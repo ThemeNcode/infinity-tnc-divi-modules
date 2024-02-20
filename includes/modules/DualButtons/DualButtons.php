@@ -43,6 +43,21 @@ class INFTNC_DualButtons extends ET_Builder_Module {
 				),
 			),
 		);
+
+        // Add Custom CSS
+		// This property will add CSS fields on Advanced > Custom CSS
+		$this->custom_css_fields = array(
+			'title' => array(
+				'label'    => esc_html__( 'Button Left', 'inftnc-infinity-tnc-divi-modules' ),
+				'selector' => '.et_pb_button',
+			),
+			'button' => array(
+				'label'    => esc_html__( 'Button Right', 'inftnc-infinity-tnc-divi-modules' ),
+				'selector' => '.et_pb_button',
+			),
+		);
+
+        
 	} 
 
 	public function get_fields() {
@@ -135,14 +150,24 @@ class INFTNC_DualButtons extends ET_Builder_Module {
                 'default' => false,
             ),
             'button'          => array(
-                'button' => array(
-                    'label'          => esc_html__('Button', 'inftnc-infinity-tnc-divi-modules'),
+                'button_left' => array(
+                    'label'          => esc_html__('Button Left', 'inftnc-infinity-tnc-divi-modules'),
                     'css'            => array(
                         'main'         => $this->main_css_element,
                         'limited_main' => "{$this->main_css_element}.et_pb_button",
                     ),
                     'box_shadow'     => false,
                     'margin_padding' => false,
+                ),
+
+                'button_right' => array(
+                    'label'          => esc_html__('Button Right', 'inftnc-infinity-tnc-divi-modules'),
+                    'css'            => array(
+                        'main'         => $this->main_css_element,
+                        'limited_main' => "{$this->main_css_element}.et_pb_button",
+                    ),
+                    'box_shadow'     => false,
+                    'margin_padding' => false, 
                 ),
             ),
             'margin_padding'  => array(
@@ -184,6 +209,8 @@ class INFTNC_DualButtons extends ET_Builder_Module {
         );
        
     }
+
+    
 
 	public function render( $attrs, $content = null, $render_slug ) {
 		$output = sprintf( '<h1>%1$s</h1>','Output');
