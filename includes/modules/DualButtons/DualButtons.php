@@ -70,6 +70,22 @@ class INFTNC_DualButtons extends ET_Builder_Module {
 
 	} 
 
+	/**
+	 * Get button alignment.
+	 *
+	 * @since 3.23 Add responsive support by adding device parameter.
+	 *
+	 * @param  string $device Current device name.
+	 * @return string         Alignment value, rtl or not.
+	 */
+	public function get_button_alignment( $device = 'desktop' ) {
+		$suffix           = 'desktop' !== $device ? "_{$device}" : '';
+		$text_orientation = isset( $this->props[ "button_alignment{$suffix}" ] ) ? $this->props[ "button_alignment{$suffix}" ] : '';
+
+		return et_pb_get_alignment( $text_orientation );
+	}
+
+
 	public function get_fields() {
 		return array(
 			'button_left_text' => array(
