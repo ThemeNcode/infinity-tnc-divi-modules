@@ -58,6 +58,16 @@ class INFTNC_DualButtons extends ET_Builder_Module {
 		);
 
         
+		// Add help videos
+		// This video will be displayed on different modal if the help icon on the bottom of the modal is clicked
+		$this->help_videos = array(
+			array(
+				'id'   => esc_html__( 'FkQuawiGWUw', 'inftnc-infinity-tnc-divi-modules' ), // YouTube video ID
+				'name' => esc_html__( 'Dual Buttons Module Video', 'inftnc-infinity-tnc-divi-modules' ),
+			),
+		);
+
+
 	} 
 
 	public function get_fields() {
@@ -211,7 +221,6 @@ class INFTNC_DualButtons extends ET_Builder_Module {
     }
 
     
-
 	public function render( $attrs, $content = null, $render_slug ) {
 		$output = sprintf( '<h1>%1$s</h1>','Output');
         return $output;
