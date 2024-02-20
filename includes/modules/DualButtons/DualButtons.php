@@ -238,10 +238,23 @@ class INFTNC_DualButtons extends ET_Builder_Module {
 
     
 	public function render( $attrs, $content = null, $render_slug ) {
-		$output = sprintf( '<h1>%1$s</h1>','Output');
+        // Module specific props added on $this->get_fields()
+        $button_left_text     =  $this->props['button_left_text'];
+        $button_right_text    =  $this->props['button_right_text'];
+        $button_left_url      =  $this->props['button_url_left'];
+        $button_left_url      =  $this->props['button_url_right'];
+        $button_target_left   =  $this->props['button_url_left_new_window'];
+        $button_target_right  =  $this->props['button_url_left_new_window'];
+        $button_alignment     =  $this->props['button_alignment'];
+
+		$output = sprintf(
+			'<div>
+				%1$s
+			</div>',
+			
+		);
         return $output;
 	}
-
     
 }
 
