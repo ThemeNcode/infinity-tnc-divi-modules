@@ -91,6 +91,7 @@ class INFTNC_DualButtons extends ET_Builder_Module {
 			'button_left_text' => array(
 				'label'           => esc_html__( 'Button Left Text', 'inftnc-infinity-tnc-divi-modules' ),
 				'type'            => 'text',
+				'default' 		  => esc_html__('Button Left', 'inftnc-infinity-tnc-divi-modules' ),
 				'option_category' => 'basic_option',
 				'description'     => esc_html__( 'Input your desired button text.', 'inftnc-infinity-tnc-divi-modules' ),
 				'toggle_slug'     => 'main_content',
@@ -98,6 +99,7 @@ class INFTNC_DualButtons extends ET_Builder_Module {
             'button_right_text' => array(
 				'label'           => esc_html__( 'Button Right Text', 'inftnc-infinity-tnc-divi-modules' ),
 				'type'            => 'text',
+				'default' 		  => esc_html__('Button Right', 'inftnc-infinity-tnc-divi-modules' ),
 				'option_category' => 'basic_option',
 				'description'     => esc_html__( 'Input your desired button text.', 'inftnc-infinity-tnc-divi-modules' ),
 				'toggle_slug'     => 'main_content',
@@ -179,8 +181,7 @@ class INFTNC_DualButtons extends ET_Builder_Module {
                 'button_left' => array(
                     'label'          => esc_html__('Button Left', 'inftnc-infinity-tnc-divi-modules'),
                     'css'            => array(
-                        'main'         => $this->main_css_element,
-                        'limited_main' => "{$this->main_css_element}.et_pb_button",
+						'main'         => "{$this->main_css_element} .et_pb_button .infinity_button_left",
                     ),
                     'box_shadow'     => false,
                     'margin_padding' => false,
@@ -189,8 +190,7 @@ class INFTNC_DualButtons extends ET_Builder_Module {
                 'button_right' => array(
                     'label'          => esc_html__('Button Right', 'inftnc-infinity-tnc-divi-modules'),
                     'css'            => array(
-                        'main'         => $this->main_css_element,
-                        'limited_main' => "{$this->main_css_element}.et_pb_button",
+                        'main'         => "{$this->main_css_element} .et_pb_button .infinity_button_right",
                     ),
                     'box_shadow'     => false,
                     'margin_padding' => false, 
@@ -198,8 +198,8 @@ class INFTNC_DualButtons extends ET_Builder_Module {
             ),
             'margin_padding'  => array(
                 'css' => array(
-                    'padding'   => "{$this->main_css_element}_wrapper {$this->main_css_element}, {$this->main_css_element}_wrapper {$this->main_css_element}:hover",
-                    'margin'    => "{$this->main_css_element}_wrapper",
+                    'padding'   => "{$this->main_css_element} {$this->main_css_element}, {$this->main_css_element} {$this->main_css_element}:hover",
+                    'margin'    => "{$this->main_css_element} .infinity_button",
                     'important' => 'all',
                 ),
             ),
@@ -242,18 +242,34 @@ class INFTNC_DualButtons extends ET_Builder_Module {
         $button_left_text     =  $this->props['button_left_text'];
         $button_right_text    =  $this->props['button_right_text'];
         $button_left_url      =  $this->props['button_url_left'];
-        $button_left_url      =  $this->props['button_url_right'];
+        $button_right_url     =  $this->props['button_url_right'];
         $button_target_left   =  $this->props['button_url_left_new_window'];
         $button_target_right  =  $this->props['button_url_left_new_window'];
         $button_alignment     =  $this->props['button_alignment'];
 
+		$button_render = '';
+		$button_render.= sprintf(
+		   '<a href="%2$s" %3$s class="et_pb_button infinity_button_left">%1$s</a>',
+			esc_html( $button_left_text ),
+			$button_left_url, 
+			('on' === $button_target_left ?  'target="_blank"': 'target="_parent"'),
+		);
+		
+		$button_render.= sprintf(
+			'<a href="%2$s" class="et_pb_button infinity_button_right">%1$s</a>',
+			esc_html( $button_right_text ),
+			$button_right_url,
+			('on' === $button_target_right ?  'target="_blank"': 'target="_parent"'),
+		);
+
+		// Render module output
 		$output = sprintf(
-			'<div>
+			'<div class="et_pb_button_module_wrapper et_pb_module ">
 				%1$s
 			</div>',
-			
+			et_core_esc_previously( $button_render ),
 		);
-        return $output;
+        return $output ;
 	}
     
 }
