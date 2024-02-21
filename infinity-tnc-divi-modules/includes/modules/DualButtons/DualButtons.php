@@ -49,11 +49,11 @@ class INFTNC_DualButtons extends ET_Builder_Module {
 		$this->custom_css_fields = array(
 			'title' => array(
 				'label'    => esc_html__( 'Button Left', 'inftnc-infinity-tnc-divi-modules' ),
-				'selector' => '.infinity_button_right',
+				'selector' => '.et_pb_button',
 			),
 			'button' => array(
 				'label'    => esc_html__( 'Button Right', 'inftnc-infinity-tnc-divi-modules' ),
-				'selector' => '.infinity_button_right',
+				'selector' => '.et_pb_button',
 			),
 		);
 
@@ -66,6 +66,7 @@ class INFTNC_DualButtons extends ET_Builder_Module {
 				'name' => esc_html__( 'Dual Buttons Module Video', 'inftnc-infinity-tnc-divi-modules' ),
 			),
 		);
+
 
 	} 
 
@@ -182,16 +183,8 @@ class INFTNC_DualButtons extends ET_Builder_Module {
                     'css'            => array(
 						'main'         => "{$this->main_css_element}.infinity_button_left.et_pb_button",
                     ),
-					'box_shadow'     => array(
-						'css' => array(
-							'main' => '%%order_class%% .infinity_button_left',
-						),
-					),
-                    'margin_padding' => array(
-						'css' => array(
-							'main'	=> '%%order_class%% .infinity_button_left'
-						)
-					),
+                    'box_shadow'     => false,
+                    'margin_padding' => false,
                 ),
 
                 'button_right' => array(
@@ -199,16 +192,8 @@ class INFTNC_DualButtons extends ET_Builder_Module {
                     'css'            => array(
                         'main'         => "{$this->main_css_element}.infinity_button_right.et_pb_button",
                     ),
-                    'box_shadow'     => array(
-						'css' => array(
-							'main' => '%%order_class%% .infinity_button_right',
-						),
-					),
-                    'margin_padding' => array(
-						'css' => array(
-							'main'	=> '%%order_class%% .infinity_button_right'
-						)
-					),
+                    'box_shadow'     => false,
+                    'margin_padding' => false, 
                 ),
             ),
             'margin_padding'  => array(
@@ -287,7 +272,6 @@ class INFTNC_DualButtons extends ET_Builder_Module {
 			esc_attr( ET_Builder_Element::get_module_order_class( $this->slug ) ),
 			et_core_esc_previously( $data_background_layout )
 		);
-		
         return $output;
 	}
     
