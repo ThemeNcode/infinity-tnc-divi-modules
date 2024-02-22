@@ -174,7 +174,7 @@ class INFTNC_DualButtons extends ET_Builder_Module {
 	function get_advanced_fields_config() { 
         return array (
 			'borders'         => array(
-				'default' => false,
+				'default' => true,
 			),
 			'button'          => array(
 				'button_left' => array(
@@ -248,7 +248,7 @@ class INFTNC_DualButtons extends ET_Builder_Module {
 			$button = $this->render_button(
 				array(
 					'button_id'           => $this->module_id( false ),
-					'button_classname'    => array('inftnc_pb_button_left'),
+					'button_classname'    => array('inftnc_pb_button_left inftnc_btn'),
 					'button_custom'       => $button_custom,
 					'button_rel'          => $button_rel,
 					'button_text'         => $button_left_text,
@@ -293,7 +293,7 @@ class INFTNC_DualButtons extends ET_Builder_Module {
 		  $button = $this->render_button(
 			  array(
 				  'button_id'           => $this->module_id( false ),
-				  'button_classname'    => array('inftnc_pb_button_right'),
+				  'button_classname'    => array('inftnc_pb_button_right inftnc_btn'),
 				  'button_custom'       => $button_custom,
 				  'button_rel'          => $button_rel,
 				  'button_text'         => $button_right_text,

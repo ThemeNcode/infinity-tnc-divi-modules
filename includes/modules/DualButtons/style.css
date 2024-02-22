@@ -21,3 +21,7 @@
 .right.et_pb_button_module_wrapper.et_pb_module.inftnc_pb_button_module {
     text-align:right;
 }
+
+.inftnc_btn {
+    display: inline-block;
+}
