@@ -10,34 +10,41 @@ class DualButtons extends Component {
     const utils              = window.ET_Builder.API.Utils;
     const buttonTargetRight  = 'on' === props.button_url_right_new_window ? '_blank' : '';
     const buttonTargetLeft   = 'on' === props.button_url_left_new_window ? '_blank' : '';
-    const buttonIcon         = props.button_icon ? utils.processFontIcon(props.button_icon) : false;
-    const buttonClassName    = {
+    const buttonIconLeft     = props.button_left_icon ? utils.processFontIcon(props.button_left_icon) : false;
+    const buttonClassNameLeft    = {
       et_pb_button:             true,
-      et_pb_custom_button_icon: props.button_icon,
+      et_pb_custom_button_icon: props.button_left_icon,
+    };
+    const buttonIconRight     = props.button_right_icon ? utils.processFontIcon(props.button_right_icon) : false;
+    const buttonClassNameRight    = {
+      et_pb_button:             true,
+      et_pb_custom_button_icon: props.button_right_icon,
     };
 
+    console.log(props);
     return (
-    <div className='et_pb_button_wrapper'>
-        <a
-          className={`${utils.classnames(
-            buttonClassName
-          )} infinity_button_right`}
-          target={buttonTargetRight}
-          href={props.button_url_left}
-          data-icon={buttonIcon}
-        >
+    <div className='et_pb_button_module_wrapper et_pb_module '>
+         <a 
+           className={`${utils.classnames(
+            buttonClassNameLeft 
+          )} inftnc_pb_button_left`}
+          target={buttonTargetLeft}
+          href={props.button_url_left} 
+          rel={utils.linkRel(props.button_rel)}
+          data-icon={buttonIconLeft}
+         >
           {props.button_left_text}
         </a>
-        <a 
-           className={`${utils.classnames(
-            buttonClassName
-          )} infinity_button_left`}
-          target={buttonTargetLeft}
-          href={props.button_url_right} 
-          data-icon={buttonIcon}
-         >
+        <a
+          className={`${utils.classnames(
+            buttonClassNameRight
+          )} inftnc_pb_button_right`}
+          target={buttonTargetRight}
+          href={props.button_url_right}
+          data-icon={buttonIconRight}
+        >
           {props.button_right_text}
-        </a>
+        </a> 
       </div>
     );
   }
@@ -45,10 +52,10 @@ class DualButtons extends Component {
 
   render() {
     return (
-      <div className="infinity-btn-wrapper">
-          {this._renderButton()};
+      <div>
+          {this._renderButton()}
       </div>
-    );
+    )
   }
 }
 
