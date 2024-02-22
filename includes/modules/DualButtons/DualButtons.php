@@ -184,7 +184,7 @@ class INFTNC_DualButtons extends ET_Builder_Module {
 					),
 					'box_shadow'     => array(
 						'css' => array(
-							'main' => '%%order_class%% ..et_pb_button.inftnc_pb_button_left',
+							'main' => '%%order_class%% .et_pb_button.inftnc_pb_button_left',
 						),
 					),
 					'margin_padding' => array(
