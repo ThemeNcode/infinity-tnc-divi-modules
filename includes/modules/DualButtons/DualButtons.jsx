@@ -20,10 +20,11 @@ class DualButtons extends Component {
       et_pb_button:             true,
       et_pb_custom_button_icon: props.button_right_icon,
     };
+    const buttonAlignment =  props.button_alignment;
 
     console.log(props);
     return (
-    <div className='et_pb_button_module_wrapper et_pb_module '>
+    <div className={`${buttonAlignment} et_pb_button_module_wrapper et_pb_module inftnc_pb_button_module`}>
          <a 
            className={`${utils.classnames(
             buttonClassNameLeft 

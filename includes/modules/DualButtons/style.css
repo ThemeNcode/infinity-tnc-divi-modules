@@ -9,3 +9,15 @@
 .et_pb_button_module_wrapper.et_pb_button_alignment_left {
     text-align:left;
 }
+
+.center.et_pb_button_module_wrapper.et_pb_module.inftnc_pb_button_module {
+    text-align:center;
+}
+
+.left.et_pb_button_module_wrapper.et_pb_module.inftnc_pb_button_module {
+    text-align:left;
+}
+
+.right.et_pb_button_module_wrapper.et_pb_module.inftnc_pb_button_module {
+    text-align:right;
+}
