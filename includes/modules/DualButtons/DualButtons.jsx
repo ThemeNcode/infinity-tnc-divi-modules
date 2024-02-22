@@ -22,7 +22,7 @@ class DualButtons extends Component {
     };
     const buttonAlignment =  props.button_alignment;
 
-    console.log(props);
+    console.log(utils.linkRel(props.button_left_rel));
     return (
     <div className={`${buttonAlignment} et_pb_button_module_wrapper et_pb_module inftnc_pb_button_module`}>
          <a 
@@ -31,7 +31,7 @@ class DualButtons extends Component {
           )} inftnc_pb_button_left`}
           target={buttonTargetLeft}
           href={props.button_url_left} 
-          rel={utils.linkRel(props.button_rel)}
+          rel={utils.linkRel(props.button_left_rel)}
           data-icon={buttonIconLeft}
          >
           {props.button_left_text}
@@ -50,7 +50,6 @@ class DualButtons extends Component {
     );
   }
   
-
   render() {
     return (
       <div>

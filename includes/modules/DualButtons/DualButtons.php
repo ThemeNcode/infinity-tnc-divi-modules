@@ -209,6 +209,9 @@ class INFTNC_DualButtons extends ET_Builder_Module {
 							'main'      => "%%order_class%% .et_pb_button.inftnc_pb_button_right",
 							'important' => 'all',
 						),
+					'custom_margin' => array(
+						'default' => '|||20px|false|false',
+					),
 					),
 				),
 			),
@@ -226,31 +229,105 @@ class INFTNC_DualButtons extends ET_Builder_Module {
        
     }
 
+	public function render_button_left() {
+
+		  // Module specific props added on $this->get_fields()
+		  $button_left_text     =  $this->props['button_left_text'];
+		  $button_left_url      =  $this->props['button_url_left'];
+		  $button_target_left   =  $this->props['button_url_left_new_window'];
+		  $button_custom        =  $this->props['custom_button_left'];
+		  $button_rel           =  $this->props['button_left_rel'];
+
+		  $custom_icon_left_values = et_pb_responsive_options()->get_property_values( $this->props, 'button_left_icon' );
+		  $custom_icon_left        = isset( $custom_icon_left_values['desktop'] ) ? $custom_icon_left_values['desktop'] : '';
+		  $custom_icon_tablet_left = isset( $custom_icon_left_values['tablet'] ) ? $custom_icon_left_values['tablet'] : '';
+		  $custom_icon_phone_left  = isset( $custom_icon_left_values['phone'] ) ? $custom_icon_left_values['phone'] : '';
+		  $multi_view              = et_pb_multi_view_options($this);
+
+		  // Render Button
+			$button = $this->render_button(
+				array(
+					'button_id'           => $this->module_id( false ),
+					'button_classname'    => array('inftnc_pb_button_left'),
+					'button_custom'       => $button_custom,
+					'button_rel'          => $button_rel,
+					'button_text'         => $button_left_text,
+					'button_text_escaped' => true,
+					'button_url'          => $button_left_url,
+					'custom_icon'         => $custom_icon_left,
+					'custom_icon_tablet'  => $custom_icon_tablet_left,
+					'custom_icon_phone'   => $custom_icon_phone_left,
+					'has_wrapper'         => false,
+					'url_new_window'      => $button_target_left,
+					'multi_view_data'     => $multi_view->render_attrs(
+						array(
+							'content'        => '{{button_text}}',
+							'hover_selector' => '%%order_class%% .et_pb_button.inftnc_pb_button_left',
+							'visibility'     => array(
+								'button_text' => '__not_empty',
+							),
+						)
+					),
+				)
+			);
+
+			return $button;
+	}
+
+	public function render_button_right() {
+
+		// Module specific props added on $this->get_fields()
+		$button_right_text     =  $this->props['button_right_text'];
+		$button_right_url      =  $this->props['button_url_right'];
+		$button_target_right   =  $this->props['button_url_right_new_window'];
+		$button_custom         =  $this->props['custom_button_right'];
+		$button_rel            =  $this->props['button_right_rel'];
+
+		$custom_icon_right_values  = et_pb_responsive_options()->get_property_values( $this->props, 'button_right_icon' );
+		$custom_icon_right         = isset( $custom_icon_right_values['desktop'] ) ? $custom_icon_right_values['desktop'] : '';
+		$custom_icon_tablet_right  = isset( $custom_icon_right_values['tablet'] ) ? $custom_icon_right_values['tablet'] : '';
+		$custom_icon_tablet_right  = isset( $custom_icon_right_values['phone'] ) ? $custom_icon_right_values['phone'] : '';
+		$multi_view                = et_pb_multi_view_options($this);
+
+		// Render Button
+		  $button = $this->render_button(
+			  array(
+				  'button_id'           => $this->module_id( false ),
+				  'button_classname'    => array('inftnc_pb_button_right'),
+				  'button_custom'       => $button_custom,
+				  'button_rel'          => $button_rel,
+				  'button_text'         => $button_right_text,
+				  'button_text_escaped' => true,
+				  'button_url'          => $button_right_url,
+				  'custom_icon'         => $custom_icon_right,
+				  'custom_icon_tablet'  => $custom_icon_tablet_right,
+				  'custom_icon_phone'   => $custom_icon_tablet_right,
+				  'has_wrapper'         => false,
+				  'url_new_window'      => $button_target_right,
+				  'multi_view_data'     => $multi_view->render_attrs(
+				  	array(
+				  		'content'        => '{{button_text}}',
+				  		'hover_selector' => '%%order_class%% .et_pb_button.inftnc_pb_button_right',
+				  		'visibility'     => array(
+				  			'button_text' => '__not_empty',
+				  		),
+				  	)
+				  ),
+			  )
+		  );
+
+		  return $button;
+  }
+
+
     
 	public function render( $attrs, $content = null, $render_slug ) {
         // Module specific props added on $this->get_fields()
-        $button_left_text     =  $this->props['button_left_text'];
-        $button_right_text    =  $this->props['button_right_text'];
-        $button_left_url      =  $this->props['button_url_left'];
-        $button_right_url     =  $this->props['button_url_right'];
-        $button_target_left   =  $this->props['button_url_left_new_window'];
-        $button_target_right  =  $this->props['button_url_left_new_window'];
-        $button_alignment     =  $this->props['button_alignment'];
-
+        $button_alignment    		   = $this->props['button_alignment'];
 		$button_alignment              = $this->get_button_alignment();
 		$is_button_aligment_responsive = et_pb_responsive_options()->is_responsive_enabled( $this->props, 'button_alignment' );
 		$button_alignment_tablet       = $is_button_aligment_responsive ? $this->get_button_alignment( 'tablet' ) : '';
 		$button_alignment_phone        = $is_button_aligment_responsive ? $this->get_button_alignment( 'phone' ) : '';
-
-		$custom_icon_left_values = et_pb_responsive_options()->get_property_values( $this->props, 'button_left_icon' );
-		$custom_icon_right       = isset( $custom_icon_left_values['desktop'] ) ? $custom_icon_left_values['desktop'] : '';
-		$custom_icon_tablet = isset( $custom_icon_left_values['tablet'] ) ? $custom_icon_left_values['tablet'] : '';
-		$custom_icon_phone  = isset( $custom_icon_left_values['phone'] ) ? $custom_icon_left_values['phone'] : '';
-
-		$custom_icon_right_values = et_pb_responsive_options()->get_property_values( $this->props, 'button_right_icon' );
-		$custom_icon        = isset( $custom_icon_right_values['desktop'] ) ? $custom_icon_right_values['desktop'] : '';
-		$custom_icon_tablet = isset( $custom_icon_right_values['tablet'] ) ? $custom_icon_right_values['tablet'] : '';
-		$custom_icon_phone  = isset( $custom_icon_right_values['phone'] ) ? $custom_icon_right_values['phone'] : '';
 
 		// Button Alignment.
 		$button_alignments = array();
@@ -268,29 +345,14 @@ class INFTNC_DualButtons extends ET_Builder_Module {
 
 		$button_alignment_classes = join( ' ', $button_alignments );
 
-		$button_render = '';
-		
-		$button_render.= sprintf(
-		   '<a href="%2$s" %3$s class="et_pb_button inftnc_pb_button_left" data-icon="%4$s">%1$s</a>',
-			esc_html( $button_left_text ),
-			$button_left_url, 
-			('on' === $button_target_left ?  'target="_blank"': 'target="_parent"'),
-			($this->props['button_left_icon']),
-		);
-		
-		$button_render.= sprintf(
-			'<a href="%2$s" class="et_pb_button inftnc_pb_button_right">%1$s</a>',
-			esc_html( $button_right_text ),
-			$button_right_url,
-			('on' === $button_target_right ?  'target="_blank"': 'target="_parent"'),
-		);
-
 		// Render module output
 		$output = sprintf(
-			'<div class="et_pb_button_module_wrapper %3$s_wrapper %2$s et_pb_module">
+			'<div class="et_pb_button_module_wrapper %4$s_wrapper %3$s et_pb_module">
 				%1$s
+			    %2$s
 			</div>',
-			et_sanitized_previously( $button_render ),
+			$this->render_button_left(),
+			$this->render_button_right(),
 			esc_attr( $button_alignment_classes ),
 			esc_attr( ET_Builder_Element::get_module_order_class( $this->slug ) ),
 		);
