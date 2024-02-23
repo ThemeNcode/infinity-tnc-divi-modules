@@ -12,13 +12,17 @@ class BreadCrumbs extends Component {
   render() {
     const props              = this.props;
     const utils              = window.ET_Builder.API.Utils;
+    const {home_text,before_text,seperator_icon}       = props;
+    const seperatorIcon     = seperator_icon ? utils.processFontIcon(seperator_icon) : false;
+
+    console.log(props);
     return (
       <div className="inftnc_breadcrumb">
-         <span class="before"></span>
+         <span class="before">{before_text}</span>
          <span property="itemListElement" typeof="ListItem">
-           <a property="item" typeof="WebPage" href="http://localhost:8888/infinity-divi/" class="home"><span property="name">Home</span></a>
-           <span class="inftnc_separator et-pb-icon">5</span>
-           <span class="inftnc_current">Infinity Test Module</span>
+           <a className="home" href="http://localhost:8888/infinity-divi/" ><span property="name">{home_text}</span></a>
+           <span className="inftnc_separator et-pb-icon">{seperatorIcon}</span>
+           <span className="inftnc_current"> <a href="#">Breadcrumbs</a></span>
          </span>
       </div>
     );
