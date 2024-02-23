@@ -1,3 +1,36 @@
 .inftnc_separator.et-pb-icon {
   font-size: unset;
+  vertical-align: middle;
+}
+
+.inftnc_breadcrums_alignment_left {
+  text-align: left;
+}
+
+.inftnc_breadcrums_alignment_right {
+    text-align: right;
+} 
+
+.inftnc_breadcrums_alignment_center {
+    text-align: center;
+}  
+
+.inftnc_breadcrums_alignment_tablet_left {
+   text-align: left;
+}
+
+.inftnc_breadcrums_alignment_tablet_right {
+    text-align: right;
+}
+
+.inftnc_breadcrums_alignment_phone_left {
+    text-align:left;
+}
+
+.inftnc_breadcrums_alignment_phone_center {
+    text-align: center;
+}
+
+.inftnc_breadcrums_alignment_phone_right {
+    text-align: right;
 }
