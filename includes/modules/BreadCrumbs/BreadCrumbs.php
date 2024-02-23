@@ -20,7 +20,8 @@ class INFTNC_BreadCrumbs extends ET_Builder_Module {
 		$this->settings_modal_toggles  = array(
 			'general'  => array(
 				'toggles' => array(
-					'main_content' => esc_html__( 'Breadcrumbs Text', 'dicm-divi-custom-modules' ),
+					'main_content' => esc_html__( 'Breadcrumbs Text', 'inftnc-infinity-tnc-divi-modules' ),
+					'icon'		   => esc_html__( 'Icon','inftnc-infinity-tnc-divi-modules'),
 				),
 			),
 		);
@@ -43,6 +44,14 @@ class INFTNC_BreadCrumbs extends ET_Builder_Module {
 				'option_category' => 'basic_option',
 				'description'     => esc_html__( 'Before text in the breadcrumbs', 'inftnc-infinity-tnc-divi-modules' ),
 				'toggle_slug'     => 'main_content',
+			),
+
+			'select_fonticon' => array(
+				'label'               => esc_html__( 'Seperator Icon', 'inftnc-infinity-tnc-divi-modules' ),
+				'type'                => 'et_font_icon_select',
+				'renderer'            => 'et_pb_get_font_icon_list',
+				'renderer_with_field' => true,
+				'toggle_slug'         => 'icon',
 			),
 
 		);
