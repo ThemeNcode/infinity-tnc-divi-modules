@@ -19,14 +19,14 @@ function infinity_tnc_breadcrumb($_home_text='Home',$_before_text='',$_delimiter
     $link_attr        = ' property="item" typeof="WebPage"';
     $link             = $link_before . '<a' . $link_attr . ' href="%1$s"><span property="name">%2$s<span></a><meta property="position" content="positionhere">' . $link_after;
     $delimiter        = $_delimiter;              // Delimiter between crumbs
-    $before           = '<span class="current">'; // Tag before the current crumb
+    $before           = '<span class="inftnc_current">'; // Tag before the current crumb
     $after            = '</span>';                // Tag after the current crumb
     $page_addon       = '';                       // Adds the page number if the query is paged
     $breadcrumb_trail = '';
     $category_links   = '';
     $position         =2;    
 	
-	$delimiter = ' <span class="separator et-pb-icon">'.$delimiter.'</span> ';
+	$delimiter = ' <span class="inftnc_separator et-pb-icon">'.$delimiter.'</span> ';
 
     /** 
      * Set our own $wp_the_query variable. Do not use the global variable version due to 

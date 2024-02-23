@@ -49,6 +49,7 @@ class INFTNC_BreadCrumbs extends ET_Builder_Module {
 			'seperator_icon' => array(
 				'label'               => esc_html__( 'Separator Icon', 'lwp-divi-breadcrumbs' ),
 				'type'                => 'select_icon',
+				'default'             => '&#x35;||divi',
 				'renderer'            => 'select_icon',
 				'option_category'     => 'basic_option',
 				'class'               => array( 'et-pb-font-icon' ),
@@ -60,16 +61,32 @@ class INFTNC_BreadCrumbs extends ET_Builder_Module {
 	}
 
 	public function render( $attrs, $content = null, $render_slug ) {
-
 		 // Module specific props added on $this->get_fields()
-
 		 $before_text		 = $this->props['before_text'];
 		 $home_text   		 = $this->props['home_text'];   
-		 $separator_icon 	 = $this->props['seperator_icon'];
+		 $seperate_font 	 = $this->props['seperator_icon'];	
+		
+		$separator_icon=esc_attr( et_pb_process_font_icon($seperate_font));	
 
-		 var_dump($separator_icon);
+		$icon_element_selector = '%%order_class%% .inftnc_separator';
+
+		// Font Icon Style.
+		$this->generate_styles(
+			array(
+				'utility_arg'    => 'icon_font_family',
+				'render_slug'    => $render_slug,
+				'base_attr_name' => 'font_icon',
+				'important'      => true,
+				'selector'       => $icon_element_selector,
+				'processor'      => array(
+					'ET_Builder_Module_Helper_Style_Processor',
+					'process_extended_icon',
+				),
+			)
+		);
 
 		$inftnc_breadcrumb =  infinity_tnc_breadcrumb( $home_text, $before_text, $separator_icon );
+
 		$output =  sprintf( '<div class="inftnc_breadcrumb">%1$s</div>', $inftnc_breadcrumb );
 
 		return $output;
