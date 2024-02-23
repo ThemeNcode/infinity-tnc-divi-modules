@@ -89,6 +89,8 @@ class INFTNC_BreadCrumbs extends ET_Builder_Module {
 		);
 	}
 
+	
+
 	public function render( $attrs, $content = null, $render_slug ) {
 		// Module specific props added on $this->get_fields()
 		$before_text		 = $this->props['before_text'];
