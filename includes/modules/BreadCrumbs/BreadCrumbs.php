@@ -94,6 +94,7 @@ class INFTNC_BreadCrumbs extends ET_Builder_Module {
 		$before_text		 = $this->props['before_text'];
 		$home_text   		 = $this->props['home_text'];   
 		$seperate_font 	     = $this->props['seperator_icon'];	
+
 		
 		$separator_icon=esc_attr( et_pb_process_font_icon($seperate_font));	
 
@@ -115,6 +116,39 @@ class INFTNC_BreadCrumbs extends ET_Builder_Module {
 		);
 
 		$inftnc_breadcrumb =  infinity_tnc_breadcrumb( $home_text, $before_text, $separator_icon );
+
+		// Process link color value into style
+		if ( '' !== $this->props['link_color'] ) {
+			ET_Builder_Element::set_style( $render_slug, array(
+				'selector'    => '%%order_class%% .inftnc_breadcrumb a',
+				'declaration' => sprintf(
+					'color: %1$s;',
+					esc_attr( $this->props['link_color'] )
+				),
+			) );
+		}
+
+		// Process seperator icon color value into style
+		if ( '' !== $this->props['seperate_icon_color'] ) {
+			ET_Builder_Element::set_style( $render_slug, array(
+				'selector'    => '%%order_class%% .inftnc_separator',
+				'declaration' => sprintf(
+					'color: %1$s;',
+					esc_attr( $this->props['seperate_icon_color'] )
+				),
+			) );
+		}
+
+		// Process seperator icon color value into style
+		if ( '' !== $this->props['current_text_color'] ) {
+			ET_Builder_Element::set_style( $render_slug, array(
+				'selector'    => '%%order_class%% .inftnc_current',
+				'declaration' => sprintf(
+					'color: %1$s;',
+					esc_attr( $this->props['current_text_color'] )
+				),
+			) );
+		}
 
 		$output =  sprintf( '<div class="inftnc_breadcrumb">%1$s</div>', $inftnc_breadcrumb );
 
