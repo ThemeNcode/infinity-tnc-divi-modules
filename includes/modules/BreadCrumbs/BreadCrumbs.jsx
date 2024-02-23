@@ -5,7 +5,7 @@ import React, { Component } from 'react';
 import './style.css';
 
 
-class HelloWorld extends Component {
+class BreadCrumbs extends Component {
 
   static slug = 'inftnc_bread_crumbs';
 
@@ -20,4 +20,4 @@ class HelloWorld extends Component {
   }
 }
 
-export default HelloWorld;
+export default BreadCrumbs;

@@ -18,10 +18,19 @@ class INFTNC_BreadCrumbs extends ET_Builder_Module {
 
 		// Toggle settings
 		$this->settings_modal_toggles  = array(
+			
 			'general'  => array(
 				'toggles' => array(
 					'main_content' => esc_html__( 'Breadcrumbs Text', 'inftnc-infinity-tnc-divi-modules' ),
 					'icon'		   => esc_html__( 'Icon','inftnc-infinity-tnc-divi-modules'),
+				),
+			),
+			'advanced' => array(
+				'toggles' => array(
+					'breadcrumbs'   => array(
+						'title' => esc_html__( 'Breadcrumbs Style', 'inftnc-infinity-tnc-divi-modules' ),
+						'priority' => 50,
+					),
 				),
 			),
 		);
@@ -47,24 +56,44 @@ class INFTNC_BreadCrumbs extends ET_Builder_Module {
 			),
 
 			'seperator_icon' => array(
-				'label'               => esc_html__( 'Separator Icon', 'lwp-divi-breadcrumbs' ),
+				'label'               => esc_html__( 'Separator Icon', 'inftnc-infinity-tnc-divi-modules' ),
 				'type'                => 'select_icon',
 				'default'             => '&#x35;||divi',
 				'renderer'            => 'select_icon',
 				'option_category'     => 'basic_option',
 				'class'               => array( 'et-pb-font-icon' ),
 				'toggle_slug'         => 'icon',
-				'description'         => esc_html__( 'Choose the icon for the separator.', 'lwp-divi-breadcrumbs' ),
+				'description'         => esc_html__( 'Choose the icon for the separator.', 'inftnc-infinity-tnc-divi-modules' ),
 			),
 
+			'link_color' => array(
+				'label'           => esc_html__('Link Color', 'inftnc-infinity-tnc-divi-modules' ),
+				'type'            => 'color',
+				'toggle_slug'     => 'breadcrumbs',
+				'tab_slug'        => 'advanced',
+			),
+
+			'seperate_icon_color' => array(
+				'label'           => esc_html__( 'Separator Icon Color', 'inftnc-infinity-tnc-divi-modules' ),
+				'type'            => 'color',
+				'toggle_slug'     => 'breadcrumbs',
+				'tab_slug'        => 'advanced',
+			),
+
+			'current_text_color' => array(
+				'label'           => esc_html__( 'Current Text Color', 'inftnc-infinity-tnc-divi-modules' ),
+				'type'            => 'color',
+				'toggle_slug'     => 'breadcrumbs',
+				'tab_slug'        => 'advanced',
+			),
 		);
 	}
 
 	public function render( $attrs, $content = null, $render_slug ) {
-		 // Module specific props added on $this->get_fields()
-		 $before_text		 = $this->props['before_text'];
-		 $home_text   		 = $this->props['home_text'];   
-		 $seperate_font 	 = $this->props['seperator_icon'];	
+		// Module specific props added on $this->get_fields()
+		$before_text		 = $this->props['before_text'];
+		$home_text   		 = $this->props['home_text'];   
+		$seperate_font 	     = $this->props['seperator_icon'];	
 		
 		$separator_icon=esc_attr( et_pb_process_font_icon($seperate_font));	
 
