@@ -46,19 +46,31 @@ class INFTNC_BreadCrumbs extends ET_Builder_Module {
 				'toggle_slug'     => 'main_content',
 			),
 
-			'select_fonticon' => array(
-				'label'               => esc_html__( 'Seperator Icon', 'inftnc-infinity-tnc-divi-modules' ),
-				'type'                => 'et_font_icon_select',
-				'renderer'            => 'et_pb_get_font_icon_list',
-				'renderer_with_field' => true,
+			'seperator_icon' => array(
+				'label'               => esc_html__( 'Separator Icon', 'lwp-divi-breadcrumbs' ),
+				'type'                => 'select_icon',
+				'renderer'            => 'select_icon',
+				'option_category'     => 'basic_option',
+				'class'               => array( 'et-pb-font-icon' ),
 				'toggle_slug'         => 'icon',
+				'description'         => esc_html__( 'Choose the icon for the separator.', 'lwp-divi-breadcrumbs' ),
 			),
 
 		);
 	}
 
 	public function render( $attrs, $content = null, $render_slug ) {
-		$output =  sprintf( '<h1>%1$s</h1>', infinity_tnc_breadcrumb('rakib','tnc') );
+
+		 // Module specific props added on $this->get_fields()
+
+		 $before_text		 = $this->props['before_text'];
+		 $home_text   		 = $this->props['home_text'];   
+		 $separator_icon 	 = $this->props['seperator_icon'];
+
+		 var_dump($separator_icon);
+
+		$inftnc_breadcrumb =  infinity_tnc_breadcrumb( $home_text, $before_text, $separator_icon );
+		$output =  sprintf( '<div class="inftnc_breadcrumb">%1$s</div>', $inftnc_breadcrumb );
 
 		return $output;
 	}
