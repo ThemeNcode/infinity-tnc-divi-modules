@@ -13,17 +13,38 @@ class INFTNC_BreadCrumbs extends ET_Builder_Module {
 
 	public function init() {
 		$this->name = esc_html__( 'Breadcrumbs - Infinity TNC', 'inftnc-infinity-tnc-divi-modules' );
+		//Icon 
+		$this->icon_path        =  plugin_dir_path( __FILE__ ) . 'icon.svg';
+
+		// Toggle settings
+		$this->settings_modal_toggles  = array(
+			'general'  => array(
+				'toggles' => array(
+					'main_content' => esc_html__( 'Breadcrumbs Text', 'dicm-divi-custom-modules' ),
+				),
+			),
+		);
 	}
 
 	public function get_fields() {
 		return array(
-			'content' => array(
-				'label'           => esc_html__( 'Content', 'inftnc-infinity-tnc-divi-modules' ),
-				'type'            => 'tiny_mce',
+			'home_text' => array(
+				'label'           => esc_html__( 'Home', 'inftnc-infinity-tnc-divi-modules' ),
+				'type'            => 'text',
 				'option_category' => 'basic_option',
-				'description'     => esc_html__( 'Content entered here will appear inside the module.', 'inftnc-infinity-tnc-divi-modules' ),
+				'default'		  => esc_html__('Home','inftnc-infinity-tnc-divi-modules'),
+				'description'     => esc_html__( 'Default home text in the Breadcrumbs', 'inftnc-infinity-tnc-divi-modules' ),
 				'toggle_slug'     => 'main_content',
 			),
+
+			'before_text' => array(
+				'label'           => esc_html__( 'Before Text', 'inftnc-infinity-tnc-divi-modules' ),
+				'type'            => 'text',
+				'option_category' => 'basic_option',
+				'description'     => esc_html__( 'Before text in the breadcrumbs', 'inftnc-infinity-tnc-divi-modules' ),
+				'toggle_slug'     => 'main_content',
+			),
+
 		);
 	}
 
