@@ -25,18 +25,18 @@
 
 .inftnc_gradient_p4 {
     font-size:16px;
-    background: #0420BF;
-    background: linear-gradient(to right, #0420BF 0%, #88F2F2 100%);
-   -webkit-background-clip: text;
+    background: #8C5B49;
+    background: linear-gradient(to right, #8C5B49 0%, #D9BBA0 100%);
+    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .inftnc_gradient_p5 {
     font-size:16px;
-    background: #C19D4B;
-    background: linear-gradient(to right, #C19D4B 0%, #F4EBB0 100%);
+    background: #044D29;
+    background: linear-gradient(to right, #044D29 0%, #97ED8A 100%);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; 
+    -webkit-text-fill-color: transparent;
 }
 
 .inftnc_gradient_p6 {
@@ -69,6 +69,7 @@
     font-size:20px
  } 
 
+ 
 
     
 

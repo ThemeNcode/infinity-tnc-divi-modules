@@ -33,11 +33,79 @@ class INFTNC_HeadingGradient extends ET_Builder_Module {
 		);
 	}
 
+     /**
+	 * Module's advanced fields configuration
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return array
+	 */
+	function get_advanced_fields_config() { 
+            return array(
+                'fonts'           => array(
+                    'title' => array(
+                        'label'          => esc_html__( 'Title','inftnc-infinity-tnc-divi-modules' ),
+                        'css'            => array(
+                            'main' => [
+                                '%%order_class%% h1.inftnc_gradient_title',
+                                '%%order_class%% h2.inftnc_gradient_title',
+                                '%%order_class%% h3.inftnc_gradient_title',
+                                '%%order_class%% h4.inftnc_gradient_title',
+                                '%%order_class%% h5.inftnc_gradient_title',
+                                '%%order_class%% h6.inftnc_gradient_title',
+                            ],
+                        ),
+                        'font_size'      => array(
+                            'default' => '30px',
+                        ),
+                        'line_height'    => array(
+                            'default' => '1em',
+                        ),
+                        'letter_spacing' => array(
+                            'default' => '0px',
+                        ),
+                        'header_level'   => array(
+                            'default' => 'h1',
+                            'label'   => esc_html__( 'Heading Level', 'inftnc-infinity-tnc-divi-modules' ),
+                        ),
+                    ),
+                ),
+                'background'      => array(
+                    'options' => array(
+                        'parallax_method' => array(
+                            'default' => 'off',
+                        ),
+                    ),
+                ),
+                'margin_padding' => array(
+                    'css' => array(
+                        'important' => 'all',
+                    ),
+                ),
+                'max_width'       => array(
+                    'css' => array(
+                        'important' => 'all',
+                    ),
+                ),
+                'text'            => false,
+                'box_shadow'      => array(
+                    'default' => array(),
+                ),
+                'position_fields' => array(
+                    'default' => 'relative',
+                ),
+                'link_options'    => false,
+                'filters'         => false,
+            );
+			
+    }
+
 	public function get_fields() {
 		return array(
-			'content' => array(
-				'label'           => esc_html__( 'Content', 'inftnc-infinity-tnc-divi-modules' ),
+			'gradient_title' => array(
+				'label'           => esc_html__( 'Title', 'inftnc-infinity-tnc-divi-modules' ),
 				'type'            => 'textarea',
+                'default'         =>  esc_html__( 'Your Title Goes Here', 'inftnc-infinity-tnc-divi-modules' ),
 				'option_category' => 'basic_option',
 				'description'     => esc_html__( 'Content entered here will appear inside the module.', 'inftnc-infinity-tnc-divi-modules' ),
 				'toggle_slug'     => 'main_content',
@@ -208,7 +276,29 @@ class INFTNC_HeadingGradient extends ET_Builder_Module {
 	}
 
 	public function render( $attrs, $content = null, $render_slug ) {
-		return sprintf( '<h1>%1$s</h1>', $this->props['content'] );
+        // Allowing full html for backwards compatibility.
+		$gradient_title = $this->props['gradient_title'];
+		$header_level   = $this->props['title_level'];
+
+       $content = sprintf(
+            '<%1$s class="inftnc_gradient_title et_pb_module_header">
+                %2$s
+            </%1$s>',
+        /* 01 */ et_pb_process_header_level( $header_level, 'h1' ),
+        /* 02 */ $gradient_title,
+       );
+
+     $output = sprintf(
+        '<div%3$s class="%2$s">
+            %1$s
+        </div>',
+        /* 01 */ $content,
+        /* 02 */ $this->module_classname( $render_slug ),
+        /* 03 */ $this->module_id(),
+    );
+
+    return $output;
+
 	}
 }
 
