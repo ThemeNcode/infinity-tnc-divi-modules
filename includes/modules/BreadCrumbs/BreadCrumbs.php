@@ -80,6 +80,31 @@ class INFTNC_BreadCrumbs extends ET_Builder_Module {
 				'description'         => esc_html__( 'Choose the icon for the separator.', 'inftnc-infinity-tnc-divi-modules' ),
 			),
 
+			'use_before_icon' => array(
+				'label'           => esc_html__( 'Add Before Icon', 'inftnc-infinity-tnc-divi-modules' ),
+				'type'            => 'yes_no_button',
+				'option_category' => 'basic_option',
+				'toggle_slug'         => 'icon',					
+				'options'         => array(
+					'off' => esc_html__( 'No', 'inftnc-infinity-tnc-divi-modules'),
+					'on'  => esc_html__( 'Yes', 'inftnc-infinity-tnc-divi-modules' ),
+				),
+			),
+
+			'before_text_icon' => array(
+				'label'               => esc_html__( 'Before Text Icon', 'inftnc-infinity-tnc-divi-modules' ),
+				'type'                => 'select_icon',
+				'default'             => '&#x35;||divi',
+				'renderer'            => 'select_icon',
+				'option_category'     => 'basic_option',
+				'class'               => array( 'et-pb-font-icon' ),
+				'toggle_slug'         => 'icon',
+				'description'         => esc_html__( 'Choose the icon for the before text.', 'inftnc-infinity-tnc-divi-modules' ),
+				'show_if'         => array(
+					'use_before_icon' => 'on',
+				),	
+			),
+
 			'link_color' => array(
 				'label'           => esc_html__('Link Color', 'inftnc-infinity-tnc-divi-modules' ),
 				'type'            => 'color',
@@ -109,12 +134,20 @@ class INFTNC_BreadCrumbs extends ET_Builder_Module {
 		$before_text		 = $this->props['before_text'];
 		$home_text   		 = $this->props['home_text'];   
 		$seperate_font 	     = $this->props['seperator_icon'];	
+		$before_text_font    = $this->props['before_text_icon'];
+		$use_before_icon     = $this->props['use_before_icon'];
 
-		$separator_icon = esc_attr( et_pb_process_font_icon( $seperate_font ) );	
+	
 
+
+		
+		
+
+	    $before_content= '';
+		$separator_icon      = esc_attr( et_pb_process_font_icon( $seperate_font ) );
 		$icon_element_selector = '%%order_class%% .inftnc_separator';
-
-		// Font Icon Style.
+	
+		// Font Icon Style Seperator.
 		$this->generate_styles(
 			array(
 				'utility_arg'    => 'icon_font_family',
@@ -128,6 +161,28 @@ class INFTNC_BreadCrumbs extends ET_Builder_Module {
 				),
 			)
 		);
+
+		if( $use_before_icon == 'on') {
+		$before_text_icon    = esc_attr( et_pb_process_font_icon( $before_text_font ));
+		$before_content.=sprintf('<span class="inftnc_before et-pb-icon">%1$s</span>',$before_text_icon);
+		$before_icon_element_selector = '%%order_class%% .inftnc_before';
+		// Font Icon Style Before Text.
+		$this->generate_styles(
+			array(
+				'utility_arg'    => 'icon_font_family',
+				'render_slug'    => $render_slug,
+				'base_attr_name' => 'before_icon',
+				'important'      => true,
+				'selector'       => $before_icon_element_selector,
+				'processor'      => array(
+					'ET_Builder_Module_Helper_Style_Processor',
+					'process_extended_icon',
+				),
+			)
+		);
+
+		}
+		
 
 		$inftnc_breadcrumb =  infinity_tnc_breadcrumb( $home_text, $before_text, $separator_icon );
 
@@ -164,7 +219,7 @@ class INFTNC_BreadCrumbs extends ET_Builder_Module {
 			) );
 		}
 
-		$output =  sprintf( '<div class="inftnc_breadcrumb">%1$s</div>', $inftnc_breadcrumb );
+		$output =  sprintf( '<div class="inftnc_breadcrumb">%2$s %1$s</div>', $inftnc_breadcrumb,$before_content);
 
 		return $output;
 	}

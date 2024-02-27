@@ -234,14 +234,14 @@ function infinity_tnc_breadcrumb($_home_text='Home',$_before_text='',$_delimiter
     ) {
         // Do not show breadcrumbs on page one of home and frontpage
         if ( is_paged() ) {
-            $breadcrumb_output_link .= '<span class="before">'.$here_text.'</span> ';
+            $breadcrumb_output_link .= '<span class="inftnc_before">'.$here_text.'</span> ';
             $breadcrumb_output_link .= '<span vocab="https://schema.org/" typeof="BreadcrumbList">';        
             $breadcrumb_output_link .= '<span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" href="' . $home_link . '" class="home"><span property="name">' . $home_text . '</span><meta property="position" content="1"></a><meta property="position" content="1"></span>';
             $breadcrumb_output_link .= $page_addon;
             $breadcrumb_output_link .= '</span>';  
         }
     } else {
-        $breadcrumb_output_link .= '<span class="before">'.$here_text.'</span> ';
+        $breadcrumb_output_link .= '<span class="inftnc_before">'.$here_text.'</span> ';
         $breadcrumb_output_link .= '<span vocab="https://schema.org/" typeof="BreadcrumbList">';        
         $breadcrumb_output_link .= '<span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" href="' . $home_link . '" class="home"><span property="name">' . $home_text . '</span></a><meta property="position" content="1"></span>';
         $breadcrumb_output_link .= $delimiter;
