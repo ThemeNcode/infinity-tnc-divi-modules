@@ -50,7 +50,7 @@ class INFTNC_HeadingGradient extends ET_Builder_Module {
                 'default'         => 'gradient_custom_color',
 				'options'         => array(
 					'gradient_custom_color'            => esc_html__( 'Custom Color', 'inftnc-infinity-tnc-divi-modules' ),
-					'gradient_preset_color'            => esc_html__( 'Preset', 'inftnc-infinity-tnc-divi-modules' ),
+					'gradient_preset_color'            => esc_html__( 'Gradient Preset', 'inftnc-infinity-tnc-divi-modules' ),
 				),
 				'tab_slug'        => 'advanced',
 				'toggle_slug'     => 'gradient',
@@ -144,6 +144,66 @@ class INFTNC_HeadingGradient extends ET_Builder_Module {
 				)
 			),
 
+            'presets_gradient' => array(
+				'label'           => esc_html__( 'Presets Gradient Style', 'dicm-divi-custom-modules' ),
+				'type'            => 'presets_shadow',
+				'tab_slug'        => 'advanced',
+				'toggle_slug'     => 'gradient',
+				'presets'         => array(
+					array(
+						'content' => array(
+							'class'   => 'preset inftnc_gradient_p1',
+							'content' => 'Hello World',
+						),
+						'value'   => 'preset1'
+					),
+                    array(
+						'content' => array(
+							'class'   => 'preset inftnc_gradient_p2',
+							'content' => 'Hello World',
+						),
+						'value'   => 'preset2'
+					),
+
+                    array(
+						'content' => array(
+							'class'   => 'preset inftnc_gradient_p3',
+							'content' => 'Hello World',
+						),
+						'value'   => 'preset3'
+					),
+                    array(
+						'content' => array(
+							'class'   => 'preset inftnc_gradient_p4',
+							'content' => 'Hello World',
+						),
+						'value'   => 'preset4'
+					),
+
+                    array(
+						'content' => array(
+							'class'   => 'preset inftnc_gradient_p5',
+							'content' => 'Hello World',
+						),
+						'value'   => 'preset5'
+					),
+
+                    array(
+						'content' => array(
+							'class'   => 'preset inftnc_gradient_p6',
+							'content' => 'Hello World',
+						),
+						'value'   => 'preset6'
+					),
+				),
+				'default'         => 'preset1',
+				'default_on_front'=> false,
+                'show_if'     => array(
+                    'gradient_options' => 'gradient_preset_color',
+                ),
+			),
+            
+
 		);
 	}
 
@@ -153,3 +213,6 @@ class INFTNC_HeadingGradient extends ET_Builder_Module {
 }
 
 new INFTNC_HeadingGradient;
+
+
+

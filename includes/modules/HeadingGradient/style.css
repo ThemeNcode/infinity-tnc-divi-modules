@@ -1,0 +1,44 @@
+.inftnc_gradient_p1 {
+    font-size:16px;
+    background: #25CC0F;
+    background: linear-gradient(to bottom right, #25CC0F 0%, #9E3212 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+   
+}  
+
+.inftnc_gradient_p2 {
+    font-size:16px;
+    background: #B8E1FC;
+    background: radial-gradient(circle farthest-corner at center center, #B8E1FC 0%, #231421 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+    
+}
+
+.inftnc_gradient_p3 {
+    font-size:16px;
+    background: #CFE7FA;
+    background: linear-gradient(to right, #CFE7FA 0%, #6393C1 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; 
+}
+
+.et-fb-preset--active .inftnc_gradient_p1 {
+   font-size:20px
+}
+
+.et-fb-preset--active  .inftnc_gradient_p2 {
+    font-size:20px
+}
+
+.et-fb-preset--active .inftnc_gradient_p3  {
+   font-size:20px
+} 
+
+
+    
+
+
+
+

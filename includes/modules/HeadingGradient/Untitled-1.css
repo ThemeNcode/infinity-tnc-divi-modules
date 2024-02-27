@@ -1,0 +1,41 @@
+// gradient preset 1 
+background: #03658C;
+background: linear-gradient(to right, #03658C 0%, #63BBF2 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+
+//  p2
+
+background: #F1543F;
+background: linear-gradient(to right, #F1543F 0%, #FDC362 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+
+// p3
+
+background: #30303B;
+background: linear-gradient(to bottom right, #30303B 0%, #EAE9E7 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+
+// p4
+
+background: #0420BF;
+background: linear-gradient(to right, #0420BF 0%, #88F2F2 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+
+// p5
+
+background: #C19D4B;
+background: linear-gradient(to right, #C19D4B 0%, #F4EBB0 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+
+// p6 
+
+background: #481CA6;
+background: linear-gradient(to right, #481CA6 0%, #AC43D9 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+
