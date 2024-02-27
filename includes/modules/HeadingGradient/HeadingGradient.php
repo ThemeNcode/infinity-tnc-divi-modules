@@ -43,8 +43,22 @@ class INFTNC_HeadingGradient extends ET_Builder_Module {
 				'toggle_slug'     => 'main_content',
 			),
 
+
+            'gradient_options' => array(
+				'label'           => esc_html__( 'Gradient Options', 'inftnc-infinity-tnc-divi-modules' ),
+				'type'            => 'select',
+                'default'         => 'gradient_custom_color',
+				'options'         => array(
+					'gradient_custom_color'            => esc_html__( 'Custom Color', 'inftnc-infinity-tnc-divi-modules' ),
+					'gradient_preset_color'            => esc_html__( 'Preset', 'inftnc-infinity-tnc-divi-modules' ),
+				),
+				'tab_slug'        => 'advanced',
+				'toggle_slug'     => 'gradient',
+                
+			),
+	
             'gradient_type' => array(
-				'label'           => esc_html__( 'Select', 'inftnc-infinity-tnc-divi-modules' ),
+				'label'           => esc_html__( 'Gradient Type', 'inftnc-infinity-tnc-divi-modules' ),
 				'type'            => 'select',
 				'options'         => array(
 					'linear-gradient'            => esc_html__( 'Linear Gradient', 'inftnc-infinity-tnc-divi-modules' ),
@@ -53,7 +67,83 @@ class INFTNC_HeadingGradient extends ET_Builder_Module {
 				),
 				'tab_slug'        => 'advanced',
 				'toggle_slug'     => 'gradient',
+                'show_if'         => array(
+					'gradient_options' => 'gradient_custom_color',
+				)
 			),
+
+            'gradient_type' => array(
+				'label'           => esc_html__( 'Position', 'inftnc-infinity-tnc-divi-modules' ),
+				'type'            => 'select',
+				'options'         => array(
+					'top left'                   => esc_html__( 'Top Left', 'inftnc-infinity-tnc-divi-modules' ),
+					'top'                        => esc_html__( 'Top', 'inftnc-infinity-tnc-divi-modules' ),
+                    'top right'                  => esc_html__( 'Top Right','inftnc-infinity-tnc-divi-modules' ),
+                    'right'                      => esc_html__( 'Right','inftnc-infinity-tnc-divi-modules' ),
+                    'bottom right'               => esc_html__( 'Bottom Right','inftnc-infinity-tnc-divi-modules' ),
+                    'bottom'                     => esc_html__( 'Bottom','inftnc-infinity-tnc-divi-modules' ),
+                    'bottom left'                => esc_html__( 'Bottom Left','inftnc-infinity-tnc-divi-modules'),
+                    'left'                       => esc_html__( 'Left','inftnc-infinity-tnc-divi-modules'),
+                ),
+				'tab_slug'        => 'advanced',
+				'toggle_slug'     => 'gradient',
+                'show_if'         => array(
+					'gradient_options' => 'gradient_custom_color',
+				)
+			),
+
+            'color' => array(
+                'label'           => esc_html__( 'Start Color', 'dicm-divi-custom-modules' ),
+                'type'            => 'color',
+                'tab_slug'        => 'advanced',
+                'toggle_slug'     => 'gradient',
+                'show_if'         => array(
+					'gradient_options' => 'gradient_custom_color',
+				)
+            ),
+
+            'color_alpha' => array(
+                'label'           => esc_html__( 'End Color', 'dicm-divi-custom-modules' ),
+                'type'            => 'color',
+                'tab_slug'        => 'advanced',
+                'toggle_slug'     => 'gradient',
+                'show_if'         => array(
+					'gradient_options' => 'gradient_custom_color',
+				),
+            ),
+
+            'start_position' => array(
+				'label'           => esc_html__( 'Start Position', 'dicm-divi-custom-modules' ),
+				'type'            => 'range',
+				'tab_slug'        => 'advanced',
+				'toggle_slug'     => 'gradient',
+                'default'         => 0,
+                'range_settings' => array(
+					'min'  => 0,
+					'max'  => 100,
+					'step' => 1,
+				),
+                'show_if'         => array(
+					'gradient_options' => 'gradient_custom_color',
+				)
+			),
+
+            'end_position' => array(
+				'label'           => esc_html__( 'End Position', 'dicm-divi-custom-modules' ),
+				'type'            => 'range',
+				'tab_slug'        => 'advanced',
+				'toggle_slug'     => 'gradient',
+                'default'         => 100,
+                'range_settings' => array(
+					'min'  => 0,
+					'max'  => 100,
+					'step' => 100,
+				),
+                'show_if'         => array(
+					'gradient_options' => 'gradient_custom_color',
+				)
+			),
+
 		);
 	}
 
