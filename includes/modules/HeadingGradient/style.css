@@ -1,7 +1,7 @@
 .inftnc_gradient_p1 {
     font-size:16px;
-    background: #25CC0F;
-    background: linear-gradient(to bottom right, #25CC0F 0%, #9E3212 100%);
+    background: #03658C;
+    background: linear-gradient(to right, #03658C 0%, #63BBF2 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
    
@@ -9,20 +9,44 @@
 
 .inftnc_gradient_p2 {
     font-size:16px;
-    background: #B8E1FC;
-    background: radial-gradient(circle farthest-corner at center center, #B8E1FC 0%, #231421 100%);
+    background: #F1543F;
+    background: linear-gradient(to right, #F1543F 0%, #FDC362 100%);
     -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent; 
-    
+    -webkit-text-fill-color: transparent;
 }
 
 .inftnc_gradient_p3 {
     font-size:16px;
-    background: #CFE7FA;
-    background: linear-gradient(to right, #CFE7FA 0%, #6393C1 100%);
+    background: #30303B;
+    background: linear-gradient(to bottom right, #30303B 0%, #EAE9E7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.inftnc_gradient_p4 {
+    font-size:16px;
+    background: #0420BF;
+    background: linear-gradient(to right, #0420BF 0%, #88F2F2 100%);
+   -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.inftnc_gradient_p5 {
+    font-size:16px;
+    background: #C19D4B;
+    background: linear-gradient(to right, #C19D4B 0%, #F4EBB0 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent; 
 }
+
+.inftnc_gradient_p6 {
+    font-size:16px;
+    background: #481CA6;
+    background: linear-gradient(to right, #481CA6 0%, #AC43D9 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 
 .et-fb-preset--active .inftnc_gradient_p1 {
    font-size:20px
@@ -35,6 +59,15 @@
 .et-fb-preset--active .inftnc_gradient_p3  {
    font-size:20px
 } 
+.et-fb-preset--active .inftnc_gradient_p4 {
+    font-size:20px
+ } 
+ .et-fb-preset--active .inftnc_gradient_p5  {
+    font-size:20px
+ } 
+ .et-fb-preset--active .inftnc_gradient_p6  {
+    font-size:20px
+ } 
 
 
     
