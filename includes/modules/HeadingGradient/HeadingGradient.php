@@ -42,6 +42,18 @@ class INFTNC_HeadingGradient extends ET_Builder_Module {
 				'description'     => esc_html__( 'Content entered here will appear inside the module.', 'inftnc-infinity-tnc-divi-modules' ),
 				'toggle_slug'     => 'main_content',
 			),
+
+            'gradient_type' => array(
+				'label'           => esc_html__( 'Select', 'inftnc-infinity-tnc-divi-modules' ),
+				'type'            => 'select',
+				'options'         => array(
+					'linear-gradient'            => esc_html__( 'Linear Gradient', 'inftnc-infinity-tnc-divi-modules' ),
+					'radial-gradient'            => esc_html__( 'Radial Gradient', 'inftnc-infinity-tnc-divi-modules' ),
+                    'ellipse'                    => esc_html__( 'Elliptical','inftnc-infinity-tnc-divi-modules' ),
+				),
+				'tab_slug'        => 'advanced',
+				'toggle_slug'     => 'gradient',
+			),
 		);
 	}
 
