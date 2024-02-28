@@ -253,7 +253,7 @@ class INFTNC_HeadingGradient extends ET_Builder_Module {
                 'range_settings' => array(
 					'min'  => 0,
 					'max'  => 100,
-					'step' => 100,
+					'step' => 1,
 				),
                 'show_if'         => array(
 					'gradient_options' => 'gradient_custom_color',
