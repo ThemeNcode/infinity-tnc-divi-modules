@@ -318,9 +318,29 @@ class INFTNC_HeadingGradient extends ET_Builder_Module {
 						),
 					)
 				);
-           } elseif ( 'radial_gradient' === $gradient_type ) {
+           } elseif ( 'radial_gradient' === $this->props['gradient_type']  ) {
 
-           } elseif ( 'ellipse'  === $gradient_type ) {
+				ET_Builder_Element::set_style(
+					$render_slug,
+					array(
+						'selector'    => '%%order_class%% .inftnc_gradient_title',
+						'declaration' => sprintf(
+							'
+							background:radial-gradient(circle farthest-corner at %1$s, %2$s %4$s%%, %3$s %5$s%% ) !important;
+							-webkit-background-clip:text !important;
+							-webkit-text-fill-color:transparent;
+							',
+							$this->props['gradient_position'],
+							$this->props['start_color'],
+							$this->props['end_color'],
+							$this->props['start_position'],
+							$this->props['end_position'],
+							$this->props['start_color']
+						),
+					)
+				);
+
+           } elseif ( 'ellipse'  === $this->props['gradient_type'] ) {
 
            }
 
