@@ -159,6 +159,7 @@ class INFTNC_HeadingGradient extends ET_Builder_Module {
 				'toggle_slug'     => 'gradient',
                 'show_if'         => array(
 					'gradient_type' => 'linear_gradient',
+					'gradient_options' => 'gradient_custom_color'
 				),
 			),
 
@@ -206,7 +207,7 @@ class INFTNC_HeadingGradient extends ET_Builder_Module {
 			),
 
             'start_color' => array(
-                'label'           => esc_html__( 'Start Color', 'dicm-divi-custom-modules' ),
+                'label'           => esc_html__( 'Start Color', 'inftnc-infinity-tnc-divi-modules' ),
                 'type'            => 'color',
 				'default'		  => '#481CA6',
                 'tab_slug'        => 'advanced',
@@ -217,7 +218,7 @@ class INFTNC_HeadingGradient extends ET_Builder_Module {
             ),
 
             'end_color' => array(
-                'label'           => esc_html__( 'End Color', 'dicm-divi-custom-modules' ),
+                'label'           => esc_html__( 'End Color', 'inftnc-infinity-tnc-divi-modules' ),
                 'type'            => 'color',
 				'default'		  => '#AC43D9',
                 'tab_slug'        => 'advanced',
@@ -228,7 +229,7 @@ class INFTNC_HeadingGradient extends ET_Builder_Module {
             ),
 
             'start_position' => array(
-				'label'           => esc_html__( 'Start Position', 'dicm-divi-custom-modules' ),
+				'label'           => esc_html__( 'Start Position', 'inftnc-infinity-tnc-divi-modules' ),
 				'type'            => 'range',
 				'tab_slug'        => 'advanced',
 				'toggle_slug'     => 'gradient',
@@ -244,7 +245,7 @@ class INFTNC_HeadingGradient extends ET_Builder_Module {
 			),
 
             'end_position' => array(
-				'label'           => esc_html__( 'End Position', 'dicm-divi-custom-modules' ),
+				'label'           => esc_html__( 'End Position', 'inftnc-infinity-tnc-divi-modules' ),
 				'type'            => 'range',
 				'tab_slug'        => 'advanced',
 				'toggle_slug'     => 'gradient',
@@ -260,7 +261,7 @@ class INFTNC_HeadingGradient extends ET_Builder_Module {
 			),
 
             'presets_gradient' => array(
-				'label'           => esc_html__( 'Presets Gradient Style', 'dicm-divi-custom-modules' ),
+				'label'           => esc_html__( 'Presets Gradient Style', 'inftnc-infinity-tnc-divi-modules' ),
 				'type'            => 'presets_shadow',
 				'tab_slug'        => 'advanced',
 				'toggle_slug'     => 'gradient',
