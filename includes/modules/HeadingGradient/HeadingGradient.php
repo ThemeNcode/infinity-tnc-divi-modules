@@ -151,6 +151,8 @@ class INFTNC_HeadingGradient extends ET_Builder_Module {
                     'top right'                  => esc_html__( 'Top Right','inftnc-infinity-tnc-divi-modules' ),
                     'right'                      => esc_html__( 'Right','inftnc-infinity-tnc-divi-modules' ),
                     'bottom right'               => esc_html__( 'Bottom Right','inftnc-infinity-tnc-divi-modules' ),
+					'center center'				 => esc_html__( 'Center Center','inftnc-infinity-tnc-divi-modules'),
+					'right center'				 => esc_html__( 'Right Center','inftnc-infinity-tnc-divi-modules' ),
                     'bottom'                     => esc_html__( 'Bottom','inftnc-infinity-tnc-divi-modules' ),
                     'bottom left'                => esc_html__( 'Bottom Left','inftnc-infinity-tnc-divi-modules'),
                     'left'                       => esc_html__( 'Left','inftnc-infinity-tnc-divi-modules'),
@@ -342,6 +344,25 @@ class INFTNC_HeadingGradient extends ET_Builder_Module {
 
            } elseif ( 'ellipse'  === $this->props['gradient_type'] ) {
 
+			ET_Builder_Element::set_style(
+				$render_slug,
+				array(
+					'selector'    => '%%order_class%% .inftnc_gradient_title',
+					'declaration' => sprintf(
+						'
+						background:radial-gradient(ellipse farthest-corner at %1$s, %2$s %4$s%%, %3$s %5$s%% ) !important;
+						-webkit-background-clip:text !important;
+						-webkit-text-fill-color:transparent;
+						',
+						$this->props['gradient_position'],
+						$this->props['start_color'],
+						$this->props['end_color'],
+						$this->props['start_position'],
+						$this->props['end_position'],
+						$this->props['start_color']
+					),
+				)
+			);
            }
 
        } elseif ( 'gradient_preset_color' === $gradient_options ){
