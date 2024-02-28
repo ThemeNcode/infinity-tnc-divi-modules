@@ -229,14 +229,14 @@ class INFTNC_HeadingGradient extends ET_Builder_Module {
 							'class'   => 'preset inftnc_gradient_p1',
 							'content' => 'Hello World',
 						),
-						'value'   => 'preset1'
+						'value'   => 'gradient_preset1'
 					),
                     array(
 						'content' => array(
 							'class'   => 'preset inftnc_gradient_p2',
 							'content' => 'Hello World',
 						),
-						'value'   => 'preset2'
+						'value'   => 'gradient_preset2'
 					),
 
                     array(
@@ -244,14 +244,14 @@ class INFTNC_HeadingGradient extends ET_Builder_Module {
 							'class'   => 'preset inftnc_gradient_p3',
 							'content' => 'Hello World',
 						),
-						'value'   => 'preset3'
+						'value'   => 'gradient_preset3'
 					),
                     array(
 						'content' => array(
 							'class'   => 'preset inftnc_gradient_p4',
 							'content' => 'Hello World',
 						),
-						'value'   => 'preset4'
+						'value'   => 'gradient_preset4'
 					),
 
                     array(
@@ -259,7 +259,7 @@ class INFTNC_HeadingGradient extends ET_Builder_Module {
 							'class'   => 'preset inftnc_gradient_p5',
 							'content' => 'Hello World',
 						),
-						'value'   => 'preset5'
+						'value'   => 'gradient_preset5'
 					),
 
                     array(
@@ -267,11 +267,11 @@ class INFTNC_HeadingGradient extends ET_Builder_Module {
 							'class'   => 'preset inftnc_gradient_p6',
 							'content' => 'Hello World',
 						),
-						'value'   => 'preset6'
+						'value'   => 'gradient_preset6'
 					),
 				),
-				'default'         => 'preset1',
-				'default_on_front'=> false,
+				'default'         => 'gradient_preset1',
+				'default_on_front'=> true,
                 'show_if'     => array(
                     'gradient_options' => 'gradient_preset_color',
                 ),
@@ -285,7 +285,6 @@ class INFTNC_HeadingGradient extends ET_Builder_Module {
 		$gradient_title     = $this->props['gradient_title'];
 		$header_level       = $this->props['title_level'];
         $gradient_options   = $this->props['gradient_options'];
-        $preset_gradient    = $this->props['presets_gradient'];
 
 
        $content = sprintf(
@@ -365,7 +364,137 @@ class INFTNC_HeadingGradient extends ET_Builder_Module {
 			);
            }
 
-       } elseif ( 'gradient_preset_color' === $gradient_options ){
+       } elseif ( 'gradient_preset_color' === $gradient_options ) {
+		 	//Gradient Preset
+			var_dump($this->props['presets_gradient']);
+			if ( '1'  ===  $this->props['presets_gradient'] ) {
+
+				ET_Builder_Element::set_style(
+					$render_slug,
+					array(
+						'selector'    => '%%order_class%% .inftnc_gradient_title',
+						'declaration' => sprintf(
+							'
+							background:linear-gradient(%1$s, %2$s %4$s%%,  %3$s %5$s%% )!important;
+							-webkit-background-clip:text !important;
+							-webkit-text-fill-color:transparent;
+							',
+							'to right',
+							'#03658C',
+							'#63BBF2',
+							'0',
+							'100',
+						),
+					)
+				);
+				
+			} elseif ( 'gradient_preset2'  ===  $this->props['presets_gradient'] ) {
+
+				ET_Builder_Element::set_style(
+					$render_slug,
+					array(
+						'selector'    => '%%order_class%% .inftnc_gradient_title',
+						'declaration' => sprintf(
+							'
+							background:linear-gradient(%1$s, %2$s %4$s%%,  %3$s %5$s%% )!important;
+							-webkit-background-clip:text !important;
+							-webkit-text-fill-color:transparent;
+							',
+							'to right',
+							'#F1543F',
+							'#FDC362',
+							'0',
+							'100',
+						),
+					)
+				);
+				
+
+			} elseif ( 'gradient_preset3'  ===  $this->props['presets_gradient'] ) {
+
+				ET_Builder_Element::set_style(
+					$render_slug,
+					array(
+						'selector'    => '%%order_class%% .inftnc_gradient_title',
+						'declaration' => sprintf(
+							'
+							background:linear-gradient(%1$s, %2$s %4$s%%,  %3$s %5$s%% )!important;
+							-webkit-background-clip:text !important;
+							-webkit-text-fill-color:transparent;
+							',
+							'to bottom right',
+							'#30303B',
+							'#EAE9E7',
+							'0',
+							'100',
+						),
+					)
+				);
+				
+			} elseif ( 'gradient_preset4'  ===  $this->props['presets_gradient'] ) {
+
+				ET_Builder_Element::set_style(
+					$render_slug,
+					array(
+						'selector'    => '%%order_class%% .inftnc_gradient_title',
+						'declaration' => sprintf(
+							'
+							background:linear-gradient(%1$s, %2$s %4$s%%,  %3$s %5$s%% )!important;
+							-webkit-background-clip:text !important;
+							-webkit-text-fill-color:transparent;
+							',
+							'to right',
+							'#8C5B49',
+							'#D9BBA0',
+							'0',
+							'100',
+						),
+					)
+				);
+
+			} elseif ( 'gradient_prese5'   ===  $this->props['presets_gradient'] ) {
+
+				ET_Builder_Element::set_style(
+					$render_slug,
+					array(
+						'selector'    => '%%order_class%% .inftnc_gradient_title',
+						'declaration' => sprintf(
+							'
+							background:linear-gradient(%1$s, %2$s %4$s%%,  %3$s %5$s%% )!important;
+							-webkit-background-clip:text !important;
+							-webkit-text-fill-color:transparent;
+							',
+							'to right',
+							'#044D29',
+							'#97ED8A',
+							'0',
+							'100',
+						),
+					)
+				);
+
+			} elseif ( 'gradient_preset6'  ===  $this->props['presets_gradient'] ) {
+
+				ET_Builder_Element::set_style(
+					$render_slug,
+					array(
+						'selector'    => '%%order_class%% .inftnc_gradient_title',
+						'declaration' => sprintf(
+							'
+							background:linear-gradient(%1$s, %2$s %4$s%%,  %3$s %5$s%% )!important;
+							-webkit-background-clip:text !important;
+							-webkit-text-fill-color:transparent;
+							',
+							'to right',
+							'#481CA6',
+							'#AC43D9',
+							'0',
+							'100',
+						),
+					)
+				);
+
+			}
            
        }
 
