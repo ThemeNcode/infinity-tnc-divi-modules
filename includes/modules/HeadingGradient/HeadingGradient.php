@@ -181,6 +181,7 @@ class INFTNC_HeadingGradient extends ET_Builder_Module {
 				'toggle_slug'     => 'gradient',
                 'show_if'         => array(
 					'gradient_type' => 'radial_gradient',
+					'gradient_options' => 'gradient_custom_color'
 				),
 			),
 
@@ -203,6 +204,7 @@ class INFTNC_HeadingGradient extends ET_Builder_Module {
 				'toggle_slug'     => 'gradient',
                 'show_if'         => array(
 					'gradient_type' => 'ellipse',
+					'gradient_options' => 'gradient_custom_color'
 				),
 			),
 
@@ -468,7 +470,7 @@ class INFTNC_HeadingGradient extends ET_Builder_Module {
 							'#30303B',
 							'#EAE9E7',
 							'0',
-							'100',
+							'100'
 						),
 					)
 				);
@@ -489,12 +491,12 @@ class INFTNC_HeadingGradient extends ET_Builder_Module {
 							'#8C5B49',
 							'#D9BBA0',
 							'0',
-							'100',
+							'100'
 						),
 					)
 				);
 
-			} elseif ( 'gradient_prese5'   ===  $this->props['presets_gradient'] ) {
+			} elseif ( 'gradient_preset5'   ===  $this->props['presets_gradient'] ) {
 
 				ET_Builder_Element::set_style(
 					$render_slug,
@@ -510,7 +512,7 @@ class INFTNC_HeadingGradient extends ET_Builder_Module {
 							'#044D29',
 							'#97ED8A',
 							'0',
-							'100',
+							'100'
 						),
 					)
 				);
@@ -531,7 +533,7 @@ class INFTNC_HeadingGradient extends ET_Builder_Module {
 							'#481CA6',
 							'#AC43D9',
 							'0',
-							'100',
+							'100'
 						),
 					)
 				);
