@@ -330,14 +330,13 @@ class INFTNC_HeadingGradient extends ET_Builder_Module {
 		$header_level       = $this->props['title_level'];
         $gradient_options   = $this->props['gradient_options'];
 
-
-       $content = sprintf(
-            '<%1$s class="inftnc_gradient_title et_pb_module_header">
-                %2$s
-            </%1$s>',
-        /* 01 */ et_pb_process_header_level( $header_level, 'h1' ),
-        /* 02 */ $gradient_title,
-       );
+		$content = sprintf(
+				'<%1$s class="inftnc_gradient_title et_pb_module_header">
+					%2$s
+				</%1$s>',
+			/* 01 */ et_pb_process_header_level( $header_level, 'h1' ),
+			/* 02 */ $gradient_title,
+		);
 
        //Gradient Options
        if ( 'gradient_custom_color' === $gradient_options ) {
