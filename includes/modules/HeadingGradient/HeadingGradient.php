@@ -141,18 +141,16 @@ class INFTNC_HeadingGradient extends ET_Builder_Module {
 				),
 			),
 
-            'gradient_position' => array (
+            'linear_position' => array (
 				'label'           => esc_html__( 'Position', 'inftnc-infinity-tnc-divi-modules' ),
 				'type'            => 'select',
-				'default'		  => 'top left',
+				'default'		  => 'right',
 				'options'         => array(
 					'top left'                   => esc_html__( 'Top Left', 'inftnc-infinity-tnc-divi-modules' ),
 					'top'                        => esc_html__( 'Top', 'inftnc-infinity-tnc-divi-modules' ),
                     'top right'                  => esc_html__( 'Top Right','inftnc-infinity-tnc-divi-modules' ),
                     'right'                      => esc_html__( 'Right','inftnc-infinity-tnc-divi-modules' ),
                     'bottom right'               => esc_html__( 'Bottom Right','inftnc-infinity-tnc-divi-modules' ),
-					'center center'				 => esc_html__( 'Center Center','inftnc-infinity-tnc-divi-modules'),
-					'right center'				 => esc_html__( 'Right Center','inftnc-infinity-tnc-divi-modules' ),
                     'bottom'                     => esc_html__( 'Bottom','inftnc-infinity-tnc-divi-modules' ),
                     'bottom left'                => esc_html__( 'Bottom Left','inftnc-infinity-tnc-divi-modules'),
                     'left'                       => esc_html__( 'Left','inftnc-infinity-tnc-divi-modules'),
@@ -160,7 +158,50 @@ class INFTNC_HeadingGradient extends ET_Builder_Module {
 				'tab_slug'        => 'advanced',
 				'toggle_slug'     => 'gradient',
                 'show_if'         => array(
-					'gradient_options' => 'gradient_custom_color',
+					'gradient_type' => 'linear_gradient',
+				),
+			),
+
+			'radial_position' => array (
+				'label'           => esc_html__( 'Position', 'inftnc-infinity-tnc-divi-modules' ),
+				'type'            => 'select',
+				'default'		  => 'center center',
+				'options'         => array(
+					'top left'                   => esc_html__( 'Top Left', 'inftnc-infinity-tnc-divi-modules' ),
+					'top center'                 => esc_html__( 'Top Center', 'inftnc-infinity-tnc-divi-modules' ),
+                    'top right'                  => esc_html__( 'Top Right','inftnc-infinity-tnc-divi-modules' ),
+                    'left center'                => esc_html__( 'Left Center','inftnc-infinity-tnc-divi-modules' ),
+                    'center center'              => esc_html__( 'Center Center','inftnc-infinity-tnc-divi-modules' ),
+					'right center'				 => esc_html__( 'Right Center','inftnc-infinity-tnc-divi-modules' ),
+                    'bottom left'                => esc_html__( 'Bottom Left','inftnc-infinity-tnc-divi-modules'),
+                    'bottom right'               => esc_html__( 'Bottom Right','inftnc-infinity-tnc-divi-modules'),
+                ),
+				'tab_slug'        => 'advanced',
+				'toggle_slug'     => 'gradient',
+                'show_if'         => array(
+					'gradient_type' => 'radial_gradient',
+				),
+			),
+
+			'ellipse_position' => array (
+				'label'           => esc_html__( 'Position', 'inftnc-infinity-tnc-divi-modules' ),
+				'type'            => 'select',
+				'default'		  => 'center center',
+				'options'         => array(
+					'top left'                   => esc_html__( 'Top Left', 'inftnc-infinity-tnc-divi-modules' ),
+					'top center'                 => esc_html__( 'Top Center', 'inftnc-infinity-tnc-divi-modules' ),
+                    'top right'                  => esc_html__( 'Top Right','inftnc-infinity-tnc-divi-modules' ),
+                    'left center'                => esc_html__( 'Left Center','inftnc-infinity-tnc-divi-modules' ),
+					'center center'				 => esc_html__( 'Center Center','inftnc-infinity-tnc-divi-modules'),
+					'right center'				 => esc_html__( 'Right Center','inftnc-infinity-tnc-divi-modules' ),
+                    'bottom left'                => esc_html__( 'Bottom Left','inftnc-infinity-tnc-divi-modules' ),
+                    'bottom center'              => esc_html__( 'Bottom Center','inftnc-infinity-tnc-divi-modules'),
+                    'bottom right'               => esc_html__( 'Bottom Right','inftnc-infinity-tnc-divi-modules'),
+                ),
+				'tab_slug'        => 'advanced',
+				'toggle_slug'     => 'gradient',
+                'show_if'         => array(
+					'gradient_type' => 'ellipse',
 				),
 			),
 
@@ -310,7 +351,7 @@ class INFTNC_HeadingGradient extends ET_Builder_Module {
 							-webkit-background-clip:text !important;
 							-webkit-text-fill-color:transparent;
 							',
-							$this->props['gradient_position'],
+							$this->props['linear_position'],
 							$this->props['start_color'],
 							$this->props['end_color'],
 							$this->props['start_position'],
@@ -331,7 +372,7 @@ class INFTNC_HeadingGradient extends ET_Builder_Module {
 							-webkit-background-clip:text !important;
 							-webkit-text-fill-color:transparent;
 							',
-							$this->props['gradient_position'],
+							$this->props['radial_position'],
 							$this->props['start_color'],
 							$this->props['end_color'],
 							$this->props['start_position'],
@@ -353,7 +394,7 @@ class INFTNC_HeadingGradient extends ET_Builder_Module {
 						-webkit-background-clip:text !important;
 						-webkit-text-fill-color:transparent;
 						',
-						$this->props['gradient_position'],
+						$this->props['ellipse_position'],
 						$this->props['start_color'],
 						$this->props['end_color'],
 						$this->props['start_position'],
@@ -366,7 +407,7 @@ class INFTNC_HeadingGradient extends ET_Builder_Module {
 
        } elseif ( 'gradient_preset_color' === $gradient_options ) {
 		 	//Gradient Preset
-			var_dump($this->props['presets_gradient']);
+			
 			if ( '1'  ===  $this->props['presets_gradient'] ) {
 
 				ET_Builder_Element::set_style(
