@@ -128,6 +128,7 @@ class INFTNC_HeadingGradient extends ET_Builder_Module {
             'gradient_type' => array(
 				'label'           => esc_html__( 'Gradient Type', 'inftnc-infinity-tnc-divi-modules' ),
 				'type'            => 'select',
+				'default'		  => 'linear_gradient',
 				'options'         => array(
 					'linear_gradient'            => esc_html__( 'Linear Gradient', 'inftnc-infinity-tnc-divi-modules' ),
 					'radial_gradient'            => esc_html__( 'Radial Gradient', 'inftnc-infinity-tnc-divi-modules' ),
@@ -143,6 +144,7 @@ class INFTNC_HeadingGradient extends ET_Builder_Module {
             'gradient_position' => array (
 				'label'           => esc_html__( 'Position', 'inftnc-infinity-tnc-divi-modules' ),
 				'type'            => 'select',
+				'default'		  => 'top left',
 				'options'         => array(
 					'top left'                   => esc_html__( 'Top Left', 'inftnc-infinity-tnc-divi-modules' ),
 					'top'                        => esc_html__( 'Top', 'inftnc-infinity-tnc-divi-modules' ),
@@ -160,9 +162,10 @@ class INFTNC_HeadingGradient extends ET_Builder_Module {
 				),
 			),
 
-            'color' => array(
+            'start_color' => array(
                 'label'           => esc_html__( 'Start Color', 'dicm-divi-custom-modules' ),
                 'type'            => 'color',
+				'default'		  => '#481CA6',
                 'tab_slug'        => 'advanced',
                 'toggle_slug'     => 'gradient',
                 'show_if'         => array(
@@ -170,9 +173,10 @@ class INFTNC_HeadingGradient extends ET_Builder_Module {
 				),
             ),
 
-            'color_alpha' => array(
+            'end_color' => array(
                 'label'           => esc_html__( 'End Color', 'dicm-divi-custom-modules' ),
                 'type'            => 'color',
+				'default'		  => '#AC43D9',
                 'tab_slug'        => 'advanced',
                 'toggle_slug'     => 'gradient',
                 'show_if'         => array(
@@ -276,11 +280,10 @@ class INFTNC_HeadingGradient extends ET_Builder_Module {
 
 	public function render( $attrs, $content = null, $render_slug ) {
         // Allowing full html for backwards compatibility.
-		$gradient_title = $this->props['gradient_title'];
-		$header_level   = $this->props['title_level'];
-        $gradient_options = $this->props['gradient_options'];
-        $gradient_type   = $this->props['gradient_type'];
-        $preset_gradient = $this->props['presets_gradient'];
+		$gradient_title     = $this->props['gradient_title'];
+		$header_level       = $this->props['title_level'];
+        $gradient_options   = $this->props['gradient_options'];
+        $preset_gradient    = $this->props['presets_gradient'];
 
 
        $content = sprintf(
@@ -293,18 +296,28 @@ class INFTNC_HeadingGradient extends ET_Builder_Module {
 
        //Gradient Options
        if ( 'gradient_custom_color' === $gradient_options ) {
+
            //Gradient Type
-           if( 'linear_gradient' === $gradient_type  ) {
-                // Process link color value into style
-                    ET_Builder_Element::set_style( $render_slug, array(
-                        'selector'    => '%%order_class%% h1.inftnc_gradient_title',
-                        'declaration' => sprintf(
-                            'background: #03658C;',
-                            'background: linear-gradient(to right, #03658C 0%, #63BBF2 100%);',
-                            '-webkit-background-clip: text;',
-                            '-webkit-text-fill-color: transparent;',
-                        ),
-                    ) );
+           if( 'linear_gradient' === $this->props['gradient_type']  ) {
+				ET_Builder_Element::set_style(
+					$render_slug,
+					array(
+						'selector'    => '%%order_class%% .inftnc_gradient_title',
+						'declaration' => sprintf(
+							'
+							background: -webkit-linear-gradient(%1$s, %2$s %4$s%%,  %3$s %5$s%% )!important;
+							-webkit-background-clip:text !important;
+							-webkit-text-fill-color:transparent;
+							',
+							$this->props['gradient_position'],
+							$this->props['start_color'],
+							$this->props['end_color'],
+							$this->props['start_position'],
+							$this->props['end_position'],
+							$this->props['start_color']
+						),
+					)
+				);
            } elseif ( 'radial_gradient' === $gradient_type ) {
 
            } elseif ( 'ellipse'  === $gradient_type ) {
@@ -314,24 +327,6 @@ class INFTNC_HeadingGradient extends ET_Builder_Module {
        } elseif ( 'gradient_preset_color' === $gradient_options ){
            
        }
-
-      
-
-        // // Process linear color value into heading title style
-		// if ( '' !== $this->props['link_color'] ) {
-		// 	ET_Builder_Element::set_style( $render_slug, array(
-		// 		'selector'    => '%%order_class%% .inftnc_breadcrumb a',
-		// 		'declaration' => sprintf(
-		// 			'color: %1$s;',
-		// 			esc_attr( $this->props['link_color'] )
-		// 		),
-		// 	) );
-		// }
-
-
-
-
-
 
      $output = sprintf(
         '<div%3$s class="%2$s">
