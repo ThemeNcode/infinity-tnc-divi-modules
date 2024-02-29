@@ -101,18 +101,8 @@ class INFTNC_StarRating extends ET_Builder_Module {
 
 	public function get_fields() {
 		return array(
-			'rating_scale' => array(
-				'label'           => esc_html__( 'Rating Scale', 'inftnc-infinity-tnc-divi-modules' ),
-				'type'            => 'select',
-				'default'		  => '0-5',
-				'options'         => array(
-					'0-5'            => esc_html__( '0-5', 'inftnc-infinity-tnc-divi-modules' ),
-					'0-10'            => esc_html__( '0-10', 'inftnc-infinity-tnc-divi-modules' ),
-				),
-				'toggle_slug'     => 'main_content',
-			),
-
-			'rating_five' => array(
+		
+			'rating' => array(
 				'label'           => esc_html__( 'Rating', 'inftnc-infinity-tnc-divi-modules' ),
 				'type'            => 'range',
                 'default'         => 5,
@@ -122,26 +112,8 @@ class INFTNC_StarRating extends ET_Builder_Module {
 					'step' => .5,
 				),
 				'toggle_slug'     => 'main_content',
-				'show_if'		  => array(
-					'rating_scale'  => '0-5',
-				),
 			),
-
-			'rating_ten' => array(
-				'label'           => esc_html__( 'Rating', 'inftnc-infinity-tnc-divi-modules' ),
-				'type'            => 'range',
-                'default'         => 10,
-                'range_settings' => array(
-					'min'  => 0,
-					'max'  => 10,
-					'step' => .5,
-				),
-				'toggle_slug'     => 'main_content',
-				'show_if'		  => array(
-					'rating_scale'  => '0-10',
-				),
-			),
-
+		
 			'title' => array(
 				'label'           => esc_html__( 'Title', 'inftnc-infinity-tnc-divi-modules' ),
 				'type'            => 'text',
@@ -162,14 +134,25 @@ class INFTNC_StarRating extends ET_Builder_Module {
 			'icon_color' => array(
 				'label'           => esc_html__( 'Star Icon Color', 'inftnc-infinity-tnc-divi-modules' ),
 				'type'            => 'color',
+				'default'		  => '#EBC03F',
 				'tab_slug'        => 'advanced',
 				'toggle_slug'     => 'rating',
+				
+			),
+
+			'empty_color' => array(
+				'label'           => esc_html__( 'Star Icon Empty Color', 'inftnc-infinity-tnc-divi-modules' ),
+				'type'            => 'color',
+				'default'		  => '#FCFBF8',
+				'tab_slug'        => 'advanced',
+				'toggle_slug'     => 'rating',
+				
 			),
 
 			'star_size' => array(
 				'label'           => esc_html__( 'Star Size', 'inftnc-infinity-tnc-divi-modules' ),
 				'type'            => 'range',
-                'default'         => 0,
+                'default'         => 25,
                 'range_settings' => array(
 					'min'  => 0,
 					'max'  => 100,

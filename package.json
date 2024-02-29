@@ -4,8 +4,11 @@
   "private": true,
   "dependencies": {
     "divi-scripts": "1.0.3",
+    "jquery": "^3.7.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "react-svg-star-rating": "^2.1.2",
+    "star-rating-svg": "^3.5.0"
   },
   "scripts": {
     "start": "divi-scripts start",
