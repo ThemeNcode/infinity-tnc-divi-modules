@@ -37,10 +37,12 @@ function inftnc_initialize_extension() {
 }
 add_action( 'divi_extensions_init', 'inftnc_initialize_extension' );
 endif;
+
 /**
  *   Includes Files  
  */
 require_once __DIR__ ."/includes/admin/breadcrumbs.php";
+require_once __DIR__ ."/public/inftnc-divi-modules-public.php";
 
 
 

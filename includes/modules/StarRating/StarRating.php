@@ -101,29 +101,45 @@ class INFTNC_StarRating extends ET_Builder_Module {
 
 	public function get_fields() {
 		return array(
-
 			'rating_scale' => array(
 				'label'           => esc_html__( 'Rating Scale', 'inftnc-infinity-tnc-divi-modules' ),
+				'type'            => 'select',
+				'default'		  => '0-5',
+				'options'         => array(
+					'0-5'            => esc_html__( '0-5', 'inftnc-infinity-tnc-divi-modules' ),
+					'0-10'            => esc_html__( '0-10', 'inftnc-infinity-tnc-divi-modules' ),
+				),
+				'toggle_slug'     => 'main_content',
+			),
+
+			'rating_five' => array(
+				'label'           => esc_html__( 'Rating', 'inftnc-infinity-tnc-divi-modules' ),
 				'type'            => 'range',
                 'default'         => 5,
                 'range_settings' => array(
 					'min'  => 0,
-					'max'  => 10,
-					'step' => 1,
+					'max'  => 5,
+					'step' => .5,
 				),
 				'toggle_slug'     => 'main_content',
+				'show_if'		  => array(
+					'rating_scale'  => '0-5',
+				),
 			),
-		
-			'rating' => array(
+
+			'rating_ten' => array(
 				'label'           => esc_html__( 'Rating', 'inftnc-infinity-tnc-divi-modules' ),
 				'type'            => 'range',
-                'default'         => 5,
+                'default'         => 10,
                 'range_settings' => array(
 					'min'  => 0,
 					'max'  => 10,
 					'step' => .5,
 				),
 				'toggle_slug'     => 'main_content',
+				'show_if'		  => array(
+					'rating_scale'  => '0-10',
+				),
 			),
 
 			'title' => array(
@@ -177,18 +193,25 @@ class INFTNC_StarRating extends ET_Builder_Module {
 			),
 
 			
-
 		);
 	}
 
 	public function render( $attrs, $content = null, $render_slug ) {
 
+		wp_enqueue_script( 'inftnc-rating-module' );
 
 		$output =  sprintf( 
-			'<h1>%1$s</h1>', $this->props['content'] 
+			'<div class="inftnc_star_rating_wrapper">
+					<div class="start_rating_inner">
+					  <li><i class="inftnc_full_star"></i><li>
+					  <li><i class="inftnc_full_star"></i><li>
+					  <li><i class="inftnc_full_star"></i><li>
+					  <li><i class="inftnc_full_star"></i><li>
+					  <li><i class="inftnc_full_star"></i><li>
+					  <li><i class="inftnc_empty_star"></i><li>
+					</div>
+			</div>', 
 		);
-
-
 		return $output;
 	}
 }
