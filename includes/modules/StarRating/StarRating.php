@@ -101,45 +101,29 @@ class INFTNC_StarRating extends ET_Builder_Module {
 
 	public function get_fields() {
 		return array(
+
 			'rating_scale' => array(
 				'label'           => esc_html__( 'Rating Scale', 'inftnc-infinity-tnc-divi-modules' ),
-				'type'            => 'select',
-				'default'		  => 'linear_gradient',
-				'options'         => array(
-					'0-5'            => esc_html__( '0-5', 'inftnc-infinity-tnc-divi-modules' ),
-					'0-10'            => esc_html__( '0-10', 'inftnc-infinity-tnc-divi-modules' ),
+				'type'            => 'range',
+                'default'         => 5,
+                'range_settings' => array(
+					'min'  => 0,
+					'max'  => 10,
+					'step' => 1,
 				),
 				'toggle_slug'     => 'main_content',
 			),
-
-			'rating_five' => array(
+		
+			'rating' => array(
 				'label'           => esc_html__( 'Rating', 'inftnc-infinity-tnc-divi-modules' ),
 				'type'            => 'range',
                 'default'         => 5,
                 'range_settings' => array(
 					'min'  => 0,
-					'max'  => 5,
-					'step' => .1,
-				),
-				'toggle_slug'     => 'main_content',
-				'show_if'		  => array(
-					'rating_scale'  => '0-5',
-				),
-			),
-
-			'rating_ten' => array(
-				'label'           => esc_html__( 'Rating', 'inftnc-infinity-tnc-divi-modules' ),
-				'type'            => 'range',
-                'default'         => 10,
-                'range_settings' => array(
-					'min'  => 0,
 					'max'  => 10,
-					'step' => .1,
+					'step' => .5,
 				),
 				'toggle_slug'     => 'main_content',
-				'show_if'		  => array(
-					'rating_scale'  => '0-10',
-				),
 			),
 
 			'title' => array(
@@ -159,7 +143,7 @@ class INFTNC_StarRating extends ET_Builder_Module {
 				'toggle_slug'     => 'main_content',
 			),
 
-			'color' => array(
+			'icon_color' => array(
 				'label'           => esc_html__( 'Star Icon Color', 'inftnc-infinity-tnc-divi-modules' ),
 				'type'            => 'color',
 				'tab_slug'        => 'advanced',
@@ -198,7 +182,14 @@ class INFTNC_StarRating extends ET_Builder_Module {
 	}
 
 	public function render( $attrs, $content = null, $render_slug ) {
-		return sprintf( '<h1>%1$s</h1>', $this->props['content'] );
+
+
+		$output =  sprintf( 
+			'<h1>%1$s</h1>', $this->props['content'] 
+		);
+
+
+		return $output;
 	}
 }
 
