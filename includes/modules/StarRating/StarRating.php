@@ -203,12 +203,7 @@ class INFTNC_StarRating extends ET_Builder_Module {
 		$output =  sprintf( 
 			'<div class="inftnc_star_rating_wrapper">
 					<div class="start_rating_inner">
-					  <li><i class="inftnc_full_star"></i><li>
-					  <li><i class="inftnc_full_star"></i><li>
-					  <li><i class="inftnc_full_star"></i><li>
-					  <li><i class="inftnc_full_star"></i><li>
-					  <li><i class="inftnc_full_star"></i><li>
-					  <li><i class="inftnc_empty_star"></i><li>
+						<div class="intftnc-rating"></div>
 					</div>
 			</div>', 
 		);
