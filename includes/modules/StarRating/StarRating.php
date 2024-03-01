@@ -197,6 +197,16 @@ class INFTNC_StarRating extends ET_Builder_Module {
 				'tab_slug'		  => 'advanced',
 			),
 
+			'star_alignment' => array(
+				'label'           => esc_html__( 'Star Alignment', 'inftnc-infinity-tnc-divi-modules' ),
+				'description'     => esc_html__( 'Align your start to the left, right or center of the module.', 'inftnc-infinity-tnc-divi-modules' ),
+				'type'            => 'text_align',
+				'option_category' => 'configuration',
+				'options'         => et_builder_get_text_orientation_options( array( 'justified' ) ),
+				'tab_slug'        => 'advanced',
+				'toggle_slug'     => 'rating',
+			),
+
 			
 		);
 	}
@@ -210,8 +220,10 @@ class INFTNC_StarRating extends ET_Builder_Module {
 		$active_color  = $this->props['icon_color'];
 		$icon_size 	   = $this->props['star_size'];
 		$header_level   = $this->props['title_level'];
-	
-		wp_enqueue_script( 'inftnc-rating-module' );
+		$star_alignment =  $this->props['star_alignment'];
+
+
+			wp_enqueue_script( 'inftnc-rating-module' );
 
 
 		if('on' === $this->props['show_rating_number']) {
@@ -243,7 +255,7 @@ class INFTNC_StarRating extends ET_Builder_Module {
 						<div class="inftnc_rating_title-wrap">
 							<%8$s class="inftnc_rating_title">%1$s</%8$s>
 					    </div>
-						<div class="inftnc_rating_inner_wrapper">
+						<div class="inftnc_rating_inner_wrapper inftnc_rating_star_alignment_%9$s">
 						   <div class="intftnc-rating" data-initial-rating="%2$s" data-initial-start="%3$s" data-initial-empty="%4$s" data-initial-active="%5$s" data-initial-size="%6$s"></div>
 						   <div class="inftnc_rating_number_wrapper">
 						 			%7$s
@@ -260,6 +272,7 @@ class INFTNC_StarRating extends ET_Builder_Module {
 			/* 06 */   $icon_size,
 			/* 07 */   $rating_number,
 			/* 08 */   et_pb_process_header_level( $header_level, 'h1' ),
+			/* 09 */   $star_alignment,
 		
 		);
 		return $output;

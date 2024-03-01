@@ -2,18 +2,25 @@
 .jq-star {
     display: inline-block;
 }
-
 .jq-star-svg {
     width: 100%;
     height: 100%;
 } 
-
 .inftnc_rating_inner_wrapper {
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
 }
-
 .jq-star:first-child {
     margin-left: 0px !important;
 }
+.inftnc_rating_star_alignment_left  {
+    justify-content: left;
+}
+.inftnc_rating_star_alignment_center {
+    justify-content: center;
+} 
+.inftnc_rating_star_alignment_right {
+    justify-content: right;
+}
+
