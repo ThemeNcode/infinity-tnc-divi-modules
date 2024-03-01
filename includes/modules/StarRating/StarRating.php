@@ -84,7 +84,7 @@ class INFTNC_StarRating extends ET_Builder_Module {
 					'label'          => esc_html__( 'Rating Number','inftnc-infinity-tnc-divi-modules' ),
 					'css'            => array(
 						'main' => [
-							'%%order_class%%',
+							'%%order_class%% .inftnc_star_rating_number',
 						],
 					),
 
@@ -101,8 +101,10 @@ class INFTNC_StarRating extends ET_Builder_Module {
 					),
 					
 				),
-				'text'     => false,
+				
 			 ),
+
+				 'text'     => false,
 		);
    }
 
