@@ -31,8 +31,8 @@ static css(props, moduleInfo) {
     return (
       <div className="inftnc_star_rating_wrapper">
 					<div className="start_rating_inner">
-             <div className="inftnc_rating_title">
-                <h1>{title}</h1>
+             <div className="inftnc_rating_title_wrap">
+                <h1 className="inftnc_rating_title">{title}</h1>
              </div>
             <div className="inftnc_rating_inner_wrapper">
                 <StarRatings

@@ -51,10 +51,15 @@ class INFTNC_StarRating extends ET_Builder_Module {
 		return array(
 			'fonts'           => array(
 				'title' => array(
-					'label'          => esc_html__( 'Title Text','inftnc-infinity-tnc-divi-modules' ),
+					'label'          => esc_html__( 'Title','inftnc-infinity-tnc-divi-modules' ),
 					'css'            => array(
 						'main' => [
-							'%%order_class%%',
+							'%%order_class%% h1.inftnc_rating_title',
+							'%%order_class%% h2.inftnc_rating_title',
+							'%%order_class%% h3.inftnc_rating_title',
+							'%%order_class%% h4.inftnc_rating_title',
+							'%%order_class%% h5.inftnc_rating_title',
+							'%%order_class%% h6.inftnc_rating_title',
 						],
 					),
 
@@ -68,6 +73,10 @@ class INFTNC_StarRating extends ET_Builder_Module {
 
 					'letter_spacing' => array(
 						'default' => '0px',
+					),
+					'header_level'   => array(
+						'default' => 'h1',
+						'label'   => esc_html__( 'Heading Level', 'inftnc-infinity-tnc-divi-modules' ),
 					),
 				),
 
@@ -90,13 +99,11 @@ class INFTNC_StarRating extends ET_Builder_Module {
 					'letter_spacing' => array(
 						'default' => '0px',
 					),
+					
 				),
-			),
-
-			'text'            => false,
-			
+				'text'     => false,
+			 ),
 		);
-		
    }
 
 	public function get_fields() {
@@ -200,6 +207,7 @@ class INFTNC_StarRating extends ET_Builder_Module {
 		$empty_color  = $this->props['empty_color'];
 		$active_color  = $this->props['icon_color'];
 		$icon_size 	   = $this->props['star_size'];
+		$header_level   = $this->props['title_level'];
 	
 		wp_enqueue_script( 'inftnc-rating-module' );
 
@@ -230,8 +238,8 @@ class INFTNC_StarRating extends ET_Builder_Module {
 		$output =  sprintf( 
 			'<div class="inftnc_star_rating_wrapper">
 					<div class="start_rating_inner">
-						<div className="inftnc_rating_title">
-							<h1>%1$s</h1>
+						<div class="inftnc_rating_title-wrap">
+							<%8$s class="inftnc_rating_title">%1$s</%8$s>
 					    </div>
 						<div class="inftnc_rating_inner_wrapper">
 						   <div class="intftnc-rating" data-initial-rating="%2$s" data-initial-start="%3$s" data-initial-empty="%4$s" data-initial-active="%5$s" data-initial-size="%6$s"></div>
@@ -249,6 +257,7 @@ class INFTNC_StarRating extends ET_Builder_Module {
 			/* 05 */   $active_color,
 			/* 06 */   $icon_size,
 			/* 07 */   $rating_number,
+			/* 08 */   et_pb_process_header_level( $header_level, 'h1' ),
 		
 		);
 		return $output;
