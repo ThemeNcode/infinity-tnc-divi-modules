@@ -11,12 +11,16 @@ static slug = 'inftnc_star_rating';
 
   render() {
 
-    const {rating,star_size,icon_color,hover_color,empty_color}       = this.props;
+    const {rating,star_size,icon_color,empty_color,title,count_star}       = this.props;
     return (
       <div className="inftnc_star_rating_wrapper">
 					<div className="start_rating_inner">
+             <div className="inftnc_rating_title">
+                <h1>{title}</h1>
+             </div>
            <StarRatings
               isReadOnly
+              count={count_star}
               initialRating={rating}
               unit="float"
               roundedCorner={true}

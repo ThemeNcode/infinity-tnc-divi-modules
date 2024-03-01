@@ -101,6 +101,18 @@ class INFTNC_StarRating extends ET_Builder_Module {
 
 	public function get_fields() {
 		return array(
+
+			'count_star' => array(
+				'label'           => esc_html__( 'Star', 'inftnc-infinity-tnc-divi-modules' ),
+				'type'            => 'range',
+                'default'         => 5,
+                'range_settings' => array(
+					'min'  => 1,
+					'max'  => 20,
+					'step' => 1,
+				),
+				'toggle_slug'     => 'main_content',
+			),
 		
 			'rating' => array(
 				'label'           => esc_html__( 'Rating', 'inftnc-infinity-tnc-divi-modules' ),
@@ -108,12 +120,13 @@ class INFTNC_StarRating extends ET_Builder_Module {
                 'default'         => 5,
                 'range_settings' => array(
 					'min'  => 0,
-					'max'  => 5,
+					'max'  => 20,
 					'step' => .5,
 				),
 				'toggle_slug'     => 'main_content',
 			),
-		
+
+			
 			'title' => array(
 				'label'           => esc_html__( 'Title', 'inftnc-infinity-tnc-divi-modules' ),
 				'type'            => 'text',
@@ -181,14 +194,24 @@ class INFTNC_StarRating extends ET_Builder_Module {
 
 	public function render( $attrs, $content = null, $render_slug ) {
 
+		$rating_title = $this->props['title']; 
+
 		wp_enqueue_script( 'inftnc-rating-module' );
+
+		wp_add_inline_script('inftnc-rating', ' var inftncStar = "20"; var inftncEmpty = "blue";  var inftncActive = "green"; var inftncRating= "4"; var inftncSize = "25"');
 
 		$output =  sprintf( 
 			'<div class="inftnc_star_rating_wrapper">
 					<div class="start_rating_inner">
+						<div className="inftnc_rating_title">
+							<h1>%1$s</h1>
+					    </div>
 						<div class="intftnc-rating"></div>
 					</div>
 			</div>', 
+
+			/* 01 */ $rating_title,
+
 		);
 		return $output;
 	}

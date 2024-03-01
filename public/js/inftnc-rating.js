@@ -1,6 +1,6 @@
 jQuery(function($) {
     jQuery(".intftnc-rating").starRating({
-        totalStars: 5,
+        totalStars: inftncStar,
         emptyColor: 'lightgray',
         hoverColor: 'salmon',
         activeColor: 'cornflowerblue',
