@@ -13,3 +13,7 @@
     gap: 10px;
     flex-wrap: wrap;
 }
+
+.jq-star:first-child {
+    margin-left: 0px !important;
+}

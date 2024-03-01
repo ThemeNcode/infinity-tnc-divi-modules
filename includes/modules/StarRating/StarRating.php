@@ -181,8 +181,8 @@ class INFTNC_StarRating extends ET_Builder_Module {
                 'default'         => 0,
                 'range_settings' => array(
 					'min'  => 0,
-					'max'  => 10,
-					'step' => .1,
+					'max'  => 100,
+					'step' => 1,
 				),
 				'toggle_slug'     => 'rating',
 				'tab_slug'		  => 'advanced',
@@ -212,8 +212,19 @@ class INFTNC_StarRating extends ET_Builder_Module {
 				/** 02 */  $rating,
 			);
 	
-		}else {
+		} else {
 			$rating_number = '';
+		}
+
+		// Process Gap value into style
+		if ( '' !== $this->props['gap'] ) {
+			ET_Builder_Element::set_style( $render_slug, array(
+				'selector'    => '%%order_class%% .jq-star',
+				'declaration' => sprintf(
+					'margin-left: %1$spx !important;',
+					esc_attr( $this->props['gap'] )
+				),
+			) );
 		}
 		
 		$output =  sprintf( 
