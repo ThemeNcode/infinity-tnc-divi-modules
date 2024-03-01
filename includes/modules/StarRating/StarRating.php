@@ -195,10 +195,13 @@ class INFTNC_StarRating extends ET_Builder_Module {
 	public function render( $attrs, $content = null, $render_slug ) {
 
 		$rating_title = $this->props['title']; 
-
+		$star_count   = $this->props['count_star'];
+		$rating  	  = $this->props['rating'];
+		$empty_color  = $this->props['empty_color'];
+		$active_color  = $this->props['icon_color'];
+		$icon_size 	   = $this->props['star_size'];
+	
 		wp_enqueue_script( 'inftnc-rating-module' );
-
-		wp_add_inline_script('inftnc-rating', ' var inftncStar = "20"; var inftncEmpty = "blue";  var inftncActive = "green"; var inftncRating= "4"; var inftncSize = "25"');
 
 		$output =  sprintf( 
 			'<div class="inftnc_star_rating_wrapper">
@@ -206,12 +209,16 @@ class INFTNC_StarRating extends ET_Builder_Module {
 						<div className="inftnc_rating_title">
 							<h1>%1$s</h1>
 					    </div>
-						<div class="intftnc-rating"></div>
+						<div class="intftnc-rating" data-initial-rating="%2$s" data-initial-start="%3$s" data-initial-empty="%4$s" data-initial-active="%5$s" data-initial-size="%6$s"></div>
 					</div>
 			</div>', 
 
 			/* 01 */ $rating_title,
-
+			/* 02 */ $rating,
+			/* 03 */ $star_count,
+			/* 04 */ $empty_color,
+			/* 05 */ $active_color,
+			/** 06 */ $icon_size,
 		);
 		return $output;
 	}
