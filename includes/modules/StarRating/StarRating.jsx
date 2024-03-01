@@ -27,14 +27,14 @@ static css(props, moduleInfo) {
 
   render() {
 
-    const {rating,star_size,icon_color,empty_color,title,count_star,show_rating_number}       = this.props;
+    const {rating,star_size,icon_color,empty_color,title,count_star,show_rating_number,star_alignment}       = this.props;
     return (
       <div className="inftnc_star_rating_wrapper">
 					<div className="start_rating_inner">
              <div className="inftnc_rating_title_wrap">
                 <h1 className="inftnc_rating_title">{title}</h1>
              </div>
-            <div className="inftnc_rating_inner_wrapper">
+            <div className={`inftnc_rating_inner_wrapper inftnc_rating_star_alignment_${star_alignment}`}>
                 <StarRatings
                       isReadOnly
                       count={count_star}
