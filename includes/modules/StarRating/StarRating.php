@@ -203,22 +203,42 @@ class INFTNC_StarRating extends ET_Builder_Module {
 	
 		wp_enqueue_script( 'inftnc-rating-module' );
 
+
+		if('on' === $this->props['show_rating_number']) {
+
+			$rating_number = sprintf(
+				'<span class="inftnc_star_rating_number">(%2$s / %1$s )</span> ',
+				/** 01 */  $star_count,
+				/** 02 */  $rating,
+			);
+	
+		}else {
+			$rating_number = '';
+		}
+		
 		$output =  sprintf( 
 			'<div class="inftnc_star_rating_wrapper">
 					<div class="start_rating_inner">
 						<div className="inftnc_rating_title">
 							<h1>%1$s</h1>
 					    </div>
-						<div class="intftnc-rating" data-initial-rating="%2$s" data-initial-start="%3$s" data-initial-empty="%4$s" data-initial-active="%5$s" data-initial-size="%6$s"></div>
+						<div class="inftnc_rating_inner_wrapper">
+						   <div class="intftnc-rating" data-initial-rating="%2$s" data-initial-start="%3$s" data-initial-empty="%4$s" data-initial-active="%5$s" data-initial-size="%6$s"></div>
+						   <div class="inftnc_rating_number_wrapper">
+						 			%7$s
+						   </div>
+						</div>
 					</div>
 			</div>', 
 
-			/* 01 */ $rating_title,
-			/* 02 */ $rating,
-			/* 03 */ $star_count,
-			/* 04 */ $empty_color,
-			/* 05 */ $active_color,
-			/** 06 */ $icon_size,
+			/* 01 */   $rating_title,
+			/* 02 */   $rating,
+			/* 03 */   $star_count,
+			/* 04 */   $empty_color,
+			/* 05 */   $active_color,
+			/* 06 */   $icon_size,
+			/* 07 */   $rating_number,
+		
 		);
 		return $output;
 	}
