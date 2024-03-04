@@ -25,17 +25,7 @@ class INFTNC_EmbedMap extends ET_Builder_Module {
 
 	public function get_fields() {
 		return array(
-			'source_type' => array(
-				'label'           => esc_html__( 'Source Type', 'inftnc-infinity-tnc-divi-modules' ),
-				'type'            => 'select',
-				'default'	      => 'emebed_code',
-				'options'         => array(
-					'emebed_code'           	 	=> esc_html__( 'Embed Code', 'inftnc-infinity-tnc-divi-modules' ),
-					'latitude_longitude'            => esc_html__( 'Latitude & Longitude', 'inftnc-infinity-tnc-divi-modules' ),
-				),
-				'toggle_slug'     => 'main_content',
-                
-			),
+
 			'map_type' => array(
 				'label'           => esc_html__( 'Map Type', 'inftnc-infinity-tnc-divi-modules' ),
 				'type'            => 'select',
@@ -47,6 +37,18 @@ class INFTNC_EmbedMap extends ET_Builder_Module {
 				'toggle_slug'     => 'main_content',
 			),
 
+			'source_type' => array(
+				'label'           => esc_html__( 'Source Type', 'inftnc-infinity-tnc-divi-modules' ),
+				'type'            => 'select',
+				'default'	      => 'emebed_code',
+				'options'         => array(
+					'emebed_code'           	 	=> esc_html__( 'Embed Code', 'inftnc-infinity-tnc-divi-modules' ),
+					'latitude_longitude'            => esc_html__( 'Latitude & Longitude', 'inftnc-infinity-tnc-divi-modules' ),
+				),
+				'toggle_slug'     => 'main_content',
+                
+			),
+			
 			'latitude_longitude' => array(
 				'label'           => esc_html__( 'Latitude & Longitude', 'inftnc-infinity-tnc-divi-modules' ),
 				'type'            => 'text',
@@ -80,6 +82,7 @@ class INFTNC_EmbedMap extends ET_Builder_Module {
 		$latitude_logitude       = $this->props['latitude_longitude'];
 		$embed_code              = $this->props['embed_code'];
 
+	
 		if( 'emebed_code'  === $source_type  && 'google_map' === $map_type ){
 			 $map = sprintf('%1$s', /* 01 */ $embed_code );
 		} elseif ( 'latitude_longitude'  === $source_type  && 'google_map' === $map_type ) { 
@@ -88,9 +91,10 @@ class INFTNC_EmbedMap extends ET_Builder_Module {
 			);
 		} elseif ( 'emebed_code'  === $source_type  && 'open_street_map' === $map_type ) {
 
+			$map = sprintf('%1$s',/* 01 */ $embed_code );
+
 		} elseif ('latitude_longitude'  === $source_type  && 'open_street_map' === $map_type) {
-
-
+			$map = sprintf(' <iframe src="http://www.openstreetmap.org/export/embed.html?bbox=79.84933018684386%%2C6.90329331805479%%2C79.85746264457703%%2C6.908917042549519&marker=23.812238958241778,90.42481753435429&layers=ND" frameborder="0"></iframe>',);
 		}
 		
 		return sprintf( '<div class="inftnc_embed_map">%1$s</div>', 
