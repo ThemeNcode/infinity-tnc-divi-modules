@@ -85,6 +85,14 @@ class INFTNC_EmbedMap extends ET_Builder_Module {
 
 	public function render( $attrs, $content = null, $render_slug ) {
 
+		$source_type    = $this->props['source_type'];
+		$map_type       = $this->props['map_type'];
+		$latitude       = $this->props['latitude'];
+		$longtitude     = $this->props['longitude'];
+		$embed_code     = $this->props['embed_code'];
+
+		
+ 
 		return sprintf( '<h1>%1$s</h1>', $this->props['content'] );
 	}
 }
