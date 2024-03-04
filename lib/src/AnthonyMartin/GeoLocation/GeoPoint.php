@@ -1,13 +1,13 @@
 <?php
 
-namespace AnthonyMartin\GeoLocation;
-use AnthonyMartin\GeoLocation\Exceptions\NoApiKeyException;
-use AnthonyMartin\GeoLocation\Polygon;
-use AnthonyMartin\GeoLocation\Base\GeoLocation;
-use AnthonyMartin\GeoLocation\Earth;
-use AnthonyMartin\GeoLocation\BoundingBox;
-use AnthonyMartin\GeoLocation\Exceptions\OutOfBoundsException;
-use AnthonyMartin\GeoLocation\Exceptions\UnexpectedResponseException;
+namespace Themencode\InftncDiviModules\AnthonyMartin\GeoLocation;
+use Themencode\InftncDiviModules\AnthonyMartin\GeoLocation\Exceptions\NoApiKeyException;
+use Themencode\InftncDiviModules\AnthonyMartin\GeoLocation\Polygon;
+use Themencode\InftncDiviModules\AnthonyMartin\GeoLocation\Base\GeoLocation;
+use Themencode\InftncDiviModules\AnthonyMartin\GeoLocation\Earth;
+use Themencode\InftncDiviModules\AnthonyMartin\GeoLocation\BoundingBox;
+use Themencode\InftncDiviModules\AnthonyMartin\GeoLocation\Exceptions\OutOfBoundsException;
+use Themencode\InftncDiviModules\AnthonyMartin\GeoLocation\Exceptions\UnexpectedResponseException;
 
 class GeoPoint {
 

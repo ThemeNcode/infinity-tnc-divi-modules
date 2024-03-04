@@ -1,9 +1,9 @@
 <?php
-namespace AnthonyMartin\GeoLocation;
+namespace Themencode\InftncDiviModules\AnthonyMartin\GeoLocation;
 
-use AnthonyMartin\GeoLocation\Earth;
-use AnthonyMartin\GeoLocation\Exceptions\InvalidArgumentException;
-use AnthonyMartin\GeoLocation\Exceptions\InvalidBoundingBoxCoordinatesException;
+use Themencode\InftncDiviModules\AnthonyMartin\GeoLocation\Earth;
+use Themencode\InftncDiviModules\AnthonyMartin\GeoLocation\Exceptions\InvalidArgumentException;
+use Themencode\InftncDiviModules\AnthonyMartin\GeoLocation\Exceptions\InvalidBoundingBoxCoordinatesException;
 
 class BoundingBox {
 

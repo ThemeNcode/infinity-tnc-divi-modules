@@ -1,6 +1,6 @@
 <?php
 
-namespace AnthonyMartin\GeoLocation\Exceptions;
+namespace Themencode\InftncDiviModules\AnthonyMartin\GeoLocation\Exceptions;
 
 class NoApiKeyException extends \Exception
 {

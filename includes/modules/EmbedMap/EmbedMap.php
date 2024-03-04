@@ -1,5 +1,7 @@
 <?php
 
+use Themencode\InftncDiviModules\AnthonyMartin\GeoLocation\GeoPoint;
+
 class INFTNC_EmbedMap extends ET_Builder_Module {
 
 	public $slug       = 'inftnc_embed_map';
@@ -82,7 +84,16 @@ class INFTNC_EmbedMap extends ET_Builder_Module {
 		$latitude_logitude       = $this->props['latitude_longitude'];
 		$embed_code              = $this->props['embed_code'];
 
-	
+		$geopointA = new GeoPoint(40.5187154, -74.4120953);
+		$boundingBox = $geopointA->boundingBox(3, 'miles');
+		$boundingBox->getMaxLatitude();
+		$boundingBox->getMaxLongitude();
+		$boundingBox->getMinLatitude();
+		$boundingBox->getMinLongitude();
+
+		var_dump($boundingBox);
+
+
 		if( 'emebed_code'  === $source_type  && 'google_map' === $map_type ){
 			 $map = sprintf('%1$s', /* 01 */ $embed_code );
 		} elseif ( 'latitude_longitude'  === $source_type  && 'google_map' === $map_type ) { 

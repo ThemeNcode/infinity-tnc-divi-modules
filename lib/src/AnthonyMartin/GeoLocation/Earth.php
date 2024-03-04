@@ -1,6 +1,6 @@
 <?php
 
-namespace AnthonyMartin\GeoLocation;
+namespace Themencode\InftncDiviModules\AnthonyMartin\GeoLocation;
 
 class Earth {
 

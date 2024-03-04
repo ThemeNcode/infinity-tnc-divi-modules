@@ -1,7 +1,7 @@
 <?php
-namespace AnthonyMartin\GeoLocation;
+namespace Themencode\InftncDiviModules\AnthonyMartin\GeoLocation;
 
-use AnthonyMartin\GeoLocation\GeoPoint;
+use Themencode\InftncDiviModules\AnthonyMartin\GeoLocation\GeoPoint;
 
 class Polygon {
 

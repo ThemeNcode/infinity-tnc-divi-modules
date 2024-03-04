@@ -1,5 +1,5 @@
 <?php
-namespace AnthonyMartin\GeoLocation\Interfaces;
+namespace Themencode\InftncDiviModules\AnthonyMartin\GeoLocation\Interfaces;
 
 interface GeoLocationInterface {
 	public static function fromDegrees($latitude, $longitude);

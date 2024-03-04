@@ -1,9 +1,9 @@
 <?php
 
-namespace AnthonyMartin\GeoLocation\Interfaces;
+namespace Themencode\InftncDiviModules\AnthonyMartin\GeoLocation\Interfaces;
 
-use AnthonyMartin\GeoLocation\GeoPoint;
-use AnthonyMartin\GeoLocation;
+use Themencode\InftncDiviModules\AnthonyMartin\GeoLocation\GeoPoint;
+use Themencode\InftncDiviModules\AnthonyMartin\GeoLocation;
 
 interface BoundingBoxInterface {
   public function __construct($geopoint, $distance, $unit_of_measurement);

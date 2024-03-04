@@ -1,6 +1,6 @@
 <?php
 
-namespace AnthonyMartin\GeoLocation\Interfaces;
+namespace Themencode\InftncDiviModules\AnthonyMartin\GeoLocation\Interfaces;
 
 interface Polygon {
   public $coordinates = array();
