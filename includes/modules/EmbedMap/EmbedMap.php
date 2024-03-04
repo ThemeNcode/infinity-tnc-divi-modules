@@ -55,10 +55,36 @@ class INFTNC_EmbedMap extends ET_Builder_Module {
 				'label'           => esc_html__( 'Latitude & Longitude', 'inftnc-infinity-tnc-divi-modules' ),
 				'type'            => 'text',
 				'option_category' => 'basic_option',
-				'description'     => esc_html__( 'Google Map Latitude & Longitude', 'inftnc-infinity-tnc-divi-modules' ),
+				'description'     => esc_html__( 'Map Latitude & Longitude', 'inftnc-infinity-tnc-divi-modules' ),
 				'toggle_slug'     => 'main_content',
 				'show_if'         => array(
 					'source_type' => 'latitude_longitude',
+					'map_type'    => 'google_map',
+					
+				),
+			),
+
+			'openstreetmap_latitude' => array(
+				'label'           => esc_html__( 'Latitude', 'inftnc-infinity-tnc-divi-modules' ),
+				'type'            => 'text',
+				'option_category' => 'basic_option',
+				'description'     => esc_html__( 'Map Latitude', 'inftnc-infinity-tnc-divi-modules' ),
+				'toggle_slug'     => 'main_content',
+				'show_if'         => array(
+					'source_type' => 'latitude_longitude',
+					'map_type' => 'open_street_map',
+				),
+			),
+
+			'openstreetmap_longtitude' => array(
+				'label'           => esc_html__( 'Longitude', 'inftnc-infinity-tnc-divi-modules' ),
+				'type'            => 'text',
+				'option_category' => 'basic_option',
+				'description'     => esc_html__( 'Map Longitude', 'inftnc-infinity-tnc-divi-modules' ),
+				'toggle_slug'     => 'main_content',
+				'show_if'         => array(
+					'source_type' => 'latitude_longitude',
+					'map_type' => 'open_street_map',
 				),
 			),
 
@@ -67,7 +93,7 @@ class INFTNC_EmbedMap extends ET_Builder_Module {
 				'label'           => esc_html__( 'Embed Code', 'inftnc-infinity-tnc-divi-modules' ),
 				'type'            => 'textarea',
 				'option_category' => 'basic_option',
-				'description'     => esc_html__( 'Google Map Longitude', 'inftnc-infinity-tnc-divi-modules' ),
+				'description'     => esc_html__( 'Map Longitude', 'inftnc-infinity-tnc-divi-modules' ),
 				'toggle_slug'     => 'main_content',
 				'show_if'         => array(
 					'source_type' => 'emebed_code',
@@ -79,19 +105,25 @@ class INFTNC_EmbedMap extends ET_Builder_Module {
 
 	public function render( $attrs, $content = null, $render_slug ) {
 
-		$source_type    		 = $this->props['source_type'];
-		$map_type       		 = $this->props['map_type'];
-		$latitude_logitude       = $this->props['latitude_longitude'];
-		$embed_code              = $this->props['embed_code'];
+		$source_type    		     = $this->props['source_type'];
+		$map_type       		     = $this->props['map_type'];
+		$latitude_logitude           = $this->props['latitude_longitude'];
+		$embed_code                  = $this->props['embed_code'];
+		$openstreetmap_longtitude    = $this->props['openstreetmap_longtitude'];
+		$openstreetmap_latitude      = $this->props['openstreetmap_latitude'];
 
-		$geopointA = new GeoPoint(40.5187154, -74.4120953);
-		$boundingBox = $geopointA->boundingBox(3, 'miles');
-		$boundingBox->getMaxLatitude();
-		$boundingBox->getMaxLongitude();
-		$boundingBox->getMinLatitude();
-		$boundingBox->getMinLongitude();
+		$geopointA = new GeoPoint(23.812238958241778,90.42481753435429);
+		$boundingBox    =  $geopointA->boundingBox(3, 'miles');
+		$maxLatitude    =  $boundingBox->getMaxLatitude();
+		$maxLongitude   =  $boundingBox->getMaxLongitude();
+		$minLatitude    =  $boundingBox->getMinLatitude();
+		$minLongitude   =  $boundingBox->getMinLongitude();
 
-		var_dump($boundingBox);
+		var_dump($minLatitude);
+		var_dump($minLongitude);
+		var_dump($maxLongitude);
+		var_dump($maxLongitude);
+		
 
 
 		if( 'emebed_code'  === $source_type  && 'google_map' === $map_type ){
@@ -105,7 +137,15 @@ class INFTNC_EmbedMap extends ET_Builder_Module {
 			$map = sprintf('%1$s',/* 01 */ $embed_code );
 
 		} elseif ('latitude_longitude'  === $source_type  && 'open_street_map' === $map_type) {
-			$map = sprintf(' <iframe src="http://www.openstreetmap.org/export/embed.html?bbox=79.84933018684386%%2C6.90329331805479%%2C79.85746264457703%%2C6.908917042549519&marker=23.812238958241778,90.42481753435429&layers=ND" frameborder="0"></iframe>',);
+			
+			$map = sprintf('<iframe src="http://www.openstreetmap.org/export/embed.html?bbox=%1$s,%2$s,%3$s,%4$s&marker=%5$s,%6$s&layers=ND" frameborder="0"></iframe>',
+				/* Min Latitude 01 */ $minLatitude,
+				/* Min Longitude 02 */ $minLongitude,
+				/* Max Longitude 03 */ $maxLongitude,
+				/* Max Latitude 04 */ $maxLongitude,
+				/* Marker 05 */ $openstreetmap_longtitude,
+				/* Marker 06 */ $openstreetmap_latitude
+			);
 		}
 		
 		return sprintf( '<div class="inftnc_embed_map">%1$s</div>', 
