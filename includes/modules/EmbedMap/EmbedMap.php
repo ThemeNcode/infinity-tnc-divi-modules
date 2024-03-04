@@ -47,27 +47,17 @@ class INFTNC_EmbedMap extends ET_Builder_Module {
 				'toggle_slug'     => 'main_content',
 			),
 
-			'latitude' => array(
-				'label'           => esc_html__( 'Latitude', 'inftnc-infinity-tnc-divi-modules' ),
+			'latitude_longitude' => array(
+				'label'           => esc_html__( 'Latitude & Longitude', 'inftnc-infinity-tnc-divi-modules' ),
 				'type'            => 'text',
 				'option_category' => 'basic_option',
-				'description'     => esc_html__( 'Google Map Latitude', 'inftnc-infinity-tnc-divi-modules' ),
+				'description'     => esc_html__( 'Google Map Latitude & Longitude', 'inftnc-infinity-tnc-divi-modules' ),
 				'toggle_slug'     => 'main_content',
 				'show_if'         => array(
 					'source_type' => 'latitude_longitude',
 				),
 			),
 
-			'longitude' => array(
-				'label'           => esc_html__( 'Longitude', 'inftnc-infinity-tnc-divi-modules' ),
-				'type'            => 'text',
-				'option_category' => 'basic_option',
-				'description'     => esc_html__( 'Google Map Longitude', 'inftnc-infinity-tnc-divi-modules' ),
-				'toggle_slug'     => 'main_content',
-				'show_if'         => array(
-					'source_type' => 'latitude_longitude',
-				),
-			),
 
 			'embed_code' => array(
 				'label'           => esc_html__( 'Embed Code', 'inftnc-infinity-tnc-divi-modules' ),
@@ -85,15 +75,26 @@ class INFTNC_EmbedMap extends ET_Builder_Module {
 
 	public function render( $attrs, $content = null, $render_slug ) {
 
-		$source_type    = $this->props['source_type'];
-		$map_type       = $this->props['map_type'];
-		$latitude       = $this->props['latitude'];
-		$longtitude     = $this->props['longitude'];
-		$embed_code     = $this->props['embed_code'];
+		$source_type    		 = $this->props['source_type'];
+		$map_type       		 = $this->props['map_type'];
+		$latitude_logitude       = $this->props['latitude_longitude'];
+		$embed_code              = $this->props['embed_code'];
 
+		if( 'emebed_code'  === $source_type  && 'google_map' === $map_type ){
+			 $map = sprintf('%1$s', /* 01 */ $embed_code );
+		} elseif ( 'latitude_longitude'  === $source_type  && 'google_map' === $map_type ) { 
+			$map = sprintf('<iframe src = "https://maps.google.com/maps?q=%1$s&hl;z=14&amp;output=embed"></iframe>',
+			 /* 01 */ $latitude_logitude,
+			);
+		} elseif ( 'emebed_code'  === $source_type  && 'open_street_map' === $map_type ) {
+
+		} elseif ('latitude_longitude'  === $source_type  && 'open_street_map' === $map_type) {
+
+
+		}
 		
- 
-		return sprintf( '<h1>%1$s</h1>', $this->props['content'] );
+		return sprintf( '<div class="inftnc_embed_map">%1$s</div>', 
+		/* 01 */ $map );
 	}
 }
 
