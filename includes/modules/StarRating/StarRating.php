@@ -112,24 +112,24 @@ class INFTNC_StarRating extends ET_Builder_Module {
 		return array(
 
 			'count_star' => array(
-				'label'           => esc_html__( 'Star', 'inftnc-infinity-tnc-divi-modules' ),
+				'label'           => esc_html__( 'Rating Scale', 'inftnc-infinity-tnc-divi-modules' ),
 				'type'            => 'range',
                 'default'         => 5,
                 'range_settings' => array(
 					'min'  => 1,
-					'max'  => 20,
+					'max'  => 10,
 					'step' => 1,
 				),
 				'toggle_slug'     => 'main_content',
 			),
 		
 			'rating' => array(
-				'label'           => esc_html__( 'Rating', 'inftnc-infinity-tnc-divi-modules' ),
+				'label'           => esc_html__( 'Rating Value', 'inftnc-infinity-tnc-divi-modules' ),
 				'type'            => 'range',
                 'default'         => 5,
                 'range_settings' => array(
 					'min'  => 0,
-					'max'  => 20,
+					'max'  => 10,
 					'step' => .5,
 				),
 				'toggle_slug'     => 'main_content',
@@ -143,7 +143,7 @@ class INFTNC_StarRating extends ET_Builder_Module {
 			),
 
 			'show_rating_number' => array(
-				'label'             => esc_html__( 'Rating Number', 'infinity' ),
+				'label'             => esc_html__( 'Display Rating Value Text', 'infinity' ),
 				'type'              => 'yes_no_button',
 				'default'			=> 'off',
 				'options'           => array(
@@ -165,7 +165,7 @@ class INFTNC_StarRating extends ET_Builder_Module {
 			'empty_color' => array(
 				'label'           => esc_html__( 'Star Icon Empty Color', 'inftnc-infinity-tnc-divi-modules' ),
 				'type'            => 'color',
-				'default'		  => '#FCFBF8',
+				'default'		  => '#AAAAAA',
 				'tab_slug'        => 'advanced',
 				'toggle_slug'     => 'rating',
 				
@@ -213,18 +213,16 @@ class INFTNC_StarRating extends ET_Builder_Module {
 
 	public function render( $attrs, $content = null, $render_slug ) {
 
-		$rating_title = $this->props['title']; 
-		$star_count   = $this->props['count_star'];
-		$rating  	  = $this->props['rating'];
-		$empty_color  = $this->props['empty_color'];
-		$active_color  = $this->props['icon_color'];
-		$icon_size 	   = $this->props['star_size'];
-		$header_level   = $this->props['title_level'];
-		$star_alignment =  $this->props['star_alignment'];
+		$rating_title     = $this->props['title']; 
+		$star_count       = $this->props['count_star'];
+		$rating  	      = $this->props['rating'];
+		$empty_color      = $this->props['empty_color'];
+		$active_color     = $this->props['icon_color'];
+		$icon_size 	      = $this->props['star_size'];
+		$header_level     = $this->props['title_level'];
+		$star_alignment   =  $this->props['star_alignment'];
 
-
-			wp_enqueue_script( 'inftnc-rating-module' );
-
+		wp_enqueue_script( 'inftnc-rating-module' );
 
 		if('on' === $this->props['show_rating_number']) {
 
@@ -257,9 +255,9 @@ class INFTNC_StarRating extends ET_Builder_Module {
 					    </div>
 						<div class="inftnc_rating_inner_wrapper inftnc_rating_star_alignment_%9$s">
 						   <div class="intftnc-rating" data-initial-rating="%2$s" data-initial-start="%3$s" data-initial-empty="%4$s" data-initial-active="%5$s" data-initial-size="%6$s"></div>
-						   <div class="inftnc_rating_number_wrapper">
-						 			%7$s
-						   </div>
+								<div class="inftnc_rating_number_wrapper">
+											%7$s
+								</div>
 						</div>
 					</div>
 			</div>', 

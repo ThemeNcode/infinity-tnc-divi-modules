@@ -7,27 +7,27 @@ import './style.css';
 
 class StarRating extends Component {
 
-static slug = 'inftnc_star_rating';
+  static slug = 'inftnc_star_rating';
 
-static css(props, moduleInfo) {
+  static css(props, moduleInfo) {
 
-    const utils         = window.ET_Builder.API.Utils;
     const additionalCss = [];
 
-    if (props.gap) {
-      additionalCss.push([{
-        selector:    '%%order_class%% .jq-star',
-        declaration: `margin-left: ${props.gap}px;`,
-      }]);
-    }
+      if (props.gap) {
+        additionalCss.push([{
+          selector:    '%%order_class%% .jq-star',
+          declaration: `margin-left: ${props.gap}px;`,
+        }]);
+      }
 
-    return additionalCss;
-    
-  }
+      return additionalCss;
+      
+    }
 
   render() {
 
     const {rating,star_size,icon_color,empty_color,title,count_star,show_rating_number,star_alignment}       = this.props;
+
     return (
       <div className="inftnc_star_rating_wrapper">
 					<div className="start_rating_inner">
