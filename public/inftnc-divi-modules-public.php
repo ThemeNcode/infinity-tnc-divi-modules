@@ -7,6 +7,7 @@ class Inftnc_divi_modules_public {
     public function __construct() {
         // Enqueue front script 
         add_action('wp_enqueue_scripts', [$this, 'inftnc_divi_modules_assets']);
+        
     }
 
 

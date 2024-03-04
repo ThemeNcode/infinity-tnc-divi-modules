@@ -3,7 +3,7 @@ import DualButtons from './DualButtons/DualButtons';
 import BreadCrumbs from './BreadCrumbs/BreadCrumbs';
 import HeadingGradient from './HeadingGradient/HeadingGradient';
 import StarRating from './StarRating/StarRating';
-import EmbedIframe  from './Embed/Embed';
+import EmbedMap  from './EmbedMap/EmbedMap';
 
 
-export default [HelloWorld,DualButtons,BreadCrumbs,HeadingGradient,StarRating,EmbedIframe];
+export default [HelloWorld,DualButtons,BreadCrumbs,HeadingGradient,StarRating,EmbedMap];

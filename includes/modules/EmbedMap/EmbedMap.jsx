@@ -5,9 +5,9 @@ import React, { Component } from 'react';
 import './style.css';
 
 
-class EmbedIframe extends Component {
+class EmbedMap extends Component {
 
-  static slug = 'inftnc_embed_iframe';
+  static slug = 'inftnc_embed_map';
 
   render() {
     const Content = this.props.content;
@@ -20,4 +20,4 @@ class EmbedIframe extends Component {
   }
 }
 
-export default EmbedIframe;
+export default EmbedMap;
