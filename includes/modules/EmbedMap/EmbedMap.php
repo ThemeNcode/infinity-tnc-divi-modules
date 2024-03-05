@@ -64,6 +64,7 @@ class INFTNC_EmbedMap extends ET_Builder_Module {
 				),
 			),
 
+
 			'openstreetmap_latitude' => array(
 				'label'           => esc_html__( 'Latitude', 'inftnc-infinity-tnc-divi-modules' ),
 				'type'            => 'text',
@@ -85,6 +86,28 @@ class INFTNC_EmbedMap extends ET_Builder_Module {
 				'show_if'         => array(
 					'source_type' => 'latitude_longitude',
 					'map_type' => 'open_street_map',
+				),
+			),
+
+			'map_width' => array(
+				'label'           => esc_html__( 'Width', 'dicm-divi-custom-modules' ),
+				'type'            => 'text',
+				'option_category' => 'basic_option',
+				'description'     => esc_html__( 'Text entered here will appear as title.', 'dicm-divi-custom-modules' ),
+				'toggle_slug'     => 'main_content',
+				'show_if'         => array(
+					'source_type' => 'latitude_longitude',
+				),
+			),
+
+			'map_height' => array(
+				'label'           => esc_html__( 'Height', 'dicm-divi-custom-modules' ),
+				'type'            => 'text',
+				'option_category' => 'basic_option',
+				'description'     => esc_html__( 'Text entered here will appear as title.', 'dicm-divi-custom-modules' ),
+				'toggle_slug'     => 'main_content',
+				'show_if'         => array(
+					'source_type' => 'latitude_longitude',
 				),
 			),
 
@@ -112,20 +135,13 @@ class INFTNC_EmbedMap extends ET_Builder_Module {
 		$openstreetmap_longtitude    = $this->props['openstreetmap_longtitude'];
 		$openstreetmap_latitude      = $this->props['openstreetmap_latitude'];
 
-		$geopointA = new GeoPoint(23.812238958241778,90.42481753435429);
+		$geopointA 		= new GeoPoint(23.812238958241778,90.42481753435429);
 		$boundingBox    =  $geopointA->boundingBox(3, 'miles');
 		$maxLatitude    =  $boundingBox->getMaxLatitude();
 		$maxLongitude   =  $boundingBox->getMaxLongitude();
 		$minLatitude    =  $boundingBox->getMinLatitude();
-		$minLongitude   =  $boundingBox->getMinLongitude();
-
-		var_dump($minLatitude);
-		var_dump($minLongitude);
-		var_dump($maxLongitude);
-		var_dump($maxLongitude);
-		
-
-
+		$minLongitude   =  $boundingBox->getMinLongitude(); 
+	
 		if( 'emebed_code'  === $source_type  && 'google_map' === $map_type ){
 			 $map = sprintf('%1$s', /* 01 */ $embed_code );
 		} elseif ( 'latitude_longitude'  === $source_type  && 'google_map' === $map_type ) { 
@@ -142,7 +158,7 @@ class INFTNC_EmbedMap extends ET_Builder_Module {
 				/* Min Latitude 01 */ $minLatitude,
 				/* Min Longitude 02 */ $minLongitude,
 				/* Max Longitude 03 */ $maxLongitude,
-				/* Max Latitude 04 */ $maxLongitude,
+				/* Max Latitude 04 */ $maxLatitude,
 				/* Marker 05 */ $openstreetmap_longtitude,
 				/* Marker 06 */ $openstreetmap_latitude
 			);
