@@ -14,6 +14,7 @@ class INFTNC_YoutubeEmbed extends ET_Builder_Module {
 	public function init() {
 
 		$this->name = esc_html__( 'Youtube Video - Infinity TNC', 'inftnc-infinity-tnc-divi-modules' );
+        $this->main_css_element = "%%order_class%%.inftnc_youtube_embed iframe";
         $this->settings_modal_toggles  = array(
 			'general'  => array(
 				'toggles' => array(
@@ -25,6 +26,30 @@ class INFTNC_YoutubeEmbed extends ET_Builder_Module {
 			),
 		);
 	}
+
+    /**
+	 * Module's advanced fields configuration
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return array
+	 */
+	function get_advanced_fields_config() { 
+		return array(
+				 'height'	=> array(
+					'options' => array(
+						'height' => array(
+							'default'        => '500px',
+							'default_tablet' => '500px',
+							'default_phone'  => '500px',
+						),
+					),
+				 ),
+				 'text'     => false,
+				 'fonts'	=> false,
+				 'filters'  => false,
+		);
+   }
 
 	public function get_fields() {
 		return array(
@@ -173,7 +198,7 @@ class INFTNC_YoutubeEmbed extends ET_Builder_Module {
 
     //    $output = '<iframe width="560" height="315" src="https://www.youtube.com/embed/1aGwOBgyWTo?si=BX6edvmRQIO-YZkl&amp;start=1&amp;end=2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
 
-        $output = '<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PL0BHfncpP5oSvjG1yxqmWCsjBD012nfbr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
+        // $output = '<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PL0BHfncpP5oSvjG1yxqmWCsjBD012nfbr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
 
         return $output;
 	}
