@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Infinity TNC Divi Modules 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/infinity-tnc-divi-"
 "modules\n"
-"POT-Creation-Date: 2024-02-21 10:08:28+00:00\n"
+"POT-Creation-Date: 2024-03-06 10:59:51+00:00\n"
 "PO-Revision-Date: 2024-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,6 +25,95 @@ msgstr ""
 "X-Textdomain-Support: yes\n"
 "X-Generator: grunt-wp-i18n 1.0.3\n"
 
+#: includes/admin/breadcrumbs.php:167
+msgid "Author archive for "
+msgstr ""
+
+#: includes/admin/breadcrumbs.php:215
+msgid "Search query for: "
+msgstr ""
+
+#: includes/admin/breadcrumbs.php:220
+msgid "Error 404"
+msgstr ""
+
+#: includes/admin/breadcrumbs.php:226
+msgid " ( Page %s )"
+msgstr ""
+
+#: includes/modules/BreadCrumbs/BreadCrumbs.php:15
+msgid "Breadcrumbs - Infinity TNC"
+msgstr ""
+
+#: includes/modules/BreadCrumbs/BreadCrumbs.php:24
+msgid "Breadcrumbs Text"
+msgstr ""
+
+#: includes/modules/BreadCrumbs/BreadCrumbs.php:25
+msgid "Icon"
+msgstr ""
+
+#: includes/modules/BreadCrumbs/BreadCrumbs.php:31
+msgid "Breadcrumbs Style"
+msgstr ""
+
+#: includes/modules/BreadCrumbs/BreadCrumbs.php:56
+#: includes/modules/BreadCrumbs/BreadCrumbs.php:59
+msgid "Home"
+msgstr ""
+
+#: includes/modules/BreadCrumbs/BreadCrumbs.php:60
+msgid "Default home text in the Breadcrumbs"
+msgstr ""
+
+#: includes/modules/BreadCrumbs/BreadCrumbs.php:65
+msgid "Before Text"
+msgstr ""
+
+#: includes/modules/BreadCrumbs/BreadCrumbs.php:68
+msgid "Before text in the breadcrumbs"
+msgstr ""
+
+#: includes/modules/BreadCrumbs/BreadCrumbs.php:73
+msgid "Separator Icon"
+msgstr ""
+
+#: includes/modules/BreadCrumbs/BreadCrumbs.php:80
+msgid "Choose the icon for the separator."
+msgstr ""
+
+#: includes/modules/BreadCrumbs/BreadCrumbs.php:84
+msgid "Add Before Icon"
+msgstr ""
+
+#: includes/modules/BreadCrumbs/BreadCrumbs.php:89
+msgid "No"
+msgstr ""
+
+#: includes/modules/BreadCrumbs/BreadCrumbs.php:90
+msgid "Yes"
+msgstr ""
+
+#: includes/modules/BreadCrumbs/BreadCrumbs.php:95
+msgid "Before Text Icon"
+msgstr ""
+
+#: includes/modules/BreadCrumbs/BreadCrumbs.php:102
+msgid "Choose the icon for the before text."
+msgstr ""
+
+#: includes/modules/BreadCrumbs/BreadCrumbs.php:109
+msgid "Link Color"
+msgstr ""
+
+#: includes/modules/BreadCrumbs/BreadCrumbs.php:116
+msgid "Separator Icon Color"
+msgstr ""
+
+#: includes/modules/BreadCrumbs/BreadCrumbs.php:123
+msgid "Current Text Color"
+msgstr ""
+
 #: includes/modules/DualButtons/DualButtons.php:16
 msgid "Dual Buttons - Infinity TNC"
 msgstr ""
@@ -35,15 +124,14 @@ msgstr ""
 
 #: includes/modules/DualButtons/DualButtons.php:29
 #: includes/modules/DualButtons/DualButtons.php:51
-#: includes/modules/DualButtons/DualButtons.php:94
-#: includes/modules/DualButtons/DualButtons.php:182
+#: includes/modules/DualButtons/DualButtons.php:93
+#: includes/modules/DualButtons/DualButtons.php:181
 msgid "Button Left"
 msgstr ""
 
 #: includes/modules/DualButtons/DualButtons.php:32
 #: includes/modules/DualButtons/DualButtons.php:55
-#: includes/modules/DualButtons/DualButtons.php:102
-#: includes/modules/DualButtons/DualButtons.php:191
+#: includes/modules/DualButtons/DualButtons.php:101
 msgid "Button Right"
 msgstr ""
 
@@ -63,59 +151,249 @@ msgstr ""
 msgid "Dual Buttons Module Video"
 msgstr ""
 
-#: includes/modules/DualButtons/DualButtons.php:92
+#: includes/modules/DualButtons/DualButtons.php:91
 msgid "Button Left Text"
 msgstr ""
 
-#: includes/modules/DualButtons/DualButtons.php:96
-#: includes/modules/DualButtons/DualButtons.php:104
+#: includes/modules/DualButtons/DualButtons.php:95
+#: includes/modules/DualButtons/DualButtons.php:103
 msgid "Input your desired button text."
 msgstr ""
 
-#: includes/modules/DualButtons/DualButtons.php:100
+#: includes/modules/DualButtons/DualButtons.php:99
 msgid "Button Right Text"
 msgstr ""
 
-#: includes/modules/DualButtons/DualButtons.php:109
-#: includes/modules/DualButtons/DualButtons.php:118
+#: includes/modules/DualButtons/DualButtons.php:108
+#: includes/modules/DualButtons/DualButtons.php:117
 msgid "Button Link URL"
 msgstr ""
 
-#: includes/modules/DualButtons/DualButtons.php:112
-#: includes/modules/DualButtons/DualButtons.php:121
+#: includes/modules/DualButtons/DualButtons.php:111
+#: includes/modules/DualButtons/DualButtons.php:120
 msgid "Input URL for your button."
 msgstr ""
 
-#: includes/modules/DualButtons/DualButtons.php:129
-#: includes/modules/DualButtons/DualButtons.php:143
+#: includes/modules/DualButtons/DualButtons.php:128
+#: includes/modules/DualButtons/DualButtons.php:142
 msgid "Button Link Target"
+msgstr ""
+
+#: includes/modules/DualButtons/DualButtons.php:132
+#: includes/modules/DualButtons/DualButtons.php:146
+msgid "In The Same Window"
 msgstr ""
 
 #: includes/modules/DualButtons/DualButtons.php:133
 #: includes/modules/DualButtons/DualButtons.php:147
-msgid "In The Same Window"
-msgstr ""
-
-#: includes/modules/DualButtons/DualButtons.php:134
-#: includes/modules/DualButtons/DualButtons.php:148
 msgid "In The New Tab"
 msgstr ""
 
-#: includes/modules/DualButtons/DualButtons.php:138
-#: includes/modules/DualButtons/DualButtons.php:152
+#: includes/modules/DualButtons/DualButtons.php:137
+#: includes/modules/DualButtons/DualButtons.php:151
 msgid "Choose whether your link opens in a new window or not"
 msgstr ""
 
-#: includes/modules/DualButtons/DualButtons.php:155
+#: includes/modules/DualButtons/DualButtons.php:154
 msgid "Button Alignment"
 msgstr ""
 
-#: includes/modules/DualButtons/DualButtons.php:156
+#: includes/modules/DualButtons/DualButtons.php:155
 msgid "Align your button to the left, right or center of the module."
 msgstr ""
 
-#: includes/modules/DualButtons/DualButtons.php:162
+#: includes/modules/DualButtons/DualButtons.php:161
 msgid "Here you can define the alignment of Button"
+msgstr ""
+
+#: includes/modules/DualButtons/DualButtons.php:198
+msgid "Button RIght"
+msgstr ""
+
+#: includes/modules/EmbedMap/EmbedMap.php:15
+msgid "Embed Map - Infinity TNC"
+msgstr ""
+
+#: includes/modules/EmbedMap/EmbedMap.php:22
+msgid "Embed Map"
+msgstr ""
+
+#: includes/modules/EmbedMap/EmbedMap.php:55
+msgid "Source Type"
+msgstr ""
+
+#: includes/modules/EmbedMap/EmbedMap.php:59
+#: includes/modules/EmbedMap/EmbedMap.php:67
+msgid "Latitude & Longitude"
+msgstr ""
+
+#: includes/modules/EmbedMap/EmbedMap.php:60
+#: includes/modules/EmbedMap/EmbedMap.php:94
+msgid "Embed Code"
+msgstr ""
+
+#: includes/modules/EmbedMap/EmbedMap.php:71
+msgid "Map Latitude & Longitude"
+msgstr ""
+
+#: includes/modules/EmbedMap/EmbedMap.php:79
+msgid "Zoom"
+msgstr ""
+
+#: includes/modules/EmbedMap/EmbedMap.php:97
+msgid "Map Longitude"
+msgstr ""
+
+#: includes/modules/HeadingGradient/HeadingGradient.php:15
+msgid "Heading Gradient - Infinity TNC"
+msgstr ""
+
+#: includes/modules/HeadingGradient/HeadingGradient.php:22
+#: includes/modules/StarRating/StarRating.php:31
+msgid "Title Text"
+msgstr ""
+
+#: includes/modules/HeadingGradient/HeadingGradient.php:28
+msgid "Gradient Style"
+msgstr ""
+
+#: includes/modules/HeadingGradient/HeadingGradient.php:47
+#: includes/modules/HeadingGradient/HeadingGradient.php:106
+#: includes/modules/StarRating/StarRating.php:54
+#: includes/modules/StarRating/StarRating.php:140
+msgid "Title"
+msgstr ""
+
+#: includes/modules/HeadingGradient/HeadingGradient.php:69
+#: includes/modules/StarRating/StarRating.php:79
+msgid "Heading Level"
+msgstr ""
+
+#: includes/modules/HeadingGradient/HeadingGradient.php:108
+msgid "Your Title Goes Here"
+msgstr ""
+
+#: includes/modules/HeadingGradient/HeadingGradient.php:110
+#: includes/modules/HelloWorld/HelloWorld.php:24
+msgid "Content entered here will appear inside the module."
+msgstr ""
+
+#: includes/modules/HeadingGradient/HeadingGradient.php:116
+msgid "Gradient Options"
+msgstr ""
+
+#: includes/modules/HeadingGradient/HeadingGradient.php:120
+msgid "Custom Color"
+msgstr ""
+
+#: includes/modules/HeadingGradient/HeadingGradient.php:121
+msgid "Gradient Preset"
+msgstr ""
+
+#: includes/modules/HeadingGradient/HeadingGradient.php:129
+msgid "Gradient Type"
+msgstr ""
+
+#: includes/modules/HeadingGradient/HeadingGradient.php:133
+msgid "Linear Gradient"
+msgstr ""
+
+#: includes/modules/HeadingGradient/HeadingGradient.php:134
+msgid "Radial Gradient"
+msgstr ""
+
+#: includes/modules/HeadingGradient/HeadingGradient.php:135
+msgid "Elliptical"
+msgstr ""
+
+#: includes/modules/HeadingGradient/HeadingGradient.php:145
+#: includes/modules/HeadingGradient/HeadingGradient.php:167
+#: includes/modules/HeadingGradient/HeadingGradient.php:189
+msgid "Position"
+msgstr ""
+
+#: includes/modules/HeadingGradient/HeadingGradient.php:149
+#: includes/modules/HeadingGradient/HeadingGradient.php:171
+#: includes/modules/HeadingGradient/HeadingGradient.php:193
+msgid "Top Left"
+msgstr ""
+
+#: includes/modules/HeadingGradient/HeadingGradient.php:150
+msgid "Top"
+msgstr ""
+
+#: includes/modules/HeadingGradient/HeadingGradient.php:151
+#: includes/modules/HeadingGradient/HeadingGradient.php:173
+#: includes/modules/HeadingGradient/HeadingGradient.php:195
+msgid "Top Right"
+msgstr ""
+
+#: includes/modules/HeadingGradient/HeadingGradient.php:152
+msgid "Right"
+msgstr ""
+
+#: includes/modules/HeadingGradient/HeadingGradient.php:153
+#: includes/modules/HeadingGradient/HeadingGradient.php:178
+#: includes/modules/HeadingGradient/HeadingGradient.php:201
+msgid "Bottom Right"
+msgstr ""
+
+#: includes/modules/HeadingGradient/HeadingGradient.php:154
+msgid "Bottom"
+msgstr ""
+
+#: includes/modules/HeadingGradient/HeadingGradient.php:155
+#: includes/modules/HeadingGradient/HeadingGradient.php:177
+#: includes/modules/HeadingGradient/HeadingGradient.php:199
+msgid "Bottom Left"
+msgstr ""
+
+#: includes/modules/HeadingGradient/HeadingGradient.php:156
+msgid "Left"
+msgstr ""
+
+#: includes/modules/HeadingGradient/HeadingGradient.php:172
+#: includes/modules/HeadingGradient/HeadingGradient.php:194
+msgid "Top Center"
+msgstr ""
+
+#: includes/modules/HeadingGradient/HeadingGradient.php:174
+#: includes/modules/HeadingGradient/HeadingGradient.php:196
+msgid "Left Center"
+msgstr ""
+
+#: includes/modules/HeadingGradient/HeadingGradient.php:175
+#: includes/modules/HeadingGradient/HeadingGradient.php:197
+msgid "Center Center"
+msgstr ""
+
+#: includes/modules/HeadingGradient/HeadingGradient.php:176
+#: includes/modules/HeadingGradient/HeadingGradient.php:198
+msgid "Right Center"
+msgstr ""
+
+#: includes/modules/HeadingGradient/HeadingGradient.php:200
+msgid "Bottom Center"
+msgstr ""
+
+#: includes/modules/HeadingGradient/HeadingGradient.php:212
+msgid "Start Color"
+msgstr ""
+
+#: includes/modules/HeadingGradient/HeadingGradient.php:223
+msgid "End Color"
+msgstr ""
+
+#: includes/modules/HeadingGradient/HeadingGradient.php:234
+msgid "Start Position"
+msgstr ""
+
+#: includes/modules/HeadingGradient/HeadingGradient.php:250
+msgid "End Position"
+msgstr ""
+
+#: includes/modules/HeadingGradient/HeadingGradient.php:266
+msgid "Presets Gradient Style"
 msgstr ""
 
 #: includes/modules/HelloWorld/HelloWorld.php:15
@@ -126,8 +404,68 @@ msgstr ""
 msgid "Content"
 msgstr ""
 
-#: includes/modules/HelloWorld/HelloWorld.php:24
-msgid "Content entered here will appear inside the module."
+#: includes/modules/StarRating/StarRating.php:16
+msgid "Star Rating - Infinity TNC"
+msgstr ""
+
+#: includes/modules/StarRating/StarRating.php:21
+msgid "Rating"
+msgstr ""
+
+#: includes/modules/StarRating/StarRating.php:27
+msgid "Star Style"
+msgstr ""
+
+#: includes/modules/StarRating/StarRating.php:35
+msgid "Rating Text"
+msgstr ""
+
+#: includes/modules/StarRating/StarRating.php:84
+msgid "Rating Number"
+msgstr ""
+
+#: includes/modules/StarRating/StarRating.php:115
+msgid "Rating Scale"
+msgstr ""
+
+#: includes/modules/StarRating/StarRating.php:127
+msgid "Rating Value"
+msgstr ""
+
+#: includes/modules/StarRating/StarRating.php:146
+msgid "Display Rating Value Text"
+msgstr ""
+
+#: includes/modules/StarRating/StarRating.php:150
+msgid "Show"
+msgstr ""
+
+#: includes/modules/StarRating/StarRating.php:151
+msgid "Hide"
+msgstr ""
+
+#: includes/modules/StarRating/StarRating.php:157
+msgid "Star Icon Color"
+msgstr ""
+
+#: includes/modules/StarRating/StarRating.php:166
+msgid "Star Icon Empty Color"
+msgstr ""
+
+#: includes/modules/StarRating/StarRating.php:175
+msgid "Star Size"
+msgstr ""
+
+#: includes/modules/StarRating/StarRating.php:188
+msgid "Star Gap"
+msgstr ""
+
+#: includes/modules/StarRating/StarRating.php:201
+msgid "Star Alignment"
+msgstr ""
+
+#: includes/modules/StarRating/StarRating.php:202
+msgid "Align your start to the left, right or center of the module."
 msgstr ""
 
 #. Plugin Name of the plugin/theme

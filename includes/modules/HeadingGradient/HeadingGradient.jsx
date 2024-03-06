@@ -10,7 +10,6 @@ class HeadingGradient extends Component {
   static slug = 'inftnc_heading_gradient';
 
   static css(props, moduleInfo) {
-    const utils         = window.ET_Builder.API.Utils;
     const additionalCss = [];
 
     if (props.gradient_options === 'gradient_custom_color'){

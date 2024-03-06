@@ -11,19 +11,19 @@ class EmbedMap extends Component {
    
   render() {
   
-    const { map_type, source_type, latitude_longitude, map_zoom, embed_code } = this.props;
-    
-    let iframe;
+    const { source_type, latitude_longitude, map_zoom, embed_code } = this.props;
+
+    let tncIframe;
     if (source_type === 'emebed_code') {
-      iframe = <div dangerouslySetInnerHTML={{__html: embed_code}}></div>
+      tncIframe = <div dangerouslySetInnerHTML={{__html: embed_code}}></div>
     } else if (source_type === 'latitude_longitude') {
         const iframeSrc = `https://maps.google.com/maps?q=${latitude_longitude}&z=${map_zoom}&output=embed`;
-        iframe = <iframe src={iframeSrc}></iframe>;
+        tncIframe = <iframe src={iframeSrc}></iframe>;
     }
 
     return (
         <div className="inftnc_embed_map_wrapper">
-            {iframe}
+            {tncIframe}
         </div>
     );
 }

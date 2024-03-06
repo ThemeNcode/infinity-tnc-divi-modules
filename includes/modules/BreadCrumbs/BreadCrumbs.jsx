@@ -10,7 +10,6 @@ class BreadCrumbs extends Component {
   static slug = 'inftnc_bread_crumbs';
 
   static css(props, moduleInfo) {
-      const utils         = window.ET_Builder.API.Utils;
       const additionalCss = [];
 
       if (props.link_color) {
@@ -44,7 +43,7 @@ class BreadCrumbs extends Component {
     const {home_text,before_text,seperator_icon,before_text_icon,use_before_icon}       = props;
     const seperatorIcon      = seperator_icon ? utils.processFontIcon(seperator_icon) : false;
     const beforeIcon         = before_text_icon ? utils.processFontIcon(before_text_icon) : false;
-    const useBeforeIcon      =  use_before_icon == 'on' ? beforeIcon : false;
+    const useBeforeIcon      =  use_before_icon === 'on' ? beforeIcon : false;
 
     return (
       <div className="inftnc_breadcrumb">
