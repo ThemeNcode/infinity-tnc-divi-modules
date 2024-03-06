@@ -210,14 +210,30 @@ class INFTNC_YoutubeEmbed extends ET_Builder_Module {
 
         
         
-        
-        
+        if ( 'video' === $video_type && 'video_url' === $video_method  ) {
+            
+            $output = sprintf('<iframe width="560" height="315" src="%1$s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
+                /* 01 */ $youtube_url,
+            );
 
-		// return sprintf( '<h1>%1$s</h1>', $this->props['content'] );
+        } elseif ( 'video' === $video_type && 'video_id' === $video_method ) { 
 
-       //    $output = '<iframe width="560" height="315" src="https://www.youtube.com/embed/1aGwOBgyWTo?si=BX6edvmRQIO-YZkl&amp;start=1&amp;end=2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
+            $output = sprintf('<iframe width="560" height="315" src="https://www.youtube.com/embed/%1$s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
+                /* 01 */ $video_id,
+            );
 
-        $output = '<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PL0BHfncpP5oSvjG1yxqmWCsjBD012nfbr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
+        } elseif ( 'video' === $video_type && 'embed_code' === $video_method ) { 
+
+            $output = sprintf('%1$s',
+                /* 01 */ $video_embed,
+            );
+
+        }  elseif ( 'playlist' === $video_type ) {
+ 
+            $output = sprintf('<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?si=ral8tYgzpgTVRktm&amp;list=PL0BHfncpP5oSvjG1yxqmWCsjBD012nfbr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
+                
+            );
+        }
 
         return $output;
 	}
