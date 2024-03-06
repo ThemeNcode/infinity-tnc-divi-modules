@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Infinity TNC Divi Modules 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/infinity-tnc-divi-"
 "modules\n"
-"POT-Creation-Date: 2024-03-06 10:59:51+00:00\n"
+"POT-Creation-Date: 2024-03-06 11:22:53+00:00\n"
 "PO-Revision-Date: 2024-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -275,6 +275,7 @@ msgstr ""
 
 #: includes/modules/HeadingGradient/HeadingGradient.php:110
 #: includes/modules/HelloWorld/HelloWorld.php:24
+#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:24
 msgid "Content entered here will appear inside the module."
 msgstr ""
 
@@ -401,6 +402,7 @@ msgid "Hello World"
 msgstr ""
 
 #: includes/modules/HelloWorld/HelloWorld.php:21
+#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:21
 msgid "Content"
 msgstr ""
 
@@ -466,6 +468,10 @@ msgstr ""
 
 #: includes/modules/StarRating/StarRating.php:202
 msgid "Align your start to the left, right or center of the module."
+msgstr ""
+
+#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:15
+msgid "Youtube Embed - Infinity TNC"
 msgstr ""
 
 #. Plugin Name of the plugin/theme
