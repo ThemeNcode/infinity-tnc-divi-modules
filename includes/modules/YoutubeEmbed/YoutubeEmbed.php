@@ -194,11 +194,30 @@ class INFTNC_YoutubeEmbed extends ET_Builder_Module {
 	}
 
 	public function render( $attrs, $content = null, $render_slug ) {
+
+        $video_type         =  $this->props['video_type'];
+        $video_method       =  $this->props['video_method'];
+        $youtube_url        =  $this->props['youtube_url'];
+        $video_id           =  $this->props['youtube_id'];
+        $video_embed        =  $this->props['youtube_embed'];
+        $video_start        =  $this->props['video_start'];
+        $video_end          =  $this->props['video_end'];
+        $autoplay           =  $this->props['autoplay'];
+        $mute               =  $this->props['mute'];
+        $loop               =  $this->props['loop'];
+        $player_control     =  $this->props['player_control'];
+        $privacy_enhanced   =  $this->props['privacy_enhanced'];
+
+        
+        
+        
+        
+
 		// return sprintf( '<h1>%1$s</h1>', $this->props['content'] );
 
-    //    $output = '<iframe width="560" height="315" src="https://www.youtube.com/embed/1aGwOBgyWTo?si=BX6edvmRQIO-YZkl&amp;start=1&amp;end=2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
+       //    $output = '<iframe width="560" height="315" src="https://www.youtube.com/embed/1aGwOBgyWTo?si=BX6edvmRQIO-YZkl&amp;start=1&amp;end=2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
 
-        // $output = '<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PL0BHfncpP5oSvjG1yxqmWCsjBD012nfbr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
+        $output = '<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PL0BHfncpP5oSvjG1yxqmWCsjBD012nfbr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
 
         return $output;
 	}
