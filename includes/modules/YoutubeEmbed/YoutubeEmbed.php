@@ -54,9 +54,10 @@ class INFTNC_YoutubeEmbed extends ET_Builder_Module {
 			),
 
             'youtube_url' => array(
-				'label'           => esc_html__( 'Youtube URL', 'nftnc-infinity-tnc-divi-modules' ),
+				'label'           => esc_html__( 'Youtube Video URL', 'inftnc-infinity-tnc-divi-modules' ),
 				'type'            => 'text',
 				'option_category' => 'basic_option',
+                'description'     => 'Use Video URL  or List URL based on what you want to display.',
 				'toggle_slug'     => 'main_content',
                 'show_if'         => array(
                     'video_method' => 'video_url',
@@ -64,9 +65,10 @@ class INFTNC_YoutubeEmbed extends ET_Builder_Module {
 			),
 
             'youtube_id' => array(
-				'label'           => esc_html__( 'Youtube ID', 'nftnc-infinity-tnc-divi-modules' ),
+				'label'           => esc_html__( 'Youtube Video ID', 'nftnc-infinity-tnc-divi-modules' ),
 				'type'            => 'text',
 				'option_category' => 'basic_option',
+                'description'     => 'Use Video ID or List ID based on what you want to display.',
 				'toggle_slug'     => 'main_content',
                 'show_if'         => array(
                     'video_method' => 'video_id',
@@ -74,9 +76,10 @@ class INFTNC_YoutubeEmbed extends ET_Builder_Module {
 			),
 
             'youtube_embed' => array(
-				'label'           => esc_html__( 'Yotube Embed Code', 'nftnc-infinity-tnc-divi-modules' ),
+				'label'           => esc_html__( 'Youtube Video Embed Code', 'nftnc-infinity-tnc-divi-modules' ),
 				'type'            => 'textarea',
 				'option_category' => 'basic_option',
+                'description'     => 'Use Video Embed Code  or List Embed Code based on what you want to display.',
 				'toggle_slug'     => 'main_content',
                 'show_if'         => array(
                     'video_method' => 'embed_code',
@@ -168,12 +171,12 @@ class INFTNC_YoutubeEmbed extends ET_Builder_Module {
 	public function render( $attrs, $content = null, $render_slug ) {
 		// return sprintf( '<h1>%1$s</h1>', $this->props['content'] );
 
-       $output = '<iframe width="560" height="315" src="https://www.youtube.com/embed/1aGwOBgyWTo?si=BX6edvmRQIO-YZkl&amp;start=1&amp;end=2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
+    //    $output = '<iframe width="560" height="315" src="https://www.youtube.com/embed/1aGwOBgyWTo?si=BX6edvmRQIO-YZkl&amp;start=1&amp;end=2" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
 
-        $output = '<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?si=dQHDqqsGH62qZ6oD&amp;list=PL0BHfncpP5oSvjG1yxqmWCsjBD012nfbr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
+        $output = '<iframe width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PL0BHfncpP5oSvjG1yxqmWCsjBD012nfbr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>';
 
         return $output;
 	}
 }
-
+ 
 new INFTNC_YoutubeEmbed;

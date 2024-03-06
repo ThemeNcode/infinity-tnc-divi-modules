@@ -30,7 +30,7 @@
     ]
   },
   "cde": {
-    "gettext": "inftnc-infinity-tnc-divi-modules",
+    "gettext": "infinity-tnc-divi-modules",
     "prefix": "inftnc"
   },
   "devDependencies": {
