@@ -228,7 +228,17 @@ class INFTNC_YoutubeEmbed extends ET_Builder_Module {
                 /* 01 */ $video_embed,
             );
 
-        }  elseif ( 'playlist' === $video_type ) {
+        }  elseif ( 'playlist' === $video_type && 'video_url' === $video_method ) {
+ 
+            $output = sprintf('<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?si=ral8tYgzpgTVRktm&amp;list=PL0BHfncpP5oSvjG1yxqmWCsjBD012nfbr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
+                
+            );
+        } elseif ( 'playlist' === $video_type && 'video_id' === $video_method ) {
+ 
+            $output = sprintf('<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?si=ral8tYgzpgTVRktm&amp;list=PL0BHfncpP5oSvjG1yxqmWCsjBD012nfbr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
+                
+            );
+        } elseif ( 'playlist' === $video_type && 'embed_code' === $video_method ) {
  
             $output = sprintf('<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?si=ral8tYgzpgTVRktm&amp;list=PL0BHfncpP5oSvjG1yxqmWCsjBD012nfbr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
                 
