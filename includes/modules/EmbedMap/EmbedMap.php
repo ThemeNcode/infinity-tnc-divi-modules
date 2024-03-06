@@ -70,8 +70,8 @@ class INFTNC_EmbedMap extends ET_Builder_Module {
 				'type'            => 'select',
 				'default'	      => 'latitude_longitude',
 				'options'         => array(
-					'emebed_code'           	 	=> esc_html__( 'Embed Code', 'inftnc-infinity-tnc-divi-modules' ),
 					'latitude_longitude'            => esc_html__( 'Latitude & Longitude', 'inftnc-infinity-tnc-divi-modules' ),
+					'emebed_code'           	 	=> esc_html__( 'Embed Code', 'inftnc-infinity-tnc-divi-modules' ),
 				),
 				'toggle_slug'     => 'main_content',
                 
@@ -80,7 +80,7 @@ class INFTNC_EmbedMap extends ET_Builder_Module {
 			'latitude_longitude' => array(
 				'label'           => esc_html__( 'Latitude & Longitude', 'inftnc-infinity-tnc-divi-modules' ),
 				'type'            => 'text',
-				'default'		  => '40.658620799731196, -73.99475680760217',
+				'default'		  => '40.658620799731196,-73.99475680760217',
 				'option_category' => 'basic_option',
 				'description'     => esc_html__( 'Map Latitude & Longitude', 'inftnc-infinity-tnc-divi-modules' ),
 				'toggle_slug'     => 'main_content',
