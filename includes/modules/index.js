@@ -5,6 +5,7 @@ import HeadingGradient from './HeadingGradient/HeadingGradient';
 import StarRating from './StarRating/StarRating';
 import EmbedMap  from './EmbedMap/EmbedMap';
 import YoutubeEmbed from './YoutubeEmbed/YoutubeEmbed';
+import VimeoVideo from './VimeoVideo/VimeoVideo';
 
 
-export default [HelloWorld,DualButtons,BreadCrumbs,HeadingGradient,StarRating,EmbedMap,YoutubeEmbed];
+export default [HelloWorld,DualButtons,BreadCrumbs,HeadingGradient,StarRating,EmbedMap,YoutubeEmbed,VimeoVideo];
