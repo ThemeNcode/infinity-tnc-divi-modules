@@ -11,13 +11,18 @@ class YoutubeEmbed extends Component {
   render() {
     const { video_type, video_method, youtube_url } = this.props;
     
-    let inftncYoutubeIframe;
+    let inftncYoutubeIframe = null;
 
     if (video_type === 'video' && video_method === 'video_url' && youtube_url) {
+
       const videoId = this.getYouTubeVideoId(youtube_url);
+
+      console.log(videoId);
       
       if (videoId) {
+
         const iframeSrc = `https://www.youtube.com/embed/${videoId}`;
+
         inftncYoutubeIframe = (
           <iframe 
             src={iframeSrc} 
@@ -40,10 +45,19 @@ class YoutubeEmbed extends Component {
   }
 
   getYouTubeVideoId(url) {
-    const regex = /^(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})$/;
+    console.log(url);
+    const regex = /(?:youtube(?:-nocookie)?\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^“&?\/ ]{11})/i;
+    const match = url.match(regex);
+    console.log(match);
+    return match ? match[1] : null;
+  }
+
+  getYouTubeVideolistId(url) {
+    const regex = /(?:youtube(?:-nocookie)?\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]list=)|youtu\.be\/)([^“&?\/ ]{34})/i;
     const match = url.match(regex);
     return match ? match[1] : null;
   }
+
 }
 
 export default YoutubeEmbed;

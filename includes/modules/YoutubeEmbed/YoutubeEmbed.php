@@ -82,6 +82,7 @@ class INFTNC_YoutubeEmbed extends ET_Builder_Module {
 				'label'           => esc_html__( 'Youtube Video URL', 'inftnc-infinity-tnc-divi-modules' ),
 				'type'            => 'text',
 				'option_category' => 'basic_option',
+				'default'		  => 'https://www.youtube.com/watch?v=z8uxAkjll5g',
                 'description'     => 'Use Video URL  or List URL based on what you want to display.',
 				'toggle_slug'     => 'main_content',
                 'show_if'         => array(
