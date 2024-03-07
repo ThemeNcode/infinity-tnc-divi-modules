@@ -1,0 +1,8 @@
+.inftnc_vimeo_video iframe {
+    width:100% !important;
+    height:500px !important;
+  }
+  
+.inftnc_vimeo_video .fluid-width-video-wrapper {
+    display: contents !important;
+}

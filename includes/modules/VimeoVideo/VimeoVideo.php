@@ -98,6 +98,23 @@ class INFTNC_VimeoVideo extends ET_Builder_Module {
                 ),
 			),
 
+            'vimeo_start' => array(
+				'label'           => esc_html__( 'Start Time', 'inftnc-infinity-tnc-divi-modules' ),
+				'type'            => 'range',
+				'description'	  => 'Specify a start time in seconds',
+				'default'          => '0',
+				'default_on_front' => '',
+                'range_settings' => array(
+					'min'  => 1,
+					'max'  => 1000,
+					'step' => 1,
+				),
+				'toggle_slug'     => 'video_options',
+				'show_if_not'     => array(
+					'vimeo_method' => 'embed_code',
+				)
+			),
+
             'autoplay' => array(
 				'label'             => esc_html__( 'Autoplay', 'infinity' ),
 				'type'              => 'yes_no_button',
@@ -212,10 +229,47 @@ class INFTNC_VimeoVideo extends ET_Builder_Module {
         $vimeo_portait      = $this->props['intro_portait'];
         $vimeo_title        = $this->props['intro_title'];
         $vimeo_byline       = $this->props['intro_byline'];
-       
+        $vimeo_start        = $this->props['vimeo_start'];
 
-		$output = sprintf('<iframe src="https://player.vimeo.com/video/909768963?h=b043407d65&autoplay=1&loop=1&title=0&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>',
-        );
+
+        ( 'on' === $vimeo_autoplay ) ? ( $autoplay_value = 1 ) : ( $autoplay_value = 0 );
+        ( 'on' === $vimeo_mute ) ? ( $mute_value = 1 ) : ( $mute_value = 0 );
+        ( 'on' === $vimeo_loop ) ? ( $loop_value = 1 ) : ( $loop_value = 0 );
+        ( 'on' === $vimeo_control ) ? ( $control_value = 1 ) : ( $control_value = 0 );
+        ( 'on' === $vimeo_portait ) ? ( $portait_value = 1 ) : ( $portait_value = 0 );
+        ( 'on' === $vimeo_title ) ? ( $title_value = 1 ) : ( $title_value = 0 );
+        ( 'on' === $vimeo_byline ) ? ( $byline_value = 1 ) : ( $byline_value = 0 );
+
+
+        if( 'vimeo_url' === $vimeo_method ) {
+
+            // Vimeo URL 
+			$url = $vimeo_url;
+            preg_match('/(?:https?:\/\/)?(?:www\.)?(?:player\.)?vimeo\.com\/(?:showcase\/)?(\d+)/i', $url, $match);
+            $vimeo_exact_id = $match[1];
+
+            $output = sprintf('<iframe src="https://player.vimeo.com/video/%1$s?&autoplay=1&loop=1&title=0&byline=0&portrait=0&#t=100s" width="640" height="360"  frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>',
+                /* 01 */ $vimeo_exact_id,
+                /* 02 */ $mute_value,
+                /* 03 */ $loop_value,
+                /* 04 */ $control_value,  
+                /* 05 */ $portait_value,
+                /* 06 */ $title_value,
+                /* 07 */ $byline_value,
+                /* 08 */ $vimeo_start,
+             );
+
+        } elseif ( 'vimeo_id' === $vimeo_method ) {
+
+            $output = sprintf('<iframe src="https://player.vimeo.com/video/909768963?h=b043407d65&autoplay=1&loop=1&title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>',
+            );
+
+        } elseif ( 'embed_code' == $vimeo_method ) {
+
+            $output = sprintf('<iframe src="https://player.vimeo.com/video/909768963?h=b043407d65&autoplay=1&loop=1&title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>',
+            );
+
+        }
 
         return $output;
 	}
