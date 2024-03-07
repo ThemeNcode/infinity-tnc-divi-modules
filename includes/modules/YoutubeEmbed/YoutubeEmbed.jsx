@@ -16,7 +16,16 @@ class YoutubeEmbed extends Component {
     let inftncYoutubeIframe;
 
     if(video_type === 'video' && video_method === 'video_url') {
-         const iframeSrc = `https://www.youtube.com/embed/z8uxAkjll5g`;
+
+        function getYouTubeVideoId(url) {
+            const regex = /^(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})$/;
+            const match = url.match(regex);
+            return match ? match[1] : null;
+        }
+        
+        const videoId = getYouTubeVideoId(youtube_url);
+        
+         const iframeSrc = `https://www.youtube.com/embed/${videoId}`;
          inftncYoutubeIframe = <iframe src={iframeSrc} title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>;
     }
 
