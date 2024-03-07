@@ -51,13 +51,51 @@ class INFTNC_VimeoVideo extends ET_Builder_Module {
    }
 
 	public function get_fields() {
-		return array(
-			'content' => array(
-				'label'           => esc_html__( 'Content', 'inftnc-infinity-tnc-divi-modules' ),
-				'type'            => 'tiny_mce',
+		return array (
+			'vimeo_method' => array(
+				'label'           => esc_html__( 'Vimeo Method', 'inftnc-infinity-tnc-divi-modules' ),
+				'type'            => 'select',
+				'default'	      => 'vimeo_url',
+				'options'         => array(
+                    'vimeo_url'            => esc_html__( 'URL', 'inftnc-infinity-tnc-divi-modules' ),
+					'vimeo_id'            => esc_html__( 'ID', 'inftnc-infinity-tnc-divi-modules' ),
+                    'embed_code'          => esc_html__( 'Embed Code', 'inftnc-infinity-tnc-divi-modules' ),
+    
+				),
+				'toggle_slug'     => 'main_content',   
+			),
+
+            'vimeo_url' => array(
+				'label'           => esc_html__( 'Vimeo Video URL', 'inftnc-infinity-tnc-divi-modules' ),
+				'type'            => 'text',
 				'option_category' => 'basic_option',
-				'description'     => esc_html__( 'Content entered here will appear inside the module.', 'inftnc-infinity-tnc-divi-modules' ),
+                'description'     => 'Use Vimeo Video URL',
 				'toggle_slug'     => 'main_content',
+                'show_if'         => array(
+                    'vimeo_method' => 'vimeo_url',
+                ),
+			),
+
+            'vimeo_id' => array(
+				'label'           => esc_html__( 'Vimeo Video ID', 'nftnc-infinity-tnc-divi-modules' ),
+				'type'            => 'text',
+				'option_category' => 'basic_option',
+                'description'     => 'Use Vimeo Video ID.',
+				'toggle_slug'     => 'main_content',
+                'show_if'         => array(
+                    'vimeo_method' => 'vimeo_id',
+                ),
+			),
+
+            'vimeo_embed' => array(
+				'label'           => esc_html__( 'Vimeo Video Embed Code', 'nftnc-infinity-tnc-divi-modules' ),
+				'type'            => 'textarea',
+				'option_category' => 'basic_option',
+                'description'     => 'Use Vimeo Video Embed Code.',
+				'toggle_slug'     => 'main_content',
+                'show_if'         => array(
+                    'vimeo_method' => 'embed_code',
+                ),
 			),
 		);
 	}
