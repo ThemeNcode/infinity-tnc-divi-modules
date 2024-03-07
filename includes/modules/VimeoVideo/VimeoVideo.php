@@ -201,7 +201,20 @@ class INFTNC_VimeoVideo extends ET_Builder_Module {
 
 	public function render( $attrs, $content = null, $render_slug ) {
 
-		$output = sprintf('<iframe src="https://player.vimeo.com/video/909768963?autoplay=1&loop=1&color=00adef&t=00h00m10s" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>',
+        $vimeo_method       = $this->props['vimeo_method'];
+        $vimeo_url          = $this->props['vimeo_url']; 
+        $vimeo_id           = $this->props['vimeo_id'];
+        $vimeo_embed        = $this->props['vimeo_embed'];
+        $vimeo_autoplay     = $this->props['autoplay'];
+        $vimeo_mute         = $this->props['mute'];
+        $vimeo_loop         = $this->props['loop'];
+        $vimeo_control      = $this->props['player_control'];
+        $vimeo_portait      = $this->props['intro_portait'];
+        $vimeo_title        = $this->props['intro_title'];
+        $vimeo_byline       = $this->props['intro_byline'];
+       
+
+		$output = sprintf('<iframe src="https://player.vimeo.com/video/909768963?h=b043407d65&autoplay=1&loop=1&title=0&byline=0&portrait=0" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>',
         );
 
         return $output;
