@@ -123,7 +123,9 @@ class INFTNC_YoutubeEmbed extends ET_Builder_Module {
 					'step' => 1,
 				),
 				'toggle_slug'     => 'video_options',
-				
+				'show_if_not'     => array(
+					'video_method' => 'embed_code',
+				)
 			),
 
             'video_end' => array(
@@ -137,6 +139,9 @@ class INFTNC_YoutubeEmbed extends ET_Builder_Module {
 					'step' => 1,
 				),
 				'toggle_slug'     => 'video_options',
+				'show_if_not'     => array(
+					'video_method' => 'embed_code',
+				)
 			),
 
             'autoplay' => array(
@@ -148,6 +153,9 @@ class INFTNC_YoutubeEmbed extends ET_Builder_Module {
 					'off' => esc_html__( 'OFF', 'inftnc-infinity-tnc-divi-modules' ),
 				),
 				'toggle_slug'     => 'video_options',
+				'show_if_not'     => array(
+					'video_method' => 'embed_code',
+				)
 			),
 
             'mute' => array(
@@ -159,6 +167,9 @@ class INFTNC_YoutubeEmbed extends ET_Builder_Module {
 					'off' => esc_html__( 'OFF', 'inftnc-infinity-tnc-divi-modules' ),
 				),
 				'toggle_slug'     => 'video_options',
+				'show_if_not'     => array(
+					'video_method' => 'embed_code',
+				)
 			),
 
             'loop' => array(
@@ -170,6 +181,9 @@ class INFTNC_YoutubeEmbed extends ET_Builder_Module {
 					'off' => esc_html__( 'OFF', 'inftnc-infinity-tnc-divi-modules' ),
 				),
 				'toggle_slug'     => 'video_options',
+				'show_if_not'     => array(
+					'video_method' => 'embed_code',
+				)
 			),
 
             'player_control' => array(
@@ -181,6 +195,9 @@ class INFTNC_YoutubeEmbed extends ET_Builder_Module {
 					'off' => esc_html__( 'OFF', 'inftnc-infinity-tnc-divi-modules' ),
 				),
 				'toggle_slug'     => 'video_options',
+				'show_if_not'     => array(
+					'video_method' => 'embed_code',
+				)
 			),
 
             'video_rel' => array(
@@ -192,6 +209,9 @@ class INFTNC_YoutubeEmbed extends ET_Builder_Module {
 					'off' => esc_html__( 'OFF', 'inftnc-infinity-tnc-divi-modules' ),
 				),
 				'toggle_slug'     => 'video_options',
+				'show_if_not'     => array(
+					'video_method' => 'embed_code',
+				)
 			),
 		);
 	}
