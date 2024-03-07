@@ -114,7 +114,9 @@ class INFTNC_YoutubeEmbed extends ET_Builder_Module {
 			'video_start' => array(
 				'label'           => esc_html__( 'Start Time', 'inftnc-infinity-tnc-divi-modules' ),
 				'type'            => 'range',
-				'default'          => '14',
+				'description'	  => 'Specify a start time in seconds',
+				'default'          => '0',
+				'default_on_front' => '',
                 'range_settings' => array(
 					'min'  => 1,
 					'max'  => 100,
@@ -127,10 +129,11 @@ class INFTNC_YoutubeEmbed extends ET_Builder_Module {
             'video_end' => array(
 				'label'           => esc_html__( 'End Time', 'inftnc-infinity-tnc-divi-modules' ),
 				'type'            => 'range',
-				'default'          => '14',
+				'default_on_front' => '',
+				'description'	  => 'Specify an End time in seconds',
                 'range_settings' => array(
 					'min'  => 1,
-					'max'  => 100,
+					'max'  => 1000,
 					'step' => 1,
 				),
 				'toggle_slug'     => 'video_options',
@@ -139,7 +142,7 @@ class INFTNC_YoutubeEmbed extends ET_Builder_Module {
             'autoplay' => array(
 				'label'             => esc_html__( 'Autoplay', 'infinity' ),
 				'type'              => 'yes_no_button',
-				'default'			=> 'off',
+				'default'			=> 'on',
 				'options'           => array(
 					'on'  => esc_html__( 'ON', 'inftnc-infinity-tnc-divi-modules' ),
 					'off' => esc_html__( 'OFF', 'inftnc-infinity-tnc-divi-modules' ),
@@ -180,8 +183,8 @@ class INFTNC_YoutubeEmbed extends ET_Builder_Module {
 				'toggle_slug'     => 'video_options',
 			),
 
-            'privacy_enhanced' => array(
-				'label'             => esc_html__( 'Enable privacy-enhanced mode.', 'infinity' ),
+            'video_rel' => array(
+				'label'             => esc_html__( 'External suggested videos.', 'infinity' ),
 				'type'              => 'yes_no_button',
 				'default'			=> 'off',
 				'options'           => array(
@@ -206,20 +209,49 @@ class INFTNC_YoutubeEmbed extends ET_Builder_Module {
         $mute               =  $this->props['mute'];
         $loop               =  $this->props['loop'];
         $player_control     =  $this->props['player_control'];
-        $privacy_enhanced   =  $this->props['privacy_enhanced'];
+		$video_rel 			=  $this->props['video_rel'];
+		
+		//Autoplay Value
+		( 'on' === $autoplay ) ? ( $autoplay_value = 1 ) : ( $autoplay_value = 0 );
+		//Mute Value 
+		( 'on' === $mute ) ? ( $mute_value = 1 ) : ( $mute_value = 0 );
+		//Loop Value 
+		( 'on' === $loop ) ? ( $loop_value = 1 ) : ( $loop_value = 0 );
+		//Player Control 
+		( 'on' === $player_control  ) ? ( $control_value = 1 ) : ( $control_value = 0 );
+		//Video Rel 
+		('on' === $video_rel  ) ? ( $rel_value = 1 ) : ( $rel_value = 0 );
 
-        
-        
+		
         if ( 'video' === $video_type && 'video_url' === $video_method  ) {
-            
-            $output = sprintf('<iframe width="560" height="315" src="%1$s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
-                /* 01 */ $youtube_url,
+
+			// Youtube URL 
+			$url = $youtube_url;
+			preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $url, $match);
+			$youtube_exact_id = $match[1];
+
+            $output = sprintf('<iframe src="https://www.youtube.com/embed/%1$s?controls=%7$s&amp;autoplay=%4$s&amp;loop=%6$s&amp;mute=%5$s&amp;start=%2$s&amp;end=%3$s&amp;rel=%8$s" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
+                /* 01 */ $youtube_exact_id,
+				/* 02 */ $video_start,
+				/* 03 */ $video_end,
+				/* 04 */ $autoplay_value,
+				/* 05 */ $mute_value,
+				/* 06 */ $loop_value,
+				/* 07 */ $control_value,
+				/* 08 */ $rel_value
             );
 
         } elseif ( 'video' === $video_type && 'video_id' === $video_method ) { 
 
-            $output = sprintf('<iframe width="560" height="315" src="https://www.youtube.com/embed/%1$s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
-                /* 01 */ $video_id,
+           $output = sprintf('<iframe src="https://www.youtube.com/embed/%1$s?controls=%7$s&amp;autoplay=%4$s&amp;loop=%6$s&amp;mute=%5$s&amp;start=%2$s&amp;end=%3$s&amp;rel=%8$s" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
+                /* 01 */ $video_id ,
+				/* 02 */ $video_start,
+				/* 03 */ $video_end,
+				/* 04 */ $autoplay_value,
+				/* 05 */ $mute_value,
+				/* 06 */ $loop_value,
+				/* 07 */ $control_value,
+				/* 08 */ $rel_value
             );
 
         } elseif ( 'video' === $video_type && 'embed_code' === $video_method ) { 
@@ -229,20 +261,38 @@ class INFTNC_YoutubeEmbed extends ET_Builder_Module {
             );
 
         }  elseif ( 'playlist' === $video_type && 'video_url' === $video_method ) {
- 
-            $output = sprintf('<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?si=ral8tYgzpgTVRktm&amp;list=PL0BHfncpP5oSvjG1yxqmWCsjBD012nfbr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
-                
+
+			//Youtube Playlist URL 
+			$url =  $youtube_url;
+			preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]list=)|youtu\.be/)([^"&?/ ]{34})%i', $url, $match);
+			$youtube_exact_id = $match[1];
+
+			$output = sprintf('<iframe src="https://www.youtube.com/embed/videoseries?controls=%7$s&amp;autoplay=%4$s&amp;loop=%6$s&amp;mute=%5$s&amp;start=%2$s&amp;end=%3$s&amp;rel=%8$s&amp;list=%1$s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
+				/* 01 */ $youtube_exact_id,
+				/* 02 */ $video_start,
+				/* 03 */ $video_end,
+				/* 04 */ $autoplay_value,
+				/* 05 */ $mute_value,
+				/* 06 */ $loop_value,
+				/* 07 */ $control_value,
+				/* 08 */ $rel_value
             );
+
         } elseif ( 'playlist' === $video_type && 'video_id' === $video_method ) {
  
-            $output = sprintf('<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?si=ral8tYgzpgTVRktm&amp;list=PL0BHfncpP5oSvjG1yxqmWCsjBD012nfbr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
-                
+            $output = sprintf('<iframe src="https://www.youtube.com/embed/videoseries?controls=%7$s&amp;autoplay=%4$s&amp;loop=%6$s&amp;mute=%5$s&amp;start=%2$s&amp;end=%3$s&amp;rel=%8$s&amp;list=%1$s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
+				/* 01 */ $video_id,
+				/* 02 */ $video_start,
+				/* 03 */ $video_end,
+				/* 04 */ $autoplay_value,
+				/* 05 */ $mute_value,
+				/* 06 */ $loop_value,
+				/* 07 */ $control_value,
+				/* 08 */ $rel_value
             );
         } elseif ( 'playlist' === $video_type && 'embed_code' === $video_method ) {
- 
-            $output = sprintf('<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/videoseries?si=ral8tYgzpgTVRktm&amp;list=PL0BHfncpP5oSvjG1yxqmWCsjBD012nfbr" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
-                
-            );
+
+            $output = sprintf('%1$s',/* 01 */ $video_embed );
         }
 
         return $output;
