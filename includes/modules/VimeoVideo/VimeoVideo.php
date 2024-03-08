@@ -69,6 +69,7 @@ class INFTNC_VimeoVideo extends ET_Builder_Module {
 				'label'           => esc_html__( 'Vimeo Video URL', 'infinity-tnc-divi-modules' ),
 				'type'            => 'text',
 				'option_category' => 'basic_option',
+				'default'	      => 'https://vimeo.com/915873558',
                 'description'     => 'Use Vimeo Video URL',
 				'toggle_slug'     => 'main_content',
                 'show_if'         => array(
