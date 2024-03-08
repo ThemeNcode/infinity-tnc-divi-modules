@@ -98,13 +98,20 @@ class INFTNC_TypeWriter extends ET_Builder_Module {
 
 	public function render( $attrs, $content = null, $render_slug ) {
 
-        $before_text = $this->props['before_text'];
-        $after_text  = $this->props['after_text'];
-        $text        = $this->props['typing_text'];
-
+        $before_text            = $this->props['before_text'];
+        $after_text             = $this->props['after_text'];
+        $text                   = $this->props['typing_text'];
+        $typing_speed           = $this->props['typing_speed'];
+        $typing_backspped       = $this->props['typing_backspeed'];
+        $typing_delay           = $this->props['typing_delay'];
+        $typing_pause           = $this->props['pause_for'];
+        $typing_cursor          = $this->props['typing_cursor'];
+        $typing_loop            = $this->props['typing_loop'];
+    
+           
         wp_enqueue_script('inftnc-typewriter-module');
 
-        $typing_text = sprintf('<span class="inftnc_typewriter_text" data-initial-text="%1$s"></span>',
+        $typing_text = sprintf('<span class="inftnc_typewriter_text" data-initial-text="%1$s" data_initial_></span>',
             /* 01 */  $text,
         );
         
