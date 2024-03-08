@@ -60,13 +60,6 @@ class INFTNC_TypeWriter extends ET_Builder_Module {
 				'toggle_slug'     => 'typing_options',
 			),
 
-            'typing_delay' => array(
-				'label'           => esc_html__( 'Back Delay (ms)', 'infinity-tnc-divi-modules' ),
-                'description'     => esc_html__('The delay between deleting each character.','infinity-tnc-divi-modules'),
-				'type'            => 'text',
-				'toggle_slug'     => 'typing_options',
-			),
-            
             'pause_for' => array(
 				'label'           => esc_html__( 'Pause Time (ms)', 'infinity-tnc-divi-modules' ),
                 'description'     => esc_html__( 'The pause duration after a text is typed.','infinity-tnc-divi-modules'),
@@ -103,7 +96,6 @@ class INFTNC_TypeWriter extends ET_Builder_Module {
         $text                   = $this->props['typing_text'];
         $typing_speed           = $this->props['typing_speed'];
         $typing_backspped       = $this->props['typing_backspeed'];
-        $typing_delay           = $this->props['typing_delay'];
         $typing_pause           = $this->props['pause_for'];
         $typing_cursor          = $this->props['typing_cursor'];
         $typing_loop            = $this->props['typing_loop'];
@@ -111,11 +103,10 @@ class INFTNC_TypeWriter extends ET_Builder_Module {
            
         wp_enqueue_script('inftnc-typewriter-module');
 
-        $typing_text = sprintf('<span class="inftnc_typewriter_text" data-initial-text="%1$s" data-initial-speed="%2$s"data-initial-backspeed="%3$s" data-initial-delay="%4$s"data-initial-pause="%5$s"data-initial-cursor="%6$s"data-initial-loop="%7$s"></span>',
+        $typing_text = sprintf('<span class="inftnc_typewriter_text" data-initial-text="%1$s" data-initial-speed="%2$s"data-initial-backspeed="%3$s" data-initial-pause="%4$s"data-initial-cursor="%5$s"data-initial-loop="%6$s"></span>',
             /* 01 */  $text,
             /* 02 */  $typing_speed,
             /* 03 */  $typing_backspped,
-            /* 04 */  $typing_delay,
             /* 05 */  $typing_pause,
             /* 06 */  $typing_cursor,
             /* 07 */  $typing_loop, 
@@ -140,3 +131,5 @@ class INFTNC_TypeWriter extends ET_Builder_Module {
 }
 
 new INFTNC_TypeWriter;
+
+
