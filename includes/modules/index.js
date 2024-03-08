@@ -8,5 +8,9 @@ import YoutubeEmbed from './YoutubeEmbed/YoutubeEmbed';
 import VimeoVideo from './VimeoVideo/VimeoVideo';
 import TypeWriter from './TypeWriter/TypeWriter';
 
-
 export default [HelloWorld,DualButtons,BreadCrumbs,HeadingGradient,StarRating,EmbedMap,YoutubeEmbed,VimeoVideo,TypeWriter];
+
+
+
+
+
