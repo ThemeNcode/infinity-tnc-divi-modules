@@ -111,9 +111,15 @@ class INFTNC_TypeWriter extends ET_Builder_Module {
            
         wp_enqueue_script('inftnc-typewriter-module');
 
-        $typing_text = sprintf('<span class="inftnc_typewriter_text" data-initial-text="%1$s" data_initial_></span>',
+        $typing_text = sprintf('<span class="inftnc_typewriter_text" data-initial-text="%1$s" data-initial-speed="%2$s"data-initial-backspeed="%3$s" data-initial-delay="%4$s"data-initial-pause="%5$s"data-initial-cursor="%6$s"data-initial-loop="%7$s"></span>',
             /* 01 */  $text,
-        );
+            /* 02 */  $typing_speed,
+            /* 03 */  $typing_backspped,
+            /* 04 */  $typing_delay,
+            /* 05 */  $typing_pause,
+            /* 06 */  $typing_cursor,
+            /* 07 */  $typing_loop, 
+         );
         
 		$output = sprintf('
 
