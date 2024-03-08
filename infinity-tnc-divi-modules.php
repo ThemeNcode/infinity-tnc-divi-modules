@@ -8,7 +8,7 @@ Author:      ThemeNcode
 Author URI:  https://themencode.com/
 License:     GPL2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: inftnc-infinity-tnc-divi-modules
+Text Domain: infinity-tnc-divi-modules
 Domain Path: /languages
 
 Infinity TNC Divi Modules is free software: you can redistribute it and/or modify

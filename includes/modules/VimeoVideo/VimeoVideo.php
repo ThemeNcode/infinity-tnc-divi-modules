@@ -12,14 +12,14 @@ class INFTNC_VimeoVideo extends ET_Builder_Module {
 	);
 
 	public function init() {
-		$this->name = esc_html__( 'Vimeo Video - Infinity TNC', 'inftnc-infinity-tnc-divi-modules' );
+		$this->name = esc_html__( 'Vimeo Video - Infinity TNC', 'infinity-tnc-divi-modules' );
         $this->main_css_element = "%%order_class%%.inftnc_vimeo_video iframe";
         $this->settings_modal_toggles  = array(
 			'general'  => array(
 				'toggles' => array(
-					'main_content' => esc_html__( 'Vimeo Video', 'inftnc-infinity-tnc-divi-modules' ),
+					'main_content' => esc_html__( 'Vimeo Video', 'infinity-tnc-divi-modules' ),
                     'video_options' => array(
-                        'title' => esc_html__( 'Video Options', 'inftnc-infinity-tnc-divi-modules' ),
+                        'title' => esc_html__( 'Video Options', 'infinity-tnc-divi-modules' ),
                     ),
 				),
 			),
@@ -53,20 +53,20 @@ class INFTNC_VimeoVideo extends ET_Builder_Module {
 	public function get_fields() {
 		return array (
 			'vimeo_method' => array(
-				'label'           => esc_html__( 'Vimeo Method', 'inftnc-infinity-tnc-divi-modules' ),
+				'label'           => esc_html__( 'Vimeo Method', 'infinity-tnc-divi-modules' ),
 				'type'            => 'select',
 				'default'	      => 'vimeo_url',
 				'options'         => array(
-                    'vimeo_url'            => esc_html__( 'URL', 'inftnc-infinity-tnc-divi-modules' ),
-					'vimeo_id'            => esc_html__( 'ID', 'inftnc-infinity-tnc-divi-modules' ),
-                    'embed_code'          => esc_html__( 'Embed Code', 'inftnc-infinity-tnc-divi-modules' ),
+                    'vimeo_url'            => esc_html__( 'URL', 'infinity-tnc-divi-modules' ),
+					'vimeo_id'            => esc_html__( 'ID', 'infinity-tnc-divi-modules' ),
+                    'embed_code'          => esc_html__( 'Embed Code', 'infinity-tnc-divi-modules' ),
     
 				),
 				'toggle_slug'     => 'main_content',   
 			),
 
             'vimeo_url' => array(
-				'label'           => esc_html__( 'Vimeo Video URL', 'inftnc-infinity-tnc-divi-modules' ),
+				'label'           => esc_html__( 'Vimeo Video URL', 'infinity-tnc-divi-modules' ),
 				'type'            => 'text',
 				'option_category' => 'basic_option',
                 'description'     => 'Use Vimeo Video URL',
@@ -88,7 +88,7 @@ class INFTNC_VimeoVideo extends ET_Builder_Module {
 			),
 
             'vimeo_embed' => array(
-				'label'           => esc_html__( 'Vimeo Video Embed Code', 'nftnc-infinity-tnc-divi-modules' ),
+				'label'           => esc_html__( 'Vimeo Video Embed Code', 'infinity-tnc-divi-modules' ),
 				'type'            => 'textarea',
 				'option_category' => 'basic_option',
                 'description'     => 'Use Vimeo Video Embed Code.',
@@ -99,16 +99,9 @@ class INFTNC_VimeoVideo extends ET_Builder_Module {
 			),
 
             'vimeo_start' => array(
-				'label'           => esc_html__( 'Start Time', 'inftnc-infinity-tnc-divi-modules' ),
-				'type'            => 'range',
-				'description'	  => 'Specify a start time in seconds',
-				'default'          => '0',
-				'default_on_front' => '',
-                'range_settings' => array(
-					'min'  => 1,
-					'max'  => 1000,
-					'step' => 1,
-				),
+				'label'           => esc_html__( 'Start Time', 'infinity-tnc-divi-modules' ),
+				'type'            => 'text',
+				'description'	  => esc_html__( 'Time represented in minutes and/or seconds (for example,1m2s)', 'infinity-tnc-divi-modules' ),
 				'toggle_slug'     => 'video_options',
 				'show_if_not'     => array(
 					'vimeo_method' => 'embed_code',
@@ -116,12 +109,13 @@ class INFTNC_VimeoVideo extends ET_Builder_Module {
 			),
 
             'autoplay' => array(
-				'label'             => esc_html__( 'Autoplay', 'infinity' ),
+				'label'             => esc_html__( 'Autoplay', 'infinity-tnc-divi-modules' ),
 				'type'              => 'yes_no_button',
 				'default'			=> 'on',
+				'description'		=> esc_html__( 'Automatically start playback of the video.', 'infinity-tnc-divi-modules' ),
 				'options'           => array(
-					'on'  => esc_html__( 'ON', 'inftnc-infinity-tnc-divi-modules' ),
-					'off' => esc_html__( 'OFF', 'inftnc-infinity-tnc-divi-modules' ),
+					'on'  => esc_html__( 'ON', 'infinity-tnc-divi-modules' ),
+					'off' => esc_html__( 'OFF', 'infinity-tnc-divi-modules' ),
 				),
 				'toggle_slug'     => 'video_options',
 				'show_if_not'     => array(
@@ -130,12 +124,13 @@ class INFTNC_VimeoVideo extends ET_Builder_Module {
 			),
 
             'mute' => array(
-				'label'             => esc_html__( 'Mute', 'infinity' ),
+				'label'             => esc_html__( 'Mute', 'infinity-tnc-divi-modules'),
 				'type'              => 'yes_no_button',
 				'default'			=> 'off',
+				'description'		=> esc_html__('Set video to mute on load. Viewers can still adjust the volume preferences in the player.','infinity-tnc-divi-modules'),
 				'options'           => array(
-					'on'  => esc_html__( 'ON', 'inftnc-infinity-tnc-divi-modules' ),
-					'off' => esc_html__( 'OFF', 'inftnc-infinity-tnc-divi-modules' ),
+					'on'  => esc_html__( 'ON', 'infinity-tnc-divi-modules' ),
+					'off' => esc_html__( 'OFF', 'infinity-tnc-divi-modules' ),
 				),
 				'toggle_slug'     => 'video_options',
 				'show_if_not'     => array(
@@ -144,12 +139,13 @@ class INFTNC_VimeoVideo extends ET_Builder_Module {
 			),
 
             'loop' => array(
-				'label'             => esc_html__( 'Loop', 'infinity' ),
+				'label'             => esc_html__( 'Loop', 'infinity-tnc-divi-modules' ),
 				'type'              => 'yes_no_button',
 				'default'			=> 'off',
+				'description'		=> esc_html__( 'Play the video again when it reaches the end, infinitely.', 'infinity-tnc-divi-modules' ),
 				'options'           => array(
-					'on'  => esc_html__( 'ON', 'inftnc-infinity-tnc-divi-modules' ),
-					'off' => esc_html__( 'OFF', 'inftnc-infinity-tnc-divi-modules' ),
+					'on'  => esc_html__( 'ON', 'infinity-tnc-divi-modules' ),
+					'off' => esc_html__( 'OFF', 'infinity-tnc-divi-modules' ),
 				),
 				'toggle_slug'     => 'video_options',
 				'show_if_not'     => array(
@@ -158,12 +154,13 @@ class INFTNC_VimeoVideo extends ET_Builder_Module {
 			),
 
             'player_control' => array(
-				'label'             => esc_html__( 'Player Control', 'infinity' ),
+				'label'             => esc_html__( 'Player Control', 'infinity-tnc-divi-modules' ),
 				'type'              => 'yes_no_button',
 				'default'			=> 'off',
+				'description'		=> esc_html__( 'This parameter will hide all elements in the player (play bar, sharing buttons, etc) for a chromeless experience. ', 'infinity-tnc-divi-modules' ),
 				'options'           => array(
-					'on'  => esc_html__( 'ON', 'inftnc-infinity-tnc-divi-modules' ),
-					'off' => esc_html__( 'OFF', 'inftnc-infinity-tnc-divi-modules' ),
+					'on'  => esc_html__( 'ON', 'infinity-tnc-divi-modules' ),
+					'off' => esc_html__( 'OFF', 'infinity-tnc-divi-modules' ),
 				),
 				'toggle_slug'     => 'video_options',
 				'show_if_not'     => array(
@@ -172,12 +169,13 @@ class INFTNC_VimeoVideo extends ET_Builder_Module {
 			),
 
             'intro_portait' => array(
-				'label'             => esc_html__( 'Intro Portrait', 'infinity' ),
+				'label'             => esc_html__( 'Intro Portrait', 'infinity-tnc-divi-modules' ),
 				'type'              => 'yes_no_button',
 				'default'			=> 'off',
+				'description'		=> esc_html__( 'Show the author’s profile image', 'infinity-tnc-divi-modules' ),
 				'options'           => array(
-					'on'  => esc_html__( 'ON', 'inftnc-infinity-tnc-divi-modules' ),
-					'off' => esc_html__( 'OFF', 'inftnc-infinity-tnc-divi-modules' ),
+					'on'  => esc_html__( 'ON', 'infinity-tnc-divi-modules' ),
+					'off' => esc_html__( 'OFF', 'infinity-tnc-divi-modules' ),
 				),
 				'toggle_slug'     => 'video_options',
 				'show_if_not'     => array(
@@ -186,12 +184,13 @@ class INFTNC_VimeoVideo extends ET_Builder_Module {
 			),
 
             'intro_title' => array(
-				'label'             => esc_html__( 'Intro Title', 'infinity' ),
+				'label'             => esc_html__( 'Intro Title', 'infinity-tnc-divi-modules' ),
 				'type'              => 'yes_no_button',
 				'default'			=> 'off',
+				'description'		=> esc_html__( 'Show the video’s title.', 'infinity-tnc-divi-modules'),
 				'options'           => array(
-					'on'  => esc_html__( 'ON', 'inftnc-infinity-tnc-divi-modules' ),
-					'off' => esc_html__( 'OFF', 'inftnc-infinity-tnc-divi-modules' ),
+					'on'  => esc_html__( 'ON', 'infinity-tnc-divi-modules' ),
+					'off' => esc_html__( 'OFF', 'infinity-tnc-divi-modules' ),
 				),
 				'toggle_slug'     => 'video_options',
 				'show_if_not'     => array(
@@ -200,12 +199,13 @@ class INFTNC_VimeoVideo extends ET_Builder_Module {
 			),
 
             'intro_byline' => array(
-				'label'             => esc_html__( 'Intro Byline', 'infinity' ),
+				'label'             => esc_html__( 'Intro Byline', 'infinity-tnc-divi-modules' ),
 				'type'              => 'yes_no_button',
 				'default'			=> 'off',
+				'description'		=> esc_html__( 'Show the author of the video (byline).', 'infinity-tnc-divi-modules' ),
 				'options'           => array(
-					'on'  => esc_html__( 'ON', 'inftnc-infinity-tnc-divi-modules' ),
-					'off' => esc_html__( 'OFF', 'inftnc-infinity-tnc-divi-modules' ),
+					'on'  => esc_html__( 'ON', 'infinity-tnc-divi-modules' ),
+					'off' => esc_html__( 'OFF', 'infinity-tnc-divi-modules' ),
 				),
 				'toggle_slug'     => 'video_options',
 				'show_if_not'     => array(
@@ -213,6 +213,31 @@ class INFTNC_VimeoVideo extends ET_Builder_Module {
 				)
 			),
 
+			'playsinline' => array(
+				'label'             => esc_html__( 'Playsinline', 'infinity-tnc-divi-modules' ),
+				'type'              => 'yes_no_button',
+				'default'			=> 'off',
+				'description'		=> esc_html__( 'Play video inline on mobile devices instead of automatically going into fullscreen mode. Inline playback is enabled for all videos by default.', 'infinity-tnc-divi-modules' ),
+				'options'           => array(
+					'on'  => esc_html__( 'ON', 'infinity-tnc-divi-modules' ),
+					'off' => esc_html__( 'OFF', 'infinity-tnc-divi-modules' ),
+				),
+				'toggle_slug'     => 'video_options',
+				'show_if_not'     => array(
+					'vimeo_method' => 'embed_code',
+				)
+			),
+
+			'vimeo_color' => array(
+				'label'           => esc_html__( 'Color', 'infinity-tnc-divi-modules' ),
+				'type'            => 'color',
+				'default'		  => '00adef',
+				'description'	  => esc_html__( 'Specify the color of the video controls. Colors may be overridden by the embed settings of the video', 'infinity-tnc-divi-modules' ),
+				'toggle_slug'     => 'video_options',
+				'show_if_not'     => array(
+					'vimeo_method' => 'embed_code',
+				)
+			),
 		);
 	}
 
@@ -230,6 +255,8 @@ class INFTNC_VimeoVideo extends ET_Builder_Module {
         $vimeo_title        = $this->props['intro_title'];
         $vimeo_byline       = $this->props['intro_byline'];
         $vimeo_start        = $this->props['vimeo_start'];
+		$vimeo_color 		= $this->props['vimeo_color'];
+		$vimeo_playsinline  = $this->props['playsinline'];
 
 
         ( 'on' === $vimeo_autoplay ) ? ( $autoplay_value = 1 ) : ( $autoplay_value = 0 );
@@ -239,16 +266,19 @@ class INFTNC_VimeoVideo extends ET_Builder_Module {
         ( 'on' === $vimeo_portait ) ? ( $portait_value = 1 ) : ( $portait_value = 0 );
         ( 'on' === $vimeo_title ) ? ( $title_value = 1 ) : ( $title_value = 0 );
         ( 'on' === $vimeo_byline ) ? ( $byline_value = 1 ) : ( $byline_value = 0 );
+		( 'on' === $vimeo_playsinline ) ? ( $playsinline_value = 1 ) : ( $playsinline_value = 0 );
+
+		
 
 
         if( 'vimeo_url' === $vimeo_method ) {
 
             // Vimeo URL 
 			$url = $vimeo_url;
-            preg_match('/(?:https?:\/\/)?(?:www\.)?(?:player\.)?vimeo\.com\/(?:showcase\/)?(\d+)/i', $url, $match);
-            $vimeo_exact_id = $match[1];
+            preg_match('%^https?:\/\/(?:www\.|player\.)?vimeo.com\/(?:channels\/(?:\w+\/)?|groups\/([^\/]*)\/videos\/|album\/(\d+)\/video\/|video\/|)(\d+)(?:$|\/|\?)(?:[?]?.*)$%im', $url, $match);
+            $vimeo_exact_id = $match[3];
 
-            $output = sprintf('<iframe src="https://player.vimeo.com/video/%1$s?&autoplay=1&loop=1&title=0&byline=0&portrait=0&#t=100s" width="640" height="360"  frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>',
+            $output = sprintf('<iframe src="https://player.vimeo.com/video/%1$s?&autoplay=%11$s&loop=%3$s&muted=%2$s&controls=%4$s&title=%6$s&byline=%7$s&portrait=%5$s&#t=%8$s&color=%9$s&playsinline=%10$s" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>',
                 /* 01 */ $vimeo_exact_id,
                 /* 02 */ $mute_value,
                 /* 03 */ $loop_value,
@@ -257,17 +287,29 @@ class INFTNC_VimeoVideo extends ET_Builder_Module {
                 /* 06 */ $title_value,
                 /* 07 */ $byline_value,
                 /* 08 */ $vimeo_start,
+				/* 09 */ $vimeo_color,
+				/* 10 */ $playsinline_value,
+				/* 11 */ $autoplay_value
              );
-
+			
         } elseif ( 'vimeo_id' === $vimeo_method ) {
 
-            $output = sprintf('<iframe src="https://player.vimeo.com/video/909768963?h=b043407d65&autoplay=1&loop=1&title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>',
-            );
-
+            $output = sprintf('<iframe src="https://player.vimeo.com/video/%1$s?&autoplay=%11$s&loop=%3$s&muted=%2$s&controls=%4$s&title=%6$s&byline=%7$s&portrait=%5$s&#t=%8$s&color=%9$s&playsinline=%10$s" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>',
+                /* 01 */ $vimeo_id,
+                /* 02 */ $mute_value,
+                /* 03 */ $loop_value,
+                /* 04 */ $control_value,  
+                /* 05 */ $portait_value,
+                /* 06 */ $title_value,
+                /* 07 */ $byline_value,
+                /* 08 */ $vimeo_start,
+				/* 09 */ $vimeo_color,
+				/* 10 */ $playsinline_value,
+				/* 11 */ $autoplay_value
+             );
         } elseif ( 'embed_code' == $vimeo_method ) {
 
-            $output = sprintf('<iframe src="https://player.vimeo.com/video/909768963?h=b043407d65&autoplay=1&loop=1&title=0&byline=0&portrait=0" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>',
-            );
+            $output = sprintf('%1$s', /* 01 */ $vimeo_embed );
 
         }
 
@@ -276,5 +318,11 @@ class INFTNC_VimeoVideo extends ET_Builder_Module {
 }
 
 new INFTNC_VimeoVideo;
+
+
+
+
+
+
 
 

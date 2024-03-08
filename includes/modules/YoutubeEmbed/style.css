@@ -4,5 +4,5 @@
 }
 
 .inftnc_youtube_embed .fluid-width-video-wrapper {
-  display: contents !important;
+  display: contents;
 }
