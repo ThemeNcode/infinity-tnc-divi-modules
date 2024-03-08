@@ -97,7 +97,28 @@ class INFTNC_TypeWriter extends ET_Builder_Module {
 	}
 
 	public function render( $attrs, $content = null, $render_slug ) {
-		return sprintf( '<h1>%1$s</h1>', $this->props['content'] );
+
+        $before_text = $this->props['before_text'];
+        $after_text  = $this->props['after_text'];
+        $typing_text = $this->props['typing_text'];
+        
+		$output = sprintf('
+
+            <div class="inftnc_typewriter_wrapper">
+                <h1>
+                    <span class="inftnc_before_text">%1$s</span>
+                    <span class="inftnc_type_text">%3$s</span>
+                    <span class="inftnc_after_text">%2$s</span>
+                <h1/>
+            <div>
+
+        ',
+            /* 01 */  $before_text,
+            /* 02 */  $after_text,
+            /* 03 */  $typing_text,
+        );
+
+        return $output;
 	}
 }
 
