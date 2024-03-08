@@ -100,16 +100,20 @@ class INFTNC_TypeWriter extends ET_Builder_Module {
 
         $before_text = $this->props['before_text'];
         $after_text  = $this->props['after_text'];
-        $typing_text = $this->props['typing_text'];
+        $text        = $this->props['typing_text'];
+
+        wp_enqueue_script('inftnc-typewriter-module');
+
+        $typing_text = sprintf('<span class="inftnc_typewriter_text" data-initial-text="%1$s"></span>',
+            /* 01 */  $text,
+        );
         
 		$output = sprintf('
 
             <div class="inftnc_typewriter_wrapper">
                 <h1>
-                    <span class="inftnc_before_text">%1$s</span>
-                    <span class="inftnc_type_text">%3$s</span>
-                    <span class="inftnc_after_text">%2$s</span>
-                <h1/>
+                    <span class="inftnc_before_text">%1$s</span>%3$s<span class="inftnc_after_text">%2$s</span>
+                </h1>
             <div>
 
         ',
