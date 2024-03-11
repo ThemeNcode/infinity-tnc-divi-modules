@@ -7,7 +7,7 @@ class SocialShareChild extends ET_Builder_Module {
 	public $type                     = 'child';
 
 	// Module item's attribute that will be used for module item label on modal
-	public $child_title_var          = 'title';
+	public $child_title_var          = 'social_network';
 
 	// If the attribute defined on $this->child_title_var is empty, this attribute will be used instead
 	public $child_title_fallback_var = 'subtitle';
@@ -18,23 +18,23 @@ class SocialShareChild extends ET_Builder_Module {
 	function init() {
 		// Module name
 		$this->name             = esc_html__( 'Social Network', 'infinity-tnc-divi-modules' );
+        $this->advanced_setting_title_text = esc_html__( 'New Social Network', 'infinity-tnc-divi-modules' );
+		$this->settings_text               = esc_html__( 'Social Network Settings', 'infinity-tnc-divi-modules' );
 
-		// Default label for module item. Basically if $this->child_title_var and $this->child_title_fallback_var
-		// // attributes are empty, this default text will be used instead as item label
-		// $this->advanced_setting_title_text = esc_html__( 'CTA Item', 'infinity-tnc-divi-modules' );
-
-		// // Module item's modal title
-		// $this->settings_text = esc_html__( 'CTA Item Settings', 'infinity-tnc-divi-modules' );
 
 		// Toggle settings
-		$this->settings_modal_toggles  = array(
-			'general'  => array(
-				'toggles' => array(
-					'main_content' => esc_html__( 'Text', 'infinity-tnc-divi-modules' ),
-					'button'       => esc_html__( 'Button', 'infinity-tnc-divi-modules' ),
-				),
-			),
-		);
+        $this->settings_modal_toggles = array(
+            'general'  => array(
+                'toggles' => array(
+                    'main_content' => esc_html__( 'Network', 'infinity-tnc-divi-modules' ),
+                ),
+            ),
+            'advanced' => array(
+                'toggles' => array(
+                    'icon' => esc_html__( 'Icon', 'infinity-tnc-divi-modules' ),
+                ),
+            ),
+        );
 	}
 
 	/**
@@ -46,53 +46,37 @@ class SocialShareChild extends ET_Builder_Module {
 	 */
 	function get_fields() {
 		return array(
-			'title' => array(
-				'label'           => esc_html__( 'Title', 'infinity-tnc-divi-modules' ),
-				'type'            => 'text',
-				'option_category' => 'basic_option',
-				'description'     => esc_html__( 'Text entered here will appear as title.', 'infinity-tnc-divi-modules' ),
-				'toggle_slug'     => 'main_content',
-			),
-			'subtitle' => array(
-				'label'           => esc_html__( 'Sub Title', 'infinity-tnc-divi-modules' ),
-				'type'            => 'text',
-				'option_category' => 'basic_option',
-				'description'     => esc_html__( 'Text entered here will appear as subtitle.', 'infinity-tnc-divi-modules' ),
-				'toggle_slug'     => 'main_content',
-			),
-			'content' => array(
-				'label'           => esc_html__( 'Content', 'infinity-tnc-divi-modules' ),
-				'type'            => 'tiny_mce',
-				'option_category' => 'basic_option',
-				'description'     => esc_html__( 'Content entered here will appear inside the module.', 'infinity-tnc-divi-modules' ),
-				'toggle_slug'     => 'main_content',
-			),
-			'button_text' => array(
-				'label'           => esc_html__( 'Button Text', 'infinity-tnc-divi-modules' ),
-				'type'            => 'text',
-				'option_category' => 'basic_option',
-				'description'     => esc_html__( 'Input your desired button text, or leave blank for no button.', 'infinity-tnc-divi-modules' ),
-				'toggle_slug'     => 'button',
-			),
-			'button_url' => array(
-				'label'           => esc_html__( 'Button URL', 'infinity-tnc-divi-modules' ),
-				'type'            => 'text',
-				'option_category' => 'basic_option',
-				'description'     => esc_html__( 'Input URL for your button.', 'infinity-tnc-divi-modules' ),
-				'toggle_slug'     => 'button',
-			),
-			'button_url_new_window' => array(
-				'default'         => 'off',
-				'default_on_front'=> true,
-				'label'           => esc_html__( 'Url Opens', 'infinity-tnc-divi-modules' ),
-				'type'            => 'select',
-				'option_category' => 'configuration',
+			'social_network'     => array(
+				'label'              => esc_html__( 'Social Network', 'infinity-tnc-divi-modules' ),
+				'type'               => 'select',
+				'option_category'    => 'basic_option',
+				'class'              => '',
 				'options'         => array(
-					'off' => esc_html__( 'In The Same Window', 'infinity-tnc-divi-modules' ),
-					'on'  => esc_html__( 'In The New Tab', 'infinity-tnc-divi-modules' ),
+                    ''                   => esc_html__( 'Select a Network', 'infinity-tnc-divi-modules' ),
+					'facebook'           => esc_html__( 'Facebook', 'infinity-tnc-divi-modules' ),
+					'whatsApp'           => esc_html__( 'WhatsApp', 'infinity-tnc-divi-modules' ),
+                    'twitter'            => esc_html__( 'X', 'infinity-tnc-divi-modules' ),
+                    'youTube'            => esc_html__( 'YouTube', 'infinity-tnc-divi-modules' ),
+                    'instagram'          => esc_html__( 'Instagram', 'infinity-tnc-divi-modules' ),
+                    'weChat'             => esc_html__( 'WeChat', 'infinity-tnc-divi-modules' ),
+                    'tikTok'             => esc_html__( 'TikTok ', 'infinity-tnc-divi-modules' ),
+                    'telegram'           => esc_html__( 'Telegram ', 'infinity-tnc-divi-modules' ),
+                    'snapchat'           => esc_html__( 'Snapchat ', 'infinity-tnc-divi-modules' ),
+                    'kuaishou'           => esc_html__( 'Kuaishou ', 'infinity-tnc-divi-modules' ),
+                    'sinaweibo'         => esc_html__( 'Sina Weibo ', 'infinity-tnc-divi-modules' ),
+                    'qq'                 => esc_html__( 'QQ', 'infinity-tnc-divi-modules' ),
+                    'pinterest'          => esc_html__( 'Pinterest', 'infinity-tnc-divi-modules' ),
+                    'reddit'             => esc_html__( 'Reddit', 'infinity-tnc-divi-modules' ),
+                    'quora'              => esc_html__( 'Quora', 'infinity-tnc-divi-modules' ),
+                    'discord'            => esc_html__( 'Discord', 'infinity-tnc-divi-modules' ),
+                    'twitch'             => esc_html__( 'Twitch', 'infinity-tnc-divi-modules' ),
+                    'tumblr'             => esc_html__( 'Tumblr', 'infinity-tnc-divi-modules' ), 
+                    'bluesky'            => esc_html__( 'Bluesky', 'infinity-tnc-divi-modules' ),
+                    'threads'            => esc_html__( 'Threads', 'infinity-tnc-divi-modules' ),
+
 				),
-				'toggle_slug'     => 'button',
-				'description'     => esc_html__( 'Choose whether your link opens in a new window or not', 'infinity-tnc-divi-modules' ),
+				'description'        => esc_html__( 'Choose the social network', 'infinity-tnc-divi-modules' ),
+				'toggle_slug'        => 'main_content',
 			),
 		);
 	}
@@ -106,11 +90,7 @@ class SocialShareChild extends ET_Builder_Module {
 	 */
 	function get_advanced_fields_config() {
 		return array(
-			'button' => array(
-				'button' => array(
-					'label' => esc_html__( 'Button', 'infinity-tnc-divi-modules' ),
-				),
-			),
+			
 		);
 	}
 
@@ -126,38 +106,11 @@ class SocialShareChild extends ET_Builder_Module {
 	 * @return string module's rendered output
 	 */
 	function render( $attrs, $content = null, $render_slug ) {
-		// Module specific props added on $this->get_fields()
-		$title                 = $this->props['title'];
-		$subtitle              = $this->props['subtitle'];
-		$button_text           = $this->props['button_text'];
-		$button_url            = $this->props['button_url'];
-		$button_url_new_window = $this->props['button_url_new_window'];
-
-		// Design related props are added via $this->advanced_options['button']['button']
-		$button_custom         = $this->props['custom_button'];
-		$button_rel            = $this->props['button_rel'];
-		$button_use_icon       = $this->props['button_use_icon'];
-
-		// Render button
-		$button = $this->render_button( array(
-			'button_text'      => $button_text,
-			'button_url'       => $button_url,
-			'url_new_window'   => $button_url_new_window,
-			'button_custom'    => $button_custom,
-			'button_rel'       => $button_rel,
-			'custom_icon'      => $button_use_icon,
-		) );
+        
 
 		// Render module content
 		return sprintf(
-			'<h2 class="dicm-title">%1$s</h2>
-			<h3 class="dicm-subtitle">%2$s</h3>
-			<div class="dicm-content">%3$s</div>
-			%4$s',
-			esc_html( $title ),
-			esc_html( $subtitle ),
-			et_sanitized_previously( $this->content ),
-			et_sanitized_previously( $button )
+			'<li>hello</li>',
 		);
 	}
 }
