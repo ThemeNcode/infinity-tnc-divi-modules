@@ -139,18 +139,22 @@ class INFTNC_TypeWriter extends ET_Builder_Module {
 			'before_text' => array(
 				'label'           => esc_html__( 'Before Text', 'infinity-tnc-divi-modules' ),
 				'type'            => 'text',
+				'default'		  => esc_html__( 'I am a Heading with', 'infinity-tnc-divi-modules' ),
 				'toggle_slug'     => 'main_content',
 			),
 
             'typing_text' => array(
 				'label'           => esc_html__( 'Typing Text', 'infinity-tnc-divi-modules' ),
 				'type'            => 'text',
+				'default'		  => esc_html__( 'Typewriter|Typing Animation', 'infinity-tnc-divi-modules' ),
+				'description'	  => esc_html__( 'Use | to separate multiple values. Ex. Text 1 | Text 2 | Text 3', 'infinity-tnc-divi-modules' ),
 				'toggle_slug'     => 'main_content',
 			),
 
             'after_text' => array(
 				'label'           => esc_html__( 'After Text', 'infinity-tnc-divi-modules' ),
 				'type'            => 'text',
+				'default'		  => esc_html__( 'Effect', 'infinity-tnc-divi-modules' ),
 				'toggle_slug'     => 'main_content',
 			),
 
