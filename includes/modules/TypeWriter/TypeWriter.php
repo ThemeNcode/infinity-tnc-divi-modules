@@ -12,6 +12,7 @@ class INFTNC_TypeWriter extends ET_Builder_Module {
 	);
 
 	public function init() {
+
 		$this->name = esc_html__( 'Typewriter - Infinity TNC', 'infinity-tnc-divi-modules' );
         $this->settings_modal_toggles  = array(
 			'general'  => array(
@@ -24,6 +25,96 @@ class INFTNC_TypeWriter extends ET_Builder_Module {
 			),
 		);
 	}
+	
+	/**
+	 * Module's advanced fields configuration
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return array
+	 */
+	function get_advanced_fields_config() { 
+		return array(
+			'fonts'           => array(
+				'title' => array(
+					'label'          => esc_html__( 'Main Title','infinity-tnc-divi-modules' ),
+					'css'            => array(
+						'main' => [
+							'%%order_class%% h1.inftnc_typewriter_main_title',
+							'%%order_class%% h2.inftnc_typewriter_main_title',
+							'%%order_class%% h3.inftnc_typewriter_main_title',
+							'%%order_class%% h4.inftnc_typewriter_main_title',
+							'%%order_class%% h5.inftnc_typewriter_main_title',
+							'%%order_class%% h6.inftnc_typewriter_main_title',
+						],
+					),
+
+					'font_size'      => array(
+						'default' => '30px',
+					),
+
+					'line_height'    => array(
+						'default' => '1em',
+					),
+
+					'letter_spacing' => array(
+						'default' => '0px',
+					),
+					'header_level'   => array(
+						'default' => 'h1',
+						'label'   => esc_html__( 'Heading Level', 'infinity-tnc-divi-modules' ),
+					),
+				),
+
+				'before_title_text' => array(
+					'label'          => esc_html__( 'Before Title','infinity-tnc-divi-modules' ),
+					'css'            => array(
+						'main' => [
+							'%%order_class%% .inftnc_before_text',
+						],
+					),
+
+					'font_size'      => array(
+						'default' => '30px',
+					),
+
+					'line_height'    => array(
+						'default' => '1em',
+					),
+
+					'text_alignment'	  => false,
+
+					'letter_spacing' => array(
+						'default' => '0px',
+					),
+
+				),
+
+				'after_title_text' => array (
+					'label'          => esc_html__( 'After Title','infinity-tnc-divi-modules' ),
+					'css'            => array(
+						'main' => [
+							'%%order_class%% .inftnc_after_text',
+						],
+					),
+
+					'font_size'      => array(
+						'default' => '30px',
+					),
+
+					'line_height'    => array(
+						'default' => '1em',
+					),
+
+					'letter_spacing' => array(
+						'default' => '0px',
+					),
+				),
+			 ),
+
+			'text'     => false,
+		);
+   }
 
 	public function get_fields() {
 
@@ -115,7 +206,7 @@ class INFTNC_TypeWriter extends ET_Builder_Module {
 		$output = sprintf('
 
             <div class="inftnc_typewriter_wrapper">
-                <h1>
+                <h1 class="inftnc_typewriter_main_title">
                     <span class="inftnc_before_text">%1$s</span>%3$s<span class="inftnc_after_text">%2$s</span>
                 </h1>
             <div>
