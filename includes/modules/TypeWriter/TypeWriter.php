@@ -157,12 +157,14 @@ class INFTNC_TypeWriter extends ET_Builder_Module {
             'typing_speed' => array(
 				'label'           => esc_html__( 'Typing Speed (ms)', 'infinity-tnc-divi-modules' ),
 				'type'            => 'text',
+				'default'		  => '75',
 				'toggle_slug'     => 'typing_options',
 			),
 
             'typing_backspeed' => array(
 				'label'           => esc_html__( 'Typing BackSpeed (ms)', 'infinity-tnc-divi-modules' ),
 				'type'            => 'text',
+				'default'		  => '75',
                 'description'     => esc_html__( 'The BackSpeed between deleting each character.', 'infinity-tnc-divi-modules' ),
 				'toggle_slug'     => 'typing_options',
 			),
@@ -171,6 +173,7 @@ class INFTNC_TypeWriter extends ET_Builder_Module {
 				'label'           => esc_html__( 'Pause Time (ms)', 'infinity-tnc-divi-modules' ),
                 'description'     => esc_html__( 'The pause duration after a text is typed.','infinity-tnc-divi-modules'),
 				'type'            => 'text',
+				'default'		  => '1500',
 				'toggle_slug'     => 'typing_options',
 			),
 
@@ -178,6 +181,7 @@ class INFTNC_TypeWriter extends ET_Builder_Module {
 				'label'           => esc_html__( 'Cursor', 'infinity-tnc-divi-modules' ),
                 'description'     => esc_html__( 'Use as the cursor.','infinity-tnc-divi-modules'),
 				'type'            => 'text',
+				'default'		  => '|',
 				'toggle_slug'     => 'typing_options',
 			),
 
@@ -210,13 +214,17 @@ class INFTNC_TypeWriter extends ET_Builder_Module {
            
         wp_enqueue_script('inftnc-typewriter-module');
 
+		( 'on' === $typing_loop ) ? ( $loop_vale = true ) : ( $loop_vale = false );
+
+		var_dump($loop_vale);
+
         $typing_text = sprintf('<span class="inftnc_typewriter_text" data-initial-text="%1$s" data-initial-speed="%2$s"data-initial-backspeed="%3$s" data-initial-pause="%4$s"data-initial-cursor="%5$s"data-initial-loop="%6$s"></span>',
             /* 01 */  $text,
             /* 02 */  $typing_speed,
             /* 03 */  $typing_backspped,
             /* 05 */  $typing_pause,
             /* 06 */  $typing_cursor,
-            /* 07 */  $typing_loop, 
+            /* 07 */  $loop_vale, 
          );
         
 		$output = sprintf('
