@@ -210,6 +210,7 @@ class INFTNC_TypeWriter extends ET_Builder_Module {
         $typing_pause           = $this->props['pause_for'];
         $typing_cursor          = $this->props['typing_cursor'];
         $typing_loop            = $this->props['typing_loop'];
+		$header_level           = $this->props['title_level'];
     
            
         wp_enqueue_script('inftnc-typewriter-module');
@@ -228,15 +229,16 @@ class INFTNC_TypeWriter extends ET_Builder_Module {
 		$output = sprintf('
 
             <div class="inftnc_typewriter_wrapper">
-                <h1 class="inftnc_typewriter_main_title">
+                <%4$s class="inftnc_typewriter_main_title">
                     <span class="inftnc_before_text">%1$s</span>%3$s<span class="inftnc_after_text">%2$s</span>
-                </h1>
+                </%4$s>
             <div>
 
         ',
             /* 01 */  $before_text,
             /* 02 */  $after_text,
             /* 03 */  $typing_text,
+			/* 04 */ et_pb_process_header_level( $header_level, 'h1' ),
         );
 
         return $output;

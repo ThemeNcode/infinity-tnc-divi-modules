@@ -1,0 +1,11 @@
+.inftnc_typewriter_wrapper span {
+    display: inline-block;
+}
+
+span.inftnc_before_text {
+    padding-right: 10px;
+}
+
+span.inftnc_after_text {
+    padding-left: 5px;
+}
