@@ -24,6 +24,22 @@ class INFTNC_TypeWriter extends ET_Builder_Module {
 				),
 			),
 		);
+
+		$this->custom_css_fields = array(
+			'main_title' => array(
+				'label'    => esc_html__( 'Main Title Text', 'infinity-tnc-divi-modules' ),
+				'selector' => '.inftnc_typewriter_main_title',
+			),
+			'before_text' => array(
+				'label'    => esc_html__( 'Before Title Text', 'infinity-tnc-divi-modules' ),
+				'selector' => '.inftnc_before_text',
+			),
+
+			'after_text' => array(
+				'label'    => esc_html__( 'After Title Text', 'infinity-tnc-divi-modules' ),
+				'selector' => '.inftnc_after_text',
+			),
+		);
 	}
 	
 	/**
