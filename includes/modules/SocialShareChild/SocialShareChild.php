@@ -9,8 +9,6 @@ class SocialShareChild extends ET_Builder_Module {
 	// Module item's attribute that will be used for module item label on modal
 	public $child_title_var          = 'social_network';
 
-	// If the attribute defined on $this->child_title_var is empty, this attribute will be used instead
-	public $child_title_fallback_var = 'subtitle';
 
 	// Full Visual Builder support
 	public $vb_support = 'on';
@@ -106,12 +104,29 @@ class SocialShareChild extends ET_Builder_Module {
 	 * @return string module's rendered output
 	 */
 	function render( $attrs, $content = null, $render_slug ) {
+
+        // Module classnames
+		$this->add_classname(
+			array(
+				'et_pb_social_icon',
+				'et_pb_social_network_link',
+			)
+		);
         
+        $this->remove_classname(
+			array(
+				$render_slug,
+				'et_pb_module',
+				'et_pb_section_video',
+				'et_pb_preload',
+				'et_pb_section_parallax',
+			)
+		);
 
 		// Render module content
-		return sprintf(
-			'<li>hello</li>',
-		);
+		$output = sprintf('<li>hello</li>');
+
+        return $output;
 	}
 }
 

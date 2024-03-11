@@ -60,8 +60,12 @@ class SocialShare extends ET_Builder_Module {
 	function render( $attrs, $content = null, $render_slug ) {
 		// Module specific props added on $this->get_fields()
 		// Render module content
+
+        // Remove automatically added classnames
+	
+
 		$output = sprintf(
-			'<div class="dicm-content">%1$s</div>',
+			'<ul class="inftnc_social_share">%1$s</ul>',
 			et_sanitized_previously( $this->content )
 		);
 
