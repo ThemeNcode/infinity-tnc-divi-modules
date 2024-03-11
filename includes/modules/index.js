@@ -7,8 +7,10 @@ import EmbedMap  from './EmbedMap/EmbedMap';
 import YoutubeEmbed from './YoutubeEmbed/YoutubeEmbed';
 import VimeoVideo from './VimeoVideo/VimeoVideo';
 import TypeWriter from './TypeWriter/TypeWriter';
+import SocialShare from './SocialShare/SocialShare';
+import SocialShareChild from './SocialShareChild/SocialShareChild';
 
-export default [HelloWorld,DualButtons,BreadCrumbs,HeadingGradient,StarRating,EmbedMap,YoutubeEmbed,VimeoVideo,TypeWriter];
+export default [HelloWorld,DualButtons,BreadCrumbs,HeadingGradient,StarRating,EmbedMap,YoutubeEmbed,VimeoVideo,TypeWriter,SocialShare,SocialShareChild];
 
 
 
