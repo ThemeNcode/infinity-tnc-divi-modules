@@ -194,6 +194,14 @@ class SocialShare extends ET_Builder_Module {
 		);
 	}
 
+	function before_render() {
+		global $inftnc_social_share_props;
+		$inftnc_social_share_props = array(
+			'button_layout'              => $this->props['button_layout'],
+			'columns'           		 => $this->props['columns'],
+		);
+	}
+
 	/**
 	 * Render module output
 	 *
@@ -215,8 +223,6 @@ class SocialShare extends ET_Builder_Module {
 		$share_alignment 		=  $this->props['share_alignment'];
 		$button_color			=  $this->props['button_color'];
 		$button_padding 	    =  $this->props['button_padding'];
-
-		
 
         // Remove automatically added classnames
 		$output = sprintf(
