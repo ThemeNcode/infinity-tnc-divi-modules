@@ -28,14 +28,18 @@ class SocialShare extends ET_Builder_Module {
 		$this->settings_modal_toggles  = array(
 			'general'  => array(
 				'toggles' => array(
-					'main_content' => esc_html__( 'Text', 'infinity-tnc-divi-modules' ),
+					'main_content' => esc_html__( 'General', 'infinity-tnc-divi-modules' ),
 				),
 			),
 			'advanced' => array(
 				'toggles' => array(
 					'layout'   => array(
 						'title' => esc_html__( 'Layout', 'inftnc-infinity-tnc-divi-modules' ),
-						'priority' => 50,
+						'priority' => 40,
+					),
+					'share_buton'	=> array(
+						'title'	=> esc_html__( 'Share Button',  'inftnc-infinity-tnc-divi-modules' ),
+						'priority' => 41,
 					),
 				),
 			),
@@ -51,7 +55,8 @@ class SocialShare extends ET_Builder_Module {
 	 */
 	function get_fields() {
 		return array(
-			'select' => array(
+
+			'button_layout' => array(
 				'label'           => esc_html__( 'Button Style and Layout', 'infinity-tnc-divi-modules' ),
 				'type'            => 'select',
 				'options'         => array(
@@ -62,6 +67,90 @@ class SocialShare extends ET_Builder_Module {
 				'toggle_slug'     => 'layout',
 				'tab_slug'        => 'advanced',
 			),
+
+			'button_shape' => array(
+				'label'           => esc_html__( 'Button Shape', 'infinity-tnc-divi-modules' ),
+				'type'            => 'select',
+				'options'         => array(
+					'button_square' 	 => esc_html__( 'Square', 'infinity-tnc-divi-modules' ),
+					'button_rounded'  	 => esc_html__( 'Rounded', 'infinity-tnc-divi-modules' ),
+					'button_circle'      => esc_html__( 'Circle', 'infinity-tnc-divi-modules' ),
+				),
+				'toggle_slug'     => 'layout',
+				'tab_slug'        => 'advanced',
+			),
+
+			'columns' => array(
+				'label'           => esc_html__( 'Number of Columns', 'infinity-tnc-divi-modules' ),
+				'type'            => 'select',
+				'options'         => array(
+					'column_one' 		=> esc_html__( '1', 'infinity-tnc-divi-modules' ),
+					'column_two'  	 	=> esc_html__( '2', 'infinity-tnc-divi-modules' ),
+					'column_three'      => esc_html__( '3', 'infinity-tnc-divi-modules' ),
+					'column_four'       => esc_html__( '4', 'infinity-tnc-divi-modules' ),
+					'column_five'       => esc_html__( '5', 'infinity-tnc-divi-modules' ),
+					'column_six'        => esc_html__( '6', 'infinity-tnc-divi-modules' ),
+				),
+				'mobile_options'     => 'true',
+				'toggle_slug'        => 'layout',
+				'tab_slug'           => 'advanced',
+			 ),
+
+			 'columns_gap' => array(
+				'label'           => esc_html__( 'Columns Gap', 'inftnc-infinity-tnc-divi-modules' ),
+				'type'            => 'range',
+				'tab_slug'        => 'advanced',
+				'toggle_slug'     => 'layout',
+				'allowed_units'    => array( '%', 'em', 'rem', 'px', 'cm', 'mm', 'in', 'pt', 'pc', 'ex', 'vh', 'vw' ),
+				'default_unit'     => 'px',
+                'default'         => 0,
+                'range_settings' => array(
+					'min'  => 0,
+					'max'  => 100,
+					'step' => 1,
+				),
+			),
+
+			'row_gap' => array(
+				'label'           => esc_html__( 'Row Gap', 'inftnc-infinity-tnc-divi-modules' ),
+				'type'            => 'range',
+				'tab_slug'        => 'advanced',
+				'toggle_slug'     => 'layout',
+				'allowed_units'    => array( '%', 'em', 'rem', 'px', 'cm', 'mm', 'in', 'pt', 'pc', 'ex', 'vh', 'vw' ),
+                'default'         => 0,
+				'default_unit'     => 'px',
+                'range_settings' => array(
+					'min'  => 0,
+					'max'  => 100,
+					'step' => 1,
+				),
+			 ),
+
+			 'share_alignment' => array(
+				'label'           => esc_html__( 'Alignment', 'inftnc-infinity-tnc-divi-modules' ),
+				'type'            => 'text_align',
+				'option_category' => 'configuration',
+				'options'         => et_builder_get_text_orientation_options( array( 'justified' ) ),
+				'description'     => esc_html__( 'Align your Share Button to the left, right or center of the module.', 'inftnc-infinity-tnc-divi-modules' ),
+				'mobile_options'  => true,
+				'tab_slug'        => 'advanced',
+				'toggle_slug'     => 'layout',
+			),
+
+			'button_color' => array(
+				'label'           => esc_html__( 'Button Color', 'dicm-divi-custom-modules' ),
+				'type'            => 'color-alpha',
+				'toggle_slug'     => 'share_buton',
+				'tab_slug'        => 'advanced',
+			),
+
+			'button_padding' => array(
+				'label'           => esc_html__( 'Button Padding', 'nftnc-infinity-tnc-divi-modules' ),
+				'type'            => 'custom_margin',
+				'tab_slug'        => 'advanced',
+				'toggle_slug'     => 'share_buton',
+			),
+
 		);
 	}
 
@@ -74,10 +163,36 @@ class SocialShare extends ET_Builder_Module {
 	 */
 	function get_advanced_fields_config() { 
 		return array(
-			'text'	=> false,
+			'fonts'           => array( 
+				'share_button_text' => array(
+					'label'          => esc_html__( 'Share Button','infinity-tnc-divi-modules' ),
+					'css'            => array(
+						'main' => [
+							'%%order_class%%',
+						],
+					),
+	
+					'font_size'      => array(
+						'default' => '30px',
+					),
+	
+					'line_height'    => array(
+						'default' => '1em',
+					),
+	
+					'text_alignment'	  => false,
+	
+					'letter_spacing' => array(
+						'default' => '0px',
+					),
+	
+				),
+			),
+			'text'	     		 => false,
+			'link_options'       => false,
+			'filters'            => false,
 		);
-		
-}
+	}
 
 	/**
 	 * Render module output

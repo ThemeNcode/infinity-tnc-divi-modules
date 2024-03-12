@@ -29,7 +29,7 @@ class SocialShareChild extends ET_Builder_Module {
             ),
             'advanced' => array(
                 'toggles' => array(
-                    'icon' => esc_html__( 'Icon', 'infinity-tnc-divi-modules' ),
+                    'share_button_child' => esc_html__( 'Share Button', 'infinity-tnc-divi-modules' ),
                 ),
             ),
         );
@@ -43,6 +43,7 @@ class SocialShareChild extends ET_Builder_Module {
 	 * @return array
 	 */
 	function get_fields() {
+		
 		return array(
 			'social_share'     => array(
 				'label'              => esc_html__( 'Social Network', 'infinity-tnc-divi-modules' ),
@@ -77,20 +78,60 @@ class SocialShareChild extends ET_Builder_Module {
 				'toggle_slug'        => 'main_content',
 			),
 
+			'button_color_child' => array(
+				'label'           => esc_html__( 'Button Color', 'dicm-divi-custom-modules' ),
+				'type'            => 'color-alpha',
+				'toggle_slug'     => 'share_button_child',
+				'tab_slug'        => 'advanced',
+			),
+
+			'button_padding_child' => array(
+				'label'           => esc_html__( 'Button Padding', 'nftnc-infinity-tnc-divi-modules' ),
+				'type'            => 'custom_margin',
+				'tab_slug'        => 'advanced',
+				'toggle_slug'     => 'share_button_child',
+			),
 			
 		);
 	}
 
-	/**
+/**
 	 * Module's advanced fields configuration
 	 *
 	 * @since 1.0.0
 	 *
 	 * @return array
 	 */
-	function get_advanced_fields_config() {
+	function get_advanced_fields_config() { 
 		return array(
-			
+			'fonts'           => array( 
+				'share_button_text_child' => array(
+					'label'          => esc_html__( 'Share Button','infinity-tnc-divi-modules' ),
+					'css'            => array(
+						'main' => [
+							'%%order_class%%',
+						],
+					),
+	
+					'font_size'      => array(
+						'default' => '30px',
+					),
+	
+					'line_height'    => array(
+						'default' => '1em',
+					),
+	
+					'text_alignment'	  => false,
+	
+					'letter_spacing' => array(
+						'default' => '0px',
+					),
+	
+				),
+			),
+			'text'	     		 => false,
+			'link_options'       => false,
+			'filters'            => false,
 		);
 	}
 
