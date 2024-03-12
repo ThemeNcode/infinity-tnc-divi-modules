@@ -206,12 +206,19 @@ class SocialShare extends ET_Builder_Module {
 	 * @return string module's rendered output
 	 */
 	function render( $attrs, $content = null, $render_slug ) {
-		// Module specific props added on $this->get_fields()
-		// Render module content
+			
+		$social_layout    		=  $this->props['button_layout'];
+		$social_shape     		=  $this->props['button_shape'];
+		$social_columns   		=  $this->props['columns'];
+		$columns_gap 	 		=  $this->props['columns_gap'];
+		$row_gap 	 			=  $this->props['row_gap'];
+		$share_alignment 		=  $this->props['share_alignment'];
+		$button_color			=  $this->props['button_color'];
+		$button_padding 	    =  $this->props['button_padding'];
+
+		
 
         // Remove automatically added classnames
-	
-
 		$output = sprintf(
 			'<div class="inftnc_social_share_wrapper">%1$s</div>',
 			et_sanitized_previously( $this->content )
