@@ -7,7 +7,7 @@ class SocialShareChild extends ET_Builder_Module {
 	public $type                     = 'child';
 
 	// Module item's attribute that will be used for module item label on modal
-	public $child_title_var          = 'social_network';
+	public $child_title_var          = 'social_share';
 
 
 	// Full Visual Builder support
@@ -15,9 +15,9 @@ class SocialShareChild extends ET_Builder_Module {
 
 	function init() {
 		// Module name
-		$this->name             = esc_html__( 'Social Network', 'infinity-tnc-divi-modules' );
-        $this->advanced_setting_title_text = esc_html__( 'New Social Network', 'infinity-tnc-divi-modules' );
-		$this->settings_text               = esc_html__( 'Social Network Settings', 'infinity-tnc-divi-modules' );
+		$this->name             				= esc_html__( 'Social Network', 'infinity-tnc-divi-modules' );
+        $this->advanced_setting_title_text 		= esc_html__( 'New Social Network', 'infinity-tnc-divi-modules' );
+		$this->settings_text               		= esc_html__( 'Social Network Settings', 'infinity-tnc-divi-modules' );
 
 
 		// Toggle settings
@@ -44,7 +44,7 @@ class SocialShareChild extends ET_Builder_Module {
 	 */
 	function get_fields() {
 		return array(
-			'social_network'     => array(
+			'social_share'     => array(
 				'label'              => esc_html__( 'Social Network', 'infinity-tnc-divi-modules' ),
 				'type'               => 'select',
 				'option_category'    => 'basic_option',
@@ -61,7 +61,7 @@ class SocialShareChild extends ET_Builder_Module {
                     'telegram'           => esc_html__( 'Telegram ', 'infinity-tnc-divi-modules' ),
                     'snapchat'           => esc_html__( 'Snapchat ', 'infinity-tnc-divi-modules' ),
                     'kuaishou'           => esc_html__( 'Kuaishou ', 'infinity-tnc-divi-modules' ),
-                    'sinaweibo'         => esc_html__( 'Sina Weibo ', 'infinity-tnc-divi-modules' ),
+                    'sinaweibo'          => esc_html__( 'Sina Weibo ', 'infinity-tnc-divi-modules' ),
                     'qq'                 => esc_html__( 'QQ', 'infinity-tnc-divi-modules' ),
                     'pinterest'          => esc_html__( 'Pinterest', 'infinity-tnc-divi-modules' ),
                     'reddit'             => esc_html__( 'Reddit', 'infinity-tnc-divi-modules' ),
@@ -76,6 +76,8 @@ class SocialShareChild extends ET_Builder_Module {
 				'description'        => esc_html__( 'Choose the social network', 'infinity-tnc-divi-modules' ),
 				'toggle_slug'        => 'main_content',
 			),
+
+			
 		);
 	}
 
@@ -105,14 +107,16 @@ class SocialShareChild extends ET_Builder_Module {
 	 */
 	function render( $attrs, $content = null, $render_slug ) {
 
+		$social_share = $this->props['social_share'];
+
         // Module classnames
 		$this->add_classname(
 			array(
-				'et_pb_social_icon',
-				'et_pb_social_network_link',
+				'inftnc_social_share_icon',
+				'inftnc_social_share_button',
 			)
 		);
-        
+		// Remove Module Class Name
         $this->remove_classname(
 			array(
 				$render_slug,
@@ -123,8 +127,29 @@ class SocialShareChild extends ET_Builder_Module {
 			)
 		);
 
+
+	    // Render social share button 
+
+		if( 'facebook'  ===  $social_share  ) {
+
+			$share_button = sprintf('
+			
+				
+			',
+		
+		   );
+
+		} else {
+
+		}
+
+
 		// Render module content
-		$output = sprintf('<li>hello</li>');
+		$output = sprintf('<div class="inftnc_share_button"> 
+					%1$s
+				</div>',
+				$share_button
+			);
 
         return $output;
 	}

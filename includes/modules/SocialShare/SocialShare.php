@@ -18,7 +18,7 @@ class SocialShare extends ET_Builder_Module {
 	function init() {
 		// Module name
 		$this->name                    = esc_html__( 'Social Share', 'infinity-tnc-divi-modules' );
-        $this->child_item_text = esc_html__( 'Social Network', 'et_builder' );
+        $this->child_item_text 		   = esc_html__( 'Social Network', 'et_builder' );
 
 		// Module Icon
 		// Load customized svg icon and use it on builder as module icon. If you don't have svg icon, you can use
@@ -29,6 +29,14 @@ class SocialShare extends ET_Builder_Module {
 			'general'  => array(
 				'toggles' => array(
 					'main_content' => esc_html__( 'Text', 'infinity-tnc-divi-modules' ),
+				),
+			),
+			'advanced' => array(
+				'toggles' => array(
+					'layout'   => array(
+						'title' => esc_html__( 'Layout', 'inftnc-infinity-tnc-divi-modules' ),
+						'priority' => 50,
+					),
 				),
 			),
 		);
@@ -43,8 +51,33 @@ class SocialShare extends ET_Builder_Module {
 	 */
 	function get_fields() {
 		return array(
+			'select' => array(
+				'label'           => esc_html__( 'Button Style and Layout', 'infinity-tnc-divi-modules' ),
+				'type'            => 'select',
+				'options'         => array(
+					'icon_with_text' => esc_html__( 'Icon With Text', 'infinity-tnc-divi-modules' ),
+					'only_icon'  	 => esc_html__( 'Only Icon', 'infinity-tnc-divi-modules' ),
+					'only_text'      => esc_html__( 'Only Text', 'infinity-tnc-divi-modules' ),
+				),
+				'toggle_slug'     => 'layout',
+				'tab_slug'        => 'advanced',
+			),
 		);
 	}
+
+	/**
+	 * Module's advanced fields configuration
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return array
+	 */
+	function get_advanced_fields_config() { 
+		return array(
+			'text'	=> false,
+		);
+		
+}
 
 	/**
 	 * Render module output
@@ -65,7 +98,7 @@ class SocialShare extends ET_Builder_Module {
 	
 
 		$output = sprintf(
-			'<ul class="inftnc_social_share">%1$s</ul>',
+			'<div class="inftnc_social_share_wrapper">%1$s</div>',
 			et_sanitized_previously( $this->content )
 		);
 
