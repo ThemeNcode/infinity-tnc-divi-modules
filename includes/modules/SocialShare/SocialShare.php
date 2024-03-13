@@ -138,18 +138,27 @@ class SocialShare extends ET_Builder_Module {
 			),
 
 			'button_color' => array(
-				'label'           => esc_html__( 'Button Color', 'dicm-divi-custom-modules' ),
+				'label'           => esc_html__( 'Button Color', 'infinity-tnc-divi-modules' ),
 				'type'            => 'color-alpha',
 				'toggle_slug'     => 'share_buton',
 				'tab_slug'        => 'advanced',
 			),
 
 			'button_padding' => array(
-				'label'           => esc_html__( 'Button Padding', 'nftnc-infinity-tnc-divi-modules' ),
+				'label'           => esc_html__( 'Button Padding', 'infinity-tnc-divi-modules' ),
 				'type'            => 'custom_margin',
 				'tab_slug'        => 'advanced',
 				'toggle_slug'     => 'share_buton',
 			),
+
+			// 'select_fonticon' => array(
+			// 	'label'               => esc_html__( 'Select Font Icon', 'et_builder' ),
+			// 	'type'                => 'et_font_icon_select',
+			// 	'renderer'            => 'et_pb_get_font_icon_list',
+			// 	'renderer_with_field' => true,
+			// 	'tab_slug'            => 'advanced',
+			// 	'toggle_slug'         => 'share_buton',
+			// ),
 
 		);
 	}

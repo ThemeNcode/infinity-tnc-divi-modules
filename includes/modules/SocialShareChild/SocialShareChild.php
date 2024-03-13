@@ -172,18 +172,29 @@ class SocialShareChild extends ET_Builder_Module {
 
 	    // Render social share button 
 		if( 'facebook' === $social_share ) {
-			$post_title = get_the_title(); // Get the WordPress post title
-			$post_excerpt = get_the_excerpt(); // Get the WordPress post excerpt
-			
+
+			$post_title   = get_the_title(); // Get the WordPress post title
 			$share_button = sprintf('
 				<div class="inftnc_share_button_inner">
-					<a href="https://www.facebook.com/sharer/sharer.php?u=%s&amp;t=%s&amp;quote=%s">
-						Share on Facebook
+					<a class="inftnc_share_link inftnc_fb_share_link" href="%1$s">
+							%2$s
+							%3$s
+							%4$s
 					</a>
 				</div>',
-				urlencode(get_permalink()),
-				urlencode($post_title),
-				urlencode($post_excerpt)
+			/* 01 */ 'https://www.facebook.com/sharer/sharer.php?u='. urlencode(get_permalink()) .'&amp;t='.urlencode($post_title).'',
+			/* 02 */ 'icon_with_text' === $social_layout ? sprintf('
+						<span class="inftnc_fb_text"> Share On Facebook</span>
+						<span class="inftnc_fb_icon et-pb-icon">&#xe093;</span>
+					'
+					) : '', 
+			/* 03 */ 'only_icon'  === $social_layout ? sprintf('
+						<span class="inftnc_fb_icon et-pb-icon">&#xe093;</span>
+					') : '',
+			
+		    /*04 */  'only_text'  === $social_layout ? sprintf('
+						<span class="inftnc_fb_text"> Share On Facebook</span>
+					 ') : '',
 			);
 		}
 
