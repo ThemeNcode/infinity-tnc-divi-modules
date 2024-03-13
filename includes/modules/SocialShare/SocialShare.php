@@ -483,8 +483,12 @@ class SocialShare extends ET_Builder_Module {
 					'selector'    => '%%order_class%% .inftnc_share_link',
 					'declaration' => sprintf(
 						'
-							border-radius:50%%;
-							padding:10px;
+						border-radius: 100px;
+						width: 45px;
+						height: 45px;
+						padding: 10px;
+						text-align:center;
+							
 						',
 						
 					),
