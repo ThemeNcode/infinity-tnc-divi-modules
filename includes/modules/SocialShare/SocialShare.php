@@ -527,6 +527,38 @@ class SocialShare extends ET_Builder_Module {
 				)
 			);
 		}
+
+		if ( '' !== $this->props['columns_gap'] ) {
+
+			ET_Builder_Element::set_style(
+				$render_slug,
+				array(
+					'selector'    => '%%order_class%% .inftnc_social_share_wrapper',
+					'declaration' => sprintf(
+						'
+							column-gap:%1$s;
+						',
+						$this->props['columns_gap']
+					),
+				)
+			);
+		}
+
+		if ( '' !== $this->props['row_gap'] ) {
+
+			ET_Builder_Element::set_style(
+				$render_slug,
+				array(
+					'selector'    => '%%order_class%% .inftnc_social_share_wrapper',
+					'declaration' => sprintf(
+						'
+							row-gap:%1$s;
+						',
+						$this->props['row_gap']
+					),
+				)
+			);
+		}
 		
         // Remove automatically added classnames
 		$output = sprintf(
