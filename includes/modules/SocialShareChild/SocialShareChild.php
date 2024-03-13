@@ -79,14 +79,14 @@ class SocialShareChild extends ET_Builder_Module {
 			),
 
 			'button_color_child' => array(
-				'label'           => esc_html__( 'Button Color', 'dicm-divi-custom-modules' ),
+				'label'           => esc_html__( 'Button Color', 'infinity-tnc-divi-modules' ),
 				'type'            => 'color-alpha',
 				'toggle_slug'     => 'share_button_child',
 				'tab_slug'        => 'advanced',
 			),
 
 			'button_padding_child' => array(
-				'label'           => esc_html__( 'Button Padding', 'nftnc-infinity-tnc-divi-modules' ),
+				'label'           => esc_html__( 'Button Padding', 'infinity-tnc-divi-modules' ),
 				'type'            => 'custom_margin',
 				'tab_slug'        => 'advanced',
 				'toggle_slug'     => 'share_button_child',
@@ -147,7 +147,9 @@ class SocialShareChild extends ET_Builder_Module {
 	 * @return string module's rendered output
 	 */
 	function render( $attrs, $content = null, $render_slug ) {
+		global $inftnc_social_share_props;
 
+		$social_layout = $inftnc_social_share_props['button_layout'];
 		$social_share = $this->props['social_share'];
 
         // Module classnames
@@ -168,22 +170,22 @@ class SocialShareChild extends ET_Builder_Module {
 			)
 		);
 
-
 	    // Render social share button 
-
-		if( 'facebook'  ===  $social_share  ) {
-
-			$share_button = sprintf('
+		if( 'facebook' === $social_share ) {
+			$post_title = get_the_title(); // Get the WordPress post title
+			$post_excerpt = get_the_excerpt(); // Get the WordPress post excerpt
 			
-				
-			',
-		
-		   );
-
-		} else {
-
+			$share_button = sprintf('
+				<div class="inftnc_share_button_inner">
+					<a href="https://www.facebook.com/sharer/sharer.php?u=%s&amp;t=%s&amp;quote=%s">
+						Share on Facebook
+					</a>
+				</div>',
+				urlencode(get_permalink()),
+				urlencode($post_title),
+				urlencode($post_excerpt)
+			);
 		}
-
 
 		// Render module content
 		$output = sprintf('<div class="inftnc_share_button"> 
