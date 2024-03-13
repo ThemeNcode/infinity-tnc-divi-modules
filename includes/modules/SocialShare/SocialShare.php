@@ -485,7 +485,6 @@ class SocialShare extends ET_Builder_Module {
 						'
 						border-radius: 100px;
 						width: 45px;
-						height: 45px;
 						padding: 10px;
 						text-align:center;
 							

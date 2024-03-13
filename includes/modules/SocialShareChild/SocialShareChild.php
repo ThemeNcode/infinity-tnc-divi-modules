@@ -224,7 +224,7 @@ class SocialShareChild extends ET_Builder_Module {
 			/* 01 */ 'https://www.facebook.com/sharer/sharer.php?u='. urlencode(get_permalink()) .'&amp;t='.urlencode($post_title).'',
 			/* 02 */ 'icon_with_text' === $social_layout ? sprintf('
 						<span class="inftnc_fb_text"> Share On Facebook</span>
-						<span class="inftnc_fb_icon et-pb-icon">&#xe093;</span>
+						<span class="inftnc_fb_icon et-pb-icon">&#xe094;</span>
 					'
 					) : '', 
 			/* 03 */ 'only_icon'  === $social_layout ? sprintf('
