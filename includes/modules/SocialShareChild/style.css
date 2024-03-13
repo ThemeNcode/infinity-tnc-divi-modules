@@ -11,3 +11,11 @@
     color:#ffffff;
 }
 
+.inftnc_social_share_button .et_pb_module_inner {
+        display: inline-block !important;
+} 
+
+.inftnc_social_share_button  {
+    display: inline-block !important;
+}
+
