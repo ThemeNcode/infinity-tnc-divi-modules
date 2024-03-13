@@ -88,7 +88,9 @@ class SocialShare extends ET_Builder_Module {
 			'columns' => array(
 				'label'           => esc_html__( 'Number of Columns', 'infinity-tnc-divi-modules' ),
 				'type'            => 'select',
+				'deafult'		  => 'auto',
 				'options'         => array(
+					'column_auto' 		=> esc_html__( 'Auto', 'infinity-tnc-divi-modules' ),
 					'column_one' 		=> esc_html__( '1', 'infinity-tnc-divi-modules' ),
 					'column_two'  	 	=> esc_html__( '2', 'infinity-tnc-divi-modules' ),
 					'column_three'      => esc_html__( '3', 'infinity-tnc-divi-modules' ),
@@ -231,7 +233,6 @@ class SocialShare extends ET_Builder_Module {
 		global $inftnc_social_share_props;
 		$inftnc_social_share_props = array(
 			'button_layout'              => $this->props['button_layout'],
-			'columns'           		 => $this->props['columns'],
 		);
 	}
 
@@ -257,15 +258,19 @@ class SocialShare extends ET_Builder_Module {
 		$button_color			=  $this->props['button_bg'];
 		$button_padding 	    =  $this->props['button_padding'];
 
-	    $button_data = 	explode("|", $this->props["button_padding"]);
-		$top = $button_data[0];
-		$right = $button_data[1];
-		$bottom = $button_data[2];
-		$left = $button_data[3];
+			var_dump($social_columns);
+		if( '' !== $this->props['button_padding'] ) {  
 
+			$button_data = 	explode("|", $this->props["button_padding"]);
+			$top = $button_data[0];
+			$right = $button_data[1];
+			$bottom = $button_data[2];
+			$left = $button_data[3];
+		}
+	
 		//Button Bg Color
 
-		if( '' !== $this->props['icon_color'] ) { 
+		if( '' !== $this->props['button_bg'] ) { 
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
@@ -330,6 +335,115 @@ class SocialShare extends ET_Builder_Module {
 			);
 		}
 
+		// Social Share Button Shape 
+
+		if( 'column_auto' === $social_columns ) {
+				ET_Builder_Element::set_style(
+					$render_slug,
+					array(
+						'selector'    => '%%order_class%% .inftnc_social_share_wrapper',
+						'declaration' => sprintf(
+							'
+								display:grid;
+								grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+							',
+							
+						),
+					)
+				);
+		 } else if ( 'column_one' === $social_columns )  {
+
+			ET_Builder_Element::set_style(
+				$render_slug,
+				array(
+					'selector'    => '%%order_class%% .inftnc_social_share_wrapper',
+					'declaration' => sprintf(
+						'
+							display:grid;
+							grid-template-columns:repeat(1, 1fr);
+						',
+						
+					),
+				)
+			);
+		} else if ( 'column_two' === $social_columns )  {
+
+			ET_Builder_Element::set_style(
+				$render_slug,
+				array(
+					'selector'    => '%%order_class%% .inftnc_social_share_wrapper',
+					'declaration' => sprintf(
+						'
+							display:grid;
+							grid-template-columns:repeat(2, 1fr);
+						',
+						
+					),
+				)
+			);
+		} else if ( 'column_three' === $social_columns )  {
+
+			ET_Builder_Element::set_style(
+				$render_slug,
+				array(
+					'selector'    => '%%order_class%% .inftnc_social_share_wrapper',
+					'declaration' => sprintf(
+						'
+							display:grid;
+							grid-template-columns:repeat(3, 1fr);
+						',
+						
+					),
+				)
+			);
+		} else if ( 'column_four' === $social_columns )  {
+
+			ET_Builder_Element::set_style(
+				$render_slug,
+				array(
+					'selector'    => '%%order_class%% .inftnc_social_share_wrapper',
+					'declaration' => sprintf(
+						'
+							display:grid;
+							grid-template-columns:repeat(4, 1fr);
+						',
+						
+					),
+				)
+			);
+		} else if ( 'column_five' === $social_columns )  {
+
+			ET_Builder_Element::set_style(
+				$render_slug,
+				array(
+					'selector'    => '%%order_class%% .inftnc_social_share_wrapper',
+					'declaration' => sprintf(
+						'
+							display:grid;
+							grid-template-columns:repeat(5, 1fr);
+						',
+						
+					),
+				)
+			);
+		} else if ( 'column_six' === $social_columns )  {
+
+			ET_Builder_Element::set_style(
+				$render_slug,
+				array(
+					'selector'    => '%%order_class%% .inftnc_social_share_wrapper',
+					'declaration' => sprintf(
+						'
+							display:grid;
+							grid-template-columns:repeat(6, 1fr);
+						',
+						
+					),
+				)
+			);
+		} 
+		
+		
 		
         // Remove automatically added classnames
 		$output = sprintf(

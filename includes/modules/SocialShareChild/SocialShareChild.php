@@ -112,8 +112,8 @@ class SocialShareChild extends ET_Builder_Module {
 				'tab_slug'        => 'advanced',
 				'toggle_slug'     => 'share_icon',
 				'allowed_units'    => array('px'),
-                'default'          => 16,
 				'default_on_front' => true,
+				'default'          => 16,
 				'default_unit'     => 'px',
                 'range_settings' => array(
 					'min'  => 0,
@@ -148,7 +148,7 @@ class SocialShareChild extends ET_Builder_Module {
 					),
 	
 					'line_height'    => array(
-						'default' => '1em',
+						'default' => '0em',
 					),
 	
 					'text_alignment'	  => false,
@@ -181,6 +181,15 @@ class SocialShareChild extends ET_Builder_Module {
 
 		$social_layout = $inftnc_social_share_props['button_layout'];
 		$social_share = $this->props['social_share'];
+
+		if( '' !== $this->props['button_padding_child'] ) {  
+			$button_data = 	explode("|", $this->props["button_padding_child"]);
+			$top = $button_data[0];
+			$right = $button_data[1];
+			$bottom = $button_data[2];
+			$left = $button_data[3];
+		}
+	
 
         // Module classnames
 		$this->add_classname(
@@ -225,6 +234,73 @@ class SocialShareChild extends ET_Builder_Module {
 		    /*04 */  'only_text'  === $social_layout ? sprintf('
 						<span class="inftnc_fb_text"> Share On Facebook</span>
 					 ') : '',
+			);
+		}
+
+		//Button Bg Color
+
+		if( '' !== $this->props['button_color_child'] ) { 
+			ET_Builder_Element::set_style(
+				$render_slug,
+				array(
+					'selector'    => '%%order_class%% .inftnc_share_link',
+					'declaration' => sprintf(
+						'
+							background-color:%1$s !important;
+						',
+						$this->props['button_color_child'],
+					),
+				)
+			);
+		}
+		
+		//Icon Color 
+		if( '' !== $this->props['icon_color_child'] ) {
+			ET_Builder_Element::set_style(
+				$render_slug,
+				array(
+					'selector'    => '%%order_class%% .inftnc_fb_icon.et-pb-icon',
+					'declaration' => sprintf(
+						'color: %1$s !important;',
+						$this->props['icon_color_child']
+					),
+				)
+			);
+		}
+		
+		//Icon Size 
+		if( '' !== $this->props['icon_size_child'] ) { 
+			ET_Builder_Element::set_style(
+				$render_slug,
+				array(
+					'selector'    => '%%order_class%% .inftnc_fb_icon.et-pb-icon',
+					'declaration' => sprintf(
+						'
+							font-size:%1$s !important;
+						',
+						$this->props['icon_size_child'],
+					),
+				)
+			);
+		}
+
+		//Share button padding 
+
+		if( '' !== $this->props['button_padding_child'] ) { 
+			ET_Builder_Element::set_style(
+				$render_slug,
+				array(
+					'selector'    => '%%order_class%% .inftnc_share_link',
+					'declaration' => sprintf(
+						'
+							padding:%1$s %2$s %3$s %4$s !important;
+						',
+						$top,
+						$right,
+						$bottom,
+						$left
+					),
+				)
 			);
 		}
 
