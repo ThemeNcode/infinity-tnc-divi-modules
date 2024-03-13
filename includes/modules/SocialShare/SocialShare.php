@@ -258,7 +258,7 @@ class SocialShare extends ET_Builder_Module {
 		$button_color			=  $this->props['button_bg'];
 		$button_padding 	    =  $this->props['button_padding'];
 
-			var_dump($social_columns);
+		
 		if( '' !== $this->props['button_padding'] ) {  
 
 			$button_data = 	explode("|", $this->props["button_padding"]);
@@ -290,7 +290,7 @@ class SocialShare extends ET_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .inftnc_fb_icon.et-pb-icon',
+					'selector'    => '%%order_class%% .inftnc_social_icon.et-pb-icon ',
 					'declaration' => sprintf(
 						'color: %1$s;',
 						$this->props['icon_color']
@@ -304,7 +304,7 @@ class SocialShare extends ET_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .inftnc_fb_icon.et-pb-icon',
+					'selector'    => '%%order_class%% .inftnc_social_icon.et-pb-icon ',
 					'declaration' => sprintf(
 						'
 							font-size:%1$s;
@@ -335,7 +335,7 @@ class SocialShare extends ET_Builder_Module {
 			);
 		}
 
-		// Social Share Button Shape 
+		// Social Share Button column
 
 		if( 'column_auto' === $social_columns ) {
 				ET_Builder_Element::set_style(
@@ -442,8 +442,88 @@ class SocialShare extends ET_Builder_Module {
 				)
 			);
 		} 
-		
-		
+
+		// Social Share button shape 
+
+		if ('button_square' === $this->props['button_shape']) {
+
+			ET_Builder_Element::set_style(
+				$render_slug,
+				array(
+					'selector'    => '%%order_class%% .inftnc_share_link',
+					'declaration' => sprintf(
+						'
+							border-radius:0px;
+						',
+						
+					),
+				)
+			);
+		}
+		if ('button_rounded' === $this->props['button_shape']) {
+			ET_Builder_Element::set_style(
+				$render_slug,
+				array(
+					'selector'    => '%%order_class%% .inftnc_share_link',
+					'declaration' => sprintf(
+						'
+							border-radius:10px;
+						',
+						
+					),
+				)
+			);
+
+		}
+		if ( 'only_icon' === $this->props['button_layout'] && 'button_circle' === $this->props['button_shape']) {
+
+			ET_Builder_Element::set_style(
+				$render_slug,
+				array(
+					'selector'    => '%%order_class%% .inftnc_share_link',
+					'declaration' => sprintf(
+						'
+							border-radius:50%%;
+							padding:10px;
+						',
+						
+					),
+				)
+			);
+		}
+
+		if ( 'only_text' === $this->props['button_layout'] && 'button_circle' === $this->props['button_shape']) {
+
+			ET_Builder_Element::set_style(
+				$render_slug,
+				array(
+					'selector'    => '%%order_class%% .inftnc_share_link',
+					'declaration' => sprintf(
+						'
+							border-radius:30px;
+
+						',
+						
+					),
+				)
+			);
+		}
+
+		if ( 'icon_with_text' === $this->props['button_layout'] && 'button_circle' === $this->props['button_shape']) {
+
+			ET_Builder_Element::set_style(
+				$render_slug,
+				array(
+					'selector'    => '%%order_class%% .inftnc_share_link',
+					'declaration' => sprintf(
+						'
+							border-radius:30px;
+						',
+						
+					),
+				)
+			);
+		}
 		
         // Remove automatically added classnames
 		$output = sprintf(

@@ -228,7 +228,7 @@ class SocialShareChild extends ET_Builder_Module {
 					'
 					) : '', 
 			/* 03 */ 'only_icon'  === $social_layout ? sprintf('
-						<span class="inftnc_fb_icon et-pb-icon">&#xe093;</span>
+							<span class="inftnc_social_icon et-pb-icon">&#xe093;</span>
 					') : '',
 			
 		    /*04 */  'only_text'  === $social_layout ? sprintf('
@@ -259,7 +259,7 @@ class SocialShareChild extends ET_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .inftnc_fb_icon.et-pb-icon',
+					'selector'    => '%%order_class%% .inftnc_social_icon.et-pb-icon',
 					'declaration' => sprintf(
 						'color: %1$s !important;',
 						$this->props['icon_color_child']
@@ -273,7 +273,7 @@ class SocialShareChild extends ET_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .inftnc_fb_icon.et-pb-icon',
+					'selector'    => '%%order_class%% .inftnc_social_icon.et-pb-icon ',
 					'declaration' => sprintf(
 						'
 							font-size:%1$s !important;
