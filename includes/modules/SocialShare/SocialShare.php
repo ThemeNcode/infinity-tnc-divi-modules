@@ -41,6 +41,10 @@ class SocialShare extends ET_Builder_Module {
 						'title'	=> esc_html__( 'Share Button',  'inftnc-infinity-tnc-divi-modules' ),
 						'priority' => 41,
 					),
+					'share_icon'	=> array(
+						'title'	=> esc_html__( 'Share Button Icon',  'inftnc-infinity-tnc-divi-modules' ),
+						'priority' => 41,
+					),
 				),
 			),
 		);
@@ -59,6 +63,7 @@ class SocialShare extends ET_Builder_Module {
 			'button_layout' => array(
 				'label'           => esc_html__( 'Button Style and Layout', 'infinity-tnc-divi-modules' ),
 				'type'            => 'select',
+				'default'		  => 'icon_with_text',
 				'options'         => array(
 					'icon_with_text' => esc_html__( 'Icon With Text', 'infinity-tnc-divi-modules' ),
 					'only_icon'  	 => esc_html__( 'Only Icon', 'infinity-tnc-divi-modules' ),
@@ -137,12 +142,35 @@ class SocialShare extends ET_Builder_Module {
 				'toggle_slug'     => 'layout',
 			),
 
-			'button_color' => array(
-				'label'           => esc_html__( 'Button Color', 'infinity-tnc-divi-modules' ),
+			'button_bg' => array(
+				'label'           => esc_html__( 'Button Background Color', 'infinity-tnc-divi-modules' ),
 				'type'            => 'color-alpha',
 				'toggle_slug'     => 'share_buton',
 				'tab_slug'        => 'advanced',
 			),
+
+			'icon_color' => array(
+				'label'           => esc_html__( 'Icon Color', 'infinity-tnc-divi-modules' ),
+				'type'            => 'color-alpha',
+				'toggle_slug'     => 'share_icon',
+				'tab_slug'        => 'advanced',
+			),
+
+			'icon_size' => array(
+				'label'           => esc_html__( 'Icon Size', 'inftnc-infinity-tnc-divi-modules' ),
+				'type'            => 'range',
+				'tab_slug'        => 'advanced',
+				'toggle_slug'     => 'share_icon',
+				'allowed_units'    => array('px'),
+                'default'          => 16,
+				'default_on_front' => true,
+				'default_unit'     => 'px',
+                'range_settings' => array(
+					'min'  => 0,
+					'max'  => 100,
+					'step' => 1,
+				),
+			 ),
 
 			'button_padding' => array(
 				'label'           => esc_html__( 'Button Padding', 'infinity-tnc-divi-modules' ),
@@ -177,16 +205,12 @@ class SocialShare extends ET_Builder_Module {
 					'label'          => esc_html__( 'Share Button','infinity-tnc-divi-modules' ),
 					'css'            => array(
 						'main' => [
-							'%%order_class%%',
+							'%%order_class%% .inftnc_fb_text',
 						],
 					),
 	
 					'font_size'      => array(
-						'default' => '30px',
-					),
-	
-					'line_height'    => array(
-						'default' => '1em',
+						'default' => '16px',
 					),
 	
 					'text_alignment'	  => false,
@@ -230,9 +254,83 @@ class SocialShare extends ET_Builder_Module {
 		$columns_gap 	 		=  $this->props['columns_gap'];
 		$row_gap 	 			=  $this->props['row_gap'];
 		$share_alignment 		=  $this->props['share_alignment'];
-		$button_color			=  $this->props['button_color'];
+		$button_color			=  $this->props['button_bg'];
 		$button_padding 	    =  $this->props['button_padding'];
 
+	    $button_data = 	explode("|", $this->props["button_padding"]);
+		$top = $button_data[0];
+		$right = $button_data[1];
+		$bottom = $button_data[2];
+		$left = $button_data[3];
+
+		//Button Bg Color
+
+		if( '' !== $this->props['icon_color'] ) { 
+			ET_Builder_Element::set_style(
+				$render_slug,
+				array(
+					'selector'    => '%%order_class%% .inftnc_share_link',
+					'declaration' => sprintf(
+						'
+							background-color:%1$s;
+						',
+						$this->props['button_bg'],
+					),
+				)
+			);
+		}
+		
+		//Icon Color 
+		if( '' !== $this->props['icon_color'] ) {
+			ET_Builder_Element::set_style(
+				$render_slug,
+				array(
+					'selector'    => '%%order_class%% .inftnc_fb_icon.et-pb-icon',
+					'declaration' => sprintf(
+						'color: %1$s;',
+						$this->props['icon_color']
+					),
+				)
+			);
+		}
+		
+		//Icon Size 
+		if( '' !== $this->props['icon_size'] ) { 
+			ET_Builder_Element::set_style(
+				$render_slug,
+				array(
+					'selector'    => '%%order_class%% .inftnc_fb_icon.et-pb-icon',
+					'declaration' => sprintf(
+						'
+							font-size:%1$s;
+						',
+						$this->props['icon_size'],
+					),
+				)
+			);
+		}
+
+		//Share button padding 
+
+		if( '' !== $this->props['button_padding'] ) { 
+			ET_Builder_Element::set_style(
+				$render_slug,
+				array(
+					'selector'    => '%%order_class%% .inftnc_share_link',
+					'declaration' => sprintf(
+						'
+							padding:%1$s %2$s %3$s %4$s;
+						',
+						$top,
+						$right,
+						$bottom,
+						$left
+					),
+				)
+			);
+		}
+
+		
         // Remove automatically added classnames
 		$output = sprintf(
 			'<div class="inftnc_social_share_wrapper">%1$s</div>',
