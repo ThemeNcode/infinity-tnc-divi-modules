@@ -29,7 +29,14 @@ class SocialShareChild extends ET_Builder_Module {
             ),
             'advanced' => array(
                 'toggles' => array(
-                    'share_button_child' => esc_html__( 'Share Button', 'infinity-tnc-divi-modules' ),
+					'share_button_child'	=> array(
+						'title'	=> esc_html__( 'Share Button',  'inftnc-infinity-tnc-divi-modules' ),
+						'priority' => 41,
+					),
+					'share_icon'	=> array(
+						'title'	=> esc_html__( 'Share Button Icon',  'inftnc-infinity-tnc-divi-modules' ),
+						'priority' => 42,
+					),
                 ),
             ),
         );
@@ -79,7 +86,7 @@ class SocialShareChild extends ET_Builder_Module {
 			),
 
 			'button_color_child' => array(
-				'label'           => esc_html__( 'Button Color', 'infinity-tnc-divi-modules' ),
+				'label'           => esc_html__( 'Button Background Color', 'infinity-tnc-divi-modules' ),
 				'type'            => 'color-alpha',
 				'toggle_slug'     => 'share_button_child',
 				'tab_slug'        => 'advanced',
@@ -91,6 +98,29 @@ class SocialShareChild extends ET_Builder_Module {
 				'tab_slug'        => 'advanced',
 				'toggle_slug'     => 'share_button_child',
 			),
+
+			'icon_color_child' => array(
+				'label'           => esc_html__( 'Icon Color', 'infinity-tnc-divi-modules' ),
+				'type'            => 'color-alpha',
+				'toggle_slug'     => 'share_icon',
+				'tab_slug'        => 'advanced',
+			),
+
+			'icon_size_child' => array(
+				'label'           => esc_html__( 'Icon Size', 'inftnc-infinity-tnc-divi-modules' ),
+				'type'            => 'range',
+				'tab_slug'        => 'advanced',
+				'toggle_slug'     => 'share_icon',
+				'allowed_units'    => array('px'),
+                'default'          => 16,
+				'default_on_front' => true,
+				'default_unit'     => 'px',
+                'range_settings' => array(
+					'min'  => 0,
+					'max'  => 100,
+					'step' => 1,
+				),
+			 ),
 			
 		);
 	}
