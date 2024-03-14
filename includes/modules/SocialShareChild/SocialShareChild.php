@@ -121,6 +121,29 @@ class SocialShareChild extends ET_Builder_Module {
 					'step' => 1,
 				),
 			 ),
+
+			 'use_icon' => array(
+				'label'             => esc_html__( 'Use Icon', 'inftnc-infinity-tnc-divi-modules' ),
+				'type'              => 'yes_no_button',
+				'options'           => array(
+					'on'  => esc_html__( 'On', 'inftnc-infinity-tnc-divi-modules' ),
+					'off' => esc_html__( 'Off', 'inftnc-infinity-tnc-divi-modules' ),
+				),
+				'tab_slug'        => 'advanced',
+				'toggle_slug'     => 'share_icon',
+			 ),
+
+			 'use_fonticon' => array(
+				'label'               => esc_html__( 'Share Button Icon', 'et_builder' ),
+				'type'                => 'et_font_icon_select',
+				'renderer'            => 'et_pb_get_font_icon_list',
+				'renderer_with_field' => true,
+				'tab_slug'            => 'advanced',
+				'toggle_slug'         => 'share_icon',
+				'show_if'			  => array (
+					'use_icon'        => 'on',
+				)
+			),
 			
 		);
 	}

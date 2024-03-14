@@ -180,16 +180,6 @@ class SocialShare extends ET_Builder_Module {
 				'tab_slug'        => 'advanced',
 				'toggle_slug'     => 'share_buton',
 			),
-
-			// 'select_fonticon' => array(
-			// 	'label'               => esc_html__( 'Select Font Icon', 'et_builder' ),
-			// 	'type'                => 'et_font_icon_select',
-			// 	'renderer'            => 'et_pb_get_font_icon_list',
-			// 	'renderer_with_field' => true,
-			// 	'tab_slug'            => 'advanced',
-			// 	'toggle_slug'         => 'share_buton',
-			// ),
-
 		);
 	}
 
@@ -536,7 +526,7 @@ class SocialShare extends ET_Builder_Module {
 					'selector'    => '%%order_class%% .inftnc_social_share_wrapper',
 					'declaration' => sprintf(
 						'
-							column-gap:%1$s;
+							grid-column-gap:%1$s;
 						',
 						$this->props['columns_gap']
 					),
@@ -552,7 +542,7 @@ class SocialShare extends ET_Builder_Module {
 					'selector'    => '%%order_class%% .inftnc_social_share_wrapper',
 					'declaration' => sprintf(
 						'
-							row-gap:%1$s;
+							grid-row-gap:%1$s;
 						',
 						$this->props['row_gap']
 					),
