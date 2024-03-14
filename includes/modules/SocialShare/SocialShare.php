@@ -197,7 +197,7 @@ class SocialShare extends ET_Builder_Module {
 					'label'          => esc_html__( 'Share Button','infinity-tnc-divi-modules' ),
 					'css'            => array(
 						'main' => [
-							'%%order_class%% .inftnc_fb_text',
+							'%%order_class%% .inftnc_social_text',
 						],
 					),
 	

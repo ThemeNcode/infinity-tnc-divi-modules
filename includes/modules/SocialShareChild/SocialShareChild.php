@@ -60,9 +60,9 @@ class SocialShareChild extends ET_Builder_Module {
 				'options'         => array(
                     ''                   => esc_html__( 'Select a Network', 'infinity-tnc-divi-modules' ),
 					'facebook'           => esc_html__( 'Facebook', 'infinity-tnc-divi-modules' ),
-					'whatsApp'           => esc_html__( 'WhatsApp', 'infinity-tnc-divi-modules' ),
+					'whatsapp'           => esc_html__( 'WhatsApp', 'infinity-tnc-divi-modules' ),
                     'twitter'            => esc_html__( 'X', 'infinity-tnc-divi-modules' ),
-                    'youTube'            => esc_html__( 'YouTube', 'infinity-tnc-divi-modules' ),
+                    'youtube'            => esc_html__( 'YouTube', 'infinity-tnc-divi-modules' ),
                     'instagram'          => esc_html__( 'Instagram', 'infinity-tnc-divi-modules' ),
                     'weChat'             => esc_html__( 'WeChat', 'infinity-tnc-divi-modules' ),
                     'tikTok'             => esc_html__( 'TikTok ', 'infinity-tnc-divi-modules' ),
@@ -162,7 +162,7 @@ class SocialShareChild extends ET_Builder_Module {
 					'label'          => esc_html__( 'Share Button','infinity-tnc-divi-modules' ),
 					'css'            => array(
 						'main' => [
-							'%%order_class%%',
+							'%%order_class%% .inftnc_social_text',
 						],
 					),
 	
@@ -248,11 +248,48 @@ class SocialShareChild extends ET_Builder_Module {
 					</a>',
 			/* 01 */ 'https://www.facebook.com/sharer/sharer.php?u='. urlencode(get_permalink()) .'&amp;t='.urlencode($post_title).'',
 			/* 02 */ 'icon_with_text' === $social_layout ? sprintf('
-						<span class="inftnc_fb_text"> Share On Facebook</span>
+						<span class="inftnc_social_text inftnc_fb_text">%2$s</span>
 						%1$s
 					',
 					/* 01 */ $use_fonts ? sprintf('<span class="inftnc_social_custom_icon">%1$s</span>',
-					 esc_attr( et_pb_process_font_icon( $use_fonts ) )) : sprintf('<span class="inftnc_social_icon et-pb-icon">&#xe093;</span>'),  
+					 esc_attr( et_pb_process_font_icon( $use_fonts ) )) : sprintf('<span class="inftnc_social_icon et-pb-icon">&#xe093;</span>'), 
+					 esc_html__( ' Share On Facebook', 'infinity-tnc-divi-modules'),
+					) : '', 
+			/* 03 */ 'only_icon'  === $social_layout ? sprintf('
+							%1$s
+					',
+					/* 01 */ $use_fonts ? sprintf('<span class="inftnc_social_custom_icon">%1$s</span>',
+
+					esc_attr( et_pb_process_font_icon( $use_fonts ) )) : sprintf('<span class="inftnc_social_icon et-pb-icon">&#xe093;</span>'),
+
+					) : '',
+			
+		    /*04 */  'only_text'  === $social_layout ? sprintf('
+						<span class="inftnc_social_text inftnc_fb_text">%1$s</span>
+					 ',
+
+					 esc_html__( ' Share On Facebook', 'infinity-tnc-divi-modules'),
+
+					 ) : '',
+			);
+
+		} else if ( 'whatsapp' === $social_share ) {
+
+			$post_title   = get_the_title(); // Get the WordPress post title
+			$share_button = sprintf('
+					<a class="inftnc_share_link inftnc_whatsapp_share_link" href="%1$s">
+							%2$s
+							%3$s
+							%4$s
+					</a>',
+			/* 01 */ 'https://api.whatsapp.com/send?text=%'.urlencode( $post_title ).'% %'.urlencode( get_permalink() ).'%',
+			/* 02 */ 'icon_with_text' === $social_layout ? sprintf('
+						<span class="inftnc_social_text inftnc_fb_text">%2$s</span>
+						%1$s
+					',
+					/* 01 */ $use_fonts ? sprintf('<span class="inftnc_social_custom_icon">%1$s</span>',
+					 esc_attr( et_pb_process_font_icon( $use_fonts ) )) : sprintf('<span class="inftnc_social_icon et-pb-icon">&#xe093;</span>'), 
+					 esc_html__( 'Share On WhatsApp', 'infinity-tnc-divi-modules'), 
 					) : '', 
 			/* 03 */ 'only_icon'  === $social_layout ? sprintf('
 							%1$s
@@ -263,9 +300,13 @@ class SocialShareChild extends ET_Builder_Module {
 					) : '',
 			
 		    /*04 */  'only_text'  === $social_layout ? sprintf('
-						<span class="inftnc_fb_text"> Share On Facebook</span>
-					 ') : '',
+						<span class="inftnc_social_text inftnc_fb_text">%1$s</span>
+					 ',
+					 esc_html__( 'Share On WhatsApp', 'infinity-tnc-divi-modules'), 
+
+					 ) : '',
 			);
+
 		}
 
 		//Button Bg Color
