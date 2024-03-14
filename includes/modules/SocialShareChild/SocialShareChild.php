@@ -216,9 +216,9 @@ class SocialShareChild extends ET_Builder_Module {
 		
 		$order_class           = self::get_module_order_class( $render_slug );
 
-		var_dump($this->props['use_fonticon']);
+		wp_enqueue_script('inftnc-social-share');
 
-        // Module classnames
+	    // Module classnames
 		$this->add_classname(
 			array(
 				'inftnc_social_share_icon',

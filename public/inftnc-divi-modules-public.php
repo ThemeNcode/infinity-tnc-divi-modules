@@ -25,6 +25,7 @@ class Inftnc_divi_modules_public {
         wp_register_script('inftnc-rating-module',plugin_dir_url(__FILE__)."js/star-rating-svg.min.js",array('inftnc-rating'),'1.0.0',true);
         wp_register_script('inftnc-typewriter', plugin_dir_url( __FILE__)."js/typewriter-core.js", array('jquery'),'2.12.1',true);
         wp_register_script('inftnc-typewriter-module', plugin_dir_url( __FILE__)."js/inftnc-typewriter.js", array('inftnc-typewriter'),'1.0.0',true);
+        wp_register_script('inftnc-social-share', plugin_dir_url(__FILE__)."js/inftnc-social-share.js", array(),'1.0.0',true);
        
       
     }
