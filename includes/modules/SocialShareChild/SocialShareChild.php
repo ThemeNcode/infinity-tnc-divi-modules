@@ -204,6 +204,7 @@ class SocialShareChild extends ET_Builder_Module {
 
 		$social_layout = $inftnc_social_share_props['button_layout'];
 		$social_share = $this->props['social_share'];
+		$use_fonts     = $this->props['use_fonticon'];
 
 		if( '' !== $this->props['button_padding_child'] ) {  
 			$button_data = 	explode("|", $this->props["button_padding_child"]);
@@ -214,6 +215,8 @@ class SocialShareChild extends ET_Builder_Module {
 		}
 		
 		$order_class           = self::get_module_order_class( $render_slug );
+
+		var_dump($this->props['use_fonticon']);
 
         // Module classnames
 		$this->add_classname(
@@ -246,12 +249,18 @@ class SocialShareChild extends ET_Builder_Module {
 			/* 01 */ 'https://www.facebook.com/sharer/sharer.php?u='. urlencode(get_permalink()) .'&amp;t='.urlencode($post_title).'',
 			/* 02 */ 'icon_with_text' === $social_layout ? sprintf('
 						<span class="inftnc_fb_text"> Share On Facebook</span>
-						<span class="inftnc_social_icon et-pb-icon">&#xe093;</span>
-					'
+						%1$s
+					',
+					/* 01 */ $use_fonts ? sprintf('<span class="inftnc_social_custom_icon">%1$s</span>',
+					 esc_attr( et_pb_process_font_icon( $use_fonts ) )) : sprintf('<span class="inftnc_social_icon et-pb-icon">&#xe093;</span>'),  
 					) : '', 
 			/* 03 */ 'only_icon'  === $social_layout ? sprintf('
-							<span class="inftnc_social_icon et-pb-icon">&#xe093;</span>
-					') : '',
+							%1$s
+					',
+					/* 01 */ $use_fonts ? sprintf('<span class="inftnc_social_custom_icon">%1$s</span>',
+					esc_attr( et_pb_process_font_icon( $use_fonts ) )) : sprintf('<span class="inftnc_social_icon et-pb-icon">&#xe093;</span>'),
+
+					) : '',
 			
 		    /*04 */  'only_text'  === $social_layout ? sprintf('
 						<span class="inftnc_fb_text"> Share On Facebook</span>
