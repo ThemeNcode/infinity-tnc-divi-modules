@@ -62,16 +62,14 @@ class SocialShareChild extends ET_Builder_Module {
 					'facebook'           => esc_html__( 'Facebook', 'infinity-tnc-divi-modules' ),
 					'whatsapp'           => esc_html__( 'WhatsApp', 'infinity-tnc-divi-modules' ),
                     'twitter'            => esc_html__( 'X', 'infinity-tnc-divi-modules' ),
-                    'youtube'            => esc_html__( 'YouTube', 'infinity-tnc-divi-modules' ),
-                    'instagram'          => esc_html__( 'Instagram', 'infinity-tnc-divi-modules' ),
-                    'weChat'             => esc_html__( 'WeChat', 'infinity-tnc-divi-modules' ),
+					'pinterest'          => esc_html__( 'Pinterest', 'infinity-tnc-divi-modules' ),
+                    'wechat'             => esc_html__( 'WeChat', 'infinity-tnc-divi-modules' ),
                     'tikTok'             => esc_html__( 'TikTok ', 'infinity-tnc-divi-modules' ),
                     'telegram'           => esc_html__( 'Telegram ', 'infinity-tnc-divi-modules' ),
                     'snapchat'           => esc_html__( 'Snapchat ', 'infinity-tnc-divi-modules' ),
                     'kuaishou'           => esc_html__( 'Kuaishou ', 'infinity-tnc-divi-modules' ),
                     'sinaweibo'          => esc_html__( 'Sina Weibo ', 'infinity-tnc-divi-modules' ),
                     'qq'                 => esc_html__( 'QQ', 'infinity-tnc-divi-modules' ),
-                    'pinterest'          => esc_html__( 'Pinterest', 'infinity-tnc-divi-modules' ),
                     'reddit'             => esc_html__( 'Reddit', 'infinity-tnc-divi-modules' ),
                     'quora'              => esc_html__( 'Quora', 'infinity-tnc-divi-modules' ),
                     'discord'            => esc_html__( 'Discord', 'infinity-tnc-divi-modules' ),
@@ -241,7 +239,8 @@ class SocialShareChild extends ET_Builder_Module {
 	    // Render social share button 
 		if( 'facebook' === $social_share ) {
 
-			$post_title   = get_the_title(); // Get the WordPress post title
+			global $post;
+			$post_title   = get_the_title($post->ID); // Get the WordPress post title
 			$share_button = sprintf('
 					<a class="inftnc_share_link inftnc_fb_share_link" href="%1$s">
 							%2$s
@@ -276,8 +275,8 @@ class SocialShareChild extends ET_Builder_Module {
 			);
 
 		} else if ( 'whatsapp' === $social_share ) {
-
-			$post_title   = get_the_title(); // Get the WordPress post title
+			global $post;
+			$post_title   = get_the_title($post->ID); // Get the WordPress post title
 			$share_button = sprintf('
 					<a class="inftnc_share_link inftnc_whatsapp_share_link" href="%1$s">
 							%2$s
@@ -361,9 +360,55 @@ class SocialShareChild extends ET_Builder_Module {
 					 ) : '',
 			);
 
-		}
-		//Button Bg Color
+		} else if ( 'pinterest' === $social_share ) {
 
+			// Get the current post
+			global $post;
+
+			// Get post title and excerpt
+			$post_title = get_the_title($post->ID);
+
+			// Get post permalink
+			$post_permalink = get_permalink($post->ID);
+
+			// Construct the Pinterest share link
+			$pinterest_share_link = 'https://pinterest.com/pin/create/button/?url=' . urlencode($post_permalink) . '&description=' . urlencode($post_title);
+
+			$share_button = sprintf('
+					<a class="inftnc_share_link inftnc_pinterest_share_link" href="%1$s">
+							%2$s
+							%3$s
+							%4$s
+					</a>',
+			/* 01 */ $pinterest_share_link,
+			/* 02 */ 'icon_with_text' === $social_layout ? sprintf('
+						<span class="inftnc_social_text inftnc_pinterest_text">%2$s</span>
+						%1$s
+					',
+					/* 01 */ $use_fonts ? sprintf('<span class="inftnc_social_icon et-pb-icon">%1$s</span>',
+					 esc_attr( et_pb_process_font_icon( $use_fonts ) )) : sprintf('<span class="inftnc_social_icon et-pb-icon">&#xe095;</span>'), 
+					 esc_html__( 'Share On Pinterest', 'infinity-tnc-divi-modules'), 
+					) : '', 
+			/* 03 */ 'only_icon'  === $social_layout ? sprintf('
+							%1$s
+					',
+					/* 01 */ $use_fonts ? sprintf('<span class="inftnc_social_icon et-pb-icon">%1$s</span>',
+					esc_attr( et_pb_process_font_icon( $use_fonts ) )) : sprintf('<span class="inftnc_social_icon et-pb-icon">&#xe095;</span>'),
+
+					) : '',
+			
+		    /*04 */  'only_text'  === $social_layout ? sprintf('
+						<span class="inftnc_social_text inftnc_pinterest_text">%1$s</span>
+					 ',
+					 esc_html__( 'Share On Pinterest', 'infinity-tnc-divi-modules'), 
+
+					 ) : '',
+			);
+
+		}
+
+
+		//Button Bg Color
 		if( '' !== $this->props['button_color_child'] ) { 
 			ET_Builder_Element::set_style(
 				$render_slug,
