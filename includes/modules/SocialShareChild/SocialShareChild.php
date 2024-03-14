@@ -189,7 +189,8 @@ class SocialShareChild extends ET_Builder_Module {
 			$bottom = $button_data[2];
 			$left = $button_data[3];
 		}
-	
+		
+		$order_class           = self::get_module_order_class( $render_slug );
 
         // Module classnames
 		$this->add_classname(
@@ -214,13 +215,11 @@ class SocialShareChild extends ET_Builder_Module {
 
 			$post_title   = get_the_title(); // Get the WordPress post title
 			$share_button = sprintf('
-				<div class="inftnc_share_button_inner">
 					<a class="inftnc_share_link inftnc_fb_share_link" href="%1$s">
 							%2$s
 							%3$s
 							%4$s
-					</a>
-				</div>',
+					</a>',
 			/* 01 */ 'https://www.facebook.com/sharer/sharer.php?u='. urlencode(get_permalink()) .'&amp;t='.urlencode($post_title).'',
 			/* 02 */ 'icon_with_text' === $social_layout ? sprintf('
 						<span class="inftnc_fb_text"> Share On Facebook</span>
@@ -306,9 +305,11 @@ class SocialShareChild extends ET_Builder_Module {
 
 		// Render module content
 		$output = sprintf('
-					%1$s
-			    ',
-				$share_button
+					<div class="inftnc_share_button %2$s">
+						%1$s
+			      	</div>',
+					$share_button,
+					$order_class
 			);
 
         return $output;
