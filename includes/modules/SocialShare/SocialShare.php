@@ -280,7 +280,7 @@ class SocialShare extends ET_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .inftnc_social_icon.et-pb-icon ',
+					'selector'    => '%%order_class%% .inftnc_social_icon',
 					'declaration' => sprintf(
 						'color: %1$s;',
 						$this->props['icon_color']
@@ -294,7 +294,7 @@ class SocialShare extends ET_Builder_Module {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
-					'selector'    => '%%order_class%% .inftnc_social_icon.et-pb-icon ',
+					'selector'    => '%%order_class%% .inftnc_social_icon',
 					'declaration' => sprintf(
 						'
 							font-size:%1$s;

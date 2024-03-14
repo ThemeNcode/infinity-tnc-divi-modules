@@ -6,7 +6,7 @@
 .inftnc_fb_text  {
     color: #ffffff;
 }
-.inftnc_social_icon.et-pb-icon  {
+.inftnc_fb_share_link .inftnc_social_icon {
     font-size: 16px;
     color:#ffffff;
 }
@@ -23,3 +23,8 @@
     display: inline-grid;
 }
 
+.inftnc_social_icon.et-pb-fa-icon {
+    font-family: FontAwesome !important;
+    font-weight: 400 !important;
+    font-size: 16px;
+}
