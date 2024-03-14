@@ -66,6 +66,7 @@ class SocialShareChild extends ET_Builder_Module {
 					'linekdin'   		 => esc_html__( 'Linekdin','infinity-tnc-divi-modules'),
 					'telegram'           => esc_html__( 'Telegram ', 'infinity-tnc-divi-modules' ),
 					'reddit'             => esc_html__( 'Reddit', 'infinity-tnc-divi-modules' ),
+					'tumblr'             => esc_html__( 'Tumblr', 'infinity-tnc-divi-modules' ), 
                     'wechat'             => esc_html__( 'WeChat', 'infinity-tnc-divi-modules' ),
                     'tikTok'             => esc_html__( 'TikTok ', 'infinity-tnc-divi-modules' ),
                     'snapchat'           => esc_html__( 'Snapchat ', 'infinity-tnc-divi-modules' ),
@@ -75,7 +76,7 @@ class SocialShareChild extends ET_Builder_Module {
                     'quora'              => esc_html__( 'Quora', 'infinity-tnc-divi-modules' ),
                     'discord'            => esc_html__( 'Discord', 'infinity-tnc-divi-modules' ),
                     'twitch'             => esc_html__( 'Twitch', 'infinity-tnc-divi-modules' ),
-                    'tumblr'             => esc_html__( 'Tumblr', 'infinity-tnc-divi-modules' ), 
+                   
                     'bluesky'            => esc_html__( 'Bluesky', 'infinity-tnc-divi-modules' ),
                     'threads'            => esc_html__( 'Threads', 'infinity-tnc-divi-modules' ),
 
@@ -507,6 +508,52 @@ class SocialShareChild extends ET_Builder_Module {
 						<span class="inftnc_social_text inftnc_reddit_text">%1$s</span>
 					 ',
 					 esc_html__( 'Share On Reddit', 'infinity-tnc-divi-modules'), 
+
+					 ) : '',
+			);	
+		} else if ( 'tumblr' === $social_share ) {
+
+			// Get the current post
+			global $post;
+
+			// Get post title and excerpt
+			$post_title = get_the_title($post->ID);
+			$post_excerpt = get_the_excerpt($post->ID);
+
+			// Get post permalink
+			$post_permalink = get_permalink($post->ID);
+
+			// Construct the Tumblr share link
+			$tumblr_share_link = 'https://www.tumblr.com/widgets/share/tool?canonicalUrl=' . urlencode($post_permalink) . '&title=' . urlencode($post_title) . '&caption=' . urlencode($post_excerpt);
+
+
+			$share_button = sprintf('
+					<a class="inftnc_share_link inftnc_reddit_share_link" href="%1$s">
+							%2$s
+							%3$s
+							%4$s
+					</a>',
+			/* 01 */ $tumblr_share_link,
+			/* 02 */ 'icon_with_text' === $social_layout ? sprintf('
+						<span class="inftnc_social_text inftnc_tumblr_text">%2$s</span>
+						%1$s
+					',
+					/* 01 */ $use_fonts ? sprintf('<span class="inftnc_social_icon %2$s">%1$s</span>',
+					 esc_attr( et_pb_process_font_icon( $use_fonts ) ),$icon_class) : sprintf('<span class="inftnc_social_icon %1$s">&#xe095;</span>',$icon_class), 
+					 esc_html__( 'Share On Tumblr', 'infinity-tnc-divi-modules'), 
+					) : '', 
+			/* 03 */ 'only_icon'  === $social_layout ? sprintf('
+							%1$s
+					',
+					/* 01 */ $use_fonts ? sprintf('<span class="inftnc_social_icon %2$s">%1$s</span>',
+					esc_attr( et_pb_process_font_icon( $use_fonts ) ),$icon_class) : sprintf('<span class="inftnc_social_icon %1$s">&#xe095;</span>',$icon_class),
+
+					) : '',
+			
+		    /*04 */  'only_text'  === $social_layout ? sprintf('
+						<span class="inftnc_social_text inftnc_tumblr_text">%1$s</span>
+					 ',
+					 esc_html__( 'Share On Tumblr ', 'infinity-tnc-divi-modules'), 
 
 					 ) : '',
 			);	
