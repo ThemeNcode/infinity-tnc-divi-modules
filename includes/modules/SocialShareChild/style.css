@@ -19,3 +19,7 @@
     display: inline-block !important;
 }
 
+
+.inftnc_share_button_inner {
+    display: inline-grid;
+}

@@ -305,13 +305,17 @@ class SocialShareChild extends ET_Builder_Module {
 		}
 
 		// Render module content
-		$output = sprintf('<div class="inftnc_share_button"> 
+		$output = sprintf('
 					%1$s
-				</div>',
+			    ',
 				$share_button
 			);
 
         return $output;
+	}
+
+	protected function _render_module_wrapper( $output = '', $render_slug = '' ) {
+		return $output;
 	}
 }
 
