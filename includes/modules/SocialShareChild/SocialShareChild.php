@@ -206,6 +206,8 @@ class SocialShareChild extends ET_Builder_Module {
 		$social_share = $this->props['social_share'];
 		$use_fonts     = $this->props['use_fonticon'];
 
+		var_dump($use_fonts);
+
 		if( '' !== $this->props['button_padding_child'] ) {  
 			$button_data = 	explode("|", $this->props["button_padding_child"]);
 			$top = $button_data[0];
@@ -251,14 +253,14 @@ class SocialShareChild extends ET_Builder_Module {
 						<span class="inftnc_social_text inftnc_fb_text">%2$s</span>
 						%1$s
 					',
-					/* 01 */ $use_fonts ? sprintf('<span class="inftnc_social_custom_icon">%1$s</span>',
+					/* 01 */ $use_fonts ? sprintf('<span class="inftnc_social_icon et-pb-icon">%1$s</span>',
 					 esc_attr( et_pb_process_font_icon( $use_fonts ) )) : sprintf('<span class="inftnc_social_icon et-pb-icon">&#xe093;</span>'), 
 					 esc_html__( ' Share On Facebook', 'infinity-tnc-divi-modules'),
 					) : '', 
 			/* 03 */ 'only_icon'  === $social_layout ? sprintf('
 							%1$s
 					',
-					/* 01 */ $use_fonts ? sprintf('<span class="inftnc_social_custom_icon">%1$s</span>',
+					/* 01 */ $use_fonts ? sprintf('<span class="inftnc_social_icon et-pb-icon">%1$s</span>',
 
 					esc_attr( et_pb_process_font_icon( $use_fonts ) )) : sprintf('<span class="inftnc_social_icon et-pb-icon">&#xe093;</span>'),
 
@@ -284,31 +286,82 @@ class SocialShareChild extends ET_Builder_Module {
 					</a>',
 			/* 01 */ 'https://api.whatsapp.com/send?text=%'.urlencode( $post_title ).'% %'.urlencode( get_permalink() ).'%',
 			/* 02 */ 'icon_with_text' === $social_layout ? sprintf('
-						<span class="inftnc_social_text inftnc_fb_text">%2$s</span>
+						<span class="inftnc_social_text inftnc_whatsapp_text">%2$s</span>
 						%1$s
 					',
-					/* 01 */ $use_fonts ? sprintf('<span class="inftnc_social_custom_icon">%1$s</span>',
+					/* 01 */ $use_fonts ? sprintf('<span class="inftnc_social_icon et-pb-icon">%1$s</span>',
 					 esc_attr( et_pb_process_font_icon( $use_fonts ) )) : sprintf('<span class="inftnc_social_icon et-pb-icon">&#xe093;</span>'), 
 					 esc_html__( 'Share On WhatsApp', 'infinity-tnc-divi-modules'), 
 					) : '', 
 			/* 03 */ 'only_icon'  === $social_layout ? sprintf('
 							%1$s
 					',
-					/* 01 */ $use_fonts ? sprintf('<span class="inftnc_social_custom_icon">%1$s</span>',
+					/* 01 */ $use_fonts ? sprintf('<span class="inftnc_social_icon et-pb-icon">%1$s</span>',
 					esc_attr( et_pb_process_font_icon( $use_fonts ) )) : sprintf('<span class="inftnc_social_icon et-pb-icon">&#xe093;</span>'),
 
 					) : '',
 			
 		    /*04 */  'only_text'  === $social_layout ? sprintf('
-						<span class="inftnc_social_text inftnc_fb_text">%1$s</span>
+						<span class="inftnc_social_text inftnc_whatsapp_text">%1$s</span>
 					 ',
 					 esc_html__( 'Share On WhatsApp', 'infinity-tnc-divi-modules'), 
 
 					 ) : '',
 			);
 
-		}
+		 } else if ( 'twitter' === $social_share ) {
 
+			global $post;
+
+			// Get post title and excerpt
+			$post_title = get_the_title($post->ID);
+			$post_excerpt = get_the_excerpt($post->ID);
+
+		   // Encode the post title and excerpt for use in URL
+			$encoded_title = urlencode($post_title);
+			$encoded_excerpt = urlencode($post_excerpt);
+
+			// Get post permalink
+			$post_permalink = get_permalink($post->ID);
+
+			// Encode the post permalink for use in URL
+			$encoded_permalink = urlencode($post_permalink);
+
+			// Twitter share link with dynamic title, excerpt, and permalink
+			$twitter_share_link = 'https://twitter.com/intent/tweet?url=' . $encoded_permalink . '&text=' . $encoded_title . '%20-%20' . $encoded_excerpt;
+
+			$share_button = sprintf('
+					<a class="inftnc_share_link inftnc_twitter_share_link" href="%1$s">
+							%2$s
+							%3$s
+							%4$s
+					</a>',
+			/* 01 */ $twitter_share_link,
+			/* 02 */ 'icon_with_text' === $social_layout ? sprintf('
+						<span class="inftnc_social_text inftnc_twitter_text">%2$s</span>
+						%1$s
+					',
+					/* 01 */ $use_fonts ? sprintf('<span class="inftnc_social_icon et-pb-icon">%1$s</span>',
+					 esc_attr( et_pb_process_font_icon( $use_fonts ) )) : sprintf('<span class="inftnc_social_icon et-pb-icon">&#xe094;</span>'), 
+					 esc_html__( 'Share On X', 'infinity-tnc-divi-modules'), 
+					) : '', 
+			/* 03 */ 'only_icon'  === $social_layout ? sprintf('
+							%1$s
+					',
+					/* 01 */ $use_fonts ? sprintf('<span class="inftnc_social_icon et-pb-icon">%1$s</span>',
+					esc_attr( et_pb_process_font_icon( $use_fonts ) )) : sprintf('<span class="inftnc_social_icon et-pb-icon">&#xe094;</span>'),
+
+					) : '',
+			
+		    /*04 */  'only_text'  === $social_layout ? sprintf('
+						<span class="inftnc_social_text inftnc_twitter_text">%1$s</span>
+					 ',
+					 esc_html__( 'Share On X', 'infinity-tnc-divi-modules'), 
+
+					 ) : '',
+			);
+
+		}
 		//Button Bg Color
 
 		if( '' !== $this->props['button_color_child'] ) { 
