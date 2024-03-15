@@ -1,6 +1,6 @@
 .inftnc_fb_share_link {
     background-color: #316FF6;
-    padding: 20px 30px;
+    padding: 10px 24px;
     display: inline-block;
 }
 .inftnc_fb_text  {
@@ -28,3 +28,116 @@
     font-weight: 400 !important;
     font-size: 16px;
 }
+
+.inftnc_twitter_share_link {
+    background-color: #1DA1F2;
+    padding: 10px 24px;
+    display: inline-block;
+    color:#fff;
+}
+
+.inftnc_twitter_text {
+    color:#fff;
+}
+
+.inftnc_social_icon {
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+.inftnc_social_fb::after {
+    font-family: "Font Awesome 5 Brands"; 
+    content: "\f39e";
+}
+
+.inftnc_social_whatsapp::after {
+    font-family: "Font Awesome 5 Brands"; 
+    content: "\f232";
+}
+
+.inftnc_whatsapp_share_link  {
+    background-color: #075E54;
+    padding: 10px 24px;
+    display: inline-block;
+    color:#fff;
+}
+
+.inftnc_soical_pinterest::after {
+    font-family: "Font Awesome 5 Brands"; 
+    content: "\f231"; 
+}
+
+.inftnc_pinterest_share_link {
+    background-color:#E60023;
+    padding: 10px 24px;
+    display: inline-block;
+    color:#fff;
+}
+
+.inftnc_soical_linekdin:after {
+    font-family: "Font Awesome 5 Brands"; 
+    content: "\f0e1"; 
+}
+
+.inftnc_linekdin_share_link {
+    background-color:#0A66C2;
+    padding: 10px 24px;
+    display: inline-block;
+    color:#fff;
+}
+
+.inftnc_soical_telegram:after  {
+    font-family: "Font Awesome 5 Brands"; 
+    content: "\f2c6"; 
+}
+
+.inftnc_telegram_share_link {
+    background-color:#229ED9;
+    padding: 10px 24px;
+    display: inline-block;
+    color:#fff;
+}
+
+.inftnc_soical_reddit::after {
+    font-family: "Font Awesome 5 Brands"; 
+    content: "\f281"; 
+}
+
+.inftnc_reddit_share_link {
+    background-color:#FF5700;
+    padding: 10px 24px;
+    display: inline-block;
+    color:#fff;
+} 
+
+.inftnc_soical_tumblr::after {
+    font-family: "Font Awesome 5 Brands"; 
+    content: "\f173"; 
+}
+
+.inftnc_tumblr_share_link {
+    background-color:#021A35    ;
+    padding: 10px 24px;
+    display: inline-block;
+    color:#fff; 
+}
+
+.inftnc_email_share_link {
+    background-color:#d44638;
+    padding: 10px 24px;
+    display: inline-block;
+    color:#fff; 
+}
+
+.inftnc_soical_blogger::after {
+    font-family: "Font Awesome 5 Brands"; 
+    content: "\f37d"; 
+}
+
+.inftnc_blogger_share_link {
+    background-color:#FF5722    ;
+    padding: 10px 24px;
+    display: inline-block;
+    color:#fff; 
+}
+

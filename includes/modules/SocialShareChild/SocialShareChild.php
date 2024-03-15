@@ -111,29 +111,6 @@ class SocialShareChild extends ET_Builder_Module {
 				),
 			 ),
 
-			 'use_icon' => array(
-				'label'             => esc_html__( 'Use Icon', 'inftnc-infinity-tnc-divi-modules' ),
-				'type'              => 'yes_no_button',
-				'options'           => array(
-					'on'  => esc_html__( 'On', 'inftnc-infinity-tnc-divi-modules' ),
-					'off' => esc_html__( 'Off', 'inftnc-infinity-tnc-divi-modules' ),
-				),
-				'tab_slug'        => 'advanced',
-				'toggle_slug'     => 'share_icon',
-			 ),
-
-			 'use_fonticon' => array(
-				'label'               => esc_html__( 'Share Button Icon', 'et_builder' ),
-				'type'                => 'et_font_icon_select',
-				'renderer'            => 'et_pb_get_font_icon_list',
-				'renderer_with_field' => true,
-				'tab_slug'            => 'advanced',
-				'toggle_slug'         => 'share_icon',
-				'show_if'			  => array (
-					'use_icon'        => 'on',
-				)
-			),
-			
 		);
 	}
 
@@ -156,7 +133,7 @@ class SocialShareChild extends ET_Builder_Module {
 					),
 	
 					'font_size'      => array(
-						'default' => '30px',
+						'default' => '16px',
 					),
 	
 					'line_height'    => array(
@@ -189,29 +166,11 @@ class SocialShareChild extends ET_Builder_Module {
 	 * @return string module's rendered output
 	 */
 	function render( $attrs, $content = null, $render_slug ) {
-		global $inftnc_social_share_props;
 
+		global $inftnc_social_share_props;
 		$social_layout = $inftnc_social_share_props['button_layout'];
 		$social_share = $this->props['social_share'];
-		$use_fonts     = $this->props['use_fonticon'];
-
 	
-		//var_dump($use_fonts);
-		$icon_class = '';
-		if( '' !== $use_fonts ) {
-			$icon_class = explode('||', $use_fonts );
-			$icon_class = $icon_class[1];
-		}
-
-		if( 'fa' ===  $icon_class) {
-			$icon_class = 'et-pb-fa-icon';
-
-		} else {
-			$icon_class = 'et-pb-icon';
-		}
-
-		//var_dump($icon_class);
-
 		if( '' !== $this->props['button_padding_child'] ) {  
 			$button_data = 	explode("|", $this->props["button_padding_child"]);
 			$top = $button_data[0];
@@ -222,7 +181,9 @@ class SocialShareChild extends ET_Builder_Module {
 		
 		$order_class           = self::get_module_order_class( $render_slug );
 
+		wp_enqueue_style('fontawesome');
 		wp_enqueue_script('inftnc-social-share');
+
 
 	    // Module classnames
 		$this->add_classname(
@@ -255,22 +216,16 @@ class SocialShareChild extends ET_Builder_Module {
 					</a>',
 			/* 01 */ 'https://www.facebook.com/sharer/sharer.php?u='. urlencode(get_permalink()) .'&amp;t='.urlencode($post_title).'',
 			/* 02 */ 'icon_with_text' === $social_layout ? sprintf('
-						<span class="inftnc_social_text inftnc_fb_text">%2$s</span>
-						%1$s
+						<span class="inftnc_social_text inftnc_fb_text">%1$s</span>
+						<span class="inftnc_social_icon inftnc_social_fb"></span>
 					',
-					/* 01 */ $use_fonts ? sprintf('<span class="inftnc_social_icon %2$s">%1$s</span>',
-					 esc_attr( et_pb_process_font_icon( $use_fonts ) ), $icon_class ) : sprintf('<span class="inftnc_social_icon %1$s">&#xe093;</span>',$icon_class ), 
-
 					 esc_html__( ' Share On Facebook', 'infinity-tnc-divi-modules'),
 					 
 					) : '', 
+
 			/* 03 */ 'only_icon'  === $social_layout ? sprintf('
-							%1$s
-					',
-					/* 01 */ $use_fonts ? sprintf('<span class="inftnc_social_icon %2$s">%1$s</span>',
-
-					esc_attr( et_pb_process_font_icon( $use_fonts ) ), $icon_class) : sprintf('<span class="inftnc_social_icon %1$s">&#xe093;</span>',$icon_class),
-
+						<span class="inftnc_social_icon inftnc_social_fb"></span>
+					'
 					) : '',
 			
 		    /*04 */  'only_text'  === $social_layout ? sprintf('
@@ -293,19 +248,16 @@ class SocialShareChild extends ET_Builder_Module {
 					</a>',
 			/* 01 */ 'https://api.whatsapp.com/send?text=%'.urlencode( $post_title ).'% %'.urlencode( get_permalink() ).'%',
 			/* 02 */ 'icon_with_text' === $social_layout ? sprintf('
-						<span class="inftnc_social_text inftnc_whatsapp_text">%2$s</span>
-						%1$s
+						<span class="inftnc_social_text inftnc_whatsapp_text">%1$s</span>
+						<span class="inftnc_social_icon inftnc_social_whatsapp"></span>
 					',
-					/* 01 */ $use_fonts ? sprintf('<span class="inftnc_social_icon %2$s">%1$s</span>',
-					 esc_attr( et_pb_process_font_icon( $use_fonts ) ), $icon_class ) : sprintf('<span class="inftnc_social_icon %1$s">&#xf232;</span>',$icon_class ), 
-					 esc_html__( 'Share On WhatsApp', 'infinity-tnc-divi-modules'), 
-					) : '', 
-			/* 03 */ 'only_icon'  === $social_layout ? sprintf('
-							%1$s
-					',
-					/* 01 */ $use_fonts ? sprintf('<span class="inftnc_social_icon %2$s">%1$s</span>',
-					esc_attr( et_pb_process_font_icon( $use_fonts ) ),$icon_class) : sprintf('<span class="inftnc_social_icon %1$s">&#xf232;</span>',$icon_class),
+					/* 01 */   esc_html__( 'Share On WhatsApp', 'infinity-tnc-divi-modules'),
 
+					) : '', 
+
+			/* 03 */ 'only_icon'  === $social_layout ? sprintf('
+						<span class="inftnc_social_icon inftnc_social_whatsapp"></span>
+					'
 					) : '',
 			
 		    /*04 */  'only_text'  === $social_layout ? sprintf('
@@ -345,19 +297,15 @@ class SocialShareChild extends ET_Builder_Module {
 					</a>',
 			/* 01 */ $twitter_share_link,
 			/* 02 */ 'icon_with_text' === $social_layout ? sprintf('
-						<span class="inftnc_social_text inftnc_twitter_text">%2$s</span>
-						%1$s
+						<span class="inftnc_social_text inftnc_twitter_text">%1$s</span>
+						<span class="inftnc_social_icon et-pb-icon">&#xe094;</span>
 					',
-					/* 01 */ $use_fonts ? sprintf('<span class="inftnc_social_icon %2$s">%1$s</span>',
-					 esc_attr( et_pb_process_font_icon( $use_fonts ) ),$icon_class) : sprintf('<span class="inftnc_social_icon %1$s">&#xe094;</span>',$icon_class), 
-					 esc_html__( 'Share On X', 'infinity-tnc-divi-modules'), 
+					/* 01 */  esc_html__( 'Share On X', 'infinity-tnc-divi-modules'), 
 					) : '', 
-			/* 03 */ 'only_icon'  === $social_layout ? sprintf('
-							%1$s
-					',
-					/* 01 */ $use_fonts ? sprintf('<span class="inftnc_social_icon %2$s">%1$s</span>',
-					esc_attr( et_pb_process_font_icon( $use_fonts ) ),$icon_class) : sprintf('<span class="inftnc_social_icon %1$s">&#xe094;</span>',$icon_class),
 
+			/* 03 */ 'only_icon'  === $social_layout ? sprintf('
+							<span class="inftnc_social_icon et-pb-icon">&#xe094;</span>
+					'
 					) : '',
 			
 		    /*04 */  'only_text'  === $social_layout ? sprintf('
@@ -384,34 +332,85 @@ class SocialShareChild extends ET_Builder_Module {
 
 			$share_button = sprintf('
 					<a class="inftnc_share_link inftnc_pinterest_share_link" href="%1$s">
+					<i class="social_pinterest"></i>
 							%2$s
 							%3$s
 							%4$s
 					</a>',
 			/* 01 */ $pinterest_share_link,
 			/* 02 */ 'icon_with_text' === $social_layout ? sprintf('
-						<span class="inftnc_social_text inftnc_pinterest_text">%2$s</span>
-						%1$s
+						<span class="inftnc_social_text inftnc_pinterest_text">%1$s</span>
+						<span class="inftnc_social_icon inftnc_soical_pinterest"></span>
 					',
-					/* 01 */ $use_fonts ? sprintf('<span class="inftnc_social_icon %2$s">%1$s</span>',
-					 esc_attr( et_pb_process_font_icon( $use_fonts ) ),$icon_class) : sprintf('<span class="inftnc_social_icon %1$s">&#xe095;</span>',$icon_class), 
-					 esc_html__( 'Share On Pinterest', 'infinity-tnc-divi-modules'), 
+					/* 01 */  esc_html__( 'Share On Pinterest', 'infinity-tnc-divi-modules'), 
 					) : '', 
+
 			/* 03 */ 'only_icon'  === $social_layout ? sprintf('
-							%1$s
+							<span class="inftnc_social_icon inftnc_soical_pinterest"></span>
 					',
-					/* 01 */ $use_fonts ? sprintf('<span class="inftnc_social_icon %2$ss">%1$s</span>',
-					esc_attr( et_pb_process_font_icon( $use_fonts ) ),$icon_class) : sprintf('<span class="inftnc_social_icon %1$s">&#xe095;</span>',$icon_class),
 
 					) : '',
 			
 		    /*04 */  'only_text'  === $social_layout ? sprintf('
+
 						<span class="inftnc_social_text inftnc_pinterest_text">%1$s</span>
 					 ',
 					 esc_html__( 'Share On Pinterest', 'infinity-tnc-divi-modules'), 
 
 					 ) : '',
 			);
+
+		} elseif ('linekdin' === $social_share) {
+
+				// Get the current post
+				global $post;
+
+				// Get post title
+				$post_title = get_the_title($post->ID);
+
+				// Get post excerpt
+				$post_excerpt = get_the_excerpt($post->ID);
+
+				// Get post permalink
+				$post_permalink = get_permalink($post->ID);
+
+				// Encode post title, excerpt, and permalink for use in URL
+				$encoded_title = urlencode($post_title);
+				$encoded_excerpt = urlencode($post_excerpt);
+				$encoded_permalink = urlencode($post_permalink);
+
+				// Construct the LinkedIn share link
+				$linkedin_share_link = 'https://www.linkedin.com/sharing/share-offsite/?url=' . $encoded_permalink . '&title=' . $encoded_title . '&summary=' . $encoded_excerpt;
+
+				$share_button = sprintf('
+						<a class="inftnc_share_link inftnc_linekdin_share_link" href="%1$s">
+						<i class="social_pinterest"></i>
+								%2$s
+								%3$s
+								%4$s
+						</a>',
+				/* 01 */ $linkedin_share_link,
+				/* 02 */ 'icon_with_text' === $social_layout ? sprintf('
+							<span class="inftnc_social_text inftnc_linekdin_text">%1$s</span>
+							<span class="inftnc_social_icon inftnc_soical_linekdin"></span>
+						',
+						/* 01 */  esc_html__( 'Share On Linekdin', 'infinity-tnc-divi-modules'), 
+						) : '', 
+	
+				/* 03 */ 'only_icon'  === $social_layout ? sprintf('
+								<span class="inftnc_social_icon inftnc_soical_linekdin"></span>
+						',
+	
+						) : '',
+				
+				/*04 */  'only_text'  === $social_layout ? sprintf('
+	
+							<span class="inftnc_social_text inftnc_linekdin_text">%1$s</span>
+						 ',
+						 esc_html__( 'Share On Linekdin', 'infinity-tnc-divi-modules'), 
+	
+						 ) : '',
+				);
 
 		} else if ( 'telegram' === $social_share ) {
 			// Get the current post
@@ -434,18 +433,16 @@ class SocialShareChild extends ET_Builder_Module {
 					</a>',
 			/* 01 */ $telegram_share_link,
 			/* 02 */ 'icon_with_text' === $social_layout ? sprintf('
-						<span class="inftnc_social_text inftnc_telegram_text">%2$s</span>
-						%1$s
+						<span class="inftnc_social_text inftnc_telegram_text">%1$s</span>
+						<span class="inftnc_social_icon inftnc_soical_telegram"></span>
 					',
-					/* 01 */ $use_fonts ? sprintf('<span class="inftnc_social_icon %2$s">%1$s</span>',
-					 esc_attr( et_pb_process_font_icon( $use_fonts ) ),$icon_class) : sprintf('<span class="inftnc_social_icon %1$s">&#xe095;</span>',$icon_class), 
-					 esc_html__( 'Share On Telegram', 'infinity-tnc-divi-modules'), 
+					/* 01 */  esc_html__( 'Share On Telegram', 'infinity-tnc-divi-modules'), 
 					) : '', 
+
 			/* 03 */ 'only_icon'  === $social_layout ? sprintf('
-							%1$s
+
+						 <span class="inftnc_social_icon inftnc_soical_telegram"></span>
 					',
-					/* 01 */ $use_fonts ? sprintf('<span class="inftnc_social_icon %2$s">%1$s</span>',
-					esc_attr( et_pb_process_font_icon( $use_fonts ) ),$icon_class) : sprintf('<span class="inftnc_social_icon %1$s">&#xe095;</span>',$icon_class),
 
 					) : '',
 			
@@ -478,18 +475,17 @@ class SocialShareChild extends ET_Builder_Module {
 					</a>',
 			/* 01 */ $reddit_share_link,
 			/* 02 */ 'icon_with_text' === $social_layout ? sprintf('
-						<span class="inftnc_social_text inftnc_reddit_text">%2$s</span>
-						%1$s
+						<span class="inftnc_social_text inftnc_reddit_text">%1$s</span>
+						<span class="inftnc_social_icon inftnc_soical_reddit"></span>
 					',
-					/* 01 */ $use_fonts ? sprintf('<span class="inftnc_social_icon %2$s">%1$s</span>',
-					 esc_attr( et_pb_process_font_icon( $use_fonts ) ),$icon_class) : sprintf('<span class="inftnc_social_icon %1$s">&#xe095;</span>',$icon_class), 
-					 esc_html__( 'Share On Reddit', 'infinity-tnc-divi-modules'), 
+					/* 01 */  esc_html__( 'Share On Reddit', 'infinity-tnc-divi-modules'), 
+
 					) : '', 
+					
 			/* 03 */ 'only_icon'  === $social_layout ? sprintf('
-							%1$s
+
+						<span class="inftnc_social_icon inftnc_soical_reddit"></span>
 					',
-					/* 01 */ $use_fonts ? sprintf('<span class="inftnc_social_icon %2$s">%1$s</span>',
-					esc_attr( et_pb_process_font_icon( $use_fonts ) ),$icon_class) : sprintf('<span class="inftnc_social_icon %1$s">&#xe095;</span>',$icon_class),
 
 					) : '',
 			
@@ -524,19 +520,16 @@ class SocialShareChild extends ET_Builder_Module {
 					</a>',
 			/* 01 */ $tumblr_share_link,
 			/* 02 */ 'icon_with_text' === $social_layout ? sprintf('
-						<span class="inftnc_social_text inftnc_tumblr_text">%2$s</span>
-						%1$s
+						<span class="inftnc_social_text inftnc_tumblr_text">%1$s</span>
+						<span class="inftnc_social_icon inftnc_soical_tumblr"></span>
 					',
-					/* 01 */ $use_fonts ? sprintf('<span class="inftnc_social_icon %2$s">%1$s</span>',
-					 esc_attr( et_pb_process_font_icon( $use_fonts ) ),$icon_class) : sprintf('<span class="inftnc_social_icon %1$s">&#xe095;</span>',$icon_class), 
-					 esc_html__( 'Share On Tumblr', 'infinity-tnc-divi-modules'), 
-					) : '', 
-			/* 03 */ 'only_icon'  === $social_layout ? sprintf('
-							%1$s
-					',
-					/* 01 */ $use_fonts ? sprintf('<span class="inftnc_social_icon %2$s">%1$s</span>',
-					esc_attr( et_pb_process_font_icon( $use_fonts ) ),$icon_class) : sprintf('<span class="inftnc_social_icon %1$s">&#xe095;</span>',$icon_class),
+					/* 01 */  esc_html__( 'Share On Tumblr', 'infinity-tnc-divi-modules'), 
 
+					) : '', 
+
+			/* 03 */ 'only_icon'  === $social_layout ? sprintf('
+							<span class="inftnc_social_icon inftnc_soical_tumblr"></span>
+					',
 					) : '',
 			
 		    /*04 */  'only_text'  === $social_layout ? sprintf('
@@ -575,19 +568,18 @@ class SocialShareChild extends ET_Builder_Module {
 					</a>',
 			/* 01 */ $email_share_link,
 			/* 02 */ 'icon_with_text' === $social_layout ? sprintf('
-						<span class="inftnc_social_text inftnc_email_text">%2$s</span>
-						%1$s
+						<span class="inftnc_social_text inftnc_email_text">%1$s</span>
+						<span class="inftnc_social_icon inftnc_soical_email"><i class="fas fa-envelope"></i></span>
 					',
-					/* 01 */ $use_fonts ? sprintf('<span class="inftnc_social_icon %2$s">%1$s</span>',
-					 esc_attr( et_pb_process_font_icon( $use_fonts ) ),$icon_class) : sprintf('<span class="inftnc_social_icon %1$s">&#xe095;</span>',$icon_class), 
-					 esc_html__( 'Share On Email', 'infinity-tnc-divi-modules'), 
-					) : '', 
-			/* 03 */ 'only_icon'  === $social_layout ? sprintf('
-							%1$s
-					',
-					/* 01 */ $use_fonts ? sprintf('<span class="inftnc_social_icon %2$s">%1$s</span>',
-					esc_attr( et_pb_process_font_icon( $use_fonts ) ),$icon_class) : sprintf('<span class="inftnc_social_icon %1$s">&#xe095;</span>',$icon_class),
+					/* 01 */ esc_html__( 'Share On Email', 'infinity-tnc-divi-modules'), 
 
+					) : '', 
+
+			/* 03 */ 'only_icon'  === $social_layout ? sprintf('
+
+							<span class="inftnc_social_icon inftnc_soical_email"><i class="fas fa-envelope"></i></span>
+					',
+			
 					) : '',
 			
 		    /*04 */  'only_text'  === $social_layout ? sprintf('
@@ -621,18 +613,17 @@ class SocialShareChild extends ET_Builder_Module {
 					</a>',
 			/* 01 */ $blogger_share_link,
 			/* 02 */ 'icon_with_text' === $social_layout ? sprintf('
-						<span class="inftnc_social_text inftnc_blogger_text">%2$s</span>
-						%1$s
+						<span class="inftnc_social_text inftnc_blogger_text">%1$s</span>
+						<span class="inftnc_social_icon inftnc_soical_blogger"></span>
 					',
-					/* 01 */ $use_fonts ? sprintf('<span class="inftnc_social_icon %2$s">%1$s</span>',
-					 esc_attr( et_pb_process_font_icon( $use_fonts ) ),$icon_class) : sprintf('<span class="inftnc_social_icon %1$s">&#xe095;</span>',$icon_class), 
-					 esc_html__( 'Share On Blogger', 'infinity-tnc-divi-modules'), 
+					
+					/* 01 */  esc_html__( 'Share On Blogger', 'infinity-tnc-divi-modules'), 
+
 					) : '', 
+
 			/* 03 */ 'only_icon'  === $social_layout ? sprintf('
-							%1$s
+						<span class="inftnc_social_icon inftnc_soical_blogger"></span>
 					',
-					/* 01 */ $use_fonts ? sprintf('<span class="inftnc_social_icon %2$s">%1$s</span>',
-					esc_attr( et_pb_process_font_icon( $use_fonts ) ),$icon_class) : sprintf('<span class="inftnc_social_icon %1$s">&#xe095;</span>',$icon_class),
 
 					) : '',
 			

@@ -88,7 +88,7 @@ class SocialShare extends ET_Builder_Module {
 			'columns' => array(
 				'label'           => esc_html__( 'Number of Columns', 'infinity-tnc-divi-modules' ),
 				'type'            => 'select',
-				'deafult'		  => 'auto',
+				'deafult'		  => 'column_auto',
 				'options'         => array(
 					'column_auto' 		=> esc_html__( 'Auto', 'infinity-tnc-divi-modules' ),
 					'column_one' 		=> esc_html__( '1', 'infinity-tnc-divi-modules' ),
@@ -213,6 +213,25 @@ class SocialShare extends ET_Builder_Module {
 	
 				),
 			),
+			'button'          => array(
+				'button_left' => array(
+					'label'          => esc_html__( 'Button Left','inftnc-infinity-tnc-divi-modules'),
+					'css'            => array(
+						 'main' 		=> '%%order_class%% .inftnc_share_button',
+					),
+					'box_shadow'     => array(
+						'css' => array(
+							'main' => '%%order_class%% .et_pb_button.inftnc_pb_button_left',
+						),
+					),
+					'margin_padding' => array(
+						'css' => array(
+							'main'      => "%%order_class%% .et_pb_button.inftnc_pb_button_left",
+							'important' => 'all',
+						),
+					),
+				),
+			),
 			'text'	     		 => false,
 			'link_options'       => false,
 			'filters'            => false,
@@ -304,6 +323,8 @@ class SocialShare extends ET_Builder_Module {
 				)
 			);
 		}
+
+
 
 		//Share button padding 
 
@@ -549,6 +570,15 @@ class SocialShare extends ET_Builder_Module {
 				)
 			);
 		}
+
+		ET_Builder_Element::set_style(
+			$render_slug,
+			array(
+				'selector'    => '%%order_class%% .inftnc_pinterest_share_link .inftnc_social_icon',
+				'declaration' => 'font-family: FontAwesome!important;
+                              font-weight: 900!important;',
+			)
+		);
 		
         // Remove automatically added classnames
 		$output = sprintf(
