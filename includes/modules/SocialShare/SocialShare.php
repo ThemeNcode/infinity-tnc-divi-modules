@@ -592,6 +592,8 @@ class SocialShare extends ET_Builder_Module {
 
 		if( $column_responsive_status ) {
 
+			// Responsive Tablet 
+
 			if( 'column_auto' === $column_responsive_tablet ) {
 				ET_Builder_Element::set_style(
 					$render_slug,
@@ -719,14 +721,149 @@ class SocialShare extends ET_Builder_Module {
 							display:grid;
 							grid-template-columns:repeat(6, 1fr);
 						',
-						
 					),
-					
+
 					'media_query' => ET_Builder_Element::get_media_query('max_width_980'),
 				)
 			);
 			
 		}
+
+		//Responive Phone 
+		if( 'column_auto' === $column_responsive_phone ) {
+			ET_Builder_Element::set_style(
+				$render_slug,
+				array(
+					'selector'    => '%%order_class%% .inftnc_social_share_wrapper',
+					'declaration' => sprintf(
+						'
+							display:grid;
+							grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+						',
+					),
+
+					'media_query' => ET_Builder_Element::get_media_query('max_width_767'),
+				)
+			);
+	   }
+
+	   if( 'column_one' === $column_responsive_phone ) {
+			ET_Builder_Element::set_style(
+				$render_slug,
+				array(
+					'selector'    => '%%order_class%% .inftnc_social_share_wrapper',
+					'declaration' => sprintf(
+						'
+							display:grid;
+							grid-template-columns:repeat(1, 1fr);
+						',
+						
+					),
+
+					'media_query' => ET_Builder_Element::get_media_query('max_width_767'),
+				)
+			);
+	   }
+
+	   if( 'column_two' === $column_responsive_phone ) {
+		
+			ET_Builder_Element::set_style(
+			$render_slug,
+			array(
+				'selector'    => '%%order_class%% .inftnc_social_share_wrapper',
+				'declaration' => sprintf(
+					'
+						display:grid;
+						grid-template-columns:repeat(2, 1fr);
+					',
+					
+				),
+
+				'media_query' => ET_Builder_Element::get_media_query('max_width_767'),
+			)
+		  );
+	   }
+
+
+	   if( 'column_three' === $column_responsive_phone ) {
+		
+		ET_Builder_Element::set_style(
+			$render_slug,
+			array(
+				'selector'    => '%%order_class%% .inftnc_social_share_wrapper',
+				'declaration' => sprintf(
+					'
+						display:grid;
+						grid-template-columns:repeat(3, 1fr);
+					',
+					
+				),
+
+				'media_query' => ET_Builder_Element::get_media_query('max_width_767'),
+			)
+		);
+	  
+   }
+
+	if( 'column_four' === $column_responsive_phone ) {
+				
+		ET_Builder_Element::set_style(
+			$render_slug,
+			array(
+				'selector'    => '%%order_class%% .inftnc_social_share_wrapper',
+				'declaration' => sprintf(
+					'
+						display:grid;
+						grid-template-columns:repeat(4, 1fr);
+					',
+					
+				),
+
+				'media_query' => ET_Builder_Element::get_media_query('max_width_767'),
+			)
+		);
+		
+	}
+
+	if( 'column_five' === $column_responsive_phone ) {
+				
+		ET_Builder_Element::set_style(
+			$render_slug,
+			array(
+				'selector'    => '%%order_class%% .inftnc_social_share_wrapper',
+				'declaration' => sprintf(
+					'
+						display:grid;
+						grid-template-columns:repeat(5, 1fr);
+					',
+					
+				),
+
+				'media_query' => ET_Builder_Element::get_media_query('max_width_767'),
+			)
+		);
+		
+	}
+
+
+	if( 'column_six' === $column_responsive_phone ) {
+				
+		ET_Builder_Element::set_style(
+			$render_slug,
+			array(
+				'selector'    => '%%order_class%% .inftnc_social_share_wrapper',
+				'declaration' => sprintf(
+					'
+						display:grid;
+						grid-template-columns:repeat(6, 1fr);
+					',
+				),
+
+				'media_query' => ET_Builder_Element::get_media_query('max_width_767'),
+			)
+		);
+		
+	}
 		     
   }
 
