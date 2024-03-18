@@ -98,7 +98,8 @@ class SocialShare extends ET_Builder_Module {
 					'column_five'       => esc_html__( '5', 'infinity-tnc-divi-modules' ),
 					'column_six'        => esc_html__( '6', 'infinity-tnc-divi-modules' ),
 				),
-				'mobile_options'     => 'true',
+				'mobile_options'     => true,
+				'responsive'         => true,
 				'toggle_slug'        => 'layout',
 				'tab_slug'           => 'advanced',
 			 ),
@@ -227,14 +228,20 @@ class SocialShare extends ET_Builder_Module {
 	 */
 	function render( $attrs, $content = null, $render_slug ) {
 			
-		$social_layout    		=  $this->props['button_layout'];
-		$social_shape     		=  $this->props['button_shape'];
-		$social_columns   		=  $this->props['columns'];
-		$columns_gap 	 		=  $this->props['columns_gap'];
-		$row_gap 	 			=  $this->props['row_gap'];
-		$button_color			=  $this->props['button_bg'];
-		$button_padding 	    =  $this->props['button_padding'];
+		$social_layout    		     =  $this->props['button_layout'];
+		$social_shape     		     =  $this->props['button_shape'];
+		$social_columns   			 =  $this->props['columns'];
+		$columns_gap 	 			 =  $this->props['columns_gap'];
+		$row_gap 	 				 =  $this->props['row_gap'];
+		$button_color				 =  $this->props['button_bg'];
+		$button_padding 	         =  $this->props['button_padding'];
+		$column_responsive           =  $this->props['columns_last_edited'];
+		$column_responsive_status    = et_pb_get_responsive_status($column_responsive);
+		$column_responsive_tablet    = $this->props['columns_tablet'];
+		$column_responsive_phone     = $this->props['columns_phone'];
 
+		var_dump($column_responsive_phone);
+		var_dump($column_responsive_tablet);
 		
 		if( '' !== $this->props['button_padding'] ) {  
 
@@ -360,6 +367,7 @@ class SocialShare extends ET_Builder_Module {
 					),
 				)
 			);
+
 		} else if ( 'column_three' === $social_columns )  {
 
 			ET_Builder_Element::set_style(
@@ -579,14 +587,150 @@ class SocialShare extends ET_Builder_Module {
 			);
 		}
 
-		ET_Builder_Element::set_style(
-			$render_slug,
-			array(
-				'selector'    => '%%order_class%% .inftnc_pinterest_share_link .inftnc_social_icon',
-				'declaration' => 'font-family: FontAwesome!important;
-                              font-weight: 900!important;',
-			)
-		);
+	
+		//Responive  Column Layout 
+
+		if( $column_responsive_status ) {
+
+			if( 'column_auto' === $column_responsive_tablet ) {
+				ET_Builder_Element::set_style(
+					$render_slug,
+					array(
+						'selector'    => '%%order_class%% .inftnc_social_share_wrapper',
+						'declaration' => sprintf(
+							'
+								display:grid;
+								grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+							',
+						),
+
+						'media_query' => ET_Builder_Element::get_media_query('max_width_980'),
+					)
+				);
+		   }
+
+		   if( 'column_one' === $column_responsive_tablet ) {
+				ET_Builder_Element::set_style(
+					$render_slug,
+					array(
+						'selector'    => '%%order_class%% .inftnc_social_share_wrapper',
+						'declaration' => sprintf(
+							'
+								display:grid;
+								grid-template-columns:repeat(1, 1fr);
+							',
+							
+						),
+
+						'media_query' => ET_Builder_Element::get_media_query('max_width_980'),
+					)
+				);
+		   }
+
+		   if( 'column_two' === $column_responsive_tablet ) {
+			
+				ET_Builder_Element::set_style(
+				$render_slug,
+				array(
+					'selector'    => '%%order_class%% .inftnc_social_share_wrapper',
+					'declaration' => sprintf(
+						'
+							display:grid;
+							grid-template-columns:repeat(2, 1fr);
+						',
+						
+					),
+
+					'media_query' => ET_Builder_Element::get_media_query('max_width_980'),
+				)
+			  );
+		   }
+
+
+		   if( 'column_three' === $column_responsive_tablet ) {
+			
+			ET_Builder_Element::set_style(
+				$render_slug,
+				array(
+					'selector'    => '%%order_class%% .inftnc_social_share_wrapper',
+					'declaration' => sprintf(
+						'
+							display:grid;
+							grid-template-columns:repeat(3, 1fr);
+						',
+						
+					),
+
+					'media_query' => ET_Builder_Element::get_media_query('max_width_980'),
+				)
+			);
+		  
+	   }
+
+		if( 'column_four' === $column_responsive_tablet ) {
+					
+			ET_Builder_Element::set_style(
+				$render_slug,
+				array(
+					'selector'    => '%%order_class%% .inftnc_social_share_wrapper',
+					'declaration' => sprintf(
+						'
+							display:grid;
+							grid-template-columns:repeat(4, 1fr);
+						',
+						
+					),
+
+					'media_query' => ET_Builder_Element::get_media_query('max_width_980'),
+				)
+			);
+			
+		}
+
+		if( 'column_five' === $column_responsive_tablet ) {
+					
+			ET_Builder_Element::set_style(
+				$render_slug,
+				array(
+					'selector'    => '%%order_class%% .inftnc_social_share_wrapper',
+					'declaration' => sprintf(
+						'
+							display:grid;
+							grid-template-columns:repeat(5, 1fr);
+						',
+						
+					),
+
+					'media_query' => ET_Builder_Element::get_media_query('max_width_980'),
+				)
+			);
+			
+		}
+
+
+		if( 'column_six' === $column_responsive_tablet ) {
+					
+			ET_Builder_Element::set_style(
+				$render_slug,
+				array(
+					'selector'    => '%%order_class%% .inftnc_social_share_wrapper',
+					'declaration' => sprintf(
+						'
+							display:grid;
+							grid-template-columns:repeat(6, 1fr);
+						',
+						
+					),
+					
+					'media_query' => ET_Builder_Element::get_media_query('max_width_980'),
+				)
+			);
+			
+		}
+		     
+  }
+
+
 		
         // Remove automatically added classnames
 		$output = sprintf(
