@@ -12,7 +12,7 @@ class SocialShare extends Component {
 
     return (
           <div className="inftnc_social_share_wrapper">{this.props.content}
-            <SocialShareChild content={this.props.content}></SocialShareChild>
+            <SocialShareChild layout={this.props.button_layout}></SocialShareChild>
           </div>
           
     );
