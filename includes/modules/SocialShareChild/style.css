@@ -141,3 +141,10 @@
     color:#fff; 
 }
 
+.inftnc_share_link {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
