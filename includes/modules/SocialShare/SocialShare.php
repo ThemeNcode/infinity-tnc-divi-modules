@@ -133,17 +133,6 @@ class SocialShare extends ET_Builder_Module {
 				),
 			 ),
 
-			 'share_alignment' => array(
-				'label'           => esc_html__( 'Alignment', 'inftnc-infinity-tnc-divi-modules' ),
-				'type'            => 'text_align',
-				'option_category' => 'configuration',
-				'options'         => et_builder_get_text_orientation_options( array( 'justified' ) ),
-				'description'     => esc_html__( 'Align your Share Button to the left, right or center of the module.', 'inftnc-infinity-tnc-divi-modules' ),
-				'mobile_options'  => true,
-				'tab_slug'        => 'advanced',
-				'toggle_slug'     => 'layout',
-			),
-
 			'button_bg' => array(
 				'label'           => esc_html__( 'Button Background Color', 'infinity-tnc-divi-modules' ),
 				'type'            => 'color-alpha',
@@ -204,7 +193,7 @@ class SocialShare extends ET_Builder_Module {
 					'font_size'      => array(
 						'default' => '16px',
 					),
-	
+
 					'text_alignment'	  => false,
 	
 					'letter_spacing' => array(
@@ -263,7 +252,6 @@ class SocialShare extends ET_Builder_Module {
 		$social_columns   		=  $this->props['columns'];
 		$columns_gap 	 		=  $this->props['columns_gap'];
 		$row_gap 	 			=  $this->props['row_gap'];
-		$share_alignment 		=  $this->props['share_alignment'];
 		$button_color			=  $this->props['button_bg'];
 		$button_padding 	    =  $this->props['button_padding'];
 
@@ -498,13 +486,47 @@ class SocialShare extends ET_Builder_Module {
 						width: 45px;
 						padding: 10px;
 						text-align:center;
-							
+						display:unset !important; 
 						',
 						
 					),
 				)
 			);
 		}
+
+		if ( 'only_icon' === $this->props['button_layout'] && 'button_circle' === $this->props['button_shape']) {
+
+			ET_Builder_Element::set_style(
+				$render_slug,
+				array(
+					'selector'    => '%%order_class%% .inftnc_social_icon',
+					'declaration' => sprintf(
+						'
+							margin-left:unset;
+						',
+						
+					),
+				)
+			);
+		} 
+
+		if ( 'only_icon' === $this->props['button_layout'] && 'button_circle' === $this->props['button_shape'] &&  'column_auto' === $social_columns ) {
+
+			ET_Builder_Element::set_style(
+				$render_slug,
+				array(
+					'selector'    => '%%order_class%% .inftnc_social_share_wrapper',
+					'declaration' => sprintf(
+						'
+						 display:unset !important;
+						',
+						
+					),
+				)
+			);
+		}
+
+
 
 		if ( 'only_text' === $this->props['button_layout'] && 'button_circle' === $this->props['button_shape']) {
 

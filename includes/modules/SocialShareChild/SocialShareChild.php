@@ -332,7 +332,6 @@ class SocialShareChild extends ET_Builder_Module {
 
 			$share_button = sprintf('
 					<a class="inftnc_share_link inftnc_pinterest_share_link" href="%1$s">
-					<i class="social_pinterest"></i>
 							%2$s
 							%3$s
 							%4$s
@@ -384,7 +383,6 @@ class SocialShareChild extends ET_Builder_Module {
 
 				$share_button = sprintf('
 						<a class="inftnc_share_link inftnc_linekdin_share_link" href="%1$s">
-						<i class="social_pinterest"></i>
 								%2$s
 								%3$s
 								%4$s
