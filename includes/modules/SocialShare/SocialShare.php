@@ -154,7 +154,6 @@ class SocialShare extends ET_Builder_Module {
 				'toggle_slug'     => 'share_icon',
 				'allowed_units'    => array('px'),
                 'default'          => 16,
-				'default_on_front' => true,
 				'default_unit'     => 'px',
                 'range_settings' => array(
 					'min'  => 0,
@@ -200,25 +199,6 @@ class SocialShare extends ET_Builder_Module {
 						'default' => '0px',
 					),
 	
-				),
-			),
-			'button'          => array(
-				'button_left' => array(
-					'label'          => esc_html__( 'Button Left','inftnc-infinity-tnc-divi-modules'),
-					'css'            => array(
-						 'main' 		=> '%%order_class%% .inftnc_share_button',
-					),
-					'box_shadow'     => array(
-						'css' => array(
-							'main' => '%%order_class%% .et_pb_button.inftnc_pb_button_left',
-						),
-					),
-					'margin_padding' => array(
-						'css' => array(
-							'main'      => "%%order_class%% .et_pb_button.inftnc_pb_button_left",
-							'important' => 'all',
-						),
-					),
 				),
 			),
 			'text'	     		 => false,
@@ -518,8 +498,14 @@ class SocialShare extends ET_Builder_Module {
 					'selector'    => '%%order_class%% .inftnc_social_share_wrapper',
 					'declaration' => sprintf(
 						'
-						 display:unset !important;
+							display: flex !important;
+							flex-direction: row !important;
+							column-gap: %1$s !important;
+							row-gap: %2$s !important;
+							flex-wrap: wrap !important;
 						',
+						$this->props['columns_gap'],
+						$this->props['row_gap'],
 						
 					),
 				)

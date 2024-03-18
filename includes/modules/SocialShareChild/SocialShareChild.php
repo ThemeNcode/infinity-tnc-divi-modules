@@ -101,7 +101,6 @@ class SocialShareChild extends ET_Builder_Module {
 				'tab_slug'        => 'advanced',
 				'toggle_slug'     => 'share_icon',
 				'allowed_units'    => array('px'),
-				'default_on_front' => true,
 				'default'          => 16,
 				'default_unit'     => 'px',
                 'range_settings' => array(
