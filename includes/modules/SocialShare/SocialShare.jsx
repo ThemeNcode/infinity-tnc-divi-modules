@@ -1,21 +1,20 @@
 // External Dependencies
 import React, { Component } from 'react';
+import SocialShareChild from '../SocialShareChild/SocialShareChild';
 
 
 class SocialShare extends Component {
 
   static slug = 'inftnc_social_share';
 
-  /**
-   * Module render in VB
-   * Basically DICM_CTA_Parent->render() equivalent in JSX
-   */
+
   render() {
+
     return (
-      <div>
-        <h2 className="dicm-title">{this.props.title}</h2>
-        <div className="dicm-content">{this.props.content}</div>
-      </div>
+          <div className="inftnc_social_share_wrapper">{this.props.content}
+            <SocialShareChild content={this.props.content}></SocialShareChild>
+          </div>
+          
     );
   }
 }

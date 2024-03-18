@@ -239,9 +239,6 @@ class SocialShare extends ET_Builder_Module {
 		$column_responsive_status    = et_pb_get_responsive_status($column_responsive);
 		$column_responsive_tablet    = $this->props['columns_tablet'];
 		$column_responsive_phone     = $this->props['columns_phone'];
-
-		var_dump($column_responsive_phone);
-		var_dump($column_responsive_tablet);
 		
 		if( '' !== $this->props['button_padding'] ) {  
 
@@ -868,7 +865,6 @@ class SocialShare extends ET_Builder_Module {
   }
 
 
-		
         // Remove automatically added classnames
 		$output = sprintf(
 			'<div class="inftnc_social_share_wrapper">%1$s</div>',

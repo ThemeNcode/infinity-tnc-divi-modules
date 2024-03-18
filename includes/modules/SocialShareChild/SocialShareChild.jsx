@@ -9,10 +9,10 @@ class SocialShareChild extends Component {
   static slug = 'inftnc_social_share_child';
 
   render() {
+    console.log(this.props.content)
     return (
-      <div>
-           <span class="inftnc_social_icon inftnc_social_fb"></span>
-      </div>
+        
+        <div className="inftnc_share_button">Social</div>
     );
   }
 }
