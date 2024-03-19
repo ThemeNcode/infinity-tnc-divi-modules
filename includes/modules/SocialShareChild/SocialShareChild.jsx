@@ -5,27 +5,30 @@ class SocialShareChild extends Component {
 
   static slug = 'inftnc_social_share_child';
 
+
   render() {
     const { social_share } = this.props; 
-    const layout = this.props.layout;   
+    const buttonLayout = this.props.layout;
     return (
       <div className="inftnc_share_button">
            {(() => {
             switch(social_share) {
               case 'facebook':
-                return (<a
-                  className="inftnc_share_link inftnc_fb_share_link"
-                  href={`https://www.facebook.com/sharer/sharer.php?u=&t=Infinity+Test+Module`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <span className="inftnc_social_text inftnc_fb_text">Share On Facebook</span>
-                  <span className="inftnc_social_icon inftnc_social_fb"></span>
-                </a> )
+                return ( 
+                  <a
+                    className="inftnc_share_link inftnc_fb_share_link"
+                    href={`#`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <span className="inftnc_social_text inftnc_fb_text">Share On Facebook</span>
+                    <span className="inftnc_social_icon inftnc_social_fb"></span>
+                    
+                  </a> )
               case 'whatsapp':
                 return (<a
                   className="inftnc_share_link inftnc_whatsapp_share_link"
-                  href={`https://www.facebook.com/sharer/sharer.php?u=&t=Infinity+Test+Module`}
+                  href={`#`}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -35,7 +38,7 @@ class SocialShareChild extends Component {
               case 'twitter':
                 return (<a
                   className="inftnc_share_link inftnc_twitter_share_link"
-                  href={`https://www.facebook.com/sharer/sharer.php?u=&t=Infinity+Test+Module`}
+                  href={`#`}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
@@ -45,7 +48,7 @@ class SocialShareChild extends Component {
                case 'pinterest':
                   return (<a
                     className="inftnc_share_link inftnc_pinterest_share_link"
-                    href={`https://www.facebook.com/sharer/sharer.php?u=&t=Infinity+Test+Module`}
+                    href={`#`}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -55,7 +58,7 @@ class SocialShareChild extends Component {
                  case 'linekdin':
                     return (<a
                       className="inftnc_share_link inftnc_linekdin_share_link"
-                      href={`https://www.facebook.com/sharer/sharer.php?u=&t=Infinity+Test+Module`}
+                      href={`#`}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -65,7 +68,7 @@ class SocialShareChild extends Component {
                  case 'telegram':
                     return (<a
                       className="inftnc_share_link inftnc_telegram_share_link"
-                      href={`https://www.facebook.com/sharer/sharer.php?u=&t=Infinity+Test+Module`}
+                      href={`#`}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -75,7 +78,7 @@ class SocialShareChild extends Component {
                   case 'reddit':
                       return (<a
                         className="inftnc_share_link inftnc_reddit_share_link"
-                        href={`https://www.facebook.com/sharer/sharer.php?u=&t=Infinity+Test+Module`}
+                        href={`#`}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
@@ -85,7 +88,7 @@ class SocialShareChild extends Component {
                   case 'tumblr':
                         return (<a
                           className="inftnc_share_link inftnc_tumblr_share_link"
-                          href={`https://www.facebook.com/sharer/sharer.php?u=&t=Infinity+Test+Module`}
+                          href={`#`}
                           target="_blank"
                           rel="noopener noreferrer"
                         >
@@ -95,7 +98,7 @@ class SocialShareChild extends Component {
                   case 'email':
                         return (<a
                           className="inftnc_share_link inftnc_email_share_link"
-                          href={`https://www.facebook.com/sharer/sharer.php?u=&t=Infinity+Test+Module`}
+                          href={`#`}
                           target="_blank"
                           rel="noopener noreferrer"
                         >
@@ -105,7 +108,7 @@ class SocialShareChild extends Component {
                    case 'blogger':
                         return (<a
                           className="inftnc_share_link inftnc_blogger_share_link"
-                          href={`https://www.facebook.com/sharer/sharer.php?u=&t=Infinity+Test+Module`}
+                          href={`#`}
                           target="_blank"
                           rel="noopener noreferrer"
                         >

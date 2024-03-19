@@ -71,6 +71,7 @@ class SocialShare extends ET_Builder_Module {
 				),
 				'toggle_slug'     => 'layout',
 				'tab_slug'        => 'advanced',
+				'default_on_child' => true,
 			),
 
 			'button_shape' => array(
