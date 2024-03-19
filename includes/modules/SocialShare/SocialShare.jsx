@@ -95,6 +95,21 @@ class SocialShare extends Component {
       }]);
     }
 
+    // Process  Column Gap value into style
+    if(props.columns_gap) {
+      additionalCss.push([{
+            selector:'%%order_class%% .inftnc_social_share_wrapper',
+            declaration: `grid-column-gap:${props.columns_gap};`,
+      }]);
+    }
+    // Process  row Gap value into style
+    if(props.row_gap) {
+      additionalCss.push([{
+            selector:'%%order_class%% .inftnc_social_share_wrapper',
+            declaration: `grid-row-gap:${props.row_gap};`,
+      }]);
+    }
+    
     return additionalCss;
   }
 
