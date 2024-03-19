@@ -193,7 +193,7 @@ class SocialShare extends Component {
               }]);
             } 
 
-            //Resonsive Column  One 
+            //Resonsive Column  Two
             if (props.columns_tablet === 'column_two' && column_responsive_active) {
               additionalCss.push([{
                 selector: '%%order_class%% .inftnc_social_share_wrapper',
@@ -201,8 +201,8 @@ class SocialShare extends Component {
                 device: 'tablet',
               }]);
             } 
-            
-             //Resonsive Column  One 
+
+             //Resonsive Column  Three
              if (props.columns_tablet === 'column_three' && column_responsive_active) {
               additionalCss.push([{
                 selector: '%%order_class%% .inftnc_social_share_wrapper',
@@ -211,7 +211,7 @@ class SocialShare extends Component {
               }]);
             } 
 
-             //Resonsive Column  One 
+             //Resonsive Column  Four 
              if (props.columns_tablet === 'column_four' && column_responsive_active) {
               additionalCss.push([{
                 selector: '%%order_class%% .inftnc_social_share_wrapper',
@@ -220,7 +220,7 @@ class SocialShare extends Component {
               }]);
             } 
 
-             //Resonsive Column  One 
+             //Resonsive Column  Five
              if (props.columns_tablet === 'column_five' && column_responsive_active) {
               additionalCss.push([{
                 selector: '%%order_class%% .inftnc_social_share_wrapper',
@@ -229,7 +229,7 @@ class SocialShare extends Component {
               }]);
             } 
 
-             //Resonsive Column  One 
+             //Resonsive Column  Six 
              if (props.columns_tablet === 'column_six' && column_responsive_active) {
               additionalCss.push([{
                 selector: '%%order_class%% .inftnc_social_share_wrapper',
@@ -238,6 +238,69 @@ class SocialShare extends Component {
               }]);
             } 
 
+            //Responsive Column Phonw
+            //Resonsive Column Auto
+            if (props.columns_phone === 'column_auto' && column_responsive_active) {
+              additionalCss.push([{
+                selector: '%%order_class%% .inftnc_social_share_wrapper',
+                declaration: `display:grid;grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));`,
+                device: 'phone',
+              }]);
+            }
+
+            //Resonsive Column  One
+            if (props.columns_phone === 'column_one' && column_responsive_active) {
+              additionalCss.push([{
+                selector: '%%order_class%% .inftnc_social_share_wrapper',
+                declaration: `display:grid;grid-template-columns:repeat(1, 1fr);`,
+                device: 'phone',
+              }]);
+            } 
+
+            //Resonsive Column  Two 
+            if (props.columns_phone === 'column_two' && column_responsive_active) {
+              additionalCss.push([{
+                selector: '%%order_class%% .inftnc_social_share_wrapper',
+                declaration: `display:grid;grid-template-columns:repeat(2, 1fr);`,
+                device: 'phone',
+              }]);
+            } 
+            
+             //Resonsive Column Three 
+             if (props.columns_phone === 'column_three' && column_responsive_active) {
+              additionalCss.push([{
+                selector: '%%order_class%% .inftnc_social_share_wrapper',
+                declaration: `display:grid;grid-template-columns:repeat(3, 1fr);`,
+                device: 'phone',
+              }]);
+            } 
+
+             //Resonsive Column  Four 
+             if (props.columns_phone === 'column_four' && column_responsive_active) {
+              additionalCss.push([{
+                selector: '%%order_class%% .inftnc_social_share_wrapper',
+                declaration: `display:grid;grid-template-columns:repeat(4, 1fr);`,
+                device: 'phone',
+              }]);
+            } 
+
+             //Resonsive Column  Five
+             if (props.columns_phone === 'column_five' && column_responsive_active) {
+              additionalCss.push([{
+                selector: '%%order_class%% .inftnc_social_share_wrapper',
+                declaration: `display:grid;grid-template-columns:repeat(5, 1fr);`,
+                device: 'phone',
+              }]);
+            } 
+
+             //Resonsive Column  Six 
+             if (props.columns_phone === 'column_six' && column_responsive_active) {
+              additionalCss.push([{
+                selector: '%%order_class%% .inftnc_social_share_wrapper',
+                declaration: `display:grid;grid-template-columns:repeat(6, 1fr);`,
+                device: 'phone',
+              }]);
+            } 
      }
 
     return additionalCss;
