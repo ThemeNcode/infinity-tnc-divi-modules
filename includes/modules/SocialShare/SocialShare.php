@@ -445,6 +445,7 @@ class SocialShare extends ET_Builder_Module {
 				)
 			);
 		}
+		
 		if ('button_rounded' === $this->props['button_shape']) {
 			ET_Builder_Element::set_style(
 				$render_slug,

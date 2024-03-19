@@ -102,14 +102,72 @@ class SocialShare extends Component {
             declaration: `grid-column-gap:${props.columns_gap};`,
       }]);
     }
-    // Process  row Gap value into style
+    // Process ow Gap value into style
     if(props.row_gap) {
       additionalCss.push([{
             selector:'%%order_class%% .inftnc_social_share_wrapper',
             declaration: `grid-row-gap:${props.row_gap};`,
       }]);
     }
-    
+
+    // Social Share button shape 
+
+    if(props.button_shape === 'button_square') {
+      additionalCss.push([{
+            selector:'%%order_class%% .inftnc_share_link',
+            declaration: `border-radius:0px;`,
+      }]);
+    }
+
+    if(props.button_shape === 'button_square') {
+      additionalCss.push([{
+            selector:'%%order_class%% .inftnc_share_link',
+            declaration: `border-radius:0px;`,
+      }]);
+    }
+
+    if(props.button_shape === 'button_rounded') {
+      additionalCss.push([{
+            selector:'%%order_class%% .inftnc_share_link',
+            declaration: `border-radius:10px;`,
+      }]);
+    }
+    //only icon 
+    if(props.button_layout === 'only_icon' && props.button_shape ==='button_circle'){
+        additionalCss.push([{
+            selector:'%%order_class%% .inftnc_share_link',
+            declaration: `border-radius: 100px;width: 45px;padding: 10px;	text-align:center; display:unset !important;`,
+        }]);
+    } 
+    // Margin unset
+    if(props.button_layout === 'only_icon' && props.button_shape ==='button_circle'){
+      additionalCss.push([{
+          selector:'%%order_class%% .inftnc_social_icon',
+          declaration: `margin-left:unset;`,
+      }]);
+    } 
+    // only icon column 
+    if(props.button_layout === 'only_icon' && props.button_shape ==='button_circle' && props.columns === 'column_auto'){
+      additionalCss.push([{
+          selector:'%%order_class%% .inftnc_social_share_wrapper',
+          declaration: `display: flex !important; flex-direction: row !important; column-gap: ${props.columns_gap}!important; row-gap: ${props.row_gap}!important; flex-wrap: wrap !important;`,
+      }]);
+    } 
+    // only text radius
+    if(props.button_layout === 'only_text' && props.button_shape ==='button_circle'){
+      additionalCss.push([{
+          selector:'%%order_class%% .inftnc_share_link',
+          declaration: `border-radius:30px;`,
+      }]);
+    } 
+    // only icon with text
+    if(props.button_layout === 'icon_with_text' && props.button_shape ==='button_circle'){
+      additionalCss.push([{
+          selector:'%%order_class%% .inftnc_share_link',
+          declaration: `border-radius:30px;`,
+      }]);
+    } 
+
     return additionalCss;
   }
 
