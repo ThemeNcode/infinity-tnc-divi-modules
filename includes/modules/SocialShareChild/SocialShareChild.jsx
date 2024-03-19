@@ -5,6 +5,37 @@ class SocialShareChild extends Component {
 
   static slug = 'inftnc_social_share_child';
 
+  static css(props, moduleInfo) {
+    const utils         = window.ET_Builder.API.Utils;
+    const additionalCss = [];
+
+    // Process button background  value into style
+    if (props.button_color_child) {
+      additionalCss.push([{
+        selector:    '%%order_class%% .inftnc_share_link',
+        declaration: `background-color: ${props.button_color_child}!important;`,
+      }]);
+    }
+
+     // Process icon color  value into style
+     if (props.icon_color_child) {
+      additionalCss.push([{
+        selector:    '%%order_class%% .inftnc_social_icon',
+        declaration: `color: ${props.icon_color_child}!important;`,
+      }]);
+    }
+
+       // Process icon size value into style
+       if (props.icon_size_child) {
+        additionalCss.push([{
+          selector:    '%%order_class%% .inftnc_social_icon',
+          declaration: `font-size: ${props.icon_size_child}!important;`,
+        }]);
+      }
+
+    return additionalCss;
+  }
+
 
   render() {
     const { social_share } = this.props; 

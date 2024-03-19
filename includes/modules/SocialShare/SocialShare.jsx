@@ -19,14 +19,6 @@ class SocialShare extends Component {
       }]);
     }
 
-     // Process button background  value into style
-     if (props.icon_color) {
-      additionalCss.push([{
-        selector:    '%%order_class%% .inftnc_social_icon',
-        declaration: `color: ${props.icon_color};`,
-      }]);
-    }
-
       // Process icon color value into style
       if (props.icon_color) {
         additionalCss.push([{
