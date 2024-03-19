@@ -168,6 +168,78 @@ class SocialShare extends Component {
       }]);
     } 
 
+    // Responsive Column Layout
+
+    if(props.columns){
+
+            const 	column_responsive_last_edited =  props.columns_last_edited; 
+            const   column_responsive_active = column_responsive_last_edited && column_responsive_last_edited.startsWith("on")
+            //Responsive Column Tablet
+            //Resonsive Column Auto
+            if (props.columns_tablet === 'column_auto' && column_responsive_active) {
+              additionalCss.push([{
+                selector: '%%order_class%% .inftnc_social_share_wrapper',
+                declaration: `display:grid;grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));`,
+                device: 'tablet',
+              }]);
+            }
+
+            //Resonsive Column  One 
+            if (props.columns_tablet === 'column_one' && column_responsive_active) {
+              additionalCss.push([{
+                selector: '%%order_class%% .inftnc_social_share_wrapper',
+                declaration: `display:grid;grid-template-columns:repeat(1, 1fr);`,
+                device: 'tablet',
+              }]);
+            } 
+
+            //Resonsive Column  One 
+            if (props.columns_tablet === 'column_two' && column_responsive_active) {
+              additionalCss.push([{
+                selector: '%%order_class%% .inftnc_social_share_wrapper',
+                declaration: `display:grid;grid-template-columns:repeat(2, 1fr);`,
+                device: 'tablet',
+              }]);
+            } 
+            
+             //Resonsive Column  One 
+             if (props.columns_tablet === 'column_three' && column_responsive_active) {
+              additionalCss.push([{
+                selector: '%%order_class%% .inftnc_social_share_wrapper',
+                declaration: `display:grid;grid-template-columns:repeat(3, 1fr);`,
+                device: 'tablet',
+              }]);
+            } 
+
+             //Resonsive Column  One 
+             if (props.columns_tablet === 'column_four' && column_responsive_active) {
+              additionalCss.push([{
+                selector: '%%order_class%% .inftnc_social_share_wrapper',
+                declaration: `display:grid;grid-template-columns:repeat(4, 1fr);`,
+                device: 'tablet',
+              }]);
+            } 
+
+             //Resonsive Column  One 
+             if (props.columns_tablet === 'column_five' && column_responsive_active) {
+              additionalCss.push([{
+                selector: '%%order_class%% .inftnc_social_share_wrapper',
+                declaration: `display:grid;grid-template-columns:repeat(5, 1fr);`,
+                device: 'tablet',
+              }]);
+            } 
+
+             //Resonsive Column  One 
+             if (props.columns_tablet === 'column_six' && column_responsive_active) {
+              additionalCss.push([{
+                selector: '%%order_class%% .inftnc_social_share_wrapper',
+                declaration: `display:grid;grid-template-columns:repeat(6, 1fr);`,
+                device: 'tablet',
+              }]);
+            } 
+
+     }
+
     return additionalCss;
   }
 
