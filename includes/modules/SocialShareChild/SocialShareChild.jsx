@@ -33,6 +33,16 @@ class SocialShareChild extends Component {
         }]);
       }
 
+      // Process button padding value into style
+      if (props.button_padding_child) {
+        const inftnc_button_padding_child = props.button_padding_child.split("|");
+        additionalCss.push([{
+          selector: '%%order_class%% .inftnc_share_link',
+          declaration: `padding-top: ${inftnc_button_padding_child[0]}; padding-right: ${inftnc_button_padding_child[1]}; padding-bottom: ${inftnc_button_padding_child[2]}; padding-left: ${inftnc_button_padding_child[3]};`,
+        }]);
+     }
+
+
     return additionalCss;
   }
 
