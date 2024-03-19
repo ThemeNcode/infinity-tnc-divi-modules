@@ -44,6 +44,57 @@ class SocialShare extends Component {
           }]);
        }
 
+       //Social Share Button column style 
+
+       if(props.columns === 'column_auto') {
+          additionalCss.push([{
+                selector:'%%order_class%% .inftnc_social_share_wrapper',
+                declaration: `display:grid;grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));`,
+          }]);
+       }
+
+        if(props.columns === 'column_one') {
+          additionalCss.push([{
+                selector:'%%order_class%% .inftnc_social_share_wrapper',
+                declaration: `display:grid;grid-template-columns:repeat(1, 1fr);`,
+          }]);
+        }
+
+      if(props.columns === 'column_two') {
+          additionalCss.push([{
+                selector:'%%order_class%% .inftnc_social_share_wrapper',
+                declaration: `display:grid;grid-template-columns:repeat(2, 1fr);`,
+          }]);
+      }
+
+      if(props.columns === 'column_three') {
+        additionalCss.push([{
+              selector:'%%order_class%% .inftnc_social_share_wrapper',
+              declaration: `display:grid;grid-template-columns:repeat(3, 1fr);`,
+        }]);
+    }
+
+    if(props.columns === 'column_four') {
+      additionalCss.push([{
+            selector:'%%order_class%% .inftnc_social_share_wrapper',
+            declaration: `display:grid;grid-template-columns:repeat(4, 1fr);`,
+      }]);
+    }
+
+    if(props.columns === 'column_five') {
+      additionalCss.push([{
+            selector:'%%order_class%% .inftnc_social_share_wrapper',
+            declaration: `display:grid;grid-template-columns:repeat(5, 1fr);`,
+      }]);
+    }
+
+    if(props.columns === 'column_six') {
+      additionalCss.push([{
+            selector:'%%order_class%% .inftnc_social_share_wrapper',
+            declaration: `display:grid;grid-template-columns:repeat(6, 1fr);`,
+      }]);
+    }
+
     return additionalCss;
   }
 
