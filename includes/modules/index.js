@@ -9,8 +9,9 @@ import VimeoVideo from './VimeoVideo/VimeoVideo';
 import TypeWriter from './TypeWriter/TypeWriter';
 import SocialShare from './SocialShare/SocialShare';
 import SocialShareChild from './SocialShareChild/SocialShareChild';
+import LogoCarousel from './LogoCarousel/LogoCarousel';
 
-export default [HelloWorld,DualButtons,BreadCrumbs,HeadingGradient,StarRating,EmbedMap,YoutubeEmbed,VimeoVideo,TypeWriter,SocialShare,SocialShareChild];
+export default [HelloWorld,DualButtons,BreadCrumbs,HeadingGradient,StarRating,EmbedMap,YoutubeEmbed,VimeoVideo,TypeWriter,SocialShare,SocialShareChild,LogoCarousel];
 
 
 
