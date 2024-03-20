@@ -203,10 +203,19 @@ class LogoCarousel extends ET_Builder_Module {
 				'tab_slug'        => 'general',
 			),
 
+			'logo_grayscale' => array(
+				'label'           => esc_html__( 'Logo Gray Scale', 'infinity-tnc-divi-modules' ),
+				'type'            => 'select',
+				'deafult'		  => 'gray_scale_default',
+				'options'         => array(
+					'gray_scale_default' 		=> esc_html__( 'Grayscale by Default', 'infinity-tnc-divi-modules' ),
+					'gray_scale_hover' 			=> esc_html__( 'Grayscale on Hover', 'infinity-tnc-divi-modules' ),
+				),
+				'toggle_slug'        => 'main_content',
+				'tab_slug'           => 'general',
+			 ),
 
-		
 		);
-
 		
 	}
 
