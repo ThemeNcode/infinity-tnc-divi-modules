@@ -30,23 +30,22 @@ class LogoCarousel extends ET_Builder_Module {
 				'toggles' => array(
 					'main_content' 		 => esc_html__( 'Logo General', 'infinity-tnc-divi-modules' ),
 					'carousel_settings'  => esc_html__( 'Carousel Settings', 'infinity-tnc-divi-modules' ),
-					'navigation'		 => esc_html__( 'Navigation', 'infinity-tnc-divi-modules'),
-					'pagination'		 => esc_html__( 'Pagination', 'infinity-tnc-divi-modules'),
 				),
 			),
 			'advanced' => array(
 				'toggles' => array(
-					'layout'   => array(
-						'title' => esc_html__( 'Layout', 'inftnc-infinity-tnc-divi-modules' ),
-						'priority' => 40,
-					),
-					'share_buton'	=> array(
-						'title'	=> esc_html__( 'Share Button',  'inftnc-infinity-tnc-divi-modules' ),
-						'priority' => 41,
-					),
-					'share_icon'	=> array(
-						'title'	=> esc_html__( 'Share Button Icon',  'inftnc-infinity-tnc-divi-modules' ),
-						'priority' => 41,
+					'navigation'		 => esc_html__( 'Navigation', 'infinity-tnc-divi-modules'),
+					'pagination' => array(
+						'title'             => esc_html__('Pagination', 'infinity-tnc-divi-modules'),
+						'tabbed_subtoggles' => true,
+						'sub_toggles'       => array(
+							'pagination_common' => array(
+								'name' => esc_html__('Common', 'infinity-tnc-divi-modules'),
+							),
+							'pagination_active' => array(
+								'name' => esc_html__('Active', 'infinity-tnc-divi-modules'),
+							),
+						),
 					),
 				),
 			),
@@ -215,6 +214,125 @@ class LogoCarousel extends ET_Builder_Module {
 				'tab_slug'           => 'general',
 			 ),
 
+			 'navigation_icon_size' => array(
+				'label'           => esc_html__( 'Icon Size', 'infinity-tnc-divi-module' ),
+				'type'            => 'range',
+				'tab_slug'        => 'advanced',
+				'toggle_slug'     => 'navigation',
+				'allowed_units'    => array( 'px'),
+				'default_unit'     => 'px',
+                'default'         => 16,
+                'range_settings' => array(
+					'min'  => 0,
+					'max'  => 100,
+					'step' => 1,
+				),
+				'mobile_options'     => true,
+				'responsive'         => true,
+			),
+
+			'navigation_bg_size' => array(
+				'label'           => esc_html__( 'Background Size', 'infinity-tnc-divi-module' ),
+				'type'            => 'range',
+				'tab_slug'        => 'advanced',
+				'toggle_slug'     => 'navigation',
+				'allowed_units'    => array('px'),
+				'default_unit'     => 'px',
+                'default'         => 16,
+                'range_settings' => array(
+					'min'  => 0,
+					'max'  => 100,
+					'step' => 1,
+				),
+				'mobile_options'     => true,
+				'responsive'         => true,
+			),
+
+			'navigation_icon_color' => array(
+                'label'           => esc_html__( 'Icon Color', 'inftnc-infinity-tnc-divi-modules' ),
+                'type'            => 'color',
+				'default'		  => '#481CA6',
+                'tab_slug'        => 'advanced',
+                'toggle_slug'     => 'navigation',
+				'hover'       	  => 'tabs',
+            ),
+
+			'navigation_bg_color' => array(
+                'label'           => esc_html__( 'Background Color', 'inftnc-infinity-tnc-divi-modules' ),
+                'type'            => 'color',
+				'default'		  => '#481CA6',
+                'tab_slug'        => 'advanced',
+                'toggle_slug'     => 'navigation',
+				'hover'       	  => 'tabs',
+            ),	
+
+			'pagination_cmn_dots_size' => array(
+				'label'           => esc_html__( 'Dots Size', 'infinity-tnc-divi-module' ),
+				'type'            => 'range',
+				'tab_slug'        => 'advanced',
+				'toggle_slug'     => 'pagination',
+				'sub_toggle'	  => 'pagination_common',	
+				'allowed_units'    => array('px'),
+				'default_unit'     => 'px',
+                'default'         => 16,
+                'range_settings' => array(
+					'min'  => 0,
+					'max'  => 100,
+					'step' => 1,
+				),
+				'mobile_options'     => true,
+				'responsive'         => true,
+			),
+
+			'pagination_active_dots_size' => array(
+				'label'           => esc_html__( 'Dots Size', 'infinity-tnc-divi-module' ),
+				'type'            => 'range',
+				'tab_slug'        => 'advanced',
+				'toggle_slug'     => 'pagination',
+				'sub_toggle'	  => 'pagination_active',	
+				'allowed_units'    => array('px'),
+				'default_unit'     => 'px',
+                'default'         => 16,
+                'range_settings' => array(
+					'min'  => 0,
+					'max'  => 100,
+					'step' => 1,
+				),
+				'mobile_options'     => true,
+				'responsive'         => true,
+			),
+
+			'pagination_cmn_dots_color' => array(
+                'label'           => esc_html__( 'Dots Color', 'infinity-tnc-divi-modules' ),
+                'type'            => 'color',
+				'default'		  => '#481CA6',
+                'tab_slug'        => 'advanced',
+                'toggle_slug'     => 'pagination',
+				'sub_toggle'	  => 'pagination_common',
+            ),
+
+			'pagination_dots_active_color' => array(
+                'label'           => esc_html__( 'Dots Color', 'infinity-tnc-divi-modules' ),
+                'type'            => 'color',
+				'default'		  => '#481CA6',
+                'tab_slug'        => 'advanced',
+                'toggle_slug'     => 'pagination',
+				'sub_toggle'	  => 'pagination_active',
+            ),
+
+			'dots_alignment' => array(
+				'label'           => esc_html__( 'Dots Alignment', 'infinity-tnc-divi-modules' ),
+				'description'     => esc_html__( 'Align Dots to the left, right or center of the module.', 'infinity-tnc-divi-modules' ),
+				'type'            => 'text_align',
+				'option_category' => 'configuration',
+				'options'         => et_builder_get_text_orientation_options( array( 'justified' ) ),
+				'mobile_options'  => true,
+				'responsive'      => true,
+				'tab_slug'        => 'advanced',
+                'toggle_slug'     => 'pagination',
+				'sub_toggle'	  => 'pagination_common',
+			),
+	
 		);
 		
 	}
