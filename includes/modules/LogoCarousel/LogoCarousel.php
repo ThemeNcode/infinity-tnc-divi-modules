@@ -18,7 +18,7 @@ class LogoCarousel extends ET_Builder_Module {
 	function init() {
 		// Module name
 		$this->name                    = esc_html__( 'Logo Carousel - Infinity TNC', 'infinity-tnc-divi-modules' );
-        $this->child_item_text 		   = esc_html__( 'Logo Carousel', 'infinity-tnc-divi-modules' );
+        $this->child_item_text 		   = esc_html__( 'Logo', 'infinity-tnc-divi-modules' );
 
 		// Module Icon
 		// Load customized svg icon and use it on builder as module icon. If you don't have svg icon, you can use
