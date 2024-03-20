@@ -62,9 +62,127 @@ class LogoCarousel extends ET_Builder_Module {
 	 */
 	function get_fields() {
 		return array(
-
+			'slides_to_show' => array(
+				'label'           => esc_html__( 'Slides To Show', 'infinity-tnc-divi-modules' ),
+				'type'            => 'text',
+				'default'		  => '3',
+				'descritpion'     => esc_html__( 'Slides to show at a time', 'infinity-tnc-divi-modules' ),
+				'toggle_slug'     => 'carousel_settings',
+				'tab_slug'        => 'general',
+				'mobile_options'     => true,
+				'responsive'         => true,
+			),	
 			
+			'slides-to-scroll' => array(
+				'label'           => esc_html__( 'Slides To Scroll', 'infinity-tnc-divi-modules' ),
+				'type'            => 'text',
+				'default'		  => '1',
+				'descritpion'     => esc_html__( 'Slides to scroll at a time', 'infinity-tnc-divi-modules' ),
+				'toggle_slug'     => 'carousel_settings',
+				'tab_slug'        => 'general',
+				'mobile_options'     => true,
+				'responsive'         => true,
+			),	
+
+			'animation_speed' => array(
+				'label'           => esc_html__( 'Animation Speed', 'infinity-tnc-divi-module' ),
+				'type'            => 'range',
+				'tab_slug'        => 'general',
+				'toggle_slug'     => 'carousel_settings',
+				'description'	  => esc_html__( 'Animation Transition speed', 'infinity-tnc-divi-module' ),
+				'allowed_units'    => array( 'ms'),
+				'default_unit'     => 'ms',
+                'default'         => 300,
+                'range_settings' => array(
+					'min'  => 0,
+					'max'  => 1000,
+					'step' => 1,
+				),
+			),
+
+			'autoplay' => array(
+				'label'             => esc_html__( 'Auto Play', 'infinity-tnc-divi-modules' ),
+				'type'              => 'yes_no_button',
+				'default'			=> 'on',
+				'options'           => array(
+					'on'  => esc_html__( 'Yes', 'infinity-tnc-divi-modules' ),
+					'off' => esc_html__( 'NO', 'infinity-tnc-divi-modules' ),
+				),
+				'toggle_slug'     => 'carousel_settings',
+				'tab_slug'        => 'general',
+			),
+
+			'autoplay_speed' => array(
+				'label'           => esc_html__( 'Autoplay Speed', 'infinity-tnc-divi-module' ),
+				'type'            => 'range',
+				'tab_slug'        => 'general',
+				'toggle_slug'     => 'carousel_settings',
+				'allowed_units'    => array( 'ms'),
+				'default_unit'     => 'ms',
+                'default'         => 3000,
+                'range_settings' => array(
+					'min'  => 0,
+					'max'  => 10000,
+					'step' => 1,
+				),
+			),
+
+			'rtl' => array(
+				'label'             => esc_html__( 'Auto Play', 'infinity-tnc-divi-modules' ),
+				'type'              => 'yes_no_button',
+				'default'			=> 'on',
+				'description'       => esc_html__('Change the logo direction to become right-to-left', 'infinity-tnc-divi-modules'),
+				'options'           => array(
+					'on'  => esc_html__( 'Yes', 'infinity-tnc-divi-modules' ),
+					'off' => esc_html__( 'NO', 'infinity-tnc-divi-modules' ),
+				),
+				'toggle_slug'     => 'carousel_settings',
+				'tab_slug'        => 'general',
+			),
+
+			'infinite' => array(
+				'label'             => esc_html__( 'Infinite', 'infinity-tnc-divi-modules' ),
+				'type'              => 'yes_no_button',
+				'default'			=> 'on',
+				'description'       => esc_html__('Infinite Logo looping', 'infinity-tnc-divi-modules'),
+				'options'           => array(
+					'on'  => esc_html__( 'Yes', 'infinity-tnc-divi-modules' ),
+					'off' => esc_html__( 'NO', 'infinity-tnc-divi-modules' ),
+				),
+				'toggle_slug'     => 'carousel_settings',
+				'tab_slug'        => 'general',
+			),
+
+			'pause_on_hover' => array(
+				'label'             => esc_html__( 'Pause On Hover', 'infinity-tnc-divi-modules' ),
+				'type'              => 'yes_no_button',
+				'default'			=> 'on',
+				'description'       => esc_html__('Pauses autoplay on hover', 'infinity-tnc-divi-modules'),
+				'options'           => array(
+					'on'  => esc_html__( 'Yes', 'infinity-tnc-divi-modules' ),
+					'off' => esc_html__( 'NO', 'infinity-tnc-divi-modules' ),
+				),
+				'toggle_slug'     => 'carousel_settings',
+				'tab_slug'        => 'general',
+			),
+
+			'swipe' => array(
+				'label'             => esc_html__( 'Swipe', 'infinity-tnc-divi-modules' ),
+				'type'              => 'yes_no_button',
+				'default'			=> 'on',
+				'description'       => esc_html__('Enables touch swipe', 'infinity-tnc-divi-modules'),
+				'options'           => array(
+					'on'  => esc_html__( 'Yes', 'infinity-tnc-divi-modules' ),
+					'off' => esc_html__( 'NO', 'infinity-tnc-divi-modules' ),
+				),
+				'toggle_slug'     => 'carousel_settings',
+				'tab_slug'        => 'general',
+			),
+
+		
 		);
+
+		
 	}
 
 	/**

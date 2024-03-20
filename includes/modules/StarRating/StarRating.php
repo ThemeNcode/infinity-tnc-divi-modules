@@ -220,7 +220,7 @@ class INFTNC_StarRating extends ET_Builder_Module {
 		$active_color     = $this->props['icon_color'];
 		$icon_size 	      = $this->props['star_size'];
 		$header_level     = $this->props['title_level'];
-		$star_alignment   =  $this->props['star_alignment'];
+		$star_alignment   = $this->props['star_alignment'];
 
 		wp_enqueue_script( 'inftnc-rating-module' );
 
