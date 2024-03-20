@@ -7,7 +7,7 @@ class LogoCarouselChild extends ET_Builder_Module {
 	public $type                     = 'child';
 
 	// Module item's attribute that will be used for module item label on modal
-	public $child_title_var          = 'logo_carousel';
+	public $child_title_var          = 'alt';
 
 
 	// Full Visual Builder support
@@ -106,11 +106,6 @@ class LogoCarouselChild extends ET_Builder_Module {
 	 * @return string module's rendered output
 	 */
 	function render( $attrs, $content = null, $render_slug ) {
-
-        $data_schema            = $this->get_swapped_img_schema('image');
-
-		
-
 		// Render module content
 		$output = sprintf('
 					<div class="inftnc_carousel_child">
