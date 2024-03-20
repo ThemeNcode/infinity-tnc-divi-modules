@@ -24,7 +24,7 @@ class LogoCarouselChild extends ET_Builder_Module {
         $this->settings_modal_toggles = array(
             'general'  => array(
                 'toggles' => array(
-                    'main_content' => esc_html__( 'Network', 'infinity-tnc-divi-modules' ),
+                    'main_content' => esc_html__( 'Content', 'infinity-tnc-divi-modules' ),
                 ),
             ),
             'advanced' => array(
@@ -52,7 +52,29 @@ class LogoCarouselChild extends ET_Builder_Module {
 	function get_fields() {
 		
 		return array(
-			
+            'logo'                 => array(
+				'label'              => esc_html__( 'Logo', 'infinity-tnc-divi-modules'),
+				'type'               => 'upload',
+                'default'            =>'data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTA4MCIgaGVpZ2h0PSI1NDAiIHZpZXdCb3g9IjAgMCAxMDgwIDU0MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICAgIDxnIGZpbGw9Im5vbmUiIGZpbGwtcnVsZT0iZXZlbm9kZCI+CiAgICAgICAgPHBhdGggZmlsbD0iI0VCRUJFQiIgZD0iTTAgMGgxMDgwdjU0MEgweiIvPgogICAgICAgIDxwYXRoIGQ9Ik00NDUuNjQ5IDU0MGgtOTguOTk1TDE0NC42NDkgMzM3Ljk5NSAwIDQ4Mi42NDR2LTk4Ljk5NWwxMTYuMzY1LTExNi4zNjVjMTUuNjItMTUuNjIgNDAuOTQ3LTE1LjYyIDU2LjU2OCAwTDQ0NS42NSA1NDB6IiBmaWxsLW9wYWNpdHk9Ii4xIiBmaWxsPSIjMDAwIiBmaWxsLXJ1bGU9Im5vbnplcm8iLz4KICAgICAgICA8Y2lyY2xlIGZpbGwtb3BhY2l0eT0iLjA1IiBmaWxsPSIjMDAwIiBjeD0iMzMxIiBjeT0iMTQ4IiByPSI3MCIvPgogICAgICAgIDxwYXRoIGQ9Ik0xMDgwIDM3OXYxMTMuMTM3TDcyOC4xNjIgMTQwLjMgMzI4LjQ2MiA1NDBIMjE1LjMyNEw2OTkuODc4IDU1LjQ0NmMxNS42Mi0xNS42MiA0MC45NDgtMTUuNjIgNTYuNTY4IDBMMTA4MCAzNzl6IiBmaWxsLW9wYWNpdHk9Ii4yIiBmaWxsPSIjMDAwIiBmaWxsLXJ1bGU9Im5vbnplcm8iLz4KICAgIDwvZz4KPC9zdmc+Cg==',
+				'option_category'    => 'basic_option',
+				'upload_button_text' => esc_html__( 'Upload a Logo', 'infinity-tnc-divi-modules'),
+				'choose_text'        => esc_attr__( 'Choose a Logo', 'infinity-tnc-divi-modules' ),
+				'update_text'        => esc_attr__( 'Set As Logo', 'infinity-tnc-divi-modules' ),
+				'description'        => esc_html__( 'Upload your desired logo, or type in the URL to the logo you would like to display.', 'infinity-tnc-divi-modules' ),
+				'toggle_slug'        => 'main_content',
+				'dynamic_content'    => 'image',
+				'mobile_options'     => true,
+				'hover'              => 'tabs',
+			),
+
+            'alt'                 => array(
+				'label'           => esc_html__( 'Logo Alternative Text', 'infinity-tnc-divi-modules' ),
+				'type'            => 'text',
+				'option_category' => 'basic_option',
+				'description'     => esc_html__( 'This defines the HTML ALT text. A short description of your image can be placed here.', 'infinity-tnc-divi-modules' ),
+				'toggle_slug'     => 'main_content',
+				'dynamic_content' => 'text',
+			),
 
 		);
 	}
@@ -85,11 +107,13 @@ class LogoCarouselChild extends ET_Builder_Module {
 	 */
 	function render( $attrs, $content = null, $render_slug ) {
 
+        $data_schema            = $this->get_swapped_img_schema('image');
+
 		
 
 		// Render module content
 		$output = sprintf('
-					<div class="inftnc_share_button">
+					<div class="inftnc_carousel_child">
 						
 			      	</div>',
 					
