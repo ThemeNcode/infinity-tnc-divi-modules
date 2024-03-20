@@ -202,17 +202,42 @@ class LogoCarousel extends ET_Builder_Module {
 				'tab_slug'        => 'general',
 			),
 
-			'logo_grayscale' => array(
-				'label'           => esc_html__( 'Logo Gray Scale', 'infinity-tnc-divi-modules' ),
-				'type'            => 'select',
-				'deafult'		  => 'gray_scale_default',
-				'options'         => array(
-					'gray_scale_default' 		=> esc_html__( 'Grayscale by Default', 'infinity-tnc-divi-modules' ),
-					'gray_scale_hover' 			=> esc_html__( 'Grayscale on Hover', 'infinity-tnc-divi-modules' ),
+			 'logo_grayscale_default' => array(
+				'label'             => esc_html__( 'Grayscale by Default', 'infinity-tnc-divi-modules' ),
+				'type'              => 'yes_no_button',
+				'default'			=> 'on',
+				'options'           => array(
+					'on'  => esc_html__( 'Yes', 'infinity-tnc-divi-modules' ),
+					'off' => esc_html__( 'NO', 'infinity-tnc-divi-modules' ),
 				),
-				'toggle_slug'        => 'main_content',
-				'tab_slug'           => 'general',
-			 ),
+				'toggle_slug'     => 'main_content',
+				'tab_slug'        => 'general',
+			),
+
+			'logo_grayscale_hover' => array(
+				'label'             => esc_html__( 'Grayscale on Hover', 'infinity-tnc-divi-modules' ),
+				'type'              => 'yes_no_button',
+				'default'			=> 'off',
+				'options'           => array(
+					'on'  => esc_html__( 'Yes', 'infinity-tnc-divi-modules' ),
+					'off' => esc_html__( 'NO', 'infinity-tnc-divi-modules' ),
+				),
+				'toggle_slug'     => 'main_content',
+				'tab_slug'        => 'general',
+			),	
+
+			'logo_hover' => array(
+				'label'           => esc_html__( 'Logo Hover Effect', 'infinity-tnc-divi-modules' ),
+				'type'            => 'select',
+				'default'		  => 'icon_with_text',
+				'options'         => array(
+					'tilt' => esc_html__( 'TILT', 'infinity-tnc-divi-modules' ),
+					'square'  	 => esc_html__( 'Square', 'infinity-tnc-divi-modules' ),
+					'shrink'      => esc_html__( 'Shrink', 'infinity-tnc-divi-modules' ),
+				),
+				'toggle_slug'     => 'main_content',
+				'tab_slug'        => 'general',
+			),
 
 			 'navigation_icon_size' => array(
 				'label'           => esc_html__( 'Icon Size', 'infinity-tnc-divi-module' ),
