@@ -321,7 +321,7 @@ class INFTNC_DualButtons extends ET_Builder_Module {
 
 
     
-	public function render( $attrs, $content = null, $render_slug ) {
+	public function render( $attrs, $content, $render_slug ) {
         // Module specific props added on $this->get_fields()
         $button_alignment    		   = $this->props['button_alignment'];
 		$button_alignment              = $this->get_button_alignment();

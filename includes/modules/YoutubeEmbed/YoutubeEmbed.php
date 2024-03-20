@@ -217,7 +217,7 @@ class INFTNC_YoutubeEmbed extends ET_Builder_Module {
 		);
 	}
 
-	public function render( $attrs, $content = null, $render_slug ) {
+	public function render( $attrs, $content , $render_slug ) {
 
         $video_type         =  $this->props['video_type'];
         $video_method       =  $this->props['video_method'];

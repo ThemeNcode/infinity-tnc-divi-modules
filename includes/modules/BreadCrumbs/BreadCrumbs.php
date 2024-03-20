@@ -129,14 +129,13 @@ class INFTNC_BreadCrumbs extends ET_Builder_Module {
 		);
 	}
 
-	public function render( $attrs, $content = null, $render_slug ) {
+	public function render( $attrs, $content, $render_slug ) {
 		// Module specific props added on $this->get_fields()
 		$before_text		 = $this->props['before_text'];
 		$home_text   		 = $this->props['home_text'];   
 		$seperate_font 	     = $this->props['seperator_icon'];	
 		$before_text_font    = $this->props['before_text_icon'];
 		$use_before_icon     = $this->props['use_before_icon'];
-
 
 	    $before_content= '';
 		$separator_icon      = esc_attr( et_pb_process_font_icon( $seperate_font ) );

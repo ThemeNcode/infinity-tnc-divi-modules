@@ -324,7 +324,7 @@ class INFTNC_HeadingGradient extends ET_Builder_Module {
 		);
 	}
 
-	public function render( $attrs, $content = null, $render_slug ) {
+	public function render( $attrs, $content, $render_slug ) {
         // Allowing full html for backwards compatibility.
 		$gradient_title     = $this->props['gradient_title'];
 		$header_level       = $this->props['title_level'];

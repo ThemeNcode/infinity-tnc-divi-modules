@@ -164,7 +164,7 @@ class SocialShareChild extends ET_Builder_Module {
 	 *
 	 * @return string module's rendered output
 	 */
-	function render( $attrs, $content = null, $render_slug ) {
+	function render( $attrs, $content, $render_slug ) {
 
 		global $inftnc_social_share_props;
 		$social_layout = $inftnc_social_share_props['button_layout'];

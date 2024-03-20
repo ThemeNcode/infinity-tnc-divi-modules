@@ -27,7 +27,7 @@ class INFTNC_HelloWorld extends ET_Builder_Module {
 		);
 	}
 
-	public function render( $attrs, $content = null, $render_slug ) {
+	public function render( $attrs, $content, $render_slug ) {
 		return sprintf( '<h1>%1$s</h1>', $this->props['content'] );
 	}
 }

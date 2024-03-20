@@ -227,7 +227,7 @@ class SocialShare extends ET_Builder_Module {
 	 *
 	 * @return string module's rendered output
 	 */
-	function render( $attrs, $content = null, $render_slug ) {
+	function render( $attrs, $content, $render_slug ) {
 			
 		$social_layout    		     =  $this->props['button_layout'];
 		$social_shape     		     =  $this->props['button_shape'];

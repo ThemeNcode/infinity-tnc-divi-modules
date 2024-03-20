@@ -204,7 +204,7 @@ class INFTNC_TypeWriter extends ET_Builder_Module {
 		);
 	}
 
-	public function render( $attrs, $content = null, $render_slug ) {
+	public function render( $attrs, $content, $render_slug ) {
 
         $before_text            = $this->props['before_text'];
         $after_text             = $this->props['after_text'];

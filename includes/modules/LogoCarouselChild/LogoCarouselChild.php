@@ -105,12 +105,22 @@ class LogoCarouselChild extends ET_Builder_Module {
 	 *
 	 * @return string module's rendered output
 	 */
-	function render( $attrs, $content = null, $render_slug ) {
+	function render( $attrs, $content, $render_slug ) {
+
+		$logo = $this->props['logo'];
+		$alt  = $this->props['alt'];
+
+		$render_logo = sprintf('
+				<img class="logo_carousel_img" src="%1$s" alt="%2$s">',
+				/*01*/	$logo,
+				/*02*/	$alt,
+		);
 		// Render module content
 		$output = sprintf('
 					<div class="inftnc_carousel_child">
-						
+							%1$s
 			      	</div>',
+					/*01*/ $render_logo,
 					
 			);
 
