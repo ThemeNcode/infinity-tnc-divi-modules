@@ -28,7 +28,10 @@ class LogoCarousel extends ET_Builder_Module {
 		$this->settings_modal_toggles  = array(
 			'general'  => array(
 				'toggles' => array(
-					'main_content' => esc_html__( 'General', 'infinity-tnc-divi-modules' ),
+					'main_content' 		 => esc_html__( 'Logo General', 'infinity-tnc-divi-modules' ),
+					'carousel_settings'  => esc_html__( 'Carousel Settings', 'infinity-tnc-divi-modules' ),
+					'navigation'		 => esc_html__( 'Navigation', 'infinity-tnc-divi-modules'),
+					'pagination'		 => esc_html__( 'Pagination', 'infinity-tnc-divi-modules'),
 				),
 			),
 			'advanced' => array(
@@ -73,14 +76,7 @@ class LogoCarousel extends ET_Builder_Module {
 	 */
 	function get_advanced_fields_config() { 
 		return array(
-			
-		);
-	}
-
-	function before_render() {
-		global $inftnc_social_share_props;
-		$inftnc_social_share_props = array(
-			'button_layout'              => $this->props['button_layout'],
+			'link_options'       => false,	
 		);
 	}
 
@@ -96,7 +92,6 @@ class LogoCarousel extends ET_Builder_Module {
 	 * @return string module's rendered output
 	 */
 	function render( $attrs, $content = null, $render_slug ) {
-		
 
         // Remove automatically added classnames
 		$output = sprintf(
