@@ -127,11 +127,22 @@ class LogoCarousel extends ET_Builder_Module {
 				),
 			),
 
-			'rtl' => array(
-				'label'             => esc_html__( 'Auto Play', 'infinity-tnc-divi-modules' ),
+			'use_navigation' => array(
+				'label'             => esc_html__( 'Use Navigation', 'infinity-tnc-divi-modules' ),
 				'type'              => 'yes_no_button',
 				'default'			=> 'on',
-				'description'       => esc_html__('Change the logo direction to become right-to-left', 'infinity-tnc-divi-modules'),
+				'options'           => array(
+					'on'  => esc_html__( 'Yes', 'infinity-tnc-divi-modules' ),
+					'off' => esc_html__( 'NO', 'infinity-tnc-divi-modules' ),
+				),
+				'toggle_slug'     => 'carousel_settings',
+				'tab_slug'        => 'general',
+			),
+
+			'use_pagination' => array(
+				'label'             => esc_html__( 'Use Pagination', 'infinity-tnc-divi-modules' ),
+				'type'              => 'yes_no_button',
+				'default'			=> 'on',
 				'options'           => array(
 					'on'  => esc_html__( 'Yes', 'infinity-tnc-divi-modules' ),
 					'off' => esc_html__( 'NO', 'infinity-tnc-divi-modules' ),
@@ -178,6 +189,20 @@ class LogoCarousel extends ET_Builder_Module {
 				'toggle_slug'     => 'carousel_settings',
 				'tab_slug'        => 'general',
 			),
+
+			'rtl' => array(
+				'label'             => esc_html__( 'RTL', 'infinity-tnc-divi-modules' ),
+				'type'              => 'yes_no_button',
+				'default'			=> 'off',
+				'description'       => esc_html__('Change the logo direction to become right-to-left', 'infinity-tnc-divi-modules'),
+				'options'           => array(
+					'on'  => esc_html__( 'Yes', 'infinity-tnc-divi-modules' ),
+					'off' => esc_html__( 'NO', 'infinity-tnc-divi-modules' ),
+				),
+				'toggle_slug'     => 'carousel_settings',
+				'tab_slug'        => 'general',
+			),
+
 
 		
 		);
