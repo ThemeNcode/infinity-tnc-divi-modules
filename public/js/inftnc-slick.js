@@ -12,9 +12,9 @@ jQuery(document).ready(function($){
         var infinite        = $(this).data('infinite');
         var pauseHover      = $(this).data('pause-hover');
         var swipe           = $(this).data('swipe');
-        var rtl             = $(this).data('swipe');
-        
-
+        var rtl             = $(this).data('rtl');
+       
+    
         $(this).slick({
             dots: true,
             infinite: false,
@@ -26,14 +26,15 @@ jQuery(document).ready(function($){
             arrows: useNavigation,
             dots: usePagination,
             infinite: infinite,
+            rtl:rtl,
+            swipe: swipe,
+            pauseOnHover: pauseHover,
             responsive: [
                 {
                     breakpoint: 1024,
                     settings: {
                         slidesToShow: slidesToShow ? slidesToShow : 3,
                         slidesToScroll: slidesToScroll ? slidesToScroll: 3,
-                        infinite: true,
-                        dots: true
                     }
                 },
                 {
