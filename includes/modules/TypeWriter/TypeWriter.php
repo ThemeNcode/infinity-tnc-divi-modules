@@ -229,7 +229,7 @@ class INFTNC_TypeWriter extends ET_Builder_Module {
             /* 06 */  $typing_cursor,
             /* 07 */  $loop_vale, 
          );
-        
+
 		$output = sprintf('
 
             <div class="inftnc_typewriter_wrapper">

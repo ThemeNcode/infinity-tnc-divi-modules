@@ -84,13 +84,11 @@ class LogoCarousel extends ET_Builder_Module {
 			),	
 
 			'animation_speed' => array(
-				'label'           => esc_html__( 'Animation Speed', 'infinity-tnc-divi-module' ),
+				'label'           => esc_html__( 'Animation Speed (ms)', 'infinity-tnc-divi-module' ),
 				'type'            => 'range',
 				'tab_slug'        => 'general',
 				'toggle_slug'     => 'carousel_settings',
 				'description'	  => esc_html__( 'Animation Transition speed', 'infinity-tnc-divi-module' ),
-				'allowed_units'    => array( 'ms'),
-				'default_unit'     => 'ms',
                 'default'         => 300,
                 'range_settings' => array(
 					'min'  => 0,
@@ -112,12 +110,10 @@ class LogoCarousel extends ET_Builder_Module {
 			),
 
 			'autoplay_speed' => array(
-				'label'           => esc_html__( 'Autoplay Speed', 'infinity-tnc-divi-module' ),
+				'label'           => esc_html__( 'Autoplay Speed (ms)', 'infinity-tnc-divi-module' ),
 				'type'            => 'range',
 				'tab_slug'        => 'general',
 				'toggle_slug'     => 'carousel_settings',
-				'allowed_units'    => array( 'ms'),
-				'default_unit'     => 'ms',
                 'default'         => 3000,
                 'range_settings' => array(
 					'min'  => 0,
@@ -401,18 +397,37 @@ class LogoCarousel extends ET_Builder_Module {
 		$rtl 					= $this->props['rtl'];
 
 
+		( 'on' === $autoplay ) ? ( $autoplay_value = 'true' ) : ( $autoplay_value = 'false' );
+		( 'on' === $use_navigation ) ? ( $navigation_value = 'true' ) : ( $navigation_value = 'false' );
+		( 'on' === $use_pagination ) ? ( $pagination_value = 'true' ) : ( $pagination_value = 'false' );
+		( 'on' === $infinite ) ? ( $infinite_value = 'true' ) : ( $infinite_value = 'false' );
+		( 'on' === $pause_on_hover ) ? ( $pause_on_hover_value = 'true' ) : ( $pause_on_hover_value = 'false' );
+		( 'on' === $swipe ) ? ( $swipe_value = 'true' ) : ( $swipe_value = 'false' );
+		( 'on' === $rtl  ) ? ( $rtl_value = 'true' ) : ( $rtl_value = 'false' );
+
+	
 		//Enqueue Style 
 		wp_enqueue_style('slick');
 		wp_enqueue_style('slick-theme');
 
 		// Enqueue Script
 		wp_enqueue_script('slick');
-		wp_enqueue_script( 'inftnc-slick');
+		wp_enqueue_script('inftnc-slick');
 
 		$output = sprintf(
-			'<div class="inftnc_carousels_logo_wrapper">%1$s</div>',
-			et_sanitized_previously( $this->content ),
-
+			'<div class="inftnc_carousels_logo_wrapper" data-slides-to-show="%2$s" data-slide-scroll="%3$s" data-animation-speed="%4$s" data-autoplay="%5$s" data-autoplay-speed="%6$s" data-navigation="%7$s" data-pagination="%8$s" data-infinite="%9$s" data-pause-hover="%10$s" data-swipe="%11$s" data-rtl="%12$s">%1$s</div>',
+			/* 01 */ et_sanitized_previously( $this->content ),
+			/* 02 */ $slides_to_show,
+			/* 03 */ $slides_to_scroll,
+			/* 04 */ $animation_speed,
+			/* 05 */ $autoplay_value,
+			/* 06 */ $autoplay_speed,
+			/* 07 */ $navigation_value,
+			/* 08 */ $pagination_value,
+			/* 09 */ $infinite_value,
+			/* 10 */ $pause_on_hover_value,
+			/* 11 */ $swipe_value,
+			/* 12 */ $rtl_value,
 		);
 
 		return  $output ;
@@ -420,3 +435,4 @@ class LogoCarousel extends ET_Builder_Module {
 }
 
 new LogoCarousel;
+

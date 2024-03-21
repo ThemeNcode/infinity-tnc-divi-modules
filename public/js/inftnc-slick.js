@@ -1,20 +1,37 @@
 jQuery(document).ready(function($){
 
     $('.inftnc_carousels_logo_wrapper').each(function() {
-        var slidesToShow = $(this).data('slides-to-show'); // Assuming you have a data attribute named "slides-to-show"
+
+        var slidesToShow    = $(this).data('slides-to-show'); 
+        var slidesToScroll  = $(this).data('slide-scroll');
+        var animationSpeed  = $(this).data('animation-speed');
+        var autoplay        = $(this).data('autoplay');
+        var autoplaySpeed   = $(this).data('autoplay-speed');
+        var useNavigation   = $(this).data('navigation');
+        var usePagination   = $(this).data('pagination');
+        var infinite        = $(this).data('infinite');
+        var pauseHover      = $(this).data('pause-hover');
+        var swipe           = $(this).data('swipe');
+        var rtl             = $(this).data('swipe');
         
+
         $(this).slick({
             dots: true,
             infinite: false,
-            speed: 300,
-            slidesToShow: slidesToShow ? slidesToShow : 3, // Default value if data attribute is not provided
+            speed: animationSpeed,
+            slidesToShow: slidesToShow ? slidesToShow : 3, 
             slidesToScroll: 1,
+            autoplay: autoplay,
+            autoplaySpeed: autoplaySpeed,
+            arrows: useNavigation,
+            dots: usePagination,
+            infinite: infinite,
             responsive: [
                 {
                     breakpoint: 1024,
                     settings: {
                         slidesToShow: slidesToShow ? slidesToShow : 3,
-                        slidesToScroll: 3,
+                        slidesToScroll: slidesToScroll ? slidesToScroll: 3,
                         infinite: true,
                         dots: true
                     }
@@ -29,7 +46,7 @@ jQuery(document).ready(function($){
                 {
                     breakpoint: 480,
                     settings: {
-                        slidesToShow: slidesToShow ? slidesToShow : 1,
+                        slidesToShow: 1,
                         slidesToScroll: 1
                     }
                 }
