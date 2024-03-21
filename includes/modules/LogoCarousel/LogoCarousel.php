@@ -388,6 +388,14 @@ class LogoCarousel extends ET_Builder_Module {
 	 */
 	function render( $attrs, $content, $render_slug ) {
 
+		//Enqueue Style 
+		wp_enqueue_style('slick');
+		wp_enqueue_style('slick-theme');
+
+		// Enqueue Script
+		wp_enqueue_script('slick');
+		wp_enqueue_script( 'inftnc-slick');
+
         // Remove automatically added classnames
 		$output = sprintf(
 			'<div class="inftnc_carousels_logo_wrapper">%1$s</div>',
