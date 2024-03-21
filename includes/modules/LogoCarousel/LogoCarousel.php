@@ -384,17 +384,22 @@ class LogoCarousel extends ET_Builder_Module {
 	 */
 	function render( $attrs, $content, $render_slug ) {
 
-		$slides_to_show 		= $this->props['slides_to_show'];
-		$slides_to_scroll 		= $this->props['slides_to_scroll'];
-		$animation_speed 		= $this->props['animation_speed'];
-		$autoplay 				= $this->props['autoplay'];
-		$autoplay_speed		    = $this->props['autoplay_speed'];
-		$use_navigation 		= $this->props['use_navigation'];
-		$use_pagination 		= $this->props['use_pagination'];
-		$infinite 				= $this->props['infinite'];
-		$pause_on_hover 		= $this->props['pause_on_hover'];
-		$swipe 					= $this->props['swipe'];
-		$rtl 					= $this->props['rtl'];
+		$slides_to_show 					= $this->props['slides_to_show'];
+		$slides_to_scroll 					= $this->props['slides_to_scroll'];
+		$animation_speed 					= $this->props['animation_speed'];
+		$autoplay 							= $this->props['autoplay'];
+		$autoplay_speed		    			= $this->props['autoplay_speed'];
+		$use_navigation 					= $this->props['use_navigation'];
+		$use_pagination 					= $this->props['use_pagination'];
+		$infinite 							= $this->props['infinite'];
+		$pause_on_hover 					= $this->props['pause_on_hover'];
+		$swipe 								= $this->props['swipe'];
+		$rtl 								= $this->props['rtl'];
+		$slides_to_show_last_edited			= $this->props['slides_to_show_last_edited'];
+		$slides_to_show_responsive_active   = et_pb_get_responsive_status($slides_to_show_last_edited);
+		$slides_to_show_tablet				= $this->props['slides_to_show_tablet'];
+		$slides_to_show_phone				= $this->props['slides_to_show_phone'];
+
 
 
 		( 'on' === $autoplay ) ? ( $autoplay_value = 'true' ) : ( $autoplay_value = 'false' );
