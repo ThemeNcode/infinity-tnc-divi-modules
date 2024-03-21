@@ -399,7 +399,10 @@ class LogoCarousel extends ET_Builder_Module {
 		$slides_to_show_responsive_active   = et_pb_get_responsive_status($slides_to_show_last_edited);
 		$slides_to_show_tablet				= $this->props['slides_to_show_tablet'];
 		$slides_to_show_phone				= $this->props['slides_to_show_phone'];
-
+		$slides_to_scroll_edited			= $this->props['slides_to_scroll_last_edited'];
+		$slides_to_scroll_responsive_active = et_pb_get_responsive_status($slides_to_show_last_edited);
+		$slides_to_scroll_tablet			= $this->props['slides_to_scroll_tablet'];
+		$slides_to_scroll_phone				= $this->props['slides_to_scroll_phone'];
 
 
 		( 'on' === $autoplay ) ? ( $autoplay_value = 'true' ) : ( $autoplay_value = 'false' );
