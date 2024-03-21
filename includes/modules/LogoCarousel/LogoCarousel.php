@@ -72,7 +72,7 @@ class LogoCarousel extends ET_Builder_Module {
 				'responsive'         => true,
 			),	
 			
-			'slides-to-scroll' => array(
+			'slides_to_scroll' => array(
 				'label'           => esc_html__( 'Slides To Scroll', 'infinity-tnc-divi-modules' ),
 				'type'            => 'text',
 				'default'		  => '1',
@@ -388,6 +388,19 @@ class LogoCarousel extends ET_Builder_Module {
 	 */
 	function render( $attrs, $content, $render_slug ) {
 
+		$slides_to_show 		= $this->props['slides_to_show'];
+		$slides_to_scroll 		= $this->props['slides_to_scroll'];
+		$animation_speed 		= $this->props['animation_speed'];
+		$autoplay 				= $this->props['autoplay'];
+		$autoplay_speed		    = $this->props['autoplay_speed'];
+		$use_navigation 		= $this->props['use_navigation'];
+		$use_pagination 		= $this->props['use_pagination'];
+		$infinite 				= $this->props['infinite'];
+		$pause_on_hover 		= $this->props['pause_on_hover'];
+		$swipe 					= $this->props['swipe'];
+		$rtl 					= $this->props['rtl'];
+
+
 		//Enqueue Style 
 		wp_enqueue_style('slick');
 		wp_enqueue_style('slick-theme');
@@ -396,10 +409,10 @@ class LogoCarousel extends ET_Builder_Module {
 		wp_enqueue_script('slick');
 		wp_enqueue_script( 'inftnc-slick');
 
-        // Remove automatically added classnames
 		$output = sprintf(
 			'<div class="inftnc_carousels_logo_wrapper">%1$s</div>',
-			et_sanitized_previously( $this->content )
+			et_sanitized_previously( $this->content ),
+
 		);
 
 		return  $output ;
