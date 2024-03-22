@@ -146,6 +146,21 @@ class LogoCarousel extends ET_Builder_Module {
 				'tab_slug'        => 'general',
 			),
 
+			'slide_spacing' => array(
+				'label'           => esc_html__( 'Slide Spacing', 'infinity-tnc-divi-module' ),
+				'type'            => 'range',
+				'tab_slug'        => 'general',
+				'toggle_slug'     => 'carousel_settings',
+				'allowed_units'    => array('px'),
+                'default'          => '20px',
+				'default_unit'     => 'px',
+                'range_settings' => array(
+					'min'  => 0,
+					'max'  => 100,
+					'step' => 1,
+				),
+			),
+
 			'infinite' => array(
 				'label'             => esc_html__( 'Infinite', 'infinity-tnc-divi-modules' ),
 				'type'              => 'yes_no_button',
@@ -421,6 +436,33 @@ class LogoCarousel extends ET_Builder_Module {
 		// Enqueue Script
 		wp_enqueue_script('slick');
 		wp_enqueue_script('inftnc-slick');
+
+
+		if( '' !== $this->props['slide_spacing'] ) {
+			ET_Builder_Element::set_style(
+				$render_slug,
+				array(
+					'selector'    => '%%order_class%% .inftnc_carousel_child.slick-slide',
+					'declaration' => sprintf(
+						'margin-left:%1$s;',
+						$this->props['slide_spacing']
+					),
+				)
+			);
+		}
+
+		if( '' !== $this->props['slide_spacing'] ) {
+			ET_Builder_Element::set_style(
+				$render_slug,
+				array(
+					'selector'    => '%%order_class%% .inftnc_carousels_logo_wrapper .slick-list',
+					'declaration' => sprintf(
+						'margin-left:-%1$s;',
+						$this->props['slide_spacing']
+					),
+				)
+			);
+		}
 
 		$output = sprintf(
 			'<div dir="%13$s" class="inftnc_carousels_logo_wrapper" data-slides-to-show="%2$s" data-slide-scroll="%3$s" data-animation-speed="%4$s" data-autoplay="%5$s" data-autoplay-speed="%6$s" data-navigation="%7$s" data-pagination="%8$s" data-infinite="%9$s" data-pause-hover="%10$s" data-swipe="%11$s" data-rtl="%12$s" data-slide-tablet="%14$s" data-slide-phone="%15$s" data-scroll-tablet="%16$s" data-scroll-phone="%17$s">%1$s</div>',
