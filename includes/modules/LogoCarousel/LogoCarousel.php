@@ -159,6 +159,8 @@ class LogoCarousel extends ET_Builder_Module {
 					'max'  => 100,
 					'step' => 1,
 				),
+				'mobile_options'     => true,
+				'responsive'         => true,
 			),
 
 			'infinite' => array(
@@ -429,7 +431,11 @@ class LogoCarousel extends ET_Builder_Module {
 		$pagination_active_dots_size_resposive      = et_pb_get_responsive_status( $pagination_active_dots_size_last_edited );
 		$pagination_active_dots_size_tablet 		= $this->props['pagination_active_dots_size_tablet'];
 		$pagination_active_dots_size_phone 			= $this->props['pagination_active_dots_size_phone'];
- 
+		$slide_spacing_last_edited					= $this->props['slide_spacing_last_edited'];
+		$slide_spacing_responsive_active			= et_pb_get_responsive_status( $slide_spacing_last_edited );
+		$slide_spacing_tablet 						= $this->props['slide_spacing_tablet'];
+		$slide_spacing_phone 						= $this->props['slide_spacing_phone'];
+
 		
 	
 		( 'on' === $autoplay ) ? ( $autoplay_value = 'true' ) : ( $autoplay_value = 'false' );
@@ -825,6 +831,71 @@ class LogoCarousel extends ET_Builder_Module {
 						'declaration' => sprintf(
 							'font-size:%1$s!important;',
 							$pagination_active_dots_size_phone,
+						),
+						'media_query' => ET_Builder_Element::get_media_query('max_width_767'),
+					)
+				);
+			}
+		}
+
+		// Responsive Slide Spacing 
+
+		if( $slide_spacing_responsive_active ) {
+
+			// Slide Spacing 
+			if( '' !== $slide_spacing_tablet  ) {
+					ET_Builder_Element::set_style(
+						$render_slug,
+						array(
+							'selector'    => '%%order_class%% .inftnc_carousel_child.slick-slide',
+							'declaration' => sprintf(
+								'margin-left:%1$s;',
+								$slide_spacing_tablet 
+							),
+							'media_query' => ET_Builder_Element::get_media_query('max_width_980'),
+						)
+					);
+				}
+
+				// Slide Spacing 
+				if( '' !== $slide_spacing_tablet  ) {
+					ET_Builder_Element::set_style(
+						$render_slug,
+						array(
+							'selector'    => '%%order_class%% .inftnc_carousels_logo_wrapper .slick-list',
+							'declaration' => sprintf(
+								'margin-left:-%1$s;',
+								$slide_spacing_tablet 
+							),
+							'media_query' => ET_Builder_Element::get_media_query('max_width_980'),
+						)
+					);
+				}
+
+				// Slide Spacing 
+			if( '' !== $slide_spacing_phone  ) {
+				ET_Builder_Element::set_style(
+					$render_slug,
+					array(
+						'selector'    => '%%order_class%% .inftnc_carousel_child.slick-slide',
+						'declaration' => sprintf(
+							'margin-left:%1$s;',
+							$slide_spacing_phone 
+						),
+						'media_query' => ET_Builder_Element::get_media_query('max_width_767'),
+					)
+				);
+			}
+
+			// Slide Spacing 
+			if( '' !== $slide_spacing_phone  ) {
+				ET_Builder_Element::set_style(
+					$render_slug,
+					array(
+						'selector'    => '%%order_class%% .inftnc_carousels_logo_wrapper .slick-list',
+						'declaration' => sprintf(
+							'margin-left:-%1$s;',
+							$slide_spacing_phone 
 						),
 						'media_query' => ET_Builder_Element::get_media_query('max_width_767'),
 					)
