@@ -16,14 +16,14 @@ jQuery(document).ready(function($){
         var slidesToShowTablet      = $(this).data('slide-tablet');
         var slidesToShowPhone       = $(this).data('slide-phone'); 
         var slidesToScrolTablet     = $(this).data('scroll-tablet');
-        var slidesToScrollPhone     = $(this).data('scroll-phone');       
+        var slidesToScrollPhone     = $(this).data('scroll-phone'); 
         
         $(this).slick({
             dots: true,
             infinite: false,
             speed: animationSpeed,
             slidesToShow: slidesToShow ? slidesToShow : 3, 
-            slidesToScroll: slidesToScroll ? slidesToScroll : 2,
+            slidesToScroll: slidesToScroll ? slidesToScroll : 1,
             autoplay: autoplay,
             autoplaySpeed: autoplaySpeed,
             arrows: useNavigation,
@@ -34,26 +34,19 @@ jQuery(document).ready(function($){
             pauseOnHover: pauseHover,
             responsive: [
                 {
-                    breakpoint: 1024,
+                    breakpoint: 980,
                     settings: {
-                        slidesToShow: slidesToShow ? slidesToShow : 3,
-                        slidesToScroll: slidesToScroll ? slidesToScroll: 2,
+                        slidesToShow: slidesToShowTablet ? slidesToShowTablet : 3,
+                        slidesToScroll: slidesToScrolTablet ? slidesToScrolTablet: 1,
                     }
                 },
                 {
-                    breakpoint: 600,
+                    breakpoint:767,
                     settings: {
-                        slidesToShow:slidesToShowTablet,
-                        slidesToScroll: slidesToScrolTablet ? slidesToScroll: 1,
+                        slidesToShow: slidesToShowPhone ? slidesToShowPhone : 1,
+                        slidesToScroll: slidesToScrollPhone ? slidesToScrollPhone : 1,
                     }
                 },
-                {
-                    breakpoint: 480,
-                    settings: {
-                        slidesToShow: slidesToShowPhone ? slidesToShow : 1,
-                        slidesToScroll: slidesToScrollPhone ? slidesToScroll: 1,
-                    }
-                }
                 // You can unslick at a given breakpoint now by adding:
                 // settings: "unslick"
                 // instead of a settings object

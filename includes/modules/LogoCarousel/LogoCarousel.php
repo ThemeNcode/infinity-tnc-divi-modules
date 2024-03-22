@@ -404,9 +404,6 @@ class LogoCarousel extends ET_Builder_Module {
 		$slides_to_scroll_tablet			= $this->props['slides_to_scroll_tablet'];
 		$slides_to_scroll_phone				= $this->props['slides_to_scroll_phone'];
 
-		var_dump($slides_to_show_tablet);
-		var_dump($slides_to_show_phone);
-		var_dump($slides_to_show_responsive_active);
 
 		( 'on' === $autoplay ) ? ( $autoplay_value = 'true' ) : ( $autoplay_value = 'false' );
 		( 'on' === $use_navigation ) ? ( $navigation_value = 'true' ) : ( $navigation_value = 'false' );
@@ -426,7 +423,7 @@ class LogoCarousel extends ET_Builder_Module {
 		wp_enqueue_script('inftnc-slick');
 
 		$output = sprintf(
-			'<div dir="%13$s" class="inftnc_carousels_logo_wrapper" data-slides-to-show="%2$s" data-slide-scroll="%3$s" data-animation-speed="%4$s" data-autoplay="%5$s" data-autoplay-speed="%6$s" data-navigation="%7$s" data-pagination="%8$s" data-infinite="%9$s" data-pause-hover="%10$s" data-swipe="%11$s" data-rtl="%12$s" data-slide-tablet="%14$s" data-slide-phone="%14$s" data-scroll-tablet="%15$s" data-scroll-phone="%16$s">%1$s</div>',
+			'<div dir="%13$s" class="inftnc_carousels_logo_wrapper" data-slides-to-show="%2$s" data-slide-scroll="%3$s" data-animation-speed="%4$s" data-autoplay="%5$s" data-autoplay-speed="%6$s" data-navigation="%7$s" data-pagination="%8$s" data-infinite="%9$s" data-pause-hover="%10$s" data-swipe="%11$s" data-rtl="%12$s" data-slide-tablet="%14$s" data-slide-phone="%15$s" data-scroll-tablet="%16$s" data-scroll-phone="%17$s">%1$s</div>',
 			/* 01 */ et_sanitized_previously( $this->content ),
 			/* 02 */ $slides_to_show,
 			/* 03 */ $slides_to_scroll,
@@ -441,8 +438,9 @@ class LogoCarousel extends ET_Builder_Module {
 			/* 12 */ $rtl_value,
 			/* 13 */ $dir_value,
 			/* 14 */ $slides_to_show_tablet,
-			/* 15 */ $slides_to_scroll_tablet,
-			/* 16 */ $slides_to_scroll_phone	
+			/* 15 */ $slides_to_show_phone,
+			/* 16 */ $slides_to_scroll_tablet,
+			/* 17 */ $slides_to_scroll_phone	
 
  		);
 
