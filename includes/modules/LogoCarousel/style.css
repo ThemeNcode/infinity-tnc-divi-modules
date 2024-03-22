@@ -25,6 +25,11 @@
     border-radius: 5px;
 }
 
+.inftnc_carousels_logo_wrapper .slick-dots li button:before { 
+     font-size:40px !important;
+}
+
+
 
 
  
