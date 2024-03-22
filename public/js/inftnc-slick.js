@@ -32,6 +32,8 @@ jQuery(document).ready(function($){
             rtl:rtl,
             swipe: swipe,
             pauseOnHover: pauseHover,
+            prevArrow: '<button type="button" class="slick-inftnc-arrow slick-prev" data-icon="&#x34;"></button>',
+            nextArrow: '<button type="button" class="slick-inftnc-arrow slick-next" data-icon="&#x35;"></button>',
             responsive: [
                 {
                     breakpoint: 980,
