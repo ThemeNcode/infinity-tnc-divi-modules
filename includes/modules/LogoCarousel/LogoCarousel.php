@@ -310,7 +310,7 @@ class LogoCarousel extends ET_Builder_Module {
 				'sub_toggle'	  => 'pagination_common',	
 				'allowed_units'    => array('px'),
 				'default_unit'     => 'px',
-                'default'         => 16,
+                'default'         => 40,
                 'range_settings' => array(
 					'min'  => 0,
 					'max'  => 100,
@@ -347,15 +347,6 @@ class LogoCarousel extends ET_Builder_Module {
 				'sub_toggle'	  => 'pagination_common',
             ),
 
-			'pagination_dots_active_color' => array(
-                'label'           => esc_html__( 'Dots Color', 'infinity-tnc-divi-modules' ),
-                'type'            => 'color',
-				'default'		  => '#481CA6',
-                'tab_slug'        => 'advanced',
-                'toggle_slug'     => 'pagination',
-				'sub_toggle'	  => 'pagination_active',
-            ),
-
 			'dots_alignment' => array(
 				'label'           => esc_html__( 'Dots Alignment', 'infinity-tnc-divi-modules' ),
 				'description'     => esc_html__( 'Align Dots to the left, right or center of the module.', 'infinity-tnc-divi-modules' ),
@@ -368,9 +359,8 @@ class LogoCarousel extends ET_Builder_Module {
                 'toggle_slug'     => 'pagination',
 				'sub_toggle'	  => 'pagination_common',
 			),
-	
 		);
-		
+
 	}
 
 	/**
@@ -551,6 +541,7 @@ class LogoCarousel extends ET_Builder_Module {
 			);
 		}
 
+		// Navigation Icon Color 		
 		if( '' !== $this->props['navigation_icon_color'] ) {
 			ET_Builder_Element::set_style(
 				$render_slug,
@@ -564,7 +555,52 @@ class LogoCarousel extends ET_Builder_Module {
 			);
 		}
 		
-		// Navigation Icon Size 
+		// Pagination Common Icon Color 
+		if( '' !== $this->props['pagination_cmn_dots_size'] ) {
+			ET_Builder_Element::set_style(
+				$render_slug,
+				array(
+					'selector'    => '%%order_class%% .inftnc_carousels_logo_wrapper .slick-dots li button:before',
+					'declaration' => sprintf(
+						'font-size:%1$s!important;',
+						$this->props['pagination_cmn_dots_size'],
+					),
+				)
+			);
+		}
+
+		// Pagination Common Icon Color 
+		if( '' !== $this->props['pagination_cmn_dots_color'] ) {
+			ET_Builder_Element::set_style(
+				$render_slug,
+				array(
+					'selector'    => '%%order_class%% .inftnc_carousels_logo_wrapper .slick-dots li button:before',
+					'declaration' => sprintf(
+						'color:%1$s!important;',
+						$this->props['pagination_cmn_dots_color'],
+					),
+				)
+			);
+		}
+
+		// Pagination Common Icon Color 
+		if( '' !== $this->props['pagination_active_dots_size'] ) {
+			ET_Builder_Element::set_style(
+				$render_slug,
+				array(
+					'selector'    => '%%order_class%% .inftnc_carousels_logo_wrapper .slick-dots li.slick-active button:before',
+					'declaration' => sprintf(
+						'font-size:%1$s!important;',
+						$this->props['pagination_active_dots_size'],
+					),
+				)
+			);
+		}
+
+		// Pagination Alignment
+
+		
+
 		$output = sprintf(
 			'<div dir="%13$s" class="inftnc_carousels_logo_wrapper" data-slides-to-show="%2$s" data-slide-scroll="%3$s" data-animation-speed="%4$s" data-autoplay="%5$s" data-autoplay-speed="%6$s" data-navigation="%7$s" data-pagination="%8$s" data-infinite="%9$s" data-pause-hover="%10$s" data-swipe="%11$s" data-rtl="%12$s" data-slide-tablet="%14$s" data-slide-phone="%15$s" data-scroll-tablet="%16$s" data-scroll-phone="%17$s">%1$s</div>',
 			/* 01 */ et_sanitized_previously( $this->content ),
