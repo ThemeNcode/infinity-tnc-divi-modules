@@ -408,8 +408,13 @@ class LogoCarousel extends ET_Builder_Module {
 		$slides_to_scroll_responsive_active = et_pb_get_responsive_status($slides_to_show_last_edited);
 		$slides_to_scroll_tablet			= $this->props['slides_to_scroll_tablet'];
 		$slides_to_scroll_phone				= $this->props['slides_to_scroll_phone'];
-
-
+		$dots_alignments					= $this->props['dots_alignment'];	
+		$dots_alignments_edited				= $this->props['dots_alignment_last_edited'];	
+		$dots_alignements_responsive_active = et_pb_get_responsive_status($dots_alignments_edited);
+		$dots_aligments_tablet				= $this->props['dots_alignment_tablet'];	
+		$dots_aligments_phone				= $this->props['dots_alignment_phone'];
+		
+	
 		( 'on' === $autoplay ) ? ( $autoplay_value = 'true' ) : ( $autoplay_value = 'false' );
 		( 'on' === $use_navigation ) ? ( $navigation_value = 'true' ) : ( $navigation_value = 'false' );
 		( 'on' === $use_pagination ) ? ( $pagination_value = 'true' ) : ( $pagination_value = 'false' );
@@ -599,7 +604,50 @@ class LogoCarousel extends ET_Builder_Module {
 
 		// Pagination Alignment
 
+		if( '' !== 	$dots_alignments ) {
+			ET_Builder_Element::set_style(
+				$render_slug,
+				array(
+					'selector'    => '%%order_class%% .inftnc_carousels_logo_wrapper .slick-dots',
+					'declaration' => sprintf(
+						'display:flex;justify-content:%1$s;margin-top: 25px;',
+						$dots_alignments,
+					),
+				)
+			);
+		}
 		
+		// Pagination Aligment Responsive
+		if($dots_alignements_responsive_active) {
+
+			if( '' !== 	$dots_aligments_tablet ) {
+				ET_Builder_Element::set_style(
+					$render_slug,
+					array(
+						'selector'    => '%%order_class%% .inftnc_carousels_logo_wrapper .slick-dots',
+						'declaration' => sprintf(
+							'justify-content:%1$s;',
+							$dots_aligments_tablet,
+						),
+						'media_query' => ET_Builder_Element::get_media_query('max_width_980'),
+					)
+				);
+			}
+
+			if( '' !== 	$dots_aligments_phone ) {
+				ET_Builder_Element::set_style(
+					$render_slug,
+					array(
+						'selector'    => '%%order_class%% .inftnc_carousels_logo_wrapper .slick-dots',
+						'declaration' => sprintf(
+							'justify-content:%1$s;',
+							$dots_aligments_phone,
+						),
+						'media_query' => ET_Builder_Element::get_media_query('max_width_767'),
+					)
+				);
+			}
+		}
 
 		$output = sprintf(
 			'<div dir="%13$s" class="inftnc_carousels_logo_wrapper" data-slides-to-show="%2$s" data-slide-scroll="%3$s" data-animation-speed="%4$s" data-autoplay="%5$s" data-autoplay-speed="%6$s" data-navigation="%7$s" data-pagination="%8$s" data-infinite="%9$s" data-pause-hover="%10$s" data-swipe="%11$s" data-rtl="%12$s" data-slide-tablet="%14$s" data-slide-phone="%15$s" data-scroll-tablet="%16$s" data-scroll-phone="%17$s">%1$s</div>',
