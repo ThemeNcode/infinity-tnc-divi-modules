@@ -297,8 +297,6 @@ class SocialShare extends ET_Builder_Module {
 			);
 		}
 
-
-
 		//Share button padding 
 
 		if( '' !== $this->props['button_padding'] ) { 

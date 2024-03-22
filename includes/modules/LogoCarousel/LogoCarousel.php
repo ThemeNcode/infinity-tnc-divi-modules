@@ -421,7 +421,15 @@ class LogoCarousel extends ET_Builder_Module {
 		$navigation_bg_size_responsive_active 		= et_pb_get_responsive_status( $navigation_bg_size_last_edited );
 		$navigation_bg_size_tablet					= $this->props['navigation_bg_size_tablet'];
 		$navigation_bg_size_phone					= $this->props['navigation_bg_size_phone'];
-
+		$pagination_cmn_dots_size_last_edited		= $this->props['pagination_cmn_dots_size_last_edited'];
+		$pagination_cmn_dots_size_resposive         = et_pb_get_responsive_status( $pagination_cmn_dots_size_last_edited );
+		$pagination_cmn_dots_size_tablet 			= $this->props['pagination_cmn_dots_size_tablet'];
+		$pagination_cmn_dots_size_phone 			= $this->props['pagination_cmn_dots_size_phone'];
+		$pagination_active_dots_size_last_edited	= $this->props['pagination_active_dots_size_last_edited'];
+		$pagination_active_dots_size_resposive      = et_pb_get_responsive_status( $pagination_active_dots_size_last_edited );
+		$pagination_active_dots_size_tablet 		= $this->props['pagination_active_dots_size_tablet'];
+		$pagination_active_dots_size_phone 			= $this->props['pagination_active_dots_size_phone'];
+ 
 		
 	
 		( 'on' === $autoplay ) ? ( $autoplay_value = 'true' ) : ( $autoplay_value = 'false' );
@@ -569,7 +577,7 @@ class LogoCarousel extends ET_Builder_Module {
 			);
 		}
 		
-		// Pagination Common Icon Color 
+		// Pagination Dots size
 		if( '' !== $this->props['pagination_cmn_dots_size'] ) {
 			ET_Builder_Element::set_style(
 				$render_slug,
@@ -583,7 +591,7 @@ class LogoCarousel extends ET_Builder_Module {
 			);
 		}
 
-		// Pagination Common Icon Color 
+		// Pagination Dots Color 
 		if( '' !== $this->props['pagination_cmn_dots_color'] ) {
 			ET_Builder_Element::set_style(
 				$render_slug,
@@ -597,7 +605,7 @@ class LogoCarousel extends ET_Builder_Module {
 			);
 		}
 
-		// Pagination Common Icon Color 
+		// Pagination Acitve Dots Size
 		if( '' !== $this->props['pagination_active_dots_size'] ) {
 			ET_Builder_Element::set_style(
 				$render_slug,
@@ -756,6 +764,72 @@ class LogoCarousel extends ET_Builder_Module {
 						)
 					);
 				}
+		}
+
+		// Responsive Common Dots Size 
+
+		if( $pagination_cmn_dots_size_resposive ){
+			 
+			if( '' !== $pagination_cmn_dots_size_tablet ) {
+				ET_Builder_Element::set_style(
+					$render_slug,
+					array(
+						'selector'    => '%%order_class%% .inftnc_carousels_logo_wrapper .slick-dots li button:before',
+						'declaration' => sprintf(
+							'font-size:%1$s!important;',
+							$pagination_cmn_dots_size_tablet,
+						),
+						'media_query' => ET_Builder_Element::get_media_query('max_width_980'),
+					)
+				);
+			}
+
+			if( '' !== $pagination_cmn_dots_size_phone ) {
+				ET_Builder_Element::set_style(
+					$render_slug,
+					array(
+						'selector'    => '%%order_class%% .inftnc_carousels_logo_wrapper .slick-dots li button:before',
+						'declaration' => sprintf(
+							'font-size:%1$s!important;',
+							$pagination_cmn_dots_size_phone,
+						),
+						'media_query' => ET_Builder_Element::get_media_query('max_width_767'),
+					)
+				);
+			}
+		}
+
+		// Responsive Active Dots Size  
+
+		if( $pagination_active_dots_size_resposive ){
+			 
+			if( '' !== $pagination_active_dots_size_tablet ) {
+				ET_Builder_Element::set_style(
+					$render_slug,
+					array(
+						'selector'    => '%%order_class%% .inftnc_carousels_logo_wrapper .slick-dots li.slick-active button:before',
+						'declaration' => sprintf(
+							'font-size:%1$s!important;',
+							$pagination_active_dots_size_tablet,
+						),
+						'media_query' => ET_Builder_Element::get_media_query('max_width_980'),
+					)
+				);
+			}
+
+			if( '' !== $pagination_active_dots_size_phone ) {
+				ET_Builder_Element::set_style(
+					$render_slug,
+					array(
+						'selector'    => '%%order_class%% .inftnc_carousels_logo_wrapper .slick-dots li.slick-active button:before',
+						'declaration' => sprintf(
+							'font-size:%1$s!important;',
+							$pagination_active_dots_size_phone,
+						),
+						'media_query' => ET_Builder_Element::get_media_query('max_width_767'),
+					)
+				);
+			}
 		}
 
 
