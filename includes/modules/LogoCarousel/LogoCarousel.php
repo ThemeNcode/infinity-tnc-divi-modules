@@ -389,34 +389,38 @@ class LogoCarousel extends ET_Builder_Module {
 	 */
 	function render( $attrs, $content, $render_slug ) {
 
-		$slides_to_show 					= $this->props['slides_to_show'];
-		$slides_to_scroll 					= $this->props['slides_to_scroll'];
-		$animation_speed 					= $this->props['animation_speed'];
-		$autoplay 							= $this->props['autoplay'];
-		$autoplay_speed		    			= $this->props['autoplay_speed'];
-		$use_navigation 					= $this->props['use_navigation'];
-		$use_pagination 					= $this->props['use_pagination'];
-		$infinite 							= $this->props['infinite'];
-		$pause_on_hover 					= $this->props['pause_on_hover'];
-		$swipe 								= $this->props['swipe'];
-		$rtl 								= $this->props['rtl'];
-		$slides_to_show_last_edited			= $this->props['slides_to_show_last_edited'];
-		$slides_to_show_responsive_active   = et_pb_get_responsive_status( $slides_to_show_last_edited );
-		$slides_to_show_tablet				= $this->props['slides_to_show_tablet'];
-		$slides_to_show_phone				= $this->props['slides_to_show_phone'];
-		$slides_to_scroll_edited			= $this->props['slides_to_scroll_last_edited'];
-		$slides_to_scroll_responsive_active = et_pb_get_responsive_status( $slides_to_show_last_edited );
-		$slides_to_scroll_tablet			= $this->props['slides_to_scroll_tablet'];
-		$slides_to_scroll_phone				= $this->props['slides_to_scroll_phone'];
-		$dots_alignments					= $this->props['dots_alignment'];	
-		$dots_alignments_edited				= $this->props['dots_alignment_last_edited'];	
-		$dots_alignements_responsive_active = et_pb_get_responsive_status( $dots_alignments_edited );
-		$dots_aligments_tablet				= $this->props['dots_alignment_tablet'];	
-		$dots_aligments_phone				= $this->props['dots_alignment_phone'];
-		$navigation_icon_size_last_edited   = $this->props['navigation_icon_size_last_edited'];
-		$navigation_icon_size_active 		= et_pb_get_responsive_status( $navigation_icon_size_last_edited );
-		$navigation_icon_size_tablet        = $this->props['navigation_icon_size_tablet'];
-		$navigation_icon_size_phone         = $this->props['navigation_icon_size_phone'];
+		$slides_to_show 							= $this->props['slides_to_show'];
+		$slides_to_scroll 							= $this->props['slides_to_scroll'];
+		$animation_speed 							= $this->props['animation_speed'];
+		$autoplay 									= $this->props['autoplay'];
+		$autoplay_speed		    					= $this->props['autoplay_speed'];
+		$use_navigation 							= $this->props['use_navigation'];
+		$use_pagination 							= $this->props['use_pagination'];
+		$infinite 									= $this->props['infinite'];
+		$pause_on_hover 							= $this->props['pause_on_hover'];
+		$swipe 										= $this->props['swipe'];
+		$rtl 										= $this->props['rtl'];
+		$slides_to_show_last_edited					= $this->props['slides_to_show_last_edited'];
+		$slides_to_show_responsive_active   		= et_pb_get_responsive_status( $slides_to_show_last_edited );
+		$slides_to_show_tablet						= $this->props['slides_to_show_tablet'];
+		$slides_to_show_phone						= $this->props['slides_to_show_phone'];
+		$slides_to_scroll_edited					= $this->props['slides_to_scroll_last_edited'];
+		$slides_to_scroll_responsive_active 		= et_pb_get_responsive_status( $slides_to_scroll_edited );
+		$slides_to_scroll_tablet					= $this->props['slides_to_scroll_tablet'];
+		$slides_to_scroll_phone						= $this->props['slides_to_scroll_phone'];
+		$dots_alignments							= $this->props['dots_alignment'];	
+		$dots_alignments_edited						= $this->props['dots_alignment_last_edited'];	
+		$dots_alignements_responsive_active 		= et_pb_get_responsive_status( $dots_alignments_edited );
+		$dots_aligments_tablet						= $this->props['dots_alignment_tablet'];	
+		$dots_aligments_phone						= $this->props['dots_alignment_phone'];
+		$navigation_icon_size_last_edited   		= $this->props['navigation_icon_size_last_edited'];
+		$navigation_icon_size_active 				= et_pb_get_responsive_status( $navigation_icon_size_last_edited );
+		$navigation_icon_size_tablet        		= $this->props['navigation_icon_size_tablet'];
+		$navigation_icon_size_phone         		= $this->props['navigation_icon_size_phone'];
+		$navigation_bg_size_last_edited				= $this->props['navigation_bg_size_last_edited'];
+		$navigation_bg_size_responsive_active 		= et_pb_get_responsive_status( $navigation_bg_size_last_edited );
+		$navigation_bg_size_tablet					= $this->props['navigation_bg_size_tablet'];
+		$navigation_bg_size_phone					= $this->props['navigation_bg_size_phone'];
 
 		
 	
@@ -718,6 +722,40 @@ class LogoCarousel extends ET_Builder_Module {
 					);
 				}
 
+		}
+
+		//Reponsive Navigation Bg Size 
+		if( $navigation_bg_size_responsive_active ) {
+
+				if( '' !== $navigation_bg_size_tablet ) {
+					ET_Builder_Element::set_style(
+						$render_slug,
+						array(
+							'selector'    => '%%order_class%% .slick-inftnc-arrow',
+							'declaration' => sprintf(
+								'width:%1$s!important;height:%2$s!important;',
+								$navigation_bg_size_tablet,
+								$navigation_bg_size_tablet,
+							),
+							'media_query' => ET_Builder_Element::get_media_query('max_width_980'),
+						)
+					);
+				}
+
+				if( '' !== $navigation_bg_size_phone ) {
+					ET_Builder_Element::set_style(
+						$render_slug,
+						array(
+							'selector'    => '%%order_class%% .slick-inftnc-arrow',
+							'declaration' => sprintf(
+								'width:%1$s!important;height:%2$s!important;',
+								$navigation_bg_size_phone,
+								$navigation_bg_size_phone,
+							),
+							'media_query' => ET_Builder_Element::get_media_query('max_width_767'),
+						)
+					);
+				}
 		}
 
 
