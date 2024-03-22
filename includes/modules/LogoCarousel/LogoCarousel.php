@@ -255,9 +255,9 @@ class LogoCarousel extends ET_Builder_Module {
 				'type'            => 'range',
 				'tab_slug'        => 'advanced',
 				'toggle_slug'     => 'navigation',
-				'allowed_units'    => array( 'px'),
-				'default_unit'     => 'px',
-                'default'         => 16,
+				'allowed_units'   => array( 'px'),
+				'default_unit'    => 'px',
+                'default'         => 30,
                 'range_settings' => array(
 					'min'  => 0,
 					'max'  => 100,
@@ -437,7 +437,7 @@ class LogoCarousel extends ET_Builder_Module {
 		wp_enqueue_script('slick');
 		wp_enqueue_script('inftnc-slick');
 
-
+		// Slide Spacing 
 		if( '' !== $this->props['slide_spacing'] ) {
 			ET_Builder_Element::set_style(
 				$render_slug,
@@ -451,6 +451,7 @@ class LogoCarousel extends ET_Builder_Module {
 			);
 		}
 
+		// Slide Spacing 
 		if( '' !== $this->props['slide_spacing'] ) {
 			ET_Builder_Element::set_style(
 				$render_slug,
@@ -464,6 +465,106 @@ class LogoCarousel extends ET_Builder_Module {
 			);
 		}
 
+		// Navigation Icon Size 
+		if( '' !== $this->props['navigation_icon_size'] ) {
+			ET_Builder_Element::set_style(
+				$render_slug,
+				array(
+					'selector'    => '%%order_class%% .slick-inftnc-arrow.slick-prev:before',
+					'declaration' => sprintf(
+						'font-size:%1$s;',
+						$this->props['navigation_icon_size']
+					),
+				)
+			);
+		}
+
+		// Navigation Icon Size 
+		if( '' !== $this->props['navigation_icon_size'] ) {
+			ET_Builder_Element::set_style(
+				$render_slug,
+				array(
+					'selector'    => '%%order_class%% .slick-inftnc-arrow.slick-next:before',
+					'declaration' => sprintf(
+						'font-size:%1$s;',
+						$this->props['navigation_icon_size']
+					),
+				)
+			);
+		}
+
+		// Navigation Background Size
+		if( '' !== $this->props['navigation_bg_size'] ) {
+			ET_Builder_Element::set_style(
+				$render_slug,
+				array(
+					'selector'    => '%%order_class%% .slick-inftnc-arrow',
+					'declaration' => sprintf(
+						'width:%1$s!important;height:%2$s!important;',
+						$this->props['navigation_bg_size'],
+						$this->props['navigation_bg_size'],
+					),
+				)
+			);
+		}
+
+
+	   // Navigation Background Color 
+		if( '' !== $this->props['navigation_bg_color'] ) {
+			ET_Builder_Element::set_style(
+				$render_slug,
+				array(
+					'selector'    => '%%order_class%% .slick-inftnc-arrow',
+					'declaration' => sprintf(
+						'background-color:%1$s!important;',
+						$this->props['navigation_bg_color'],
+					),
+				)
+			);
+		}
+
+		// Navigation Background Color 
+		if( '' !== $this->props['navigation_bg_color'] ) {
+			ET_Builder_Element::set_style(
+				$render_slug,
+				array(
+					'selector'    => '%%order_class%% .slick-inftnc-arrow',
+					'declaration' => sprintf(
+						'background-color:%1$s!important;',
+						$this->props['navigation_bg_color'],
+					),
+				)
+			);
+		}
+
+		// Navigation Icon Color 
+		if( '' !== $this->props['navigation_icon_color'] ) {
+			ET_Builder_Element::set_style(
+				$render_slug,
+				array(
+					'selector'    => '%%order_class%% .slick-inftnc-arrow.slick-next:before',
+					'declaration' => sprintf(
+						'color:%1$s!important;',
+						$this->props['navigation_icon_color'],
+					),
+				)
+			);
+		}
+
+		if( '' !== $this->props['navigation_icon_color'] ) {
+			ET_Builder_Element::set_style(
+				$render_slug,
+				array(
+					'selector'    => '%%order_class%% .slick-inftnc-arrow.slick-prev:before',
+					'declaration' => sprintf(
+						'color:%1$s!important;',
+						$this->props['navigation_icon_color'],
+					),
+				)
+			);
+		}
+		
+		// Navigation Icon Size 
 		$output = sprintf(
 			'<div dir="%13$s" class="inftnc_carousels_logo_wrapper" data-slides-to-show="%2$s" data-slide-scroll="%3$s" data-animation-speed="%4$s" data-autoplay="%5$s" data-autoplay-speed="%6$s" data-navigation="%7$s" data-pagination="%8$s" data-infinite="%9$s" data-pause-hover="%10$s" data-swipe="%11$s" data-rtl="%12$s" data-slide-tablet="%14$s" data-slide-phone="%15$s" data-scroll-tablet="%16$s" data-scroll-phone="%17$s">%1$s</div>',
 			/* 01 */ et_sanitized_previously( $this->content ),

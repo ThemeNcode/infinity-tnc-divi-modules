@@ -2,7 +2,7 @@
     font-family: ETmodules!important;
     font-weight: 400!important;
     content: attr(data-icon) !important;
-    font-size: 30px !important;
+    font-size: 30px;
     display: inline-block !important;
     color: #7a7070 !important;
 }
@@ -11,7 +11,7 @@
     font-family: ETmodules!important;
     font-weight: 400!important;
     content: attr(data-icon) !important;
-    font-size: 30px !important;
+    font-size: 30px;
     display: inline-block !important;
     color: #7a7070 !important;
 }
