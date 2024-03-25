@@ -19,8 +19,6 @@ jQuery(document).ready(function($){
         var slidesToScrollPhone     = $(this).data('scroll-phone'); 
         
         $(this).slick({
-            dots: true,
-            infinite: false,
             speed: animationSpeed,
             slidesToShow: slidesToShow ? slidesToShow : 3, 
             slidesToScroll: slidesToScroll ? slidesToScroll : 1,
