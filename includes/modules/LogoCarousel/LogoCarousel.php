@@ -1045,9 +1045,9 @@ class LogoCarousel extends ET_Builder_Module {
 				array(
 					'selector'    => '%%order_class%% .inftnc_carousels_logo_wrapper .logo_carousel_img',
 					'declaration' => sprintf(
-						'margin-left: 5px;
-						-webkit-transform: scale(1.03, 1.03);
-						transform: scale(1.03, 1.03);
+						'margin-left: 10px;
+						-webkit-transform: scale(1.01, 1.01);
+						transform: scale(1.01, 1.01);
 						-webkit-transition: all .5s ease 0s;
 						transition: all .5s ease 0s;',
 					),
@@ -1055,7 +1055,39 @@ class LogoCarousel extends ET_Builder_Module {
 			);
 		}
 		
-	
+		 // Image Rotate  Effects
+
+		 if( 'rotate' === $logo_hover_effects ) {
+			ET_Builder_Element::set_style(
+				$render_slug,
+				array(
+					'selector'    => '%%order_class%% .inftnc_carousels_logo_wrapper .logo_carousel_img:hover',
+					'declaration' => sprintf(
+						'-webkit-transform: rotate(0) scale(1);
+						transform: rotate(0) scale(1);
+						-webkit-transition: all .5s ease 0s;
+						transition: all .5s ease 0s;',
+					),
+				)
+			);
+		}
+
+		if( 'rotate' === $logo_hover_effects ) {
+			ET_Builder_Element::set_style(
+				$render_slug,
+				array(
+					'selector'    => '%%order_class%% .inftnc_carousels_logo_wrapper .logo_carousel_img',
+					'declaration' => sprintf(
+						'-webkit-transform: rotate(15deg) scale(1.4);
+						transform: rotate(15deg) scale(1.4);
+						-webkit-transition: all .5s ease 0s;
+						transition: all .5s ease 0s;',
+					),
+				)
+			);
+		}
+
+
 		$output = sprintf(
 			'<div dir="%13$s" class="inftnc_carousels_logo_wrapper" data-slides-to-show="%2$s" data-slide-scroll="%3$s" data-animation-speed="%4$s" data-autoplay="%5$s" data-autoplay-speed="%6$s" data-navigation="%7$s" data-pagination="%8$s" data-infinite="%9$s" data-pause-hover="%10$s" data-swipe="%11$s" data-rtl="%12$s" data-slide-tablet="%14$s" data-slide-phone="%15$s" data-scroll-tablet="%16$s" data-scroll-phone="%17$s">%1$s</div>',
 			/* 01 */ et_sanitized_previously( $this->content ),
