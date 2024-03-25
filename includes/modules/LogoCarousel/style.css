@@ -33,6 +33,10 @@
     overflow: hidden;
 }
 
+.inftnc_carousel_child img {
+    display: inline-block !important;
+}
+
 
 
 

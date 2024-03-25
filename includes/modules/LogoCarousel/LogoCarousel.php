@@ -47,6 +47,10 @@ class LogoCarousel extends ET_Builder_Module {
 							),
 						),
 					),
+					'logo_styles' => array(
+						'title'	=>	esc_html__( 'Logo', 'infinity-tnc-divi-modules' ),
+						'priority' 	=>22,
+					),
 				),
 			),
 		);
@@ -242,13 +246,13 @@ class LogoCarousel extends ET_Builder_Module {
 			'logo_hover' => array(
 				'label'           => esc_html__( 'Logo Hover Effect', 'infinity-tnc-divi-modules' ),
 				'type'            => 'select',
-				'default'		  => 'icon_with_text',
+				'default'		  => 'none',
 				'options'         => array(
+					'none'	  	  	  => esc_html__( 'None','infinity-tnc-divi-modules'),
 					'zoom_in' 		  => esc_html__( 'Zoom IN', 'infinity-tnc-divi-modules'),
 					'zoom_out'  	  => esc_html__( 'Zoom Out','infinity-tnc-divi-modules'),
 					'slide'      	  => esc_html__( 'Slide','infinity-tnc-divi-modules' ),
 					'rotate'	  	  => esc_html__( 'Rotate','infinity-tnc-divi-modules'),
-					'blur'		  	  => esc_html__( 'Blur', 'infinity-tnc-divi-modules'),
 				),
 				'toggle_slug'     => 'main_content',
 				'tab_slug'        => 'general',
@@ -259,7 +263,7 @@ class LogoCarousel extends ET_Builder_Module {
 				'type'            => 'range',
 				'tab_slug'        => 'advanced',
 				'toggle_slug'     => 'navigation',
-				'allowed_units'   => array( 'px'),
+				'allowed_units'   => array('px'),
 				'default_unit'    => 'px',
                 'default'         => 30,
                 'range_settings' => array(
@@ -371,10 +375,45 @@ class LogoCarousel extends ET_Builder_Module {
 	 *
 	 * @return array
 	 */
-	function get_advanced_fields_config() { 
+	function get_advanced_fields_config() {
 		return array(
+			'borders'        => array(
+				'image'   => array(
+					'css'             => array(
+						'main' => array(
+							'border_radii'  => "%%order_class%% .inftnc_carousels_logo_wrapper .slick-slide .logo_carousel_img",
+							'border_styles' => "%%order_class%% .inftnc_carousels_logo_wrapper .slick-slide .logo_carousel_img",
+						),
+					),
+					'label_prefix'    => esc_html__( 'Logo', 'infinity-tnc-divi-modules' ),
+					'tab_slug'        => 'advanced',
+					'toggle_slug'     => 'logo_styles',
+				),												
+			),
+
+			'box_shadow'        => array(
+				
+				'image'   => array(
+					'css'             => array(
+						'main' => "%%order_class%% .inftnc_carousels_logo_wrapper .slick-slide .logo_carousel_img",
+						'overlay' => 'inset',
+					),
+					'label_prefix'    => esc_html__( 'Logo', 'infinity-tnc-divi-modules' ),
+					'tab_slug'        => 'advanced',
+					'toggle_slug'     => 'logo_styles',
+				),			
+			),
+			'margin_padding' => array(
+				'css' => array(
+					'important' => 'all',
+				),
+			),
+
 			'link_options'       => false,	
+			'text'				 => false,
+			'fonts'				 => false,											
 		);
+
 	}
 
 	/**
@@ -872,7 +911,7 @@ class LogoCarousel extends ET_Builder_Module {
 					);
 				}
 
-				// Slide Spacing 
+			// Slide Spacing 
 			if( '' !== $slide_spacing_phone  ) {
 				ET_Builder_Element::set_style(
 					$render_slug,
@@ -979,10 +1018,10 @@ class LogoCarousel extends ET_Builder_Module {
 					'declaration' => sprintf(
 						'transition: all .5s ease 0s;
 						-webkit-transition: all .5s ease 0s;
-						-webkit-transform: scale(1.03, 1.03);
-						-moz-transform: scale(1.03, 1.03);
-						-ms-transform: scale(1.03, 1.03);
-						-o-transform: scale(1.03, 1.03);',
+						-webkit-transform: scale(1.04, 1.04);
+						-moz-transform: scale(1.04, 1.04);
+						-ms-transform: scale(1.04, 1.04);
+						-o-transform: scale(1.04, 1.04);',
 					),
 				)
 			);
