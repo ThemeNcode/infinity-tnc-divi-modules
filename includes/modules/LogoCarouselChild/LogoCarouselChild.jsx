@@ -6,9 +6,13 @@ class LogoCarouselChild extends Component {
   static slug = 'inftnc_logo_carousel_child';
 
   render() {
+
+    const {logo,alt}  = this.props;
     
     return (
-            <>Logo Carousel Child</>
+          <div className="inftnc_carousel_child"> 
+            <img className="logo_carousel_img" src={logo} alt={alt} /> 
+           </div>
     );
   }
 }
