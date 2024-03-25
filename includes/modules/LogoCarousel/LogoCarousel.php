@@ -245,7 +245,7 @@ class LogoCarousel extends ET_Builder_Module {
 				'default'		  => 'icon_with_text',
 				'options'         => array(
 					'zoom_in' 		  => esc_html__( 'Zoom IN', 'infinity-tnc-divi-modules'),
-					'zooom_out'  	  => esc_html__( 'Zoom Out','infinity-tnc-divi-modules'),
+					'zoom_out'  	  => esc_html__( 'Zoom Out','infinity-tnc-divi-modules'),
 					'slide'      	  => esc_html__( 'Slide','infinity-tnc-divi-modules' ),
 					'rotate'	  	  => esc_html__( 'Rotate','infinity-tnc-divi-modules'),
 					'blur'		  	  => esc_html__( 'Blur', 'infinity-tnc-divi-modules'),
@@ -955,8 +955,9 @@ class LogoCarousel extends ET_Builder_Module {
 			);
 		}
 
-		// Logo Hover Effect 
+		// Logo Hover Effectcs
 
+		// Zoom in effects 
 		if( 'zoom_in' === $logo_hover_effects ) {
 			ET_Builder_Element::set_style(
 				$render_slug,
@@ -985,7 +986,41 @@ class LogoCarousel extends ET_Builder_Module {
 			);
 		}
 
-	
+		// Zoom out Effects 
+
+		if( 'zoom_out' === $logo_hover_effects ) {
+			ET_Builder_Element::set_style(
+				$render_slug,
+				array(
+					'selector'    => '%%order_class%% .inftnc_carousels_logo_wrapper .logo_carousel_img:hover',
+					'declaration' => sprintf(
+						'transition: all .5s ease 0s;
+						-webkit-transform: scale(1.0, 1.0);
+						-moz-transform: scale(1.0, 1.0);
+						-ms-transform: scale(1.0, 1.0);
+						-o-transform: scale(1.0, 1.0);',
+					),
+				)
+			);
+		}
+
+		if( 'zoom_out' === $logo_hover_effects ) {
+			ET_Builder_Element::set_style(
+				$render_slug,
+				array(
+					'selector'    => '%%order_class%% .inftnc_carousels_logo_wrapper .logo_carousel_img',
+					'declaration' => sprintf(
+						'transition: all .5s ease 0s;
+						-webkit-transform: scale(1.03, 1.03);
+						-moz-transform: scale(1.03, 1.03);
+						-ms-transform: scale(1.03, 1.03);
+						-o-transform: scale(1.03, 1.03);',
+					),
+				)
+			);
+		}
+
+
 		$output = sprintf(
 			'<div dir="%13$s" class="inftnc_carousels_logo_wrapper" data-slides-to-show="%2$s" data-slide-scroll="%3$s" data-animation-speed="%4$s" data-autoplay="%5$s" data-autoplay-speed="%6$s" data-navigation="%7$s" data-pagination="%8$s" data-infinite="%9$s" data-pause-hover="%10$s" data-swipe="%11$s" data-rtl="%12$s" data-slide-tablet="%14$s" data-slide-phone="%15$s" data-scroll-tablet="%16$s" data-scroll-phone="%17$s">%1$s</div>',
 			/* 01 */ et_sanitized_previously( $this->content ),
