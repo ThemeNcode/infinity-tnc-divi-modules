@@ -244,9 +244,11 @@ class LogoCarousel extends ET_Builder_Module {
 				'type'            => 'select',
 				'default'		  => 'icon_with_text',
 				'options'         => array(
-					'tilt' => esc_html__( 'TILT', 'infinity-tnc-divi-modules' ),
-					'square'  	 => esc_html__( 'Square', 'infinity-tnc-divi-modules' ),
-					'shrink'      => esc_html__( 'Shrink', 'infinity-tnc-divi-modules' ),
+					'zoom_in' 		  => esc_html__( 'Zoom IN', 'infinity-tnc-divi-modules'),
+					'zooom_out'  	  => esc_html__( 'Zoom Out','infinity-tnc-divi-modules'),
+					'slide'      	  => esc_html__( 'Slide','infinity-tnc-divi-modules' ),
+					'rotate'	  	  => esc_html__( 'Rotate','infinity-tnc-divi-modules'),
+					'blur'		  	  => esc_html__( 'Blur', 'infinity-tnc-divi-modules'),
 				),
 				'toggle_slug'     => 'main_content',
 				'tab_slug'        => 'general',
@@ -432,6 +434,7 @@ class LogoCarousel extends ET_Builder_Module {
 		$slide_spacing_responsive_active			= et_pb_get_responsive_status( $slide_spacing_last_edited );
 		$slide_spacing_tablet 						= $this->props['slide_spacing_tablet'];
 		$slide_spacing_phone 						= $this->props['slide_spacing_phone'];
+		$logo_hover_effects							= $this->props['logo_hover'];
 
 		
 	
@@ -947,6 +950,36 @@ class LogoCarousel extends ET_Builder_Module {
 					'selector'    => '%%order_class%% .inftnc_carousels_logo_wrapper .logo_carousel_img:hover',
 					'declaration' => sprintf(
 						' -webkit-filter: grayscale(100%%); filter: grayscale(100%%); transition: all .5s;',
+					),
+				)
+			);
+		}
+
+		// Logo Hover Effect 
+
+		if( 'zoom_in' === $logo_hover_effects ) {
+			ET_Builder_Element::set_style(
+				$render_slug,
+				array(
+					'selector'    => '%%order_class%% .inftnc_carousels_logo_wrapper .logo_carousel_img',
+					'declaration' => sprintf(
+						'transition: all .5s ease 0s;',
+					),
+				)
+			);
+		}
+
+		if( 'zoom_in' === $logo_hover_effects ) {
+			ET_Builder_Element::set_style(
+				$render_slug,
+				array(
+					'selector'    => '%%order_class%% .inftnc_carousels_logo_wrapper .logo_carousel_img:hover',
+					'declaration' => sprintf(
+						'transition: all .5s ease 0s;
+						-webkit-transform: scale(1.03, 1.03);
+						-moz-transform: scale(1.03, 1.03);
+						-ms-transform: scale(1.03, 1.03);
+						-o-transform: scale(1.03, 1.03);',
 					),
 				)
 			);
