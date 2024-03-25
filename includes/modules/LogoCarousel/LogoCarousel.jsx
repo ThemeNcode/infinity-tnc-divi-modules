@@ -1,19 +1,27 @@
 // External Dependencies
 import React, { Component } from 'react';
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 
 class LogoCarousel extends Component {
 
   static slug = 'inftnc_logo_carousel';
 
-  /**
-   * Module render in VB
-   * Basically DICM_CTA_Parent->render() equivalent in JSX
-   */
   render() {
+
+    var settings = {
+      dots: true,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+    };
+  
     return (
       <div>
-        <div className="dicm-content">{this.props.content}</div>
+        <Slider {...settings}>{this.props.content} </Slider>
       </div>
     );
   }

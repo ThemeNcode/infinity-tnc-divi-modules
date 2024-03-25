@@ -7,7 +7,9 @@
     "jquery": "^3.7.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-slick": "^0.30.2",
     "react-svg-star-rating": "^2.1.2",
+    "slick-carousel": "^1.8.1",
     "star-rating-svg": "^3.5.0",
     "typewriter-effect": "^2.21.0"
   },
