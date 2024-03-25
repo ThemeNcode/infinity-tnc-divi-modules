@@ -609,7 +609,7 @@ class LogoCarousel extends ET_Builder_Module {
 		}
 
 		// Pagination Acitve Dots Size
-		if( '' !== $this->props['pagination_active_dots_size'] ) {
+		if( '' == $this->props['pagination_active_dots_size'] ) {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
@@ -902,7 +902,7 @@ class LogoCarousel extends ET_Builder_Module {
 
 		// Logo Gray Scale Deafult 
 
-		if( '' !== $this->props['logo_grayscale_default'] ) {
+		if( 'on' === $this->props['logo_grayscale_default'] ) {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
@@ -914,13 +914,39 @@ class LogoCarousel extends ET_Builder_Module {
 			);
 		}
 
-		if( '' !== $this->props['logo_grayscale_default'] ) {
+		if( 'on' === $this->props['logo_grayscale_default'] ) {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
 					'selector'    => '%%order_class%% .inftnc_carousels_logo_wrapper .logo_carousel_img:hover',
 					'declaration' => sprintf(
-						' -webkit-filter: grayscale(0) !important; filter: none !important;',
+						' -webkit-filter: grayscale(0); filter: none;',
+					),
+				)
+			);
+		}
+
+		// Logo Gray Scale By Hover 
+
+		if( 'on' === $this->props['logo_grayscale_hover'] ) {
+			ET_Builder_Element::set_style(
+				$render_slug,
+				array(
+					'selector'    => '%%order_class%% .inftnc_carousels_logo_wrapper .logo_carousel_img',
+					'declaration' => sprintf(
+						' -webkit-filter: grayscale(0); filter: none;',
+					),
+				)
+			);
+		}
+
+		if( 'on' === $this->props['logo_grayscale_hover'] ) {
+			ET_Builder_Element::set_style(
+				$render_slug,
+				array(
+					'selector'    => '%%order_class%% .inftnc_carousels_logo_wrapper .logo_carousel_img:hover',
+					'declaration' => sprintf(
+						' -webkit-filter: grayscale(100%%); filter: grayscale(100%%); transition: all .5s;',
 					),
 				)
 			);
