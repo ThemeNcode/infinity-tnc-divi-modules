@@ -911,7 +911,7 @@ class LogoCarousel extends ET_Builder_Module {
 				array(
 					'selector'    => '%%order_class%% .inftnc_carousels_logo_wrapper .logo_carousel_img',
 					'declaration' => sprintf(
-						' -webkit-filter: grayscale(100%%); filter: grayscale(100%%); transition: all .5s;',
+						' -webkit-filter: grayscale(100%%); filter: grayscale(100%%); transition: all .5s ease 0s; -webkit-transition: all .5s ease 0s;',
 					),
 				)
 			);
@@ -923,7 +923,7 @@ class LogoCarousel extends ET_Builder_Module {
 				array(
 					'selector'    => '%%order_class%% .inftnc_carousels_logo_wrapper .logo_carousel_img:hover',
 					'declaration' => sprintf(
-						' -webkit-filter: grayscale(0); filter: none;',
+						' -webkit-filter: grayscale(0); filter: none; transition: all .5s ease 0s; -webkit-transition: all .5s ease 0s;',
 					),
 				)
 			);
@@ -937,7 +937,7 @@ class LogoCarousel extends ET_Builder_Module {
 				array(
 					'selector'    => '%%order_class%% .inftnc_carousels_logo_wrapper .logo_carousel_img',
 					'declaration' => sprintf(
-						' -webkit-filter: grayscale(0); filter: none;',
+						' -webkit-filter: grayscale(0); filter: none; transition: all .5s ease 0s; -webkit-transition: all .5s ease 0s;',
 					),
 				)
 			);
@@ -949,7 +949,7 @@ class LogoCarousel extends ET_Builder_Module {
 				array(
 					'selector'    => '%%order_class%% .inftnc_carousels_logo_wrapper .logo_carousel_img:hover',
 					'declaration' => sprintf(
-						' -webkit-filter: grayscale(100%%); filter: grayscale(100%%); transition: all .5s;',
+						' -webkit-filter: grayscale(100%%); filter: grayscale(100%%); transition: all .5s ease 0s; -webkit-transition: all .5s ease 0s;',
 					),
 				)
 			);
@@ -964,7 +964,8 @@ class LogoCarousel extends ET_Builder_Module {
 				array(
 					'selector'    => '%%order_class%% .inftnc_carousels_logo_wrapper .logo_carousel_img',
 					'declaration' => sprintf(
-						'transition: all .5s ease 0s;',
+						'transition: all .5s ease 0s;
+						-webkit-transition: all .5s ease 0s;',
 					),
 				)
 			);
@@ -977,6 +978,7 @@ class LogoCarousel extends ET_Builder_Module {
 					'selector'    => '%%order_class%% .inftnc_carousels_logo_wrapper .logo_carousel_img:hover',
 					'declaration' => sprintf(
 						'transition: all .5s ease 0s;
+						-webkit-transition: all .5s ease 0s;
 						-webkit-transform: scale(1.03, 1.03);
 						-moz-transform: scale(1.03, 1.03);
 						-ms-transform: scale(1.03, 1.03);
@@ -995,6 +997,7 @@ class LogoCarousel extends ET_Builder_Module {
 					'selector'    => '%%order_class%% .inftnc_carousels_logo_wrapper .logo_carousel_img:hover',
 					'declaration' => sprintf(
 						'transition: all .5s ease 0s;
+						-webkit-transition: all .5s ease 0s;
 						-webkit-transform: scale(1.0, 1.0);
 						-moz-transform: scale(1.0, 1.0);
 						-ms-transform: scale(1.0, 1.0);
@@ -1011,6 +1014,7 @@ class LogoCarousel extends ET_Builder_Module {
 					'selector'    => '%%order_class%% .inftnc_carousels_logo_wrapper .logo_carousel_img',
 					'declaration' => sprintf(
 						'transition: all .5s ease 0s;
+						-webkit-transition: all .5s ease 0s;
 						-webkit-transform: scale(1.03, 1.03);
 						-moz-transform: scale(1.03, 1.03);
 						-ms-transform: scale(1.03, 1.03);
@@ -1021,6 +1025,37 @@ class LogoCarousel extends ET_Builder_Module {
 		}
 
 
+		// Image Slide  Effects
+
+		if( 'slide' === $logo_hover_effects ) {
+			ET_Builder_Element::set_style(
+				$render_slug,
+				array(
+					'selector'    => '%%order_class%% .inftnc_carousels_logo_wrapper .logo_carousel_img:hover',
+					'declaration' => sprintf(
+						'margin-left: 0;',
+					),
+				)
+			);
+		}
+
+		if( 'slide' === $logo_hover_effects ) {
+			ET_Builder_Element::set_style(
+				$render_slug,
+				array(
+					'selector'    => '%%order_class%% .inftnc_carousels_logo_wrapper .logo_carousel_img',
+					'declaration' => sprintf(
+						'margin-left: 5px;
+						-webkit-transform: scale(1.03, 1.03);
+						transform: scale(1.03, 1.03);
+						-webkit-transition: all .5s ease 0s;
+						transition: all .5s ease 0s;',
+					),
+				)
+			);
+		}
+		
+	
 		$output = sprintf(
 			'<div dir="%13$s" class="inftnc_carousels_logo_wrapper" data-slides-to-show="%2$s" data-slide-scroll="%3$s" data-animation-speed="%4$s" data-autoplay="%5$s" data-autoplay-speed="%6$s" data-navigation="%7$s" data-pagination="%8$s" data-infinite="%9$s" data-pause-hover="%10$s" data-swipe="%11$s" data-rtl="%12$s" data-slide-tablet="%14$s" data-slide-phone="%15$s" data-scroll-tablet="%16$s" data-scroll-phone="%17$s">%1$s</div>',
 			/* 01 */ et_sanitized_previously( $this->content ),
