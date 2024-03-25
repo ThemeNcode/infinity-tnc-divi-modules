@@ -289,7 +289,6 @@ class LogoCarousel extends ET_Builder_Module {
 			'navigation_icon_color' => array(
                 'label'           => esc_html__( 'Icon Color', 'inftnc-infinity-tnc-divi-modules' ),
                 'type'            => 'color',
-				'default'		  => '#481CA6',
                 'tab_slug'        => 'advanced',
                 'toggle_slug'     => 'navigation',
 				'hover'       	  => 'tabs',
@@ -298,7 +297,6 @@ class LogoCarousel extends ET_Builder_Module {
 			'navigation_bg_color' => array(
                 'label'           => esc_html__( 'Background Color', 'inftnc-infinity-tnc-divi-modules' ),
                 'type'            => 'color',
-				'default'		  => '#481CA6',
                 'tab_slug'        => 'advanced',
                 'toggle_slug'     => 'navigation',
 				'hover'       	  => 'tabs',
@@ -343,7 +341,6 @@ class LogoCarousel extends ET_Builder_Module {
 			'pagination_cmn_dots_color' => array(
                 'label'           => esc_html__( 'Dots Color', 'infinity-tnc-divi-modules' ),
                 'type'            => 'color',
-				'default'		  => '#481CA6',
                 'tab_slug'        => 'advanced',
                 'toggle_slug'     => 'pagination',
 				'sub_toggle'	  => 'pagination_common',
@@ -903,7 +900,33 @@ class LogoCarousel extends ET_Builder_Module {
 			}
 		}
 
+		// Logo Gray Scale Deafult 
 
+		if( '' !== $this->props['logo_grayscale_default'] ) {
+			ET_Builder_Element::set_style(
+				$render_slug,
+				array(
+					'selector'    => '%%order_class%% .inftnc_carousels_logo_wrapper .logo_carousel_img',
+					'declaration' => sprintf(
+						' -webkit-filter: grayscale(100%%); filter: grayscale(100%%); transition: all .5s;',
+					),
+				)
+			);
+		}
+
+		if( '' !== $this->props['logo_grayscale_default'] ) {
+			ET_Builder_Element::set_style(
+				$render_slug,
+				array(
+					'selector'    => '%%order_class%% .inftnc_carousels_logo_wrapper .logo_carousel_img:hover',
+					'declaration' => sprintf(
+						' -webkit-filter: grayscale(0) !important; filter: none !important;',
+					),
+				)
+			);
+		}
+
+	
 		$output = sprintf(
 			'<div dir="%13$s" class="inftnc_carousels_logo_wrapper" data-slides-to-show="%2$s" data-slide-scroll="%3$s" data-animation-speed="%4$s" data-autoplay="%5$s" data-autoplay-speed="%6$s" data-navigation="%7$s" data-pagination="%8$s" data-infinite="%9$s" data-pause-hover="%10$s" data-swipe="%11$s" data-rtl="%12$s" data-slide-tablet="%14$s" data-slide-phone="%15$s" data-scroll-tablet="%16$s" data-scroll-phone="%17$s">%1$s</div>',
 			/* 01 */ et_sanitized_previously( $this->content ),
