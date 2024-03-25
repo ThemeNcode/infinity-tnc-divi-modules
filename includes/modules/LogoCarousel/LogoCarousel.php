@@ -54,8 +54,26 @@ class LogoCarousel extends ET_Builder_Module {
 				),
 			),
 		);
-	}
 
+		// This property will add CSS fields on Advanced > Custom CSS
+		$this->custom_css_fields = array(
+			'logo' => array(
+				'label'    => esc_html__( 'Logo', 'dicm-divi-custom-modules' ),
+				'selector' => '.logo_carousel_img',
+			),
+			'navigation' => array(
+				'label'    => esc_html__( 'Navigation', 'dicm-divi-custom-modules' ),
+				'selector' => '.slick-inftnc-arrow',
+			),
+			'pagination' => array(
+				'label'    => esc_html__( 'Pagination', 'dicm-divi-custom-modules' ),
+				'selector' => '.inftnc_carousels_logo_wrapper .slick-dots',
+			),
+		);
+	}
+	
+
+	
 	/**
 	 * Module's specific fields
 	 *
@@ -392,7 +410,6 @@ class LogoCarousel extends ET_Builder_Module {
 			),
 
 			'box_shadow'        => array(
-				
 				'image'   => array(
 					'css'             => array(
 						'main' => "%%order_class%% .inftnc_carousels_logo_wrapper .slick-slide .logo_carousel_img",
@@ -403,6 +420,7 @@ class LogoCarousel extends ET_Builder_Module {
 					'toggle_slug'     => 'logo_styles',
 				),			
 			),
+
 			'margin_padding' => array(
 				'css' => array(
 					'important' => 'all',
