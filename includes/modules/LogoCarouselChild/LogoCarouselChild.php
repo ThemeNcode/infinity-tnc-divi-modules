@@ -62,9 +62,6 @@ class LogoCarouselChild extends ET_Builder_Module {
 				'update_text'        => esc_attr__( 'Set As Logo', 'infinity-tnc-divi-modules' ),
 				'description'        => esc_html__( 'Upload your desired logo, or type in the URL to the logo you would like to display.', 'infinity-tnc-divi-modules' ),
 				'toggle_slug'        => 'main_content',
-				'dynamic_content'    => 'image',
-				'mobile_options'     => true,
-				'hover'              => 'tabs',
 			),
 
             'alt'                 => array(
