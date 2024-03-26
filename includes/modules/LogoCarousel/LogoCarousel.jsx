@@ -113,6 +113,37 @@ class LogoCarousel extends Component {
         }
     }
 
+      // Process Navitgation Bg Value Into Style 
+      if (props.navigation_bg_size) {
+        additionalCss.push([{
+          selector:    '%%order_class%% .slick-inftnc-arrow',
+          declaration: `width:${props.navigation_bg_size}!important;height:${props.navigation_bg_size}!important;`,
+        }]);
+      }
+
+      // Process Navitgation responsive bg value into style 
+      if(props.navigation_bg_size) {
+         const 	navigation_bg_size_last_edited =  props.navigation_bg_size_last_edited; 
+         const  navigation_bg_responsive_active = navigation_bg_size_last_edited && navigation_bg_size_last_edited.startsWith("on")
+         // Tablet 
+         if (props.navigation_bg_size_tablet && navigation_bg_responsive_active ) {
+          additionalCss.push([{
+            selector:    '%%order_class%% .slick-inftnc-arrow',
+            declaration: `width:${props.navigation_bg_size_tablet}!important;height:${props.navigation_bg_size_tablet}!important;`,
+            device:'tablet',
+          }]);
+        }
+        // Phone 
+        if (props.navigation_bg_size_phone && navigation_bg_responsive_active ) {
+          additionalCss.push([{
+            selector:    '%%order_class%% .slick-inftnc-arrow',
+            declaration: `width:${props.navigation_bg_size_phone}!important;height:${props.navigation_bg_size_phone}!important;`,
+            device:'phone',
+          }]);
+        } 
+      }
+
+
     return additionalCss;
 
   }
