@@ -80,6 +80,39 @@ class LogoCarousel extends Component {
       }]);
     }
 
+    // Navigation responsive icon size 
+    if(props.navigation_icon_size) {
+        const 	navigation_icon_size_last_edited =  props.navigation_icon_size_last_edited; 
+        const   navigation_icon_responsive_active = navigation_icon_size_last_edited && navigation_icon_size_last_edited.startsWith("on")
+        // Tablet 
+        if(props.navigation_icon_size_tablet && navigation_icon_responsive_active ) {
+          additionalCss.push([{
+            selector:    '%%order_class%% .slick-inftnc-arrow.slick-prev:before',
+            declaration: `font-size:${props.navigation_icon_size_tablet};`,
+            device: 'tablet',
+          }]);
+
+          additionalCss.push([{
+            selector:    '%%order_class%% .slick-inftnc-arrow.slick-next:before',
+            declaration: `font-size:${props.navigation_icon_size_tablet};`,
+          }]);
+
+        }
+        // Phone
+        if(props.navigation_icon_size_phone && navigation_icon_responsive_active ) {
+          additionalCss.push([{
+            selector:    '%%order_class%% .slick-inftnc-arrow.slick-prev:before',
+            declaration: `font-size:${props.navigation_icon_size_phone};`,
+            device: 'tablet',
+          }]);
+
+          additionalCss.push([{
+            selector:    '%%order_class%% .slick-inftnc-arrow.slick-next:before',
+            declaration: `font-size:${props.navigation_icon_size_phone};`,
+          }]);
+        }
+    }
+
     return additionalCss;
 
   }
