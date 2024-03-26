@@ -120,7 +120,6 @@ class LogoCarousel extends Component {
           declaration: `width:${props.navigation_bg_size}!important;height:${props.navigation_bg_size}!important;`,
         }]);
       }
-
       // Process Navitgation responsive bg value into style 
       if(props.navigation_bg_size) {
          const 	navigation_bg_size_last_edited =  props.navigation_bg_size_last_edited; 
@@ -142,6 +141,29 @@ class LogoCarousel extends Component {
           }]);
         } 
       }
+
+       // Process Navigation bg color into style
+        if (props.navigation_bg_color) {
+          additionalCss.push([{
+            selector:    '%%order_class%% .slick-inftnc-arrow',
+            declaration: `background-color:${props.navigation_bg_color}!important;`,
+          }]);
+        }
+        
+        // Process Navigation icon color into style
+        if (props.navigation_icon_color) {
+          additionalCss.push([{
+            selector:    '%%order_class%% .slick-inftnc-arrow.slick-next:before',
+            declaration: `color:${props.navigation_icon_color}!important;`,
+          }]);
+        }
+
+        if (props.navigation_icon_color) {
+          additionalCss.push([{
+            selector:    '%%order_class%% .slick-inftnc-arrow.slick-prev:before',
+            declaration: `color:${props.navigation_icon_color}!important;`,
+          }]);
+        }
 
 
     return additionalCss;
