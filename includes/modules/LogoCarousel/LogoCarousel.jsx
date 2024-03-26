@@ -358,6 +358,28 @@ class LogoCarousel extends Component {
           }]);
         }
 
+         //Process logo rotate in effect value into style
+         if (props.logo_hover === 'rotate') {
+          additionalCss.push([{
+            selector:    '%%order_class%% .inftnc_carousels_logo_wrapper .logo_carousel_img',
+            declaration: `-webkit-transform: rotate(15deg) scale(1.4);
+						transform: rotate(15deg) scale(1.4);
+						-webkit-transition: all .5s ease 0s;
+						transition: all .5s ease 0s;`,
+          }]);
+        }
+
+        if (props.logo_hover === 'rotate') {
+          additionalCss.push([{
+            selector:    '%%order_class%% .inftnc_carousels_logo_wrapper .logo_carousel_img:hover',
+            declaration: `-webkit-transform: rotate(0) scale(1);
+						transform: rotate(0) scale(1);
+						-webkit-transition: all .5s ease 0s;
+						transition: all .5s ease 0s;`,
+          }]);
+        }
+
+
     return additionalCss;
 
   }
