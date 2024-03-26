@@ -224,6 +224,36 @@ class LogoCarousel extends Component {
               }
          }
 
+         // Process dots aligment value into style 
+          if (props.dots_alignment) {
+            additionalCss.push([{
+              selector:    '%%order_class%% .inftnc_carousels_logo_wrapper .slick-dots',
+              declaration: `display:flex!important;justify-content:${props.dots_alignment};margin-top: 25px;`,
+            }]);
+          }
+
+          // Process responsive  dots aligment value into style  
+          if(props.dots_alignment){
+              const 	dots_alignment_last_edited =  props.dots_alignment_last_edited; 
+              const   dots_alignment_responsive_active = dots_alignment_last_edited && dots_alignment_last_edited.startsWith("on")  
+              //Tablet
+              if (props.dots_alignment_tablet && dots_alignment_responsive_active) {
+                additionalCss.push([{
+                  selector:    '%%order_class%% .inftnc_carousels_logo_wrapper .slick-dots',
+                  declaration: `display:flex!important;justify-content:${props.dots_alignment_tablet};margin-top: 25px;`,
+                  device:'tablet',
+                }]);
+              }
+               //Phone 
+               if (props.dots_alignment_phone && dots_alignment_responsive_active) {
+                additionalCss.push([{
+                  selector:    '%%order_class%% .inftnc_carousels_logo_wrapper .slick-dots',
+                  declaration: `display:flex!important;justify-content:${props.dots_alignment_phone};margin-top: 25px;`,
+                  device:'phone',
+                }]);
+              }
+          }
+
     return additionalCss;
 
   }
