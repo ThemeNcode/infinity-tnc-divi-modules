@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { type } from 'jquery';
+
 
 
 class LogoCarousel extends Component {
@@ -48,7 +48,7 @@ class LogoCarousel extends Component {
 
   render() {
     // Destructure Props 
-    const {slides_to_show,slides_to_show_tablet,slides_to_show_phone,slides_to_scroll,slides_to_scroll_tablet,slides_to_scroll_phone,animation_speed,autoplay,autoplay_speed,use_navigation,use_pagination,slide_spacing,infinite,pause_on_hover,swipe,rtl,logo_grayscale_default,logo_grayscale_hover,logo_hover,navigation_icon_size,navigation_bg_size,navigation_icon_color,navigation_bg_color,pagination_cmn_dots_size,pagination_active_dots_size,pagination_cmn_dots_color,dots_alignment}   = this.props;
+    const {slides_to_show,slides_to_show_tablet,slides_to_show_phone,slides_to_scroll,slides_to_scroll_tablet,slides_to_scroll_phone,animation_speed,autoplay,autoplay_speed,use_navigation,use_pagination,slide_spacing,infinite,pause_on_hover,swipe,rtl,logo_grayscale_default,logo_grayscale_hover,logo_hover,navigation_icon_size,navigation_bg_size,navigation_icon_color,navigation_bg_color,pagination_cmn_dots_size,pagination_active_dots_size,pagination_cmn_dots_color,dots_alignment,content}   = this.props;
 
     let autoPlayValue;
     autoplay == 'on' ? autoPlayValue = true : autoPlayValue = false ;
@@ -56,8 +56,6 @@ class LogoCarousel extends Component {
     use_pagination == 'on' ? paginationValue = true :  paginationValue = false ;
     let navigationValue 
     use_navigation == 'on' ? navigationValue = true :  navigationValue = false ;
-    let infiniteValue;
-    infinite == 'on' ? infiniteValue = true :  infiniteValue = false ;
     let pauseHoverValue;
     pause_on_hover == 'on' ? pauseHoverValue = true :  pauseHoverValue = false ;
     let swipeValue;
@@ -65,7 +63,9 @@ class LogoCarousel extends Component {
     let rtlValue;
     rtl == 'on' ? rtlValue = true :  rtlValue = false ;
 
-    console.log(slides_to_show_tablet);
+     // Fix infinite Issue 
+     let logo_length = content.length;
+     let logoInfinite = logo_length >= slides_to_show && infinite === "on" ? true  : false;
 
     var settings = { 
       speed: parseInt(animation_speed),
@@ -75,7 +75,7 @@ class LogoCarousel extends Component {
       autoplaySpeed: parseInt(autoplay_speed),
       arrows: navigationValue,
       dots:paginationValue,
-      infinite: infinite,
+      infinite: logoInfinite,
       rtl:rtlValue,
       swipe: swipeValue,
       pauseOnHover: pauseHoverValue,
