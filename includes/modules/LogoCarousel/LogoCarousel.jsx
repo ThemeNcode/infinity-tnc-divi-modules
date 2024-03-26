@@ -276,6 +276,69 @@ class LogoCarousel extends Component {
           }]);
         }
 
+        // Process logo gray scale hover value into style
+
+        if (props.logo_grayscale_hover === 'on') {
+          additionalCss.push([{
+            selector:    '%%order_class%% .inftnc_carousels_logo_wrapper .logo_carousel_img',
+            declaration: `-webkit-filter: grayscale(0); filter: none; transition: all .5s ease 0s; -webkit-transition: all .5s ease 0s;`,
+          }]);
+        }
+
+        if (props.logo_grayscale_hover === 'on') {
+          additionalCss.push([{
+            selector:    '%%order_class%% .inftnc_carousels_logo_wrapper .logo_carousel_img:hover',
+            declaration: `-webkit-filter: grayscale(100%); filter: grayscale(100%); transition: all .5s ease 0s; -webkit-transition: all .5s ease 0s;`,
+          }]);
+        }
+
+        // Logo Hover Effectcs 
+
+        //Process logo zoom in effect value into style
+        if (props.logo_hover === 'zoom_in') {
+          additionalCss.push([{
+            selector:    '%%order_class%% .inftnc_carousels_logo_wrapper .logo_carousel_img',
+            declaration: `transition: all .5s ease 0s;-webkit-transition: all .5s ease 0s;`,
+          }]);
+        }
+
+        if (props.logo_hover === 'zoom_in') {
+          additionalCss.push([{
+            selector:    '%%order_class%% .inftnc_carousels_logo_wrapper .logo_carousel_img:hover',
+            declaration: `transition: all .5s ease 0s;
+						-webkit-transition: all .5s ease 0s;
+						-webkit-transform: scale(1.04, 1.04);
+						-moz-transform: scale(1.04, 1.04);
+						-ms-transform: scale(1.04, 1.04);
+						-o-transform: scale(1.04, 1.04);'`,
+          }]);
+        }
+
+        //Process logo zoom in effect value into style
+        if (props.logo_hover === 'zoom_out') {
+          additionalCss.push([{
+            selector:    '%%order_class%% .inftnc_carousels_logo_wrapper .logo_carousel_img',
+            declaration: `transition: all .5s ease 0s;
+						-webkit-transition: all .5s ease 0s;
+						-webkit-transform: scale(1.03, 1.03);
+						-moz-transform: scale(1.03, 1.03);
+						-ms-transform: scale(1.03, 1.03);
+						-o-transform: scale(1.03, 1.03);`,
+          }]);
+        }
+
+        if (props.logo_hover === 'zoom_out') {
+          additionalCss.push([{
+            selector:    '%%order_class%% .inftnc_carousels_logo_wrapper .logo_carousel_img:hover',
+            declaration: `transition: all .5s ease 0s;
+						-webkit-transition: all .5s ease 0s;
+						-webkit-transform: scale(1.0, 1.0);
+						-moz-transform: scale(1.0, 1.0);
+						-ms-transform: scale(1.0, 1.0);
+						-o-transform: scale(1.0, 1.0);`,
+          }]);
+        }
+
           
     return additionalCss;
 
