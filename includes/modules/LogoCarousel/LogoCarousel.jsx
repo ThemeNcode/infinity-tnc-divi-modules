@@ -14,10 +14,10 @@ class LogoCarousel extends Component {
    const utils         = window.ET_Builder.API.Utils;
    const additionalCss = [];
 
-    // // Process slide spacing value into style
+    // Process slide spacing value into style
     if (props.slide_spacing) {
       additionalCss.push([{
-        selector:    '%%order_class%% .inftnc_logo_carousel_child',
+        selector:    '%%order_class%% .slick-slide',
         declaration: `padding-left:${props.slide_spacing};`,
       }]);
     }
@@ -26,8 +26,44 @@ class LogoCarousel extends Component {
     if (props.slide_spacing) {
       additionalCss.push([{
         selector:    '%%order_class%% .inftnc_carousels_logo_wrapper .slick-list',
-        declaration: `padding-left:${props.slide_spacing};`,
+        declaration: `margin-left:-${props.slide_spacing};`,
       }]);
+    }
+
+    // Process responsive slide spacing value into style
+
+    if(props.slide_spacing) {
+        const 	slide_last_edited =  props.slide_spacing_last_edited; 
+        const   slide_responsive_active = slide_last_edited && slide_last_edited.startsWith("on")
+        //Tablet 
+        if( props.slide_spacing_tablet && slide_responsive_active){
+          additionalCss.push([{
+            selector:    '%%order_class%% .inftnc_carousels_logo_wrapper .slick-list',
+            declaration: `margin-left:-${props.slide_spacing_tablet};`,
+            device: 'tablet',
+          }]);
+          
+          additionalCss.push([{
+            selector:    '%%order_class%% .slick-slide',
+            declaration: `padding-left:${props.slide_spacing_tablet};`,
+            device: 'tablet',
+          }]);
+        }
+        // Phone 
+
+        if( props.slide_spacing_phone && slide_responsive_active){
+          additionalCss.push([{
+            selector:    '%%order_class%% .inftnc_carousels_logo_wrapper .slick-list',
+            declaration: `margin-left:-${props.slide_spacing_phone};`,
+            device: 'phone',
+          }]);
+          
+          additionalCss.push([{
+            selector:    '%%order_class%% .slick-slide',
+            declaration: `padding-left:${props.slide_spacing_phone};`,
+            device: 'phone',
+          }]);
+        }
     }
 
     return additionalCss;
