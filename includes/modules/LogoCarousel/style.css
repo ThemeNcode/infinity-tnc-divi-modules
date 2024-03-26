@@ -41,6 +41,13 @@
     bottom: -50px !important;
 }
 
+.slick-prev {
+    left:-16px !important;
+}
+
+.slick-next {
+    right: -16px !important;
+}
 
 
 

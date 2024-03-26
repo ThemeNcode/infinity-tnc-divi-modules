@@ -10,21 +10,29 @@ class LogoCarousel extends Component {
 
   static slug = 'inftnc_logo_carousel';
 
-//   static css(props, moduleInfo) {
-//    const utils         = window.ET_Builder.API.Utils;
-//    const additionalCss = [];
+  static css(props, moduleInfo) {
+   const utils         = window.ET_Builder.API.Utils;
+   const additionalCss = [];
 
-//    // Process button background  value into style
-//     // if (props.button_bg) {
-//     //   additionalCss.push([{
-//     //     selector:    '%%order_class%% .inftnc_share_link',
-//     //     declaration: `background-color: ${props.button_bg};`,
-//     //   }]);
-//     // }
+    // // Process slide spacing value into style
+    if (props.slide_spacing) {
+      additionalCss.push([{
+        selector:    '%%order_class%% .inftnc_logo_carousel_child',
+        declaration: `padding-left:${props.slide_spacing};`,
+      }]);
+    }
 
-//    return additionalCss;
+   // Process slide spacing value into style
+    if (props.slide_spacing) {
+      additionalCss.push([{
+        selector:    '%%order_class%% .inftnc_carousels_logo_wrapper .slick-list',
+        declaration: `padding-left:${props.slide_spacing};`,
+      }]);
+    }
 
-//  }
+    return additionalCss;
+
+  }
 
   NextArrow = ({ onClick }) => {
     return (
@@ -92,9 +100,9 @@ class LogoCarousel extends Component {
     };
 
     return (
-      <div>
+  
         <Slider {...settings} className="inftnc_carousels_logo_wrapper">{this.props.content}</Slider>
-      </div>
+      
     );
   }
 }

@@ -11,7 +11,7 @@ class LogoCarouselChild extends Component {
     
     return (
           <div className="inftnc_carousel_child"> 
-            <img className="logo_carousel_img" src={logo} alt={alt} /> 
+             <img className="logo_carousel_img" src={logo} alt={alt} /> 
            </div>
     );
   }
