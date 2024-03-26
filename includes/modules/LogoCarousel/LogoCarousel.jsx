@@ -192,10 +192,37 @@ class LogoCarousel extends Component {
                   declaration: `font-size:${props.pagination_cmn_dots_size_phone}!important;`,
                 }]);
               }
-
          }
 
+         // Process pagination dots size into style 
+        if (props.pagination_active_dots_size) {
+          additionalCss.push([{
+            selector:    '%%order_class%% .inftnc_carousels_logo_wrapper .slick-dots li.slick-active button:before',
+            declaration: `font-size:${props.pagination_active_dots_size}!important;`,
+          }]);
+        }
 
+         // Process responsive pagination dots size into style 
+         if(props.pagination_active_dots_size){
+              const 	pagination_active_dots_size_last_edited =  props.pagination_active_dots_size_last_edited; 
+              const   pagination_dots_active_responsive_active = pagination_active_dots_size_last_edited && pagination_active_dots_size_last_edited.startsWith("on")  
+             // Tablet
+              if (props.pagination_active_dots_size_tablet && pagination_dots_active_responsive_active) {
+                additionalCss.push([{
+                  selector:    '%%order_class%% .inftnc_carousels_logo_wrapper .slick-dots li.slick-active button:before',
+                  declaration: `font-size:${props.pagination_active_dots_size_tablet}!important;`,
+                  device:'tablet',
+                }]);
+              }
+              //Phone
+              if (props.pagination_active_dots_size_phone && pagination_dots_active_responsive_active) {
+                additionalCss.push([{
+                  selector:    '%%order_class%% .inftnc_carousels_logo_wrapper .slick-dots li.slick-active button:before',
+                  declaration: `font-size:${props.pagination_active_dots_size_phone}!important;`,
+                  device:'phone',
+                }]);
+              }
+         }
 
     return additionalCss;
 
