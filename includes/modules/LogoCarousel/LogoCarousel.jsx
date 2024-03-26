@@ -339,7 +339,25 @@ class LogoCarousel extends Component {
           }]);
         }
 
-          
+         //Process logo slide in effect value into style
+         if (props.logo_hover === 'slide') {
+          additionalCss.push([{
+            selector:    '%%order_class%% .inftnc_carousels_logo_wrapper .logo_carousel_img',
+            declaration: `margin-left: 10px;
+						-webkit-transform: scale(1.01, 1.01);
+						transform: scale(1.01, 1.01);
+						-webkit-transition: all .5s ease 0s;
+						transition: all .5s ease 0s;`,
+          }]);
+        }
+
+        if (props.logo_hover === 'slide') {
+          additionalCss.push([{
+            selector:    '%%order_class%% .inftnc_carousels_logo_wrapper .logo_carousel_img:hover',
+            declaration: `margin-left: 0;`,
+          }]);
+        }
+
     return additionalCss;
 
   }
