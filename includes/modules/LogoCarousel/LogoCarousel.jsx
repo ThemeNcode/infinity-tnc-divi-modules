@@ -31,7 +31,6 @@ class LogoCarousel extends Component {
     }
 
     // Process responsive slide spacing value into style
-
     if(props.slide_spacing) {
         const 	slide_last_edited =  props.slide_spacing_last_edited; 
         const   slide_responsive_active = slide_last_edited && slide_last_edited.startsWith("on")
@@ -50,7 +49,6 @@ class LogoCarousel extends Component {
           }]);
         }
         // Phone 
-
         if( props.slide_spacing_phone && slide_responsive_active){
           additionalCss.push([{
             selector:    '%%order_class%% .inftnc_carousels_logo_wrapper .slick-list',
@@ -64,6 +62,22 @@ class LogoCarousel extends Component {
             device: 'phone',
           }]);
         }
+    }
+
+    // Process navigaton value into style
+    if (props.navigation_icon_size) {
+      additionalCss.push([{
+        selector:    '%%order_class%% .slick-inftnc-arrow.slick-prev:before',
+        declaration: `font-size:${props.navigation_icon_size};`,
+      }]);
+    }
+
+    // Process navigaton value into style
+    if (props.navigation_icon_size) {
+      additionalCss.push([{
+        selector:    '%%order_class%% .slick-inftnc-arrow.slick-next:before',
+        declaration: `font-size:${props.navigation_icon_size};`,
+      }]);
     }
 
     return additionalCss;
