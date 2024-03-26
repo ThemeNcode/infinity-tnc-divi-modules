@@ -26,21 +26,21 @@ class LogoCarousel extends Component {
 
 //  }
 
-    NextArrow() {
-      return (
-        <button type="button" className="slick-inftnc-arrow slick-prev" data-icon="&#x34;"></button>
-      );
-    }
+  NextArrow = ({ onClick }) => {
+    return (
+      <button type="button" className="slick-inftnc-arrow slick-next" onClick={onClick} data-icon="&#x35;"></button>
+    );
+  }
 
-    PrevArrow() {
-      return (
-        <button type="button" className="slick-inftnc-arrow slick-next" data-icon="&#x35;"></button>
-      );
-    }
+  PrevArrow = ({ onClick }) => {
+    return (
+      <button type="button" className="slick-inftnc-arrow slick-prev" onClick={onClick} data-icon="&#x34;"></button>
+    );
+  }
 
   render() {
     // Destructure Props 
-    const {slides_to_show,slides_to_scroll,animation_speed,autoplay,autoplay_speed,use_navigation,use_pagination,slide_spacing,infinite,pause_on_hover,swipe,rtl,logo_grayscale_default,logo_grayscale_hover,logo_hover,navigation_icon_size,navigation_bg_size,navigation_icon_color,navigation_bg_color,pagination_cmn_dots_size,pagination_active_dots_size,pagination_cmn_dots_color,dots_alignment}   = this.props;
+    const {slides_to_show,slides_to_show_tablet,slides_to_show_phone,slides_to_scroll,slides_to_scroll_tablet,slides_to_scroll_phone,animation_speed,autoplay,autoplay_speed,use_navigation,use_pagination,slide_spacing,infinite,pause_on_hover,swipe,rtl,logo_grayscale_default,logo_grayscale_hover,logo_hover,navigation_icon_size,navigation_bg_size,navigation_icon_color,navigation_bg_color,pagination_cmn_dots_size,pagination_active_dots_size,pagination_cmn_dots_color,dots_alignment}   = this.props;
 
     let autoPlayValue;
     autoplay == 'on' ? autoPlayValue = true : autoPlayValue = false ;
@@ -57,6 +57,8 @@ class LogoCarousel extends Component {
     let rtlValue;
     rtl == 'on' ? rtlValue = true :  rtlValue = false ;
 
+    console.log(slides_to_show_tablet);
+
     var settings = { 
       speed: parseInt(animation_speed),
       slidesToShow: slides_to_show ? parseInt(slides_to_show) : 3,
@@ -69,39 +71,29 @@ class LogoCarousel extends Component {
       rtl:rtlValue,
       swipe: swipeValue,
       pauseOnHover: pauseHoverValue,
-      prevArrow: <this.NextArrow></this.NextArrow>,
-      nextArrow: <this.PrevArrow></this.PrevArrow>,
+      prevArrow: <this.PrevArrow />,
+      nextArrow: <this.NextArrow />,
       responsive: [
         {
-          breakpoint: 1024,
+          breakpoint: 980,
           settings: {
-            slidesToShow: 3,
-            slidesToScroll: slides_to_scroll,
-            infinite: true,
-            dots: true
+            slidesToShow: slides_to_show_tablet ? parseInt(slides_to_show_tablet) : 3,
+            slidesToScroll: slides_to_scroll_tablet ? parseInt(slides_to_scroll_tablet) : 1,
           }
         },
         {
-          breakpoint: 600,
+          breakpoint: 767,
           settings: {
-            slidesToShow: 2,
-            slidesToScroll: 2,
-            initialSlide: 2
+            slidesToShow: slides_to_show_phone ? parseInt(slides_to_show_phone) : 2,
+            slidesToScroll: slides_to_scroll_phone ? parseInt(slides_to_scroll_phone) : 1,
           }
         },
-        {
-          breakpoint: 480,
-          settings: {
-            slidesToShow: 1,
-            slidesToScroll: 1
-          }
-        }
       ]
     };
 
     return (
       <div>
-        <Slider {...settings} className="inftnc_carousels_logo_wrapper">{this.props.content} </Slider>
+        <Slider {...settings} className="inftnc_carousels_logo_wrapper">{this.props.content}</Slider>
       </div>
     );
   }

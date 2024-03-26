@@ -37,6 +37,9 @@
     display: inline-block !important;
 }
 
+.inftnc_carousels_logo_wrapper .slick-dots {
+    bottom: -50px !important;
+}
 
 
 

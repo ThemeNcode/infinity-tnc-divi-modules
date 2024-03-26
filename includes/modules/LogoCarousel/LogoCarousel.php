@@ -493,8 +493,6 @@ class LogoCarousel extends ET_Builder_Module {
 		$slide_spacing_phone 						= $this->props['slide_spacing_phone'];
 		$logo_hover_effects							= $this->props['logo_hover'];
 
-		
-	
 		( 'on' === $autoplay ) ? ( $autoplay_value = 'true' ) : ( $autoplay_value = 'false' );
 		( 'on' === $use_navigation ) ? ( $navigation_value = 'true' ) : ( $navigation_value = 'false' );
 		( 'on' === $use_pagination ) ? ( $pagination_value = 'true' ) : ( $pagination_value = 'false' );
