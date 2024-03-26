@@ -253,7 +253,30 @@ class LogoCarousel extends Component {
                 }]);
               }
           }
+          //Process dots color value into style 
+          if (props.pagination_cmn_dots_color) {
+            additionalCss.push([{
+              selector:    '%%order_class%% .inftnc_carousels_logo_wrapper .slick-dots li button:before',
+              declaration: `color:${props.pagination_cmn_dots_color};`,
+            }]);
+          }
 
+      	// Process logo gray scale default value into style
+        if (props.logo_grayscale_default === 'on') {
+          additionalCss.push([{
+            selector:    '%%order_class%% .inftnc_carousels_logo_wrapper .logo_carousel_img',
+            declaration: `-webkit-filter: grayscale(100%); filter: grayscale(100%); transition: all .5s ease 0s; -webkit-transition: all .5s ease 0s;`,
+          }]);
+        }
+
+        if (props.logo_grayscale_default === 'on') {
+          additionalCss.push([{
+            selector:    '%%order_class%% .inftnc_carousels_logo_wrapper .logo_carousel_img:hover',
+            declaration: `-webkit-filter: grayscale(0); filter: none; transition: all .5s ease 0s; -webkit-transition: all .5s ease 0s;`,
+          }]);
+        }
+
+          
     return additionalCss;
 
   }
