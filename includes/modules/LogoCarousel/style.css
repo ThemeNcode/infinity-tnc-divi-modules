@@ -49,6 +49,10 @@
     right: -16px !important;
 }
 
+[dir='rtl'] .slick-next {
+    right: auto !important;
+}
+
 
 
  
