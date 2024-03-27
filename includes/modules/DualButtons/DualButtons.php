@@ -17,7 +17,7 @@ class INFTNC_DualButtons extends ET_Builder_Module {
         // Module Icon
 		$this->icon          = 'e';
         //'$this->icon_path        =  plugin_dir_path( __FILE__ ) . 'icon.svg';
-        $this->main_css_element = '%%order_class%% infinity-tnc-module';
+        $this->main_css_element = '%%order_class%% .infinity-tnc-module';
 
         // Toggle settings
 		$this->settings_modal_toggles  = array(
@@ -248,7 +248,7 @@ class INFTNC_DualButtons extends ET_Builder_Module {
 			$button = $this->render_button(
 				array(
 					'button_id'           => $this->module_id( false ),
-					'button_classname'    => array('inftnc_pb_button_left inftnc_btn'),
+					'button_classname'    => array('inftnc_pb_button_left inftnc_btn et_pb_bg_layout_light'),
 					'button_custom'       => $button_custom,
 					'button_rel'          => $button_rel,
 					'button_text'         => $button_left_text,
@@ -274,6 +274,8 @@ class INFTNC_DualButtons extends ET_Builder_Module {
 			return $button;
 	}
 
+		
+
 	public function render_button_right() {
 
 		// Module specific props added on $this->get_fields()
@@ -293,7 +295,7 @@ class INFTNC_DualButtons extends ET_Builder_Module {
 		  $button = $this->render_button(
 			  array(
 				  'button_id'           => $this->module_id( false ),
-				  'button_classname'    => array('inftnc_pb_button_right inftnc_btn'),
+				  'button_classname'    => array('inftnc_pb_button_right inftnc_btn et_pb_bg_layout_light'),
 				  'button_custom'       => $button_custom,
 				  'button_rel'          => $button_rel,
 				  'button_text'         => $button_right_text,

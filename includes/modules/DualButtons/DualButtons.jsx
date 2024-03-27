@@ -26,7 +26,7 @@ class DualButtons extends Component {
          <a 
            className={`${utils.classnames(
             buttonClassNameLeft 
-          )} inftnc_pb_button_left`}
+          )} inftnc_pb_button_left et_pb_bg_layout_light`}
           target={buttonTargetLeft}
           href={props.button_url_left} 
           rel={utils.linkRel(props.button_left_rel)}
@@ -37,7 +37,7 @@ class DualButtons extends Component {
         <a
           className={`${utils.classnames(
             buttonClassNameRight
-          )} inftnc_pb_button_right`}
+          )} inftnc_pb_button_right et_pb_bg_layout_light`}
           target={buttonTargetRight}
           href={props.button_url_right}
           data-icon={buttonIconRight}
