@@ -1,0 +1,59 @@
+.slick-inftnc-arrow.slick-prev:before {
+    font-family: ETmodules!important;
+    font-weight: 400!important;
+    content: attr(data-icon) !important;
+    font-size: 30px;
+    display: inline-block !important;
+    color: #7a7070 !important;
+}
+
+.slick-inftnc-arrow.slick-next:before {
+    font-family: ETmodules!important;
+    font-weight: 400!important;
+    content: attr(data-icon) !important;
+    font-size: 30px;
+    display: inline-block !important;
+    color: #7a7070 !important;
+}
+
+.slick-inftnc-arrow {
+    background-color: #d9d9d9 !important;
+    width: 35px !important;
+    height: 35px !important;
+    vertical-align: middle !important;
+    z-index: 9999 !important;
+    border-radius: 5px;
+}
+
+.inftnc_carousels_logo_wrapper .slick-dots li button:before { 
+     font-size:40px;
+}
+
+.inftnc_carousel_child {
+    overflow: hidden;
+}
+
+.inftnc_carousel_child img {
+    display: inline-block !important;
+}
+
+.inftnc_carousels_logo_wrapper .slick-dots {
+    bottom: -50px !important;
+}
+
+.slick-prev {
+    left:-16px !important;
+}
+
+.slick-next {
+    right: -16px !important;
+}
+
+[dir='rtl'] .slick-next {
+    right: auto !important;
+}
+
+
+
+ 
+
