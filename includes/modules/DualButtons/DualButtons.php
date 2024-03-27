@@ -15,8 +15,9 @@ class INFTNC_DualButtons extends ET_Builder_Module {
         // Module name
 		$this->name = esc_html__( 'Dual Buttons - Infinity TNC', 'inftnc-infinity-tnc-divi-modules' );
         // Module Icon
-        $this->icon_path        =  plugin_dir_path( __FILE__ ) . 'icon.svg';
-        $this->main_css_element = '%%order_class%%';
+		$this->icon          = 'e';
+        //'$this->icon_path        =  plugin_dir_path( __FILE__ ) . 'icon.svg';
+        $this->main_css_element = '%%order_class%% infinity-tnc-module';
 
         // Toggle settings
 		$this->settings_modal_toggles  = array(
@@ -158,7 +159,6 @@ class INFTNC_DualButtons extends ET_Builder_Module {
 				'options'         => et_builder_get_text_orientation_options( array( 'justified' ) ),
 				'tab_slug'        => 'advanced',
 				'toggle_slug'     => 'alignment',
-				'description'     => esc_html__( 'Here you can define the alignment of Button', 'inftnc-infinity-tnc-divi-modules' ),
 				'mobile_options'  => true,
 			),
 		);

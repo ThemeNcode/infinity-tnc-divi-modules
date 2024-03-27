@@ -17,7 +17,7 @@ class SocialShare extends ET_Builder_Module {
 	 */
 	function init() {
 		// Module name
-		$this->name                    = esc_html__( 'Social Share', 'infinity-tnc-divi-modules' );
+		$this->name                    = esc_html__( 'Social Share - Infinity TNC', 'infinity-tnc-divi-modules' );
         $this->child_item_text 		   = esc_html__( 'Social Network', 'et_builder' );
 
 		// Module Icon
