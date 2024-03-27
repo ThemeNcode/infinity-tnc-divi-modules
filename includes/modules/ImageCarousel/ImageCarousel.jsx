@@ -4,11 +4,9 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-
-
 class LogoCarousel extends Component {
 
-  static slug = 'inftnc_logo_carousel';
+  static slug = 'inftnc_image_carousel';
 
   static css(props, moduleInfo) {
    const utils         = window.ET_Builder.API.Utils;
@@ -176,7 +174,7 @@ class LogoCarousel extends Component {
          // Process responsive pagination dots size into style 
 
          if(props.pagination_cmn_dots_size){
-              const 	pagination_cmn_dots_size_last_edited =  props.pagination_cmn_dots_size_last_edited; 
+              const  pagination_cmn_dots_size_last_edited =  props.pagination_cmn_dots_size_last_edited; 
               const  navigation_bg_responsive_active = pagination_cmn_dots_size_last_edited && pagination_cmn_dots_size_last_edited.startsWith("on")  
              // Tablet
               if (props.pagination_cmn_dots_size_tablet && navigation_bg_responsive_active) {
@@ -204,7 +202,7 @@ class LogoCarousel extends Component {
 
          // Process responsive pagination dots size into style 
          if(props.pagination_active_dots_size){
-              const 	pagination_active_dots_size_last_edited =  props.pagination_active_dots_size_last_edited; 
+              const   pagination_active_dots_size_last_edited =  props.pagination_active_dots_size_last_edited; 
               const   pagination_dots_active_responsive_active = pagination_active_dots_size_last_edited && pagination_active_dots_size_last_edited.startsWith("on")  
              // Tablet
               if (props.pagination_active_dots_size_tablet && pagination_dots_active_responsive_active) {
@@ -234,7 +232,7 @@ class LogoCarousel extends Component {
 
           // Process responsive  dots aligment value into style  
           if(props.dots_alignment){
-              const 	dots_alignment_last_edited =  props.dots_alignment_last_edited; 
+              const   dots_alignment_last_edited =  props.dots_alignment_last_edited; 
               const   dots_alignment_responsive_active = dots_alignment_last_edited && dots_alignment_last_edited.startsWith("on")  
               //Tablet
               if (props.dots_alignment_tablet && dots_alignment_responsive_active) {
@@ -262,14 +260,14 @@ class LogoCarousel extends Component {
           }
 
       	// Process logo gray scale default value into style
-        if (props.logo_grayscale_default === 'on') {
+        if (props.image_grayscale_default === 'on') {
           additionalCss.push([{
             selector:    '%%order_class%% .inftnc_carousels_logo_wrapper .logo_carousel_img',
             declaration: `-webkit-filter: grayscale(100%); filter: grayscale(100%); transition: all .5s ease 0s; -webkit-transition: all .5s ease 0s;`,
           }]);
         }
 
-        if (props.logo_grayscale_default === 'on') {
+        if (props.image_grayscale_default === 'on') {
           additionalCss.push([{
             selector:    '%%order_class%% .inftnc_carousels_logo_wrapper .logo_carousel_img:hover',
             declaration: `-webkit-filter: grayscale(0); filter: none; transition: all .5s ease 0s; -webkit-transition: all .5s ease 0s;`,
@@ -278,14 +276,14 @@ class LogoCarousel extends Component {
 
         // Process logo gray scale hover value into style
 
-        if (props.logo_grayscale_hover === 'on') {
+        if (props.image_grayscale_hover === 'on') {
           additionalCss.push([{
             selector:    '%%order_class%% .inftnc_carousels_logo_wrapper .logo_carousel_img',
             declaration: `-webkit-filter: grayscale(0); filter: none; transition: all .5s ease 0s; -webkit-transition: all .5s ease 0s;`,
           }]);
         }
 
-        if (props.logo_grayscale_hover === 'on') {
+        if (props.image_grayscale_hover === 'on') {
           additionalCss.push([{
             selector:    '%%order_class%% .inftnc_carousels_logo_wrapper .logo_carousel_img:hover',
             declaration: `-webkit-filter: grayscale(100%); filter: grayscale(100%); transition: all .5s ease 0s; -webkit-transition: all .5s ease 0s;`,
@@ -295,14 +293,14 @@ class LogoCarousel extends Component {
         // Logo Hover Effectcs 
 
         //Process logo zoom in effect value into style
-        if (props.logo_hover === 'zoom_in') {
+        if (props.image_hover === 'zoom_in') {
           additionalCss.push([{
             selector:    '%%order_class%% .inftnc_carousels_logo_wrapper .logo_carousel_img',
             declaration: `transition: all .5s ease 0s;-webkit-transition: all .5s ease 0s;`,
           }]);
         }
 
-        if (props.logo_hover === 'zoom_in') {
+        if (props.image_hover === 'zoom_in') {
           additionalCss.push([{
             selector:    '%%order_class%% .inftnc_carousels_logo_wrapper .logo_carousel_img:hover',
             declaration: `transition: all .5s ease 0s;
@@ -315,7 +313,7 @@ class LogoCarousel extends Component {
         }
 
         //Process logo zoom in effect value into style
-        if (props.logo_hover === 'zoom_out') {
+        if (props.image_hover === 'zoom_out') {
           additionalCss.push([{
             selector:    '%%order_class%% .inftnc_carousels_logo_wrapper .logo_carousel_img',
             declaration: `transition: all .5s ease 0s;
@@ -327,7 +325,7 @@ class LogoCarousel extends Component {
           }]);
         }
 
-        if (props.logo_hover === 'zoom_out') {
+        if (props.image_hover === 'zoom_out') {
           additionalCss.push([{
             selector:    '%%order_class%% .inftnc_carousels_logo_wrapper .logo_carousel_img:hover',
             declaration: `transition: all .5s ease 0s;
@@ -340,7 +338,7 @@ class LogoCarousel extends Component {
         }
 
          //Process logo slide in effect value into style
-         if (props.logo_hover === 'slide') {
+         if (props.image_hover === 'slide') {
           additionalCss.push([{
             selector:    '%%order_class%% .inftnc_carousels_logo_wrapper .logo_carousel_img',
             declaration: `margin-left: 10px;
@@ -351,7 +349,7 @@ class LogoCarousel extends Component {
           }]);
         }
 
-        if (props.logo_hover === 'slide') {
+        if (props.image_hover === 'slide') {
           additionalCss.push([{
             selector:    '%%order_class%% .inftnc_carousels_logo_wrapper .logo_carousel_img:hover',
             declaration: `margin-left: 0;`,
@@ -359,7 +357,7 @@ class LogoCarousel extends Component {
         }
 
          //Process logo rotate in effect value into style
-         if (props.logo_hover === 'rotate') {
+         if (props.image_hover === 'rotate') {
           additionalCss.push([{
             selector:    '%%order_class%% .inftnc_carousels_logo_wrapper .logo_carousel_img',
             declaration: `-webkit-transform: rotate(15deg) scale(1.4);
@@ -369,7 +367,7 @@ class LogoCarousel extends Component {
           }]);
         }
 
-        if (props.logo_hover === 'rotate') {
+        if (props.image_hover === 'rotate') {
           additionalCss.push([{
             selector:    '%%order_class%% .inftnc_carousels_logo_wrapper .logo_carousel_img:hover',
             declaration: `-webkit-transform: rotate(0) scale(1);
@@ -398,7 +396,7 @@ class LogoCarousel extends Component {
 
   render() {
     // Destructure Props 
-    const {slides_to_show,slides_to_show_tablet,slides_to_show_phone,slides_to_scroll,slides_to_scroll_tablet,slides_to_scroll_phone,animation_speed,autoplay,autoplay_speed,use_navigation,use_pagination,slide_spacing,infinite,pause_on_hover,swipe,rtl,logo_grayscale_default,logo_grayscale_hover,logo_hover,navigation_icon_size,navigation_bg_size,navigation_icon_color,navigation_bg_color,pagination_cmn_dots_size,pagination_active_dots_size,pagination_cmn_dots_color,dots_alignment,content}   = this.props;
+    const {slides_to_show,slides_to_show_tablet,slides_to_show_phone,slides_to_scroll,slides_to_scroll_tablet,slides_to_scroll_phone,animation_speed,autoplay,autoplay_speed,use_navigation,use_pagination,infinite,pause_on_hover,swipe,rtl,content}   = this.props;
 
     let autoPlayValue;
     autoplay == 'on' ? autoPlayValue = true : autoPlayValue = false ;
@@ -414,8 +412,8 @@ class LogoCarousel extends Component {
     rtl == 'on' ? rtlValue = true :  rtlValue = false ;
 
      // Fix infinite Issue 
-     let logo_length = content.length;
-     let logoInfinite = logo_length >= slides_to_show && infinite === "on" ? true  : false;
+     let image_length = content.length;
+     let imageInfinite = image_length >= slides_to_show && infinite === "on" ? true  : false;
 
     var settings = { 
       speed: parseInt(animation_speed),
@@ -425,7 +423,7 @@ class LogoCarousel extends Component {
       autoplaySpeed: parseInt(autoplay_speed),
       arrows: navigationValue,
       dots:paginationValue,
-      infinite: logoInfinite,
+      infinite: imageInfinite,
       rtl:rtlValue,
       swipe: swipeValue,
       pauseOnHover: pauseHoverValue,

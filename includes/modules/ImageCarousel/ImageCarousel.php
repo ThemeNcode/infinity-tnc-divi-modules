@@ -1,14 +1,14 @@
 <?php
 
-class LogoCarousel extends ET_Builder_Module {
+class ImageCarousel extends ET_Builder_Module {
 	// Module slug (also used as shortcode tag)
-	public $slug       = 'inftnc_logo_carousel';
+	public $slug       = 'inftnc_image_carousel';
 
 	// Full Visual Builder support
 	public $vb_support = 'on';
 
 	// Module item's slug
-	public $child_slug = 'inftnc_logo_carousel_child';
+	public $child_slug = 'inftnc_image_carousel_child';
 
 	/**
 	 * Module properties initialization
@@ -17,8 +17,8 @@ class LogoCarousel extends ET_Builder_Module {
 	 */
 	function init() {
 		// Module name
-		$this->name                    = esc_html__( 'Logo Carousel - Infinity TNC', 'infinity-tnc-divi-modules' );
-        $this->child_item_text 		   = esc_html__( 'Logo', 'infinity-tnc-divi-modules' );
+		$this->name                    = esc_html__( 'Image Carousel - Infinity TNC', 'infinity-tnc-divi-modules' );
+        $this->child_item_text 		   = esc_html__( 'Image', 'infinity-tnc-divi-modules' );
 
 		// Module Icon
 		// Load customized svg icon and use it on builder as module icon. If you don't have svg icon, you can use
@@ -28,7 +28,7 @@ class LogoCarousel extends ET_Builder_Module {
 		$this->settings_modal_toggles  = array(
 			'general'  => array(
 				'toggles' => array(
-					'main_content' 		 => esc_html__( 'Logo General', 'infinity-tnc-divi-modules' ),
+					'main_content' 		 => esc_html__( 'Image General', 'infinity-tnc-divi-modules' ),
 					'carousel_settings'  => esc_html__( 'Carousel Settings', 'infinity-tnc-divi-modules' ),
 				),
 			),
@@ -47,8 +47,8 @@ class LogoCarousel extends ET_Builder_Module {
 							),
 						),
 					),
-					'logo_styles' => array(
-						'title'	=>	esc_html__( 'Logo', 'infinity-tnc-divi-modules' ),
+					'image_styles' => array(
+						'title'	=>	esc_html__( 'Image', 'infinity-tnc-divi-modules' ),
 						'priority' 	=>22,
 					),
 				),
@@ -57,22 +57,20 @@ class LogoCarousel extends ET_Builder_Module {
 
 		// This property will add CSS fields on Advanced > Custom CSS
 		$this->custom_css_fields = array(
-			'logo' => array(
-				'label'    => esc_html__( 'Logo', 'dicm-divi-custom-modules' ),
+			'image' => array(
+				'label'    => esc_html__( 'Image', 'infinity-tnc-divi-modules' ),
 				'selector' => '.logo_carousel_img',
 			),
 			'navigation' => array(
-				'label'    => esc_html__( 'Navigation', 'dicm-divi-custom-modules' ),
+				'label'    => esc_html__( 'Navigation', 'infinity-tnc-divi-modules' ),
 				'selector' => '.slick-inftnc-arrow',
 			),
 			'pagination' => array(
-				'label'    => esc_html__( 'Pagination', 'dicm-divi-custom-modules' ),
+				'label'    => esc_html__( 'Pagination', 'infinity-tnc-divi-modules' ),
 				'selector' => '.inftnc_carousels_logo_wrapper .slick-dots',
 			),
 		);
 	}
-	
-
 	
 	/**
 	 * Module's specific fields
@@ -237,7 +235,7 @@ class LogoCarousel extends ET_Builder_Module {
 				'tab_slug'        => 'general',
 			),
 
-			 'logo_grayscale_default' => array(
+			 'image_grayscale_default' => array(
 				'label'             => esc_html__( 'Grayscale by Default', 'infinity-tnc-divi-modules' ),
 				'type'              => 'yes_no_button',
 				'default'			=> 'on',
@@ -249,7 +247,7 @@ class LogoCarousel extends ET_Builder_Module {
 				'tab_slug'        => 'general',
 			),
 
-			'logo_grayscale_hover' => array(
+			'image_grayscale_hover' => array(
 				'label'             => esc_html__( 'Grayscale on Hover', 'infinity-tnc-divi-modules' ),
 				'type'              => 'yes_no_button',
 				'default'			=> 'off',
@@ -261,8 +259,8 @@ class LogoCarousel extends ET_Builder_Module {
 				'tab_slug'        => 'general',
 			),	
 
-			'logo_hover' => array(
-				'label'           => esc_html__( 'Logo Hover Effect', 'infinity-tnc-divi-modules' ),
+			'image_hover' => array(
+				'label'           => esc_html__( 'Image Hover Effect', 'infinity-tnc-divi-modules' ),
 				'type'            => 'select',
 				'default'		  => 'none',
 				'options'         => array(
@@ -403,9 +401,9 @@ class LogoCarousel extends ET_Builder_Module {
 							'border_styles' => "%%order_class%% .inftnc_carousels_logo_wrapper .slick-slide .logo_carousel_img",
 						),
 					),
-					'label_prefix'    => esc_html__( 'Logo', 'infinity-tnc-divi-modules' ),
+					'label_prefix'    => esc_html__( 'Image', 'infinity-tnc-divi-modules' ),
 					'tab_slug'        => 'advanced',
-					'toggle_slug'     => 'logo_styles',
+					'toggle_slug'     => 'image_styles',
 				),												
 			),
 
@@ -415,9 +413,9 @@ class LogoCarousel extends ET_Builder_Module {
 						'main' => "%%order_class%% .inftnc_carousels_logo_wrapper .slick-slide .logo_carousel_img",
 						'overlay' => 'inset',
 					),
-					'label_prefix'    => esc_html__( 'Logo', 'infinity-tnc-divi-modules' ),
+					'label_prefix'    => esc_html__( 'Image', 'infinity-tnc-divi-modules' ),
 					'tab_slug'        => 'advanced',
-					'toggle_slug'     => 'logo_styles',
+					'toggle_slug'     => 'image_styles',
 				),			
 			),
 
@@ -491,7 +489,7 @@ class LogoCarousel extends ET_Builder_Module {
 		$slide_spacing_responsive_active			= et_pb_get_responsive_status( $slide_spacing_last_edited );
 		$slide_spacing_tablet 						= $this->props['slide_spacing_tablet'];
 		$slide_spacing_phone 						= $this->props['slide_spacing_phone'];
-		$logo_hover_effects							= $this->props['logo_hover'];
+		$image_hover_effects					    = $this->props['image_hover'];
 
 		( 'on' === $autoplay ) ? ( $autoplay_value = 'true' ) : ( $autoplay_value = 'false' );
 		( 'on' === $use_navigation ) ? ( $navigation_value = 'true' ) : ( $navigation_value = 'false' );
@@ -960,7 +958,7 @@ class LogoCarousel extends ET_Builder_Module {
 
 		// Logo Gray Scale Deafult 
 
-		if( 'on' === $this->props['logo_grayscale_default'] ) {
+		if( 'on' === $this->props['image_grayscale_default'] ) {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
@@ -972,7 +970,7 @@ class LogoCarousel extends ET_Builder_Module {
 			);
 		}
 
-		if( 'on' === $this->props['logo_grayscale_default'] ) {
+		if( 'on' === $this->props['image_grayscale_default'] ) {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
@@ -986,7 +984,7 @@ class LogoCarousel extends ET_Builder_Module {
 
 		// Logo Gray Scale By Hover 
 
-		if( 'on' === $this->props['logo_grayscale_hover'] ) {
+		if( 'on' === $this->props['image_grayscale_hover'] ) {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
@@ -998,7 +996,7 @@ class LogoCarousel extends ET_Builder_Module {
 			);
 		}
 
-		if( 'on' === $this->props['logo_grayscale_hover'] ) {
+		if( 'on' === $this->props['image_grayscale_hover'] ) {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
@@ -1013,7 +1011,7 @@ class LogoCarousel extends ET_Builder_Module {
 		// Logo Hover Effectcs
 
 		// Zoom in effects 
-		if( 'zoom_in' === $logo_hover_effects ) {
+		if( 'zoom_in' === $image_hover_effects ) {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
@@ -1026,7 +1024,7 @@ class LogoCarousel extends ET_Builder_Module {
 			);
 		}
 
-		if( 'zoom_in' === $logo_hover_effects ) {
+		if( 'zoom_in' === $image_hover_effects ) {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
@@ -1045,7 +1043,7 @@ class LogoCarousel extends ET_Builder_Module {
 
 		// Zoom out Effects 
 
-		if( 'zoom_out' === $logo_hover_effects ) {
+		if( 'zoom_out' === $image_hover_effects ) {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
@@ -1062,7 +1060,7 @@ class LogoCarousel extends ET_Builder_Module {
 			);
 		}
 
-		if( 'zoom_out' === $logo_hover_effects ) {
+		if( 'zoom_out' === $image_hover_effects ) {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
@@ -1082,7 +1080,7 @@ class LogoCarousel extends ET_Builder_Module {
 
 		// Image Slide  Effects
 
-		if( 'slide' === $logo_hover_effects ) {
+		if( 'slide' === $image_hover_effects ) {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
@@ -1094,7 +1092,7 @@ class LogoCarousel extends ET_Builder_Module {
 			);
 		}
 
-		if( 'slide' === $logo_hover_effects ) {
+		if( 'slide' === $image_hover_effects ) {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
@@ -1112,7 +1110,7 @@ class LogoCarousel extends ET_Builder_Module {
 		
 		 // Image Rotate  Effects
 
-		 if( 'rotate' === $logo_hover_effects ) {
+		 if( 'rotate' === $image_hover_effects ) {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
@@ -1127,7 +1125,7 @@ class LogoCarousel extends ET_Builder_Module {
 			);
 		}
 
-		if( 'rotate' === $logo_hover_effects ) {
+		if( 'rotate' === $image_hover_effects ) {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
@@ -1169,5 +1167,5 @@ class LogoCarousel extends ET_Builder_Module {
 	}
 }
 
-new LogoCarousel;
+new ImageCarousel;
 
