@@ -238,7 +238,7 @@ class ImageCarousel extends ET_Builder_Module {
 			 'image_grayscale_default' => array(
 				'label'             => esc_html__( 'Grayscale by Default', 'infinity-tnc-divi-modules' ),
 				'type'              => 'yes_no_button',
-				'default'			=> 'on',
+				'default'			=> 'off',
 				'options'           => array(
 					'on'  => esc_html__( 'Yes', 'infinity-tnc-divi-modules' ),
 					'off' => esc_html__( 'NO', 'infinity-tnc-divi-modules' ),
