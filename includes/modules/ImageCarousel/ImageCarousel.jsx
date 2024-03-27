@@ -265,82 +265,79 @@ class ImageCarousel extends Component {
           }
 
       	// Process logo gray scale default value into style
-        if (props.image_grayscale_default === 'on') {
-          additionalCss.push([{
-            selector:    '%%order_class%% .inftnc_carousels_image_wrapper .image_carousel_img',
-            declaration: `-webkit-filter: grayscale(100%); filter: grayscale(100%); transition: all .5s ease 0s; -webkit-transition: all .5s ease 0s;`,
-          }]);
-        }
-
-        if (props.image_grayscale_default === 'on') {
-          additionalCss.push([{
-            selector:    '%%order_class%% .inftnc_carousels_image_wrapper .image_carousel_img:hover',
-            declaration: `-webkit-filter: grayscale(0); filter: none; transition: all .5s ease 0s; -webkit-transition: all .5s ease 0s;`,
-          }]);
-        }
-
-        // Process logo gray scale hover value into style
-
-        if (props.image_grayscale_hover === 'on') {
-          additionalCss.push([{
-            selector:    '%%order_class%% .inftnc_carousels_image_wrapper .image_carousel_img',
-            declaration: `-webkit-filter: grayscale(0); filter: none; transition: all .5s ease 0s; -webkit-transition: all .5s ease 0s;`,
-          }]);
-        }
-
-        if (props.image_grayscale_hover === 'on') {
-          additionalCss.push([{
-            selector:    '%%order_class%% .inftnc_carousels_image_wrapper .image_carousel_img:hover',
-            declaration: `-webkit-filter: grayscale(100%); filter: grayscale(100%); transition: all .5s ease 0s; -webkit-transition: all .5s ease 0s;`,
-          }]);
-        }
-
-        // Logo Hover Effectcs 
-
-        //Process logo zoom in effect value into style
-        if (props.image_hover === 'zoom_in') {
-          additionalCss.push([{
-            selector:    '%%order_class%% .inftnc_carousels_image_wrapper .image_carousel_img',
-            declaration: `transition: all .5s ease 0s;-webkit-transition: all .5s ease 0s;`,
-          }]);
-        }
-
-        if (props.image_hover === 'zoom_in') {
-          additionalCss.push([{
-            selector:    '%%order_class%% .inftnc_carousels_image_wrapper .image_carousel_img:hover',
-            declaration: `transition: all .5s ease 0s;
-						-webkit-transition: all .5s ease 0s;
-						-webkit-transform: scale(1.04, 1.04);
-						-moz-transform: scale(1.04, 1.04);
-						-ms-transform: scale(1.04, 1.04);
-						-o-transform: scale(1.04, 1.04);'`,
-          }]);
-        }
-
-        //Process logo zoom in effect value into style
-        if (props.image_hover === 'zoom_out') {
-          additionalCss.push([{
-            selector:    '%%order_class%% .inftnc_carousels_image_wrapper .image_carousel_img',
-            declaration: `transition: all .5s ease 0s;
-						-webkit-transition: all .5s ease 0s;
-						-webkit-transform: scale(1.03, 1.03);
-						-moz-transform: scale(1.03, 1.03);
-						-ms-transform: scale(1.03, 1.03);
-						-o-transform: scale(1.03, 1.03);`,
-          }]);
-        }
-
-        if (props.image_hover === 'zoom_out') {
-          additionalCss.push([{
-            selector:    '%%order_class%% .inftnc_carousels_image_wrapper .image_carousel_img:hover',
-            declaration: `transition: all .5s ease 0s;
-						-webkit-transition: all .5s ease 0s;
-						-webkit-transform: scale(1.0, 1.0);
-						-moz-transform: scale(1.0, 1.0);
-						-ms-transform: scale(1.0, 1.0);
-						-o-transform: scale(1.0, 1.0);`,
-          }]);
-        }
+          if (props.image_grayscale_default === 'on') {
+            additionalCss.push([{
+              selector:    '%%order_class%% .inftnc_carousels_image_wrapper .image_carousel_img',
+              declaration: `-webkit-filter: grayscale(100%); filter: grayscale(100%);
+                              transition: -webkit-filter .5s ease 0s; transition: filter .5s ease 0s;`,
+            }]);
+          }
+  
+          if (props.image_grayscale_default === 'on') {
+            additionalCss.push([{
+              selector:    '%%order_class%% .inftnc_carousels_image_wrapper .image_carousel_img:hover',
+              declaration: `-webkit-filter: grayscale(0); filter: none;`,
+            }]);
+          }
+  
+          // Process logo gray scale hover value into style
+  
+          if (props.image_grayscale_hover === 'on') {
+            additionalCss.push([{
+              selector:    '%%order_class%% .inftnc_carousels_image_wrapper .image_carousel_img',
+              declaration: `-webkit-filter: grayscale(0); filter: none; transition: -webkit-filter .5s ease 0s; transition: filter .5s ease 0s;`,
+            }]);
+          }
+  
+          if (props.image_grayscale_hover === 'on') {
+            additionalCss.push([{
+              selector:    '%%order_class%% .inftnc_carousels_image_wrapper .image_carousel_img:hover',
+              declaration: `-webkit-filter: grayscale(100%); filter: grayscale(100%);`,
+            }]);
+          }
+  
+          // Logo Hover Effectcs 
+  
+          //Process logo zoom in effect value into style
+          if (props.image_hover === 'zoom_in') {
+            additionalCss.push([{
+              selector:    '%%order_class%% .inftnc_carousels_image_wrapper .image_carousel_img',
+              declaration: `transition: transform .5s ease 0s;
+              -webkit-transition: -webkit-transform .5s ease 0s;`,
+            }]);
+          }
+  
+          if (props.image_hover === 'zoom_in') {
+            additionalCss.push([{
+              selector:    '%%order_class%% .inftnc_carousels_image_wrapper .image_carousel_img:hover',
+              declaration: `-webkit-transform: scale(1.04);
+              -moz-transform: scale(1.04);
+              -ms-transform: scale(1.04);
+              -o-transform: scale(1.04);
+              transform: scale(1.04);'`,
+            }]);
+          }
+  
+          //Process logo zoom in effect value into style
+          if (props.image_hover === 'zoom_out') {
+            additionalCss.push([{
+              selector:    '%%order_class%% .inftnc_carousels_image_wrapper .image_carousel_img',
+              declaration: `transition: transform .5s ease 0s;
+              -webkit-transition: -webkit-transform .5s ease 0s;
+              transform-origin: center center;
+              -webkit-transform-origin: center center;
+              transform: scale(1.04);
+              -webkit-transform: scale(1.04);`,
+            }]);
+          }
+  
+          if (props.image_hover === 'zoom_out') {
+            additionalCss.push([{
+              selector:    '%%order_class%% .inftnc_carousels_image_wrapper .image_carousel_img:hover',
+              declaration: `transform: scale(1);
+              -webkit-transform: scale(1);`,
+            }]);
+          }
 
          //Process logo slide in effect value into style
          if (props.image_hover === 'slide') {

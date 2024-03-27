@@ -956,127 +956,122 @@ class ImageCarousel extends ET_Builder_Module {
 			}
 		}
 
-		// Logo Gray Scale Deafult 
+		// Image Gray Scale Deafult 
 
-		if( 'on' === $this->props['image_grayscale_default'] ) {
-			ET_Builder_Element::set_style(
-				$render_slug,
-				array(
-					'selector'    => '%%order_class%% .inftnc_carousels_image_wrapper .image_carousel_img',
-					'declaration' => sprintf(
-						'-webkit-filter: grayscale(100%%); filter: grayscale(100%%); transition: all .5s ease 0s; -webkit-transition: all .5s ease 0s;',
-					),
-				)
-			);
-		}
+		// Grayscale effect
+        if ('on' === $this->props['image_grayscale_default']) {
+            ET_Builder_Element::set_style(
+                $render_slug,
+                array(
+                    'selector'    => '%%order_class%% .inftnc_carousels_image_wrapper .image_carousel_img',
+                    'declaration' => sprintf(
+                        '-webkit-filter: grayscale(100%%); filter: grayscale(100%%);
+                        transition: -webkit-filter .5s ease 0s; transition: filter .5s ease 0s;'
+                    ),
+                )
+            );
+        }
 
-		if( 'on' === $this->props['image_grayscale_default'] ) {
-			ET_Builder_Element::set_style(
-				$render_slug,
-				array(
-					'selector'    => '%%order_class%% .inftnc_carousels_image_wrapper .image_carousel_img:hover',
-					'declaration' => sprintf(
-						' -webkit-filter: grayscale(0); filter: none; transition: all .5s ease 0s; -webkit-transition: all .5s ease 0s;',
-					),
-				)
-			);
-		}
+        if ('on' === $this->props['image_grayscale_default']) {
+            ET_Builder_Element::set_style(
+                $render_slug,
+                array(
+                    'selector'    => '%%order_class%% .inftnc_carousels_image_wrapper .image_carousel_img:hover',
+                    'declaration' => sprintf(
+                        '-webkit-filter: grayscale(0); filter: none;'
+                    ),
+                )
+            );
+        }
 
-		// Logo Gray Scale By Hover 
+    // Logo Gray Scale By Hover 
 
-		if( 'on' === $this->props['image_grayscale_hover'] ) {
-			ET_Builder_Element::set_style(
-				$render_slug,
-				array(
-					'selector'    => '%%order_class%% .inftnc_carousels_image_wrapper .image_carousel_img',
-					'declaration' => sprintf(
-						'-webkit-filter: grayscale(0); filter: none; transition: all .5s ease 0s; -webkit-transition: all .5s ease 0s;',
-					),
-				)
-			);
-		}
+    if( 'on' === $this->props['image_grayscale_hover'] ) {
+        ET_Builder_Element::set_style(
+            $render_slug,
+            array(
+                'selector'    => '%%order_class%% .inftnc_carousels_image_wrapper .image_carousel_img',
+                'declaration' => sprintf(
+                    '-webkit-filter: grayscale(0); filter: none; transition: -webkit-filter .5s ease 0s; transition: filter .5s ease 0s;',
+                ),
+            )
+        );
+    }
 
-		if( 'on' === $this->props['image_grayscale_hover'] ) {
-			ET_Builder_Element::set_style(
-				$render_slug,
-				array(
-					'selector'    => '%%order_class%% .inftnc_carousels_image_wrapper .image_carousel_img:hover',
-					'declaration' => sprintf(
-						' -webkit-filter: grayscale(100%%); filter: grayscale(100%%); transition: all .5s ease 0s; -webkit-transition: all .5s ease 0s;',
-					),
-				)
-			);
-		}
+    if( 'on' === $this->props['image_grayscale_hover'] ) {
+        ET_Builder_Element::set_style(
+            $render_slug,
+            array(
+                'selector'    => '%%order_class%% .inftnc_carousels_image_wrapper .image_carousel_img:hover',
+                'declaration' => sprintf(
+                    '-webkit-filter: grayscale(100%%); filter: grayscale(100%%);',
+                ),
+            )
+        );
+    }
 
-		// Logo Hover Effectcs
+    // Image Hover Effectcs
 
-		// Zoom in effects 
-		if( 'zoom_in' === $image_hover_effects ) {
-			ET_Builder_Element::set_style(
-				$render_slug,
-				array(
-					'selector'    => '%%order_class%% .inftnc_carousels_image_wrapper .image_carousel_img',
-					'declaration' => sprintf(
-						'transition: all .5s ease 0s;
-						-webkit-transition: all .5s ease 0s;',
-					),
-				)
-			);
-		}
+    // Zoom in effect
+        if ('zoom_in' === $image_hover_effects) {
+            ET_Builder_Element::set_style(
+                $render_slug,
+                array(
+                    'selector'    => '%%order_class%% .inftnc_carousels_image_wrapper .image_carousel_img',
+                    'declaration' => sprintf(
+                        'transition: transform .5s ease 0s;
+                        -webkit-transition: -webkit-transform .5s ease 0s;'
+                    ),
+                )
+            );
+        }
 
-		if( 'zoom_in' === $image_hover_effects ) {
-			ET_Builder_Element::set_style(
-				$render_slug,
-				array(
-					'selector'    => '%%order_class%% .inftnc_carousels_image_wrapper .image_carousel_img:hover',
-					'declaration' => sprintf(
-						'transition: all .5s ease 0s;
-						-webkit-transition: all .5s ease 0s;
-						-webkit-transform: scale(1.04, 1.04);
-						-moz-transform: scale(1.04, 1.04);
-						-ms-transform: scale(1.04, 1.04);
-						-o-transform: scale(1.04, 1.04);',
-					),
-				)
-			);
-		}
+        if ('zoom_in' === $image_hover_effects) {
+            ET_Builder_Element::set_style(
+                $render_slug,
+                array(
+                    'selector'    => '%%order_class%% .inftnc_carousels_image_wrapper .image_carousel_img:hover',
+                    'declaration' => sprintf(
+                        '-webkit-transform: scale(1.04);
+                        -moz-transform: scale(1.04);
+                        -ms-transform: scale(1.04);
+                        -o-transform: scale(1.04);
+                        transform: scale(1.04);'
+                    ),
+                )
+            );
+        }
+        
+        // Zoom out Effects 
+        if ('zoom_out' === $image_hover_effects) {
+            ET_Builder_Element::set_style(
+                $render_slug,
+                array(
+                    'selector'    => '%%order_class%% .inftnc_carousels_image_wrapper .image_carousel_img',
+                    'declaration' => sprintf(
+                        'transition: transform .5s ease 0s;
+                        -webkit-transition: -webkit-transform .5s ease 0s;
+                        transform-origin: center center;
+                        -webkit-transform-origin: center center;
+                        transform: scale(1.04);
+                        -webkit-transform: scale(1.04);'
+                    ),
+                )
+            );
+        }
 
-		// Zoom out Effects 
-
-		if( 'zoom_out' === $image_hover_effects ) {
-			ET_Builder_Element::set_style(
-				$render_slug,
-				array(
-					'selector'    => '%%order_class%% .inftnc_carousels_image_wrapper .image_carousel_img:hover',
-					'declaration' => sprintf(
-						'transition: all .5s ease 0s;
-						-webkit-transition: all .5s ease 0s;
-						-webkit-transform: scale(1.0, 1.0);
-						-moz-transform: scale(1.0, 1.0);
-						-ms-transform: scale(1.0, 1.0);
-						-o-transform: scale(1.0, 1.0);',
-					),
-				)
-			);
-		}
-
-		if( 'zoom_out' === $image_hover_effects ) {
-			ET_Builder_Element::set_style(
-				$render_slug,
-				array(
-					'selector'    => '%%order_class%% .inftnc_carousels_image_wrapper .image_carousel_img',
-					'declaration' => sprintf(
-						'transition: all .5s ease 0s;
-						-webkit-transition: all .5s ease 0s;
-						-webkit-transform: scale(1.03, 1.03);
-						-moz-transform: scale(1.03, 1.03);
-						-ms-transform: scale(1.03, 1.03);
-						-o-transform: scale(1.03, 1.03);',
-					),
-				)
-			);
-		}
-
+        if ('zoom_out' === $image_hover_effects) {
+            ET_Builder_Element::set_style(
+                $render_slug,
+                array(
+                    'selector'    => '%%order_class%% .inftnc_carousels_image_wrapper .image_carousel_img:hover',
+                    'declaration' => sprintf(
+                        'transform: scale(1);
+                        -webkit-transform: scale(1);'
+                    ),
+                )
+            );
+        }
 
 		// Image Slide  Effects
 
