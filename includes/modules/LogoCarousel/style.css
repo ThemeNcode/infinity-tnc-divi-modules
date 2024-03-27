@@ -33,10 +33,6 @@
     overflow: hidden;
 }
 
-.inftnc_carousel_child img {
-    display: inline-block !important;
-}
-
 .inftnc_carousels_logo_wrapper .slick-dots {
     bottom: -50px !important;
 }
