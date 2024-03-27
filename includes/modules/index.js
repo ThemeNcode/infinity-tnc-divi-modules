@@ -11,7 +11,9 @@ import SocialShare from './SocialShare/SocialShare';
 import SocialShareChild from './SocialShareChild/SocialShareChild';
 import LogoCarousel from './LogoCarousel/LogoCarousel';
 import LogoCarouselChild from './LogoCarouselChild/LogoCarouselChild';
-export default [HelloWorld,DualButtons,BreadCrumbs,HeadingGradient,StarRating,EmbedMap,YoutubeEmbed,VimeoVideo,TypeWriter,SocialShare,SocialShareChild,LogoCarousel,LogoCarouselChild];
+import ImageCarousel from './ImageCarousel/ImageCarousel';
+import ImageCarouselChild from './ImageCarouselChild/ImageCarouselChild';
+export default [HelloWorld,DualButtons,BreadCrumbs,HeadingGradient,StarRating,EmbedMap,YoutubeEmbed,VimeoVideo,TypeWriter,SocialShare,SocialShareChild,LogoCarousel,LogoCarouselChild,ImageCarouselChild,ImageCarousel];
 
 
 

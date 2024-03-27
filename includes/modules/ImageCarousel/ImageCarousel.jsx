@@ -4,7 +4,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-class LogoCarousel extends Component {
+class ImageCarousel extends Component {
 
   static slug = 'inftnc_image_carousel';
 
@@ -23,7 +23,7 @@ class LogoCarousel extends Component {
    // Process slide spacing value into style
     if (props.slide_spacing) {
       additionalCss.push([{
-        selector:    '%%order_class%% .inftnc_carousels_logo_wrapper .slick-list',
+        selector:    '%%order_class%% .inftnc_carousels_image_wrapper .slick-list',
         declaration: `margin-left:-${props.slide_spacing};`,
       }]);
     }
@@ -35,7 +35,7 @@ class LogoCarousel extends Component {
         //Tablet 
         if( props.slide_spacing_tablet && slide_responsive_active){
           additionalCss.push([{
-            selector:    '%%order_class%% .inftnc_carousels_logo_wrapper .slick-list',
+            selector:    '%%order_class%% .inftnc_carousels_image_wrapper .slick-list',
             declaration: `margin-left:-${props.slide_spacing_tablet};`,
             device: 'tablet',
           }]);
@@ -49,7 +49,7 @@ class LogoCarousel extends Component {
         // Phone 
         if( props.slide_spacing_phone && slide_responsive_active){
           additionalCss.push([{
-            selector:    '%%order_class%% .inftnc_carousels_logo_wrapper .slick-list',
+            selector:    '%%order_class%% .inftnc_carousels_image_wrapper .slick-list',
             declaration: `margin-left:-${props.slide_spacing_phone};`,
             device: 'phone',
           }]);
@@ -166,11 +166,16 @@ class LogoCarousel extends Component {
         // Process pagination dots size into style 
         if (props.pagination_cmn_dots_size) {
           additionalCss.push([{
-            selector:    '%%order_class%% .inftnc_carousels_logo_wrapper .slick-dots li button:before',
+            selector:    '%%order_class%% .inftnc_carousels_image_wrapper .slick-dots li button:before',
             declaration: `font-size:${props.pagination_cmn_dots_size}!important;`,
           }]);
         }
 
+        additionalCss.push([{
+            selector:    '%%order_class%% .inftnc_carousels_image_wrapper .slick-dots',
+            declaration: `bottom:unset!important;`,
+        }]);
+        
          // Process responsive pagination dots size into style 
 
          if(props.pagination_cmn_dots_size){
@@ -179,14 +184,14 @@ class LogoCarousel extends Component {
              // Tablet
               if (props.pagination_cmn_dots_size_tablet && navigation_bg_responsive_active) {
                 additionalCss.push([{
-                  selector:    '%%order_class%% .inftnc_carousels_logo_wrapper .slick-dots li button:before',
+                  selector:    '%%order_class%% .inftnc_carousels_image_wrapper .slick-dots li button:before',
                   declaration: `font-size:${props.pagination_cmn_dots_size_tablet}!important;`,
                 }]);
               }
               //Phone
               if (props.pagination_cmn_dots_size_phone && navigation_bg_responsive_active) {
                 additionalCss.push([{
-                  selector:    '%%order_class%% .inftnc_carousels_logo_wrapper .slick-dots li button:before',
+                  selector:    '%%order_class%% .inftnc_carousels_image_wrapper .slick-dots li button:before',
                   declaration: `font-size:${props.pagination_cmn_dots_size_phone}!important;`,
                 }]);
               }
@@ -195,7 +200,7 @@ class LogoCarousel extends Component {
          // Process pagination dots size into style 
         if (props.pagination_active_dots_size) {
           additionalCss.push([{
-            selector:    '%%order_class%% .inftnc_carousels_logo_wrapper .slick-dots li.slick-active button:before',
+            selector:    '%%order_class%% .inftnc_carousels_image_wrapper .slick-dots li.slick-active button:before',
             declaration: `font-size:${props.pagination_active_dots_size}!important;`,
           }]);
         }
@@ -207,7 +212,7 @@ class LogoCarousel extends Component {
              // Tablet
               if (props.pagination_active_dots_size_tablet && pagination_dots_active_responsive_active) {
                 additionalCss.push([{
-                  selector:    '%%order_class%% .inftnc_carousels_logo_wrapper .slick-dots li.slick-active button:before',
+                  selector:    '%%order_class%% .inftnc_carousels_image_wrapper .slick-dots li.slick-active button:before',
                   declaration: `font-size:${props.pagination_active_dots_size_tablet}!important;`,
                   device:'tablet',
                 }]);
@@ -215,7 +220,7 @@ class LogoCarousel extends Component {
               //Phone
               if (props.pagination_active_dots_size_phone && pagination_dots_active_responsive_active) {
                 additionalCss.push([{
-                  selector:    '%%order_class%% .inftnc_carousels_logo_wrapper .slick-dots li.slick-active button:before',
+                  selector:    '%%order_class%% .inftnc_carousels_image_wrapper .slick-dots li.slick-active button:before',
                   declaration: `font-size:${props.pagination_active_dots_size_phone}!important;`,
                   device:'phone',
                 }]);
@@ -225,7 +230,7 @@ class LogoCarousel extends Component {
          // Process dots aligment value into style 
           if (props.dots_alignment) {
             additionalCss.push([{
-              selector:    '%%order_class%% .inftnc_carousels_logo_wrapper .slick-dots',
+              selector:    '%%order_class%% .inftnc_carousels_image_wrapper .slick-dots',
               declaration: `display:flex!important;justify-content:${props.dots_alignment};margin-top: 25px;`,
             }]);
           }
@@ -237,7 +242,7 @@ class LogoCarousel extends Component {
               //Tablet
               if (props.dots_alignment_tablet && dots_alignment_responsive_active) {
                 additionalCss.push([{
-                  selector:    '%%order_class%% .inftnc_carousels_logo_wrapper .slick-dots',
+                  selector:    '%%order_class%% .inftnc_carousels_image_wrapper .slick-dots',
                   declaration: `display:flex!important;justify-content:${props.dots_alignment_tablet};margin-top: 25px;`,
                   device:'tablet',
                 }]);
@@ -245,7 +250,7 @@ class LogoCarousel extends Component {
                //Phone 
                if (props.dots_alignment_phone && dots_alignment_responsive_active) {
                 additionalCss.push([{
-                  selector:    '%%order_class%% .inftnc_carousels_logo_wrapper .slick-dots',
+                  selector:    '%%order_class%% .inftnc_carousels_image_wrapper .slick-dots',
                   declaration: `display:flex!important;justify-content:${props.dots_alignment_phone};margin-top: 25px;`,
                   device:'phone',
                 }]);
@@ -254,7 +259,7 @@ class LogoCarousel extends Component {
           //Process dots color value into style 
           if (props.pagination_cmn_dots_color) {
             additionalCss.push([{
-              selector:    '%%order_class%% .inftnc_carousels_logo_wrapper .slick-dots li button:before',
+              selector:    '%%order_class%% .inftnc_carousels_image_wrapper .slick-dots li button:before',
               declaration: `color:${props.pagination_cmn_dots_color};`,
             }]);
           }
@@ -262,14 +267,14 @@ class LogoCarousel extends Component {
       	// Process logo gray scale default value into style
         if (props.image_grayscale_default === 'on') {
           additionalCss.push([{
-            selector:    '%%order_class%% .inftnc_carousels_logo_wrapper .logo_carousel_img',
+            selector:    '%%order_class%% .inftnc_carousels_image_wrapper .image_carousel_img',
             declaration: `-webkit-filter: grayscale(100%); filter: grayscale(100%); transition: all .5s ease 0s; -webkit-transition: all .5s ease 0s;`,
           }]);
         }
 
         if (props.image_grayscale_default === 'on') {
           additionalCss.push([{
-            selector:    '%%order_class%% .inftnc_carousels_logo_wrapper .logo_carousel_img:hover',
+            selector:    '%%order_class%% .inftnc_carousels_image_wrapper .image_carousel_img:hover',
             declaration: `-webkit-filter: grayscale(0); filter: none; transition: all .5s ease 0s; -webkit-transition: all .5s ease 0s;`,
           }]);
         }
@@ -278,14 +283,14 @@ class LogoCarousel extends Component {
 
         if (props.image_grayscale_hover === 'on') {
           additionalCss.push([{
-            selector:    '%%order_class%% .inftnc_carousels_logo_wrapper .logo_carousel_img',
+            selector:    '%%order_class%% .inftnc_carousels_image_wrapper .image_carousel_img',
             declaration: `-webkit-filter: grayscale(0); filter: none; transition: all .5s ease 0s; -webkit-transition: all .5s ease 0s;`,
           }]);
         }
 
         if (props.image_grayscale_hover === 'on') {
           additionalCss.push([{
-            selector:    '%%order_class%% .inftnc_carousels_logo_wrapper .logo_carousel_img:hover',
+            selector:    '%%order_class%% .inftnc_carousels_image_wrapper .image_carousel_img:hover',
             declaration: `-webkit-filter: grayscale(100%); filter: grayscale(100%); transition: all .5s ease 0s; -webkit-transition: all .5s ease 0s;`,
           }]);
         }
@@ -295,14 +300,14 @@ class LogoCarousel extends Component {
         //Process logo zoom in effect value into style
         if (props.image_hover === 'zoom_in') {
           additionalCss.push([{
-            selector:    '%%order_class%% .inftnc_carousels_logo_wrapper .logo_carousel_img',
+            selector:    '%%order_class%% .inftnc_carousels_image_wrapper .image_carousel_img',
             declaration: `transition: all .5s ease 0s;-webkit-transition: all .5s ease 0s;`,
           }]);
         }
 
         if (props.image_hover === 'zoom_in') {
           additionalCss.push([{
-            selector:    '%%order_class%% .inftnc_carousels_logo_wrapper .logo_carousel_img:hover',
+            selector:    '%%order_class%% .inftnc_carousels_image_wrapper .image_carousel_img:hover',
             declaration: `transition: all .5s ease 0s;
 						-webkit-transition: all .5s ease 0s;
 						-webkit-transform: scale(1.04, 1.04);
@@ -315,7 +320,7 @@ class LogoCarousel extends Component {
         //Process logo zoom in effect value into style
         if (props.image_hover === 'zoom_out') {
           additionalCss.push([{
-            selector:    '%%order_class%% .inftnc_carousels_logo_wrapper .logo_carousel_img',
+            selector:    '%%order_class%% .inftnc_carousels_image_wrapper .image_carousel_img',
             declaration: `transition: all .5s ease 0s;
 						-webkit-transition: all .5s ease 0s;
 						-webkit-transform: scale(1.03, 1.03);
@@ -327,7 +332,7 @@ class LogoCarousel extends Component {
 
         if (props.image_hover === 'zoom_out') {
           additionalCss.push([{
-            selector:    '%%order_class%% .inftnc_carousels_logo_wrapper .logo_carousel_img:hover',
+            selector:    '%%order_class%% .inftnc_carousels_image_wrapper .image_carousel_img:hover',
             declaration: `transition: all .5s ease 0s;
 						-webkit-transition: all .5s ease 0s;
 						-webkit-transform: scale(1.0, 1.0);
@@ -340,7 +345,7 @@ class LogoCarousel extends Component {
          //Process logo slide in effect value into style
          if (props.image_hover === 'slide') {
           additionalCss.push([{
-            selector:    '%%order_class%% .inftnc_carousels_logo_wrapper .logo_carousel_img',
+            selector:    '%%order_class%% .inftnc_carousels_image_wrapper .image_carousel_img',
             declaration: `margin-left: 10px;
 						-webkit-transform: scale(1.01, 1.01);
 						transform: scale(1.01, 1.01);
@@ -351,7 +356,7 @@ class LogoCarousel extends Component {
 
         if (props.image_hover === 'slide') {
           additionalCss.push([{
-            selector:    '%%order_class%% .inftnc_carousels_logo_wrapper .logo_carousel_img:hover',
+            selector:    '%%order_class%% .inftnc_carousels_image_wrapper .image_carousel_img:hover',
             declaration: `margin-left: 0;`,
           }]);
         }
@@ -359,7 +364,7 @@ class LogoCarousel extends Component {
          //Process logo rotate in effect value into style
          if (props.image_hover === 'rotate') {
           additionalCss.push([{
-            selector:    '%%order_class%% .inftnc_carousels_logo_wrapper .logo_carousel_img',
+            selector:    '%%order_class%% .inftnc_carousels_image_wrapper .image_carousel_img',
             declaration: `-webkit-transform: rotate(15deg) scale(1.4);
 						transform: rotate(15deg) scale(1.4);
 						-webkit-transition: all .5s ease 0s;
@@ -369,7 +374,7 @@ class LogoCarousel extends Component {
 
         if (props.image_hover === 'rotate') {
           additionalCss.push([{
-            selector:    '%%order_class%% .inftnc_carousels_logo_wrapper .logo_carousel_img:hover',
+            selector:    '%%order_class%% .inftnc_carousels_image_wrapper .image_carousel_img:hover',
             declaration: `-webkit-transform: rotate(0) scale(1);
 						transform: rotate(0) scale(1);
 						-webkit-transition: all .5s ease 0s;
@@ -411,9 +416,9 @@ class LogoCarousel extends Component {
     let rtlValue;
     rtl == 'on' ? rtlValue = true :  rtlValue = false ;
 
-     // Fix infinite Issue 
-     let image_length = content.length;
-     let imageInfinite = image_length >= slides_to_show && infinite === "on" ? true  : false;
+    // Fix infinite Issue 
+    let image_length = content.length;
+    let imageInfinite = image_length >= slides_to_show && infinite === "on" ? true  : false;
 
     var settings = { 
       speed: parseInt(animation_speed),
@@ -449,10 +454,10 @@ class LogoCarousel extends Component {
 
     return (
   
-        <Slider {...settings} className="inftnc_carousels_logo_wrapper">{this.props.content}</Slider>
+        <Slider {...settings} className="inftnc_carousels_image_wrapper">{this.props.content}</Slider>
       
     );
   }
 }
 
-export default LogoCarousel;
+export default ImageCarousel;

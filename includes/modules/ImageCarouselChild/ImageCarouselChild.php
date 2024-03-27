@@ -53,7 +53,7 @@ class ImageCarouselChild extends ET_Builder_Module {
 			),
 
             'alt'                 => array(
-				'label'           => esc_html__( 'Logo Alternative Text', 'infinity-tnc-divi-modules' ),
+				'label'           => esc_html__( 'Image Alternative Text', 'infinity-tnc-divi-modules' ),
 				'type'            => 'text',
 				'option_category' => 'basic_option',
 				'description'     => esc_html__( 'This defines the HTML ALT text. A short description of your image can be placed here.', 'infinity-tnc-divi-modules' ),
@@ -96,7 +96,7 @@ class ImageCarouselChild extends ET_Builder_Module {
 		$alt  = $this->props['alt'];
 
 		$render_image = sprintf('
-				<img class="logo_carousel_img" src="%1$s" alt="%2$s">',
+				<img class="image_carousel_img" src="%1$s" alt="%2$s">',
 				/*01*/	$image,
 				/*02*/	$alt,
 		);
