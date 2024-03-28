@@ -102,7 +102,7 @@ class SocialShare extends Component {
             declaration: `grid-column-gap:${props.columns_gap};`,
       }]);
     }
-    // Process ow Gap value into style
+    // Process on Gap value into style
     if(props.row_gap) {
       additionalCss.push([{
             selector:'%%order_class%% .inftnc_social_share_wrapper',

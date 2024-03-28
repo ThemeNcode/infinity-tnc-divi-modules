@@ -71,7 +71,6 @@ class SocialShare extends ET_Builder_Module {
 				),
 				'toggle_slug'     => 'layout',
 				'tab_slug'        => 'advanced',
-				'default_on_child' => true,
 			),
 
 			'button_shape' => array(
@@ -89,8 +88,7 @@ class SocialShare extends ET_Builder_Module {
 			'columns' => array(
 				'label'           => esc_html__( 'Number of Columns', 'infinity-tnc-divi-modules' ),
 				'type'            => 'select',
-				'deafult'		  => 'column_auto',
-				'default_on_front'=> true,
+				'default'		  => 'column_auto',
 				'options'         => array(
 					'column_auto' 		=> esc_html__( 'Auto', 'infinity-tnc-divi-modules' ),
 					'column_one' 		=> esc_html__( '1', 'infinity-tnc-divi-modules' ),
@@ -249,6 +247,7 @@ class SocialShare extends ET_Builder_Module {
 			$bottom = $button_data[2];
 			$left = $button_data[3];
 		}
+
 	
 		//Button Bg Color
 
@@ -316,6 +315,27 @@ class SocialShare extends ET_Builder_Module {
 				)
 			);
 		}
+ 
+		if ( 'only_icon' === $this->props['button_layout'] && 'button_circle' === $this->props['button_shape'] && 'column_auto' === $social_columns) {
+
+			ET_Builder_Element::set_style(
+				$render_slug,
+				array(
+					'selector' => '%%order_class%% .inftnc_social_share_wrapper',
+					'declaration' => sprintf(
+						'display: flex !important;
+						 flex-direction: row !important;
+						 column-gap: %1$s !important;
+						 row-gap: %2$s !important;
+						 flex-wrap: wrap !important;
+						',
+						$this->props['columns_gap'],
+						$this->props['row_gap']
+					),
+				)
+			);
+		}
+		
 
 		// Social Share Button column
 
@@ -496,29 +516,7 @@ class SocialShare extends ET_Builder_Module {
 			);
 		} 
 
-		if ( 'only_icon' === $this->props['button_layout'] && 'button_circle' === $this->props['button_shape'] &&  'column_auto' === $social_columns ) {
-
-			ET_Builder_Element::set_style(
-				$render_slug,
-				array(
-					'selector'    => '%%order_class%% .inftnc_social_share_wrapper',
-					'declaration' => sprintf(
-						'
-							display: flex !important;
-							flex-direction: row !important;
-							column-gap: %1$s !important;
-							row-gap: %2$s !important;
-							flex-wrap: wrap !important;
-						',
-						$this->props['columns_gap'],
-						$this->props['row_gap'],
-						
-					),
-				)
-			);
-		}
-
-
+	
 
 		if ( 'only_text' === $this->props['button_layout'] && 'button_circle' === $this->props['button_shape']) {
 
@@ -876,3 +874,4 @@ class SocialShare extends ET_Builder_Module {
 }
 
 new SocialShare;
+
