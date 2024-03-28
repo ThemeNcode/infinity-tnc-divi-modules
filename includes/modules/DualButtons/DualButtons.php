@@ -15,8 +15,7 @@ class INFTNC_DualButtons extends ET_Builder_Module {
         // Module name
 		$this->name = esc_html__( 'Dual Buttons - Infinity TNC', 'infinity-tnc-divi-modules' );
         // Module Icon
-		$this->icon          = 'e';
-        //'$this->icon_path        =  plugin_dir_path( __FILE__ ) . 'icon.svg';
+        $this->icon_path        =  plugin_dir_path( __FILE__ ) . 'icon.svg';
         $this->main_css_element = '%%order_class%%';
 
         // Toggle settings
@@ -46,7 +45,6 @@ class INFTNC_DualButtons extends ET_Builder_Module {
 			),
 		);
 
-        // Add Custom CSS
 		// This property will add CSS fields on Advanced > Custom CSS
 		$this->custom_css_fields = array(
 			'title' => array(
@@ -58,34 +56,7 @@ class INFTNC_DualButtons extends ET_Builder_Module {
 				'selector' => '.inftnc_pb_button_right',
 			),
 		);
-
-        
-		// Add help videos
-		// This video will be displayed on different modal if the help icon on the bottom of the modal is clicked
-		$this->help_videos = array(
-			array(
-				'id'   => esc_html__( 'FkQuawiGWUw', 'infinity-tnc-divi-modules' ), // YouTube video ID
-				'name' => esc_html__( 'Dual Buttons Module Video', 'infinity-tnc-divi-modules' ),
-			),
-		);
-
 	} 
-
-	/**
-	 * Get button alignment.
-	 *
-	 * @since 3.23 Add responsive support by adding device parameter.
-	 *
-	 * @param  string $device Current device name.
-	 * @return string         Alignment value, rtl or not.
-	 */
-	public function get_button_alignment( $device = 'desktop' ) {
-		$suffix           = 'desktop' !== $device ? "_{$device}" : '';
-		$text_orientation = isset( $this->props[ "button_alignment{$suffix}" ] ) ? $this->props[ "button_alignment{$suffix}" ] : '';
-
-		return et_pb_get_alignment( $text_orientation );
-	}
-
 
 	public function get_fields() {
 		return array(
@@ -341,32 +312,16 @@ class INFTNC_DualButtons extends ET_Builder_Module {
     
 	public function render( $attrs, $content, $render_slug ) {
         // Module specific props added on $this->get_fields()
-        $button_alignment    		   = $this->props['button_alignment'];
-		$button_alignment              = $this->get_button_alignment();
-		$is_button_aligment_responsive = et_pb_responsive_options()->is_responsive_enabled( $this->props, 'button_alignment' );
-		$button_alignment_tablet       = $is_button_aligment_responsive ? $this->get_button_alignment( 'tablet' ) : '';
-		$button_alignment_phone        = $is_button_aligment_responsive ? $this->get_button_alignment( 'phone' ) : '';
-		$button_gap 				   = $this->props['button_gap'];
-		$button_gap_last_edited        = $this->props['button_gap_last_edited'];
-		$button_gap_responsive_active  =  et_pb_get_responsive_status( $button_gap_last_edited );
-		$button_gap_tablet			   = $this->props['button_gap_tablet'];
-		$button_gap_phone			   = $this->props['button_gap_phone'];
-
-		// Button Alignment.
-		$button_alignments = array();
-		if ( ! empty( $button_alignment ) ) {
-			array_push( $button_alignments, sprintf( 'et_pb_button_alignment_%1$s', esc_attr( $button_alignment ) ) );
-		}
-
-		if ( ! empty( $button_alignment_tablet ) ) {
-			array_push( $button_alignments, sprintf( 'et_pb_button_alignment_tablet_%1$s', esc_attr( $button_alignment_tablet ) ) );
-		}
-
-		if ( ! empty( $button_alignment_phone ) ) {
-			array_push( $button_alignments, sprintf( 'et_pb_button_alignment_phone_%1$s', esc_attr( $button_alignment_phone ) ) );
-		}
-
-		$button_alignment_classes = join( ' ', $button_alignments );
+        $button_alignment    		  				 = $this->props['button_alignment'];
+		$button_alignment_last_edited 				 = $this->props['button_alignment_last_edited'];
+		$button_alignment_responsvie_active 		 = et_pb_get_responsive_status( $button_alignment_last_edited );
+		$button_alignment_tablet					 = $this->props['button_alignment_tablet'];
+		$button_alignment_phone					     = $this->props['button_alignment_phone'];
+		$button_gap 				   				 = $this->props['button_gap'];
+		$button_gap_last_edited        				 = $this->props['button_gap_last_edited'];
+		$button_gap_responsive_active  				 = et_pb_get_responsive_status( $button_gap_last_edited );
+		$button_gap_tablet			  				 = $this->props['button_gap_tablet'];
+		$button_gap_phone			  				 = $this->props['button_gap_phone'];
 
 		// Button Gap 
 		if( '' !== $button_gap  ) {
@@ -415,15 +370,63 @@ class INFTNC_DualButtons extends ET_Builder_Module {
 			}
 		}
 
+		// Button Alignment
+		if( '' !== $button_alignment  ) {
+			ET_Builder_Element::set_style(
+				$render_slug,
+				array(
+					'selector'    => '%%order_class%% .inftnc_button_wrapper',
+					'declaration' => sprintf(
+						'justify-content:%1$s;',
+						$button_alignment
+					),
+				)
+			);
+		}
+
+		// Responsive Button Alignment 
+		if( $button_alignment ) {
+			//Tablet
+			if( '' !== $button_alignment_tablet  && $button_alignment_responsvie_active  ) {
+				ET_Builder_Element::set_style(
+					$render_slug,
+					array(
+						'selector'    => '%%order_class%% .inftnc_button_wrapper',
+						'declaration' => sprintf(
+							'justify-content:%1$s;',
+							$button_alignment_tablet
+						),
+						'media_query' => ET_Builder_Element::get_media_query('max_width_980'),
+					)
+				);
+			}
+
+			//Phone 
+			if( '' !== $button_alignment_phone  && $button_alignment_responsvie_active  ) {
+				ET_Builder_Element::set_style(
+					$render_slug,
+					array(
+						'selector'    => '%%order_class%% .inftnc_button_wrapper',
+						'declaration' => sprintf(
+							'justify-content:%1$s;',
+							$button_alignment_phone
+						),
+						'media_query' => ET_Builder_Element::get_media_query('max_width_767'),
+					)
+				);
+			}
+		}
+
+		
+
 		// Render module output
 		$output = sprintf(
-			'<div class="inftnc_button_wrapper et_pb_button_module_wrapper %4$s_wrapper %3$s et_pb_module">
+			'<div class="inftnc_button_wrapper et_pb_button_module_wrapper %3$s_wrapper et_pb_module">
 				%1$s
 			    %2$s
 			</div>',
 			$this->render_button_left(),
 			$this->render_button_right(),
-			esc_attr( $button_alignment_classes ),
 			esc_attr( ET_Builder_Element::get_module_order_class( $this->slug ) ),
 		);
 		
