@@ -14,16 +14,19 @@ class INFTNC_TypeWriter extends ET_Builder_Module {
 	public function init() {
 
 		$this->name = esc_html__( 'Typewriter - Infinity TNC', 'infinity-tnc-divi-modules' );
-        $this->settings_modal_toggles  = array(
-			'general'  => array(
-				'toggles' => array(
-					'main_content' => esc_html__( 'Typing Text', 'infinity-tnc-divi-modules' ),
-                    'typing_options' => array(
-                        'title' => esc_html__( 'Typing Effect Options', 'infinity-tnc-divi-modules' ),
-                    ),
+		//Icon 
+		$this->icon_path        =  plugin_dir_path( __FILE__ ) . 'icon.svg';
+		
+		$this->settings_modal_toggles  = array(
+				'general'  => array(
+					'toggles' => array(
+						'main_content' => esc_html__( 'Typing Text', 'infinity-tnc-divi-modules' ),
+						'typing_options' => array(
+							'title' => esc_html__( 'Typing Effect Options', 'infinity-tnc-divi-modules' ),
+						),
+					),
 				),
-			),
-		);
+			);
 
 		$this->custom_css_fields = array(
 			'main_title' => array(

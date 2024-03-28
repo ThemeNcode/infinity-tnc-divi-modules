@@ -18,6 +18,8 @@ class ImageCarousel extends ET_Builder_Module {
 	function init() {
 		// Module name
 		$this->name                    = esc_html__( 'Image Carousel - Infinity TNC', 'infinity-tnc-divi-modules' );
+		//Icon 
+		$this->icon_path        =  plugin_dir_path( __FILE__ ) . 'icon.svg';
         $this->child_item_text 		   = esc_html__( 'Image', 'infinity-tnc-divi-modules' );
 
 		// Module Icon

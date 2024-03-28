@@ -22,7 +22,7 @@ class SocialShare extends ET_Builder_Module {
 
 		// Module Icon
 		// Load customized svg icon and use it on builder as module icon. If you don't have svg icon, you can use
-		$this->icon_path               =  plugin_dir_path( __FILE__ ) . 'icon.svg';
+	 	$this->icon_path        =  plugin_dir_path( __FILE__ ) . 'icon.svg';
 
 		// Toggle settings
 		$this->settings_modal_toggles  = array(

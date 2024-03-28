@@ -13,6 +13,8 @@ class INFTNC_EmbedMap extends ET_Builder_Module {
 
 	public function init() {
 		$this->name = esc_html__('Embed Map - Infinity TNC', 'inftnc-infinity-tnc-divi-modules' );
+			//Icon 
+			$this->icon_path        =  plugin_dir_path( __FILE__ ) . 'icon.svg';
 		$this->main_css_element = "%%order_class%%.inftnc_embed_map iframe";
 
 

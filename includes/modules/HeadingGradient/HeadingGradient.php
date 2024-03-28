@@ -13,6 +13,8 @@ class INFTNC_HeadingGradient extends ET_Builder_Module {
 
 	public function init() {
 		$this->name = esc_html__( 'Heading Gradient - Infinity TNC', 'inftnc-infinity-tnc-divi-modules' );
+		//Icon 
+		$this->icon_path        =  plugin_dir_path( __FILE__ ) . 'icon.svg';
 
         // Toggle settings
 		$this->settings_modal_toggles  = array(

@@ -18,3 +18,7 @@
     line-height: 18px !important;
 }
 
+.et-db #et-boc .et-l .et-fb-settings-options-tab.et-fb-modules-list ul li[class^=inftnc_] svg {
+    width:25px !important;
+    height:25px !important;
+}

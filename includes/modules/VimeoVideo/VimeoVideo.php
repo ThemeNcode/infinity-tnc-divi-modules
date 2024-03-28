@@ -13,6 +13,8 @@ class INFTNC_VimeoVideo extends ET_Builder_Module {
 
 	public function init() {
 		$this->name = esc_html__( 'Vimeo Video - Infinity TNC', 'infinity-tnc-divi-modules' );
+		//Icon 
+		$this->icon_path        =  plugin_dir_path( __FILE__ ) . 'icon.svg';
         $this->main_css_element = "%%order_class%%.inftnc_vimeo_video iframe";
         $this->settings_modal_toggles  = array(
 			'general'  => array(
