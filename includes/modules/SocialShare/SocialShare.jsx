@@ -303,6 +303,14 @@ class SocialShare extends Component {
             } 
      }
 
+     if (props.button_layout === 'only_icon' && props.button_shape ==='button_circle') {
+      additionalCss.push([{
+        selector: '%%order_class%% .inftnc_social_text',
+        declaration: `display:none;`,
+      }]);
+    } 
+      
+
     return additionalCss;
   }
 
