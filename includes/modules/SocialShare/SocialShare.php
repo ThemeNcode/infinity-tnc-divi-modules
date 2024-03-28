@@ -90,6 +90,7 @@ class SocialShare extends ET_Builder_Module {
 				'label'           => esc_html__( 'Number of Columns', 'infinity-tnc-divi-modules' ),
 				'type'            => 'select',
 				'deafult'		  => 'column_auto',
+				'default_on_front'=> true,
 				'options'         => array(
 					'column_auto' 		=> esc_html__( 'Auto', 'infinity-tnc-divi-modules' ),
 					'column_one' 		=> esc_html__( '1', 'infinity-tnc-divi-modules' ),
@@ -112,7 +113,7 @@ class SocialShare extends ET_Builder_Module {
 				'toggle_slug'     => 'layout',
 				'allowed_units'    => array( '%', 'em', 'rem', 'px', 'cm', 'mm', 'in', 'pt', 'pc', 'ex', 'vh', 'vw' ),
 				'default_unit'     => 'px',
-                'default'         => 0,
+                'default'         => '10px',
                 'range_settings' => array(
 					'min'  => 0,
 					'max'  => 100,
@@ -126,7 +127,7 @@ class SocialShare extends ET_Builder_Module {
 				'tab_slug'        => 'advanced',
 				'toggle_slug'     => 'layout',
 				'allowed_units'    => array( '%', 'em', 'rem', 'px', 'cm', 'mm', 'in', 'pt', 'pc', 'ex', 'vh', 'vw' ),
-                'default'         => 0,
+                'default'          => '10px',
 				'default_unit'     => 'px',
                 'range_settings' => array(
 					'min'  => 0,
@@ -242,7 +243,6 @@ class SocialShare extends ET_Builder_Module {
 		$column_responsive_phone     = $this->props['columns_phone'];
 		
 		if( '' !== $this->props['button_padding'] ) {  
-
 			$button_data = 	explode("|", $this->props["button_padding"]);
 			$top = $button_data[0];
 			$right = $button_data[1];
@@ -333,6 +333,7 @@ class SocialShare extends ET_Builder_Module {
 						),
 					)
 				);
+
 		 } else if ( 'column_one' === $social_columns )  {
 
 			ET_Builder_Element::set_style(
@@ -864,8 +865,7 @@ class SocialShare extends ET_Builder_Module {
 		     
   }
 
-
-        // Remove automatically added classnames
+	 	// Remove automatically added classnames
 		$output = sprintf(
 			'<div class="inftnc_social_share_wrapper">%1$s</div>',
 			et_sanitized_previously( $this->content )

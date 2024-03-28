@@ -19,7 +19,6 @@ class SocialShareChild extends ET_Builder_Module {
         $this->advanced_setting_title_text 		= esc_html__( 'New Social Network', 'infinity-tnc-divi-modules' );
 		$this->settings_text               		= esc_html__( 'Social Network Settings', 'infinity-tnc-divi-modules' );
 
-
 		// Toggle settings
         $this->settings_modal_toggles = array(
             'general'  => array(

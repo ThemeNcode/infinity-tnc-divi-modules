@@ -42,6 +42,17 @@ class SocialShareChild extends Component {
         }]);
      }
 
+     // inline grid width 100%
+      additionalCss.push([{
+        selector: '%%order_class%% .inftnc_share_button',
+        declaration: `width:100%`,
+      }]);
+
+      additionalCss.push([{
+        selector: '%%order_class%% .inftnc_social_share_child.et_pb_module',
+        declaration: `margin-bottom:0%!important`,
+      }]);
+   
 
     return additionalCss;
   }
