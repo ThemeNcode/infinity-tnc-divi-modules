@@ -5,6 +5,74 @@ class DualButtons extends Component {
 
   static slug = 'inftnc_dual_buttons';
 
+  static css(props, moduleInfo) {
+    const utils         = window.ET_Builder.API.Utils;
+    const additionalCss = [];
+
+     // Process button alignment value into style
+      if (props.button_alignment) {
+        additionalCss.push([{
+          selector:    '%%order_class%% .inftnc_button_wrapper',
+          declaration: `justify-content: ${props.button_alignment};`,
+        }]);
+      }
+
+      // Process responsive  button alignment value into style 
+        if(props.button_alignment) {
+          const 	button_alignment_last_edited =  props.button_alignment_last_edited; 
+          const   button_alignment_responsive_active = button_alignment_last_edited && button_alignment_last_edited.startsWith("on")
+          //Tablet 
+          if( props.button_alignment_tablet && button_alignment_responsive_active){
+            additionalCss.push([{
+              selector:    '%%order_class%% .inftnc_button_wrapper',
+              declaration: `justify-content: ${props.button_alignment_tablet};`,
+              device: 'tablet',
+            }]);
+          }
+          // Phone 
+          if( props.button_alignment_phone && button_alignment_responsive_active){
+            additionalCss.push([{
+              selector:    '%%order_class%% .inftnc_button_wrapper',
+              declaration: `justify-content: ${props.button_alignment_phone};`,
+              device: 'phone',
+            }]);
+          }
+      }
+
+      // Process button alignment value into style
+      if (props.button_gap) {
+        additionalCss.push([{
+          selector:    '%%order_class%% .inftnc_button_wrapper',
+          declaration: `gap: ${props.button_gap};`,
+        }]);
+      }
+
+      // Process responsive  button alignment value into style 
+      if(props.button_gap) {
+          const 	button_gap_last_edited =  props.button_gap_last_edited; 
+          const   button_gap_responsive_active = button_gap_last_edited && button_gap_last_edited.startsWith("on")
+          //Tablet 
+          if( props.button_gap_tablet && button_gap_responsive_active){
+            additionalCss.push([{
+              selector:    '%%order_class%% .inftnc_button_wrapper',
+              declaration: `gap: ${props.button_gap_tablet};`,
+              device: 'tablet',
+            }]);
+          }
+          // Phone 
+          if( props.button_gap_phone && button_gap_responsive_active){
+            additionalCss.push([{
+              selector:    '%%order_class%% .inftnc_button_wrapper',
+              declaration: `gap: ${props.button_gap_phone};`,
+              device: 'phone',
+            }]);
+          }
+      }
+
+    return additionalCss;
+  }
+
+
   _renderButton() {
     const props              = this.props;
     const utils              = window.ET_Builder.API.Utils;
@@ -20,9 +88,9 @@ class DualButtons extends Component {
       et_pb_button:             true,
       et_pb_custom_button_icon: props.button_right_icon,
     };
-    const buttonAlignment =  props.button_alignment;
+
     return (
-    <div className={`${buttonAlignment} et_pb_button_module_wrapper et_pb_module inftnc_pb_button_module`}>
+    <div className="inftnc_button_wrapper et_pb_button_module_wrapper et_pb_module inftnc_pb_button_module">
          <a 
            className={`${utils.classnames(
             buttonClassNameLeft 
