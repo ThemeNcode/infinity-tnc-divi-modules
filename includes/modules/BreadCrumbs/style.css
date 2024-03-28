@@ -8,3 +8,13 @@
   vertical-align: middle;
 }
 
+/** All  Builder Module Style **/
+
+.et-db #et-boc .et-l .et-fb-settings-options-tab.et-fb-modules-list ul li[class^=inftnc_] {
+  border: 1px solid #cccccc !important;
+}
+
+.et-db #et-boc .et-l .et-fb-settings-options-tab.et-fb-modules-list ul li[class^=inftnc_] .et_module_title {
+    line-height: 18px !important;
+}
+
