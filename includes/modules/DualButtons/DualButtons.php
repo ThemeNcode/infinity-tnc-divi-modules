@@ -13,34 +13,35 @@ class INFTNC_DualButtons extends ET_Builder_Module {
 
 	public function init() {
         // Module name
-		$this->name = esc_html__( 'Dual Buttons - Infinity TNC', 'inftnc-infinity-tnc-divi-modules' );
+		$this->name = esc_html__( 'Dual Buttons - Infinity TNC', 'infinity-tnc-divi-modules' );
         // Module Icon
 		$this->icon          = 'e';
         //'$this->icon_path        =  plugin_dir_path( __FILE__ ) . 'icon.svg';
-        $this->main_css_element = '%%order_class%% .infinity-tnc-module';
+        $this->main_css_element = '%%order_class%%';
 
         // Toggle settings
 		$this->settings_modal_toggles  = array(
 			'general'  => array(
 				'toggles' => array(
-					'main_content' => esc_html__( 'Button Text', 'inftnc-infinity-tnc-divi-modules' ),
+					'main_content' => esc_html__( 'Button Text', 'infinity-tnc-divi-modules' ),
 					'button_links'        => array(
 						'sub_toggles'     => array(
 							'button_left_tab' => array(
-								'name' => esc_html__( 'Button Left', 'inftnc-infinity-tnc-divi-modules' ),
+								'name' => esc_html__( 'Button Left', 'infinity-tnc-divi-modules' ),
 							),
 							'button_right_tab' => array(
-								'name' => esc_html__( 'Button Right', 'inftnc-infinity-tnc-divi-modules' ),
+								'name' => esc_html__( 'Button Right', 'infinity-tnc-divi-modules' ),
 							),
 						),
 						'tabbed_subtoggles' => true,
-						'title'             => esc_html__( 'Button Links', 'inftnc-infinity-tnc-divi-modules' ),
+						'title'             => esc_html__( 'Button Links', 'infinity-tnc-divi-modules' ),
 					),
 				),
 			),
             'advanced' => array(
 				'toggles' => array(
-					'alignment' => esc_html__( 'Alignment', 'inftnc-infinity-tnc-divi-modules' ),
+					'alignment' => esc_html__( 'Button Alignment', 'infinity-tnc-divi-modules' ),
+					'button_gap' => esc_html__( 'Button Gap', 'infinity-tnc-divi-modules'),
 				),
 			),
 		);
@@ -49,11 +50,11 @@ class INFTNC_DualButtons extends ET_Builder_Module {
 		// This property will add CSS fields on Advanced > Custom CSS
 		$this->custom_css_fields = array(
 			'title' => array(
-				'label'    => esc_html__( 'Button Left', 'inftnc-infinity-tnc-divi-modules' ),
+				'label'    => esc_html__( 'Button Left', 'infinity-tnc-divi-modules' ),
 				'selector' => '.inftnc_pb_button_right',
 			),
 			'button' => array(
-				'label'    => esc_html__( 'Button Right', 'inftnc-infinity-tnc-divi-modules' ),
+				'label'    => esc_html__( 'Button Right', 'infinity-tnc-divi-modules' ),
 				'selector' => '.inftnc_pb_button_right',
 			),
 		);
@@ -63,8 +64,8 @@ class INFTNC_DualButtons extends ET_Builder_Module {
 		// This video will be displayed on different modal if the help icon on the bottom of the modal is clicked
 		$this->help_videos = array(
 			array(
-				'id'   => esc_html__( 'FkQuawiGWUw', 'inftnc-infinity-tnc-divi-modules' ), // YouTube video ID
-				'name' => esc_html__( 'Dual Buttons Module Video', 'inftnc-infinity-tnc-divi-modules' ),
+				'id'   => esc_html__( 'FkQuawiGWUw', 'infinity-tnc-divi-modules' ), // YouTube video ID
+				'name' => esc_html__( 'Dual Buttons Module Video', 'infinity-tnc-divi-modules' ),
 			),
 		);
 
@@ -89,36 +90,36 @@ class INFTNC_DualButtons extends ET_Builder_Module {
 	public function get_fields() {
 		return array(
 			'button_left_text' => array(
-				'label'           => esc_html__( 'Button Left Text', 'inftnc-infinity-tnc-divi-modules' ),
+				'label'           => esc_html__( 'Button Left Text', 'infinity-tnc-divi-modules' ),
 				'type'            => 'text',
-				'default' 		  => esc_html__('Button Left', 'inftnc-infinity-tnc-divi-modules' ),
+				'default' 		  => esc_html__('Button Left', 'infinity-tnc-divi-modules' ),
 				'option_category' => 'basic_option',
-				'description'     => esc_html__( 'Input your desired button text.', 'inftnc-infinity-tnc-divi-modules' ),
+				'description'     => esc_html__( 'Input your desired button text.', 'infinity-tnc-divi-modules' ),
 				'toggle_slug'     => 'main_content',
 			),
             'button_right_text' => array(
-				'label'           => esc_html__( 'Button Right Text', 'inftnc-infinity-tnc-divi-modules' ),
+				'label'           => esc_html__( 'Button Right Text', 'infinity-tnc-divi-modules' ),
 				'type'            => 'text',
-				'default' 		  => esc_html__('Button Right', 'inftnc-infinity-tnc-divi-modules' ),
+				'default' 		  => esc_html__('Button Right', 'infinity-tnc-divi-modules' ),
 				'option_category' => 'basic_option',
-				'description'     => esc_html__( 'Input your desired button text.', 'inftnc-infinity-tnc-divi-modules' ),
+				'description'     => esc_html__( 'Input your desired button text.', 'infinity-tnc-divi-modules' ),
 				'toggle_slug'     => 'main_content',
 			),
 
 			'button_url_left' => array(
-				'label'           => esc_html__( 'Button Link URL', 'inftnc-infinity-tnc-divi-modules' ),
+				'label'           => esc_html__( 'Button Link URL', 'infinity-tnc-divi-modules' ),
 				'type'            => 'text',
 				'option_category' => 'basic_option',
-				'description'     => esc_html__( 'Input URL for your button.', 'inftnc-infinity-tnc-divi-modules' ),
+				'description'     => esc_html__( 'Input URL for your button.', 'infinity-tnc-divi-modules' ),
 				'toggle_slug'     => 'button_links',
                 'sub_toggle'      => 'button_left_tab'
 			),
 
             'button_url_right' => array(
-				'label'           => esc_html__( 'Button Link URL', 'inftnc-infinity-tnc-divi-modules' ),
+				'label'           => esc_html__( 'Button Link URL', 'infinity-tnc-divi-modules' ),
 				'type'            => 'text',
 				'option_category' => 'basic_option',
-				'description'     => esc_html__( 'Input URL for your button.', 'inftnc-infinity-tnc-divi-modules' ),
+				'description'     => esc_html__( 'Input URL for your button.', 'infinity-tnc-divi-modules' ),
 				'toggle_slug'     => 'button_links',
                 'sub_toggle'      => 'button_right_tab'
 			),
@@ -126,34 +127,34 @@ class INFTNC_DualButtons extends ET_Builder_Module {
             'button_url_left_new_window' => array(
 				'default'         => 'off',
 				'default_on_front'=> true,
-				'label'           => esc_html__( 'Button Link Target', 'inftnc-infinity-tnc-divi-modules' ),
+				'label'           => esc_html__( 'Button Link Target', 'infinity-tnc-divi-modules' ),
 				'type'            => 'select',
 				'option_category' => 'configuration',
 				'options'         => array(
-					'off' => esc_html__( 'In The Same Window', 'inftnc-infinity-tnc-divi-modules' ),
-					'on'  => esc_html__( 'In The New Tab', 'inftnc-infinity-tnc-divi-modules' ),
+					'off' => esc_html__( 'In The Same Window', 'infinity-tnc-divi-modules' ),
+					'on'  => esc_html__( 'In The New Tab', 'infinity-tnc-divi-modules' ),
 				),
 				'toggle_slug'     => 'button_links',
                 'sub_toggle'      => 'button_left_tab',
-				'description'     => esc_html__( 'Choose whether your link opens in a new window or not', 'inftnc-infinity-tnc-divi-modules' ),
+				'description'     => esc_html__( 'Choose whether your link opens in a new window or not', 'infinity-tnc-divi-modules' ),
 			),
             'button_url_right_new_window' => array(
 				'default'         => 'off',
 				'default_on_front'=> true,
-				'label'           => esc_html__( 'Button Link Target', 'inftnc-infinity-tnc-divi-modules' ),
+				'label'           => esc_html__( 'Button Link Target', 'infinity-tnc-divi-modules' ),
 				'type'            => 'select',
 				'option_category' => 'configuration',
 				'options'         => array(
-					'off' => esc_html__( 'In The Same Window', 'inftnc-infinity-tnc-divi-modules' ),
-					'on'  => esc_html__( 'In The New Tab', 'inftnc-infinity-tnc-divi-modules' ),
+					'off' => esc_html__( 'In The Same Window', 'infinity-tnc-divi-modules' ),
+					'on'  => esc_html__( 'In The New Tab', 'infinity-tnc-divi-modules' ),
 				),
 				'toggle_slug'     => 'button_links',
                 'sub_toggle'      => 'button_right_tab',
-				'description'     => esc_html__( 'Choose whether your link opens in a new window or not', 'inftnc-infinity-tnc-divi-modules' ),
+				'description'     => esc_html__( 'Choose whether your link opens in a new window or not', 'infinity-tnc-divi-modules' ),
 			),
             'button_alignment' => array(
-				'label'           => esc_html__( 'Button Alignment', 'inftnc-infinity-tnc-divi-modules' ),
-				'description'     => esc_html__( 'Align your button to the left, right or center of the module.', 'inftnc-infinity-tnc-divi-modules' ),
+				'label'           => esc_html__( 'Button Alignment', 'infinity-tnc-divi-modules' ),
+				'description'     => esc_html__( 'Align your button to the left, right or center of the module.', 'infinity-tnc-divi-modules' ),
 				'type'            => 'text_align',
 				'option_category' => 'configuration',
 				'options'         => et_builder_get_text_orientation_options( array( 'justified' ) ),
@@ -161,6 +162,24 @@ class INFTNC_DualButtons extends ET_Builder_Module {
 				'toggle_slug'     => 'alignment',
 				'mobile_options'  => true,
 			),
+
+			'button_gap' => array(
+				'label'           => esc_html__( 'Button Gap', 'infinity-tnc-divi-module' ),
+				'type'            => 'range',
+				'tab_slug'        => 'advanced',
+				'toggle_slug'     => 'button_gap',
+				'allowed_units'    => array('px'),
+				'default_unit'     => 'px',
+                'default'         => '20px',
+                'range_settings' => array(
+					'min'  => 0,
+					'max'  => 100,
+					'step' => 1,
+				),
+				'mobile_options'     => true,
+				'responsive'         => true,
+			),
+
 		);
 	}
 
@@ -178,7 +197,7 @@ class INFTNC_DualButtons extends ET_Builder_Module {
 			),
 			'button'          => array(
 				'button_left' => array(
-					'label'          => esc_html__( 'Button Left','inftnc-infinity-tnc-divi-modules'),
+					'label'          => esc_html__( 'Button Left','infinity-tnc-divi-modules'),
 					'css'            => array(
 						 'main' 		=> '%%order_class%% .et_pb_button.inftnc_pb_button_left',
 					),
@@ -195,7 +214,7 @@ class INFTNC_DualButtons extends ET_Builder_Module {
 					),
 				),
 				'button_right' => array(
-					'label'          => esc_html__( 'Button RIght','inftnc-infinity-tnc-divi-modules'),
+					'label'          => esc_html__( 'Button RIght','infinity-tnc-divi-modules'),
 					'css'            => array(
 						'main' 		=> '%%order_class%% .et_pb_button.inftnc_pb_button_right',
 					),
@@ -209,9 +228,6 @@ class INFTNC_DualButtons extends ET_Builder_Module {
 							'main'      => "%%order_class%% .et_pb_button.inftnc_pb_button_right",
 							'important' => 'all',
 						),
-					'custom_margin' => array(
-						'default' => '|||20px|false|false',
-					),
 					),
 				),
 			),
@@ -330,6 +346,11 @@ class INFTNC_DualButtons extends ET_Builder_Module {
 		$is_button_aligment_responsive = et_pb_responsive_options()->is_responsive_enabled( $this->props, 'button_alignment' );
 		$button_alignment_tablet       = $is_button_aligment_responsive ? $this->get_button_alignment( 'tablet' ) : '';
 		$button_alignment_phone        = $is_button_aligment_responsive ? $this->get_button_alignment( 'phone' ) : '';
+		$button_gap 				   = $this->props['button_gap'];
+		$button_gap_last_edited        = $this->props['button_gap_last_edited'];
+		$button_gap_responsive_active  =  et_pb_get_responsive_status( $button_gap_last_edited );
+		$button_gap_tablet			   = $this->props['button_gap_tablet'];
+		$button_gap_phone			   = $this->props['button_gap_phone'];
 
 		// Button Alignment.
 		$button_alignments = array();
@@ -347,9 +368,56 @@ class INFTNC_DualButtons extends ET_Builder_Module {
 
 		$button_alignment_classes = join( ' ', $button_alignments );
 
+		// Button Gap 
+		if( '' !== $button_gap  ) {
+			ET_Builder_Element::set_style(
+				$render_slug,
+				array(
+					'selector'    => '%%order_class%% .inftnc_button_wrapper',
+					'declaration' => sprintf(
+						'gap:%1$s;',
+						$button_gap
+					),
+				)
+			);
+		}
+
+		//Button Gap Responsive 
+		if( $button_gap ) {
+			//Tablet
+			if( '' !== $button_gap_tablet  && $button_gap_responsive_active  ) {
+				ET_Builder_Element::set_style(
+					$render_slug,
+					array(
+						'selector'    => '%%order_class%% .inftnc_button_wrapper',
+						'declaration' => sprintf(
+							'gap:%1$s;',
+							$button_gap_tablet
+						),
+						'media_query' => ET_Builder_Element::get_media_query('max_width_980'),
+					)
+				);
+			}
+
+			//Phone 
+			if( '' !== $button_gap_phone  && $button_gap_responsive_active  ) {
+				ET_Builder_Element::set_style(
+					$render_slug,
+					array(
+						'selector'    => '%%order_class%% .inftnc_button_wrapper',
+						'declaration' => sprintf(
+							'gap:%1$s;',
+							$button_gap_phone
+						),
+						'media_query' => ET_Builder_Element::get_media_query('max_width_767'),
+					)
+				);
+			}
+		}
+
 		// Render module output
 		$output = sprintf(
-			'<div class="et_pb_button_module_wrapper %4$s_wrapper %3$s et_pb_module">
+			'<div class="inftnc_button_wrapper et_pb_button_module_wrapper %4$s_wrapper %3$s et_pb_module">
 				%1$s
 			    %2$s
 			</div>',
