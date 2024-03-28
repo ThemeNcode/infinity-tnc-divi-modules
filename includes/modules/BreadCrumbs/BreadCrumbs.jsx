@@ -28,8 +28,15 @@ class BreadCrumbs extends Component {
 
       if (props.current_text_color) {
         additionalCss.push([{
-          selector:    '%%order_class%% .inftnc_current',
-          declaration: `color: ${props.current_text_color};`,
+          selector:    '%%order_class%% .inftnc_current a',
+          declaration: `color: ${props.current_text_color} !important;`,
+        }]);
+      }
+
+      if (props.before_text_color) {
+        additionalCss.push([{
+          selector:    '%%order_class%% .inftnc_before',
+          declaration: `color: ${props.before_text_color} !important;`,
         }]);
       }
 
@@ -49,7 +56,7 @@ class BreadCrumbs extends Component {
       <div className="inftnc_breadcrumb">
           
            <span class="inftnc_before et-pb-icon">{useBeforeIcon}</span>
-           <span class="before">{before_text}</span>
+           <span class="inftnc_before">{before_text}</span>
            <a className="home" href="http://localhost:8888/infinity-divi/" ><span property="name">{home_text}</span></a>
            <span className="inftnc_separator et-pb-icon">{seperatorIcon}</span>
            <span className="inftnc_current"> <a href="#">Breadcrumbs</a></span>

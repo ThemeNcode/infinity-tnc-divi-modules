@@ -34,6 +34,29 @@ class INFTNC_BreadCrumbs extends ET_Builder_Module {
 				),
 			),
 		);
+
+		// This property will add CSS fields on Advanced > Custom CSS
+		$this->custom_css_fields = array(
+			'before_text' => array(
+				'label'    => esc_html__( 'Before Text', 'infinity-tnc-divi-modules' ),
+				'selector' => '.inftnc_before',
+			),
+
+			'home_text' => array(
+				'label'    => esc_html__( 'Home Text', 'infinity-tnc-divi-modules' ),
+				'selector' => '.home',
+			),
+
+			'seperator' => array(
+				'label'    => esc_html__( 'Seperator', 'infinity-tnc-divi-modules' ),
+				'selector' => '.inftnc_separator',
+			),
+
+			'link_text' => array(
+				'label'    => esc_html__( 'Current Text', 'infinity-tnc-divi-modules' ),
+				'selector' => '.inftnc_current',
+			),
+		);
 	}
 
 	 /**
@@ -126,6 +149,13 @@ class INFTNC_BreadCrumbs extends ET_Builder_Module {
 				'tab_slug'        => 'advanced',
 			),
 
+			'before_text_color' => array(
+				'label'           => esc_html__( 'Before Text Color', 'inftnc-infinity-tnc-divi-modules' ),
+				'type'            => 'color',
+				'toggle_slug'     => 'breadcrumbs',
+				'tab_slug'        => 'advanced',
+			),
+
 		);
 	}
 
@@ -209,6 +239,17 @@ class INFTNC_BreadCrumbs extends ET_Builder_Module {
 				'declaration' => sprintf(
 					'color: %1$s;',
 					esc_attr( $this->props['current_text_color'] )
+				),
+			) );
+		}
+
+		// Process seperator icon color value into style
+		if ( '' !== $this->props['before_text_color'] ) {
+			ET_Builder_Element::set_style( $render_slug, array(
+				'selector'    => '%%order_class%% .inftnc_before',
+				'declaration' => sprintf(
+					'color: %1$s;',
+					esc_attr( $this->props['before_text_color'] )
 				),
 			) );
 		}

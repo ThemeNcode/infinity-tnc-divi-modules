@@ -417,8 +417,7 @@ class INFTNC_DualButtons extends ET_Builder_Module {
 			}
 		}
 
-		
-
+	
 		// Render module output
 		$output = sprintf(
 			'<div class="inftnc_button_wrapper et_pb_button_module_wrapper %3$s_wrapper et_pb_module">
@@ -436,3 +435,4 @@ class INFTNC_DualButtons extends ET_Builder_Module {
 }
 
 new INFTNC_DualButtons;
+  
