@@ -10,6 +10,7 @@ class INFTNC_YoutubeEmbed extends ET_Builder_Module {
 		'author'     => 'ThemeNcode',
 		'author_uri' => 'https://themencode.com/',
 	);
+	
 	/**
 	 * Module properties initialization
 	 *
@@ -20,7 +21,7 @@ class INFTNC_YoutubeEmbed extends ET_Builder_Module {
 		$this->name = esc_html__( 'Youtube Video - Infinity TNC', 'infinity-tnc-divi-modules' );
 		//Icon 
 		$this->icon_path        =  plugin_dir_path( __FILE__ ) . 'icon.svg';
-        $this->main_css_element = "%%order_class%%.inftnc_youtube_embed iframe";
+        $this->main_css_element = "%%order_class%% .inftnc_youtube_embed iframe";
         $this->settings_modal_toggles  = array(
 			'general'  => array(
 				'toggles' => array(
@@ -275,7 +276,7 @@ class INFTNC_YoutubeEmbed extends ET_Builder_Module {
 			$youtube_exact_id = $match[1];
 
             $output = sprintf('<iframe src="https://www.youtube.com/embed/%1$s?controls=%7$s&amp;autoplay=%4$s&amp;loop=%6$s&amp;mute=%5$s&amp;start=%2$s&amp;end=%3$s&amp;rel=%8$s" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
-                /* 01 */ $youtube_exact_id,
+                /* 01 */ esc_url( $youtube_exact_id ),
 				/* 02 */ $video_start,
 				/* 03 */ $video_end,
 				/* 04 */ $autoplay_value,
@@ -288,7 +289,7 @@ class INFTNC_YoutubeEmbed extends ET_Builder_Module {
         } elseif ( 'video' === $video_type && 'video_id' === $video_method ) { 
 
            $output = sprintf('<iframe src="https://www.youtube.com/embed/%1$s?controls=%7$s&amp;autoplay=%4$s&amp;loop=%6$s&amp;mute=%5$s&amp;start=%2$s&amp;end=%3$s&amp;rel=%8$s" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
-                /* 01 */ $video_id ,
+                /* 01 */ esc_attr( $video_id ),
 				/* 02 */ $video_start,
 				/* 03 */ $video_end,
 				/* 04 */ $autoplay_value,
@@ -301,7 +302,7 @@ class INFTNC_YoutubeEmbed extends ET_Builder_Module {
         } elseif ( 'video' === $video_type && 'embed_code' === $video_method ) { 
 
             $output = sprintf('%1$s',
-                /* 01 */ $video_embed,
+                /* 01 */ wp_kses_post_deep( $video_embed ) ,
             );
 
         }  elseif ( 'playlist' === $video_type && 'video_url' === $video_method ) {
@@ -312,7 +313,7 @@ class INFTNC_YoutubeEmbed extends ET_Builder_Module {
 			$youtube_exact_id = $match[1];
 
 			$output = sprintf('<iframe src="https://www.youtube.com/embed/videoseries?controls=%7$s&amp;autoplay=%4$s&amp;loop=%6$s&amp;mute=%5$s&amp;start=%2$s&amp;end=%3$s&amp;rel=%8$s&amp;list=%1$s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
-				/* 01 */ $youtube_exact_id,
+				/* 01 */ esc_url( $youtube_exact_id ),
 				/* 02 */ $video_start,
 				/* 03 */ $video_end,
 				/* 04 */ $autoplay_value,
@@ -325,7 +326,7 @@ class INFTNC_YoutubeEmbed extends ET_Builder_Module {
         } elseif ( 'playlist' === $video_type && 'video_id' === $video_method ) {
  
             $output = sprintf('<iframe src="https://www.youtube.com/embed/videoseries?controls=%7$s&amp;autoplay=%4$s&amp;loop=%6$s&amp;mute=%5$s&amp;start=%2$s&amp;end=%3$s&amp;rel=%8$s&amp;list=%1$s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
-				/* 01 */ $video_id,
+				/* 01 */ esc_attr( $video_id ),
 				/* 02 */ $video_start,
 				/* 03 */ $video_end,
 				/* 04 */ $autoplay_value,
@@ -336,7 +337,7 @@ class INFTNC_YoutubeEmbed extends ET_Builder_Module {
             );
         } elseif ( 'playlist' === $video_type && 'embed_code' === $video_method ) {
 
-            $output = sprintf('%1$s',/* 01 */ $video_embed );
+            $output = sprintf('%1$s',/* 01 */ wp_kses_post_deep( $video_embed )  );
         }
 
         return $output;
