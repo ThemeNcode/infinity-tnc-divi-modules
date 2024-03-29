@@ -16,6 +16,7 @@ class INFTNC_VimeoVideo extends ET_Builder_Module {
 	 *
 	 * @since 1.0.0
 	 */
+
 	public function init() {
 		$this->name = esc_html__( 'Vimeo Video - Infinity TNC', 'infinity-tnc-divi-modules' );
 		//Icon 
@@ -310,7 +311,7 @@ class INFTNC_VimeoVideo extends ET_Builder_Module {
             $vimeo_exact_id = $match[3];
 
             $output = sprintf('<iframe src="https://player.vimeo.com/video/%1$s?&autoplay=%11$s&loop=%3$s&muted=%2$s&controls=%4$s&title=%6$s&byline=%7$s&portrait=%5$s&#t=%8$s&color=%9$s&playsinline=%10$s" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>',
-                /* 01 */ $vimeo_exact_id,
+                /* 01 */ esc_attr( $vimeo_exact_id ),
                 /* 02 */ $mute_value,
                 /* 03 */ $loop_value,
                 /* 04 */ $control_value,  
@@ -326,7 +327,7 @@ class INFTNC_VimeoVideo extends ET_Builder_Module {
         } elseif ( 'vimeo_id' === $vimeo_method ) {
 
             $output = sprintf('<iframe src="https://player.vimeo.com/video/%1$s?&autoplay=%11$s&loop=%3$s&muted=%2$s&controls=%4$s&title=%6$s&byline=%7$s&portrait=%5$s&#t=%8$s&color=%9$s&playsinline=%10$s" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>',
-                /* 01 */ $vimeo_id,
+                /* 01 */ esc_attr( $vimeo_id ),
                 /* 02 */ $mute_value,
                 /* 03 */ $loop_value,
                 /* 04 */ $control_value,  
@@ -340,7 +341,7 @@ class INFTNC_VimeoVideo extends ET_Builder_Module {
              );
         } elseif ( 'embed_code' == $vimeo_method ) {
 
-            $output = sprintf('%1$s', /* 01 */ $vimeo_embed );
+            $output = sprintf('%1$s', /* 01 */ wp_kses_post( $vimeo_embed )  );
 
         }
 
