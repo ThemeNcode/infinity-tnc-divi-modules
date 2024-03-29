@@ -115,13 +115,13 @@ class INFTNC_HeadingGradient extends ET_Builder_Module {
 			
     }
 
-/**
- * Module's specific fields
- * 
- * @since 1.0.0
- *
- * @return array
- */
+	/**
+	 * Module's specific fields
+	 * 
+	 * @since 1.0.0
+	 *
+	 * @return array
+	 */
 	public function get_fields() {
 		return array(
 			'gradient_title' => array(

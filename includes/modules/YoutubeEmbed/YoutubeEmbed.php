@@ -4,7 +4,7 @@ class INFTNC_YoutubeEmbed extends ET_Builder_Module {
 
 	public $slug       = 'inftnc_youtube_embed';
 	public $vb_support = 'on';
-
+	// Module Credits (Appears at the bottom of the module settings modal)
 	protected $module_credits = array(
 		'module_uri' => 'https://themencode.com/',
 		'author'     => 'ThemeNcode',
@@ -17,16 +17,16 @@ class INFTNC_YoutubeEmbed extends ET_Builder_Module {
 	 */
 	public function init() {
 
-		$this->name = esc_html__( 'Youtube Video - Infinity TNC', 'inftnc-infinity-tnc-divi-modules' );
+		$this->name = esc_html__( 'Youtube Video - Infinity TNC', 'infinity-tnc-divi-modules' );
 		//Icon 
 		$this->icon_path        =  plugin_dir_path( __FILE__ ) . 'icon.svg';
         $this->main_css_element = "%%order_class%%.inftnc_youtube_embed iframe";
         $this->settings_modal_toggles  = array(
 			'general'  => array(
 				'toggles' => array(
-					'main_content' => esc_html__( 'Youtube Video', 'inftnc-infinity-tnc-divi-modules' ),
+					'main_content' => esc_html__( 'Youtube Video', 'infinity-tnc-divi-modules' ),
                     'video_options' => array(
-                        'title' => esc_html__( 'Video Options', 'inftnc-infinity-tnc-divi-modules' ),
+                        'title' => esc_html__( 'Video Options', 'infinity-tnc-divi-modules' ),
                     ),
 				),
 			),
@@ -56,36 +56,42 @@ class INFTNC_YoutubeEmbed extends ET_Builder_Module {
 				 'filters'  => false,
 		);
    }
-
+   	/**
+	 * Module's specific fields
+	 * 
+	 * @since 1.0.0
+	 *
+	 * @return array
+	 */
 	public function get_fields() {
 		return array(
 			'video_type' => array(
-				'label'           => esc_html__( 'Video Type', 'inftnc-infinity-tnc-divi-modules' ),
+				'label'           => esc_html__( 'Video Type', 'infinity-tnc-divi-modules' ),
 				'type'            => 'select',
 				'default'	      => 'video',
 				'options'         => array(
-					'video'            => esc_html__( 'Video', 'inftnc-infinity-tnc-divi-modules' ),
-					'playlist'         => esc_html__( 'Playlist', 'inftnc-infinity-tnc-divi-modules' ),
+					'video'            => esc_html__( 'Video', 'infinity-tnc-divi-modules' ),
+					'playlist'         => esc_html__( 'Playlist', 'infinity-tnc-divi-modules' ),
 				),
 				'toggle_slug'     => 'main_content',
                 
 			),
 
             'video_method' => array(
-				'label'           => esc_html__( 'Video Method', 'inftnc-infinity-tnc-divi-modules' ),
+				'label'           => esc_html__( 'Video Method', 'infinity-tnc-divi-modules' ),
 				'type'            => 'select',
 				'default'	      => 'video_url',
 				'options'         => array(
-                    'video_url'            => esc_html__( 'URL', 'inftnc-infinity-tnc-divi-modules' ),
-					'video_id'            => esc_html__( 'ID', 'inftnc-infinity-tnc-divi-modules' ),
-                    'embed_code'          => esc_html__( 'Embed Code', 'inftnc-infinity-tnc-divi-modules' ),
+                    'video_url'            => esc_html__( 'URL', 'infinity-tnc-divi-modules' ),
+					'video_id'            => esc_html__( 'ID', 'infinity-tnc-divi-modules' ),
+                    'embed_code'          => esc_html__( 'Embed Code', 'infinity-tnc-divi-modules' ),
     
 				),
 				'toggle_slug'     => 'main_content',   
 			),
 
             'youtube_url' => array(
-				'label'           => esc_html__( 'Youtube Video URL', 'inftnc-infinity-tnc-divi-modules' ),
+				'label'           => esc_html__( 'Youtube Video URL', 'infinity-tnc-divi-modules' ),
 				'type'            => 'text',
 				'option_category' => 'basic_option',
 				'default'		  => 'https://www.youtube.com/watch?v=z8uxAkjll5g',
@@ -119,7 +125,7 @@ class INFTNC_YoutubeEmbed extends ET_Builder_Module {
 			),
 
 			'video_start' => array(
-				'label'           => esc_html__( 'Start Time', 'inftnc-infinity-tnc-divi-modules' ),
+				'label'           => esc_html__( 'Start Time', 'infinity-tnc-divi-modules' ),
 				'type'            => 'range',
 				'description'	  => 'Specify a start time in seconds',
 				'default'          => '0',
@@ -136,7 +142,7 @@ class INFTNC_YoutubeEmbed extends ET_Builder_Module {
 			),
 
             'video_end' => array(
-				'label'           => esc_html__( 'End Time', 'inftnc-infinity-tnc-divi-modules' ),
+				'label'           => esc_html__( 'End Time', 'infinity-tnc-divi-modules' ),
 				'type'            => 'range',
 				'default_on_front' => '',
 				'description'	  => 'Specify an End time in seconds',
@@ -156,8 +162,8 @@ class INFTNC_YoutubeEmbed extends ET_Builder_Module {
 				'type'              => 'yes_no_button',
 				'default'			=> 'on',
 				'options'           => array(
-					'on'  => esc_html__( 'ON', 'inftnc-infinity-tnc-divi-modules' ),
-					'off' => esc_html__( 'OFF', 'inftnc-infinity-tnc-divi-modules' ),
+					'on'  => esc_html__( 'ON', 'infinity-tnc-divi-modules' ),
+					'off' => esc_html__( 'OFF', 'infinity-tnc-divi-modules' ),
 				),
 				'toggle_slug'     => 'video_options',
 				'show_if_not'     => array(
@@ -170,8 +176,8 @@ class INFTNC_YoutubeEmbed extends ET_Builder_Module {
 				'type'              => 'yes_no_button',
 				'default'			=> 'off',
 				'options'           => array(
-					'on'  => esc_html__( 'ON', 'inftnc-infinity-tnc-divi-modules' ),
-					'off' => esc_html__( 'OFF', 'inftnc-infinity-tnc-divi-modules' ),
+					'on'  => esc_html__( 'ON', 'infinity-tnc-divi-modules' ),
+					'off' => esc_html__( 'OFF', 'infinity-tnc-divi-modules' ),
 				),
 				'toggle_slug'     => 'video_options',
 				'show_if_not'     => array(
@@ -184,8 +190,8 @@ class INFTNC_YoutubeEmbed extends ET_Builder_Module {
 				'type'              => 'yes_no_button',
 				'default'			=> 'off',
 				'options'           => array(
-					'on'  => esc_html__( 'ON', 'inftnc-infinity-tnc-divi-modules' ),
-					'off' => esc_html__( 'OFF', 'inftnc-infinity-tnc-divi-modules' ),
+					'on'  => esc_html__( 'ON', 'infinity-tnc-divi-modules' ),
+					'off' => esc_html__( 'OFF', 'infinity-tnc-divi-modules' ),
 				),
 				'toggle_slug'     => 'video_options',
 				'show_if_not'     => array(
@@ -198,8 +204,8 @@ class INFTNC_YoutubeEmbed extends ET_Builder_Module {
 				'type'              => 'yes_no_button',
 				'default'			=> 'off',
 				'options'           => array(
-					'on'  => esc_html__( 'ON', 'inftnc-infinity-tnc-divi-modules' ),
-					'off' => esc_html__( 'OFF', 'inftnc-infinity-tnc-divi-modules' ),
+					'on'  => esc_html__( 'ON', 'infinity-tnc-divi-modules' ),
+					'off' => esc_html__( 'OFF', 'infinity-tnc-divi-modules' ),
 				),
 				'toggle_slug'     => 'video_options',
 				'show_if_not'     => array(
@@ -212,8 +218,8 @@ class INFTNC_YoutubeEmbed extends ET_Builder_Module {
 				'type'              => 'yes_no_button',
 				'default'			=> 'off',
 				'options'           => array(
-					'on'  => esc_html__( 'ON', 'inftnc-infinity-tnc-divi-modules' ),
-					'off' => esc_html__( 'OFF', 'inftnc-infinity-tnc-divi-modules' ),
+					'on'  => esc_html__( 'ON', 'infinity-tnc-divi-modules' ),
+					'off' => esc_html__( 'OFF', 'infinity-tnc-divi-modules' ),
 				),
 				'toggle_slug'     => 'video_options',
 				'show_if_not'     => array(
@@ -223,6 +229,17 @@ class INFTNC_YoutubeEmbed extends ET_Builder_Module {
 		);
 	}
 
+	/**
+	 * Render module output
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param array  $attrs       List of unprocessed attributes
+	 * @param string $content     Content being processed
+	 * @param string $render_slug Slug of module that is used for rendering output
+	 *
+	 * @return string module's rendered output
+	 */
 	public function render( $attrs, $content , $render_slug ) {
 
         $video_type         =  $this->props['video_type'];
