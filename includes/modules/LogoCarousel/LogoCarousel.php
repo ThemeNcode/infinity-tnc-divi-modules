@@ -58,15 +58,15 @@ class LogoCarousel extends ET_Builder_Module {
 		// This property will add CSS fields on Advanced > Custom CSS
 		$this->custom_css_fields = array(
 			'logo' => array(
-				'label'    => esc_html__( 'Logo', 'dicm-divi-custom-modules' ),
+				'label'    => esc_html__( 'Logo', 'infinity-tnc-divi-modules' ),
 				'selector' => '.logo_carousel_img',
 			),
 			'navigation' => array(
-				'label'    => esc_html__( 'Navigation', 'dicm-divi-custom-modules' ),
+				'label'    => esc_html__( 'Navigation', 'infinity-tnc-divi-modules' ),
 				'selector' => '.slick-inftnc-arrow',
 			),
 			'pagination' => array(
-				'label'    => esc_html__( 'Pagination', 'dicm-divi-custom-modules' ),
+				'label'    => esc_html__( 'Pagination', 'infinity-tnc-divi-modules' ),
 				'selector' => '.inftnc_carousels_logo_wrapper .slick-dots',
 			),
 		);
