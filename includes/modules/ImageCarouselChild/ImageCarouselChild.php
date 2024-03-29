@@ -9,7 +9,6 @@ class ImageCarouselChild extends ET_Builder_Module {
 	// Module item's attribute that will be used for module item label on modal
 	public $child_title_var          = 'alt';
 
-
 	// Full Visual Builder support
 	public $vb_support = 'on';
 

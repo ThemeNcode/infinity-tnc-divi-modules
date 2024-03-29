@@ -12,7 +12,7 @@ class INFTNC_BreadCrumbs extends ET_Builder_Module {
 	);
 
 	public function init() {
-		$this->name = esc_html__( 'Breadcrumbs - Infinity TNC', 'inftnc-infinity-tnc-divi-modules' );
+		$this->name = esc_html__( 'Breadcrumbs - Infinity TNC', 'infinity-tnc-divi-module' );
 		//Icon 
 		$this->icon_path        =  plugin_dir_path( __FILE__ ) . 'icon.svg';
 
@@ -21,14 +21,14 @@ class INFTNC_BreadCrumbs extends ET_Builder_Module {
 			
 			'general'  => array(
 				'toggles' => array(
-					'main_content' => esc_html__( 'Breadcrumbs Text', 'inftnc-infinity-tnc-divi-modules' ),
-					'icon'		   => esc_html__( 'Icon','inftnc-infinity-tnc-divi-modules'),
+					'main_content' => esc_html__( 'Breadcrumbs Text', 'infinity-tnc-divi-module' ),
+					'icon'		   => esc_html__( 'Icon','infinity-tnc-divi-module'),
 				),
 			),
 			'advanced' => array(
 				'toggles' => array(
 					'breadcrumbs'   => array(
-						'title' => esc_html__( 'Breadcrumbs Style', 'inftnc-infinity-tnc-divi-modules' ),
+						'title' => esc_html__( 'Breadcrumbs Style', 'infinity-tnc-divi-module' ),
 						'priority' => 50,
 					),
 				),
@@ -76,81 +76,81 @@ class INFTNC_BreadCrumbs extends ET_Builder_Module {
 	public function get_fields() {
 		return array(
 			'home_text' => array(
-				'label'           => esc_html__( 'Home', 'inftnc-infinity-tnc-divi-modules' ),
+				'label'           => esc_html__( 'Home', 'infinity-tnc-divi-module' ),
 				'type'            => 'text',
 				'option_category' => 'basic_option',
-				'default'		  => esc_html__('Home','inftnc-infinity-tnc-divi-modules'),
-				'description'     => esc_html__( 'Default home text in the Breadcrumbs', 'inftnc-infinity-tnc-divi-modules' ),
+				'default'		  => esc_html__('Home','infinity-tnc-divi-module'),
+				'description'     => esc_html__( 'Default home text in the Breadcrumbs', 'infinity-tnc-divi-module' ),
 				'toggle_slug'     => 'main_content',
 			),
 
 			'before_text' => array(
-				'label'           => esc_html__( 'Before Text', 'inftnc-infinity-tnc-divi-modules' ),
+				'label'           => esc_html__( 'Before Text', 'infinity-tnc-divi-module' ),
 				'type'            => 'text',
 				'option_category' => 'basic_option',
-				'description'     => esc_html__( 'Before text in the breadcrumbs', 'inftnc-infinity-tnc-divi-modules' ),
+				'description'     => esc_html__( 'Before text in the breadcrumbs', 'infinity-tnc-divi-module' ),
 				'toggle_slug'     => 'main_content',
 			),
 
 			'seperator_icon' => array(
-				'label'               => esc_html__( 'Separator Icon', 'inftnc-infinity-tnc-divi-modules' ),
+				'label'               => esc_html__( 'Separator Icon', 'infinity-tnc-divi-module' ),
 				'type'                => 'select_icon',
 				'default'             => '&#x35;||divi',
 				'renderer'            => 'select_icon',
 				'option_category'     => 'basic_option',
 				'class'               => array( 'et-pb-font-icon' ),
 				'toggle_slug'         => 'icon',
-				'description'         => esc_html__( 'Choose the icon for the separator.', 'inftnc-infinity-tnc-divi-modules' ),
+				'description'         => esc_html__( 'Choose the icon for the separator.', 'infinity-tnc-divi-module' ),
 			),
 
 			'use_before_icon' => array(
-				'label'           => esc_html__( 'Add Before Icon', 'inftnc-infinity-tnc-divi-modules' ),
+				'label'           => esc_html__( 'Add Before Icon', 'infinity-tnc-divi-module' ),
 				'type'            => 'yes_no_button',
 				'option_category' => 'basic_option',
 				'toggle_slug'         => 'icon',					
 				'options'         => array(
-					'off' => esc_html__( 'No', 'inftnc-infinity-tnc-divi-modules'),
-					'on'  => esc_html__( 'Yes', 'inftnc-infinity-tnc-divi-modules' ),
+					'off' => esc_html__( 'No', 'infinity-tnc-divi-module'),
+					'on'  => esc_html__( 'Yes', 'infinity-tnc-divi-module' ),
 				),
 			),
 
 			'before_text_icon' => array(
-				'label'               => esc_html__( 'Before Text Icon', 'inftnc-infinity-tnc-divi-modules' ),
+				'label'               => esc_html__( 'Before Text Icon', 'infinity-tnc-divi-module' ),
 				'type'                => 'select_icon',
 				'default'             => '&#x35;||divi',
 				'renderer'            => 'select_icon',
 				'option_category'     => 'basic_option',
 				'class'               => array( 'et-pb-font-icon' ),
 				'toggle_slug'         => 'icon',
-				'description'         => esc_html__( 'Choose the icon for the before text.', 'inftnc-infinity-tnc-divi-modules' ),
+				'description'         => esc_html__( 'Choose the icon for the before text.', 'infinity-tnc-divi-module' ),
 				'show_if'         => array(
 					'use_before_icon' => 'on',
 				),	
 			),
 
 			'link_color' => array(
-				'label'           => esc_html__('Link Color', 'inftnc-infinity-tnc-divi-modules' ),
+				'label'           => esc_html__('Link Color', 'infinity-tnc-divi-module' ),
 				'type'            => 'color',
 				'toggle_slug'     => 'breadcrumbs',
 				'tab_slug'        => 'advanced',
 			),
 
 			'seperate_icon_color' => array(
-				'label'           => esc_html__( 'Separator Icon Color', 'inftnc-infinity-tnc-divi-modules' ),
+				'label'           => esc_html__( 'Separator Icon Color', 'infinity-tnc-divi-module' ),
 				'type'            => 'color',
 				'toggle_slug'     => 'breadcrumbs',
 				'tab_slug'        => 'advanced',
 			),
 
 			'current_text_color' => array(
-				'label'           => esc_html__( 'Current Text Color', 'inftnc-infinity-tnc-divi-modules' ),
+				'label'           => esc_html__( 'Current Text Color', 'infinity-tnc-divi-module' ),
 				'type'            => 'color',
 				'toggle_slug'     => 'breadcrumbs',
 				'tab_slug'        => 'advanced',
 			),
 
 			'before_text_color' => array(
-				'label'           => esc_html__( 'Before Text Color', 'inftnc-infinity-tnc-divi-modules' ),
+				'label'           => esc_html__( 'Before Text Color', 'infinity-tnc-divi-module' ),
 				'type'            => 'color',
 				'toggle_slug'     => 'breadcrumbs',
 				'tab_slug'        => 'advanced',
