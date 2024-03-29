@@ -1,4 +1,3 @@
-import HelloWorld from './HelloWorld/HelloWorld';
 import DualButtons from './DualButtons/DualButtons';
 import BreadCrumbs from './BreadCrumbs/BreadCrumbs';
 import HeadingGradient from './HeadingGradient/HeadingGradient';
@@ -13,7 +12,7 @@ import LogoCarousel from './LogoCarousel/LogoCarousel';
 import LogoCarouselChild from './LogoCarouselChild/LogoCarouselChild';
 import ImageCarousel from './ImageCarousel/ImageCarousel';
 import ImageCarouselChild from './ImageCarouselChild/ImageCarouselChild';
-export default [HelloWorld,DualButtons,BreadCrumbs,HeadingGradient,StarRating,EmbedMap,YoutubeEmbed,VimeoVideo,TypeWriter,SocialShare,SocialShareChild,LogoCarousel,LogoCarouselChild,ImageCarouselChild,ImageCarousel];
+export default [DualButtons,BreadCrumbs,HeadingGradient,StarRating,EmbedMap,YoutubeEmbed,VimeoVideo,TypeWriter,SocialShare,SocialShareChild,LogoCarousel,LogoCarouselChild,ImageCarouselChild,ImageCarousel];
 
 
 
