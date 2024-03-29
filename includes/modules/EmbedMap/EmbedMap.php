@@ -5,18 +5,30 @@ class INFTNC_EmbedMap extends ET_Builder_Module {
 	public $slug       = 'inftnc_embed_map';
 	public $vb_support = 'on';
 
+	// Module Credits (Appears at the bottom of the module settings modal)
 	protected $module_credits = array(
 		'module_uri' => 'https://themencode.com/',
 		'author'     => 'ThemeNcode',
 		'author_uri' => 'https://themencode.com/', 
 	);
 
-	public function init() {
+	/**
+	 * Module properties initialization
+	 *
+	 * @since 1.0.0
+	 */
+		public function init() {
 		$this->name = esc_html__('Embed Map - Infinity TNC', 'inftnc-infinity-tnc-divi-modules' );
-			//Icon 
-			$this->icon_path        =  plugin_dir_path( __FILE__ ) . 'icon.svg';
-		$this->main_css_element = "%%order_class%%.inftnc_embed_map iframe";
-
+		//Icon 
+		$this->icon_path        =  plugin_dir_path( __FILE__ ) . 'icon.svg';
+		$this->main_css_element = "%%order_class%% .inftnc_embed_map iframe";
+		// This property will add CSS fields on Advanced > Custom CSS
+		$this->custom_css_fields = array(
+			'iframe' => array(
+				'label'    => esc_html__( 'Map', 'infinity-tnc-divi-modules' ),
+				'selector' => 'iframe',
+			),
+		);
 
 		$this->settings_modal_toggles  = array(
 			'general'  => array(
@@ -34,6 +46,7 @@ class INFTNC_EmbedMap extends ET_Builder_Module {
 	 *
 	 * @return array
 	 */
+
 	function get_advanced_fields_config() { 
 		return array(
 				 'height'	=> array(
@@ -50,6 +63,14 @@ class INFTNC_EmbedMap extends ET_Builder_Module {
 				 'filters'  => false,
 		);
    }
+
+   /**
+	 * Module's specific fields
+	 * 
+	 * @since 1.0.0
+	 *
+	 * @return array
+	 */
 
 	public function get_fields() {
 		return array(
@@ -106,6 +127,17 @@ class INFTNC_EmbedMap extends ET_Builder_Module {
 		);
 	}
 
+	/**
+	 * Render module output
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param array  $attrs       List of unprocessed attributes
+	 * @param string $content     Content being processed
+	 * @param string $render_slug Slug of module that is used for rendering output
+	 *
+	 * @return string module's rendered output
+	 */
 
 	public function render( $attrs, $content, $render_slug ) {
 
@@ -116,11 +148,11 @@ class INFTNC_EmbedMap extends ET_Builder_Module {
 		
 		
 		if( 'emebed_code'  === $source_type ){
-			 $map = sprintf('%1$s', /* 01 */ $embed_code );
+			 $map = sprintf('%1$s', /* 01 */ wp_kses_post_deep( $embed_code ));
 		} elseif ( 'latitude_longitude'  === $source_type) { 
 			$map = sprintf('<iframe src = "https://maps.google.com/maps?q=%1$s&z=%2$s&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>',
-			 /* 01 */ $latitude_logitude,
-			 /* 04 */ $zoom,
+			 /* 01 */ esc_attr( $latitude_logitude ),
+			 /* 04 */ esc_attr( $zoom ),
 			);
 		} 
 		
