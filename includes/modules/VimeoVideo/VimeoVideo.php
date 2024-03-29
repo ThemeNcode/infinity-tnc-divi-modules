@@ -4,18 +4,23 @@ class INFTNC_VimeoVideo extends ET_Builder_Module {
 
 	public $slug       = 'inftnc_vimeo_video';
 	public $vb_support = 'on';
-
+	// Module Credits (Appears at the bottom of the module settings modal)
 	protected $module_credits = array(
 		'module_uri' => 'https://themencode.com/',
 		'author'     => 'ThemeNcode',
 		'author_uri' => 'https://themencode.com/',
 	);
 
+	/**
+	 * Module properties initialization
+	 *
+	 * @since 1.0.0
+	 */
 	public function init() {
 		$this->name = esc_html__( 'Vimeo Video - Infinity TNC', 'infinity-tnc-divi-modules' );
 		//Icon 
 		$this->icon_path        =  plugin_dir_path( __FILE__ ) . 'icon.svg';
-        $this->main_css_element = "%%order_class%%.inftnc_vimeo_video iframe";
+        $this->main_css_element = "%%order_class%% .inftnc_vimeo_video iframe";
         $this->settings_modal_toggles  = array(
 			'general'  => array(
 				'toggles' => array(
@@ -52,6 +57,13 @@ class INFTNC_VimeoVideo extends ET_Builder_Module {
 		);
    }
 
+   /**
+	 * Module's specific fields
+	 * 
+	 * @since 1.0.0
+	 *
+	 * @return array
+	 */
 	public function get_fields() {
 		return array (
 			'vimeo_method' => array(
@@ -80,7 +92,7 @@ class INFTNC_VimeoVideo extends ET_Builder_Module {
 			),
 
             'vimeo_id' => array(
-				'label'           => esc_html__( 'Vimeo Video ID', 'nftnc-infinity-tnc-divi-modules' ),
+				'label'           => esc_html__( 'Vimeo Video ID', 'infinity-tnc-divi-modules' ),
 				'type'            => 'text',
 				'option_category' => 'basic_option',
                 'description'     => 'Use Vimeo Video ID.',
@@ -244,6 +256,17 @@ class INFTNC_VimeoVideo extends ET_Builder_Module {
 		);
 	}
 
+	/**
+	 * Render module output
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param array  $attrs       List of unprocessed attributes
+	 * @param string $content     Content being processed
+	 * @param string $render_slug Slug of module that is used for rendering output
+	 *
+	 * @return string module's rendered output
+	 */
 	public function render( $attrs, $content, $render_slug ) {
 
         $vimeo_method       = $this->props['vimeo_method'];
@@ -271,9 +294,7 @@ class INFTNC_VimeoVideo extends ET_Builder_Module {
         ( 'on' === $vimeo_byline ) ? ( $byline_value = 1 ) : ( $byline_value = 0 );
 		( 'on' === $vimeo_playsinline ) ? ( $playsinline_value = 1 ) : ( $playsinline_value = 0 );
 
-		
-
-
+	
         if( 'vimeo_url' === $vimeo_method ) {
 
             // Vimeo URL 

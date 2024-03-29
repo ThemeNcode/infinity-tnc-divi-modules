@@ -10,18 +10,26 @@ class INFTNC_YoutubeEmbed extends ET_Builder_Module {
 		'author'     => 'ThemeNcode',
 		'author_uri' => 'https://themencode.com/',
 	);
-	
+
 	/**
 	 * Module properties initialization
 	 *
 	 * @since 1.0.0
 	 */
+
 	public function init() {
 
 		$this->name = esc_html__( 'Youtube Video - Infinity TNC', 'infinity-tnc-divi-modules' );
 		//Icon 
 		$this->icon_path        =  plugin_dir_path( __FILE__ ) . 'icon.svg';
         $this->main_css_element = "%%order_class%% .inftnc_youtube_embed iframe";
+		// This property will add CSS fields on Advanced > Custom CSS
+		$this->custom_css_fields = array(
+			'iframe' => array(
+				'label'    => esc_html__( 'Youtube', 'infinity-tnc-divi-modules' ),
+				'selector' => 'iframe',
+			),
+		);
         $this->settings_modal_toggles  = array(
 			'general'  => array(
 				'toggles' => array(
@@ -32,7 +40,7 @@ class INFTNC_YoutubeEmbed extends ET_Builder_Module {
 				),
 			),
 		);
-	}
+	 }
 
     /**
 	 * Module's advanced fields configuration
