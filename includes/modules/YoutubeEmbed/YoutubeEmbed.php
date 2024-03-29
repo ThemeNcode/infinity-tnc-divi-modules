@@ -16,7 +16,6 @@ class INFTNC_YoutubeEmbed extends ET_Builder_Module {
 	 *
 	 * @since 1.0.0
 	 */
-
 	public function init() {
 
 		$this->name = esc_html__( 'Youtube Video - Infinity TNC', 'infinity-tnc-divi-modules' );

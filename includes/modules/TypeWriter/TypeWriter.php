@@ -4,13 +4,18 @@ class INFTNC_TypeWriter extends ET_Builder_Module {
 
 	public $slug       = 'inftnc_type_writer';
 	public $vb_support = 'on';
-
+	// Module Credits (Appears at the bottom of the module settings modal)
 	protected $module_credits = array(
 		'module_uri' => 'https://themencode.com/',
 		'author'     => 'ThemeNcode',
 		'author_uri' => 'https://themencode.com/',
 	);
 
+	/**
+	 * Module properties initialization
+	 *
+	 * @since 1.0.0
+	 */
 	public function init() {
 
 		$this->name = esc_html__( 'Typewriter - Infinity TNC', 'infinity-tnc-divi-modules' );
@@ -135,6 +140,13 @@ class INFTNC_TypeWriter extends ET_Builder_Module {
 		);
    }
 
+    /**
+	 * Module's specific fields
+	 * 
+	 * @since 1.0.0
+	 *
+	 * @return array
+	 */
 	public function get_fields() {
 
 		return array(
@@ -206,7 +218,17 @@ class INFTNC_TypeWriter extends ET_Builder_Module {
 
 		);
 	}
-
+	/**
+	 * Render module output
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param array  $attrs       List of unprocessed attributes
+	 * @param string $content     Content being processed
+	 * @param string $render_slug Slug of module that is used for rendering output
+	 *
+	 * @return string module's rendered output
+	 */
 	public function render( $attrs, $content, $render_slug ) {
 
         $before_text            = $this->props['before_text'];
@@ -225,7 +247,7 @@ class INFTNC_TypeWriter extends ET_Builder_Module {
 		( 'on' === $typing_loop ) ? ( $loop_vale = true ) : ( $loop_vale = false );
 	
         $typing_text = sprintf('<span class="inftnc_typewriter_text" data-initial-text="%1$s" data-initial-speed="%2$s"data-initial-backspeed="%3$s" data-initial-pause="%4$s"data-initial-cursor="%5$s"data-initial-loop="%6$s"></span>',
-            /* 01 */  $text,
+            /* 01 */  esc_html( $text ),
             /* 02 */  $typing_speed,
             /* 03 */  $typing_backspped,
             /* 05 */  $typing_pause,
@@ -242,9 +264,9 @@ class INFTNC_TypeWriter extends ET_Builder_Module {
             <div>
 
         ',
-            /* 01 */  $before_text,
-            /* 02 */  $after_text,
-            /* 03 */  $typing_text,
+            /* 01 */ esc_html( $before_text ),
+            /* 02 */ esc_html( $after_text ), 
+            /* 03 */ $typing_text, 
 			/* 04 */ et_pb_process_header_level( $header_level, 'h1' ),
         );
 
