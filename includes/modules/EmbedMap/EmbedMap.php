@@ -19,7 +19,7 @@ class INFTNC_EmbedMap extends ET_Builder_Module {
 	 */
 	
 	 public function init() {
-		$this->name = esc_html__('Embed Map - Infinity TNC', 'inftnc-infinity-tnc-divi-modules' );
+		$this->name = esc_html__('Embed Map - Infinity TNC', 'infinity-tnc-divi-modules' );
 		//Icon 
 		$this->icon_path        =  plugin_dir_path( __FILE__ ) . 'icon.svg';
 		$this->main_css_element = "%%order_class%% .inftnc_embed_map iframe";
@@ -34,7 +34,7 @@ class INFTNC_EmbedMap extends ET_Builder_Module {
 		$this->settings_modal_toggles  = array(
 			'general'  => array(
 				'toggles' => array(
-					'main_content' => esc_html__( 'Embed Map', 'inftnc-infinity-tnc-divi-modules' ),
+					'main_content' => esc_html__( 'Embed Map', 'infinity-tnc-divi-modules' ),
 				),
 			),
 		);
@@ -76,23 +76,23 @@ class INFTNC_EmbedMap extends ET_Builder_Module {
 	public function get_fields() {
 		return array(
 			'source_type' => array(
-				'label'           => esc_html__( 'Source Type', 'inftnc-infinity-tnc-divi-modules' ),
+				'label'           => esc_html__( 'Source Type', 'infinity-tnc-divi-modules' ),
 				'type'            => 'select',
 				'default'	      => 'latitude_longitude',
 				'options'         => array(
-					'latitude_longitude'            => esc_html__( 'Latitude & Longitude', 'inftnc-infinity-tnc-divi-modules' ),
-					'emebed_code'           	 	=> esc_html__( 'Embed Code', 'inftnc-infinity-tnc-divi-modules' ),
+					'latitude_longitude'            => esc_html__( 'Latitude & Longitude', 'infinity-tnc-divi-modules' ),
+					'emebed_code'           	 	=> esc_html__( 'Embed Code', 'infinity-tnc-divi-modules' ),
 				),
 				'toggle_slug'     => 'main_content',
                 
 			),
 			
 			'latitude_longitude' => array(
-				'label'           => esc_html__( 'Latitude & Longitude', 'inftnc-infinity-tnc-divi-modules' ),
+				'label'           => esc_html__( 'Latitude & Longitude', 'infinity-tnc-divi-modules' ),
 				'type'            => 'text',
 				'default'		  => '40.658620799731196,-73.99475680760217',
 				'option_category' => 'basic_option',
-				'description'     => esc_html__( 'Map Latitude & Longitude', 'inftnc-infinity-tnc-divi-modules' ),
+				'description'     => esc_html__( 'Map Latitude & Longitude', 'infinity-tnc-divi-modules' ),
 				'toggle_slug'     => 'main_content',
 				'show_if'         => array(
 					'source_type' => 'latitude_longitude',
@@ -100,7 +100,7 @@ class INFTNC_EmbedMap extends ET_Builder_Module {
 			),
 
 			'map_zoom' => array(
-				'label'           => esc_html__( 'Zoom', 'inftnc-infinity-tnc-divi-modules' ),
+				'label'           => esc_html__( 'Zoom', 'infinity-tnc-divi-modules' ),
 				'type'            => 'range',
 				'default'          => '14',
                 'range_settings' => array(
@@ -115,10 +115,10 @@ class INFTNC_EmbedMap extends ET_Builder_Module {
 			),
 
 			'embed_code' => array(
-				'label'           => esc_html__( 'Embed Code', 'inftnc-infinity-tnc-divi-modules' ),
+				'label'           => esc_html__( 'Embed Code', 'infinity-tnc-divi-modules' ),
 				'type'            => 'textarea',
 				'option_category' => 'basic_option',
-				'description'     => esc_html__( 'Map Longitude', 'inftnc-infinity-tnc-divi-modules' ),
+				'description'     => esc_html__( 'Map Longitude', 'infinity-tnc-divi-modules' ),
 				'toggle_slug'     => 'main_content',
 				'show_if'         => array(
 					'source_type' => 'emebed_code',
