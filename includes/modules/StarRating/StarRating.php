@@ -218,9 +218,7 @@ class INFTNC_StarRating extends ET_Builder_Module {
 				'options'         => et_builder_get_text_orientation_options( array( 'justified' ) ),
 				'tab_slug'        => 'advanced',
 				'toggle_slug'     => 'rating',
-			),
-
-			
+			),			
 		);
 	}
 
@@ -252,8 +250,8 @@ class INFTNC_StarRating extends ET_Builder_Module {
 
 			$rating_number = sprintf(
 				'<span class="inftnc_star_rating_number">(%2$s / %1$s )</span> ',
-				/** 01 */  $star_count,
-				/** 02 */  $rating,
+				/** 01 */ esc_attr( $star_count ) ,
+				/** 02 */ esc_attr( $rating ),
 			);
 	
 		} else {
@@ -287,14 +285,14 @@ class INFTNC_StarRating extends ET_Builder_Module {
 			</div>', 
 
 			/* 01 */   esc_html( $rating_title ),
-			/* 02 */   $rating,
-			/* 03 */   $star_count,
-			/* 04 */   $empty_color,
-			/* 05 */   $active_color,
-			/* 06 */   $icon_size,
+			/* 02 */   esc_attr( $rating ),
+			/* 03 */   esc_attr( $star_count ),
+			/* 04 */   esc_attr( $empty_color ) ,
+			/* 05 */   esc_attr( $active_color ),
+			/* 06 */   esc_attr( $icon_size ) ,
 			/* 07 */   $rating_number,
 			/* 08 */   et_pb_process_header_level( $header_level, 'h1' ),
-			/* 09 */   $star_alignment,
+			/* 09 */   esc_attr( $star_alignment ), 
 		
 		);
 		return $output;
