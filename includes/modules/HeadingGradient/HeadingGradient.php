@@ -368,7 +368,7 @@ class INFTNC_HeadingGradient extends ET_Builder_Module {
 					%2$s
 				</%1$s>',
 			/* 01 */ et_pb_process_header_level( $header_level, 'h1' ),
-			/* 02 */ esc_attr( $gradient_title ),
+			/* 02 */ esc_html( $gradient_title ),
 		);
 
        //Gradient Options
