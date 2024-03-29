@@ -4,37 +4,42 @@ class INFTNC_StarRating extends ET_Builder_Module {
 
 	public $slug       = 'inftnc_star_rating';
 	public $vb_support = 'on';
-
+	// Module Credits (Appears at the bottom of the module settings modal)
 	protected $module_credits = array(
 		'module_uri' => 'https://themencode.com/',
 		'author'     => 'ThemeNcode',
 		'author_uri' => 'https://themencode.com/',
 	);
 
+	/**
+	 * Module properties initialization
+	 *
+	 * @since 1.0.0
+	 */
 	public function init() {
 
-		$this->name = esc_html__( 'Star Rating - Infinity TNC', 'inftnc-infinity-tnc-divi-modules' );
+		$this->name = esc_html__( 'Star Rating - Infinity TNC', 'infinity-tnc-divi-modules' );
 		//Icon 
 		$this->icon_path        =  plugin_dir_path( __FILE__ ) . 'icon.svg';
 
 		$this->settings_modal_toggles  = array(
 			'general'  => array(
 				'toggles' => array(
-					'main_content' => esc_html__( 'Rating', 'inftnc-infinity-tnc-divi-modules' ),
+					'main_content' => esc_html__( 'Rating', 'infinity-tnc-divi-modules' ),
 				),
 			),
 			'advanced' => array(
 				'toggles' => array(
 					'rating'   => array(
-						'title' => esc_html__( 'Star Style', 'inftnc-infinity-tnc-divi-modules' ),
+						'title' => esc_html__( 'Star Style', 'infinity-tnc-divi-modules' ),
 						'priority' => 50,
 					),
 					'title'   => array(
-						'title' => esc_html__( 'Title Text', 'inftnc-infinity-tnc-divi-modules' ),
+						'title' => esc_html__( 'Title Text', 'infinity-tnc-divi-modules' ),
 						'priority' => 51,
 					),
 					'rating_text'   => array(
-						'title' => esc_html__( 'Rating Text', 'inftnc-infinity-tnc-divi-modules' ),
+						'title' => esc_html__( 'Rating Text', 'infinity-tnc-divi-modules' ),
 						'priority' => 52,
 					),
 				),
@@ -53,7 +58,7 @@ class INFTNC_StarRating extends ET_Builder_Module {
 		return array(
 			'fonts'           => array(
 				'title' => array(
-					'label'          => esc_html__( 'Title','inftnc-infinity-tnc-divi-modules' ),
+					'label'          => esc_html__( 'Title','infinity-tnc-divi-modules' ),
 					'css'            => array(
 						'main' => [
 							'%%order_class%% h1.inftnc_rating_title',
@@ -78,12 +83,12 @@ class INFTNC_StarRating extends ET_Builder_Module {
 					),
 					'header_level'   => array(
 						'default' => 'h1',
-						'label'   => esc_html__( 'Heading Level', 'inftnc-infinity-tnc-divi-modules' ),
+						'label'   => esc_html__( 'Heading Level', 'infinity-tnc-divi-modules' ),
 					),
 				),
 
 				'rating_number' => array(
-					'label'          => esc_html__( 'Rating Number','inftnc-infinity-tnc-divi-modules' ),
+					'label'          => esc_html__( 'Rating Number','infinity-tnc-divi-modules' ),
 					'css'            => array(
 						'main' => [
 							'%%order_class%% .inftnc_star_rating_number',
@@ -109,12 +114,18 @@ class INFTNC_StarRating extends ET_Builder_Module {
 				 'text'     => false,
 		);
    }
-
+    /**
+	 * Module's specific fields
+	 * 
+	 * @since 1.0.0
+	 *
+	 * @return array
+	 */
 	public function get_fields() {
 		return array(
 
 			'count_star' => array(
-				'label'           => esc_html__( 'Rating Scale', 'inftnc-infinity-tnc-divi-modules' ),
+				'label'           => esc_html__( 'Rating Scale', 'infinity-tnc-divi-modules' ),
 				'type'            => 'range',
                 'default'         => 5,
                 'range_settings' => array(
@@ -126,7 +137,7 @@ class INFTNC_StarRating extends ET_Builder_Module {
 			),
 		
 			'rating' => array(
-				'label'           => esc_html__( 'Rating Value', 'inftnc-infinity-tnc-divi-modules' ),
+				'label'           => esc_html__( 'Rating Value', 'infinity-tnc-divi-modules' ),
 				'type'            => 'range',
                 'default'         => 5,
                 'range_settings' => array(
@@ -139,7 +150,7 @@ class INFTNC_StarRating extends ET_Builder_Module {
 
 			
 			'title' => array(
-				'label'           => esc_html__( 'Title', 'inftnc-infinity-tnc-divi-modules' ),
+				'label'           => esc_html__( 'Title', 'infinity-tnc-divi-modules' ),
 				'type'            => 'text',
 				'toggle_slug'     => 'main_content',
 			),
@@ -149,14 +160,14 @@ class INFTNC_StarRating extends ET_Builder_Module {
 				'type'              => 'yes_no_button',
 				'default'			=> 'off',
 				'options'           => array(
-					'on'  => esc_html__( 'Show', 'inftnc-infinity-tnc-divi-modules' ),
-					'off' => esc_html__( 'Hide', 'inftnc-infinity-tnc-divi-modules' ),
+					'on'  => esc_html__( 'Show', 'infinity-tnc-divi-modules' ),
+					'off' => esc_html__( 'Hide', 'infinity-tnc-divi-modules' ),
 				),
 				'toggle_slug'     => 'main_content',
 			),
 
 			'icon_color' => array(
-				'label'           => esc_html__( 'Star Icon Color', 'inftnc-infinity-tnc-divi-modules' ),
+				'label'           => esc_html__( 'Star Icon Color', 'infinity-tnc-divi-modules' ),
 				'type'            => 'color',
 				'default'		  => '#EBC03F',
 				'tab_slug'        => 'advanced',
@@ -165,7 +176,7 @@ class INFTNC_StarRating extends ET_Builder_Module {
 			),
 
 			'empty_color' => array(
-				'label'           => esc_html__( 'Star Icon Empty Color', 'inftnc-infinity-tnc-divi-modules' ),
+				'label'           => esc_html__( 'Star Icon Empty Color', 'infinity-tnc-divi-modules' ),
 				'type'            => 'color',
 				'default'		  => '#AAAAAA',
 				'tab_slug'        => 'advanced',
@@ -174,7 +185,7 @@ class INFTNC_StarRating extends ET_Builder_Module {
 			),
 
 			'star_size' => array(
-				'label'           => esc_html__( 'Star Size', 'inftnc-infinity-tnc-divi-modules' ),
+				'label'           => esc_html__( 'Star Size', 'infinity-tnc-divi-modules' ),
 				'type'            => 'range',
                 'default'         => 25,
                 'range_settings' => array(
@@ -187,7 +198,7 @@ class INFTNC_StarRating extends ET_Builder_Module {
 			),
 
 			'gap' => array(
-				'label'           => esc_html__( 'Star Gap', 'inftnc-infinity-tnc-divi-modules' ),
+				'label'           => esc_html__( 'Star Gap', 'infinity-tnc-divi-modules' ),
 				'type'            => 'range',
                 'default'         => 0,
                 'range_settings' => array(
@@ -200,8 +211,8 @@ class INFTNC_StarRating extends ET_Builder_Module {
 			),
 
 			'star_alignment' => array(
-				'label'           => esc_html__( 'Star Alignment', 'inftnc-infinity-tnc-divi-modules' ),
-				'description'     => esc_html__( 'Align your start to the left, right or center of the module.', 'inftnc-infinity-tnc-divi-modules' ),
+				'label'           => esc_html__( 'Star Alignment', 'infinity-tnc-divi-modules' ),
+				'description'     => esc_html__( 'Align your start to the left, right or center of the module.', 'infinity-tnc-divi-modules' ),
 				'type'            => 'text_align',
 				'option_category' => 'configuration',
 				'options'         => et_builder_get_text_orientation_options( array( 'justified' ) ),
@@ -213,6 +224,17 @@ class INFTNC_StarRating extends ET_Builder_Module {
 		);
 	}
 
+	/**
+	 * Render module output
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param array  $attrs       List of unprocessed attributes
+	 * @param string $content     Content being processed
+	 * @param string $render_slug Slug of module that is used for rendering output
+	 *
+	 * @return string module's rendered output
+	 */
 	public function render( $attrs, $content, $render_slug ) {
 
 		$rating_title     = $this->props['title']; 
