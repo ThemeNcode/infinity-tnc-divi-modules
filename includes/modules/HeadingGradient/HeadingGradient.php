@@ -118,7 +118,7 @@ class INFTNC_HeadingGradient extends ET_Builder_Module {
 		return array(
 			'gradient_title' => array(
 				'label'           => esc_html__( 'Title', 'infinity-tnc-divi-modules' ),
-				'type'            => 'textarea',
+				'type'            => 'text',
                 'default'         =>  esc_html__( 'Your Title Goes Here', 'infinity-tnc-divi-modules' ),
 				'option_category' => 'basic_option',
 				'description'     => esc_html__( 'Content entered here will appear inside the module.', 'infinity-tnc-divi-modules' ),
@@ -350,7 +350,7 @@ class INFTNC_HeadingGradient extends ET_Builder_Module {
 	 * @return string module's rendered output
 	 */
 	public function render( $attrs, $content, $render_slug ) {
-		
+
 		$gradient_title     = $this->props['gradient_title'];
 		$header_level       = $this->props['title_level'];
         $gradient_options   = $this->props['gradient_options'];
@@ -360,7 +360,7 @@ class INFTNC_HeadingGradient extends ET_Builder_Module {
 					%2$s
 				</%1$s>',
 			/* 01 */ et_pb_process_header_level( $header_level, 'h1' ),
-			/* 02 */ $gradient_title,
+			/* 02 */ esc_attr( $gradient_title ),
 		);
 
        //Gradient Options
