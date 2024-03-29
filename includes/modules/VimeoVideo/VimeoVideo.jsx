@@ -19,8 +19,6 @@ class VimeoVideo extends Component {
 
        const videoId = this.getVimeooVideoId(vimeo_url);
 
-       console.log(videoId);
-       
        if(videoId) {
 
         const iframeSrc = `https://player.vimeo.com/video/${videoId}?&autoplay=${autoplay}&loop=${loop}&muted=${mute}&controls=${player_control}&title=${intro_title}&byline=${intro_byline}&portrait=${intro_portait}&#t=${vimeo_start}&color=${vimeo_color}&playsinline=${playsinline}`;
@@ -28,7 +26,7 @@ class VimeoVideo extends Component {
         vimeoIframe = (
 
           <iframe 
-            src={iframeSrc} 
+            src={iframeSrc} åå
             frameborder="0" 
             allow="autoplay; fullscreen; picture-in-picture" 
             allowfullscreen

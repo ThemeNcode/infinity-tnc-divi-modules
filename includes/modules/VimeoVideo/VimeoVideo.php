@@ -312,32 +312,32 @@ class INFTNC_VimeoVideo extends ET_Builder_Module {
 
             $output = sprintf('<iframe src="https://player.vimeo.com/video/%1$s?&autoplay=%11$s&loop=%3$s&muted=%2$s&controls=%4$s&title=%6$s&byline=%7$s&portrait=%5$s&#t=%8$s&color=%9$s&playsinline=%10$s" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>',
                 /* 01 */ esc_attr( $vimeo_exact_id ),
-                /* 02 */ $mute_value,
-                /* 03 */ $loop_value,
-                /* 04 */ $control_value,  
-                /* 05 */ $portait_value,
-                /* 06 */ $title_value,
-                /* 07 */ $byline_value,
-                /* 08 */ $vimeo_start,
-				/* 09 */ $vimeo_color,
-				/* 10 */ $playsinline_value,
-				/* 11 */ $autoplay_value
+                /* 02 */ esc_attr( $mute_value ),
+                /* 03 */ esc_attr( $loop_value ),
+                /* 04 */ esc_attr( $control_value ),  
+                /* 05 */ esc_attr( $portait_value ),
+                /* 06 */ esc_attr( $title_value ),
+                /* 07 */ esc_attr( $byline_value ),
+                /* 08 */ esc_attr( $vimeo_start ),
+				/* 09 */ esc_attr( $vimeo_color ),
+				/* 10 */ esc_attr( $playsinline_value ),
+				/* 11 */ esc_attr( $autoplay_value )
              );
 			
         } elseif ( 'vimeo_id' === $vimeo_method ) {
 
             $output = sprintf('<iframe src="https://player.vimeo.com/video/%1$s?&autoplay=%11$s&loop=%3$s&muted=%2$s&controls=%4$s&title=%6$s&byline=%7$s&portrait=%5$s&#t=%8$s&color=%9$s&playsinline=%10$s" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>',
                 /* 01 */ esc_attr( $vimeo_id ),
-                /* 02 */ $mute_value,
-                /* 03 */ $loop_value,
-                /* 04 */ $control_value,  
-                /* 05 */ $portait_value,
-                /* 06 */ $title_value,
-                /* 07 */ $byline_value,
-                /* 08 */ $vimeo_start,
-				/* 09 */ $vimeo_color,
-				/* 10 */ $playsinline_value,
-				/* 11 */ $autoplay_value
+                /* 02 */ esc_attr( $mute_value ),
+                /* 03 */ esc_attr( $loop_value ),
+                /* 04 */ esc_attr( $control_value ),  
+                /* 05 */ esc_attr( $portait_value ),
+                /* 06 */ esc_attr( $title_value ) ,
+                /* 07 */ esc_attr( $byline_value ),
+                /* 08 */ esc_attr( $vimeo_start ) ,
+				/* 09 */ esc_attr( $vimeo_color ),
+				/* 10 */ esc_attr( $playsinline_value ),
+				/* 11 */ esc_attr( $autoplay_value ),
              );
         } elseif ( 'embed_code' == $vimeo_method ) {
 
