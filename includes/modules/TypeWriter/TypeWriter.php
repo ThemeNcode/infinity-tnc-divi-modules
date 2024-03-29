@@ -248,11 +248,11 @@ class INFTNC_TypeWriter extends ET_Builder_Module {
 	
         $typing_text = sprintf('<span class="inftnc_typewriter_text" data-initial-text="%1$s" data-initial-speed="%2$s"data-initial-backspeed="%3$s" data-initial-pause="%4$s"data-initial-cursor="%5$s"data-initial-loop="%6$s"></span>',
             /* 01 */  esc_html( $text ),
-            /* 02 */  $typing_speed,
-            /* 03 */  $typing_backspped,
-            /* 05 */  $typing_pause,
-            /* 06 */  $typing_cursor,
-            /* 07 */  $loop_vale, 
+            /* 02 */  esc_attr( $typing_speed ),
+            /* 03 */  esc_attr( $typing_backspped ),
+            /* 05 */  esc_attr( $typing_pause ),
+            /* 06 */  esc_attr( $typing_cursor ),
+            /* 07 */  esc_attr( $loop_vale ),
          );
 
 		$output = sprintf('
