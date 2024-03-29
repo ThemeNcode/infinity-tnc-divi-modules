@@ -284,26 +284,26 @@ class INFTNC_YoutubeEmbed extends ET_Builder_Module {
 
             $output = sprintf('<iframe src="https://www.youtube.com/embed/%1$s?controls=%7$s&amp;autoplay=%4$s&amp;loop=%6$s&amp;mute=%5$s&amp;start=%2$s&amp;end=%3$s&amp;rel=%8$s" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
                 /* 01 */ esc_attr( $youtube_exact_id ),
-				/* 02 */ $video_start,
-				/* 03 */ $video_end,
-				/* 04 */ $autoplay_value,
-				/* 05 */ $mute_value,
-				/* 06 */ $loop_value,
-				/* 07 */ $control_value,
-				/* 08 */ $rel_value
+				/* 02 */ esc_attr( $video_start ),
+				/* 03 */ esc_attr( $video_end ),
+				/* 04 */ esc_attr( $autoplay_value ) ,
+				/* 05 */ esc_attr( $mute_value ),
+				/* 06 */ esc_attr( $loop_value ),
+				/* 07 */ esc_attr( $control_value ),
+				/* 08 */ esc_attr( $rel_value ),
             );
 
         } elseif ( 'video' === $video_type && 'video_id' === $video_method ) { 
 
            $output = sprintf('<iframe src="https://www.youtube.com/embed/%1$s?controls=%7$s&amp;autoplay=%4$s&amp;loop=%6$s&amp;mute=%5$s&amp;start=%2$s&amp;end=%3$s&amp;rel=%8$s" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
                 /* 01 */ esc_attr( $video_id ),
-				/* 02 */ $video_start,
-				/* 03 */ $video_end,
-				/* 04 */ $autoplay_value,
-				/* 05 */ $mute_value,
-				/* 06 */ $loop_value,
-				/* 07 */ $control_value,
-				/* 08 */ $rel_value
+				/* 02 */ esc_attr( $video_start ) ,
+				/* 03 */ esc_attr( $video_end ) ,
+				/* 04 */ esc_attr( $autoplay_value ) ,
+				/* 05 */ esc_attr( $mute_value ),
+				/* 06 */ esc_attr( $loop_value ),
+				/* 07 */ esc_attr( $control_value ) ,
+				/* 08 */ esc_attr( $rel_value ),
             );
 
         } elseif ( 'video' === $video_type && 'embed_code' === $video_method ) { 
@@ -321,26 +321,26 @@ class INFTNC_YoutubeEmbed extends ET_Builder_Module {
 
 			$output = sprintf('<iframe src="https://www.youtube.com/embed/videoseries?controls=%7$s&amp;autoplay=%4$s&amp;loop=%6$s&amp;mute=%5$s&amp;start=%2$s&amp;end=%3$s&amp;rel=%8$s&amp;list=%1$s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
 				/* 01 */ esc_attr( $youtube_exact_id ),
-				/* 02 */ $video_start,
-				/* 03 */ $video_end,
-				/* 04 */ $autoplay_value,
-				/* 05 */ $mute_value,
-				/* 06 */ $loop_value,
-				/* 07 */ $control_value,
-				/* 08 */ $rel_value
+				/* 02 */ esc_attr( $video_start ),
+				/* 03 */ esc_attr( $video_end ),
+				/* 04 */ esc_attr( $autoplay_value ),
+				/* 05 */ esc_attr( $mute_value ),
+				/* 06 */ esc_attr( $loop_value ),
+				/* 07 */ esc_attr( $control_value ),
+				/* 08 */ esc_attr( $rel_value ),
             );
 
         } elseif ( 'playlist' === $video_type && 'video_id' === $video_method ) {
  
             $output = sprintf('<iframe src="https://www.youtube.com/embed/videoseries?controls=%7$s&amp;autoplay=%4$s&amp;loop=%6$s&amp;mute=%5$s&amp;start=%2$s&amp;end=%3$s&amp;rel=%8$s&amp;list=%1$s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
 				/* 01 */ esc_attr( $video_id ),
-				/* 02 */ $video_start,
-				/* 03 */ $video_end,
-				/* 04 */ $autoplay_value,
-				/* 05 */ $mute_value,
-				/* 06 */ $loop_value,
-				/* 07 */ $control_value,
-				/* 08 */ $rel_value
+				/* 02 */ esc_attr( $video_start ),
+				/* 03 */ esc_attr( $video_end ),
+				/* 04 */ esc_attr( $autoplay_value ),
+				/* 05 */ esc_attr( $mute_value ),
+				/* 06 */ esc_attr( $loop_value ),
+				/* 07 */ esc_attr( $control_value ),
+				/* 08 */ esc_attr( $rel_value ),
             );
         } elseif ( 'playlist' === $video_type && 'embed_code' === $video_method ) {
 
