@@ -46,13 +46,9 @@ class Inftnc_divi_modules_public {
         wp_register_script('slick',plugin_dir_url(__FILE__)."js/slick.min.js", array('jquery'),'1.8.1',true );
         wp_register_script('inftnc-slick',plugin_dir_url(__FILE__)."js/inftnc-slick.js",array('jquery'),'1.0.0',true);
       
-       
-      
     }
 
-                   
-
-
+                
 }
 
 

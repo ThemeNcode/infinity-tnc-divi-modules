@@ -41,7 +41,6 @@ endif;
 /**
  *   Includes Files  
  */
-require_once __DIR__  ."/lib/vendor/autoload.php";
 require_once __DIR__ ."/includes/admin/breadcrumbs.php";
 require_once __DIR__ ."/public/inftnc-divi-modules-public.php";
 
