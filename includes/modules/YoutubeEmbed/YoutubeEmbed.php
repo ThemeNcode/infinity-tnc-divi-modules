@@ -10,7 +10,11 @@ class INFTNC_YoutubeEmbed extends ET_Builder_Module {
 		'author'     => 'ThemeNcode',
 		'author_uri' => 'https://themencode.com/',
 	);
-
+	/**
+	 * Module properties initialization
+	 *
+	 * @since 1.0.0
+	 */
 	public function init() {
 
 		$this->name = esc_html__( 'Youtube Video - Infinity TNC', 'inftnc-infinity-tnc-divi-modules' );
