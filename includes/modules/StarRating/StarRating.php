@@ -286,7 +286,7 @@ class INFTNC_StarRating extends ET_Builder_Module {
 					</div>
 			</div>', 
 
-			/* 01 */   $rating_title,
+			/* 01 */   esc_html( $rating_title ),
 			/* 02 */   $rating,
 			/* 03 */   $star_count,
 			/* 04 */   $empty_color,
