@@ -19,7 +19,7 @@ class ImageCarousel extends ET_Builder_Module {
 		// Module name
 		$this->name                    = esc_html__( 'Image Carousel - Infinity TNC', 'infinity-tnc-divi-modules' );
 		//Icon 
-		$this->icon_path        =  plugin_dir_path( __FILE__ ) . 'icon.svg';
+		$this->icon_path       		   =  plugin_dir_path( __FILE__ ) . 'icon.svg';
         $this->child_item_text 		   = esc_html__( 'Image', 'infinity-tnc-divi-modules' );
 
 		// Module Icon
@@ -311,7 +311,7 @@ class ImageCarousel extends ET_Builder_Module {
 			),
 
 			'navigation_icon_color' => array(
-                'label'           => esc_html__( 'Icon Color', 'inftnc-infinity-tnc-divi-modules' ),
+                'label'           => esc_html__( 'Icon Color', 'infinity-tnc-divi-module' ),
                 'type'            => 'color',
                 'tab_slug'        => 'advanced',
                 'toggle_slug'     => 'navigation',
@@ -319,7 +319,7 @@ class ImageCarousel extends ET_Builder_Module {
             ),
 
 			'navigation_bg_color' => array(
-                'label'           => esc_html__( 'Background Color', 'inftnc-infinity-tnc-divi-modules' ),
+                'label'           => esc_html__( 'Background Color', 'infinity-tnc-divi-module' ),
                 'type'            => 'color',
                 'tab_slug'        => 'advanced',
                 'toggle_slug'     => 'navigation',
@@ -1141,22 +1141,22 @@ class ImageCarousel extends ET_Builder_Module {
 		$output = sprintf(
 			'<div dir="%13$s" class="inftnc_carousels_image_wrapper" data-slides-to-show="%2$s" data-slide-scroll="%3$s" data-animation-speed="%4$s" data-autoplay="%5$s" data-autoplay-speed="%6$s" data-navigation="%7$s" data-pagination="%8$s" data-infinite="%9$s" data-pause-hover="%10$s" data-swipe="%11$s" data-rtl="%12$s" data-slide-tablet="%14$s" data-slide-phone="%15$s" data-scroll-tablet="%16$s" data-scroll-phone="%17$s">%1$s</div>',
 			/* 01 */ et_sanitized_previously( $this->content ),
-			/* 02 */ $slides_to_show,
-			/* 03 */ $slides_to_scroll,
-			/* 04 */ $animation_speed,
-			/* 05 */ $autoplay_value,
-			/* 06 */ $autoplay_speed,
-			/* 07 */ $navigation_value,
-			/* 08 */ $pagination_value,
-			/* 09 */ $infinite_value,
-			/* 10 */ $pause_on_hover_value,
-			/* 11 */ $swipe_value,
-			/* 12 */ $rtl_value,
-			/* 13 */ $dir_value,
-			/* 14 */ $slides_to_show_tablet,
-			/* 15 */ $slides_to_show_phone,
-			/* 16 */ $slides_to_scroll_tablet,
-			/* 17 */ $slides_to_scroll_phone	
+			/* 02 */ esc_html( $slides_to_show ),
+			/* 03 */ esc_html( $slides_to_scroll ),
+			/* 04 */ esc_html( $animation_speed ),
+			/* 05 */ esc_html( $autoplay_value ),
+			/* 06 */ esc_html( $autoplay_speed ),
+			/* 07 */ esc_html( $navigation_value ),
+			/* 08 */ esc_html( $pagination_value ) ,
+			/* 09 */ esc_html( $infinite_value ),
+			/* 10 */ esc_html( $pause_on_hover_value ) ,
+			/* 11 */ esc_html( $swipe_value ),
+			/* 12 */ esc_html( $rtl_value ),
+			/* 13 */ esc_html( $dir_value ),
+			/* 14 */ esc_html( $slides_to_show_tablet ),
+			/* 15 */ esc_html( $slides_to_show_phone ),
+			/* 16 */ esc_html( $slides_to_scroll_tablet ) ,
+			/* 17 */ esc_html( $slides_to_scroll_phone ), 	
  		);
 
 		return  $output ;

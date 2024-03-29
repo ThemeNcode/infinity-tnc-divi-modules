@@ -97,8 +97,8 @@ class ImageCarouselChild extends ET_Builder_Module {
 
 		$render_image = sprintf('
 				<img class="image_carousel_img" src="%1$s" alt="%2$s">',
-				/*01*/	$image,
-				/*02*/	$alt,
+				/*01*/	esc_url( $image ),
+				/*02*/	esc_attr( $alt ),
 		);
 		// Render module content
 		$output = sprintf('

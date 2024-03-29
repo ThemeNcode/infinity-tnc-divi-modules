@@ -68,7 +68,7 @@ class LogoCarouselChild extends ET_Builder_Module {
 				'label'           => esc_html__( 'Logo Alternative Text', 'infinity-tnc-divi-modules' ),
 				'type'            => 'text',
 				'option_category' => 'basic_option',
-				'description'     => esc_html__( 'This defines the HTML ALT text. A short description of your image can be placed here.', 'infinity-tnc-divi-modules' ),
+				'description'     => esc_html__( 'This defines the HTML ALT text. A short description of your logo can be placed here.', 'infinity-tnc-divi-modules' ),
 				'toggle_slug'     => 'main_content',
 				'dynamic_content' => 'text',
 			),
