@@ -109,7 +109,7 @@ class LogoCarouselChild extends ET_Builder_Module {
 
 		$render_logo = sprintf('
 				<img class="logo_carousel_img" src="%1$s" alt="%2$s">',
-				/*01*/	esc_url( $logo ),
+				/*01*/	$logo,
 				/*02*/	esc_attr( $alt ),
 		);
 		// Render module content
