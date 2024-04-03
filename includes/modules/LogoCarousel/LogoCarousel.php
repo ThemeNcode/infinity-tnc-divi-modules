@@ -502,10 +502,6 @@ class LogoCarousel extends ET_Builder_Module {
 		( 'on' === $rtl  ) ? ( $rtl_value = 'true' ) : ( $rtl_value = 'false' );
 		( 'on' === $rtl  ) ? ( $dir_value = 'rtl' ) : ( $dir_value = '' );
 
-		//Enqueue Style 
-		wp_enqueue_style('slick');
-		wp_enqueue_style('slick-theme');
-
 		// Enqueue Script
 		wp_enqueue_script('slick');
 		wp_enqueue_script('inftnc-slick');

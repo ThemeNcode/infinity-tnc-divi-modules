@@ -9,7 +9,7 @@ class INFTNC_InfinityTncDiviModules extends DiviExtension {
 	 *
 	 * @var string
 	 */
-	public $gettext_domain = 'inftnc-infinity-tnc-divi-modules';
+	public $gettext_domain = 'infinity-tnc-divi-modules';
 
 	/**
 	 * The extension's WP Plugin name.
