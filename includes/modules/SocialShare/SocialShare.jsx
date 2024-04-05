@@ -302,15 +302,29 @@ class SocialShare extends Component {
               }]);
             } 
      }
+     //only icon 
 
-     if (props.button_layout === 'only_icon' && props.button_shape ==='button_circle') {
+     if (props.button_layout === 'only_icon' && (props.button_shape === 'button_circle' || props.button_shape === 'button_rounded' || props.button_shape === 'button_square' )) {
       additionalCss.push([{
         selector: '%%order_class%% .inftnc_social_text',
         declaration: `display:none;`,
       }]);
+    }
+
+    if (props.button_layout === 'only_icon' && (props.button_shape === 'button_rounded' || props.button_shape === 'button_square' )) {
+      additionalCss.push([{
+        selector: '%%order_class%% .inftnc_share_link',
+        declaration: `justify-content:center;`,
+      }]);
+    }
+ 
+    if (props.button_layout === 'only_text') {
+      additionalCss.push([{
+        selector: '%%order_class%% .inftnc_social_icon',
+        declaration: `display:none;`,
+      }]);
     } 
       
-
     return additionalCss;
   }
 

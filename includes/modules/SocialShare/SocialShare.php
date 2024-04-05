@@ -248,7 +248,8 @@ class SocialShare extends ET_Builder_Module {
 			$left = $button_data[3];
 		}
 
-	
+		
+
 		//Button Bg Color
 
 		if( '' !== $this->props['button_bg'] ) { 
@@ -275,6 +276,22 @@ class SocialShare extends ET_Builder_Module {
 					'declaration' => sprintf(
 						'color: %1$s;',
 						$this->props['icon_color']
+					),
+				)
+			);
+		}
+
+		//  Buton only icon spacing 
+
+		if( 'only_icon' === $this->props['button_layout'] && ('button_square' === $this->props['button_shape'] || 'button_rounded' === $this->props['button_shape'] ) ) { 
+			ET_Builder_Element::set_style(
+				$render_slug,
+				array(
+					'selector'    => '%%order_class%% .inftnc_share_link',
+					'declaration' => sprintf(
+						'
+						justify-content:center !important;
+						',
 					),
 				)
 			);
@@ -862,6 +879,8 @@ class SocialShare extends ET_Builder_Module {
 	}
 		     
   }
+
+
 
 	 	// Remove automatically added classnames
 		$output = sprintf(
