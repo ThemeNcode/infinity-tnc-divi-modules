@@ -21,14 +21,14 @@ class INFTNC_BreadCrumbs extends ET_Builder_Module {
 			
 			'general'  => array(
 				'toggles' => array(
-					'main_content' => esc_html__( 'Breadcrumbs Text', 'infinity-tnc-divi-module' ),
+					'main_content' => esc_html__( 'Text', 'infinity-tnc-divi-module' ),
 					'icon'		   => esc_html__( 'Icon','infinity-tnc-divi-module'),
 				),
 			),
 			'advanced' => array(
 				'toggles' => array(
 					'breadcrumbs'   => array(
-						'title' => esc_html__( 'Breadcrumbs Style', 'infinity-tnc-divi-module' ),
+						'title' => esc_html__( 'Colors', 'infinity-tnc-divi-module' ),
 						'priority' => 50,
 					),
 				),
@@ -48,7 +48,7 @@ class INFTNC_BreadCrumbs extends ET_Builder_Module {
 			),
 
 			'seperator' => array(
-				'label'    => esc_html__( 'Seperator', 'infinity-tnc-divi-modules' ),
+				'label'    => esc_html__( 'Separator', 'infinity-tnc-divi-modules' ),
 				'selector' => '.inftnc_separator',
 			),
 
@@ -69,6 +69,7 @@ class INFTNC_BreadCrumbs extends ET_Builder_Module {
 	function get_advanced_fields_config() { 
         return array (			
 			'text'			  => false,	
+			'link_options'    => false,	
         );
        
     }

@@ -40,7 +40,7 @@ class LogoCarousel extends ET_Builder_Module {
 						'tabbed_subtoggles' => true,
 						'sub_toggles'       => array(
 							'pagination_common' => array(
-								'name' => esc_html__('Common', 'infinity-tnc-divi-modules'),
+								'name' => esc_html__('Default', 'infinity-tnc-divi-modules'),
 							),
 							'pagination_active' => array(
 								'name' => esc_html__('Active', 'infinity-tnc-divi-modules'),
@@ -84,7 +84,7 @@ class LogoCarousel extends ET_Builder_Module {
 	function get_fields() {
 		return array(
 			'slides_to_show' => array(
-				'label'           => esc_html__( 'Slides To Show', 'infinity-tnc-divi-modules' ),
+				'label'           => esc_html__( 'Slides to Show', 'infinity-tnc-divi-modules' ),
 				'type'            => 'text',
 				'default'		  => '3',
 				'descritpion'     => esc_html__( 'Slides to show at a time', 'infinity-tnc-divi-modules' ),
@@ -95,7 +95,7 @@ class LogoCarousel extends ET_Builder_Module {
 			),	
 			
 			'slides_to_scroll' => array(
-				'label'           => esc_html__( 'Slides To Scroll', 'infinity-tnc-divi-modules' ),
+				'label'           => esc_html__( 'Slides to Scroll', 'infinity-tnc-divi-modules' ),
 				'type'            => 'text',
 				'default'		  => '1',
 				'descritpion'     => esc_html__( 'Slides to scroll at a time', 'infinity-tnc-divi-modules' ),
@@ -199,7 +199,7 @@ class LogoCarousel extends ET_Builder_Module {
 			),
 
 			'pause_on_hover' => array(
-				'label'             => esc_html__( 'Pause On Hover', 'infinity-tnc-divi-modules' ),
+				'label'             => esc_html__( 'Pause on Hover', 'infinity-tnc-divi-modules' ),
 				'type'              => 'yes_no_button',
 				'default'			=> 'on',
 				'description'       => esc_html__('Pauses autoplay on hover', 'infinity-tnc-divi-modules'),

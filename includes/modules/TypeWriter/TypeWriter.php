@@ -35,7 +35,7 @@ class INFTNC_TypeWriter extends ET_Builder_Module {
 
 		$this->custom_css_fields = array(
 			'main_title' => array(
-				'label'    => esc_html__( 'Main Title Text', 'infinity-tnc-divi-modules' ),
+				'label'    => esc_html__( 'Typing Text', 'infinity-tnc-divi-modules' ),
 				'selector' => '.inftnc_typewriter_main_title',
 			),
 			'before_text' => array(
@@ -61,7 +61,7 @@ class INFTNC_TypeWriter extends ET_Builder_Module {
 		return array(
 			'fonts'           => array(
 				'title' => array(
-					'label'          => esc_html__( 'Main Title','infinity-tnc-divi-modules' ),
+					'label'          => esc_html__( 'Typing','infinity-tnc-divi-modules' ),
 					'css'            => array(
 						'main' => [
 							'%%order_class%% h1.inftnc_typewriter_main_title',

@@ -61,7 +61,7 @@ class INFTNC_DualButtons extends ET_Builder_Module {
 	public function get_fields() {
 		return array(
 			'button_left_text' => array(
-				'label'           => esc_html__( 'Button Left Text', 'infinity-tnc-divi-modules' ),
+				'label'           => esc_html__( 'Button Left', 'infinity-tnc-divi-modules' ),
 				'type'            => 'text',
 				'default' 		  => esc_html__('Button Left', 'infinity-tnc-divi-modules' ),
 				'option_category' => 'basic_option',
@@ -69,7 +69,7 @@ class INFTNC_DualButtons extends ET_Builder_Module {
 				'toggle_slug'     => 'main_content',
 			),
             'button_right_text' => array(
-				'label'           => esc_html__( 'Button Right Text', 'infinity-tnc-divi-modules' ),
+				'label'           => esc_html__( 'Button Right', 'infinity-tnc-divi-modules' ),
 				'type'            => 'text',
 				'default' 		  => esc_html__('Button Right', 'infinity-tnc-divi-modules' ),
 				'option_category' => 'basic_option',
@@ -78,7 +78,7 @@ class INFTNC_DualButtons extends ET_Builder_Module {
 			),
 
 			'button_url_left' => array(
-				'label'           => esc_html__( 'Button Link URL', 'infinity-tnc-divi-modules' ),
+				'label'           => esc_html__( 'URL', 'infinity-tnc-divi-modules' ),
 				'type'            => 'text',
 				'option_category' => 'basic_option',
 				'description'     => esc_html__( 'Input URL for your button.', 'infinity-tnc-divi-modules' ),
@@ -87,7 +87,7 @@ class INFTNC_DualButtons extends ET_Builder_Module {
 			),
 
             'button_url_right' => array(
-				'label'           => esc_html__( 'Button Link URL', 'infinity-tnc-divi-modules' ),
+				'label'           => esc_html__( 'URL', 'infinity-tnc-divi-modules' ),
 				'type'            => 'text',
 				'option_category' => 'basic_option',
 				'description'     => esc_html__( 'Input URL for your button.', 'infinity-tnc-divi-modules' ),
@@ -98,30 +98,30 @@ class INFTNC_DualButtons extends ET_Builder_Module {
             'button_url_left_new_window' => array(
 				'default'         => 'off',
 				'default_on_front'=> true,
-				'label'           => esc_html__( 'Button Link Target', 'infinity-tnc-divi-modules' ),
+				'label'           => esc_html__( 'Link Target', 'infinity-tnc-divi-modules' ),
 				'type'            => 'select',
 				'option_category' => 'configuration',
 				'options'         => array(
-					'off' => esc_html__( 'In The Same Window', 'infinity-tnc-divi-modules' ),
-					'on'  => esc_html__( 'In The New Tab', 'infinity-tnc-divi-modules' ),
+					'off' => esc_html__( 'Same Window', 'infinity-tnc-divi-modules' ),
+					'on'  => esc_html__( 'New Tab', 'infinity-tnc-divi-modules' ),
 				),
 				'toggle_slug'     => 'button_links',
                 'sub_toggle'      => 'button_left_tab',
-				'description'     => esc_html__( 'Choose whether your link opens in a new window or not', 'infinity-tnc-divi-modules' ),
+				'description'     => esc_html__( 'Choose whether your link opens in same or new tab', 'infinity-tnc-divi-modules' ),
 			),
             'button_url_right_new_window' => array(
 				'default'         => 'off',
 				'default_on_front'=> true,
-				'label'           => esc_html__( 'Button Link Target', 'infinity-tnc-divi-modules' ),
+				'label'           => esc_html__( 'Link Target', 'infinity-tnc-divi-modules' ),
 				'type'            => 'select',
 				'option_category' => 'configuration',
 				'options'         => array(
-					'off' => esc_html__( 'In The Same Window', 'infinity-tnc-divi-modules' ),
-					'on'  => esc_html__( 'In The New Tab', 'infinity-tnc-divi-modules' ),
+					'off' => esc_html__( 'Same Window', 'infinity-tnc-divi-modules' ),
+					'on'  => esc_html__( 'New Tab', 'infinity-tnc-divi-modules' ),
 				),
 				'toggle_slug'     => 'button_links',
                 'sub_toggle'      => 'button_right_tab',
-				'description'     => esc_html__( 'Choose whether your link opens in a new window or not', 'infinity-tnc-divi-modules' ),
+				'description'     => esc_html__( 'Choose whether your link opens in same or new tab', 'infinity-tnc-divi-modules' ),
 			),
             'button_alignment' => array(
 				'label'           => esc_html__( 'Button Alignment', 'infinity-tnc-divi-modules' ),

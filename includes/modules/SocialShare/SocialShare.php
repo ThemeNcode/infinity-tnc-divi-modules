@@ -65,7 +65,7 @@ class SocialShare extends ET_Builder_Module {
 				'type'            => 'select',
 				'default'		  => 'icon_with_text',
 				'options'         => array(
-					'icon_with_text' => esc_html__( 'Icon With Text', 'infinity-tnc-divi-modules' ),
+					'icon_with_text' => esc_html__( 'Icon with Text', 'infinity-tnc-divi-modules' ),
 					'only_icon'  	 => esc_html__( 'Only Icon', 'infinity-tnc-divi-modules' ),
 					'only_text'      => esc_html__( 'Only Text', 'infinity-tnc-divi-modules' ),
 				),
@@ -105,7 +105,7 @@ class SocialShare extends ET_Builder_Module {
 			 ),
 
 			 'columns_gap' => array(
-				'label'           => esc_html__( 'Columns Gap', 'inftnc-infinity-tnc-divi-modules' ),
+				'label'           => esc_html__( 'Column Gap', 'inftnc-infinity-tnc-divi-modules' ),
 				'type'            => 'range',
 				'tab_slug'        => 'advanced',
 				'toggle_slug'     => 'layout',

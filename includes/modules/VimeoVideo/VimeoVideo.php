@@ -237,7 +237,7 @@ class INFTNC_VimeoVideo extends ET_Builder_Module {
 			),
 
 			'playsinline' => array(
-				'label'             => esc_html__( 'Playsinline', 'infinity-tnc-divi-modules' ),
+				'label'             => esc_html__( 'Plays Inline', 'infinity-tnc-divi-modules' ),
 				'type'              => 'yes_no_button',
 				'default'			=> 'off',
 				'description'		=> esc_html__( 'Play video inline on mobile devices instead of automatically going into fullscreen mode. Inline playback is enabled for all videos by default.', 'infinity-tnc-divi-modules' ),

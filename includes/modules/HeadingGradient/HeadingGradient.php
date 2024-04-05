@@ -24,7 +24,7 @@ class INFTNC_HeadingGradient extends ET_Builder_Module {
 		// This property will add CSS fields on Advanced > Custom CSS
 		$this->custom_css_fields = array(
 			'title' => array(
-				'label'    => esc_html__( 'Heading Title', 'infinity-tnc-divi-modules' ),
+				'label'    => esc_html__( 'Heading', 'infinity-tnc-divi-modules' ),
 				'selector' => '.inftnc_gradient_title',
 			),
 		);
@@ -34,7 +34,7 @@ class INFTNC_HeadingGradient extends ET_Builder_Module {
 			
 			'general'  => array(
 				'toggles' => array(
-					'main_content' => esc_html__( 'Title Text', 'infinity-tnc-divi-modules' ),
+					'main_content' => esc_html__( 'Heading', 'infinity-tnc-divi-modules' ),
 				),
 			),
 			'advanced' => array(
@@ -59,7 +59,7 @@ class INFTNC_HeadingGradient extends ET_Builder_Module {
             return array(
                 'fonts'           => array(
                     'title' => array(
-                        'label'          => esc_html__( 'Title','infinity-tnc-divi-modules' ),
+                        'label'          => esc_html__( 'Heading','infinity-tnc-divi-modules' ),
                         'css'            => array(
                             'main' => [
                                 '%%order_class%% h1.inftnc_gradient_title',
@@ -125,9 +125,9 @@ class INFTNC_HeadingGradient extends ET_Builder_Module {
 	public function get_fields() {
 		return array(
 			'gradient_title' => array(
-				'label'           => esc_html__( 'Title', 'infinity-tnc-divi-modules' ),
+				'label'           => esc_html__( 'Heading Text', 'infinity-tnc-divi-modules' ),
 				'type'            => 'text',
-                'default'         =>  esc_html__( 'Your Title Goes Here', 'infinity-tnc-divi-modules' ),
+                'default'         =>  esc_html__( 'My Awesome Heading with Gradient', 'infinity-tnc-divi-modules' ),
 				'option_category' => 'basic_option',
 				'description'     => esc_html__( 'Content entered here will appear inside the module.', 'infinity-tnc-divi-modules' ),
 				'toggle_slug'     => 'main_content',

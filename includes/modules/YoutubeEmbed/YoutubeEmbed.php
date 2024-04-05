@@ -86,7 +86,7 @@ class INFTNC_YoutubeEmbed extends ET_Builder_Module {
 			),
 
             'video_method' => array(
-				'label'           => esc_html__( 'Video Method', 'infinity-tnc-divi-modules' ),
+				'label'           => esc_html__( 'Video/Playlist Method', 'infinity-tnc-divi-modules' ),
 				'type'            => 'select',
 				'default'	      => 'video_url',
 				'options'         => array(
@@ -99,7 +99,7 @@ class INFTNC_YoutubeEmbed extends ET_Builder_Module {
 			),
 
             'youtube_url' => array(
-				'label'           => esc_html__( 'Youtube Video URL', 'infinity-tnc-divi-modules' ),
+				'label'           => esc_html__( 'Youtube Video/Playlist URL', 'infinity-tnc-divi-modules' ),
 				'type'            => 'text',
 				'option_category' => 'basic_option',
 				'default'		  => 'https://www.youtube.com/watch?v=z8uxAkjll5g',
@@ -111,7 +111,7 @@ class INFTNC_YoutubeEmbed extends ET_Builder_Module {
 			),
 
             'youtube_id' => array(
-				'label'           => esc_html__( 'Youtube Video ID', 'nftnc-infinity-tnc-divi-modules' ),
+				'label'           => esc_html__( 'Youtube Video/Playlist ID', 'nftnc-infinity-tnc-divi-modules' ),
 				'type'            => 'text',
 				'option_category' => 'basic_option',
                 'description'     => 'Use Video ID or List ID based on what you want to display.',
@@ -122,7 +122,7 @@ class INFTNC_YoutubeEmbed extends ET_Builder_Module {
 			),
 
             'youtube_embed' => array(
-				'label'           => esc_html__( 'Youtube Video Embed Code', 'nftnc-infinity-tnc-divi-modules' ),
+				'label'           => esc_html__( 'Youtube Video/Playlist Embed Code', 'nftnc-infinity-tnc-divi-modules' ),
 				'type'            => 'textarea',
 				'option_category' => 'basic_option',
                 'description'     => 'Use Video Embed Code  or List Embed Code based on what you want to display.',

@@ -52,7 +52,7 @@ class ImageCarouselChild extends ET_Builder_Module {
 			),
 
             'alt'                 => array(
-				'label'           => esc_html__( 'Image Alternative Text', 'infinity-tnc-divi-modules' ),
+				'label'           => esc_html__( 'Image ALT Text', 'infinity-tnc-divi-modules' ),
 				'type'            => 'text',
 				'option_category' => 'basic_option',
 				'description'     => esc_html__( 'This defines the HTML ALT text. A short description of your image can be placed here.', 'infinity-tnc-divi-modules' ),
