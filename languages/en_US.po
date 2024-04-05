@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Infinity TNC Divi Modules 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/infinity-tnc-divi-"
 "modules\n"
-"POT-Creation-Date: 2024-04-03 04:37:13+00:00\n"
+"POT-Creation-Date: 2024-04-05 08:37:23+00:00\n"
 "PO-Revision-Date: 2024-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -70,7 +70,7 @@ msgid "Breadcrumbs - Infinity TNC"
 msgstr ""
 
 #: includes/modules/BreadCrumbs/BreadCrumbs.php:24
-msgid "Breadcrumbs Text"
+msgid "Text"
 msgstr ""
 
 #: includes/modules/BreadCrumbs/BreadCrumbs.php:25
@@ -78,11 +78,11 @@ msgid "Icon"
 msgstr ""
 
 #: includes/modules/BreadCrumbs/BreadCrumbs.php:31
-msgid "Breadcrumbs Style"
+msgid "Colors"
 msgstr ""
 
 #: includes/modules/BreadCrumbs/BreadCrumbs.php:41
-#: includes/modules/BreadCrumbs/BreadCrumbs.php:88
+#: includes/modules/BreadCrumbs/BreadCrumbs.php:89
 #: includes/modules/TypeWriter/TypeWriter.php:155
 msgid "Before Text"
 msgstr ""
@@ -92,43 +92,43 @@ msgid "Home Text"
 msgstr ""
 
 #: includes/modules/BreadCrumbs/BreadCrumbs.php:51
-msgid "Seperator"
+msgid "Separator"
 msgstr ""
 
 #: includes/modules/BreadCrumbs/BreadCrumbs.php:56
 msgid "Current Text"
 msgstr ""
 
-#: includes/modules/BreadCrumbs/BreadCrumbs.php:79
-#: includes/modules/BreadCrumbs/BreadCrumbs.php:82
+#: includes/modules/BreadCrumbs/BreadCrumbs.php:80
+#: includes/modules/BreadCrumbs/BreadCrumbs.php:83
 msgid "Home"
 msgstr ""
 
-#: includes/modules/BreadCrumbs/BreadCrumbs.php:83
+#: includes/modules/BreadCrumbs/BreadCrumbs.php:84
 msgid "Default home text in the Breadcrumbs"
 msgstr ""
 
-#: includes/modules/BreadCrumbs/BreadCrumbs.php:91
+#: includes/modules/BreadCrumbs/BreadCrumbs.php:92
 msgid "Before text in the breadcrumbs"
 msgstr ""
 
-#: includes/modules/BreadCrumbs/BreadCrumbs.php:96
+#: includes/modules/BreadCrumbs/BreadCrumbs.php:97
 msgid "Separator Icon"
 msgstr ""
 
-#: includes/modules/BreadCrumbs/BreadCrumbs.php:103
+#: includes/modules/BreadCrumbs/BreadCrumbs.php:104
 msgid "Choose the icon for the separator."
 msgstr ""
 
-#: includes/modules/BreadCrumbs/BreadCrumbs.php:107
+#: includes/modules/BreadCrumbs/BreadCrumbs.php:108
 msgid "Add Before Icon"
 msgstr ""
 
-#: includes/modules/BreadCrumbs/BreadCrumbs.php:112
+#: includes/modules/BreadCrumbs/BreadCrumbs.php:113
 msgid "No"
 msgstr ""
 
-#: includes/modules/BreadCrumbs/BreadCrumbs.php:113
+#: includes/modules/BreadCrumbs/BreadCrumbs.php:114
 #: includes/modules/ImageCarousel/ImageCarousel.php:127
 #: includes/modules/ImageCarousel/ImageCarousel.php:152
 #: includes/modules/ImageCarousel/ImageCarousel.php:164
@@ -150,27 +150,27 @@ msgstr ""
 msgid "Yes"
 msgstr ""
 
-#: includes/modules/BreadCrumbs/BreadCrumbs.php:118
+#: includes/modules/BreadCrumbs/BreadCrumbs.php:119
 msgid "Before Text Icon"
 msgstr ""
 
-#: includes/modules/BreadCrumbs/BreadCrumbs.php:125
+#: includes/modules/BreadCrumbs/BreadCrumbs.php:126
 msgid "Choose the icon for the before text."
 msgstr ""
 
-#: includes/modules/BreadCrumbs/BreadCrumbs.php:132
+#: includes/modules/BreadCrumbs/BreadCrumbs.php:133
 msgid "Link Color"
 msgstr ""
 
-#: includes/modules/BreadCrumbs/BreadCrumbs.php:139
+#: includes/modules/BreadCrumbs/BreadCrumbs.php:140
 msgid "Separator Icon Color"
 msgstr ""
 
-#: includes/modules/BreadCrumbs/BreadCrumbs.php:146
+#: includes/modules/BreadCrumbs/BreadCrumbs.php:147
 msgid "Current Text Color"
 msgstr ""
 
-#: includes/modules/BreadCrumbs/BreadCrumbs.php:153
+#: includes/modules/BreadCrumbs/BreadCrumbs.php:154
 msgid "Before Text Color"
 msgstr ""
 
@@ -184,6 +184,7 @@ msgstr ""
 
 #: includes/modules/DualButtons/DualButtons.php:29
 #: includes/modules/DualButtons/DualButtons.php:51
+#: includes/modules/DualButtons/DualButtons.php:64
 #: includes/modules/DualButtons/DualButtons.php:66
 #: includes/modules/DualButtons/DualButtons.php:171
 msgid "Button Left"
@@ -191,6 +192,7 @@ msgstr ""
 
 #: includes/modules/DualButtons/DualButtons.php:32
 #: includes/modules/DualButtons/DualButtons.php:55
+#: includes/modules/DualButtons/DualButtons.php:72
 #: includes/modules/DualButtons/DualButtons.php:74
 msgid "Button Right"
 msgstr ""
@@ -209,22 +211,16 @@ msgstr ""
 msgid "Button Gap"
 msgstr ""
 
-#: includes/modules/DualButtons/DualButtons.php:64
-msgid "Button Left Text"
-msgstr ""
-
 #: includes/modules/DualButtons/DualButtons.php:68
 #: includes/modules/DualButtons/DualButtons.php:76
 msgid "Input your desired button text."
 msgstr ""
 
-#: includes/modules/DualButtons/DualButtons.php:72
-msgid "Button Right Text"
-msgstr ""
-
 #: includes/modules/DualButtons/DualButtons.php:81
 #: includes/modules/DualButtons/DualButtons.php:90
-msgid "Button Link URL"
+#: includes/modules/VimeoVideo/VimeoVideo.php:82
+#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:93
+msgid "URL"
 msgstr ""
 
 #: includes/modules/DualButtons/DualButtons.php:84
@@ -234,22 +230,22 @@ msgstr ""
 
 #: includes/modules/DualButtons/DualButtons.php:101
 #: includes/modules/DualButtons/DualButtons.php:115
-msgid "Button Link Target"
+msgid "Link Target"
 msgstr ""
 
 #: includes/modules/DualButtons/DualButtons.php:105
 #: includes/modules/DualButtons/DualButtons.php:119
-msgid "In The Same Window"
+msgid "Same Window"
 msgstr ""
 
 #: includes/modules/DualButtons/DualButtons.php:106
 #: includes/modules/DualButtons/DualButtons.php:120
-msgid "In The New Tab"
+msgid "New Tab"
 msgstr ""
 
 #: includes/modules/DualButtons/DualButtons.php:110
 #: includes/modules/DualButtons/DualButtons.php:124
-msgid "Choose whether your link opens in a new window or not"
+msgid "Choose whether your link opens in same or new tab"
 msgstr ""
 
 #: includes/modules/DualButtons/DualButtons.php:128
@@ -305,23 +301,13 @@ msgid "Heading Gradient - Infinity TNC"
 msgstr ""
 
 #: includes/modules/HeadingGradient/HeadingGradient.php:27
-msgid "Heading Title"
-msgstr ""
-
 #: includes/modules/HeadingGradient/HeadingGradient.php:37
-#: includes/modules/StarRating/StarRating.php:38
-msgid "Title Text"
+#: includes/modules/HeadingGradient/HeadingGradient.php:62
+msgid "Heading"
 msgstr ""
 
 #: includes/modules/HeadingGradient/HeadingGradient.php:43
 msgid "Gradient Style"
-msgstr ""
-
-#: includes/modules/HeadingGradient/HeadingGradient.php:62
-#: includes/modules/HeadingGradient/HeadingGradient.php:128
-#: includes/modules/StarRating/StarRating.php:61
-#: includes/modules/StarRating/StarRating.php:153
-msgid "Title"
 msgstr ""
 
 #: includes/modules/HeadingGradient/HeadingGradient.php:84
@@ -330,8 +316,12 @@ msgstr ""
 msgid "Heading Level"
 msgstr ""
 
+#: includes/modules/HeadingGradient/HeadingGradient.php:128
+msgid "Heading Text"
+msgstr ""
+
 #: includes/modules/HeadingGradient/HeadingGradient.php:130
-msgid "Your Title Goes Here"
+msgid "My Awesome Heading with Gradient"
 msgstr ""
 
 #: includes/modules/HeadingGradient/HeadingGradient.php:132
@@ -495,7 +485,7 @@ msgstr ""
 
 #: includes/modules/ImageCarousel/ImageCarousel.php:45
 #: includes/modules/LogoCarousel/LogoCarousel.php:43
-msgid "Common"
+msgid "Default"
 msgstr ""
 
 #: includes/modules/ImageCarousel/ImageCarousel.php:48
@@ -505,7 +495,7 @@ msgstr ""
 
 #: includes/modules/ImageCarousel/ImageCarousel.php:87
 #: includes/modules/LogoCarousel/LogoCarousel.php:87
-msgid "Slides To Show"
+msgid "Slides to Show"
 msgstr ""
 
 #: includes/modules/ImageCarousel/ImageCarousel.php:90
@@ -515,7 +505,7 @@ msgstr ""
 
 #: includes/modules/ImageCarousel/ImageCarousel.php:98
 #: includes/modules/LogoCarousel/LogoCarousel.php:98
-msgid "Slides To Scroll"
+msgid "Slides to Scroll"
 msgstr ""
 
 #: includes/modules/ImageCarousel/ImageCarousel.php:101
@@ -591,7 +581,7 @@ msgstr ""
 
 #: includes/modules/ImageCarousel/ImageCarousel.php:202
 #: includes/modules/LogoCarousel/LogoCarousel.php:202
-msgid "Pause On Hover"
+msgid "Pause on Hover"
 msgstr ""
 
 #: includes/modules/ImageCarousel/ImageCarousel.php:205
@@ -684,19 +674,15 @@ msgstr ""
 
 #: includes/modules/ImageCarousel/ImageCarousel.php:330
 #: includes/modules/ImageCarousel/ImageCarousel.php:348
-#: includes/modules/LogoCarousel/LogoCarousel.php:330
-#: includes/modules/LogoCarousel/LogoCarousel.php:348
-msgid "Dots Size"
+msgid "Dot Size"
 msgstr ""
 
 #: includes/modules/ImageCarousel/ImageCarousel.php:366
-#: includes/modules/LogoCarousel/LogoCarousel.php:366
-msgid "Dots Color"
+msgid "Dot Color"
 msgstr ""
 
 #: includes/modules/ImageCarousel/ImageCarousel.php:374
-#: includes/modules/LogoCarousel/LogoCarousel.php:374
-msgid "Dots Alignment"
+msgid "Dot Alignment"
 msgstr ""
 
 #: includes/modules/ImageCarousel/ImageCarousel.php:375
@@ -736,7 +722,7 @@ msgid ""
 msgstr ""
 
 #: includes/modules/ImageCarouselChild/ImageCarouselChild.php:55
-msgid "Image Alternative Text"
+msgid "Image ALT Text"
 msgstr ""
 
 #: includes/modules/ImageCarouselChild/ImageCarouselChild.php:58
@@ -765,6 +751,19 @@ msgstr ""
 
 #: includes/modules/LogoCarousel/LogoCarousel.php:265
 msgid "Logo Hover Effect"
+msgstr ""
+
+#: includes/modules/LogoCarousel/LogoCarousel.php:330
+#: includes/modules/LogoCarousel/LogoCarousel.php:348
+msgid "Dots Size"
+msgstr ""
+
+#: includes/modules/LogoCarousel/LogoCarousel.php:366
+msgid "Dots Color"
+msgstr ""
+
+#: includes/modules/LogoCarousel/LogoCarousel.php:374
+msgid "Dots Alignment"
 msgstr ""
 
 #: includes/modules/LogoCarouselChild/LogoCarouselChild.php:19
@@ -808,7 +807,7 @@ msgid ""
 msgstr ""
 
 #: includes/modules/LogoCarouselChild/LogoCarouselChild.php:68
-msgid "Logo Alternative Text"
+msgid "Logo ALT Text"
 msgstr ""
 
 #: includes/modules/LogoCarouselChild/LogoCarouselChild.php:71
@@ -840,7 +839,7 @@ msgid "Button Style and Layout"
 msgstr ""
 
 #: includes/modules/SocialShare/SocialShare.php:68
-msgid "Icon With Text"
+msgid "Icon with Text"
 msgstr ""
 
 #: includes/modules/SocialShare/SocialShare.php:69
@@ -876,7 +875,7 @@ msgid "Auto"
 msgstr ""
 
 #: includes/modules/SocialShare/SocialShare.php:108
-msgid "Columns Gap"
+msgid "Column Gap"
 msgstr ""
 
 #: includes/modules/SocialShare/SocialShare.php:123
@@ -1024,8 +1023,17 @@ msgstr ""
 msgid "Star Style"
 msgstr ""
 
+#: includes/modules/StarRating/StarRating.php:38
+msgid "Title Text"
+msgstr ""
+
 #: includes/modules/StarRating/StarRating.php:42
 msgid "Rating Text"
+msgstr ""
+
+#: includes/modules/StarRating/StarRating.php:61
+#: includes/modules/StarRating/StarRating.php:153
+msgid "Title"
 msgstr ""
 
 #: includes/modules/StarRating/StarRating.php:91
@@ -1081,16 +1089,13 @@ msgid "Typewriter - Infinity TNC"
 msgstr ""
 
 #: includes/modules/TypeWriter/TypeWriter.php:28
+#: includes/modules/TypeWriter/TypeWriter.php:38
 #: includes/modules/TypeWriter/TypeWriter.php:162
 msgid "Typing Text"
 msgstr ""
 
 #: includes/modules/TypeWriter/TypeWriter.php:30
 msgid "Typing Effect Options"
-msgstr ""
-
-#: includes/modules/TypeWriter/TypeWriter.php:38
-msgid "Main Title Text"
 msgstr ""
 
 #: includes/modules/TypeWriter/TypeWriter.php:42
@@ -1102,7 +1107,7 @@ msgid "After Title Text"
 msgstr ""
 
 #: includes/modules/TypeWriter/TypeWriter.php:64
-msgid "Main Title"
+msgid "Typing"
 msgstr ""
 
 #: includes/modules/TypeWriter/TypeWriter.php:94
@@ -1226,11 +1231,6 @@ msgstr ""
 msgid "Vimeo Method"
 msgstr ""
 
-#: includes/modules/VimeoVideo/VimeoVideo.php:82
-#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:93
-msgid "URL"
-msgstr ""
-
 #: includes/modules/VimeoVideo/VimeoVideo.php:83
 #: includes/modules/YoutubeEmbed/YoutubeEmbed.php:94
 msgid "ID"
@@ -1317,7 +1317,7 @@ msgid "Show the author of the video (byline)."
 msgstr ""
 
 #: includes/modules/VimeoVideo/VimeoVideo.php:240
-msgid "Playsinline"
+msgid "Plays Inline"
 msgstr ""
 
 #: includes/modules/VimeoVideo/VimeoVideo.php:243
@@ -1361,19 +1361,19 @@ msgid "Playlist"
 msgstr ""
 
 #: includes/modules/YoutubeEmbed/YoutubeEmbed.php:89
-msgid "Video Method"
+msgid "Video/Playlist Method"
 msgstr ""
 
 #: includes/modules/YoutubeEmbed/YoutubeEmbed.php:102
-msgid "Youtube Video URL"
+msgid "Youtube Video/Playlist URL"
 msgstr ""
 
 #: includes/modules/YoutubeEmbed/YoutubeEmbed.php:114
-msgid "Youtube Video ID"
+msgid "Youtube Video/Playlist ID"
 msgstr ""
 
 #: includes/modules/YoutubeEmbed/YoutubeEmbed.php:125
-msgid "Youtube Video Embed Code"
+msgid "Youtube Video/Playlist Embed Code"
 msgstr ""
 
 #: includes/modules/YoutubeEmbed/YoutubeEmbed.php:153

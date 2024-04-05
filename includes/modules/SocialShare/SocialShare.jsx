@@ -324,6 +324,13 @@ class SocialShare extends Component {
         declaration: `display:none;`,
       }]);
     } 
+
+    if (props.button_layout === 'only_icon') {
+      additionalCss.push([{
+        selector: '%%order_class%% .inftnc_social_text',
+        declaration: `display:none;`,
+      }]);
+    } 
       
     return additionalCss;
   }
