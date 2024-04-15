@@ -15,6 +15,7 @@
 /styles/style-dbp.min.css
 /styles/style.min.css
 asset-manifest.json
+package-lock.json
 *.map
 
 # misc

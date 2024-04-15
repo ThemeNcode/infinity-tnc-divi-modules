@@ -185,7 +185,7 @@ class INFTNC_DualButtons extends ET_Builder_Module {
 					),
 				),
 				'button_right' => array(
-					'label'          => esc_html__( 'Button RIght','infinity-tnc-divi-modules'),
+					'label'          => esc_html__( 'Button Right','infinity-tnc-divi-modules'),
 					'css'            => array(
 						'main' 		=> '%%order_class%% .et_pb_button.inftnc_pb_button_right',
 					),
