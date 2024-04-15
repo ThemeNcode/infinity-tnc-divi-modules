@@ -139,8 +139,8 @@ class INFTNC_HeadingGradient extends ET_Builder_Module {
 				'type'            => 'select',
                 'default'         => 'gradient_custom_color',
 				'options'         => array(
-					'gradient_custom_color'            => esc_html__( 'Custom Color', 'infinity-tnc-divi-modules' ),
 					'gradient_preset_color'            => esc_html__( 'Gradient Preset', 'infinity-tnc-divi-modules' ),
+					'gradient_custom_color'            => esc_html__( 'Custom Color', 'infinity-tnc-divi-modules' ),
 				),
 				'tab_slug'        => 'advanced',
 				'toggle_slug'     => 'gradient',
