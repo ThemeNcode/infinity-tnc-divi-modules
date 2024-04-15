@@ -261,7 +261,7 @@ class INFTNC_TypeWriter extends ET_Builder_Module {
                 <%4$s class="inftnc_typewriter_main_title">
                     <span class="inftnc_before_text">%1$s</span>%3$s<span class="inftnc_after_text">%2$s</span>
                 </%4$s>
-            <div>
+            </div>
 
         ',
             /* 01 */ esc_html( $before_text ),
