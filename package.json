@@ -1,6 +1,6 @@
 {
   "name": "infinity-tnc-divi-modules",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "divi-scripts": "1.0.3",
@@ -35,5 +35,8 @@
   "cde": {
     "gettext": "infinity-tnc-divi-modules",
     "prefix": "inftnc"
+  },
+  "devDependencies": {
+    "grunt-wp-i18n": "^1.0.3"
   }
 }

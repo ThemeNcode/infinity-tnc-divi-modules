@@ -2,9 +2,9 @@
 /*
 Plugin Name: Infinity TNC Divi Modules
 Plugin URI:  https://themencode.com/
-Description: Adds a custom module to the Divi Builder
+Description: Fulfill your Divi experience with the awesome & useful modules for every purpose you need.
 Version:     1.0.0
-Author:      ThemeNcode
+Author:      ThemeNcode LLC
 Author URI:  https://themencode.com/
 License:     GPL2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
