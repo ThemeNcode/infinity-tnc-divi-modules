@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Infinity TNC Divi Modules 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/infinity-tnc-divi-"
 "modules\n"
-"POT-Creation-Date: 2024-04-17 12:06:31+00:00\n"
+"POT-Creation-Date: 2024-04-17 12:16:56+00:00\n"
 "PO-Revision-Date: 2024-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1385,8 +1385,8 @@ msgstr ""
 msgid "Infinity TNC Divi Modules"
 msgstr ""
 
-#. Author URI of the plugin/theme
-msgid "https://themencode.com/"
+#. Plugin URI of the plugin/theme
+msgid "https://divi.themencode.com/infinity-tnc-divi-modules-preview/"
 msgstr ""
 
 #. Description of the plugin/theme
@@ -1397,4 +1397,8 @@ msgstr ""
 
 #. Author of the plugin/theme
 msgid "ThemeNcode LLC"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://themencode.com/"
 msgstr ""
