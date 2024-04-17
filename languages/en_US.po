@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Infinity TNC Divi Modules 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/infinity-tnc-divi-"
 "modules\n"
-"POT-Creation-Date: 2024-04-17 12:16:56+00:00\n"
+"POT-Creation-Date: 2024-04-17 12:33:23+00:00\n"
 "PO-Revision-Date: 2024-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -61,7 +61,8 @@ msgstr ""
 msgid "Error 404"
 msgstr ""
 
-#: includes/admin/breadcrumbs.php:226
+#. translators: %s: current page number
+#: includes/admin/breadcrumbs.php:227
 msgid " ( Page %s )"
 msgstr ""
 

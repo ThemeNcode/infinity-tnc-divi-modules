@@ -11,9 +11,9 @@
 function infinity_tnc_breadcrumb($_home_text='Home',$_before_text='',$_delimiter='&#x39;')
 {
     // Set variables for later use
-    $here_text        = __( $_before_text, 'inftnc-infinity-tnc-divi-modules' );
+    $here_text        = $_before_text;
     $home_link        = home_url('/');
-    $home_text        = __( $_home_text, 'inftnc-infinity-tnc-divi-modules' );
+    $home_text        = $_home_text;
     $link_before      = '<span property="itemListElement" typeof="ListItem">';
     $link_after       = '</span>';
     $link_attr        = ' property="item" typeof="WebPage"';
@@ -223,6 +223,7 @@ function infinity_tnc_breadcrumb($_home_text='Home',$_before_text='',$_delimiter
     // Handle paged pages
     if ( is_paged() ) {
         $current_page = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : get_query_var( 'page' );
+         /* translators: %s: current page number */
         $page_addon   = $before . sprintf( __( ' ( Page %s )' ), number_format_i18n( $current_page ) ) . $after;
     }
 
