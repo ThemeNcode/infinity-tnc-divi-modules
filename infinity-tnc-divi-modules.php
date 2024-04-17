@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: Infinity TNC Divi Modules
-Plugin URI:  https://themencode.com/
+Plugin URI:  https://divi.themencode.com/infinity-tnc-divi-modules-preview/
 Description: Fulfill your Divi experience with the awesome & useful modules for every purpose you need.
 Version:     1.0.0
 Author:      ThemeNcode LLC
