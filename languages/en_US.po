@@ -1,11 +1,11 @@
-# Copyright (C) 2024 ThemeNcode
+# Copyright (C) 2024 ThemeNcode LLC
 # This file is distributed under the GPL2.
 msgid ""
 msgstr ""
 "Project-Id-Version: Infinity TNC Divi Modules 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/infinity-tnc-divi-"
 "modules\n"
-"POT-Creation-Date: 2024-04-17 11:12:42+00:00\n"
+"POT-Creation-Date: 2024-04-17 11:43:13+00:00\n"
 "PO-Revision-Date: 2024-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1390,9 +1390,11 @@ msgid "https://themencode.com/"
 msgstr ""
 
 #. Description of the plugin/theme
-msgid "Adds a custom module to the Divi Builder"
+msgid ""
+"Fulfill your Divi experience with the awesome & useful modules for every "
+"purpose you need."
 msgstr ""
 
 #. Author of the plugin/theme
-msgid "ThemeNcode"
+msgid "ThemeNcode LLC"
 msgstr ""
