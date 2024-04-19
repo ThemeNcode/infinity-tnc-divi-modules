@@ -1097,7 +1097,7 @@ class ImageCarousel extends ET_Builder_Module {
 						-webkit-transition: all .5s ease 0s;
 						transition: all .5s ease 0s;'
 					),
-				)w
+				)
 			);
 		}
 		
