@@ -217,7 +217,7 @@ class SocialShareChild extends ET_Builder_Module {
 						<span class="inftnc_social_text inftnc_fb_text">%1$s</span>
 						<span class="inftnc_social_icon inftnc_social_fb"></span>
 					',
-					 esc_html__( ' Share On Facebook', 'infinity-tnc-divi-modules'),
+					 esc_html__( ' Share On Facebook', 'infinity-tnc-divi-modules')
 					 
 					) : '', 
 
@@ -230,9 +230,9 @@ class SocialShareChild extends ET_Builder_Module {
 						<span class="inftnc_social_text inftnc_fb_text">%1$s</span>
 					 ',
 
-					 esc_html__( ' Share On Facebook', 'infinity-tnc-divi-modules'),
+					 esc_html__( ' Share On Facebook', 'infinity-tnc-divi-modules')
 
-					 ) : '',
+					 ) : ''
 			);
 
 		} else if ( 'whatsapp' === $social_share ) {
@@ -249,7 +249,7 @@ class SocialShareChild extends ET_Builder_Module {
 						<span class="inftnc_social_text inftnc_whatsapp_text">%1$s</span>
 						<span class="inftnc_social_icon inftnc_social_whatsapp"></span>
 					',
-					/* 01 */   esc_html__( 'Share On WhatsApp', 'infinity-tnc-divi-modules'),
+					/* 01 */   esc_html__( 'Share On WhatsApp', 'infinity-tnc-divi-modules')
 
 					) : '', 
 
@@ -261,9 +261,9 @@ class SocialShareChild extends ET_Builder_Module {
 		    /*04 */  'only_text'  === $social_layout ? sprintf('
 						<span class="inftnc_social_text inftnc_whatsapp_text">%1$s</span>
 					 ',
-					 esc_html__( 'Share On WhatsApp', 'infinity-tnc-divi-modules'), 
+					 esc_html__( 'Share On WhatsApp', 'infinity-tnc-divi-modules')
 
-					 ) : '',
+					 ) : ''
 			);
 
 		 } else if ( 'twitter' === $social_share ) {
@@ -298,7 +298,7 @@ class SocialShareChild extends ET_Builder_Module {
 						<span class="inftnc_social_text inftnc_twitter_text">%1$s</span>
 						<span class="inftnc_social_icon et-pb-icon">&#xe094;</span>
 					',
-					/* 01 */  esc_html__( 'Share On X', 'infinity-tnc-divi-modules'), 
+					/* 01 */  esc_html__( 'Share On X', 'infinity-tnc-divi-modules')
 					) : '', 
 
 			/* 03 */ 'only_icon'  === $social_layout ? sprintf('
@@ -309,9 +309,9 @@ class SocialShareChild extends ET_Builder_Module {
 		    /*04 */  'only_text'  === $social_layout ? sprintf('
 						<span class="inftnc_social_text inftnc_twitter_text">%1$s</span>
 					 ',
-					 esc_html__( 'Share On X', 'infinity-tnc-divi-modules'), 
+					 esc_html__( 'Share On X', 'infinity-tnc-divi-modules')
 
-					 ) : '',
+					 ) : ''
 			);
 
 		} else if ( 'pinterest' === $social_share ) {
@@ -339,12 +339,12 @@ class SocialShareChild extends ET_Builder_Module {
 						<span class="inftnc_social_text inftnc_pinterest_text">%1$s</span>
 						<span class="inftnc_social_icon inftnc_soical_pinterest"></span>
 					',
-					/* 01 */  esc_html__( 'Share On Pinterest', 'infinity-tnc-divi-modules'), 
+					/* 01 */  esc_html__( 'Share On Pinterest', 'infinity-tnc-divi-modules') 
 					) : '', 
 
 			/* 03 */ 'only_icon'  === $social_layout ? sprintf('
 							<span class="inftnc_social_icon inftnc_soical_pinterest"></span>
-					',
+					'
 
 					) : '',
 			
@@ -352,9 +352,9 @@ class SocialShareChild extends ET_Builder_Module {
 
 						<span class="inftnc_social_text inftnc_pinterest_text">%1$s</span>
 					 ',
-					 esc_html__( 'Share On Pinterest', 'infinity-tnc-divi-modules'), 
+					 esc_html__( 'Share On Pinterest', 'infinity-tnc-divi-modules') 
 
-					 ) : '',
+					 ) : ''
 			);
 
 		} elseif ('linekdin' === $social_share) {
@@ -390,12 +390,12 @@ class SocialShareChild extends ET_Builder_Module {
 							<span class="inftnc_social_text inftnc_linekdin_text">%1$s</span>
 							<span class="inftnc_social_icon inftnc_soical_linekdin"></span>
 						',
-						/* 01 */  esc_html__( 'Share On Linekdin', 'infinity-tnc-divi-modules'), 
+						/* 01 */  esc_html__( 'Share On Linekdin', 'infinity-tnc-divi-modules') 
 						) : '', 
 	
 				/* 03 */ 'only_icon'  === $social_layout ? sprintf('
 								<span class="inftnc_social_icon inftnc_soical_linekdin"></span>
-						',
+						'
 	
 						) : '',
 				
@@ -403,9 +403,9 @@ class SocialShareChild extends ET_Builder_Module {
 	
 							<span class="inftnc_social_text inftnc_linekdin_text">%1$s</span>
 						 ',
-						 esc_html__( 'Share On Linekdin', 'infinity-tnc-divi-modules'), 
+						 esc_html__( 'Share On Linekdin', 'infinity-tnc-divi-modules')
 	
-						 ) : '',
+						 ) : ''
 				);
 
 		} else if ( 'telegram' === $social_share ) {
@@ -432,22 +432,22 @@ class SocialShareChild extends ET_Builder_Module {
 						<span class="inftnc_social_text inftnc_telegram_text">%1$s</span>
 						<span class="inftnc_social_icon inftnc_soical_telegram"></span>
 					',
-					/* 01 */  esc_html__( 'Share On Telegram', 'infinity-tnc-divi-modules'), 
+					/* 01 */  esc_html__( 'Share On Telegram', 'infinity-tnc-divi-modules')
 					) : '', 
 
 			/* 03 */ 'only_icon'  === $social_layout ? sprintf('
 
 						 <span class="inftnc_social_icon inftnc_soical_telegram"></span>
-					',
+					'
 
 					) : '',
 			
 		    /*04 */  'only_text'  === $social_layout ? sprintf('
 						<span class="inftnc_social_text inftnc_telegram_text">%1$s</span>
 					 ',
-					 esc_html__( 'Share On Telegram', 'infinity-tnc-divi-modules'), 
+					 esc_html__( 'Share On Telegram', 'infinity-tnc-divi-modules') 
 
-					 ) : '',
+					 ) : ''
 			);	
 		} else if ( 'reddit' === $social_share ) {
 
@@ -474,23 +474,23 @@ class SocialShareChild extends ET_Builder_Module {
 						<span class="inftnc_social_text inftnc_reddit_text">%1$s</span>
 						<span class="inftnc_social_icon inftnc_soical_reddit"></span>
 					',
-					/* 01 */  esc_html__( 'Share On Reddit', 'infinity-tnc-divi-modules'), 
+					/* 01 */  esc_html__( 'Share On Reddit', 'infinity-tnc-divi-modules') 
 
 					) : '', 
 					
 			/* 03 */ 'only_icon'  === $social_layout ? sprintf('
 
 						<span class="inftnc_social_icon inftnc_soical_reddit"></span>
-					',
+					'
 
 					) : '',
 			
 		    /*04 */  'only_text'  === $social_layout ? sprintf('
 						<span class="inftnc_social_text inftnc_reddit_text">%1$s</span>
 					 ',
-					 esc_html__( 'Share On Reddit', 'infinity-tnc-divi-modules'), 
+					 esc_html__( 'Share On Reddit', 'infinity-tnc-divi-modules') 
 
-					 ) : '',
+					 ) : ''
 			);	
 		} else if ( 'tumblr' === $social_share ) {
 
@@ -519,21 +519,21 @@ class SocialShareChild extends ET_Builder_Module {
 						<span class="inftnc_social_text inftnc_tumblr_text">%1$s</span>
 						<span class="inftnc_social_icon inftnc_soical_tumblr"></span>
 					',
-					/* 01 */  esc_html__( 'Share On Tumblr', 'infinity-tnc-divi-modules'), 
+					/* 01 */  esc_html__( 'Share On Tumblr', 'infinity-tnc-divi-modules') 
 
 					) : '', 
 
 			/* 03 */ 'only_icon'  === $social_layout ? sprintf('
 							<span class="inftnc_social_icon inftnc_soical_tumblr"></span>
-					',
+					'
 					) : '',
 			
 		    /*04 */  'only_text'  === $social_layout ? sprintf('
 						<span class="inftnc_social_text inftnc_tumblr_text">%1$s</span>
 					 ',
-					 esc_html__( 'Share On Tumblr ', 'infinity-tnc-divi-modules'), 
+					 esc_html__( 'Share On Tumblr ', 'infinity-tnc-divi-modules')
 
-					 ) : '',
+					 ) : ''
 			);	
 		} else if ( 'email' === $social_share ) {
 			// Get the current post
@@ -567,23 +567,23 @@ class SocialShareChild extends ET_Builder_Module {
 						<span class="inftnc_social_text inftnc_email_text">%1$s</span>
 						<span class="inftnc_social_icon inftnc_soical_email"><i class="fas fa-envelope"></i></span>
 					',
-					/* 01 */ esc_html__( 'Share On Email', 'infinity-tnc-divi-modules'), 
+					/* 01 */ esc_html__( 'Share On Email', 'infinity-tnc-divi-modules')
 
 					) : '', 
 
 			/* 03 */ 'only_icon'  === $social_layout ? sprintf('
 
 							<span class="inftnc_social_icon inftnc_soical_email"><i class="fas fa-envelope"></i></span>
-					',
+					'
 			
 					) : '',
 			
 		    /*04 */  'only_text'  === $social_layout ? sprintf('
 						<span class="inftnc_social_text inftnc_email_text">%1$s</span>
 					 ',
-					 esc_html__( 'Share On Email ', 'infinity-tnc-divi-modules'), 
+					 esc_html__( 'Share On Email ', 'infinity-tnc-divi-modules')
 
-					 ) : '',
+					 ) : ''
 			);
 
 		 } else if ( 'blogger' === $social_share ) {
@@ -613,22 +613,22 @@ class SocialShareChild extends ET_Builder_Module {
 						<span class="inftnc_social_icon inftnc_soical_blogger"></span>
 					',
 					
-					/* 01 */  esc_html__( 'Share On Blogger', 'infinity-tnc-divi-modules'), 
+					/* 01 */  esc_html__( 'Share On Blogger', 'infinity-tnc-divi-modules') 
 
 					) : '', 
 
 			/* 03 */ 'only_icon'  === $social_layout ? sprintf('
 						<span class="inftnc_social_icon inftnc_soical_blogger"></span>
-					',
+					'
 
 					) : '',
 			
 		    /*04 */  'only_text'  === $social_layout ? sprintf('
 						<span class="inftnc_social_text inftnc_blogger_text">%1$s</span>
 					 ',
-					 esc_html__( 'Share On Blogger ', 'infinity-tnc-divi-modules'), 
+					 esc_html__( 'Share On Blogger ', 'infinity-tnc-divi-modules')
 
-					 ) : '',
+					 ) : ''
 			);		
 
 		}
@@ -643,7 +643,7 @@ class SocialShareChild extends ET_Builder_Module {
 						'
 							background-color:%1$s !important;
 						',
-						$this->props['button_color_child'],
+						$this->props['button_color_child']
 					),
 				)
 			);
@@ -673,7 +673,7 @@ class SocialShareChild extends ET_Builder_Module {
 						'
 							font-size:%1$s !important;
 						',
-						$this->props['icon_size_child'],
+						$this->props['icon_size_child']
 					),
 				)
 			);

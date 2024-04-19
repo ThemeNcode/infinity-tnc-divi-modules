@@ -97,16 +97,15 @@ class ImageCarouselChild extends ET_Builder_Module {
 		$render_image = sprintf('
 				<img class="image_carousel_img" src="%1$s" alt="%2$s">',
 				/*01*/   $image,
-				/*02*/	esc_attr( $alt ),
+				/*02*/	esc_attr( $alt )
 		);
 		// Render module content
 		$output = sprintf('
 					<div class="inftnc_carousel_child">
 							%1$s
 			      	</div>',
-					/*01*/ $render_image,
-					
-			);
+					/*01*/ $render_image	
+		);
 
         return $output;
 	}

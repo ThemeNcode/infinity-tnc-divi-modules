@@ -251,7 +251,7 @@ class INFTNC_StarRating extends ET_Builder_Module {
 			$rating_number = sprintf(
 				'<span class="inftnc_star_rating_number">(%2$s / %1$s )</span> ',
 				/** 01 */ esc_attr( $star_count ) ,
-				/** 02 */ esc_attr( $rating ),
+				/** 02 */ esc_attr( $rating )
 			);
 	
 		} else {
@@ -292,7 +292,7 @@ class INFTNC_StarRating extends ET_Builder_Module {
 			/* 06 */   esc_attr( $icon_size ) ,
 			/* 07 */   $rating_number,
 			/* 08 */   et_pb_process_header_level( $header_level, 'h1' ),
-			/* 09 */   esc_attr( $star_alignment ), 
+			/* 09 */   esc_attr( $star_alignment )
 		
 		);
 		return $output;

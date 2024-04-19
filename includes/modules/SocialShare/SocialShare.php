@@ -261,7 +261,7 @@ class SocialShare extends ET_Builder_Module {
 						'
 							background-color:%1$s;
 						',
-						$this->props['button_bg'],
+						$this->props['button_bg']
 					),
 				)
 			);
@@ -290,8 +290,8 @@ class SocialShare extends ET_Builder_Module {
 					'selector'    => '%%order_class%% .inftnc_share_link',
 					'declaration' => sprintf(
 						'
-						justify-content:center !important;
-						',
+						 justify-content:center !important;
+						'
 					),
 				)
 			);
@@ -307,7 +307,7 @@ class SocialShare extends ET_Builder_Module {
 						'
 							font-size:%1$s;
 						',
-						$this->props['icon_size'],
+						$this->props['icon_size']
 					),
 				)
 			);
@@ -365,7 +365,7 @@ class SocialShare extends ET_Builder_Module {
 							'
 								display:grid;
 								grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-							',
+							'
 							
 						),
 					)
@@ -381,7 +381,7 @@ class SocialShare extends ET_Builder_Module {
 						'
 							display:grid;
 							grid-template-columns:repeat(1, 1fr);
-						',
+						'
 						
 					),
 				)
@@ -396,7 +396,7 @@ class SocialShare extends ET_Builder_Module {
 						'
 							display:grid;
 							grid-template-columns:repeat(2, 1fr);
-						',
+						'
 						
 					),
 				)
@@ -412,7 +412,7 @@ class SocialShare extends ET_Builder_Module {
 						'
 							display:grid;
 							grid-template-columns:repeat(3, 1fr);
-						',
+						'
 						
 					),
 				)
@@ -427,7 +427,7 @@ class SocialShare extends ET_Builder_Module {
 						'
 							display:grid;
 							grid-template-columns:repeat(4, 1fr);
-						',
+						'
 						
 					),
 				)
@@ -442,7 +442,7 @@ class SocialShare extends ET_Builder_Module {
 						'
 							display:grid;
 							grid-template-columns:repeat(5, 1fr);
-						',
+						'
 						
 					),
 				)
@@ -457,7 +457,7 @@ class SocialShare extends ET_Builder_Module {
 						'
 							display:grid;
 							grid-template-columns:repeat(6, 1fr);
-						',
+						'
 						
 					),
 				)
@@ -475,7 +475,7 @@ class SocialShare extends ET_Builder_Module {
 					'declaration' => sprintf(
 						'
 							border-radius:0px;
-						',
+						'
 						
 					),
 				)
@@ -490,7 +490,7 @@ class SocialShare extends ET_Builder_Module {
 					'declaration' => sprintf(
 						'
 							border-radius:10px;
-						',
+						'
 						
 					),
 				)
@@ -510,7 +510,7 @@ class SocialShare extends ET_Builder_Module {
 						padding: 10px;
 						text-align:center;
 						display:unset !important; 
-						',
+						'
 						
 					),
 				)
@@ -526,7 +526,7 @@ class SocialShare extends ET_Builder_Module {
 					'declaration' => sprintf(
 						'
 							margin-left:unset;
-						',
+						'
 						
 					),
 				)
@@ -545,7 +545,7 @@ class SocialShare extends ET_Builder_Module {
 						'
 							border-radius:30px;
 
-						',
+						'
 						
 					),
 				)
@@ -561,7 +561,7 @@ class SocialShare extends ET_Builder_Module {
 					'declaration' => sprintf(
 						'
 							border-radius:30px;
-						',
+						'
 						
 					),
 				)
@@ -616,7 +616,7 @@ class SocialShare extends ET_Builder_Module {
 							'
 								display:grid;
 								grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-							',
+							'
 						),
 
 						'media_query' => ET_Builder_Element::get_media_query('max_width_980'),
@@ -633,7 +633,7 @@ class SocialShare extends ET_Builder_Module {
 							'
 								display:grid;
 								grid-template-columns:repeat(1, 1fr);
-							',
+							'
 							
 						),
 
@@ -652,7 +652,7 @@ class SocialShare extends ET_Builder_Module {
 						'
 							display:grid;
 							grid-template-columns:repeat(2, 1fr);
-						',
+						'
 						
 					),
 
@@ -672,7 +672,7 @@ class SocialShare extends ET_Builder_Module {
 						'
 							display:grid;
 							grid-template-columns:repeat(3, 1fr);
-						',
+						'
 						
 					),
 
@@ -692,7 +692,7 @@ class SocialShare extends ET_Builder_Module {
 						'
 							display:grid;
 							grid-template-columns:repeat(4, 1fr);
-						',
+						'
 						
 					),
 
@@ -712,7 +712,7 @@ class SocialShare extends ET_Builder_Module {
 						'
 							display:grid;
 							grid-template-columns:repeat(5, 1fr);
-						',
+						'
 						
 					),
 
@@ -733,7 +733,7 @@ class SocialShare extends ET_Builder_Module {
 						'
 							display:grid;
 							grid-template-columns:repeat(6, 1fr);
-						',
+						'
 					),
 
 					'media_query' => ET_Builder_Element::get_media_query('max_width_980'),
@@ -752,7 +752,7 @@ class SocialShare extends ET_Builder_Module {
 						'
 							display:grid;
 							grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-						',
+						'
 					),
 
 					'media_query' => ET_Builder_Element::get_media_query('max_width_767'),
@@ -769,7 +769,7 @@ class SocialShare extends ET_Builder_Module {
 						'
 							display:grid;
 							grid-template-columns:repeat(1, 1fr);
-						',
+						'
 						
 					),
 
@@ -788,7 +788,7 @@ class SocialShare extends ET_Builder_Module {
 					'
 						display:grid;
 						grid-template-columns:repeat(2, 1fr);
-					',
+					'
 					
 				),
 
@@ -808,7 +808,7 @@ class SocialShare extends ET_Builder_Module {
 					'
 						display:grid;
 						grid-template-columns:repeat(3, 1fr);
-					',
+					'
 					
 				),
 
@@ -828,7 +828,7 @@ class SocialShare extends ET_Builder_Module {
 					'
 						display:grid;
 						grid-template-columns:repeat(4, 1fr);
-					',
+					'
 					
 				),
 
@@ -848,7 +848,7 @@ class SocialShare extends ET_Builder_Module {
 					'
 						display:grid;
 						grid-template-columns:repeat(5, 1fr);
-					',
+					'
 					
 				),
 
@@ -869,7 +869,7 @@ class SocialShare extends ET_Builder_Module {
 					'
 						display:grid;
 						grid-template-columns:repeat(6, 1fr);
-					',
+					'
 				),
 
 				'media_query' => ET_Builder_Element::get_media_query('max_width_767'),

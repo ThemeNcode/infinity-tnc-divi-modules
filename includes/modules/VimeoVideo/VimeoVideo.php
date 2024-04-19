@@ -337,7 +337,7 @@ class INFTNC_VimeoVideo extends ET_Builder_Module {
                 /* 08 */ esc_attr( $vimeo_start ) ,
 				/* 09 */ esc_attr( $vimeo_color ),
 				/* 10 */ esc_attr( $playsinline_value ),
-				/* 11 */ esc_attr( $autoplay_value ),
+				/* 11 */ esc_attr( $autoplay_value )
              );
         } elseif ( 'embed_code' == $vimeo_method ) {
 

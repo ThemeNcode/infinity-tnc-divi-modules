@@ -368,7 +368,7 @@ class INFTNC_HeadingGradient extends ET_Builder_Module {
 					%2$s
 				</%1$s>',
 			/* 01 */ et_pb_process_header_level( $header_level, 'h1' ),
-			/* 02 */ esc_html( $gradient_title ),
+			/* 02 */ esc_html( $gradient_title )
 		);
 
        //Gradient Options
@@ -459,7 +459,7 @@ class INFTNC_HeadingGradient extends ET_Builder_Module {
 							'#03658C',
 							'#63BBF2',
 							'0',
-							'100',
+							'100'
 						),
 					)
 				);
@@ -480,7 +480,7 @@ class INFTNC_HeadingGradient extends ET_Builder_Module {
 							'#F1543F',
 							'#FDC362',
 							'0',
-							'100',
+							'100'
 						),
 					)
 				);
@@ -580,7 +580,7 @@ class INFTNC_HeadingGradient extends ET_Builder_Module {
         </div>',
         /* 01 */ $content,
         /* 02 */ $this->module_classname( $render_slug ),
-        /* 03 */ $this->module_id(),
+        /* 03 */ $this->module_id()
     );
 
     return $output;

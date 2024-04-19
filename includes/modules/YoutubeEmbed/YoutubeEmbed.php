@@ -290,7 +290,7 @@ class INFTNC_YoutubeEmbed extends ET_Builder_Module {
 				/* 05 */ esc_attr( $mute_value ),
 				/* 06 */ esc_attr( $loop_value ),
 				/* 07 */ esc_attr( $control_value ),
-				/* 08 */ esc_attr( $rel_value ),
+				/* 08 */ esc_attr( $rel_value )
             );
 
         } elseif ( 'video' === $video_type && 'video_id' === $video_method ) { 
@@ -303,13 +303,13 @@ class INFTNC_YoutubeEmbed extends ET_Builder_Module {
 				/* 05 */ esc_attr( $mute_value ),
 				/* 06 */ esc_attr( $loop_value ),
 				/* 07 */ esc_attr( $control_value ) ,
-				/* 08 */ esc_attr( $rel_value ),
+				/* 08 */ esc_attr( $rel_value )
             );
 
         } elseif ( 'video' === $video_type && 'embed_code' === $video_method ) { 
 
             $output = sprintf('%1$s',
-                /* 01 */ wp_kses_post_deep( $video_embed ) ,
+                /* 01 */ wp_kses_post_deep( $video_embed ) 
             );
 
         }  elseif ( 'playlist' === $video_type && 'video_url' === $video_method ) {
@@ -327,7 +327,7 @@ class INFTNC_YoutubeEmbed extends ET_Builder_Module {
 				/* 05 */ esc_attr( $mute_value ),
 				/* 06 */ esc_attr( $loop_value ),
 				/* 07 */ esc_attr( $control_value ),
-				/* 08 */ esc_attr( $rel_value ),
+				/* 08 */ esc_attr( $rel_value )
             );
 
         } elseif ( 'playlist' === $video_type && 'video_id' === $video_method ) {
@@ -340,7 +340,7 @@ class INFTNC_YoutubeEmbed extends ET_Builder_Module {
 				/* 05 */ esc_attr( $mute_value ),
 				/* 06 */ esc_attr( $loop_value ),
 				/* 07 */ esc_attr( $control_value ),
-				/* 08 */ esc_attr( $rel_value ),
+				/* 08 */ esc_attr( $rel_value )
             );
         } elseif ( 'playlist' === $video_type && 'embed_code' === $video_method ) {
 

@@ -426,7 +426,7 @@ class INFTNC_DualButtons extends ET_Builder_Module {
 			</div>',
 			$this->render_button_left(),
 			$this->render_button_right(),
-			esc_attr( ET_Builder_Element::get_module_order_class( $this->slug ) ),
+			esc_attr( ET_Builder_Element::get_module_order_class( $this->slug ) )
 		);
 		
         return $output;

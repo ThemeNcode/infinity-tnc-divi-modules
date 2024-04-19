@@ -252,7 +252,7 @@ class INFTNC_TypeWriter extends ET_Builder_Module {
             /* 03 */  esc_attr( $typing_backspped ),
             /* 05 */  esc_attr( $typing_pause ),
             /* 06 */  esc_attr( $typing_cursor ),
-            /* 07 */  esc_attr( $loop_vale ),
+            /* 07 */  esc_attr( $loop_vale )
          );
 
 		$output = sprintf('
@@ -267,7 +267,7 @@ class INFTNC_TypeWriter extends ET_Builder_Module {
             /* 01 */ esc_html( $before_text ),
             /* 02 */ esc_html( $after_text ), 
             /* 03 */ $typing_text, 
-			/* 04 */ et_pb_process_header_level( $header_level, 'h1' ),
+			/* 04 */ et_pb_process_header_level( $header_level, 'h1' )
         );
 
         return $output;

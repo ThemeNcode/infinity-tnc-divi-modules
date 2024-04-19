@@ -571,7 +571,7 @@ class ImageCarousel extends ET_Builder_Module {
 					'declaration' => sprintf(
 						'width:%1$s!important;height:%2$s!important;',
 						$this->props['navigation_bg_size'],
-						$this->props['navigation_bg_size'],
+						$this->props['navigation_bg_size']
 					),
 				)
 			);
@@ -586,7 +586,7 @@ class ImageCarousel extends ET_Builder_Module {
 					'selector'    => '%%order_class%% .slick-inftnc-arrow',
 					'declaration' => sprintf(
 						'background-color:%1$s!important;',
-						$this->props['navigation_bg_color'],
+						$this->props['navigation_bg_color']
 					),
 				)
 			);
@@ -600,7 +600,7 @@ class ImageCarousel extends ET_Builder_Module {
 					'selector'    => '%%order_class%% .slick-inftnc-arrow',
 					'declaration' => sprintf(
 						'background-color:%1$s!important;',
-						$this->props['navigation_bg_color'],
+						$this->props['navigation_bg_color']
 					),
 				)
 			);
@@ -614,7 +614,7 @@ class ImageCarousel extends ET_Builder_Module {
 					'selector'    => '%%order_class%% .slick-inftnc-arrow.slick-next:before',
 					'declaration' => sprintf(
 						'color:%1$s!important;',
-						$this->props['navigation_icon_color'],
+						$this->props['navigation_icon_color']
 					),
 				)
 			);
@@ -628,7 +628,7 @@ class ImageCarousel extends ET_Builder_Module {
 					'selector'    => '%%order_class%% .slick-inftnc-arrow.slick-prev:before',
 					'declaration' => sprintf(
 						'color:%1$s!important;',
-						$this->props['navigation_icon_color'],
+						$this->props['navigation_icon_color']
 					),
 				)
 			);
@@ -642,7 +642,7 @@ class ImageCarousel extends ET_Builder_Module {
 					'selector'    => '%%order_class%% .inftnc_carousels_image_wrapper .slick-dots li button:before',
 					'declaration' => sprintf(
 						'font-size:%1$s!important;',
-						$this->props['pagination_cmn_dots_size'],
+						$this->props['pagination_cmn_dots_size']
 					),
 				)
 			);
@@ -656,7 +656,7 @@ class ImageCarousel extends ET_Builder_Module {
 					'selector'    => '%%order_class%% .inftnc_carousels_image_wrapper .slick-dots li button:before',
 					'declaration' => sprintf(
 						'color:%1$s!important;',
-						$this->props['pagination_cmn_dots_color'],
+						$this->props['pagination_cmn_dots_color']
 					),
 				)
 			);
@@ -670,7 +670,7 @@ class ImageCarousel extends ET_Builder_Module {
 					'selector'    => '%%order_class%% .inftnc_carousels_image_wrapper .slick-dots li.slick-active button:before',
 					'declaration' => sprintf(
 						'font-size:%1$s!important;',
-						$this->props['pagination_active_dots_size'],
+						$this->props['pagination_active_dots_size']
 					),
 				)
 			);
@@ -685,7 +685,7 @@ class ImageCarousel extends ET_Builder_Module {
 					'selector'    => '%%order_class%% .inftnc_carousels_image_wrapper .slick-dots',
 					'declaration' => sprintf(
 						'display:flex;justify-content:%1$s;margin-top: 25px;',
-						$dots_alignments,
+						$dots_alignments
 					),
 				)
 			);
@@ -701,7 +701,7 @@ class ImageCarousel extends ET_Builder_Module {
 						'selector'    => '%%order_class%% .inftnc_carousels_image_wrapper .slick-dots',
 						'declaration' => sprintf(
 							'justify-content:%1$s;',
-							$dots_aligments_tablet,
+							$dots_aligments_tablet
 						),
 						'media_query' => ET_Builder_Element::get_media_query('max_width_980'),
 					)
@@ -715,7 +715,7 @@ class ImageCarousel extends ET_Builder_Module {
 						'selector'    => '%%order_class%% .inftnc_carousels_image_wrapper .slick-dots',
 						'declaration' => sprintf(
 							'justify-content:%1$s;',
-							$dots_aligments_phone,
+							$dots_aligments_phone
 						),
 						'media_query' => ET_Builder_Element::get_media_query('max_width_767'),
 					)
@@ -800,7 +800,7 @@ class ImageCarousel extends ET_Builder_Module {
 							'declaration' => sprintf(
 								'width:%1$s!important;height:%2$s!important;',
 								$navigation_bg_size_tablet,
-								$navigation_bg_size_tablet,
+								$navigation_bg_size_tablet
 							),
 							'media_query' => ET_Builder_Element::get_media_query('max_width_980'),
 						)
@@ -815,7 +815,7 @@ class ImageCarousel extends ET_Builder_Module {
 							'declaration' => sprintf(
 								'width:%1$s!important;height:%2$s!important;',
 								$navigation_bg_size_phone,
-								$navigation_bg_size_phone,
+								$navigation_bg_size_phone
 							),
 							'media_query' => ET_Builder_Element::get_media_query('max_width_767'),
 						)
@@ -834,7 +834,7 @@ class ImageCarousel extends ET_Builder_Module {
 						'selector'    => '%%order_class%% .inftnc_carousels_image_wrapper .slick-dots li button:before',
 						'declaration' => sprintf(
 							'font-size:%1$s!important;',
-							$pagination_cmn_dots_size_tablet,
+							$pagination_cmn_dots_size_tablet
 						),
 						'media_query' => ET_Builder_Element::get_media_query('max_width_980'),
 					)
@@ -848,7 +848,7 @@ class ImageCarousel extends ET_Builder_Module {
 						'selector'    => '%%order_class%% .inftnc_carousels_image_wrapper .slick-dots li button:before',
 						'declaration' => sprintf(
 							'font-size:%1$s!important;',
-							$pagination_cmn_dots_size_phone,
+							$pagination_cmn_dots_size_phone
 						),
 						'media_query' => ET_Builder_Element::get_media_query('max_width_767'),
 					)
@@ -867,7 +867,7 @@ class ImageCarousel extends ET_Builder_Module {
 						'selector'    => '%%order_class%% .inftnc_carousels_image_wrapper .slick-dots li.slick-active button:before',
 						'declaration' => sprintf(
 							'font-size:%1$s!important;',
-							$pagination_active_dots_size_tablet,
+							$pagination_active_dots_size_tablet
 						),
 						'media_query' => ET_Builder_Element::get_media_query('max_width_980'),
 					)
@@ -881,7 +881,7 @@ class ImageCarousel extends ET_Builder_Module {
 						'selector'    => '%%order_class%% .inftnc_carousels_image_wrapper .slick-dots li.slick-active button:before',
 						'declaration' => sprintf(
 							'font-size:%1$s!important;',
-							$pagination_active_dots_size_phone,
+							$pagination_active_dots_size_phone
 						),
 						'media_query' => ET_Builder_Element::get_media_query('max_width_767'),
 					)
@@ -990,7 +990,7 @@ class ImageCarousel extends ET_Builder_Module {
             array(
                 'selector'    => '%%order_class%% .inftnc_carousels_image_wrapper .image_carousel_img',
                 'declaration' => sprintf(
-                    '-webkit-filter: grayscale(0); filter: none; transition: -webkit-filter .5s ease 0s; transition: filter .5s ease 0s;',
+                    '-webkit-filter: grayscale(0); filter: none; transition: -webkit-filter .5s ease 0s; transition: filter .5s ease 0s;'
                 ),
             )
         );
@@ -1002,7 +1002,7 @@ class ImageCarousel extends ET_Builder_Module {
             array(
                 'selector'    => '%%order_class%% .inftnc_carousels_image_wrapper .image_carousel_img:hover',
                 'declaration' => sprintf(
-                    '-webkit-filter: grayscale(100%%); filter: grayscale(100%%);',
+                    '-webkit-filter: grayscale(100%%); filter: grayscale(100%%);'
                 ),
             )
         );
@@ -1079,7 +1079,7 @@ class ImageCarousel extends ET_Builder_Module {
 				array(
 					'selector'    => '%%order_class%% .inftnc_carousels_image_wrapper .image_carousel_img:hover',
 					'declaration' => sprintf(
-						'margin-left: 0;',
+						'margin-left: 0;'
 					),
 				)
 			);
@@ -1095,9 +1095,9 @@ class ImageCarousel extends ET_Builder_Module {
 						-webkit-transform: scale(1.01, 1.01);
 						transform: scale(1.01, 1.01);
 						-webkit-transition: all .5s ease 0s;
-						transition: all .5s ease 0s;',
+						transition: all .5s ease 0s;'
 					),
-				)
+				)w
 			);
 		}
 		
@@ -1112,7 +1112,7 @@ class ImageCarousel extends ET_Builder_Module {
 						'-webkit-transform: rotate(0) scale(1);
 						transform: rotate(0) scale(1);
 						-webkit-transition: all .5s ease 0s;
-						transition: all .5s ease 0s;',
+						transition: all .5s ease 0s;'
 					),
 				)
 			);
@@ -1127,7 +1127,7 @@ class ImageCarousel extends ET_Builder_Module {
 						'-webkit-transform: rotate(15deg) scale(1.4);
 						transform: rotate(15deg) scale(1.4);
 						-webkit-transition: all .5s ease 0s;
-						transition: all .5s ease 0s;',
+						transition: all .5s ease 0s;'
 					),
 				)
 			);
@@ -1152,7 +1152,7 @@ class ImageCarousel extends ET_Builder_Module {
 			/* 14 */ esc_html( $slides_to_show_tablet ),
 			/* 15 */ esc_html( $slides_to_show_phone ),
 			/* 16 */ esc_html( $slides_to_scroll_tablet ) ,
-			/* 17 */ esc_html( $slides_to_scroll_phone ), 	
+			/* 17 */ esc_html( $slides_to_scroll_phone )
  		);
 
 		return  $output ;

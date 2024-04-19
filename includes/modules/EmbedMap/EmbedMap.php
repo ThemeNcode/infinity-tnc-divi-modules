@@ -153,7 +153,7 @@ class INFTNC_EmbedMap extends ET_Builder_Module {
 		} elseif ( 'latitude_longitude'  === $source_type) { 
 			$map = sprintf('<iframe src = "https://maps.google.com/maps?q=%1$s&z=%2$s&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>',
 			 /* 01 */ esc_attr( $latitude_logitude ),
-			 /* 04 */ esc_attr( $zoom ),
+			 /* 04 */ esc_attr( $zoom )
 			);
 		} 
 		
