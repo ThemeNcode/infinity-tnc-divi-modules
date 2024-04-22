@@ -20,7 +20,7 @@ class INFTNC_HeadingGradient extends ET_Builder_Module {
 		$this->name = esc_html__( 'Heading Gradient - Infinity TNC', 'infinity-tnc-divi-modules' );
 		//Icon 
 		$this->icon_path        =  plugin_dir_path( __FILE__ ) . 'icon.svg';
-
+		
 		// This property will add CSS fields on Advanced > Custom CSS
 		$this->custom_css_fields = array(
 			'title' => array(

@@ -149,7 +149,7 @@ class INFTNC_VimeoVideo extends ET_Builder_Module {
             'mute' => array(
 				'label'             => esc_html__( 'Mute', 'infinity-tnc-divi-modules'),
 				'type'              => 'yes_no_button',
-				'default'			=> 'off',
+				'default'			=> 'on',
 				'description'		=> esc_html__('Set video to mute on load. Viewers can still adjust the volume preferences in the player.','infinity-tnc-divi-modules'),
 				'options'           => array(
 					'on'  => esc_html__( 'ON', 'infinity-tnc-divi-modules' ),
