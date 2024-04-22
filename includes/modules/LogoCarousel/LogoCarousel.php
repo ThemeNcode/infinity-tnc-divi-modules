@@ -1,5 +1,5 @@
 <?php
-
+#[\AllowDynamicProperties]
 class LogoCarousel extends ET_Builder_Module {
 	// Module slug (also used as shortcode tag)
 	public $slug       = 'inftnc_logo_carousel';

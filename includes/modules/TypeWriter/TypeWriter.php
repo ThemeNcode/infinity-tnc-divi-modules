@@ -1,5 +1,5 @@
 <?php
-
+#[\AllowDynamicProperties]
 class INFTNC_TypeWriter extends ET_Builder_Module {
 
 	public $slug       = 'inftnc_type_writer';

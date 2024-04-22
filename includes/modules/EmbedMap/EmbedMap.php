@@ -1,5 +1,5 @@
 <?php
-
+#[\AllowDynamicProperties]
 class INFTNC_EmbedMap extends ET_Builder_Module {
 
 	public $slug       = 'inftnc_embed_map';

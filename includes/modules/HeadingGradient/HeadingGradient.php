@@ -1,5 +1,5 @@
 <?php
-
+#[\AllowDynamicProperties]
 class INFTNC_HeadingGradient extends ET_Builder_Module {
 
 	public $slug       = 'inftnc_heading_gradient';

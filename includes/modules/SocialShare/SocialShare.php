@@ -1,5 +1,5 @@
 <?php
-
+#[\AllowDynamicProperties]
 class SocialShare extends ET_Builder_Module {
 	// Module slug (also used as shortcode tag)
 	public $slug       = 'inftnc_social_share';

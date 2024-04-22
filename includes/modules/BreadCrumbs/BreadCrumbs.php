@@ -1,5 +1,5 @@
 <?php
-
+#[\AllowDynamicProperties]
 class INFTNC_BreadCrumbs extends ET_Builder_Module {
 
 	public $slug       = 'inftnc_bread_crumbs';
@@ -34,6 +34,8 @@ class INFTNC_BreadCrumbs extends ET_Builder_Module {
 				),
 			),
 		);
+
+	
 
 		// This property will add CSS fields on Advanced > Custom CSS
 		$this->custom_css_fields = array(

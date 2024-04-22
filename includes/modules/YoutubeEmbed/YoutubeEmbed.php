@@ -1,5 +1,5 @@
 <?php
-
+#[\AllowDynamicProperties]
 class INFTNC_YoutubeEmbed extends ET_Builder_Module {
 
 	public $slug       = 'inftnc_youtube_embed';

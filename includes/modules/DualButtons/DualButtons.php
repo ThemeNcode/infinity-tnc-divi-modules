@@ -1,5 +1,5 @@
 <?php
-
+#[\AllowDynamicProperties]
 class INFTNC_DualButtons extends ET_Builder_Module {
 
 	public $slug       = 'inftnc_dual_buttons';

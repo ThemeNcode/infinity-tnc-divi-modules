@@ -1,4 +1,5 @@
 <?php
+
 class ImageCarouselChild extends ET_Builder_Module {
 	// Module slug (also used as shortcode tag)
 	public $slug                     = 'inftnc_image_carousel_child';

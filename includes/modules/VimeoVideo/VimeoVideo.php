@@ -1,5 +1,5 @@
 <?php
-
+#[\AllowDynamicProperties]
 class INFTNC_VimeoVideo extends ET_Builder_Module {
 
 	public $slug       = 'inftnc_vimeo_video';

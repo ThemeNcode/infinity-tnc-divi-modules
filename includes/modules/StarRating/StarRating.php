@@ -1,7 +1,6 @@
 <?php
-
+#[\AllowDynamicProperties]
 class INFTNC_StarRating extends ET_Builder_Module {
-
 	public $slug       = 'inftnc_star_rating';
 	public $vb_support = 'on';
 	// Module Credits (Appears at the bottom of the module settings modal)
