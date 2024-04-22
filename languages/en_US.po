@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Infinity TNC Divi Modules 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/infinity-tnc-divi-"
 "modules\n"
-"POT-Creation-Date: 2024-04-19 06:30:16+00:00\n"
+"POT-Creation-Date: 2024-04-22 10:26:29+00:00\n"
 "PO-Revision-Date: 2024-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -82,54 +82,54 @@ msgstr ""
 msgid "Colors"
 msgstr ""
 
-#: includes/modules/BreadCrumbs/BreadCrumbs.php:41
-#: includes/modules/BreadCrumbs/BreadCrumbs.php:89
+#: includes/modules/BreadCrumbs/BreadCrumbs.php:43
+#: includes/modules/BreadCrumbs/BreadCrumbs.php:91
 #: includes/modules/TypeWriter/TypeWriter.php:155
 msgid "Before Text"
 msgstr ""
 
-#: includes/modules/BreadCrumbs/BreadCrumbs.php:46
+#: includes/modules/BreadCrumbs/BreadCrumbs.php:48
 msgid "Home Text"
 msgstr ""
 
-#: includes/modules/BreadCrumbs/BreadCrumbs.php:51
+#: includes/modules/BreadCrumbs/BreadCrumbs.php:53
 msgid "Separator"
 msgstr ""
 
-#: includes/modules/BreadCrumbs/BreadCrumbs.php:56
+#: includes/modules/BreadCrumbs/BreadCrumbs.php:58
 msgid "Current Text"
 msgstr ""
 
-#: includes/modules/BreadCrumbs/BreadCrumbs.php:80
-#: includes/modules/BreadCrumbs/BreadCrumbs.php:83
+#: includes/modules/BreadCrumbs/BreadCrumbs.php:82
+#: includes/modules/BreadCrumbs/BreadCrumbs.php:85
 msgid "Home"
 msgstr ""
 
-#: includes/modules/BreadCrumbs/BreadCrumbs.php:84
+#: includes/modules/BreadCrumbs/BreadCrumbs.php:86
 msgid "Default home text in the Breadcrumbs"
 msgstr ""
 
-#: includes/modules/BreadCrumbs/BreadCrumbs.php:92
+#: includes/modules/BreadCrumbs/BreadCrumbs.php:94
 msgid "Before text in the breadcrumbs"
 msgstr ""
 
-#: includes/modules/BreadCrumbs/BreadCrumbs.php:97
+#: includes/modules/BreadCrumbs/BreadCrumbs.php:99
 msgid "Separator Icon"
 msgstr ""
 
-#: includes/modules/BreadCrumbs/BreadCrumbs.php:104
+#: includes/modules/BreadCrumbs/BreadCrumbs.php:106
 msgid "Choose the icon for the separator."
 msgstr ""
 
-#: includes/modules/BreadCrumbs/BreadCrumbs.php:108
+#: includes/modules/BreadCrumbs/BreadCrumbs.php:110
 msgid "Add Before Icon"
 msgstr ""
 
-#: includes/modules/BreadCrumbs/BreadCrumbs.php:113
+#: includes/modules/BreadCrumbs/BreadCrumbs.php:115
 msgid "No"
 msgstr ""
 
-#: includes/modules/BreadCrumbs/BreadCrumbs.php:114
+#: includes/modules/BreadCrumbs/BreadCrumbs.php:116
 #: includes/modules/ImageCarousel/ImageCarousel.php:127
 #: includes/modules/ImageCarousel/ImageCarousel.php:152
 #: includes/modules/ImageCarousel/ImageCarousel.php:164
@@ -151,27 +151,27 @@ msgstr ""
 msgid "Yes"
 msgstr ""
 
-#: includes/modules/BreadCrumbs/BreadCrumbs.php:119
+#: includes/modules/BreadCrumbs/BreadCrumbs.php:121
 msgid "Before Text Icon"
 msgstr ""
 
-#: includes/modules/BreadCrumbs/BreadCrumbs.php:126
+#: includes/modules/BreadCrumbs/BreadCrumbs.php:128
 msgid "Choose the icon for the before text."
 msgstr ""
 
-#: includes/modules/BreadCrumbs/BreadCrumbs.php:133
+#: includes/modules/BreadCrumbs/BreadCrumbs.php:135
 msgid "Link Color"
 msgstr ""
 
-#: includes/modules/BreadCrumbs/BreadCrumbs.php:140
+#: includes/modules/BreadCrumbs/BreadCrumbs.php:142
 msgid "Separator Icon Color"
 msgstr ""
 
-#: includes/modules/BreadCrumbs/BreadCrumbs.php:147
+#: includes/modules/BreadCrumbs/BreadCrumbs.php:149
 msgid "Current Text Color"
 msgstr ""
 
-#: includes/modules/BreadCrumbs/BreadCrumbs.php:154
+#: includes/modules/BreadCrumbs/BreadCrumbs.php:156
 msgid "Before Text Color"
 msgstr ""
 
@@ -309,7 +309,7 @@ msgid "Gradient Style"
 msgstr ""
 
 #: includes/modules/HeadingGradient/HeadingGradient.php:84
-#: includes/modules/StarRating/StarRating.php:86
+#: includes/modules/StarRating/StarRating.php:85
 #: includes/modules/TypeWriter/TypeWriter.php:89
 msgid "Heading Level"
 msgstr ""
@@ -453,8 +453,8 @@ msgstr ""
 #: includes/modules/ImageCarousel/ImageCarousel.php:63
 #: includes/modules/ImageCarousel/ImageCarousel.php:406
 #: includes/modules/ImageCarousel/ImageCarousel.php:418
-#: includes/modules/ImageCarouselChild/ImageCarouselChild.php:17
-#: includes/modules/ImageCarouselChild/ImageCarouselChild.php:43
+#: includes/modules/ImageCarouselChild/ImageCarouselChild.php:18
+#: includes/modules/ImageCarouselChild/ImageCarouselChild.php:44
 msgid "Image"
 msgstr ""
 
@@ -688,42 +688,42 @@ msgstr ""
 msgid "Align Dots to the left, right or center of the module."
 msgstr ""
 
-#: includes/modules/ImageCarouselChild/ImageCarouselChild.php:18
+#: includes/modules/ImageCarouselChild/ImageCarouselChild.php:19
 msgid "New Image"
 msgstr ""
 
-#: includes/modules/ImageCarouselChild/ImageCarouselChild.php:19
+#: includes/modules/ImageCarouselChild/ImageCarouselChild.php:20
 msgid "Image Carousel Settings"
 msgstr ""
 
-#: includes/modules/ImageCarouselChild/ImageCarouselChild.php:26
+#: includes/modules/ImageCarouselChild/ImageCarouselChild.php:27
 #: includes/modules/LogoCarouselChild/LogoCarouselChild.php:27
 msgid "Content"
 msgstr ""
 
-#: includes/modules/ImageCarouselChild/ImageCarouselChild.php:47
+#: includes/modules/ImageCarouselChild/ImageCarouselChild.php:48
 msgid "Upload an Image"
 msgstr ""
 
-#: includes/modules/ImageCarouselChild/ImageCarouselChild.php:48
+#: includes/modules/ImageCarouselChild/ImageCarouselChild.php:49
 msgid "Choose an Image"
 msgstr ""
 
-#: includes/modules/ImageCarouselChild/ImageCarouselChild.php:49
+#: includes/modules/ImageCarouselChild/ImageCarouselChild.php:50
 msgid "Set As Image"
 msgstr ""
 
-#: includes/modules/ImageCarouselChild/ImageCarouselChild.php:50
+#: includes/modules/ImageCarouselChild/ImageCarouselChild.php:51
 msgid ""
 "Upload your desired Image, or type in the URL to the Image you would like to "
 "display."
 msgstr ""
 
-#: includes/modules/ImageCarouselChild/ImageCarouselChild.php:55
+#: includes/modules/ImageCarouselChild/ImageCarouselChild.php:56
 msgid "Image ALT Text"
 msgstr ""
 
-#: includes/modules/ImageCarouselChild/ImageCarouselChild.php:58
+#: includes/modules/ImageCarouselChild/ImageCarouselChild.php:59
 msgid ""
 "This defines the HTML ALT text. A short description of your image can be "
 "placed here."
@@ -1009,76 +1009,76 @@ msgstr ""
 msgid "Share On Blogger "
 msgstr ""
 
-#: includes/modules/StarRating/StarRating.php:21
+#: includes/modules/StarRating/StarRating.php:20
 msgid "Star Rating - Infinity TNC"
 msgstr ""
 
-#: includes/modules/StarRating/StarRating.php:28
+#: includes/modules/StarRating/StarRating.php:27
 msgid "Rating"
 msgstr ""
 
-#: includes/modules/StarRating/StarRating.php:34
+#: includes/modules/StarRating/StarRating.php:33
 msgid "Star Style"
 msgstr ""
 
-#: includes/modules/StarRating/StarRating.php:38
+#: includes/modules/StarRating/StarRating.php:37
 msgid "Title Text"
 msgstr ""
 
-#: includes/modules/StarRating/StarRating.php:42
+#: includes/modules/StarRating/StarRating.php:41
 msgid "Rating Text"
 msgstr ""
 
-#: includes/modules/StarRating/StarRating.php:61
-#: includes/modules/StarRating/StarRating.php:153
+#: includes/modules/StarRating/StarRating.php:60
+#: includes/modules/StarRating/StarRating.php:152
 msgid "Title"
 msgstr ""
 
-#: includes/modules/StarRating/StarRating.php:91
+#: includes/modules/StarRating/StarRating.php:90
 msgid "Rating Number"
 msgstr ""
 
-#: includes/modules/StarRating/StarRating.php:128
+#: includes/modules/StarRating/StarRating.php:127
 msgid "Rating Scale"
 msgstr ""
 
-#: includes/modules/StarRating/StarRating.php:140
+#: includes/modules/StarRating/StarRating.php:139
 msgid "Rating Value"
 msgstr ""
 
-#: includes/modules/StarRating/StarRating.php:159
+#: includes/modules/StarRating/StarRating.php:158
 msgid "Display Rating Value Text"
 msgstr ""
 
-#: includes/modules/StarRating/StarRating.php:163
+#: includes/modules/StarRating/StarRating.php:162
 msgid "Show"
 msgstr ""
 
-#: includes/modules/StarRating/StarRating.php:164
+#: includes/modules/StarRating/StarRating.php:163
 msgid "Hide"
 msgstr ""
 
-#: includes/modules/StarRating/StarRating.php:170
+#: includes/modules/StarRating/StarRating.php:169
 msgid "Star Icon Color"
 msgstr ""
 
-#: includes/modules/StarRating/StarRating.php:179
+#: includes/modules/StarRating/StarRating.php:178
 msgid "Star Icon Empty Color"
 msgstr ""
 
-#: includes/modules/StarRating/StarRating.php:188
+#: includes/modules/StarRating/StarRating.php:187
 msgid "Star Size"
 msgstr ""
 
-#: includes/modules/StarRating/StarRating.php:201
+#: includes/modules/StarRating/StarRating.php:200
 msgid "Star Gap"
 msgstr ""
 
-#: includes/modules/StarRating/StarRating.php:214
+#: includes/modules/StarRating/StarRating.php:213
 msgid "Star Alignment"
 msgstr ""
 
-#: includes/modules/StarRating/StarRating.php:215
+#: includes/modules/StarRating/StarRating.php:214
 msgid "Align your start to the left, right or center of the module."
 msgstr ""
 
