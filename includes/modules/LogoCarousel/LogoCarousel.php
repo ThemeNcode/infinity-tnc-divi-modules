@@ -848,7 +848,7 @@ class LogoCarousel extends ET_Builder_Module {
 						'selector'    => '%%order_class%% .inftnc_carousels_logo_wrapper .slick-dots li button:before',
 						'declaration' => sprintf(
 							'font-size:%1$s!important;',
-							$pagination_cmn_dots_size_phone,
+							$pagination_cmn_dots_size_phone
 						),
 						'media_query' => ET_Builder_Element::get_media_query('max_width_767'),
 					)
