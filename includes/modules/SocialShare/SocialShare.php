@@ -136,14 +136,14 @@ class SocialShare extends ET_Builder_Module {
 
 			'button_bg' => array(
 				'label'           => esc_html__( 'Button Background Color', 'infinity-tnc-divi-modules' ),
-				'type'            => 'color',
+				'type'            => 'color-alpha',
 				'toggle_slug'     => 'share_buton',
 				'tab_slug'        => 'advanced',
 			),
 
 			'icon_color' => array(
 				'label'           => esc_html__( 'Icon Color', 'infinity-tnc-divi-modules' ),
-				'type'            => 'color',
+				'type'            => 'color-alpha',
 				'toggle_slug'     => 'share_icon',
 				'tab_slug'        => 'advanced',
 			),

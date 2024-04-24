@@ -232,7 +232,7 @@ class INFTNC_HeadingGradient extends ET_Builder_Module {
 
             'start_color' => array(
                 'label'           => esc_html__( 'Start Color', 'infinity-tnc-divi-modules' ),
-                'type'            => 'color',
+                'type'            => 'color-alpha',
 				'default'		  => '#481CA6',
                 'tab_slug'        => 'advanced',
                 'toggle_slug'     => 'gradient',
@@ -243,7 +243,7 @@ class INFTNC_HeadingGradient extends ET_Builder_Module {
 
             'end_color' => array(
                 'label'           => esc_html__( 'End Color', 'infinity-tnc-divi-modules' ),
-                'type'            => 'color',
+                'type'            => 'color-alpha',
 				'default'		  => '#AC43D9',
                 'tab_slug'        => 'advanced',
                 'toggle_slug'     => 'gradient',

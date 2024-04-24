@@ -133,28 +133,28 @@ class INFTNC_BreadCrumbs extends ET_Builder_Module {
 
 			'link_color' => array(
 				'label'           => esc_html__('Link Color', 'infinity-tnc-divi-module' ),
-				'type'            => 'color',
+				'type'            => 'color-alpha',
 				'toggle_slug'     => 'breadcrumbs',
 				'tab_slug'        => 'advanced',
 			),
 
 			'seperate_icon_color' => array(
 				'label'           => esc_html__( 'Separator Icon Color', 'infinity-tnc-divi-module' ),
-				'type'            => 'color',
+				'type'            => 'color-alpha',
 				'toggle_slug'     => 'breadcrumbs',
 				'tab_slug'        => 'advanced',
 			),
 
 			'current_text_color' => array(
 				'label'           => esc_html__( 'Current Text Color', 'infinity-tnc-divi-module' ),
-				'type'            => 'color',
+				'type'            => 'color-alpha',
 				'toggle_slug'     => 'breadcrumbs',
 				'tab_slug'        => 'advanced',
 			),
 
 			'before_text_color' => array(
 				'label'           => esc_html__( 'Before Text Color', 'infinity-tnc-divi-module' ),
-				'type'            => 'color',
+				'type'            => 'color-alpha',
 				'toggle_slug'     => 'breadcrumbs',
 				'tab_slug'        => 'advanced',
 			),

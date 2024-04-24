@@ -253,7 +253,7 @@ class INFTNC_VimeoVideo extends ET_Builder_Module {
 
 			'vimeo_color' => array(
 				'label'           => esc_html__( 'Color', 'infinity-tnc-divi-modules' ),
-				'type'            => 'color',
+				'type'            => 'color-alpha',
 				'default'		  => '00adef',
 				'description'	  => esc_html__( 'Specify the color of the video controls. Colors may be overridden by the embed settings of the video', 'infinity-tnc-divi-modules' ),
 				'toggle_slug'     => 'video_options',

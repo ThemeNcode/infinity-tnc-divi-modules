@@ -75,7 +75,7 @@ class SocialShareChild extends ET_Builder_Module {
 
 			'button_color_child' => array(
 				'label'           => esc_html__( 'Button Background Color', 'infinity-tnc-divi-modules' ),
-				'type'            => 'color',
+				'type'            => 'color-alpha',
 				'toggle_slug'     => 'share_button_child',
 				'tab_slug'        => 'advanced',
 			),
@@ -89,7 +89,7 @@ class SocialShareChild extends ET_Builder_Module {
 
 			'icon_color_child' => array(
 				'label'           => esc_html__( 'Icon Color', 'infinity-tnc-divi-modules' ),
-				'type'            => 'color',
+				'type'            => 'color-alpha',
 				'toggle_slug'     => 'share_icon',
 				'tab_slug'        => 'advanced',
 			),

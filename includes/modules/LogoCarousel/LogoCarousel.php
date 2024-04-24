@@ -312,7 +312,7 @@ class LogoCarousel extends ET_Builder_Module {
 
 			'navigation_icon_color' => array(
                 'label'           => esc_html__( 'Icon Color', 'inftnc-infinity-tnc-divi-modules' ),
-                'type'            => 'color',
+                'type'            => 'color-alpha',
                 'tab_slug'        => 'advanced',
                 'toggle_slug'     => 'navigation',
 				'hover'       	  => 'tabs',
@@ -320,7 +320,7 @@ class LogoCarousel extends ET_Builder_Module {
 
 			'navigation_bg_color' => array(
                 'label'           => esc_html__( 'Background Color', 'inftnc-infinity-tnc-divi-modules' ),
-                'type'            => 'color',
+                'type'            => 'color-alpha',
                 'tab_slug'        => 'advanced',
                 'toggle_slug'     => 'navigation',
 				'hover'       	  => 'tabs',
@@ -364,7 +364,7 @@ class LogoCarousel extends ET_Builder_Module {
 
 			'pagination_cmn_dots_color' => array(
                 'label'           => esc_html__( 'Dots Color', 'infinity-tnc-divi-modules' ),
-                'type'            => 'color',
+                'type'            => 'color-alpha',
                 'tab_slug'        => 'advanced',
                 'toggle_slug'     => 'pagination',
 				'sub_toggle'	  => 'pagination_common',

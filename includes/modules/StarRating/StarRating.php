@@ -167,7 +167,7 @@ class INFTNC_StarRating extends ET_Builder_Module {
 
 			'icon_color' => array(
 				'label'           => esc_html__( 'Star Icon Color', 'infinity-tnc-divi-modules' ),
-				'type'            => 'color',
+				'type'            => 'color-alpha',
 				'default'		  => '#EBC03F',
 				'tab_slug'        => 'advanced',
 				'toggle_slug'     => 'rating',
@@ -176,7 +176,7 @@ class INFTNC_StarRating extends ET_Builder_Module {
 
 			'empty_color' => array(
 				'label'           => esc_html__( 'Star Icon Empty Color', 'infinity-tnc-divi-modules' ),
-				'type'            => 'color',
+				'type'            => 'color-alpha',
 				'default'		  => '#AAAAAA',
 				'tab_slug'        => 'advanced',
 				'toggle_slug'     => 'rating',
