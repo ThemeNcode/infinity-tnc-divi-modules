@@ -885,7 +885,7 @@ class SocialShare extends ET_Builder_Module {
 	 	// Remove automatically added classnames
 		$output = sprintf(
 			'<div class="inftnc_social_share_wrapper">%1$s</div>',
-			et_sanitized_previously( $this->content )
+			et_core_sanitized_previously( $this->content )
 		);
 
 		return  $output ;

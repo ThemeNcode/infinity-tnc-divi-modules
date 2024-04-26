@@ -1136,7 +1136,7 @@ class ImageCarousel extends ET_Builder_Module {
 
 		$output = sprintf(
 			'<div dir="%13$s" class="inftnc_carousels_image_wrapper" data-slides-to-show="%2$s" data-slide-scroll="%3$s" data-animation-speed="%4$s" data-autoplay="%5$s" data-autoplay-speed="%6$s" data-navigation="%7$s" data-pagination="%8$s" data-infinite="%9$s" data-pause-hover="%10$s" data-swipe="%11$s" data-rtl="%12$s" data-slide-tablet="%14$s" data-slide-phone="%15$s" data-scroll-tablet="%16$s" data-scroll-phone="%17$s">%1$s</div>',
-			/* 01 */ et_sanitized_previously( $this->content ),
+			/* 01 */ et_core_sanitized_previously( $this->content ),
 			/* 02 */ esc_html( $slides_to_show ),
 			/* 03 */ esc_html( $slides_to_scroll ),
 			/* 04 */ esc_html( $animation_speed ),
