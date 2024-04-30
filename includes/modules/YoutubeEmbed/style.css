@@ -1,4 +1,22 @@
+
+.inftnc_youtube_video_container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 50%;
+}
+
 .inftnc_youtube_embed iframe {
-  width:100%;
-  height:500px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.inftnc_youtube_video_container .fluid-width-video-wrapper {
+  padding-top: 0% !important;
+  position: unset !important;
 }

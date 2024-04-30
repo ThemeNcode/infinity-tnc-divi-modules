@@ -16,5 +16,10 @@
     height: 100%;
   }
 
+  .inftnc_vimeo_video_container .fluid-width-video-wrapper {
+    padding-top: 0% !important;
+    position: unset !important;
+  }
+
 
   

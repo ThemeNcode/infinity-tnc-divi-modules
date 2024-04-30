@@ -109,7 +109,10 @@ class YoutubeEmbed extends Component {
     return (
 
       <div className="inftnc_youtube_embed_wrapper">
-          {inftncYoutubeIframe}
+          <div className="inftnc_youtube_video_container">
+            {inftncYoutubeIframe}  
+          </div>
+
       </div>
 
     );

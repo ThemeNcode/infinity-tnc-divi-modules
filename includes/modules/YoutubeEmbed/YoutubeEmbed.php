@@ -21,7 +21,7 @@ class INFTNC_YoutubeEmbed extends ET_Builder_Module {
 		$this->name = esc_html__( 'Youtube Video - Infinity TNC', 'infinity-tnc-divi-modules' );
 		//Icon 
 		$this->icon_path        =  plugin_dir_path( __FILE__ ) . 'icon.svg';
-        $this->main_css_element = "%%order_class%% .inftnc_youtube_embed iframe";
+        $this->main_css_element = "%%order_class%% .inftnc_youtube_video_container";
 		// This property will add CSS fields on Advanced > Custom CSS
 		$this->custom_css_fields = array(
 			'iframe' => array(
@@ -50,15 +50,6 @@ class INFTNC_YoutubeEmbed extends ET_Builder_Module {
 	 */
 	function get_advanced_fields_config() { 
 		return array(
-				 'height'	=> array(
-					'options' => array(
-						'height' => array(
-							'default'        => '500px',
-							'default_tablet' => '500px',
-							'default_phone'  => '500px',
-						),
-					),
-				 ),
 				 'text'     => false,
 				 'fonts'	=> false,
 				 'filters'  => false,
@@ -282,7 +273,7 @@ class INFTNC_YoutubeEmbed extends ET_Builder_Module {
 			preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $url, $match);
 			$youtube_exact_id = $match[1];
 
-            $output = sprintf('<iframe src="https://www.youtube.com/embed/%1$s?controls=%7$s&amp;autoplay=%4$s&amp;loop=%6$s&amp;mute=%5$s&amp;start=%2$s&amp;end=%3$s&amp;rel=%8$s" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
+            $output = sprintf(' <div class="inftnc_youtube_video_container"> <iframe src="https://www.youtube.com/embed/%1$s?controls=%7$s&amp;autoplay=%4$s&amp;loop=%6$s&amp;mute=%5$s&amp;start=%2$s&amp;end=%3$s&amp;rel=%8$s" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> </div>',
                 /* 01 */ esc_attr( $youtube_exact_id ),
 				/* 02 */ esc_attr( $video_start ),
 				/* 03 */ esc_attr( $video_end ),
@@ -295,7 +286,7 @@ class INFTNC_YoutubeEmbed extends ET_Builder_Module {
 
         } elseif ( 'video' === $video_type && 'video_id' === $video_method ) { 
 
-           $output = sprintf('<iframe src="https://www.youtube.com/embed/%1$s?controls=%7$s&amp;autoplay=%4$s&amp;loop=%6$s&amp;mute=%5$s&amp;start=%2$s&amp;end=%3$s&amp;rel=%8$s" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
+           $output = sprintf( '<div class="inftnc_youtube_video_container"><iframe src="https://www.youtube.com/embed/%1$s?controls=%7$s&amp;autoplay=%4$s&amp;loop=%6$s&amp;mute=%5$s&amp;start=%2$s&amp;end=%3$s&amp;rel=%8$s" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> </div>',
                 /* 01 */ esc_attr( $video_id ),
 				/* 02 */ esc_attr( $video_start ) ,
 				/* 03 */ esc_attr( $video_end ) ,
@@ -319,7 +310,7 @@ class INFTNC_YoutubeEmbed extends ET_Builder_Module {
 			preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]list=)|youtu\.be/)([^"&?/ ]{34})%i', $url, $match);
 			$youtube_exact_id = $match[1];
 
-			$output = sprintf('<iframe src="https://www.youtube.com/embed/videoseries?controls=%7$s&amp;autoplay=%4$s&amp;loop=%6$s&amp;mute=%5$s&amp;start=%2$s&amp;end=%3$s&amp;rel=%8$s&amp;list=%1$s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
+			$output = sprintf('<div class="inftnc_youtube_video_container"> <iframe src="https://www.youtube.com/embed/videoseries?controls=%7$s&amp;autoplay=%4$s&amp;loop=%6$s&amp;mute=%5$s&amp;start=%2$s&amp;end=%3$s&amp;rel=%8$s&amp;list=%1$s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> </div>',
 				/* 01 */ esc_attr( $youtube_exact_id ),
 				/* 02 */ esc_attr( $video_start ),
 				/* 03 */ esc_attr( $video_end ),
@@ -332,7 +323,7 @@ class INFTNC_YoutubeEmbed extends ET_Builder_Module {
 
         } elseif ( 'playlist' === $video_type && 'video_id' === $video_method ) {
  
-            $output = sprintf('<iframe src="https://www.youtube.com/embed/videoseries?controls=%7$s&amp;autoplay=%4$s&amp;loop=%6$s&amp;mute=%5$s&amp;start=%2$s&amp;end=%3$s&amp;rel=%8$s&amp;list=%1$s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
+            $output = sprintf('<div class="inftnc_youtube_video_container"> <iframe src="https://www.youtube.com/embed/videoseries?controls=%7$s&amp;autoplay=%4$s&amp;loop=%6$s&amp;mute=%5$s&amp;start=%2$s&amp;end=%3$s&amp;rel=%8$s&amp;list=%1$s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> </div>',
 				/* 01 */ esc_attr( $video_id ),
 				/* 02 */ esc_attr( $video_start ),
 				/* 03 */ esc_attr( $video_end ),
@@ -344,7 +335,7 @@ class INFTNC_YoutubeEmbed extends ET_Builder_Module {
             );
         } elseif ( 'playlist' === $video_type && 'embed_code' === $video_method ) {
 
-            $output = sprintf('%1$s',/* 01 */ wp_kses_post_deep( $video_embed )  );
+            $output = sprintf('<div class="inftnc_youtube_video_container">%1$s</div>',/* 01 */ wp_kses_post_deep( $video_embed )  );
         }
 
         return $output;
