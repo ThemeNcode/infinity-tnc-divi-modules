@@ -1,5 +1,5 @@
 // External Dependencies
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 
 // Internal Dependencies
 import './style.css';
@@ -61,6 +61,7 @@ class VimeoVideo extends Component {
         vimeoIframe = (
 
           <iframe 
+          className=''
             src={iframeSrc} 
             frameborder="0" 
             allow="autoplay; fullscreen; picture-in-picture" 
@@ -74,9 +75,9 @@ class VimeoVideo extends Component {
     }
 
     return (
-      <Fragment>
+      <div className="inftnc_vimeo_video_container">
             {vimeoIframe}
-      </Fragment>
+      </div>
     );
   }
 

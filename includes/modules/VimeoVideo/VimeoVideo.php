@@ -21,7 +21,7 @@ class INFTNC_VimeoVideo extends ET_Builder_Module {
 		$this->name = esc_html__( 'Vimeo Video - Infinity TNC', 'infinity-tnc-divi-modules' );
 		//Icon 
 		$this->icon_path        =  plugin_dir_path( __FILE__ ) . 'icon.svg';
-        $this->main_css_element = "%%order_class%% .inftnc_vimeo_video iframe";
+        $this->main_css_element = "%%order_class%% .inftnc_vimeo_video_container";
 		// This property will add CSS fields on Advanced > Custom CSS
 		$this->custom_css_fields = array(
 			'iframe' => array(
@@ -50,15 +50,6 @@ class INFTNC_VimeoVideo extends ET_Builder_Module {
 	 */
 	function get_advanced_fields_config() { 
 		return array(
-				 'height'	=> array(
-					'options' => array(
-						'height' => array(
-							'default'        => '500px',
-							'default_tablet' => '500px',
-							'default_phone'  => '500px',
-						),
-					),
-				 ),
 				 'text'     => false,
 				 'fonts'	=> false,
 				 'filters'  => false,
@@ -310,7 +301,7 @@ class INFTNC_VimeoVideo extends ET_Builder_Module {
             preg_match('%^https?:\/\/(?:www\.|player\.)?vimeo.com\/(?:channels\/(?:\w+\/)?|groups\/([^\/]*)\/videos\/|album\/(\d+)\/video\/|video\/|)(\d+)(?:$|\/|\?)(?:[?]?.*)$%im', $url, $match);
             $vimeo_exact_id = $match[3];
 
-            $output = sprintf('<iframe src="https://player.vimeo.com/video/%1$s?&autoplay=%11$s&loop=%3$s&muted=%2$s&controls=%4$s&title=%6$s&byline=%7$s&portrait=%5$s&#t=%8$s&color=%9$s&playsinline=%10$s" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>',
+            $output = sprintf('<div class="inftnc_vimeo_video_container"><iframe src="https://player.vimeo.com/video/%1$s?&autoplay=%11$s&loop=%3$s&muted=%2$s&controls=%4$s&title=%6$s&byline=%7$s&portrait=%5$s&#t=%8$s&color=%9$s&playsinline=%10$s" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div>',
                 /* 01 */ esc_attr( $vimeo_exact_id ),
                 /* 02 */ esc_attr( $mute_value ),
                 /* 03 */ esc_attr( $loop_value ),
@@ -326,7 +317,7 @@ class INFTNC_VimeoVideo extends ET_Builder_Module {
 			
         } elseif ( 'vimeo_id' === $vimeo_method ) {
 
-            $output = sprintf('<iframe src="https://player.vimeo.com/video/%1$s?&autoplay=%11$s&loop=%3$s&muted=%2$s&controls=%4$s&title=%6$s&byline=%7$s&portrait=%5$s&#t=%8$s&color=%9$s&playsinline=%10$s" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>',
+            $output = sprintf('<div class="inftnc_vimeo_video_container"><iframe src="https://player.vimeo.com/video/%1$s?&autoplay=%11$s&loop=%3$s&muted=%2$s&controls=%4$s&title=%6$s&byline=%7$s&portrait=%5$s&#t=%8$s&color=%9$s&playsinline=%10$s" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe></div>',
                 /* 01 */ esc_attr( $vimeo_id ),
                 /* 02 */ esc_attr( $mute_value ),
                 /* 03 */ esc_attr( $loop_value ),
@@ -341,7 +332,7 @@ class INFTNC_VimeoVideo extends ET_Builder_Module {
              );
         } elseif ( 'embed_code' == $vimeo_method ) {
 
-            $output = sprintf('%1$s', /* 01 */ wp_kses_post( $vimeo_embed )  );
+            $output = sprintf('<div class="inftnc_vimeo_video_container">%1$s</div>', /* 01 */ wp_kses_post( $vimeo_embed )  );
 
         }
 
