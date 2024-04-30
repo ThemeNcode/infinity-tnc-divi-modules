@@ -299,7 +299,7 @@ class INFTNC_YoutubeEmbed extends ET_Builder_Module {
 
         } elseif ( 'video' === $video_type && 'embed_code' === $video_method ) { 
 
-            $output = sprintf('%1$s',
+            $output = sprintf('<div class="inftnc_youtube_video_container">%1$s</div>',
                 /* 01 */ wp_kses_post_deep( $video_embed ) 
             );
 

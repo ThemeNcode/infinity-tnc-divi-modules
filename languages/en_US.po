@@ -5,7 +5,7 @@ msgstr ""
 "Project-Id-Version: Infinity TNC Divi Modules 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/infinity-tnc-divi-"
 "modules\n"
-"POT-Creation-Date: 2024-04-26 04:25:31+00:00\n"
+"POT-Creation-Date: 2024-04-30 06:04:41+00:00\n"
 "PO-Revision-Date: 2024-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -220,8 +220,8 @@ msgstr ""
 
 #: includes/modules/DualButtons/DualButtons.php:81
 #: includes/modules/DualButtons/DualButtons.php:90
-#: includes/modules/VimeoVideo/VimeoVideo.php:82
-#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:93
+#: includes/modules/VimeoVideo/VimeoVideo.php:73
+#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:84
 msgid "URL"
 msgstr ""
 
@@ -277,8 +277,8 @@ msgstr ""
 
 #: includes/modules/EmbedMap/EmbedMap.php:84
 #: includes/modules/EmbedMap/EmbedMap.php:118
-#: includes/modules/VimeoVideo/VimeoVideo.php:84
-#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:95
+#: includes/modules/VimeoVideo/VimeoVideo.php:75
+#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:86
 msgid "Embed Code"
 msgstr ""
 
@@ -1165,8 +1165,8 @@ msgid "Use as the cursor."
 msgstr ""
 
 #: includes/modules/TypeWriter/TypeWriter.php:208
-#: includes/modules/VimeoVideo/VimeoVideo.php:165
-#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:197
+#: includes/modules/VimeoVideo/VimeoVideo.php:156
+#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:188
 msgid "Loop"
 msgstr ""
 
@@ -1175,36 +1175,36 @@ msgid "Whether to keep looping or not."
 msgstr ""
 
 #: includes/modules/TypeWriter/TypeWriter.php:213
-#: includes/modules/VimeoVideo/VimeoVideo.php:140
-#: includes/modules/VimeoVideo/VimeoVideo.php:155
-#: includes/modules/VimeoVideo/VimeoVideo.php:170
-#: includes/modules/VimeoVideo/VimeoVideo.php:185
-#: includes/modules/VimeoVideo/VimeoVideo.php:200
-#: includes/modules/VimeoVideo/VimeoVideo.php:215
-#: includes/modules/VimeoVideo/VimeoVideo.php:230
-#: includes/modules/VimeoVideo/VimeoVideo.php:245
-#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:173
-#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:187
-#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:201
-#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:215
-#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:229
+#: includes/modules/VimeoVideo/VimeoVideo.php:131
+#: includes/modules/VimeoVideo/VimeoVideo.php:146
+#: includes/modules/VimeoVideo/VimeoVideo.php:161
+#: includes/modules/VimeoVideo/VimeoVideo.php:176
+#: includes/modules/VimeoVideo/VimeoVideo.php:191
+#: includes/modules/VimeoVideo/VimeoVideo.php:206
+#: includes/modules/VimeoVideo/VimeoVideo.php:221
+#: includes/modules/VimeoVideo/VimeoVideo.php:236
+#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:164
+#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:178
+#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:192
+#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:206
+#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:220
 msgid "ON"
 msgstr ""
 
 #: includes/modules/TypeWriter/TypeWriter.php:214
-#: includes/modules/VimeoVideo/VimeoVideo.php:141
-#: includes/modules/VimeoVideo/VimeoVideo.php:156
-#: includes/modules/VimeoVideo/VimeoVideo.php:171
-#: includes/modules/VimeoVideo/VimeoVideo.php:186
-#: includes/modules/VimeoVideo/VimeoVideo.php:201
-#: includes/modules/VimeoVideo/VimeoVideo.php:216
-#: includes/modules/VimeoVideo/VimeoVideo.php:231
-#: includes/modules/VimeoVideo/VimeoVideo.php:246
-#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:174
-#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:188
-#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:202
-#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:216
-#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:230
+#: includes/modules/VimeoVideo/VimeoVideo.php:132
+#: includes/modules/VimeoVideo/VimeoVideo.php:147
+#: includes/modules/VimeoVideo/VimeoVideo.php:162
+#: includes/modules/VimeoVideo/VimeoVideo.php:177
+#: includes/modules/VimeoVideo/VimeoVideo.php:192
+#: includes/modules/VimeoVideo/VimeoVideo.php:207
+#: includes/modules/VimeoVideo/VimeoVideo.php:222
+#: includes/modules/VimeoVideo/VimeoVideo.php:237
+#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:165
+#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:179
+#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:193
+#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:207
+#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:221
 msgid "OFF"
 msgstr ""
 
@@ -1225,110 +1225,110 @@ msgstr ""
 msgid "Video Options"
 msgstr ""
 
-#: includes/modules/VimeoVideo/VimeoVideo.php:78
+#: includes/modules/VimeoVideo/VimeoVideo.php:69
 msgid "Vimeo Method"
 msgstr ""
 
-#: includes/modules/VimeoVideo/VimeoVideo.php:83
-#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:94
+#: includes/modules/VimeoVideo/VimeoVideo.php:74
+#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:85
 msgid "ID"
 msgstr ""
 
-#: includes/modules/VimeoVideo/VimeoVideo.php:91
+#: includes/modules/VimeoVideo/VimeoVideo.php:82
 msgid "Vimeo Video URL"
 msgstr ""
 
-#: includes/modules/VimeoVideo/VimeoVideo.php:103
+#: includes/modules/VimeoVideo/VimeoVideo.php:94
 msgid "Vimeo Video ID"
 msgstr ""
 
-#: includes/modules/VimeoVideo/VimeoVideo.php:114
+#: includes/modules/VimeoVideo/VimeoVideo.php:105
 msgid "Vimeo Video Embed Code"
 msgstr ""
 
-#: includes/modules/VimeoVideo/VimeoVideo.php:125
-#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:136
+#: includes/modules/VimeoVideo/VimeoVideo.php:116
+#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:127
 msgid "Start Time"
 msgstr ""
 
-#: includes/modules/VimeoVideo/VimeoVideo.php:127
+#: includes/modules/VimeoVideo/VimeoVideo.php:118
 msgid "Time represented in minutes and/or seconds (for example,1m2s)"
 msgstr ""
 
-#: includes/modules/VimeoVideo/VimeoVideo.php:135
-#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:169
+#: includes/modules/VimeoVideo/VimeoVideo.php:126
+#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:160
 msgid "Autoplay"
 msgstr ""
 
-#: includes/modules/VimeoVideo/VimeoVideo.php:138
+#: includes/modules/VimeoVideo/VimeoVideo.php:129
 msgid "Automatically start playback of the video."
 msgstr ""
 
-#: includes/modules/VimeoVideo/VimeoVideo.php:150
-#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:183
+#: includes/modules/VimeoVideo/VimeoVideo.php:141
+#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:174
 msgid "Mute"
 msgstr ""
 
-#: includes/modules/VimeoVideo/VimeoVideo.php:153
+#: includes/modules/VimeoVideo/VimeoVideo.php:144
 msgid ""
 "Set video to mute on load. Viewers can still adjust the volume preferences "
 "in the player."
 msgstr ""
 
-#: includes/modules/VimeoVideo/VimeoVideo.php:168
+#: includes/modules/VimeoVideo/VimeoVideo.php:159
 msgid "Play the video again when it reaches the end, infinitely."
 msgstr ""
 
-#: includes/modules/VimeoVideo/VimeoVideo.php:180
-#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:211
+#: includes/modules/VimeoVideo/VimeoVideo.php:171
+#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:202
 msgid "Player Control"
 msgstr ""
 
-#: includes/modules/VimeoVideo/VimeoVideo.php:183
+#: includes/modules/VimeoVideo/VimeoVideo.php:174
 msgid ""
 "This parameter will hide all elements in the player (play bar, sharing "
 "buttons, etc) for a chromeless experience. "
 msgstr ""
 
-#: includes/modules/VimeoVideo/VimeoVideo.php:195
+#: includes/modules/VimeoVideo/VimeoVideo.php:186
 msgid "Intro Portrait"
 msgstr ""
 
-#: includes/modules/VimeoVideo/VimeoVideo.php:198
+#: includes/modules/VimeoVideo/VimeoVideo.php:189
 msgid "Show the author’s profile image"
 msgstr ""
 
-#: includes/modules/VimeoVideo/VimeoVideo.php:210
+#: includes/modules/VimeoVideo/VimeoVideo.php:201
 msgid "Intro Title"
 msgstr ""
 
-#: includes/modules/VimeoVideo/VimeoVideo.php:213
+#: includes/modules/VimeoVideo/VimeoVideo.php:204
 msgid "Show the video’s title."
 msgstr ""
 
-#: includes/modules/VimeoVideo/VimeoVideo.php:225
+#: includes/modules/VimeoVideo/VimeoVideo.php:216
 msgid "Intro Byline"
 msgstr ""
 
-#: includes/modules/VimeoVideo/VimeoVideo.php:228
+#: includes/modules/VimeoVideo/VimeoVideo.php:219
 msgid "Show the author of the video (byline)."
 msgstr ""
 
-#: includes/modules/VimeoVideo/VimeoVideo.php:240
+#: includes/modules/VimeoVideo/VimeoVideo.php:231
 msgid "Plays Inline"
 msgstr ""
 
-#: includes/modules/VimeoVideo/VimeoVideo.php:243
+#: includes/modules/VimeoVideo/VimeoVideo.php:234
 msgid ""
 "Play video inline on mobile devices instead of automatically going into "
 "fullscreen mode. Inline playback is enabled for all videos by default."
 msgstr ""
 
-#: includes/modules/VimeoVideo/VimeoVideo.php:255
+#: includes/modules/VimeoVideo/VimeoVideo.php:246
 msgid "Color"
 msgstr ""
 
-#: includes/modules/VimeoVideo/VimeoVideo.php:258
+#: includes/modules/VimeoVideo/VimeoVideo.php:249
 msgid ""
 "Specify the color of the video controls. Colors may be overridden by the "
 "embed settings of the video"
@@ -1346,39 +1346,39 @@ msgstr ""
 msgid "Youtube Video"
 msgstr ""
 
-#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:77
+#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:68
 msgid "Video Type"
 msgstr ""
 
-#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:81
+#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:72
 msgid "Video"
 msgstr ""
 
-#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:82
+#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:73
 msgid "Playlist"
 msgstr ""
 
-#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:89
+#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:80
 msgid "Video/Playlist Method"
 msgstr ""
 
-#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:102
+#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:93
 msgid "Youtube Video/Playlist URL"
 msgstr ""
 
-#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:114
+#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:105
 msgid "Youtube Video/Playlist ID"
 msgstr ""
 
-#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:125
+#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:116
 msgid "Youtube Video/Playlist Embed Code"
 msgstr ""
 
-#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:153
+#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:144
 msgid "End Time"
 msgstr ""
 
-#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:225
+#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:216
 msgid "External suggested videos."
 msgstr ""
 
