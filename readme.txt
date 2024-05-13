@@ -21,7 +21,7 @@ Divi is one of the most powerful page builders in today's world. Infinity TNC is
 * Logo Carousel
 * Star Rating
 * Dual Buttons
-* Image Carousel
+* Image Carousel 
 * Heading Gradient
 * Heading Typewriter
 * Embed Map (Google map and openstreetmap)
