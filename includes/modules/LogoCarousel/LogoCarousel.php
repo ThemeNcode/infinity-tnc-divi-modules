@@ -1,6 +1,7 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly 
 #[\AllowDynamicProperties]
-class LogoCarousel extends ET_Builder_Module {
+class INFTNC_LogoCarousel extends ET_Builder_Module {
 	// Module slug (also used as shortcode tag)
 	public $slug       = 'inftnc_logo_carousel';
 
@@ -106,11 +107,11 @@ class LogoCarousel extends ET_Builder_Module {
 			),	
 
 			'animation_speed' => array(
-				'label'           => esc_html__( 'Animation Speed (ms)', 'infinity-tnc-divi-module' ),
+				'label'           => esc_html__( 'Animation Speed (ms)', 'infinity-tnc-divi-modules' ),
 				'type'            => 'range',
 				'tab_slug'        => 'general',
 				'toggle_slug'     => 'carousel_settings',
-				'description'	  => esc_html__( 'Animation Transition speed', 'infinity-tnc-divi-module' ),
+				'description'	  => esc_html__( 'Animation Transition speed', 'infinity-tnc-divi-modules' ),
                 'default'         => 300,
                 'range_settings' => array(
 					'min'  => 0,
@@ -132,7 +133,7 @@ class LogoCarousel extends ET_Builder_Module {
 			),
 
 			'autoplay_speed' => array(
-				'label'           => esc_html__( 'Autoplay Speed (ms)', 'infinity-tnc-divi-module' ),
+				'label'           => esc_html__( 'Autoplay Speed (ms)', 'infinity-tnc-divi-modules' ),
 				'type'            => 'range',
 				'tab_slug'        => 'general',
 				'toggle_slug'     => 'carousel_settings',
@@ -169,7 +170,7 @@ class LogoCarousel extends ET_Builder_Module {
 			),
 
 			'slide_spacing' => array(
-				'label'           => esc_html__( 'Slide Spacing', 'infinity-tnc-divi-module' ),
+				'label'           => esc_html__( 'Slide Spacing', 'infinity-tnc-divi-modules' ),
 				'type'            => 'range',
 				'tab_slug'        => 'general',
 				'toggle_slug'     => 'carousel_settings',
@@ -277,7 +278,7 @@ class LogoCarousel extends ET_Builder_Module {
 			),
 
 			 'navigation_icon_size' => array(
-				'label'           => esc_html__( 'Icon Size', 'infinity-tnc-divi-module' ),
+				'label'           => esc_html__( 'Icon Size', 'infinity-tnc-divi-modules' ),
 				'type'            => 'range',
 				'tab_slug'        => 'advanced',
 				'toggle_slug'     => 'navigation',
@@ -294,7 +295,7 @@ class LogoCarousel extends ET_Builder_Module {
 			),
 
 			'navigation_bg_size' => array(
-				'label'           => esc_html__( 'Background Size', 'infinity-tnc-divi-module' ),
+				'label'           => esc_html__( 'Background Size', 'infinity-tnc-divi-modules'),
 				'type'            => 'range',
 				'tab_slug'        => 'advanced',
 				'toggle_slug'     => 'navigation',
@@ -311,7 +312,7 @@ class LogoCarousel extends ET_Builder_Module {
 			),
 
 			'navigation_icon_color' => array(
-                'label'           => esc_html__( 'Icon Color', 'inftnc-infinity-tnc-divi-modules' ),
+                'label'           => esc_html__( 'Icon Color', 'infinity-tnc-divi-modules' ),
                 'type'            => 'color-alpha',
                 'tab_slug'        => 'advanced',
                 'toggle_slug'     => 'navigation',
@@ -319,7 +320,7 @@ class LogoCarousel extends ET_Builder_Module {
             ),
 
 			'navigation_bg_color' => array(
-                'label'           => esc_html__( 'Background Color', 'inftnc-infinity-tnc-divi-modules' ),
+                'label'           => esc_html__( 'Background Color', 'infinity-tnc-divi-modules' ),
                 'type'            => 'color-alpha',
                 'tab_slug'        => 'advanced',
                 'toggle_slug'     => 'navigation',
@@ -327,7 +328,7 @@ class LogoCarousel extends ET_Builder_Module {
             ),	
 
 			'pagination_cmn_dots_size' => array(
-				'label'           => esc_html__( 'Dots Size', 'infinity-tnc-divi-module' ),
+				'label'           => esc_html__( 'Dots Size', 'infinity-tnc-divi-modules' ),
 				'type'            => 'range',
 				'tab_slug'        => 'advanced',
 				'toggle_slug'     => 'pagination',
@@ -345,7 +346,7 @@ class LogoCarousel extends ET_Builder_Module {
 			),
 
 			'pagination_active_dots_size' => array(
-				'label'           => esc_html__( 'Dots Size', 'infinity-tnc-divi-module' ),
+				'label'           => esc_html__( 'Dots Size', 'infinity-tnc-divi-modules' ),
 				'type'            => 'range',
 				'tab_slug'        => 'advanced',
 				'toggle_slug'     => 'pagination',
@@ -1161,5 +1162,5 @@ class LogoCarousel extends ET_Builder_Module {
 	}
 }
 
-new LogoCarousel;
+new INFTNC_LogoCarousel;
 

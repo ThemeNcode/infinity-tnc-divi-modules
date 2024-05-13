@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly 
 #[\AllowDynamicProperties]
 class INFTNC_DualButtons extends ET_Builder_Module {
 
@@ -135,7 +136,7 @@ class INFTNC_DualButtons extends ET_Builder_Module {
 			),
 
 			'button_gap' => array(
-				'label'           => esc_html__( 'Button Gap', 'infinity-tnc-divi-module' ),
+				'label'           => esc_html__( 'Button Gap', 'infinity-tnc-divi-modules' ),
 				'type'            => 'range',
 				'tab_slug'        => 'advanced',
 				'toggle_slug'     => 'button_gap',

@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly 
 #[\AllowDynamicProperties]
 class INFTNC_YoutubeEmbed extends ET_Builder_Module {
 
@@ -83,7 +84,7 @@ class INFTNC_YoutubeEmbed extends ET_Builder_Module {
 				'options'         => array(
                     'video_url'            => esc_html__( 'URL', 'infinity-tnc-divi-modules' ),
 					'video_id'            => esc_html__( 'ID', 'infinity-tnc-divi-modules' ),
-                    'embed_code'          => esc_html__( 'Embed Code', 'infinity-tnc-divi-modules' ),
+                    'embed_code'          => esc_html__( 'Embed Code','infinity-tnc-divi-modules' ),
     
 				),
 				'toggle_slug'     => 'main_content',   
@@ -102,7 +103,7 @@ class INFTNC_YoutubeEmbed extends ET_Builder_Module {
 			),
 
             'youtube_id' => array(
-				'label'           => esc_html__( 'Youtube Video/Playlist ID', 'nftnc-infinity-tnc-divi-modules' ),
+				'label'           => esc_html__( 'Youtube Video/Playlist ID', 'infinity-tnc-divi-modules' ),
 				'type'            => 'text',
 				'option_category' => 'basic_option',
                 'description'     => 'Use Video ID or List ID based on what you want to display.',
@@ -113,7 +114,7 @@ class INFTNC_YoutubeEmbed extends ET_Builder_Module {
 			),
 
             'youtube_embed' => array(
-				'label'           => esc_html__( 'Youtube Video/Playlist Embed Code', 'nftnc-infinity-tnc-divi-modules' ),
+				'label'           => esc_html__( 'Youtube Video/Playlist Embed Code', 'infinity-tnc-divi-modules' ),
 				'type'            => 'textarea',
 				'option_category' => 'basic_option',
                 'description'     => 'Use Video Embed Code  or List Embed Code based on what you want to display.',
@@ -157,7 +158,7 @@ class INFTNC_YoutubeEmbed extends ET_Builder_Module {
 			),
 
             'autoplay' => array(
-				'label'             => esc_html__( 'Autoplay', 'infinity' ),
+				'label'             => esc_html__( 'Autoplay', 'infinity-tnc-divi-modules' ),
 				'type'              => 'yes_no_button',
 				'default'			=> 'on',
 				'options'           => array(
@@ -171,7 +172,7 @@ class INFTNC_YoutubeEmbed extends ET_Builder_Module {
 			),
 
             'mute' => array(
-				'label'             => esc_html__( 'Mute', 'infinity' ),
+				'label'             => esc_html__( 'Mute', 'infinity-tnc-divi-modules' ),
 				'type'              => 'yes_no_button',
 				'default'			=> 'off',
 				'options'           => array(
@@ -185,7 +186,7 @@ class INFTNC_YoutubeEmbed extends ET_Builder_Module {
 			),
 
             'loop' => array(
-				'label'             => esc_html__( 'Loop', 'infinity' ),
+				'label'             => esc_html__( 'Loop', 'infinity-tnc-divi-modules' ),
 				'type'              => 'yes_no_button',
 				'default'			=> 'off',
 				'options'           => array(
@@ -199,7 +200,7 @@ class INFTNC_YoutubeEmbed extends ET_Builder_Module {
 			),
 
             'player_control' => array(
-				'label'             => esc_html__( 'Player Control', 'infinity' ),
+				'label'             => esc_html__( 'Player Control', 'infinity-tnc-divi-modules' ),
 				'type'              => 'yes_no_button',
 				'default'			=> 'off',
 				'options'           => array(
@@ -213,7 +214,7 @@ class INFTNC_YoutubeEmbed extends ET_Builder_Module {
 			),
 
             'video_rel' => array(
-				'label'             => esc_html__( 'External suggested videos.', 'infinity' ),
+				'label'             => esc_html__( 'External suggested videos.', 'infinity-tnc-divi-modules' ),
 				'type'              => 'yes_no_button',
 				'default'			=> 'off',
 				'options'           => array(

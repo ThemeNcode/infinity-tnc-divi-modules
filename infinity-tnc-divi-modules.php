@@ -25,6 +25,7 @@ You should have received a copy of the GNU General Public License
 along with Infinity TNC Divi Modules. If not, see https://www.gnu.org/licenses/gpl-2.0.html.
 */
 
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly 
 
 if ( ! function_exists( 'inftnc_initialize_extension' ) ):
 /**

@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly 
 #[\AllowDynamicProperties]
 class INFTNC_EmbedMap extends ET_Builder_Module {
 
@@ -100,7 +101,7 @@ class INFTNC_EmbedMap extends ET_Builder_Module {
 			),
 
 			'map_zoom' => array(
-				'label'           => esc_html__( 'Zoom', 'infinity-tnc-divi-modules' ),
+				'label'           => esc_html__( 'Zoom', 'infinity-tnc-divi-modules'),
 				'type'            => 'range',
 				'default'          => '14',
                 'range_settings' => array(

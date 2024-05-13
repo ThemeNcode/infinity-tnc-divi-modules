@@ -1,6 +1,6 @@
 <?php
-
-class ImageCarouselChild extends ET_Builder_Module {
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly 
+class INFTNC_ImageCarouselChild extends ET_Builder_Module {
 	// Module slug (also used as shortcode tag)
 	public $slug                     = 'inftnc_image_carousel_child';
 
@@ -19,7 +19,7 @@ class ImageCarouselChild extends ET_Builder_Module {
         $this->advanced_setting_title_text 		= esc_html__( 'New Image', 'infinity-tnc-divi-modules' );
 		$this->settings_text               		= esc_html__( 'Image Carousel Settings', 'infinity-tnc-divi-modules' );
 
-
+		
 		// Toggle settings
         $this->settings_modal_toggles = array(
             'general'  => array(
@@ -40,6 +40,7 @@ class ImageCarouselChild extends ET_Builder_Module {
 	function get_fields() {
 		
 		return array(
+
             'image'                 => array(
 				'label'              => esc_html__( 'Image', 'infinity-tnc-divi-modules'),
 				'type'               => 'upload',
@@ -116,4 +117,4 @@ class ImageCarouselChild extends ET_Builder_Module {
 	}
 }
 
-new ImageCarouselChild;
+new INFTNC_ImageCarouselChild;

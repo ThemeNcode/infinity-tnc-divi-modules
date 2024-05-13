@@ -1,5 +1,6 @@
 <?php
-class SocialShareChild extends ET_Builder_Module {
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly 
+class INFTNC_SocialShareChild extends ET_Builder_Module {
 	// Module slug (also used as shortcode tag)
 	public $slug                     = 'inftnc_social_share_child';
 
@@ -29,11 +30,11 @@ class SocialShareChild extends ET_Builder_Module {
             'advanced' => array(
                 'toggles' => array(
 					'share_button_child'	=> array(
-						'title'	=> esc_html__( 'Share Button',  'inftnc-infinity-tnc-divi-modules' ),
+						'title'	=> esc_html__( 'Share Button',  'infinity-tnc-divi-modules' ),
 						'priority' => 41,
 					),
 					'share_icon'	=> array(
-						'title'	=> esc_html__( 'Share Button Icon',  'inftnc-infinity-tnc-divi-modules' ),
+						'title'	=> esc_html__( 'Share Button Icon',  'infinity-tnc-divi-modules' ),
 						'priority' => 42,
 					),
                 ),
@@ -95,7 +96,7 @@ class SocialShareChild extends ET_Builder_Module {
 			),
 
 			'icon_size_child' => array(
-				'label'           => esc_html__( 'Icon Size', 'inftnc-infinity-tnc-divi-modules' ),
+				'label'           => esc_html__( 'Icon Size', 'infinity-tnc-divi-modules' ),
 				'type'            => 'range',
 				'tab_slug'        => 'advanced',
 				'toggle_slug'     => 'share_icon',
@@ -716,4 +717,4 @@ class SocialShareChild extends ET_Builder_Module {
 	}
 }
 
-new SocialShareChild;
+new INFTNC_SocialShareChild;

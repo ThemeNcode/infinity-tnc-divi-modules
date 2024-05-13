@@ -1,5 +1,6 @@
 <?php
-class LogoCarouselChild extends ET_Builder_Module {
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly 
+class INFTNC_LogoCarouselChild extends ET_Builder_Module {
 	// Module slug (also used as shortcode tag)
 	public $slug                     = 'inftnc_logo_carousel_child';
 
@@ -30,11 +31,11 @@ class LogoCarouselChild extends ET_Builder_Module {
             'advanced' => array(
                 'toggles' => array(
 					'share_button_child'	=> array(
-						'title'	=> esc_html__( 'Share Button',  'inftnc-infinity-tnc-divi-modules' ),
+						'title'	=> esc_html__( 'Share Button',  'infinity-tnc-divi-modules' ),
 						'priority' => 41,
 					),
 					'share_icon'	=> array(
-						'title'	=> esc_html__( 'Share Button Icon',  'inftnc-infinity-tnc-divi-modules' ),
+						'title'	=> esc_html__( 'Share Button Icon',  'infinity-tnc-divi-modules' ),
 						'priority' => 42,
 					),
                 ),
@@ -129,4 +130,4 @@ class LogoCarouselChild extends ET_Builder_Module {
 	}
 }
 
-new LogoCarouselChild;
+new INFTNC_LogoCarouselChild;

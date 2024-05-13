@@ -1,4 +1,5 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly 
 #[\AllowDynamicProperties]
 class INFTNC_StarRating extends ET_Builder_Module {
 	public $slug       = 'inftnc_star_rating';

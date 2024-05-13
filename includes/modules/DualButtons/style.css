@@ -9,3 +9,8 @@
     flex-wrap: wrap;
     flex-direction:row;
 }
+
+.et_pb_button[data-icon]:not([data-icon=""]):after {
+    content: attr(data-icon);
+}
+

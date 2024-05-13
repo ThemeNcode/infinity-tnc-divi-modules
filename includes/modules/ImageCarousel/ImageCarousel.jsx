@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import Slider from "react-slick";
 
-class ImageCarousel extends Component {
+class INFTNC_ImageCarousel extends Component {
 
   static slug = 'inftnc_image_carousel';
 
@@ -455,4 +455,4 @@ class ImageCarousel extends Component {
   }
 }
 
-export default ImageCarousel;
+export default INFTNC_ImageCarousel;

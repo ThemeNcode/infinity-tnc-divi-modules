@@ -1,6 +1,7 @@
 <?php
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly 
 #[\AllowDynamicProperties]
-class SocialShare extends ET_Builder_Module {
+class INFTNC_SocialShare extends ET_Builder_Module {
 	// Module slug (also used as shortcode tag)
 	public $slug       = 'inftnc_social_share';
 
@@ -18,7 +19,7 @@ class SocialShare extends ET_Builder_Module {
 	function init() {
 		// Module name
 		$this->name                    = esc_html__( 'Social Share - Infinity TNC', 'infinity-tnc-divi-modules' );
-        $this->child_item_text 		   = esc_html__( 'Social Network', 'et_builder' );
+        $this->child_item_text 		   = esc_html__( 'Social Network', 'infinity-tnc-divi-modules' );
 
 		// Module Icon
 		// Load customized svg icon and use it on builder as module icon. If you don't have svg icon, you can use
@@ -34,15 +35,15 @@ class SocialShare extends ET_Builder_Module {
 			'advanced' => array(
 				'toggles' => array(
 					'layout'   => array(
-						'title' => esc_html__( 'Layout', 'inftnc-infinity-tnc-divi-modules' ),
+						'title' => esc_html__( 'Layout', 'infinity-tnc-divi-modules' ),
 						'priority' => 40,
 					),
 					'share_buton'	=> array(
-						'title'	=> esc_html__( 'Share Button',  'inftnc-infinity-tnc-divi-modules' ),
+						'title'	=> esc_html__( 'Share Button',  'infinity-tnc-divi-modules' ),
 						'priority' => 41,
 					),
 					'share_icon'	=> array(
-						'title'	=> esc_html__( 'Share Button Icon',  'inftnc-infinity-tnc-divi-modules' ),
+						'title'	=> esc_html__( 'Share Button Icon',  'infinity-tnc-divi-modules' ),
 						'priority' => 41,
 					),
 				),
@@ -105,7 +106,7 @@ class SocialShare extends ET_Builder_Module {
 			 ),
 
 			 'columns_gap' => array(
-				'label'           => esc_html__( 'Column Gap', 'inftnc-infinity-tnc-divi-modules' ),
+				'label'           => esc_html__( 'Column Gap', 'infinity-tnc-divi-modules' ),
 				'type'            => 'range',
 				'tab_slug'        => 'advanced',
 				'toggle_slug'     => 'layout',
@@ -120,7 +121,7 @@ class SocialShare extends ET_Builder_Module {
 			),
 
 			'row_gap' => array(
-				'label'           => esc_html__( 'Row Gap', 'inftnc-infinity-tnc-divi-modules' ),
+				'label'           => esc_html__( 'Row Gap', 'infinity-tnc-divi-modules' ),
 				'type'            => 'range',
 				'tab_slug'        => 'advanced',
 				'toggle_slug'     => 'layout',
@@ -149,7 +150,7 @@ class SocialShare extends ET_Builder_Module {
 			),
 
 			'icon_size' => array(
-				'label'           => esc_html__( 'Icon Size', 'inftnc-infinity-tnc-divi-modules' ),
+				'label'           => esc_html__( 'Icon Size', 'infinity-tnc-divi-modules' ),
 				'type'            => 'range',
 				'tab_slug'        => 'advanced',
 				'toggle_slug'     => 'share_icon',
@@ -892,5 +893,5 @@ class SocialShare extends ET_Builder_Module {
 	}
 }
 
-new SocialShare;
+new INFTNC_SocialShare;
 
