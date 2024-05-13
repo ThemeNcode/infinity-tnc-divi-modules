@@ -164,7 +164,8 @@ function infinity_tnc_breadcrumb($_home_text='Home',$_before_text='',$_delimiter
 
         } elseif ( is_author() ) {
 
-            $breadcrumb_trail = __( 'Author archive for ') .  $before . $queried_object->data->display_name . $after;
+            $breadcrumb_trail = sprintf( __( 'Author archive for %s', 'infinity-tnc-divi-modules' ), $before . $queried_object->data->display_name . $after );
+
 
         } elseif ( is_date() ) {
             // Set default variables
@@ -212,19 +213,21 @@ function infinity_tnc_breadcrumb($_home_text='Home',$_before_text='',$_delimiter
 
     // Handle the search page
     if ( is_search() ) {
-        $breadcrumb_trail = __( 'Search query for: ' ) . $before . get_search_query() . $after;
+
+        $breadcrumb_trail = sprintf( __( 'Search query for: %s', 'infinity-tnc-divi-modules' ), $before . get_search_query() . $after );
     }
 
     // Handle 404's
     if ( is_404() ) {
-        $breadcrumb_trail = $before . __( 'Error 404' ) . $after;
+        $breadcrumb_trail = $before . sprintf( __( 'Error %d', 'infinity-tnc-divi-modules' ), 404 ) . $after;
     }
 
     // Handle paged pages
     if ( is_paged() ) {
         $current_page = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : get_query_var( 'page' );
          /* translators: %s: current page number */
-        $page_addon   = $before . sprintf( __( ' ( Page %s )' ), number_format_i18n( $current_page ) ) . $after;
+        $page_addon = $before . sprintf( __( ' ( Page %s )', 'infinity-tnc-divi-modules' ), number_format_i18n( $current_page ) ) . $after;
+
     }
 
     $breadcrumb_output_link  = '';

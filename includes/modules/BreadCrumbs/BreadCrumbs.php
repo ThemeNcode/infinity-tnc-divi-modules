@@ -22,7 +22,7 @@ class INFTNC_BreadCrumbs extends ET_Builder_Module {
 			
 			'general'  => array(
 				'toggles' => array(
-					'main_content' => esc_html__( 'Text', '' ),
+					'main_content' => esc_html__( 'Text', 'infinity-tnc-divi-modules' ),
 					'icon'		   => esc_html__( 'Icon','infinity-tnc-divi-modules'),
 				),
 			),
