@@ -163,7 +163,7 @@ function infinity_tnc_breadcrumb($_home_text='Home',$_before_text='',$_delimiter
             }
 
         } elseif ( is_author() ) {
-
+            /* translators: %s: author archive name */
             $breadcrumb_trail = sprintf( __( 'Author archive for %s', 'infinity-tnc-divi-modules' ), $before . $queried_object->data->display_name . $after );
 
 
@@ -213,12 +213,13 @@ function infinity_tnc_breadcrumb($_home_text='Home',$_before_text='',$_delimiter
 
     // Handle the search page
     if ( is_search() ) {
-
+         /* translators: %s: search query */
         $breadcrumb_trail = sprintf( __( 'Search query for: %s', 'infinity-tnc-divi-modules' ), $before . get_search_query() . $after );
     }
 
     // Handle 404's
     if ( is_404() ) {
+        /* translators: %s: 404 error */
         $breadcrumb_trail = $before . sprintf( __( 'Error %d', 'infinity-tnc-divi-modules' ), 404 ) . $after;
     }
 
