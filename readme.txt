@@ -68,6 +68,9 @@ Documentation is available on this URL: https://docs.themencode.com/docs/pdf-vie
  
 <a href="https://codecanyon.net/item/pdf-viewer-for-wordpress/8182815/" target="_blank">TNC PDF viewer Premium Version</a>
 
+= Where can I find source code? =
+
+Source code is available on github. <a href="https://github.com/ThemeNcode/infinity-tnc-divi-modules">Click Here</a> to browse source code.
  
 == Screenshots ==
  
