@@ -6,10 +6,11 @@ class INFTNC_BreadCrumbs extends ET_Builder_Module {
 	public $slug       = 'inftnc_bread_crumbs';
 	public $vb_support = 'on';
 
+	// Module Credit 
 	protected $module_credits = array(
 		'module_uri' => 'https://themencode.com/',
-		'author'     => 'ThemeNcode',
-		'author_uri' => 'https://themencode.com/',
+		'author'     => 'ThemeNcode LLC, Get Pro Version',
+		'author_uri' => 'https://www.elegantthemes.com/marketplace/infinity-tnc-divi-modules-pro/',
 	);
 
 	public function init() {
@@ -19,7 +20,6 @@ class INFTNC_BreadCrumbs extends ET_Builder_Module {
 
 		// Toggle settings
 		$this->settings_modal_toggles  = array(
-			
 			'general'  => array(
 				'toggles' => array(
 					'main_content' => esc_html__( 'Text', 'infinity-tnc-divi-modules' ),
@@ -35,8 +35,6 @@ class INFTNC_BreadCrumbs extends ET_Builder_Module {
 				),
 			),
 		);
-
-	
 
 		// This property will add CSS fields on Advanced > Custom CSS
 		$this->custom_css_fields = array(
@@ -60,6 +58,8 @@ class INFTNC_BreadCrumbs extends ET_Builder_Module {
 				'selector' => '.inftnc_current',
 			),
 		);
+
+		
 	}
 
 	 /**
