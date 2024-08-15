@@ -8,6 +8,13 @@ class INFTNC_ImageCarousel extends ET_Builder_Module {
 	// Full Visual Builder support
 	public $vb_support = 'on';
 
+	// Module Credits
+	protected $module_credits = array(
+		'module_uri' => 'https://themencode.com/',
+		'author'     => 'ThemeNcode LLC, Get Pro Version',
+		'author_uri' => 'https://www.elegantthemes.com/marketplace/infinity-tnc-divi-modules-pro/',
+	);
+
 	// Module item's slug
 	public $child_slug = 'inftnc_image_carousel_child';
 
