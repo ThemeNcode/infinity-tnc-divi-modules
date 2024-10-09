@@ -2,10 +2,10 @@
 # This file is distributed under the GPL2.
 msgid ""
 msgstr ""
-"Project-Id-Version: Infinity TNC Divi Modules 1.1.0\n"
+"Project-Id-Version: Infinity TNC Divi Modules 1.2.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/infinity-tnc-divi-"
 "modules\n"
-"POT-Creation-Date: 2024-08-15 10:27:49+00:00\n"
+"POT-Creation-Date: 2024-10-09 13:11:23+00:00\n"
 "PO-Revision-Date: 2024-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -953,63 +953,63 @@ msgstr ""
 msgid "Choose the social network"
 msgstr ""
 
-#: includes/modules/SocialShareChild/SocialShareChild.php:221
-#: includes/modules/SocialShareChild/SocialShareChild.php:234
-msgid " Share On Facebook"
+#: includes/modules/SocialShareChild/SocialShareChild.php:222
+#: includes/modules/SocialShareChild/SocialShareChild.php:235
+msgid " Share on Facebook"
 msgstr ""
 
 #: includes/modules/SocialShareChild/SocialShareChild.php:253
 #: includes/modules/SocialShareChild/SocialShareChild.php:265
-msgid "Share On WhatsApp"
+msgid "Share on WhatsApp"
 msgstr ""
 
-#: includes/modules/SocialShareChild/SocialShareChild.php:302
-#: includes/modules/SocialShareChild/SocialShareChild.php:313
-msgid "Share On X"
+#: includes/modules/SocialShareChild/SocialShareChild.php:300
+#: includes/modules/SocialShareChild/SocialShareChild.php:311
+msgid "Share on X"
 msgstr ""
 
-#: includes/modules/SocialShareChild/SocialShareChild.php:343
-#: includes/modules/SocialShareChild/SocialShareChild.php:356
-msgid "Share On Pinterest"
+#: includes/modules/SocialShareChild/SocialShareChild.php:339
+#: includes/modules/SocialShareChild/SocialShareChild.php:352
+msgid "Share on Pinterest"
 msgstr ""
 
-#: includes/modules/SocialShareChild/SocialShareChild.php:394
-#: includes/modules/SocialShareChild/SocialShareChild.php:407
-msgid "Share On Linekdin"
+#: includes/modules/SocialShareChild/SocialShareChild.php:387
+#: includes/modules/SocialShareChild/SocialShareChild.php:400
+msgid "Share on Linekdin"
 msgstr ""
 
-#: includes/modules/SocialShareChild/SocialShareChild.php:436
-#: includes/modules/SocialShareChild/SocialShareChild.php:449
-msgid "Share On Telegram"
+#: includes/modules/SocialShareChild/SocialShareChild.php:427
+#: includes/modules/SocialShareChild/SocialShareChild.php:440
+msgid "Share on Telegram"
 msgstr ""
 
-#: includes/modules/SocialShareChild/SocialShareChild.php:478
-#: includes/modules/SocialShareChild/SocialShareChild.php:492
-msgid "Share On Reddit"
+#: includes/modules/SocialShareChild/SocialShareChild.php:466
+#: includes/modules/SocialShareChild/SocialShareChild.php:480
+msgid "Share on Reddit"
 msgstr ""
 
-#: includes/modules/SocialShareChild/SocialShareChild.php:523
-msgid "Share On Tumblr"
+#: includes/modules/SocialShareChild/SocialShareChild.php:508
+msgid "Share on Tumblr"
 msgstr ""
 
-#: includes/modules/SocialShareChild/SocialShareChild.php:535
-msgid "Share On Tumblr "
+#: includes/modules/SocialShareChild/SocialShareChild.php:520
+msgid "Share on Tumblr "
 msgstr ""
 
-#: includes/modules/SocialShareChild/SocialShareChild.php:571
-msgid "Share On Email"
+#: includes/modules/SocialShareChild/SocialShareChild.php:554
+msgid "Share on Email"
 msgstr ""
 
-#: includes/modules/SocialShareChild/SocialShareChild.php:585
-msgid "Share On Email "
+#: includes/modules/SocialShareChild/SocialShareChild.php:568
+msgid "Share on Email "
 msgstr ""
 
-#: includes/modules/SocialShareChild/SocialShareChild.php:617
-msgid "Share On Blogger"
+#: includes/modules/SocialShareChild/SocialShareChild.php:598
+msgid "Share on Blogger"
 msgstr ""
 
-#: includes/modules/SocialShareChild/SocialShareChild.php:630
-msgid "Share On Blogger "
+#: includes/modules/SocialShareChild/SocialShareChild.php:611
+msgid "Share on Blogger "
 msgstr ""
 
 #: includes/modules/StarRating/StarRating.php:22
