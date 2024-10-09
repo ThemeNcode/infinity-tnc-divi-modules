@@ -202,6 +202,8 @@ class INFTNC_SocialShareChild extends ET_Builder_Module {
 			)
 		);
 
+		// Social share default 
+		 $share_button  = '';
 	    // Render social share button 
 		if( 'facebook' === $social_share ) {
 
