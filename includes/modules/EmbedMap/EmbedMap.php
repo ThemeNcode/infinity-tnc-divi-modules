@@ -7,10 +7,11 @@ class INFTNC_EmbedMap extends ET_Builder_Module {
 	public $vb_support = 'on';
 
 	// Module Credits (Appears at the bottom of the module settings modal)
+
 	protected $module_credits = array(
 		'module_uri' => 'https://themencode.com/',
-		'author'     => 'ThemeNcode',
-		'author_uri' => 'https://themencode.com/', 
+		'author'     => 'ThemeNcode LLC, Get Pro Version',
+		'author_uri' => 'https://www.elegantthemes.com/marketplace/infinity-tnc-divi-modules-pro/',
 	);
 
 	/**

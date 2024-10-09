@@ -73,7 +73,7 @@ class SocialShareChild extends Component {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <span className="inftnc_social_text inftnc_fb_text">Share On Facebook</span>
+                    <span className="inftnc_social_text inftnc_fb_text">Share on Facebook</span>
                     <span className="inftnc_social_icon inftnc_social_fb"></span>
                     
                   </a> )
@@ -84,7 +84,7 @@ class SocialShareChild extends Component {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <span className="inftnc_social_text inftnc_whatsapp_text">Share On Whatsapp</span>
+                  <span className="inftnc_social_text inftnc_whatsapp_text">Share on Whatsapp </span>
                   <span className="inftnc_social_icon inftnc_social_whatsapp"></span>
                 </a> )
               case 'twitter':
@@ -94,7 +94,7 @@ class SocialShareChild extends Component {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <span className="inftnc_social_text inftnc_twitter_text">Share On X</span>
+                  <span className="inftnc_social_text inftnc_twitter_text">Share on X</span>
                   <span className="inftnc_social_icon inftnc_social_twiiter et-pb-icon">&#xe094;</span>
                 </a> )
                case 'pinterest':
@@ -104,7 +104,7 @@ class SocialShareChild extends Component {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <span className="inftnc_social_text inftnc_pinterest_text">Share On Pinterest</span>
+                    <span className="inftnc_social_text inftnc_pinterest_text">Share on Pinterest</span>
                     <span className="inftnc_social_icon inftnc_soical_pinterest"></span>
                   </a> )
                  case 'linekdin':
@@ -114,7 +114,7 @@ class SocialShareChild extends Component {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <span className="inftnc_social_text inftnc_linekdin_text">Share On Linekdin</span>
+                      <span className="inftnc_social_text inftnc_linekdin_text">Share on Linekdin</span>
                       <span className="inftnc_social_icon inftnc_soical_linekdin"></span>
                     </a> )
                  case 'telegram':
@@ -124,7 +124,7 @@ class SocialShareChild extends Component {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <span className="inftnc_social_text inftnc_telegram_text">Share On Telegram</span>
+                      <span className="inftnc_social_text inftnc_telegram_text">Share on Telegram</span>
                       <span className="inftnc_social_icon inftnc_soical_telegram"></span>
                     </a> )
                   case 'reddit':
@@ -134,7 +134,7 @@ class SocialShareChild extends Component {
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                        <span className="inftnc_social_text inftnc_reddit_text">Share On Reddit</span>
+                        <span className="inftnc_social_text inftnc_reddit_text">Share on Reddit</span>
                         <span className="inftnc_social_icon inftnc_soical_reddit"></span>
                       </a> )
                   case 'tumblr':
@@ -144,7 +144,7 @@ class SocialShareChild extends Component {
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          <span className="inftnc_social_text inftnc_tumblr_text">Share On Tumblr</span>
+                          <span className="inftnc_social_text inftnc_tumblr_text">Share on Tumblr</span>
                           <span className="inftnc_social_icon inftnc_soical_tumblr"></span>
                       </a> )
                   case 'email':
@@ -154,7 +154,7 @@ class SocialShareChild extends Component {
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          <span className="inftnc_social_text inftnc_email_text">Share On Email</span>
+                          <span className="inftnc_social_text inftnc_email_text">Share on Email</span>
                           <span className="inftnc_social_icon inftnc_soical_email"><i className="fas fa-envelope"></i></span>
                       </a> )
                    case 'blogger':
@@ -164,7 +164,7 @@ class SocialShareChild extends Component {
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          <span className="inftnc_social_text inftnc_blogger_text">Share On Blogger</span>
+                          <span className="inftnc_social_text inftnc_blogger_text">Share on Blogger</span>
                           <span className="inftnc_social_icon inftnc_soical_blogger"></span>
                       </a> )
               default:
