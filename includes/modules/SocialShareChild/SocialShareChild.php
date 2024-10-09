@@ -207,8 +207,7 @@ class INFTNC_SocialShareChild extends ET_Builder_Module {
 	    // Render social share button 
 		if( 'facebook' === $social_share ) {
 
-			global $post;
-			$post_title   = get_the_title($post->ID); // Get the WordPress post title
+			$post_title   = get_the_title( get_the_ID() ); // Get the WordPress post title
 			$share_button = sprintf('
 					<a class="inftnc_share_link inftnc_fb_share_link" href="%1$s">
 							%2$s
@@ -239,8 +238,7 @@ class INFTNC_SocialShareChild extends ET_Builder_Module {
 			);
 
 		} else if ( 'whatsapp' === $social_share ) {
-			global $post;
-			$post_title   = get_the_title($post->ID); // Get the WordPress post title
+			$post_title   = get_the_title( get_the_ID() ); // Get the WordPress post title
 			$share_button = sprintf('
 					<a class="inftnc_share_link inftnc_whatsapp_share_link" href="%1$s">
 							%2$s
@@ -271,18 +269,16 @@ class INFTNC_SocialShareChild extends ET_Builder_Module {
 
 		 } else if ( 'twitter' === $social_share ) {
 
-			global $post;
-
 			// Get post title and excerpt
-			$post_title = get_the_title($post->ID);
-			$post_excerpt = get_the_excerpt($post->ID);
+			$post_title = get_the_title( get_the_ID() );
+			$post_excerpt = get_the_excerpt( get_the_ID()  );
 
 		   // Encode the post title and excerpt for use in URL
 			$encoded_title = urlencode($post_title);
 			$encoded_excerpt = urlencode($post_excerpt);
 
 			// Get post permalink
-			$post_permalink = get_permalink($post->ID);
+			$post_permalink = get_permalink( get_the_ID() );
 
 			// Encode the post permalink for use in URL
 			$encoded_permalink = urlencode($post_permalink);
@@ -319,14 +315,12 @@ class INFTNC_SocialShareChild extends ET_Builder_Module {
 
 		} else if ( 'pinterest' === $social_share ) {
 
-			// Get the current post
-			global $post;
-
+	
 			// Get post title and excerpt
-			$post_title = get_the_title($post->ID);
+			$post_title = get_the_title( get_the_ID() );
 
 			// Get post permalink
-			$post_permalink = get_permalink($post->ID);
+			$post_permalink = get_permalink( get_the_ID() );
 
 			// Construct the Pinterest share link
 			$pinterest_share_link = 'https://pinterest.com/pin/create/button/?url=' . urlencode($post_permalink) . '&description=' . urlencode($post_title);
@@ -362,17 +356,14 @@ class INFTNC_SocialShareChild extends ET_Builder_Module {
 
 		} elseif ('linekdin' === $social_share) {
 
-				// Get the current post
-				global $post;
-
 				// Get post title
-				$post_title = get_the_title($post->ID);
+				$post_title = get_the_title( get_the_ID() );
 
 				// Get post excerpt
-				$post_excerpt = get_the_excerpt($post->ID);
+				$post_excerpt = get_the_excerpt( get_the_ID() );
 
 				// Get post permalink
-				$post_permalink = get_permalink($post->ID);
+				$post_permalink = get_permalink( get_the_ID() );
 
 				// Encode post title, excerpt, and permalink for use in URL
 				$encoded_title = urlencode($post_title);
@@ -412,14 +403,12 @@ class INFTNC_SocialShareChild extends ET_Builder_Module {
 				);
 
 		} else if ( 'telegram' === $social_share ) {
-			// Get the current post
-			global $post;
-
+		
 			// Get post title
-			$post_title = get_the_title($post->ID);
+			$post_title = get_the_title( get_the_ID() );
 
 			// Get post permalink
-			$post_permalink = get_permalink($post->ID);
+			$post_permalink = get_permalink( get_the_ID() );
 
 			// Construct the Telegram share link
 			$telegram_share_link = 'https://t.me/share/url?url=' . urlencode($post_permalink) . '&text=' . urlencode($post_title);
@@ -454,14 +443,11 @@ class INFTNC_SocialShareChild extends ET_Builder_Module {
 			);	
 		} else if ( 'reddit' === $social_share ) {
 
-			// Get the current post
-			global $post;
-
 			// Get post title
-			$post_title = get_the_title($post->ID);
+			$post_title = get_the_title( get_the_ID() );
 
 			// Get post permalink
-			$post_permalink = get_permalink($post->ID);
+			$post_permalink = get_permalink( get_the_ID() );
 
 			// Construct the Reddit share link
 			$reddit_share_link = 'https://www.reddit.com/submit?url=' . urlencode($post_permalink) . '&title=' . urlencode($post_title);
@@ -497,15 +483,12 @@ class INFTNC_SocialShareChild extends ET_Builder_Module {
 			);	
 		} else if ( 'tumblr' === $social_share ) {
 
-			// Get the current post
-			global $post;
-
 			// Get post title and excerpt
-			$post_title = get_the_title($post->ID);
-			$post_excerpt = get_the_excerpt($post->ID);
+			$post_title = get_the_title( get_the_ID() );
+			$post_excerpt = get_the_excerpt(  get_the_ID() );
 
 			// Get post permalink
-			$post_permalink = get_permalink($post->ID);
+			$post_permalink = get_permalink( get_the_ID() );
 
 			// Construct the Tumblr share link
 			$tumblr_share_link = 'https://www.tumblr.com/widgets/share/tool?canonicalUrl=' . urlencode($post_permalink) . '&title=' . urlencode($post_title) . '&caption=' . urlencode($post_excerpt);
@@ -539,16 +522,14 @@ class INFTNC_SocialShareChild extends ET_Builder_Module {
 					 ) : ''
 			);	
 		} else if ( 'email' === $social_share ) {
-			// Get the current post
-			global $post;
-
+	
 			// Get post title
-			$post_title = get_the_title($post->ID);
+			$post_title = get_the_title( get_the_ID() );
 						
-			$post_excerpt = get_the_excerpt($post->ID);
+			$post_excerpt = get_the_excerpt( get_the_ID() );
 
 			// Get post permalink
-			$post_permalink = get_permalink($post->ID);
+			$post_permalink = get_permalink( get_the_ID() );
 
 			// Encode post title, excerpt, and permalink for use in URL
 			$encoded_title = urlencode($post_title);
@@ -591,15 +572,13 @@ class INFTNC_SocialShareChild extends ET_Builder_Module {
 
 		 } else if ( 'blogger' === $social_share ) {
 
-			// Get the current post
-			global $post;
 
 			// Get post title and excerpt
-			$post_title = get_the_title($post->ID);
-			$post_excerpt = get_the_excerpt($post->ID);
+			$post_title = get_the_title( get_the_ID() );
+			$post_excerpt = get_the_excerpt( get_the_ID() );
 
 			// Get post permalink
-			$post_permalink = get_permalink($post->ID);
+			$post_permalink = get_permalink( get_the_ID() );
 
 			// Construct the Tumblr share link
 			$blogger_share_link = 'https://www.blogger.com/blog-this.g?u=' . urlencode($post_permalink) . '&n=' . urlencode($post_title) . '&t=' . urlencode($post_excerpt);
