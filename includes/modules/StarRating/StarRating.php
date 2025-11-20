@@ -4,11 +4,12 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 class INFTNC_StarRating extends ET_Builder_Module {
 	public $slug       = 'inftnc_star_rating';
 	public $vb_support = 'on';
-	// Module Credits (Appears at the bottom of the module settings modal)
+	
+	// Module  Credit
 	protected $module_credits = array(
 		'module_uri' => 'https://themencode.com/',
-		'author'     => 'ThemeNcode',
-		'author_uri' => 'https://themencode.com/',
+		'author'     => 'ThemeNcode LLC, Get Pro Version',
+		'author_uri' => 'https://www.elegantthemes.com/marketplace/infinity-tnc-divi-modules-pro/',
 	);
 
 	/**

@@ -3,7 +3,7 @@
 Plugin Name: Infinity TNC Divi Modules
 Plugin URI:  https://divi.themencode.com/infinity-tnc-divi-modules-preview/
 Description: Fulfill your Divi experience with the awesome & useful modules for every purpose you need.
-Version:     1.0.0
+Version:     1.1.0
 Author:      ThemeNcode LLC
 Author URI:  https://themencode.com/
 License:     GPL2
@@ -49,3 +49,23 @@ require_once __DIR__ ."/public/inftnc-divi-modules-public.php";
 
 
 
+/**  
+ * * Add a settings link to the plugin actions * 
+ * * @param array $links Existing plugin action links.
+ * @return array Modified plugin action links.
+ */
+
+function inftnc_plugin_settings_link( $links )
+{
+    $url = 'https://www.elegantthemes.com/marketplace/infinity-tnc-divi-modules-pro/';
+
+    $_link = '<a href="'. esc_url($url) .'" target="_blank">' . __( 'Get Pro Version', 'infinity-tnc-divi-modules' ) . '</a>';
+
+    $links[] = $_link;
+
+    return $links;
+}
+
+add_filter( 'plugin_action_links_' . plugin_basename(__FILE__), 'inftnc_plugin_settings_link' );
+
+ 
