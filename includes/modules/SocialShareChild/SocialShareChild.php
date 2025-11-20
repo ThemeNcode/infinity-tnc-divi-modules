@@ -202,11 +202,12 @@ class INFTNC_SocialShareChild extends ET_Builder_Module {
 			)
 		);
 
+		// Social share default 
+		 $share_button  = '';
 	    // Render social share button 
 		if( 'facebook' === $social_share ) {
 
-			global $post;
-			$post_title   = get_the_title($post->ID); // Get the WordPress post title
+			$post_title   = get_the_title( get_the_ID() ); // Get the WordPress post title
 			$share_button = sprintf('
 					<a class="inftnc_share_link inftnc_fb_share_link" href="%1$s">
 							%2$s
@@ -218,7 +219,7 @@ class INFTNC_SocialShareChild extends ET_Builder_Module {
 						<span class="inftnc_social_text inftnc_fb_text">%1$s</span>
 						<span class="inftnc_social_icon inftnc_social_fb"></span>
 					',
-					 esc_html__( ' Share On Facebook', 'infinity-tnc-divi-modules')
+					 esc_html__( ' Share on Facebook', 'infinity-tnc-divi-modules')
 					 
 					) : '', 
 
@@ -231,14 +232,13 @@ class INFTNC_SocialShareChild extends ET_Builder_Module {
 						<span class="inftnc_social_text inftnc_fb_text">%1$s</span>
 					 ',
 
-					 esc_html__( ' Share On Facebook', 'infinity-tnc-divi-modules')
+					 esc_html__( ' Share on Facebook', 'infinity-tnc-divi-modules')
 
 					 ) : ''
 			);
 
 		} else if ( 'whatsapp' === $social_share ) {
-			global $post;
-			$post_title   = get_the_title($post->ID); // Get the WordPress post title
+			$post_title   = get_the_title( get_the_ID() ); // Get the WordPress post title
 			$share_button = sprintf('
 					<a class="inftnc_share_link inftnc_whatsapp_share_link" href="%1$s">
 							%2$s
@@ -250,7 +250,7 @@ class INFTNC_SocialShareChild extends ET_Builder_Module {
 						<span class="inftnc_social_text inftnc_whatsapp_text">%1$s</span>
 						<span class="inftnc_social_icon inftnc_social_whatsapp"></span>
 					',
-					/* 01 */   esc_html__( 'Share On WhatsApp', 'infinity-tnc-divi-modules')
+					/* 01 */   esc_html__( 'Share on WhatsApp', 'infinity-tnc-divi-modules')
 
 					) : '', 
 
@@ -262,25 +262,23 @@ class INFTNC_SocialShareChild extends ET_Builder_Module {
 		    /*04 */  'only_text'  === $social_layout ? sprintf('
 						<span class="inftnc_social_text inftnc_whatsapp_text">%1$s</span>
 					 ',
-					 esc_html__( 'Share On WhatsApp', 'infinity-tnc-divi-modules')
+					 esc_html__( 'Share on WhatsApp', 'infinity-tnc-divi-modules')
 
 					 ) : ''
 			);
 
 		 } else if ( 'twitter' === $social_share ) {
 
-			global $post;
-
 			// Get post title and excerpt
-			$post_title = get_the_title($post->ID);
-			$post_excerpt = get_the_excerpt($post->ID);
+			$post_title = get_the_title( get_the_ID() );
+			$post_excerpt = get_the_excerpt( get_the_ID()  );
 
 		   // Encode the post title and excerpt for use in URL
 			$encoded_title = urlencode($post_title);
 			$encoded_excerpt = urlencode($post_excerpt);
 
 			// Get post permalink
-			$post_permalink = get_permalink($post->ID);
+			$post_permalink = get_permalink( get_the_ID() );
 
 			// Encode the post permalink for use in URL
 			$encoded_permalink = urlencode($post_permalink);
@@ -299,7 +297,7 @@ class INFTNC_SocialShareChild extends ET_Builder_Module {
 						<span class="inftnc_social_text inftnc_twitter_text">%1$s</span>
 						<span class="inftnc_social_icon et-pb-icon">&#xe094;</span>
 					',
-					/* 01 */  esc_html__( 'Share On X', 'infinity-tnc-divi-modules')
+					/* 01 */  esc_html__( 'Share on X', 'infinity-tnc-divi-modules')
 					) : '', 
 
 			/* 03 */ 'only_icon'  === $social_layout ? sprintf('
@@ -310,21 +308,19 @@ class INFTNC_SocialShareChild extends ET_Builder_Module {
 		    /*04 */  'only_text'  === $social_layout ? sprintf('
 						<span class="inftnc_social_text inftnc_twitter_text">%1$s</span>
 					 ',
-					 esc_html__( 'Share On X', 'infinity-tnc-divi-modules')
+					 esc_html__( 'Share on X', 'infinity-tnc-divi-modules')
 
 					 ) : ''
 			);
 
 		} else if ( 'pinterest' === $social_share ) {
 
-			// Get the current post
-			global $post;
-
+	
 			// Get post title and excerpt
-			$post_title = get_the_title($post->ID);
+			$post_title = get_the_title( get_the_ID() );
 
 			// Get post permalink
-			$post_permalink = get_permalink($post->ID);
+			$post_permalink = get_permalink( get_the_ID() );
 
 			// Construct the Pinterest share link
 			$pinterest_share_link = 'https://pinterest.com/pin/create/button/?url=' . urlencode($post_permalink) . '&description=' . urlencode($post_title);
@@ -340,7 +336,7 @@ class INFTNC_SocialShareChild extends ET_Builder_Module {
 						<span class="inftnc_social_text inftnc_pinterest_text">%1$s</span>
 						<span class="inftnc_social_icon inftnc_soical_pinterest"></span>
 					',
-					/* 01 */  esc_html__( 'Share On Pinterest', 'infinity-tnc-divi-modules') 
+					/* 01 */  esc_html__( 'Share on Pinterest', 'infinity-tnc-divi-modules') 
 					) : '', 
 
 			/* 03 */ 'only_icon'  === $social_layout ? sprintf('
@@ -353,24 +349,21 @@ class INFTNC_SocialShareChild extends ET_Builder_Module {
 
 						<span class="inftnc_social_text inftnc_pinterest_text">%1$s</span>
 					 ',
-					 esc_html__( 'Share On Pinterest', 'infinity-tnc-divi-modules') 
+					 esc_html__( 'Share on Pinterest', 'infinity-tnc-divi-modules') 
 
 					 ) : ''
 			);
 
 		} elseif ('linekdin' === $social_share) {
 
-				// Get the current post
-				global $post;
-
 				// Get post title
-				$post_title = get_the_title($post->ID);
+				$post_title = get_the_title( get_the_ID() );
 
 				// Get post excerpt
-				$post_excerpt = get_the_excerpt($post->ID);
+				$post_excerpt = get_the_excerpt( get_the_ID() );
 
 				// Get post permalink
-				$post_permalink = get_permalink($post->ID);
+				$post_permalink = get_permalink( get_the_ID() );
 
 				// Encode post title, excerpt, and permalink for use in URL
 				$encoded_title = urlencode($post_title);
@@ -391,7 +384,7 @@ class INFTNC_SocialShareChild extends ET_Builder_Module {
 							<span class="inftnc_social_text inftnc_linekdin_text">%1$s</span>
 							<span class="inftnc_social_icon inftnc_soical_linekdin"></span>
 						',
-						/* 01 */  esc_html__( 'Share On Linekdin', 'infinity-tnc-divi-modules') 
+						/* 01 */  esc_html__( 'Share on Linekdin', 'infinity-tnc-divi-modules') 
 						) : '', 
 	
 				/* 03 */ 'only_icon'  === $social_layout ? sprintf('
@@ -404,20 +397,18 @@ class INFTNC_SocialShareChild extends ET_Builder_Module {
 	
 							<span class="inftnc_social_text inftnc_linekdin_text">%1$s</span>
 						 ',
-						 esc_html__( 'Share On Linekdin', 'infinity-tnc-divi-modules')
+						 esc_html__( 'Share on Linekdin', 'infinity-tnc-divi-modules')
 	
 						 ) : ''
 				);
 
 		} else if ( 'telegram' === $social_share ) {
-			// Get the current post
-			global $post;
-
+		
 			// Get post title
-			$post_title = get_the_title($post->ID);
+			$post_title = get_the_title( get_the_ID() );
 
 			// Get post permalink
-			$post_permalink = get_permalink($post->ID);
+			$post_permalink = get_permalink( get_the_ID() );
 
 			// Construct the Telegram share link
 			$telegram_share_link = 'https://t.me/share/url?url=' . urlencode($post_permalink) . '&text=' . urlencode($post_title);
@@ -433,7 +424,7 @@ class INFTNC_SocialShareChild extends ET_Builder_Module {
 						<span class="inftnc_social_text inftnc_telegram_text">%1$s</span>
 						<span class="inftnc_social_icon inftnc_soical_telegram"></span>
 					',
-					/* 01 */  esc_html__( 'Share On Telegram', 'infinity-tnc-divi-modules')
+					/* 01 */  esc_html__( 'Share on Telegram', 'infinity-tnc-divi-modules')
 					) : '', 
 
 			/* 03 */ 'only_icon'  === $social_layout ? sprintf('
@@ -446,20 +437,17 @@ class INFTNC_SocialShareChild extends ET_Builder_Module {
 		    /*04 */  'only_text'  === $social_layout ? sprintf('
 						<span class="inftnc_social_text inftnc_telegram_text">%1$s</span>
 					 ',
-					 esc_html__( 'Share On Telegram', 'infinity-tnc-divi-modules') 
+					 esc_html__( 'Share on Telegram', 'infinity-tnc-divi-modules') 
 
 					 ) : ''
 			);	
 		} else if ( 'reddit' === $social_share ) {
 
-			// Get the current post
-			global $post;
-
 			// Get post title
-			$post_title = get_the_title($post->ID);
+			$post_title = get_the_title( get_the_ID() );
 
 			// Get post permalink
-			$post_permalink = get_permalink($post->ID);
+			$post_permalink = get_permalink( get_the_ID() );
 
 			// Construct the Reddit share link
 			$reddit_share_link = 'https://www.reddit.com/submit?url=' . urlencode($post_permalink) . '&title=' . urlencode($post_title);
@@ -475,7 +463,7 @@ class INFTNC_SocialShareChild extends ET_Builder_Module {
 						<span class="inftnc_social_text inftnc_reddit_text">%1$s</span>
 						<span class="inftnc_social_icon inftnc_soical_reddit"></span>
 					',
-					/* 01 */  esc_html__( 'Share On Reddit', 'infinity-tnc-divi-modules') 
+					/* 01 */  esc_html__( 'Share on Reddit', 'infinity-tnc-divi-modules') 
 
 					) : '', 
 					
@@ -489,21 +477,18 @@ class INFTNC_SocialShareChild extends ET_Builder_Module {
 		    /*04 */  'only_text'  === $social_layout ? sprintf('
 						<span class="inftnc_social_text inftnc_reddit_text">%1$s</span>
 					 ',
-					 esc_html__( 'Share On Reddit', 'infinity-tnc-divi-modules') 
+					 esc_html__( 'Share on Reddit', 'infinity-tnc-divi-modules') 
 
 					 ) : ''
 			);	
 		} else if ( 'tumblr' === $social_share ) {
 
-			// Get the current post
-			global $post;
-
 			// Get post title and excerpt
-			$post_title = get_the_title($post->ID);
-			$post_excerpt = get_the_excerpt($post->ID);
+			$post_title = get_the_title( get_the_ID() );
+			$post_excerpt = get_the_excerpt(  get_the_ID() );
 
 			// Get post permalink
-			$post_permalink = get_permalink($post->ID);
+			$post_permalink = get_permalink( get_the_ID() );
 
 			// Construct the Tumblr share link
 			$tumblr_share_link = 'https://www.tumblr.com/widgets/share/tool?canonicalUrl=' . urlencode($post_permalink) . '&title=' . urlencode($post_title) . '&caption=' . urlencode($post_excerpt);
@@ -520,7 +505,7 @@ class INFTNC_SocialShareChild extends ET_Builder_Module {
 						<span class="inftnc_social_text inftnc_tumblr_text">%1$s</span>
 						<span class="inftnc_social_icon inftnc_soical_tumblr"></span>
 					',
-					/* 01 */  esc_html__( 'Share On Tumblr', 'infinity-tnc-divi-modules') 
+					/* 01 */  esc_html__( 'Share on Tumblr', 'infinity-tnc-divi-modules') 
 
 					) : '', 
 
@@ -532,21 +517,19 @@ class INFTNC_SocialShareChild extends ET_Builder_Module {
 		    /*04 */  'only_text'  === $social_layout ? sprintf('
 						<span class="inftnc_social_text inftnc_tumblr_text">%1$s</span>
 					 ',
-					 esc_html__( 'Share On Tumblr ', 'infinity-tnc-divi-modules')
+					 esc_html__( 'Share on Tumblr ', 'infinity-tnc-divi-modules')
 
 					 ) : ''
 			);	
 		} else if ( 'email' === $social_share ) {
-			// Get the current post
-			global $post;
-
+	
 			// Get post title
-			$post_title = get_the_title($post->ID);
+			$post_title = get_the_title( get_the_ID() );
 						
-			$post_excerpt = get_the_excerpt($post->ID);
+			$post_excerpt = get_the_excerpt( get_the_ID() );
 
 			// Get post permalink
-			$post_permalink = get_permalink($post->ID);
+			$post_permalink = get_permalink( get_the_ID() );
 
 			// Encode post title, excerpt, and permalink for use in URL
 			$encoded_title = urlencode($post_title);
@@ -568,7 +551,7 @@ class INFTNC_SocialShareChild extends ET_Builder_Module {
 						<span class="inftnc_social_text inftnc_email_text">%1$s</span>
 						<span class="inftnc_social_icon inftnc_soical_email"><i class="fas fa-envelope"></i></span>
 					',
-					/* 01 */ esc_html__( 'Share On Email', 'infinity-tnc-divi-modules')
+					/* 01 */ esc_html__( 'Share on Email', 'infinity-tnc-divi-modules')
 
 					) : '', 
 
@@ -582,22 +565,20 @@ class INFTNC_SocialShareChild extends ET_Builder_Module {
 		    /*04 */  'only_text'  === $social_layout ? sprintf('
 						<span class="inftnc_social_text inftnc_email_text">%1$s</span>
 					 ',
-					 esc_html__( 'Share On Email ', 'infinity-tnc-divi-modules')
+					 esc_html__( 'Share on Email ', 'infinity-tnc-divi-modules')
 
 					 ) : ''
 			);
 
 		 } else if ( 'blogger' === $social_share ) {
 
-			// Get the current post
-			global $post;
 
 			// Get post title and excerpt
-			$post_title = get_the_title($post->ID);
-			$post_excerpt = get_the_excerpt($post->ID);
+			$post_title = get_the_title( get_the_ID() );
+			$post_excerpt = get_the_excerpt( get_the_ID() );
 
 			// Get post permalink
-			$post_permalink = get_permalink($post->ID);
+			$post_permalink = get_permalink( get_the_ID() );
 
 			// Construct the Tumblr share link
 			$blogger_share_link = 'https://www.blogger.com/blog-this.g?u=' . urlencode($post_permalink) . '&n=' . urlencode($post_title) . '&t=' . urlencode($post_excerpt);
@@ -614,7 +595,7 @@ class INFTNC_SocialShareChild extends ET_Builder_Module {
 						<span class="inftnc_social_icon inftnc_soical_blogger"></span>
 					',
 					
-					/* 01 */  esc_html__( 'Share On Blogger', 'infinity-tnc-divi-modules') 
+					/* 01 */  esc_html__( 'Share on Blogger', 'infinity-tnc-divi-modules') 
 
 					) : '', 
 
@@ -627,7 +608,7 @@ class INFTNC_SocialShareChild extends ET_Builder_Module {
 		    /*04 */  'only_text'  === $social_layout ? sprintf('
 						<span class="inftnc_social_text inftnc_blogger_text">%1$s</span>
 					 ',
-					 esc_html__( 'Share On Blogger ', 'infinity-tnc-divi-modules')
+					 esc_html__( 'Share on Blogger ', 'infinity-tnc-divi-modules')
 
 					 ) : ''
 			);		
