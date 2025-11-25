@@ -1,0 +1,1412 @@
+# Copyright (C) 2024 ThemeNcode LLC
+# This file is distributed under the GPL2.
+msgid ""
+msgstr ""
+"Project-Id-Version: Infinity TNC Divi Modules 1.2.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/infinity-tnc-divi-"
+"modules\n"
+"POT-Creation-Date: 2024-10-09 13:11:23+00:00\n"
+"PO-Revision-Date: 2024-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Country: United States\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;"
+"_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;"
+"esc_html_x:1,2c;\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-Bookmarks: \n"
+"X-Textdomain-Support: yes\n"
+"X-Generator: grunt-wp-i18n 1.0.3\n"
+
+#: includes/modules/SocialShare/SocialShare.php:102
+msgid "1"
+msgstr ""
+
+#: includes/modules/SocialShare/SocialShare.php:103
+msgid "2"
+msgstr ""
+
+#: includes/modules/SocialShare/SocialShare.php:104
+msgid "3"
+msgstr ""
+
+#: includes/modules/SocialShare/SocialShare.php:105
+msgid "4"
+msgstr ""
+
+#: includes/modules/SocialShare/SocialShare.php:106
+msgid "5"
+msgstr ""
+
+#: includes/modules/SocialShare/SocialShare.php:107
+msgid "6"
+msgstr ""
+
+#. translators: %s: author archive name
+#: includes/admin/breadcrumbs.php:167
+msgid "Author archive for %s"
+msgstr ""
+
+#. translators: %s: search query
+#: includes/admin/breadcrumbs.php:217
+msgid "Search query for: %s"
+msgstr ""
+
+#. translators: %s: 404 error
+#: includes/admin/breadcrumbs.php:223
+msgid "Error %d"
+msgstr ""
+
+#. translators: %s: current page number
+#: includes/admin/breadcrumbs.php:230
+msgid " ( Page %s )"
+msgstr ""
+
+#: includes/modules/BreadCrumbs/BreadCrumbs.php:17
+msgid "Breadcrumbs - Infinity TNC"
+msgstr ""
+
+#: includes/modules/BreadCrumbs/BreadCrumbs.php:25
+msgid "Text"
+msgstr ""
+
+#: includes/modules/BreadCrumbs/BreadCrumbs.php:26
+msgid "Icon"
+msgstr ""
+
+#: includes/modules/BreadCrumbs/BreadCrumbs.php:32
+msgid "Colors"
+msgstr ""
+
+#: includes/modules/BreadCrumbs/BreadCrumbs.php:42
+#: includes/modules/BreadCrumbs/BreadCrumbs.php:92
+#: includes/modules/TypeWriter/TypeWriter.php:157
+msgid "Before Text"
+msgstr ""
+
+#: includes/modules/BreadCrumbs/BreadCrumbs.php:47
+msgid "Home Text"
+msgstr ""
+
+#: includes/modules/BreadCrumbs/BreadCrumbs.php:52
+msgid "Separator"
+msgstr ""
+
+#: includes/modules/BreadCrumbs/BreadCrumbs.php:57
+msgid "Current Text"
+msgstr ""
+
+#: includes/modules/BreadCrumbs/BreadCrumbs.php:83
+#: includes/modules/BreadCrumbs/BreadCrumbs.php:86
+msgid "Home"
+msgstr ""
+
+#: includes/modules/BreadCrumbs/BreadCrumbs.php:87
+msgid "Default home text in the Breadcrumbs"
+msgstr ""
+
+#: includes/modules/BreadCrumbs/BreadCrumbs.php:95
+msgid "Before text in the breadcrumbs"
+msgstr ""
+
+#: includes/modules/BreadCrumbs/BreadCrumbs.php:100
+msgid "Separator Icon"
+msgstr ""
+
+#: includes/modules/BreadCrumbs/BreadCrumbs.php:107
+msgid "Choose the icon for the separator."
+msgstr ""
+
+#: includes/modules/BreadCrumbs/BreadCrumbs.php:111
+msgid "Add Before Icon"
+msgstr ""
+
+#: includes/modules/BreadCrumbs/BreadCrumbs.php:116
+msgid "No"
+msgstr ""
+
+#: includes/modules/BreadCrumbs/BreadCrumbs.php:117
+#: includes/modules/ImageCarousel/ImageCarousel.php:135
+#: includes/modules/ImageCarousel/ImageCarousel.php:160
+#: includes/modules/ImageCarousel/ImageCarousel.php:172
+#: includes/modules/ImageCarousel/ImageCarousel.php:202
+#: includes/modules/ImageCarousel/ImageCarousel.php:215
+#: includes/modules/ImageCarousel/ImageCarousel.php:228
+#: includes/modules/ImageCarousel/ImageCarousel.php:241
+#: includes/modules/ImageCarousel/ImageCarousel.php:253
+#: includes/modules/ImageCarousel/ImageCarousel.php:265
+#: includes/modules/LogoCarousel/LogoCarousel.php:135
+#: includes/modules/LogoCarousel/LogoCarousel.php:160
+#: includes/modules/LogoCarousel/LogoCarousel.php:172
+#: includes/modules/LogoCarousel/LogoCarousel.php:202
+#: includes/modules/LogoCarousel/LogoCarousel.php:215
+#: includes/modules/LogoCarousel/LogoCarousel.php:228
+#: includes/modules/LogoCarousel/LogoCarousel.php:241
+#: includes/modules/LogoCarousel/LogoCarousel.php:253
+#: includes/modules/LogoCarousel/LogoCarousel.php:265
+msgid "Yes"
+msgstr ""
+
+#: includes/modules/BreadCrumbs/BreadCrumbs.php:122
+msgid "Before Text Icon"
+msgstr ""
+
+#: includes/modules/BreadCrumbs/BreadCrumbs.php:129
+msgid "Choose the icon for the before text."
+msgstr ""
+
+#: includes/modules/BreadCrumbs/BreadCrumbs.php:136
+msgid "Link Color"
+msgstr ""
+
+#: includes/modules/BreadCrumbs/BreadCrumbs.php:143
+msgid "Separator Icon Color"
+msgstr ""
+
+#: includes/modules/BreadCrumbs/BreadCrumbs.php:150
+msgid "Current Text Color"
+msgstr ""
+
+#: includes/modules/BreadCrumbs/BreadCrumbs.php:157
+msgid "Before Text Color"
+msgstr ""
+
+#: includes/modules/DualButtons/DualButtons.php:18
+msgid "Dual Buttons - Infinity TNC"
+msgstr ""
+
+#: includes/modules/DualButtons/DualButtons.php:27
+msgid "Button Text"
+msgstr ""
+
+#: includes/modules/DualButtons/DualButtons.php:31
+#: includes/modules/DualButtons/DualButtons.php:53
+#: includes/modules/DualButtons/DualButtons.php:66
+#: includes/modules/DualButtons/DualButtons.php:68
+#: includes/modules/DualButtons/DualButtons.php:173
+msgid "Button Left"
+msgstr ""
+
+#: includes/modules/DualButtons/DualButtons.php:34
+#: includes/modules/DualButtons/DualButtons.php:57
+#: includes/modules/DualButtons/DualButtons.php:74
+#: includes/modules/DualButtons/DualButtons.php:76
+#: includes/modules/DualButtons/DualButtons.php:190
+msgid "Button Right"
+msgstr ""
+
+#: includes/modules/DualButtons/DualButtons.php:38
+msgid "Button Links"
+msgstr ""
+
+#: includes/modules/DualButtons/DualButtons.php:44
+#: includes/modules/DualButtons/DualButtons.php:129
+msgid "Button Alignment"
+msgstr ""
+
+#: includes/modules/DualButtons/DualButtons.php:45
+#: includes/modules/DualButtons/DualButtons.php:140
+msgid "Button Gap"
+msgstr ""
+
+#: includes/modules/DualButtons/DualButtons.php:70
+#: includes/modules/DualButtons/DualButtons.php:78
+msgid "Input your desired button text."
+msgstr ""
+
+#: includes/modules/DualButtons/DualButtons.php:83
+#: includes/modules/DualButtons/DualButtons.php:92
+#: includes/modules/VimeoVideo/VimeoVideo.php:75
+#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:86
+msgid "URL"
+msgstr ""
+
+#: includes/modules/DualButtons/DualButtons.php:86
+#: includes/modules/DualButtons/DualButtons.php:95
+msgid "Input URL for your button."
+msgstr ""
+
+#: includes/modules/DualButtons/DualButtons.php:103
+#: includes/modules/DualButtons/DualButtons.php:117
+msgid "Link Target"
+msgstr ""
+
+#: includes/modules/DualButtons/DualButtons.php:107
+#: includes/modules/DualButtons/DualButtons.php:121
+msgid "Same Window"
+msgstr ""
+
+#: includes/modules/DualButtons/DualButtons.php:108
+#: includes/modules/DualButtons/DualButtons.php:122
+msgid "New Tab"
+msgstr ""
+
+#: includes/modules/DualButtons/DualButtons.php:112
+#: includes/modules/DualButtons/DualButtons.php:126
+msgid "Choose whether your link opens in same or new tab"
+msgstr ""
+
+#: includes/modules/DualButtons/DualButtons.php:130
+msgid "Align your button to the left, right or center of the module."
+msgstr ""
+
+#: includes/modules/EmbedMap/EmbedMap.php:24
+msgid "Embed Map - Infinity TNC"
+msgstr ""
+
+#: includes/modules/EmbedMap/EmbedMap.php:31
+msgid "Map"
+msgstr ""
+
+#: includes/modules/EmbedMap/EmbedMap.php:39
+msgid "Embed Map"
+msgstr ""
+
+#: includes/modules/EmbedMap/EmbedMap.php:81
+msgid "Source Type"
+msgstr ""
+
+#: includes/modules/EmbedMap/EmbedMap.php:85
+#: includes/modules/EmbedMap/EmbedMap.php:93
+msgid "Latitude & Longitude"
+msgstr ""
+
+#: includes/modules/EmbedMap/EmbedMap.php:86
+#: includes/modules/EmbedMap/EmbedMap.php:120
+#: includes/modules/VimeoVideo/VimeoVideo.php:77
+#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:88
+msgid "Embed Code"
+msgstr ""
+
+#: includes/modules/EmbedMap/EmbedMap.php:97
+msgid "Map Latitude & Longitude"
+msgstr ""
+
+#: includes/modules/EmbedMap/EmbedMap.php:105
+msgid "Zoom"
+msgstr ""
+
+#: includes/modules/EmbedMap/EmbedMap.php:123
+msgid "Map Longitude"
+msgstr ""
+
+#: includes/modules/HeadingGradient/HeadingGradient.php:21
+msgid "Heading Gradient - Infinity TNC"
+msgstr ""
+
+#: includes/modules/HeadingGradient/HeadingGradient.php:28
+#: includes/modules/HeadingGradient/HeadingGradient.php:38
+#: includes/modules/HeadingGradient/HeadingGradient.php:63
+msgid "Heading"
+msgstr ""
+
+#: includes/modules/HeadingGradient/HeadingGradient.php:44
+msgid "Gradient Style"
+msgstr ""
+
+#: includes/modules/HeadingGradient/HeadingGradient.php:85
+#: includes/modules/StarRating/StarRating.php:87
+#: includes/modules/TypeWriter/TypeWriter.php:91
+msgid "Heading Level"
+msgstr ""
+
+#: includes/modules/HeadingGradient/HeadingGradient.php:129
+msgid "Heading Text"
+msgstr ""
+
+#: includes/modules/HeadingGradient/HeadingGradient.php:131
+msgid "My Awesome Heading with Gradient"
+msgstr ""
+
+#: includes/modules/HeadingGradient/HeadingGradient.php:133
+msgid "Content entered here will appear inside the module."
+msgstr ""
+
+#: includes/modules/HeadingGradient/HeadingGradient.php:139
+msgid "Gradient Options"
+msgstr ""
+
+#: includes/modules/HeadingGradient/HeadingGradient.php:143
+msgid "Gradient Preset"
+msgstr ""
+
+#: includes/modules/HeadingGradient/HeadingGradient.php:144
+msgid "Custom Color"
+msgstr ""
+
+#: includes/modules/HeadingGradient/HeadingGradient.php:152
+msgid "Gradient Type"
+msgstr ""
+
+#: includes/modules/HeadingGradient/HeadingGradient.php:156
+msgid "Linear Gradient"
+msgstr ""
+
+#: includes/modules/HeadingGradient/HeadingGradient.php:157
+msgid "Radial Gradient"
+msgstr ""
+
+#: includes/modules/HeadingGradient/HeadingGradient.php:158
+msgid "Elliptical"
+msgstr ""
+
+#: includes/modules/HeadingGradient/HeadingGradient.php:168
+#: includes/modules/HeadingGradient/HeadingGradient.php:190
+#: includes/modules/HeadingGradient/HeadingGradient.php:212
+msgid "Position"
+msgstr ""
+
+#: includes/modules/HeadingGradient/HeadingGradient.php:172
+#: includes/modules/HeadingGradient/HeadingGradient.php:194
+#: includes/modules/HeadingGradient/HeadingGradient.php:216
+msgid "Top Left"
+msgstr ""
+
+#: includes/modules/HeadingGradient/HeadingGradient.php:173
+msgid "Top"
+msgstr ""
+
+#: includes/modules/HeadingGradient/HeadingGradient.php:174
+#: includes/modules/HeadingGradient/HeadingGradient.php:196
+#: includes/modules/HeadingGradient/HeadingGradient.php:218
+msgid "Top Right"
+msgstr ""
+
+#: includes/modules/HeadingGradient/HeadingGradient.php:175
+msgid "Right"
+msgstr ""
+
+#: includes/modules/HeadingGradient/HeadingGradient.php:176
+#: includes/modules/HeadingGradient/HeadingGradient.php:201
+#: includes/modules/HeadingGradient/HeadingGradient.php:224
+msgid "Bottom Right"
+msgstr ""
+
+#: includes/modules/HeadingGradient/HeadingGradient.php:177
+msgid "Bottom"
+msgstr ""
+
+#: includes/modules/HeadingGradient/HeadingGradient.php:178
+#: includes/modules/HeadingGradient/HeadingGradient.php:200
+#: includes/modules/HeadingGradient/HeadingGradient.php:222
+msgid "Bottom Left"
+msgstr ""
+
+#: includes/modules/HeadingGradient/HeadingGradient.php:179
+msgid "Left"
+msgstr ""
+
+#: includes/modules/HeadingGradient/HeadingGradient.php:195
+#: includes/modules/HeadingGradient/HeadingGradient.php:217
+msgid "Top Center"
+msgstr ""
+
+#: includes/modules/HeadingGradient/HeadingGradient.php:197
+#: includes/modules/HeadingGradient/HeadingGradient.php:219
+msgid "Left Center"
+msgstr ""
+
+#: includes/modules/HeadingGradient/HeadingGradient.php:198
+#: includes/modules/HeadingGradient/HeadingGradient.php:220
+msgid "Center Center"
+msgstr ""
+
+#: includes/modules/HeadingGradient/HeadingGradient.php:199
+#: includes/modules/HeadingGradient/HeadingGradient.php:221
+msgid "Right Center"
+msgstr ""
+
+#: includes/modules/HeadingGradient/HeadingGradient.php:223
+msgid "Bottom Center"
+msgstr ""
+
+#: includes/modules/HeadingGradient/HeadingGradient.php:235
+msgid "Start Color"
+msgstr ""
+
+#: includes/modules/HeadingGradient/HeadingGradient.php:246
+msgid "End Color"
+msgstr ""
+
+#: includes/modules/HeadingGradient/HeadingGradient.php:257
+msgid "Start Position"
+msgstr ""
+
+#: includes/modules/HeadingGradient/HeadingGradient.php:273
+msgid "End Position"
+msgstr ""
+
+#: includes/modules/HeadingGradient/HeadingGradient.php:289
+msgid "Presets Gradient Style"
+msgstr ""
+
+#: includes/modules/ImageCarousel/ImageCarousel.php:28
+msgid "Image Carousel - Infinity TNC"
+msgstr ""
+
+#: includes/modules/ImageCarousel/ImageCarousel.php:31
+#: includes/modules/ImageCarousel/ImageCarousel.php:61
+#: includes/modules/ImageCarousel/ImageCarousel.php:71
+#: includes/modules/ImageCarousel/ImageCarousel.php:414
+#: includes/modules/ImageCarousel/ImageCarousel.php:426
+#: includes/modules/ImageCarouselChild/ImageCarouselChild.php:18
+#: includes/modules/ImageCarouselChild/ImageCarouselChild.php:45
+msgid "Image"
+msgstr ""
+
+#: includes/modules/ImageCarousel/ImageCarousel.php:41
+msgid "Image General"
+msgstr ""
+
+#: includes/modules/ImageCarousel/ImageCarousel.php:42
+#: includes/modules/LogoCarousel/LogoCarousel.php:40
+msgid "Carousel Settings"
+msgstr ""
+
+#: includes/modules/ImageCarousel/ImageCarousel.php:47
+#: includes/modules/ImageCarousel/ImageCarousel.php:75
+#: includes/modules/LogoCarousel/LogoCarousel.php:45
+#: includes/modules/LogoCarousel/LogoCarousel.php:73
+msgid "Navigation"
+msgstr ""
+
+#: includes/modules/ImageCarousel/ImageCarousel.php:49
+#: includes/modules/ImageCarousel/ImageCarousel.php:79
+#: includes/modules/LogoCarousel/LogoCarousel.php:47
+#: includes/modules/LogoCarousel/LogoCarousel.php:77
+msgid "Pagination"
+msgstr ""
+
+#: includes/modules/ImageCarousel/ImageCarousel.php:53
+#: includes/modules/LogoCarousel/LogoCarousel.php:51
+msgid "Default"
+msgstr ""
+
+#: includes/modules/ImageCarousel/ImageCarousel.php:56
+#: includes/modules/LogoCarousel/LogoCarousel.php:54
+msgid "Active"
+msgstr ""
+
+#: includes/modules/ImageCarousel/ImageCarousel.php:95
+#: includes/modules/LogoCarousel/LogoCarousel.php:95
+msgid "Slides to Show"
+msgstr ""
+
+#: includes/modules/ImageCarousel/ImageCarousel.php:98
+#: includes/modules/LogoCarousel/LogoCarousel.php:98
+msgid "Slides to show at a time"
+msgstr ""
+
+#: includes/modules/ImageCarousel/ImageCarousel.php:106
+#: includes/modules/LogoCarousel/LogoCarousel.php:106
+msgid "Slides to Scroll"
+msgstr ""
+
+#: includes/modules/ImageCarousel/ImageCarousel.php:109
+#: includes/modules/LogoCarousel/LogoCarousel.php:109
+msgid "Slides to scroll at a time"
+msgstr ""
+
+#: includes/modules/ImageCarousel/ImageCarousel.php:117
+#: includes/modules/LogoCarousel/LogoCarousel.php:117
+msgid "Animation Speed (ms)"
+msgstr ""
+
+#: includes/modules/ImageCarousel/ImageCarousel.php:121
+#: includes/modules/LogoCarousel/LogoCarousel.php:121
+msgid "Animation Transition speed"
+msgstr ""
+
+#: includes/modules/ImageCarousel/ImageCarousel.php:131
+#: includes/modules/LogoCarousel/LogoCarousel.php:131
+msgid "Auto Play"
+msgstr ""
+
+#: includes/modules/ImageCarousel/ImageCarousel.php:136
+#: includes/modules/ImageCarousel/ImageCarousel.php:161
+#: includes/modules/ImageCarousel/ImageCarousel.php:173
+#: includes/modules/ImageCarousel/ImageCarousel.php:203
+#: includes/modules/ImageCarousel/ImageCarousel.php:216
+#: includes/modules/ImageCarousel/ImageCarousel.php:229
+#: includes/modules/ImageCarousel/ImageCarousel.php:242
+#: includes/modules/ImageCarousel/ImageCarousel.php:254
+#: includes/modules/ImageCarousel/ImageCarousel.php:266
+#: includes/modules/LogoCarousel/LogoCarousel.php:136
+#: includes/modules/LogoCarousel/LogoCarousel.php:161
+#: includes/modules/LogoCarousel/LogoCarousel.php:173
+#: includes/modules/LogoCarousel/LogoCarousel.php:203
+#: includes/modules/LogoCarousel/LogoCarousel.php:216
+#: includes/modules/LogoCarousel/LogoCarousel.php:229
+#: includes/modules/LogoCarousel/LogoCarousel.php:242
+#: includes/modules/LogoCarousel/LogoCarousel.php:254
+#: includes/modules/LogoCarousel/LogoCarousel.php:266
+msgid "NO"
+msgstr ""
+
+#: includes/modules/ImageCarousel/ImageCarousel.php:143
+#: includes/modules/LogoCarousel/LogoCarousel.php:143
+msgid "Autoplay Speed (ms)"
+msgstr ""
+
+#: includes/modules/ImageCarousel/ImageCarousel.php:156
+#: includes/modules/LogoCarousel/LogoCarousel.php:156
+msgid "Use Navigation"
+msgstr ""
+
+#: includes/modules/ImageCarousel/ImageCarousel.php:168
+#: includes/modules/LogoCarousel/LogoCarousel.php:168
+msgid "Use Pagination"
+msgstr ""
+
+#: includes/modules/ImageCarousel/ImageCarousel.php:180
+#: includes/modules/LogoCarousel/LogoCarousel.php:180
+msgid "Slide Spacing"
+msgstr ""
+
+#: includes/modules/ImageCarousel/ImageCarousel.php:197
+#: includes/modules/LogoCarousel/LogoCarousel.php:197
+msgid "Infinite"
+msgstr ""
+
+#: includes/modules/ImageCarousel/ImageCarousel.php:200
+#: includes/modules/LogoCarousel/LogoCarousel.php:200
+msgid "Infinite Logo looping"
+msgstr ""
+
+#: includes/modules/ImageCarousel/ImageCarousel.php:210
+#: includes/modules/LogoCarousel/LogoCarousel.php:210
+msgid "Pause on Hover"
+msgstr ""
+
+#: includes/modules/ImageCarousel/ImageCarousel.php:213
+#: includes/modules/LogoCarousel/LogoCarousel.php:213
+msgid "Pauses autoplay on hover"
+msgstr ""
+
+#: includes/modules/ImageCarousel/ImageCarousel.php:223
+#: includes/modules/LogoCarousel/LogoCarousel.php:223
+msgid "Swipe"
+msgstr ""
+
+#: includes/modules/ImageCarousel/ImageCarousel.php:226
+#: includes/modules/LogoCarousel/LogoCarousel.php:226
+msgid "Enables touch swipe"
+msgstr ""
+
+#: includes/modules/ImageCarousel/ImageCarousel.php:236
+#: includes/modules/LogoCarousel/LogoCarousel.php:236
+msgid "RTL"
+msgstr ""
+
+#: includes/modules/ImageCarousel/ImageCarousel.php:239
+#: includes/modules/LogoCarousel/LogoCarousel.php:239
+msgid "Change the logo direction to become right-to-left"
+msgstr ""
+
+#: includes/modules/ImageCarousel/ImageCarousel.php:249
+#: includes/modules/LogoCarousel/LogoCarousel.php:249
+msgid "Grayscale by Default"
+msgstr ""
+
+#: includes/modules/ImageCarousel/ImageCarousel.php:261
+#: includes/modules/LogoCarousel/LogoCarousel.php:261
+msgid "Grayscale on Hover"
+msgstr ""
+
+#: includes/modules/ImageCarousel/ImageCarousel.php:273
+msgid "Image Hover Effect"
+msgstr ""
+
+#: includes/modules/ImageCarousel/ImageCarousel.php:277
+#: includes/modules/LogoCarousel/LogoCarousel.php:277
+msgid "None"
+msgstr ""
+
+#: includes/modules/ImageCarousel/ImageCarousel.php:278
+#: includes/modules/LogoCarousel/LogoCarousel.php:278
+msgid "Zoom IN"
+msgstr ""
+
+#: includes/modules/ImageCarousel/ImageCarousel.php:279
+#: includes/modules/LogoCarousel/LogoCarousel.php:279
+msgid "Zoom Out"
+msgstr ""
+
+#: includes/modules/ImageCarousel/ImageCarousel.php:280
+#: includes/modules/LogoCarousel/LogoCarousel.php:280
+msgid "Slide"
+msgstr ""
+
+#: includes/modules/ImageCarousel/ImageCarousel.php:281
+#: includes/modules/LogoCarousel/LogoCarousel.php:281
+msgid "Rotate"
+msgstr ""
+
+#: includes/modules/ImageCarousel/ImageCarousel.php:288
+#: includes/modules/LogoCarousel/LogoCarousel.php:288
+#: includes/modules/SocialShare/SocialShare.php:160
+#: includes/modules/SocialShareChild/SocialShareChild.php:99
+msgid "Icon Size"
+msgstr ""
+
+#: includes/modules/ImageCarousel/ImageCarousel.php:305
+#: includes/modules/LogoCarousel/LogoCarousel.php:305
+msgid "Background Size"
+msgstr ""
+
+#: includes/modules/ImageCarousel/ImageCarousel.php:322
+#: includes/modules/LogoCarousel/LogoCarousel.php:322
+#: includes/modules/SocialShare/SocialShare.php:153
+#: includes/modules/SocialShareChild/SocialShareChild.php:92
+msgid "Icon Color"
+msgstr ""
+
+#: includes/modules/ImageCarousel/ImageCarousel.php:330
+#: includes/modules/LogoCarousel/LogoCarousel.php:330
+msgid "Background Color"
+msgstr ""
+
+#: includes/modules/ImageCarousel/ImageCarousel.php:338
+#: includes/modules/ImageCarousel/ImageCarousel.php:356
+msgid "Dot Size"
+msgstr ""
+
+#: includes/modules/ImageCarousel/ImageCarousel.php:374
+msgid "Dot Color"
+msgstr ""
+
+#: includes/modules/ImageCarousel/ImageCarousel.php:382
+msgid "Dot Alignment"
+msgstr ""
+
+#: includes/modules/ImageCarousel/ImageCarousel.php:383
+#: includes/modules/LogoCarousel/LogoCarousel.php:383
+msgid "Align Dots to the left, right or center of the module."
+msgstr ""
+
+#: includes/modules/ImageCarouselChild/ImageCarouselChild.php:19
+msgid "New Image"
+msgstr ""
+
+#: includes/modules/ImageCarouselChild/ImageCarouselChild.php:20
+msgid "Image Carousel Settings"
+msgstr ""
+
+#: includes/modules/ImageCarouselChild/ImageCarouselChild.php:27
+#: includes/modules/LogoCarouselChild/LogoCarouselChild.php:28
+msgid "Content"
+msgstr ""
+
+#: includes/modules/ImageCarouselChild/ImageCarouselChild.php:49
+msgid "Upload an Image"
+msgstr ""
+
+#: includes/modules/ImageCarouselChild/ImageCarouselChild.php:50
+msgid "Choose an Image"
+msgstr ""
+
+#: includes/modules/ImageCarouselChild/ImageCarouselChild.php:51
+msgid "Set As Image"
+msgstr ""
+
+#: includes/modules/ImageCarouselChild/ImageCarouselChild.php:52
+msgid ""
+"Upload your desired Image, or type in the URL to the Image you would like to "
+"display."
+msgstr ""
+
+#: includes/modules/ImageCarouselChild/ImageCarouselChild.php:57
+msgid "Image ALT Text"
+msgstr ""
+
+#: includes/modules/ImageCarouselChild/ImageCarouselChild.php:60
+msgid ""
+"This defines the HTML ALT text. A short description of your image can be "
+"placed here."
+msgstr ""
+
+#: includes/modules/LogoCarousel/LogoCarousel.php:28
+msgid "Logo Carousel - Infinity TNC"
+msgstr ""
+
+#: includes/modules/LogoCarousel/LogoCarousel.php:29
+#: includes/modules/LogoCarousel/LogoCarousel.php:59
+#: includes/modules/LogoCarousel/LogoCarousel.php:69
+#: includes/modules/LogoCarousel/LogoCarousel.php:414
+#: includes/modules/LogoCarousel/LogoCarousel.php:426
+#: includes/modules/LogoCarouselChild/LogoCarouselChild.php:19
+#: includes/modules/LogoCarouselChild/LogoCarouselChild.php:57
+msgid "Logo"
+msgstr ""
+
+#: includes/modules/LogoCarousel/LogoCarousel.php:39
+msgid "Logo General"
+msgstr ""
+
+#: includes/modules/LogoCarousel/LogoCarousel.php:273
+msgid "Logo Hover Effect"
+msgstr ""
+
+#: includes/modules/LogoCarousel/LogoCarousel.php:338
+#: includes/modules/LogoCarousel/LogoCarousel.php:356
+msgid "Dots Size"
+msgstr ""
+
+#: includes/modules/LogoCarousel/LogoCarousel.php:374
+msgid "Dots Color"
+msgstr ""
+
+#: includes/modules/LogoCarousel/LogoCarousel.php:382
+msgid "Dots Alignment"
+msgstr ""
+
+#: includes/modules/LogoCarouselChild/LogoCarouselChild.php:20
+msgid "New Logo"
+msgstr ""
+
+#: includes/modules/LogoCarouselChild/LogoCarouselChild.php:21
+msgid "Logo Carousel Settings"
+msgstr ""
+
+#: includes/modules/LogoCarouselChild/LogoCarouselChild.php:34
+#: includes/modules/SocialShare/SocialShare.php:49
+#: includes/modules/SocialShare/SocialShare.php:194
+#: includes/modules/SocialShareChild/SocialShareChild.php:33
+#: includes/modules/SocialShareChild/SocialShareChild.php:127
+msgid "Share Button"
+msgstr ""
+
+#: includes/modules/LogoCarouselChild/LogoCarouselChild.php:38
+#: includes/modules/SocialShare/SocialShare.php:53
+#: includes/modules/SocialShareChild/SocialShareChild.php:37
+msgid "Share Button Icon"
+msgstr ""
+
+#: includes/modules/LogoCarouselChild/LogoCarouselChild.php:61
+msgid "Upload a Logo"
+msgstr ""
+
+#: includes/modules/LogoCarouselChild/LogoCarouselChild.php:62
+msgid "Choose a Logo"
+msgstr ""
+
+#: includes/modules/LogoCarouselChild/LogoCarouselChild.php:63
+msgid "Set As Logo"
+msgstr ""
+
+#: includes/modules/LogoCarouselChild/LogoCarouselChild.php:64
+msgid ""
+"Upload your desired logo, or type in the URL to the logo you would like to "
+"display."
+msgstr ""
+
+#: includes/modules/LogoCarouselChild/LogoCarouselChild.php:69
+msgid "Logo ALT Text"
+msgstr ""
+
+#: includes/modules/LogoCarouselChild/LogoCarouselChild.php:72
+msgid ""
+"This defines the HTML ALT text. A short description of your logo can be "
+"placed here."
+msgstr ""
+
+#: includes/modules/SocialShare/SocialShare.php:28
+msgid "Social Share - Infinity TNC"
+msgstr ""
+
+#: includes/modules/SocialShare/SocialShare.php:29
+#: includes/modules/SocialShareChild/SocialShareChild.php:19
+#: includes/modules/SocialShareChild/SocialShareChild.php:56
+msgid "Social Network"
+msgstr ""
+
+#: includes/modules/SocialShare/SocialShare.php:39
+msgid "General"
+msgstr ""
+
+#: includes/modules/SocialShare/SocialShare.php:45
+msgid "Layout"
+msgstr ""
+
+#: includes/modules/SocialShare/SocialShare.php:72
+msgid "Button Style and Layout"
+msgstr ""
+
+#: includes/modules/SocialShare/SocialShare.php:76
+msgid "Icon with Text"
+msgstr ""
+
+#: includes/modules/SocialShare/SocialShare.php:77
+msgid "Only Icon"
+msgstr ""
+
+#: includes/modules/SocialShare/SocialShare.php:78
+msgid "Only Text"
+msgstr ""
+
+#: includes/modules/SocialShare/SocialShare.php:85
+msgid "Button Shape"
+msgstr ""
+
+#: includes/modules/SocialShare/SocialShare.php:88
+msgid "Square"
+msgstr ""
+
+#: includes/modules/SocialShare/SocialShare.php:89
+msgid "Rounded"
+msgstr ""
+
+#: includes/modules/SocialShare/SocialShare.php:90
+msgid "Circle"
+msgstr ""
+
+#: includes/modules/SocialShare/SocialShare.php:97
+msgid "Number of Columns"
+msgstr ""
+
+#: includes/modules/SocialShare/SocialShare.php:101
+msgid "Auto"
+msgstr ""
+
+#: includes/modules/SocialShare/SocialShare.php:116
+msgid "Column Gap"
+msgstr ""
+
+#: includes/modules/SocialShare/SocialShare.php:131
+msgid "Row Gap"
+msgstr ""
+
+#: includes/modules/SocialShare/SocialShare.php:146
+#: includes/modules/SocialShareChild/SocialShareChild.php:78
+msgid "Button Background Color"
+msgstr ""
+
+#: includes/modules/SocialShare/SocialShare.php:175
+#: includes/modules/SocialShareChild/SocialShareChild.php:85
+msgid "Button Padding"
+msgstr ""
+
+#: includes/modules/SocialShareChild/SocialShareChild.php:20
+msgid "New Social Network"
+msgstr ""
+
+#: includes/modules/SocialShareChild/SocialShareChild.php:21
+msgid "Social Network Settings"
+msgstr ""
+
+#: includes/modules/SocialShareChild/SocialShareChild.php:27
+msgid "Network"
+msgstr ""
+
+#: includes/modules/SocialShareChild/SocialShareChild.php:61
+msgid "Select a Network"
+msgstr ""
+
+#: includes/modules/SocialShareChild/SocialShareChild.php:62
+msgid "Facebook"
+msgstr ""
+
+#: includes/modules/SocialShareChild/SocialShareChild.php:63
+msgid "WhatsApp"
+msgstr ""
+
+#: includes/modules/SocialShareChild/SocialShareChild.php:64
+msgid "X"
+msgstr ""
+
+#: includes/modules/SocialShareChild/SocialShareChild.php:65
+msgid "Pinterest"
+msgstr ""
+
+#: includes/modules/SocialShareChild/SocialShareChild.php:66
+msgid "Linekdin"
+msgstr ""
+
+#: includes/modules/SocialShareChild/SocialShareChild.php:67
+msgid "Telegram "
+msgstr ""
+
+#: includes/modules/SocialShareChild/SocialShareChild.php:68
+msgid "Reddit"
+msgstr ""
+
+#: includes/modules/SocialShareChild/SocialShareChild.php:69
+msgid "Tumblr"
+msgstr ""
+
+#: includes/modules/SocialShareChild/SocialShareChild.php:70
+msgid "Email "
+msgstr ""
+
+#: includes/modules/SocialShareChild/SocialShareChild.php:71
+msgid "Blogger"
+msgstr ""
+
+#: includes/modules/SocialShareChild/SocialShareChild.php:73
+msgid "Choose the social network"
+msgstr ""
+
+#: includes/modules/SocialShareChild/SocialShareChild.php:222
+#: includes/modules/SocialShareChild/SocialShareChild.php:235
+msgid " Share on Facebook"
+msgstr ""
+
+#: includes/modules/SocialShareChild/SocialShareChild.php:253
+#: includes/modules/SocialShareChild/SocialShareChild.php:265
+msgid "Share on WhatsApp"
+msgstr ""
+
+#: includes/modules/SocialShareChild/SocialShareChild.php:300
+#: includes/modules/SocialShareChild/SocialShareChild.php:311
+msgid "Share on X"
+msgstr ""
+
+#: includes/modules/SocialShareChild/SocialShareChild.php:339
+#: includes/modules/SocialShareChild/SocialShareChild.php:352
+msgid "Share on Pinterest"
+msgstr ""
+
+#: includes/modules/SocialShareChild/SocialShareChild.php:387
+#: includes/modules/SocialShareChild/SocialShareChild.php:400
+msgid "Share on Linekdin"
+msgstr ""
+
+#: includes/modules/SocialShareChild/SocialShareChild.php:427
+#: includes/modules/SocialShareChild/SocialShareChild.php:440
+msgid "Share on Telegram"
+msgstr ""
+
+#: includes/modules/SocialShareChild/SocialShareChild.php:466
+#: includes/modules/SocialShareChild/SocialShareChild.php:480
+msgid "Share on Reddit"
+msgstr ""
+
+#: includes/modules/SocialShareChild/SocialShareChild.php:508
+msgid "Share on Tumblr"
+msgstr ""
+
+#: includes/modules/SocialShareChild/SocialShareChild.php:520
+msgid "Share on Tumblr "
+msgstr ""
+
+#: includes/modules/SocialShareChild/SocialShareChild.php:554
+msgid "Share on Email"
+msgstr ""
+
+#: includes/modules/SocialShareChild/SocialShareChild.php:568
+msgid "Share on Email "
+msgstr ""
+
+#: includes/modules/SocialShareChild/SocialShareChild.php:598
+msgid "Share on Blogger"
+msgstr ""
+
+#: includes/modules/SocialShareChild/SocialShareChild.php:611
+msgid "Share on Blogger "
+msgstr ""
+
+#: includes/modules/StarRating/StarRating.php:22
+msgid "Star Rating - Infinity TNC"
+msgstr ""
+
+#: includes/modules/StarRating/StarRating.php:29
+msgid "Rating"
+msgstr ""
+
+#: includes/modules/StarRating/StarRating.php:35
+msgid "Star Style"
+msgstr ""
+
+#: includes/modules/StarRating/StarRating.php:39
+msgid "Title Text"
+msgstr ""
+
+#: includes/modules/StarRating/StarRating.php:43
+msgid "Rating Text"
+msgstr ""
+
+#: includes/modules/StarRating/StarRating.php:62
+#: includes/modules/StarRating/StarRating.php:154
+msgid "Title"
+msgstr ""
+
+#: includes/modules/StarRating/StarRating.php:92
+msgid "Rating Number"
+msgstr ""
+
+#: includes/modules/StarRating/StarRating.php:129
+msgid "Rating Scale"
+msgstr ""
+
+#: includes/modules/StarRating/StarRating.php:141
+msgid "Rating Value"
+msgstr ""
+
+#: includes/modules/StarRating/StarRating.php:160
+msgid "Display Rating Value Text"
+msgstr ""
+
+#: includes/modules/StarRating/StarRating.php:164
+msgid "Show"
+msgstr ""
+
+#: includes/modules/StarRating/StarRating.php:165
+msgid "Hide"
+msgstr ""
+
+#: includes/modules/StarRating/StarRating.php:171
+msgid "Star Icon Color"
+msgstr ""
+
+#: includes/modules/StarRating/StarRating.php:180
+msgid "Star Icon Empty Color"
+msgstr ""
+
+#: includes/modules/StarRating/StarRating.php:189
+msgid "Star Size"
+msgstr ""
+
+#: includes/modules/StarRating/StarRating.php:202
+msgid "Star Gap"
+msgstr ""
+
+#: includes/modules/StarRating/StarRating.php:215
+msgid "Star Alignment"
+msgstr ""
+
+#: includes/modules/StarRating/StarRating.php:216
+msgid "Align your start to the left, right or center of the module."
+msgstr ""
+
+#: includes/modules/TypeWriter/TypeWriter.php:23
+msgid "Typewriter - Infinity TNC"
+msgstr ""
+
+#: includes/modules/TypeWriter/TypeWriter.php:30
+#: includes/modules/TypeWriter/TypeWriter.php:40
+#: includes/modules/TypeWriter/TypeWriter.php:164
+msgid "Typing Text"
+msgstr ""
+
+#: includes/modules/TypeWriter/TypeWriter.php:32
+msgid "Typing Effect Options"
+msgstr ""
+
+#: includes/modules/TypeWriter/TypeWriter.php:44
+msgid "Before Title Text"
+msgstr ""
+
+#: includes/modules/TypeWriter/TypeWriter.php:49
+msgid "After Title Text"
+msgstr ""
+
+#: includes/modules/TypeWriter/TypeWriter.php:66
+msgid "Typing"
+msgstr ""
+
+#: includes/modules/TypeWriter/TypeWriter.php:96
+msgid "Before Title"
+msgstr ""
+
+#: includes/modules/TypeWriter/TypeWriter.php:120
+msgid "After Title"
+msgstr ""
+
+#: includes/modules/TypeWriter/TypeWriter.php:159
+msgid "I am a Heading with"
+msgstr ""
+
+#: includes/modules/TypeWriter/TypeWriter.php:166
+msgid "Typewriter|Typing Animation"
+msgstr ""
+
+#: includes/modules/TypeWriter/TypeWriter.php:167
+msgid "Use | to separate multiple values. Ex. Text 1 | Text 2 | Text 3"
+msgstr ""
+
+#: includes/modules/TypeWriter/TypeWriter.php:172
+msgid "After Text"
+msgstr ""
+
+#: includes/modules/TypeWriter/TypeWriter.php:174
+msgid "Effect"
+msgstr ""
+
+#: includes/modules/TypeWriter/TypeWriter.php:179
+msgid "Typing Speed (ms)"
+msgstr ""
+
+#: includes/modules/TypeWriter/TypeWriter.php:186
+msgid "Typing BackSpeed (ms)"
+msgstr ""
+
+#: includes/modules/TypeWriter/TypeWriter.php:189
+msgid "The BackSpeed between deleting each character."
+msgstr ""
+
+#: includes/modules/TypeWriter/TypeWriter.php:194
+msgid "Pause Time (ms)"
+msgstr ""
+
+#: includes/modules/TypeWriter/TypeWriter.php:195
+msgid "The pause duration after a text is typed."
+msgstr ""
+
+#: includes/modules/TypeWriter/TypeWriter.php:202
+msgid "Cursor"
+msgstr ""
+
+#: includes/modules/TypeWriter/TypeWriter.php:203
+msgid "Use as the cursor."
+msgstr ""
+
+#: includes/modules/TypeWriter/TypeWriter.php:210
+#: includes/modules/VimeoVideo/VimeoVideo.php:158
+#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:190
+msgid "Loop"
+msgstr ""
+
+#: includes/modules/TypeWriter/TypeWriter.php:213
+msgid "Whether to keep looping or not."
+msgstr ""
+
+#: includes/modules/TypeWriter/TypeWriter.php:215
+#: includes/modules/VimeoVideo/VimeoVideo.php:133
+#: includes/modules/VimeoVideo/VimeoVideo.php:148
+#: includes/modules/VimeoVideo/VimeoVideo.php:163
+#: includes/modules/VimeoVideo/VimeoVideo.php:178
+#: includes/modules/VimeoVideo/VimeoVideo.php:193
+#: includes/modules/VimeoVideo/VimeoVideo.php:208
+#: includes/modules/VimeoVideo/VimeoVideo.php:223
+#: includes/modules/VimeoVideo/VimeoVideo.php:238
+#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:166
+#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:180
+#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:194
+#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:208
+#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:222
+msgid "ON"
+msgstr ""
+
+#: includes/modules/TypeWriter/TypeWriter.php:216
+#: includes/modules/VimeoVideo/VimeoVideo.php:134
+#: includes/modules/VimeoVideo/VimeoVideo.php:149
+#: includes/modules/VimeoVideo/VimeoVideo.php:164
+#: includes/modules/VimeoVideo/VimeoVideo.php:179
+#: includes/modules/VimeoVideo/VimeoVideo.php:194
+#: includes/modules/VimeoVideo/VimeoVideo.php:209
+#: includes/modules/VimeoVideo/VimeoVideo.php:224
+#: includes/modules/VimeoVideo/VimeoVideo.php:239
+#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:167
+#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:181
+#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:195
+#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:209
+#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:223
+msgid "OFF"
+msgstr ""
+
+#: includes/modules/VimeoVideo/VimeoVideo.php:23
+msgid "Vimeo Video - Infinity TNC"
+msgstr ""
+
+#: includes/modules/VimeoVideo/VimeoVideo.php:30
+msgid "Iframe"
+msgstr ""
+
+#: includes/modules/VimeoVideo/VimeoVideo.php:37
+msgid "Vimeo Video"
+msgstr ""
+
+#: includes/modules/VimeoVideo/VimeoVideo.php:39
+#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:39
+msgid "Video Options"
+msgstr ""
+
+#: includes/modules/VimeoVideo/VimeoVideo.php:71
+msgid "Vimeo Method"
+msgstr ""
+
+#: includes/modules/VimeoVideo/VimeoVideo.php:76
+#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:87
+msgid "ID"
+msgstr ""
+
+#: includes/modules/VimeoVideo/VimeoVideo.php:84
+msgid "Vimeo Video URL"
+msgstr ""
+
+#: includes/modules/VimeoVideo/VimeoVideo.php:96
+msgid "Vimeo Video ID"
+msgstr ""
+
+#: includes/modules/VimeoVideo/VimeoVideo.php:107
+msgid "Vimeo Video Embed Code"
+msgstr ""
+
+#: includes/modules/VimeoVideo/VimeoVideo.php:118
+#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:129
+msgid "Start Time"
+msgstr ""
+
+#: includes/modules/VimeoVideo/VimeoVideo.php:120
+msgid "Time represented in minutes and/or seconds (for example,1m2s)"
+msgstr ""
+
+#: includes/modules/VimeoVideo/VimeoVideo.php:128
+#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:162
+msgid "Autoplay"
+msgstr ""
+
+#: includes/modules/VimeoVideo/VimeoVideo.php:131
+msgid "Automatically start playback of the video."
+msgstr ""
+
+#: includes/modules/VimeoVideo/VimeoVideo.php:143
+#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:176
+msgid "Mute"
+msgstr ""
+
+#: includes/modules/VimeoVideo/VimeoVideo.php:146
+msgid ""
+"Set video to mute on load. Viewers can still adjust the volume preferences "
+"in the player."
+msgstr ""
+
+#: includes/modules/VimeoVideo/VimeoVideo.php:161
+msgid "Play the video again when it reaches the end, infinitely."
+msgstr ""
+
+#: includes/modules/VimeoVideo/VimeoVideo.php:173
+#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:204
+msgid "Player Control"
+msgstr ""
+
+#: includes/modules/VimeoVideo/VimeoVideo.php:176
+msgid ""
+"This parameter will hide all elements in the player (play bar, sharing "
+"buttons, etc) for a chromeless experience. "
+msgstr ""
+
+#: includes/modules/VimeoVideo/VimeoVideo.php:188
+msgid "Intro Portrait"
+msgstr ""
+
+#: includes/modules/VimeoVideo/VimeoVideo.php:191
+msgid "Show the author’s profile image"
+msgstr ""
+
+#: includes/modules/VimeoVideo/VimeoVideo.php:203
+msgid "Intro Title"
+msgstr ""
+
+#: includes/modules/VimeoVideo/VimeoVideo.php:206
+msgid "Show the video’s title."
+msgstr ""
+
+#: includes/modules/VimeoVideo/VimeoVideo.php:218
+msgid "Intro Byline"
+msgstr ""
+
+#: includes/modules/VimeoVideo/VimeoVideo.php:221
+msgid "Show the author of the video (byline)."
+msgstr ""
+
+#: includes/modules/VimeoVideo/VimeoVideo.php:233
+msgid "Plays Inline"
+msgstr ""
+
+#: includes/modules/VimeoVideo/VimeoVideo.php:236
+msgid ""
+"Play video inline on mobile devices instead of automatically going into "
+"fullscreen mode. Inline playback is enabled for all videos by default."
+msgstr ""
+
+#: includes/modules/VimeoVideo/VimeoVideo.php:248
+msgid "Color"
+msgstr ""
+
+#: includes/modules/VimeoVideo/VimeoVideo.php:251
+msgid ""
+"Specify the color of the video controls. Colors may be overridden by the "
+"embed settings of the video"
+msgstr ""
+
+#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:23
+msgid "Youtube Video - Infinity TNC"
+msgstr ""
+
+#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:30
+msgid "Youtube"
+msgstr ""
+
+#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:37
+msgid "Youtube Video"
+msgstr ""
+
+#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:70
+msgid "Video Type"
+msgstr ""
+
+#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:74
+msgid "Video"
+msgstr ""
+
+#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:75
+msgid "Playlist"
+msgstr ""
+
+#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:82
+msgid "Video/Playlist Method"
+msgstr ""
+
+#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:95
+msgid "Youtube Video/Playlist URL"
+msgstr ""
+
+#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:107
+msgid "Youtube Video/Playlist ID"
+msgstr ""
+
+#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:118
+msgid "Youtube Video/Playlist Embed Code"
+msgstr ""
+
+#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:146
+msgid "End Time"
+msgstr ""
+
+#: includes/modules/YoutubeEmbed/YoutubeEmbed.php:218
+msgid "External suggested videos."
+msgstr ""
+
+#: infinity-tnc-divi-modules.php:62
+msgid "Get Pro Version"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "Infinity TNC Divi Modules"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "https://divi.themencode.com/infinity-tnc-divi-modules-preview/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Fulfill your Divi experience with the awesome & useful modules for every "
+"purpose you need."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "ThemeNcode LLC"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://themencode.com/"
+msgstr ""

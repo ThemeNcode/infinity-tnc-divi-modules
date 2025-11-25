@@ -2,7 +2,7 @@
 Contributors: ThemeNcode, abdulawal39
 Tags: divi, modules, slider, logo, carousel
 Requires at least: 5.0
-Tested up to: 6.8.3
+Tested up to: 6.5.2
 Requires PHP: 7.0
 Stable tag: 1.0.0
 License: GPLv2 or later
