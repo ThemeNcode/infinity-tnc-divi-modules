@@ -1,5 +1,5 @@
 {
-    "name": "d5-extension-example-modules-divi4",
+    "name": "infinity-tnc-divi-modules-divi4",
     "version": "1.0.0",
     "description": "Divi 4 Visual Builder components for D5 Extension Example Modules",
     "main": "src/index.js",

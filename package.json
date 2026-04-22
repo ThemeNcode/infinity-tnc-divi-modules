@@ -1,8 +1,8 @@
 {
-  "name": "d5-extension-example-modules",
+  "name": "infinity-tnc-divi-modules",
   "version": "1.0.0",
   "private": true,
-  "repository": "https://github.com/elegantthemes/d5-extension-example-modules",
+  "repository": "https://github.com/elegantthemes/infinity-tnc-divi-modules",
   "author": "Elegant Themes",
   "engines": {
     "npm": ">=10.0.0",

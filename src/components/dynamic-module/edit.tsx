@@ -113,12 +113,12 @@ const DynamicModuleEdit = (props: DynamicModuleEditProps): ReactElement => {
       }
       {
         ! isLoading && response.length < 1 && (
-          <div>{__('No post found.', 'd5-extension-example-modules')}</div>
+          <div>{__('No post found.', 'infinity-tnc-divi-modules')}</div>
         )
       }
       {
         isLoading && (
-          <div>{__('Loading...', 'd5-extension-example-modules')}</div>
+          <div>{__('Loading...', 'infinity-tnc-divi-modules')}</div>
         )
       }
     </ModuleContainer>

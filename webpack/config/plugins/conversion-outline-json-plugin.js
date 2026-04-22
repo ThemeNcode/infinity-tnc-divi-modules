@@ -76,6 +76,16 @@ class ConversionOutlineJsonPlugin {
                   "conversion-outline.json"
                 );
 
+                // Only write the file if it doesn't exist or content has changed to prevent infinite watch loops
+                try {
+                  const existingContent = await fsp.readFile(outputPath, "utf8");
+                  if (existingContent === jsonContent) {
+                    return; // Content is identical, skip writing to preserve mtime
+                  }
+                } catch (e) {
+                  // File doesn't exist, proceed to write
+                }
+
                 // Write the JSON content to a `conversion-outline.json` file in the same directory
                 await fsp.writeFile(outputPath, jsonContent);
               } catch (fsError) {

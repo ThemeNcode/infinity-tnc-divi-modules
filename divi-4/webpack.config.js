@@ -85,7 +85,13 @@ module.exports = {
     // Determine where the created bundles will be outputted.
     // @see https://webpack.js.org/concepts/#output
     output: {
-        filename: 'd5-extension-example-modules-divi4.js',
+        filename: 'infinity-tnc-divi-modules-divi4.js',
         path: path.resolve(__dirname, 'build'),
+    },
+    watchOptions: {
+        ignored: [
+            path.resolve(__dirname, 'node_modules'),
+            path.resolve(__dirname, 'build')
+        ],
     },
 };

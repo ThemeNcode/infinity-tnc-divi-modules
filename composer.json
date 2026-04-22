@@ -1,5 +1,5 @@
 {
-    "name": "divi/d5-extension-example-modules",
+    "name": "divi/infinity-tnc-divi-modules",
     "autoload": {
         "psr-4": {
             "MEE\\Modules\\": "modules/"

@@ -31,58 +31,58 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die( 'Direct access forbidden.' );
 }
 
-define( 'D5_EXTENSION_EXAMPLE_MODULES_PATH', plugin_dir_path( __FILE__ ) );
-define( 'D5_EXTENSION_EXAMPLE_MODULES_JSON_PATH', D5_EXTENSION_EXAMPLE_MODULES_PATH . 'modules-json/' );
+define( 'INFINITY_TNC_DIVI_MODULES_PATH', plugin_dir_path( __FILE__ ) );
+define( 'INFINITY_TNC_DIVI_MODULES_JSON_PATH', INFINITY_TNC_DIVI_MODULES_PATH . 'modules-json/' );
 
 /**
  * Requires Autoloader.
  */
-require D5_EXTENSION_EXAMPLE_MODULES_PATH . 'vendor/autoload.php';
-require D5_EXTENSION_EXAMPLE_MODULES_PATH . 'modules/Modules.php';
+require INFINITY_TNC_DIVI_MODULES_PATH . 'vendor/autoload.php';
+require INFINITY_TNC_DIVI_MODULES_PATH . 'modules/Modules.php';
 
 /**
  * Register all Divi 4 modules.
  *
  * @since ??
  */
-function d5_extension_example_module_initialize_d4_modules() {
-	require_once D5_EXTENSION_EXAMPLE_MODULES_PATH . 'divi-4/modules/Divi4Module/Divi4Module.php';
-	require_once D5_EXTENSION_EXAMPLE_MODULES_PATH . 'divi-4/modules/Divi4OnlyModule/Divi4OnlyModule.php';
+function infinity_tnc_divi_module_initialize_d4_modules() {
+	require_once INFINITY_TNC_DIVI_MODULES_PATH . 'divi-4/modules/Divi4Module/Divi4Module.php';
+	require_once INFINITY_TNC_DIVI_MODULES_PATH . 'divi-4/modules/Divi4OnlyModule/Divi4OnlyModule.php';
 }
-add_action( 'et_builder_ready', 'd5_extension_example_module_initialize_d4_modules' );
+add_action( 'et_builder_ready', 'infinity_tnc_divi_module_initialize_d4_modules' );
 
 /**
  * Enqueue Divi 4 Visual Builder Assets
  *
  * @since ??
  */
-function d5_extension_example_module_enqueue_d4_vb_scripts() {
+function infinity_tnc_divi_module_enqueue_d4_vb_scripts() {
 	if ( et_core_is_fb_enabled() ) {
 		$plugin_dir_url = plugin_dir_url( __FILE__ );
 		wp_enqueue_script(
-			'd5-extension-example-modules-divi4-vb',
-			"{$plugin_dir_url}divi-4/build/d5-extension-example-modules-divi4.js",
+			'infinity-tnc-divi-modules-d4-vb',
+			"{$plugin_dir_url}divi-4/build/infinity-tnc-divi-modules-divi4.js",
 			array( 'react', 'jquery' ),
-			'1.0.0',ç
+			'1.2.0',
 			true
 		);
 	}
 }
-add_action( 'wp_enqueue_scripts', 'd5_extension_example_module_enqueue_d4_vb_scripts' );
+add_action( 'wp_enqueue_scripts', 'infinity_tnc_divi_module_enqueue_d4_vb_scripts' );
 
 /**
  * Enqueue style and scripts of Module Extension Example for Visual Builder.
  *
  * @since ??
  */
-function d5_extension_example_module_enqueue_vb_scripts() {
+function infinity_tnc_divi_module_enqueue_vb_scripts() {
 	if ( et_builder_d5_enabled() && et_core_is_fb_enabled() ) {
 		$plugin_dir_url = plugin_dir_url( __FILE__ );
 
 		\ET\Builder\VisualBuilder\Assets\PackageBuildManager::register_package_build(
 			[
-				'name'   => 'd5-extension-example-modules-builder-bundle-script',
-				'version' => '1.0.0',
+				'name'   => 'infinity-tnc-divi-modules-vb-bundle-script',
+				'version' => '1.2.0',
 				'script' => [
 					'src' => "{$plugin_dir_url}scripts/bundle.js",
 					'deps'               => [
@@ -97,8 +97,8 @@ function d5_extension_example_module_enqueue_vb_scripts() {
 
 		\ET\Builder\VisualBuilder\Assets\PackageBuildManager::register_package_build(
 			[
-				'name'   => 'd5-extension-example-modules-builder-vb-bundle-style',
-				'version' => '1.0.0',
+				'name'   => 'infinity-tnc-divi-modules-vb-bundle-style',
+				'version' => '1.2.0',
 				'style' => [
 					'src' => "{$plugin_dir_url}styles/vb-bundle.css",
 					'deps'               => [],
@@ -109,15 +109,15 @@ function d5_extension_example_module_enqueue_vb_scripts() {
 		);
 	}
 }
-add_action( 'divi_visual_builder_assets_before_enqueue_scripts', 'd5_extension_example_module_enqueue_vb_scripts' );
+add_action( 'divi_visual_builder_assets_before_enqueue_scripts', 'infinity_tnc_divi_module_enqueue_vb_scripts' );
 
 /**
  * Enqueue style and scripts of Module Extension Example
  *
  * @since ??
  */
-function d5_extension_example_module_enqueue_frontend_scripts() {
+function infinity_tnc_divi_module_enqueue_frontend_scripts() {
 	$plugin_dir_url = plugin_dir_url( __FILE__ );
-	wp_enqueue_style( 'd5-extension-example-modules-builder-bundle-style', "{$plugin_dir_url}styles/bundle.css", array(), '1.0.0' );
+	wp_enqueue_style( 'infinity-tnc-divi-modules-bundle-style', "{$plugin_dir_url}styles/bundle.css", array(), '1.2.0' );
 }
-add_action( 'wp_enqueue_scripts', 'd5_extension_example_module_enqueue_frontend_scripts' );
+add_action( 'wp_enqueue_scripts', 'infinity_tnc_divi_module_enqueue_frontend_scripts' );

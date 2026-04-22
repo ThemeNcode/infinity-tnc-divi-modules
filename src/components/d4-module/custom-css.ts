@@ -6,7 +6,7 @@ import metadata from './module.json';
 
 const customCssFields = metadata.customCssFields as Record<'title' | 'content', { subName: string, selectorSuffix: string, label: string }>;
 
-customCssFields.title.label            = __('Title', 'd5-extension-example-modules');
-customCssFields.content.label          = __('Content', 'd5-extension-example-modules');
+customCssFields.title.label            = __('Title', 'infinity-tnc-divi-modules');
+customCssFields.content.label          = __('Content', 'infinity-tnc-divi-modules');
 
 export const cssFields = { ...customCssFields };

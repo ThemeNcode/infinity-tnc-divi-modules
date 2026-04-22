@@ -138,7 +138,7 @@ trait RenderCallbackTrait {
 				[
 					'tag'               => 'div',
 					'childrenSanitizer' => 'esc_html',
-					'children'          => __( 'No post found.', 'd5-extension-example-modules' ),
+					'children'          => __( 'No post found.', 'infinity-tnc-divi-modules' ),
 				]
 			);
 		}

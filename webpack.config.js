@@ -213,6 +213,15 @@ module.exports = {
     filename: '[name].js',
     path: path.resolve(__dirname, 'scripts'),
   },
+  watchOptions: {
+    ignored: [
+      path.resolve(__dirname, 'node_modules'),
+      path.resolve(__dirname, 'scripts'),
+      path.resolve(__dirname, 'styles'),
+      path.resolve(__dirname, 'modules-json'),
+      path.resolve(__dirname, 'divi-4/build')
+    ],
+  },
   stats: {
     errorDetails: true,
   },
