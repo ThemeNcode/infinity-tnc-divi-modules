@@ -1,5 +1,6 @@
 <?php
 /*
+/*
 Plugin Name: Infinity TNC Divi Modules
 Plugin URI:  https://divi.themencode.com/infinity-tnc-divi-modules-preview/
 Description: Fulfill your Divi experience with the awesome & useful modules for every purpose you need.
@@ -25,47 +26,98 @@ You should have received a copy of the GNU General Public License
 along with Infinity TNC Divi Modules. If not, see https://www.gnu.org/licenses/gpl-2.0.html.
 */
 
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly 
 
-if ( ! function_exists( 'inftnc_initialize_extension' ) ):
+if ( ! defined( 'ABSPATH' ) ) {
+	die( 'Direct access forbidden.' );
+}
+
+define( 'D5_EXTENSION_EXAMPLE_MODULES_PATH', plugin_dir_path( __FILE__ ) );
+define( 'D5_EXTENSION_EXAMPLE_MODULES_JSON_PATH', D5_EXTENSION_EXAMPLE_MODULES_PATH . 'modules-json/' );
+
 /**
- * Creates the extension's main class instance.
+ * Requires Autoloader.
+ */
+require D5_EXTENSION_EXAMPLE_MODULES_PATH . 'vendor/autoload.php';
+require D5_EXTENSION_EXAMPLE_MODULES_PATH . 'modules/Modules.php';
+
+/**
+ * Register all Divi 4 modules.
  *
- * @since 1.0.0
+ * @since ??
  */
-function inftnc_initialize_extension() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/InfinityTncDiviModules.php';
+function d5_extension_example_module_initialize_d4_modules() {
+	require_once D5_EXTENSION_EXAMPLE_MODULES_PATH . 'divi-4/modules/Divi4Module/Divi4Module.php';
+	require_once D5_EXTENSION_EXAMPLE_MODULES_PATH . 'divi-4/modules/Divi4OnlyModule/Divi4OnlyModule.php';
 }
-add_action( 'divi_extensions_init', 'inftnc_initialize_extension' );
-endif;
+add_action( 'et_builder_ready', 'd5_extension_example_module_initialize_d4_modules' );
 
 /**
- *   Includes Files  
+ * Enqueue Divi 4 Visual Builder Assets
+ *
+ * @since ??
  */
-require_once __DIR__ ."/includes/admin/breadcrumbs.php";
-require_once __DIR__ ."/public/inftnc-divi-modules-public.php";
-
-
-
-
-
-/**  
- * * Add a settings link to the plugin actions * 
- * * @param array $links Existing plugin action links.
- * @return array Modified plugin action links.
- */
-
-function inftnc_plugin_settings_link( $links )
-{
-    $url = 'https://www.elegantthemes.com/marketplace/infinity-tnc-divi-modules-pro/';
-
-    $_link = '<a href="'. esc_url($url) .'" target="_blank">' . __( 'Get Pro Version', 'infinity-tnc-divi-modules' ) . '</a>';
-
-    $links[] = $_link;
-
-    return $links;
+function d5_extension_example_module_enqueue_d4_vb_scripts() {
+	if ( et_core_is_fb_enabled() ) {
+		$plugin_dir_url = plugin_dir_url( __FILE__ );
+		wp_enqueue_script(
+			'd5-extension-example-modules-divi4-vb',
+			"{$plugin_dir_url}divi-4/build/d5-extension-example-modules-divi4.js",
+			array( 'react', 'jquery' ),
+			'1.0.0',ç
+			true
+		);
+	}
 }
+add_action( 'wp_enqueue_scripts', 'd5_extension_example_module_enqueue_d4_vb_scripts' );
 
-add_filter( 'plugin_action_links_' . plugin_basename(__FILE__), 'inftnc_plugin_settings_link' );
+/**
+ * Enqueue style and scripts of Module Extension Example for Visual Builder.
+ *
+ * @since ??
+ */
+function d5_extension_example_module_enqueue_vb_scripts() {
+	if ( et_builder_d5_enabled() && et_core_is_fb_enabled() ) {
+		$plugin_dir_url = plugin_dir_url( __FILE__ );
 
- 
+		\ET\Builder\VisualBuilder\Assets\PackageBuildManager::register_package_build(
+			[
+				'name'   => 'd5-extension-example-modules-builder-bundle-script',
+				'version' => '1.0.0',
+				'script' => [
+					'src' => "{$plugin_dir_url}scripts/bundle.js",
+					'deps'               => [
+						'divi-module-library',
+						'divi-vendor-wp-hooks',
+					],
+					'enqueue_top_window' => false,
+					'enqueue_app_window' => true,
+				],
+			]
+		);
+
+		\ET\Builder\VisualBuilder\Assets\PackageBuildManager::register_package_build(
+			[
+				'name'   => 'd5-extension-example-modules-builder-vb-bundle-style',
+				'version' => '1.0.0',
+				'style' => [
+					'src' => "{$plugin_dir_url}styles/vb-bundle.css",
+					'deps'               => [],
+					'enqueue_top_window' => false,
+					'enqueue_app_window' => true,
+				],
+			]
+		);
+	}
+}
+add_action( 'divi_visual_builder_assets_before_enqueue_scripts', 'd5_extension_example_module_enqueue_vb_scripts' );
+
+/**
+ * Enqueue style and scripts of Module Extension Example
+ *
+ * @since ??
+ */
+function d5_extension_example_module_enqueue_frontend_scripts() {
+	$plugin_dir_url = plugin_dir_url( __FILE__ );
+	wp_enqueue_style( 'd5-extension-example-modules-builder-bundle-style', "{$plugin_dir_url}styles/bundle.css", array(), '1.0.0' );
+}
+add_action( 'wp_enqueue_scripts', 'd5_extension_example_module_enqueue_frontend_scripts' );

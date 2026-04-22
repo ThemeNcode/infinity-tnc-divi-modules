@@ -1,0 +1,9 @@
+{
+    "name": "divi/d5-extension-example-modules",
+    "autoload": {
+        "psr-4": {
+            "MEE\\Modules\\": "modules/"
+        }
+    },
+    "require": {}
+}
