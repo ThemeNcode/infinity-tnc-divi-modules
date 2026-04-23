@@ -66,6 +66,7 @@ function infinity_tnc_divi_module_enqueue_d4_vb_scripts() {
 			'1.2.0',
 			true
 		);
+		wp_enqueue_style( 'inftnc-embed-map-vb-style', "{$plugin_dir_url}divi-4/modules/EmbedMap/style.css", array(), '1.2.0' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'infinity_tnc_divi_module_enqueue_d4_vb_scripts' );
@@ -119,5 +120,6 @@ add_action( 'divi_visual_builder_assets_before_enqueue_scripts', 'infinity_tnc_d
 function infinity_tnc_divi_module_enqueue_frontend_scripts() {
 	$plugin_dir_url = plugin_dir_url( __FILE__ );
 	wp_enqueue_style( 'infinity-tnc-divi-modules-bundle-style', "{$plugin_dir_url}styles/bundle.css", array(), '1.2.0' );
+	wp_enqueue_style( 'inftnc-embed-map-style', "{$plugin_dir_url}divi-4/modules/EmbedMap/style.css", array(), '1.2.0' );
 }
 add_action( 'wp_enqueue_scripts', 'infinity_tnc_divi_module_enqueue_frontend_scripts' );
