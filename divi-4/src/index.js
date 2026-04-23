@@ -2,6 +2,8 @@ import $ from 'jquery';
 
 import Divi4Module from './components/divi4-module';
 import Divi4OnlyModule from './components/divi4-only-module';
+import EmbedMap from './components/embed-map';
+
 
 /**
  * Register modules to Visual Builder once the API is ready.
@@ -13,5 +15,6 @@ $(window).on('et_builder_api_ready', (event, API) => {
     API.registerModules([
         Divi4Module,
         Divi4OnlyModule,
+        EmbedMap,
     ]);
 });

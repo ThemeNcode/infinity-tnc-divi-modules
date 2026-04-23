@@ -47,6 +47,7 @@ require INFINITY_TNC_DIVI_MODULES_PATH . 'modules/Modules.php';
 function infinity_tnc_divi_module_initialize_d4_modules() {
 	require_once INFINITY_TNC_DIVI_MODULES_PATH . 'divi-4/modules/Divi4Module/Divi4Module.php';
 	require_once INFINITY_TNC_DIVI_MODULES_PATH . 'divi-4/modules/Divi4OnlyModule/Divi4OnlyModule.php';
+	require_once INFINITY_TNC_DIVI_MODULES_PATH . 'divi-4/modules/EmbedMap/EmbedMap.php';
 }
 add_action( 'et_builder_ready', 'infinity_tnc_divi_module_initialize_d4_modules' );
 
