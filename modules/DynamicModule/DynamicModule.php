@@ -2,11 +2,11 @@
 /**
  * Module: Dynamic Module class.
  *
- * @package MEE\Modules\DynamicModule
+ * @package INFTNC\Modules\DynamicModule
  * @since ??
  */
 
-namespace MEE\Modules\DynamicModule;
+namespace INFTNC\Modules\DynamicModule;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	die( 'Direct access forbidden.' );
@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 use ET\Builder\Framework\DependencyManagement\Interfaces\DependencyInterface;
 use ET\Builder\Packages\ModuleLibrary\ModuleRegistration;
-use MEE\Modules\DynamicModule\DynamicModuleTrait;
+use INFTNC\Modules\DynamicModule\DynamicModuleTrait;
 
 /**
  * `DynamicModule` is consisted of functions used for Dynamic Module such as Front-End rendering, REST API Endpoints etc.

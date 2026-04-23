@@ -2,11 +2,11 @@
 /**
  * ChildModule::render_callback()
  *
- * @package MEE\Modules\ChildModule
+ * @package INFTNC\Modules\ChildModule
  * @since ??
  */
 
-namespace MEE\Modules\ChildModule\ChildModuleTrait;
+namespace INFTNC\Modules\ChildModule\ChildModuleTrait;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	die( 'Direct access forbidden.' );
@@ -21,7 +21,7 @@ use ET\Builder\Packages\IconLibrary\IconFont\Utils;
 use ET\Builder\Packages\Module\Options\Element\ElementComponents;
 use ET\Builder\Packages\ModuleLibrary\ModuleRegistration;
 use ET\Builder\Packages\ModuleUtils\ModuleUtils;
-use MEE\Modules\ChildModule\ChildModule;
+use INFTNC\Modules\ChildModule\ChildModule;
 
 trait RenderCallbackTrait {
 	use ModuleClassnamesTrait;

@@ -2,11 +2,11 @@
 /**
  * StaticModule::render_callback()
  *
- * @package MEE\Modules\StaticModule
+ * @package INFTNC\Modules\StaticModule
  * @since ??
  */
 
-namespace MEE\Modules\StaticModule\StaticModuleTrait;
+namespace INFTNC\Modules\StaticModule\StaticModuleTrait;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	die( 'Direct access forbidden.' );
@@ -18,7 +18,7 @@ use ET\Builder\Packages\Module\Module;
 use ET\Builder\Framework\Utility\HTMLUtility;
 use ET\Builder\FrontEnd\BlockParser\BlockParserStore;
 use ET\Builder\Packages\Module\Options\Element\ElementComponents;
-use MEE\Modules\StaticModule\StaticModule;
+use INFTNC\Modules\StaticModule\StaticModule;
 
 trait RenderCallbackTrait {
 

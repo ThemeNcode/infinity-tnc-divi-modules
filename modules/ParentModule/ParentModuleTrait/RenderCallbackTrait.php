@@ -2,11 +2,11 @@
 /**
  * ChildModule::render_callback()
  *
- * @package MEE\Modules\ChildModule
+ * @package INFTNC\Modules\ChildModule
  * @since ??
  */
 
-namespace MEE\Modules\ParentModule\ParentModuleTrait;
+namespace INFTNC\Modules\ParentModule\ParentModuleTrait;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	die( 'Direct access forbidden.' );
@@ -17,7 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 use ET\Builder\FrontEnd\BlockParser\BlockParserStore;
 use ET\Builder\Packages\Module\Module;
 use ET\Builder\Packages\Module\Options\Element\ElementComponents;
-use MEE\Modules\ParentModule\ParentModule;
+use INFTNC\Modules\ParentModule\ParentModule;
 
 trait RenderCallbackTrait {
 	use ModuleClassnamesTrait;

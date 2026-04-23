@@ -2,11 +2,11 @@
 /**
  * DynamicModule::render_callback()
  *
- * @package MEE\Modules\DynamicModule
+ * @package INFTNC\Modules\DynamicModule
  * @since ??
  */
 
-namespace MEE\Modules\DynamicModule\DynamicModuleTrait;
+namespace INFTNC\Modules\DynamicModule\DynamicModuleTrait;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	die( 'Direct access forbidden.' );

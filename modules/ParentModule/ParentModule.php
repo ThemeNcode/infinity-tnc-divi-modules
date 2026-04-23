@@ -2,11 +2,11 @@
 /**
  * Module: Parent Module class.
  *
- * @package MEE\Modules\ParentModule
+ * @package INFTNC\Modules\ParentModule
  * @since ??
  */
 
-namespace MEE\Modules\ParentModule;
+namespace INFTNC\Modules\ParentModule;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	die( 'Direct access forbidden.' );

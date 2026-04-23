@@ -2,11 +2,11 @@
 /**
  * ParentModule::module_styles().
  *
- * @package MEE\Modules\ParentModule
+ * @package INFTNC\Modules\ParentModule
  * @since ??
  */
 
-namespace MEE\Modules\ParentModule\ParentModuleTrait;
+namespace INFTNC\Modules\ParentModule\ParentModuleTrait;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	die( 'Direct access forbidden.' );
@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 use ET\Builder\FrontEnd\Module\Style;
 use ET\Builder\Packages\Module\Layout\Components\StyleCommon\CommonStyle;
 use ET\Builder\Packages\Module\Options\Css\CssStyle;
-use MEE\Modules\ChildModule\ChildModule;
+use INFTNC\Modules\ChildModule\ChildModule;
 
 trait ModuleStylesTrait {
 

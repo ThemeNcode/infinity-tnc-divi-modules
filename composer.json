@@ -2,7 +2,7 @@
     "name": "divi/infinity-tnc-divi-modules",
     "autoload": {
         "psr-4": {
-            "MEE\\Modules\\": "modules/"
+            "INFTNC\\Modules\\": "modules/"
         }
     },
     "require": {}

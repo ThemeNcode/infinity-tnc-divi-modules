@@ -2,11 +2,11 @@
 /**
  * ParentModule::custom_css().
  *
- * @package MEE\Modules\ParentModule
+ * @package INFTNC\Modules\ParentModule
  * @since ??
  */
 
-namespace MEE\Modules\ParentModule\ParentModuleTrait;
+namespace INFTNC\Modules\ParentModule\ParentModuleTrait;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	die( 'Direct access forbidden.' );

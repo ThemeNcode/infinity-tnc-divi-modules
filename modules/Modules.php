@@ -2,21 +2,21 @@
 /**
  * Register all modules with dependency tree.
  *
- * @package MEE\Modules
+ * @package INFTNC\Modules
  * @since ??
  */
 
-namespace MEE\Modules;
+namespace INFTNC\Modules;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	die( 'Direct access forbidden.' );
 }
 
-use MEE\Modules\StaticModule\StaticModule;
-use MEE\Modules\D4Module\D4Module;
-use MEE\Modules\ChildModule\ChildModule;
-use MEE\Modules\ParentModule\ParentModule;
-use MEE\Modules\DynamicModule\DynamicModule;
+use INFTNC\Modules\StaticModule\StaticModule;
+use INFTNC\Modules\D4Module\D4Module;
+use INFTNC\Modules\ChildModule\ChildModule;
+use INFTNC\Modules\ParentModule\ParentModule;
+use INFTNC\Modules\DynamicModule\DynamicModule;
 
 add_action(
 	'divi_module_library_modules_dependency_tree',

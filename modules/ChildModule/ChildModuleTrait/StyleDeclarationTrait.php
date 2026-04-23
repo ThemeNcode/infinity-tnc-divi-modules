@@ -6,7 +6,7 @@
  * @since ??
  */
 
-namespace MEE\Modules\ChildModule\ChildModuleTrait;
+namespace INFTNC\Modules\ChildModule\ChildModuleTrait;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	die( 'Direct access forbidden.' );

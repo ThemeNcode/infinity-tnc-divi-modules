@@ -6,7 +6,7 @@
  * @since ??
  */
 
-namespace MEE\Modules\ChildModule\ChildModuleTrait;
+namespace INFTNC\Modules\ChildModule\ChildModuleTrait;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	die( 'Direct access forbidden.' );
@@ -16,7 +16,7 @@ use ET\Builder\FrontEnd\Module\Style;
 use ET\Builder\Packages\Module\Options\Text\TextStyle;
 use ET\Builder\Packages\Module\Options\Css\CssStyle;
 use ET\Builder\Packages\Module\Layout\Components\StyleCommon\CommonStyle;
-use MEE\Modules\ChildModule\ChildModule;
+use INFTNC\Modules\ChildModule\ChildModule;
 
 trait ModuleStylesTrait {
 

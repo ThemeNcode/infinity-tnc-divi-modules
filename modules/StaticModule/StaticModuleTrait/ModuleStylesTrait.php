@@ -2,11 +2,11 @@
 /**
  * StaticModule::module_styles().
  *
- * @package MEE\Modules\StaticModule
+ * @package INFTNC\Modules\StaticModule
  * @since ??
  */
 
-namespace MEE\Modules\StaticModule\StaticModuleTrait;
+namespace INFTNC\Modules\StaticModule\StaticModuleTrait;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	die( 'Direct access forbidden.' );
@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 use ET\Builder\FrontEnd\Module\Style;
 use ET\Builder\Packages\Module\Options\Text\TextStyle;
 use ET\Builder\Packages\Module\Options\Css\CssStyle;
-use MEE\Modules\StaticModule\StaticModule;
+use INFTNC\Modules\StaticModule\StaticModule;
 
 trait ModuleStylesTrait {
 

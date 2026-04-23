@@ -2,11 +2,11 @@
 /**
  * StaticModule::module_classnames().
  *
- * @package MEE\Modules\StaticModule
+ * @package INFTNC\Modules\StaticModule
  * @since ??
  */
 
-namespace MEE\Modules\StaticModule\StaticModuleTrait;
+namespace INFTNC\Modules\StaticModule\StaticModuleTrait;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	die( 'Direct access forbidden.' );

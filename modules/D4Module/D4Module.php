@@ -2,11 +2,11 @@
 /**
  * Module: Divi 4 Module class.
  *
- * @package MEE\Modules\D4Module
+ * @package INFTNC\Modules\D4Module
  * @since ??
  */
 
-namespace MEE\Modules\D4Module;
+namespace INFTNC\Modules\D4Module;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	die( 'Direct access forbidden.' );
@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 use ET\Builder\Framework\DependencyManagement\Interfaces\DependencyInterface;
 use ET\Builder\Packages\ModuleLibrary\ModuleRegistration;
-use MEE\Modules\D4Module\D4ModuleTrait;
+use INFTNC\Modules\D4Module\D4ModuleTrait;
 
 /**
  * `D4Module` is consisted of functions used for Divi 4 Module such as Front-End rendering, REST API Endpoints etc.

@@ -2,11 +2,11 @@
 /**
  * D4Module::render_callback()
  *
- * @package MEE\Modules\D4Module
+ * @package INFTNC\Modules\D4Module
  * @since ??
  */
 
-namespace MEE\Modules\D4Module\D4ModuleTrait;
+namespace INFTNC\Modules\D4Module\D4ModuleTrait;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	die( 'Direct access forbidden.' );
