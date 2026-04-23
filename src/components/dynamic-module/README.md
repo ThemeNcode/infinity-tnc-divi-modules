@@ -22,7 +22,7 @@ dynamic-module
 ├── module.json
 ├── module.scss
 ├── placeholder-content.ts
-├── settings-advanced.tsx
+├── settings-advanced.tsx   
 ├── settings-content.tsx
 ├── settings-design.tsx
 ├── stories
