@@ -3,6 +3,7 @@ import $ from 'jquery';
 import Divi4Module from './components/divi4-module';
 import Divi4OnlyModule from './components/divi4-only-module';
 import EmbedMap from './components/embed-map';
+import TypeWriter from './components/type-writer';
 
 
 /**
@@ -16,5 +17,6 @@ $(window).on('et_builder_api_ready', (event, API) => {
         Divi4Module,
         Divi4OnlyModule,
         EmbedMap,
+        TypeWriter
     ]);
 });
