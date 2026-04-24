@@ -1,0 +1,43 @@
+{
+  "_comment": "!!! THIS IS AN AUTOMATICALLY GENERATED FILE - DO NOT EDIT !!!",
+  "module": {
+    "advanced": {
+      "html": {
+        "desktop": {
+          "value": {
+            "elementType": "p"
+          }
+        }
+      }
+    }
+  },
+  "fieldItem": {
+    "advanced": {
+      "fullwidth": {
+        "desktop": {
+          "value": "on"
+        }
+      },
+      "id": {
+        "desktop": {
+          "value": ""
+        }
+      },
+      "type": {
+        "desktop": {
+          "value": "input"
+        }
+      },
+      "required": {
+        "desktop": {
+          "value": "on"
+        }
+      }
+    },
+    "innerContent": {
+      "desktop": {
+        "value": "New Field"
+      }
+    }
+  }
+}

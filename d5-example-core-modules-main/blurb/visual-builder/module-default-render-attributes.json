@@ -1,0 +1,58 @@
+{
+  "_comment": "!!! THIS IS AN AUTOMATICALLY GENERATED FILE - DO NOT EDIT !!!",
+  "imageIcon": {
+    "innerContent": {
+      "desktop": {
+        "value": {
+          "useIcon": "off",
+          "animation": "top"
+        }
+      }
+    },
+    "advanced": {
+      "color": {
+        "desktop": {
+          "value": "$variable({\"type\":\"color\",\"value\":{\"name\":\"gcid-primary-color\",\"settings\":{}}})$"
+        }
+      },
+      "placement": {
+        "desktop": {
+          "value": "top"
+        }
+      }
+    }
+  },
+  "module": {
+    "meta": {
+      "adminLabel": {
+        "desktop": {
+          "value": "Blurb"
+        }
+      }
+    },
+    "advanced": {
+      "text": {
+        "text": {
+          "desktop": {
+            "value": {
+              "color": "light"
+            }
+          }
+        }
+      }
+    }
+  },
+  "title": {
+    "decoration": {
+      "font": {
+        "font": {
+          "desktop": {
+            "value": {
+              "headingLevel": "h4"
+            }
+          }
+        }
+      }
+    }
+  }
+}
