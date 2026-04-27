@@ -51,7 +51,7 @@ function infinity_tnc_divi_module_initialize_d4_modules() {
 	require_once INFINITY_TNC_DIVI_MODULES_PATH . 'divi-4/modules/TypeWriter/TypeWriter.php';
 	require_once INFINITY_TNC_DIVI_MODULES_PATH . 'divi-4/modules/StarRating/StarRating.php';
 	require_once INFINITY_TNC_DIVI_MODULES_PATH . 'divi-4/modules/YoutubeEmbed/YoutubeEmbed.php';
-	require_once INFINITY_TNC_DIVI_MODULES_PATH . 'divi-4/modules/VimeVideo/VimeVideo.php';
+	require_once INFINITY_TNC_DIVI_MODULES_PATH . 'divi-4/modules/VimeoVideo/VimeoVideo.php';
 }
 add_action( 'et_builder_ready', 'infinity_tnc_divi_module_initialize_d4_modules' );
 
@@ -71,6 +71,9 @@ function infinity_tnc_divi_module_enqueue_d4_vb_scripts() {
 			true
 		);
 		wp_enqueue_style( 'inftnc-embed-map-vb-style', "{$plugin_dir_url}divi-4/modules/EmbedMap/style.css", array(), '1.2.0' );
+		wp_enqueue_style( 'inftnc-star-rating-vb-style', "{$plugin_dir_url}divi-4/modules/StarRating/style.css", array(), '1.2.0' );
+		wp_enqueue_style( 'inftnc-youtube-embed-vb-style', "{$plugin_dir_url}divi-4/modules/YoutubeEmbed/style.css", array(), '1.2.0' );
+		wp_enqueue_style( 'inftnc-vimeo-video-vb-style', "{$plugin_dir_url}divi-4/modules/VimeoVideo/style.css", array(), '1.2.0' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'infinity_tnc_divi_module_enqueue_d4_vb_scripts' );
@@ -125,5 +128,8 @@ function infinity_tnc_divi_module_enqueue_frontend_scripts() {
 	$plugin_dir_url = plugin_dir_url( __FILE__ );
 	wp_enqueue_style( 'infinity-tnc-divi-modules-bundle-style', "{$plugin_dir_url}styles/bundle.css", array(), '1.2.0' );
 	wp_enqueue_style( 'inftnc-embed-map-style', "{$plugin_dir_url}divi-4/modules/EmbedMap/style.css", array(), '1.2.0' );
+	wp_enqueue_style( 'inftnc-star-rating-style', "{$plugin_dir_url}divi-4/modules/StarRating/style.css", array(), '1.2.0' );
+	wp_enqueue_style( 'inftnc-youtube-embed-style', "{$plugin_dir_url}divi-4/modules/YoutubeEmbed/style.css", array(), '1.2.0' );
+	wp_enqueue_style( 'inftnc-vimeo-video-style', "{$plugin_dir_url}divi-4/modules/VimeoVideo/style.css", array(), '1.2.0' );
 }
 add_action( 'wp_enqueue_scripts', 'infinity_tnc_divi_module_enqueue_frontend_scripts' );
