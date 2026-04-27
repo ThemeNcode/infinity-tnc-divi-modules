@@ -1,0 +1,51 @@
+/* eslint-disable @typescript-eslint/naming-convention */
+import { ModuleConversionOutline } from '@divi/types';
+
+export const conversionOutline: ModuleConversionOutline = {
+  advanced: {
+    admin_label: 'module.meta.adminLabel',
+    animation:   'module.decoration.animation',
+    background:  'module.decoration.background',
+    borders:     {
+      default: 'module.decoration.border',
+    },
+    box_shadow: {
+      default: 'module.decoration.boxShadow',
+    },
+    disabled_on: 'module.decoration.disabledOn',
+    height:          'module.decoration.sizing',
+    link_options:    'module.advanced.link',
+    margin_padding:  'module.decoration.spacing',
+    max_width:       'module.decoration.sizing',
+    module:          'module.advanced.htmlAttributes',
+    overflow:        'module.decoration.overflow',
+    position_fields: 'module.decoration.position',
+    scroll:          'module.decoration.scroll',
+    sticky:          'module.decoration.sticky',
+    transform:  'module.decoration.transform',
+    transition: 'module.decoration.transition',
+    z_index:    'module.decoration.zIndex',
+  },
+  css: {
+    after:        'css.*.after',
+    before:       'css.*.before',
+    main_element: 'css.*.mainElement',
+    iframe:       'css.*.iframe',
+  },
+  module: {
+    vimeo_method: 'vimeoVideoData.mainContent.*.vimeo_method',
+    vimeo_url:    'vimeoVideoData.mainContent.*.vimeo_url',
+    vimeo_id:     'vimeoVideoData.mainContent.*.vimeo_id',
+    vimeo_embed:  'vimeoVideoData.mainContent.*.vimeo_embed',
+    vimeo_start:  'vimeoVideoData.mainContent.*.vimeo_start',
+    autoplay:     'vimeoVideoData.mainContent.*.autoplay',
+    mute:         'vimeoVideoData.mainContent.*.mute',
+    loop:         'vimeoVideoData.mainContent.*.loop',
+    player_control: 'vimeoVideoData.mainContent.*.player_control',
+    intro_portait:  'vimeoVideoData.mainContent.*.intro_portait',
+    intro_title:    'vimeoVideoData.mainContent.*.intro_title',
+    intro_byline:   'vimeoVideoData.mainContent.*.intro_byline',
+    playsinline:    'vimeoVideoData.mainContent.*.playsinline',
+    vimeo_color:    'vimeoVideoData.mainContent.*.vimeo_color',
+  },
+};

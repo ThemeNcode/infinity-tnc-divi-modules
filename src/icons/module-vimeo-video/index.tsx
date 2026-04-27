@@ -1,0 +1,8 @@
+import React, { ReactElement } from 'react';
+
+// Icon data.
+export const name      = 'inftnc/module-vimeo-video'; // Unique name.
+export const viewBox   = '0 0 24 24'; // You will need to adjust this to match your SVG.
+export const component = (): ReactElement => (
+  <path d="M21 7.15c-0.2 1.95-1.5 4.55-3.8 7.75-2.4 3.4-4.5 5.1-6.3 5.1-1.3 0-2.3-1.2-3.1-3.6-0.6-2-1.2-4-1.8-6.1-0.7-2.6-1.5-3.8-2.3-3.8-0.1 0-0.7 0.4-1.7 1.1l-1-1.3c1.1-1 2.3-2.1 3.5-3.1 1.6-1.3 2.7-2 3.4-2 1.6 0 2.5 1.4 2.8 4.3 0.3 2.5 0.5 4 0.7 4.5 0.3 1.3 0.8 1.9 1.5 1.9 0.9 0 2-1.3 3.3-3.8 1.1-1.9 1.6-3.3 1.6-4.2 0-1.4-0.6-2.1-1.9-2.1-0.7 0-1.5 0.2-2.3 0.6 1.1-3.3 3.3-4.9 6.6-4.9C20.6 2.6 21.2 4.1 21 7.15z"/>
+); // Vimeo SVG path.

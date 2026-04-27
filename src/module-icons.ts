@@ -5,6 +5,7 @@ import {
   moduleEmbedMap,
   moduleParent,
   moduleStatic,
+  moduleVimeoVideo,
 } from './icons';
 
 // Add module icons to the icon library.
@@ -16,5 +17,6 @@ addFilter('divi.iconLibrary.icon.map', 'extensionExample', (icons) => {
     [moduleDynamic.name]:  moduleDynamic,
     [moduleD4.name]:       moduleD4,
     [moduleEmbedMap.name]: moduleEmbedMap,
+    [moduleVimeoVideo.name]: moduleVimeoVideo,
   };
 });

@@ -1,9 +1,6 @@
 // External Dependencies
 import React, { Component } from 'react';
-import StarRatings from "react-svg-star-rating";
 
-// Internal Dependencies
-import './style.css';
 
 class StarRating extends Component {
 
