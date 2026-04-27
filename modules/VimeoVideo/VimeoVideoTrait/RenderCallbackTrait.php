@@ -37,7 +37,7 @@ trait RenderCallbackTrait {
 	 */
 	public static function render_callback( $attrs, $content, $block, $elements ) {
 		// Get attribute values from the consolidated vimeoVideoData array.
-		$vimeo_data         = $attrs['vimeoVideoData']['mainContent']['desktop']['value'] ?? [];
+		$vimeo_data         = $attrs['vimeoVideoData']['innerContent']['desktop']['value'] ?? [];
 		$vimeo_method       = $vimeo_data['vimeo_method'] ?? 'vimeo_url';
 		$vimeo_url          = $vimeo_data['vimeo_url'] ?? 'https://vimeo.com/915873558';
 		$vimeo_id           = $vimeo_data['vimeo_id'] ?? '';

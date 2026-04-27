@@ -270,20 +270,26 @@ class INFTNC_VimeoVideo extends ET_Builder_Module {
 	 */
 	public function render( $attrs, $content, $render_slug ) {
 
-        $vimeo_method       = $this->props['vimeo_method'];
-        $vimeo_url          = $this->props['vimeo_url']; 
-        $vimeo_id           = $this->props['vimeo_id'];
-        $vimeo_embed        = $this->props['vimeo_embed'];
-        $vimeo_autoplay     = $this->props['autoplay'];
-        $vimeo_mute         = $this->props['mute'];
-        $vimeo_loop         = $this->props['loop'];
-        $vimeo_control      = $this->props['player_control'];
-        $vimeo_portait      = $this->props['intro_portait'];
-        $vimeo_title        = $this->props['intro_title'];
-        $vimeo_byline       = $this->props['intro_byline'];
-        $vimeo_start        = $this->props['vimeo_start'];
-		$vimeo_color 		= $this->props['vimeo_color'];
-		$vimeo_playsinline  = $this->props['playsinline'];
+		$vimeo_video_data = $this->props['vimeo_video_data'] ?? [];
+		$inner_content = [];
+		if ( ! empty( $vimeo_video_data ) && is_array( $vimeo_video_data ) && isset( $vimeo_video_data['innerContent'] ) ) {
+			$inner_content = $vimeo_video_data['innerContent']['desktop']['value'] ?? [];
+		}
+
+        $vimeo_method       = $inner_content['vimeo_method'] ?? $this->props['vimeo_method'] ?? 'vimeo_url';
+        $vimeo_url          = $inner_content['vimeo_url'] ?? $this->props['vimeo_url'] ?? 'https://vimeo.com/915873558'; 
+        $vimeo_id           = $inner_content['vimeo_id'] ?? $this->props['vimeo_id'] ?? '';
+        $vimeo_embed        = $inner_content['vimeo_embed'] ?? $this->props['vimeo_embed'] ?? '';
+        $vimeo_autoplay     = $inner_content['autoplay'] ?? $this->props['autoplay'] ?? 'on';
+        $vimeo_mute         = $inner_content['mute'] ?? $this->props['mute'] ?? 'on';
+        $vimeo_loop         = $inner_content['loop'] ?? $this->props['loop'] ?? 'off';
+        $vimeo_control      = $inner_content['player_control'] ?? $this->props['player_control'] ?? 'off';
+        $vimeo_portait      = $inner_content['intro_portait'] ?? $this->props['intro_portait'] ?? 'off';
+        $vimeo_title        = $inner_content['intro_title'] ?? $this->props['intro_title'] ?? 'off';
+        $vimeo_byline       = $inner_content['intro_byline'] ?? $this->props['intro_byline'] ?? 'off';
+        $vimeo_start        = $inner_content['vimeo_start'] ?? $this->props['vimeo_start'] ?? '';
+		$vimeo_color 		= $inner_content['vimeo_color'] ?? $this->props['vimeo_color'] ?? '00adef';
+		$vimeo_playsinline  = $inner_content['playsinline'] ?? $this->props['playsinline'] ?? 'off';
 
 
         ( 'on' === $vimeo_autoplay ) ? ( $autoplay_value = 1 ) : ( $autoplay_value = 0 );
