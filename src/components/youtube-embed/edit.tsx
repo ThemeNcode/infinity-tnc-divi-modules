@@ -108,7 +108,9 @@ const YoutubeEmbedEdit = (props: YoutubeEmbedEditProps): ReactElement => {
         attrName: 'module',
       })}
       <div className="inftnc_youtube_video_container" key={videoMethod + videoType}>
-        {content}
+        <div className="fluid-width-video-wrapper">
+          {content}
+        </div>
       </div>
     </ModuleContainer>
   );
