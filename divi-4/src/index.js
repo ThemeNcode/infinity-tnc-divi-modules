@@ -4,7 +4,9 @@ import Divi4Module from './components/divi4-module';
 import Divi4OnlyModule from './components/divi4-only-module';
 import EmbedMap from './components/embed-map';
 import TypeWriter from './components/type-writer';
-
+import StarRating from './components/start-rating';
+import YoutubeEmbed from './components/youtube-embed';
+import VimeVideo from './components/vimeo-video';
 
 /**
  * Register modules to Visual Builder once the API is ready.
@@ -17,6 +19,9 @@ $(window).on('et_builder_api_ready', (event, API) => {
         Divi4Module,
         Divi4OnlyModule,
         EmbedMap,
-        TypeWriter
+        TypeWriter,
+        StarRating,
+        YoutubeEmbed,
+        VimeVideo
     ]);
 });

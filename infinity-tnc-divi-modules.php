@@ -49,6 +49,9 @@ function infinity_tnc_divi_module_initialize_d4_modules() {
 	require_once INFINITY_TNC_DIVI_MODULES_PATH . 'divi-4/modules/Divi4OnlyModule/Divi4OnlyModule.php';
 	require_once INFINITY_TNC_DIVI_MODULES_PATH . 'divi-4/modules/EmbedMap/EmbedMap.php';
 	require_once INFINITY_TNC_DIVI_MODULES_PATH . 'divi-4/modules/TypeWriter/TypeWriter.php';
+	require_once INFINITY_TNC_DIVI_MODULES_PATH . 'divi-4/modules/StarRating/StarRating.php';
+	require_once INFINITY_TNC_DIVI_MODULES_PATH . 'divi-4/modules/YoutubeEmbed/YoutubeEmbed.php';
+	require_once INFINITY_TNC_DIVI_MODULES_PATH . 'divi-4/modules/VimeVideo/VimeVideo.php';
 }
 add_action( 'et_builder_ready', 'infinity_tnc_divi_module_initialize_d4_modules' );
 
