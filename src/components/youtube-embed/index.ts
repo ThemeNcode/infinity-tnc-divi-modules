@@ -7,6 +7,7 @@ import { YoutubeEmbedEdit } from './edit';
 import { SettingsContent } from './settings-content';
 import { SettingsDesign } from './settings-design';
 import { SettingsAdvanced } from './settings-advanced';
+import { ModuleStyles } from './styles';
 import metadata from './module.json';
 import { YoutubeEmbedAttrs } from './types';
 import { placeholderContent } from './placeholder-content';
@@ -25,5 +26,6 @@ export const youtubeEmbed: ModuleLibrary.Module.RegisterDefinition<YoutubeEmbedA
   },
   renderers: {
     edit: YoutubeEmbedEdit,
+    styles: ModuleStyles,
   },
 };

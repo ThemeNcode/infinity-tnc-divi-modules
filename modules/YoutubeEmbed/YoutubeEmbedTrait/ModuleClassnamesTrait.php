@@ -26,7 +26,6 @@ trait ModuleClassnamesTrait {
 	 * @return void
 	 */
 	public static function module_classnames( $args ) {
-		$classnames = $args['classnamesInstance'];
-		$classnames->add( 'inftnc_youtube_video' );
+		// No additional classnames needed.
 	}
 }

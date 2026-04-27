@@ -8,6 +8,7 @@ import { YoutubeEmbedAttrs } from './types';
  */
 export const moduleClassnames = ({
   classnamesInstance,
+  attrs,
 }: ModuleClassnamesParams<YoutubeEmbedAttrs>): void => {
-  classnamesInstance.add('inftnc_youtube_video');
+  // No additional classnames needed.
 };

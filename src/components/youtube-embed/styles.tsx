@@ -1,17 +1,50 @@
+// External dependencies.
 import React, { ReactElement } from 'react';
-import { ModuleStylesProps } from '@divi/module';
-import { YoutubeEmbedAttrs } from './types';
 
-export const ModuleStyles = ({
+// Divi dependencies.
+import {
+  StyleContainer,
+  StylesProps,
+  CssStyle,
+} from '@divi/module';
+
+// Local dependencies.
+import { YoutubeEmbedAttrs } from './types';
+import { cssFields } from './custom-css';
+
+/**
+ * Youtube Embed module's style components.
+ *
+ * @since ??
+ */
+const ModuleStyles = ({
   attrs,
   settings,
   orderClass,
   mode,
   state,
-}: ModuleStylesProps<YoutubeEmbedAttrs>): ReactElement => {
+  noStyleTag,
+  elements,
+}: StylesProps<YoutubeEmbedAttrs>): ReactElement => {
   return (
-    <React.Fragment>
-      {/* Styles will be added here if needed */}
-    </React.Fragment>
+    <StyleContainer mode={mode} state={state} noStyleTag={noStyleTag}>
+      {elements.style({
+        attrName: 'module',
+        styleProps: {
+          disabledOn: {
+            disabledModuleVisibility: settings?.disabledModuleVisibility,
+          },
+        },
+      })}
+      <CssStyle
+        selector={orderClass}
+        attr={attrs?.css}
+        cssFields={cssFields}
+      />
+    </StyleContainer>
   );
+}
+
+export {
+  ModuleStyles,
 };
