@@ -10,6 +10,7 @@ import { dynamicModule } from './components/dynamic-module';
 import { embedMap } from './components/embed-map';
 import { parentModule } from './components/parent-module';
 import { vimeoVideo } from './components/vimeo-video';
+import { youtubeEmbed } from './components/youtube-embed';
 import { staticModule } from './components/static-module';
 
 import './module-icons';
@@ -23,4 +24,5 @@ addAction('divi.moduleLibrary.registerModuleLibraryStore.after', 'extensionExamp
   registerModule(d4Module.metadata, omit(d4Module, 'metadata'));
   registerModule(embedMap.metadata, omit(embedMap, 'metadata'));
   registerModule(vimeoVideo.metadata, omit(vimeoVideo, 'metadata'));
+  registerModule(youtubeEmbed.metadata, omit(youtubeEmbed, 'metadata'));
 });
