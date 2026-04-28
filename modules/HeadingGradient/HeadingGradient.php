@@ -25,6 +25,8 @@ use INFTNC\Modules\HeadingGradient\HeadingGradientTrait;
  */
 class HeadingGradient implements DependencyInterface {
 	use HeadingGradientTrait\RenderCallbackTrait;
+	use HeadingGradientTrait\ModuleStylesTrait;
+	use HeadingGradientTrait\ModuleScriptDataTrait;
 
 	/**
 	 * Loads `HeadingGradient` and registers Front-End render callback and REST API Endpoints.

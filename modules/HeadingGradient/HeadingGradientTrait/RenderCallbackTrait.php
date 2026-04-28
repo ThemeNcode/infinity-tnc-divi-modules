@@ -66,6 +66,8 @@ trait RenderCallbackTrait {
 				'parentAttrs'         => $parent_attrs,
 				'parentId'            => $parent->id ?? '',
 				'parentName'          => $parent->blockName ?? '',
+				'stylesComponent'     => [ self::class, 'module_styles' ],
+				'scriptDataComponent' => [ self::class, 'module_script_data' ],
 				'children'            => $heading,
 			]
 		);
