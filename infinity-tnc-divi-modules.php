@@ -38,6 +38,7 @@ define( 'INFINITY_TNC_DIVI_MODULES_JSON_PATH', INFINITY_TNC_DIVI_MODULES_PATH . 
  */
 require INFINITY_TNC_DIVI_MODULES_PATH . 'vendor/autoload.php';
 require INFINITY_TNC_DIVI_MODULES_PATH . 'modules/Modules.php';
+require INFINITY_TNC_DIVI_MODULES_PATH . 'admin/breadcrumbs.php';
 
 /**
  * Register all Divi 4 modules.
@@ -53,6 +54,7 @@ function infinity_tnc_divi_module_initialize_d4_modules() {
 	require_once INFINITY_TNC_DIVI_MODULES_PATH . 'divi-4/modules/YoutubeEmbed/YoutubeEmbed.php';
 	require_once INFINITY_TNC_DIVI_MODULES_PATH . 'divi-4/modules/VimeoVideo/VimeoVideo.php';
 	require_once INFINITY_TNC_DIVI_MODULES_PATH . 'divi-4/modules/HeadingGradient/HeadingGradient.php';
+	require_once INFINITY_TNC_DIVI_MODULES_PATH . 'divi-4/modules/BreadCrumbs/BreadCrumbs.php';
 }
 add_action( 'et_builder_ready', 'infinity_tnc_divi_module_initialize_d4_modules' );
 
@@ -76,6 +78,7 @@ function infinity_tnc_divi_module_enqueue_d4_vb_scripts() {
 		wp_enqueue_style( 'inftnc-youtube-embed-vb-style', "{$plugin_dir_url}divi-4/modules/YoutubeEmbed/style.css", array(), '1.2.0' );
 		wp_enqueue_style( 'inftnc-vimeo-video-vb-style', "{$plugin_dir_url}divi-4/modules/VimeoVideo/style.css", array(), '1.2.0' );
 		wp_enqueue_style( 'inftnc-heading-gradient-vb-style', "{$plugin_dir_url}divi-4/modules/HeadingGradient/style.css", array(), '1.2.0' );
+		wp_enqueue_style( 'inftnc-breadcrumb-vb-style', "{$plugin_dir_url}divi-4/modules/BreadCrumbs/style.css", array(), '1.2.0' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'infinity_tnc_divi_module_enqueue_d4_vb_scripts' );

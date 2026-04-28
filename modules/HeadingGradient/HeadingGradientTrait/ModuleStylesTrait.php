@@ -24,8 +24,12 @@ trait ModuleStylesTrait {
 	 * Custom gradient style declarations.
 	 */
 	public static function custom_gradient_style_declaration( $args ) {
-		$attr_value = $args['attrValue']['innerContent']['desktop']['value'] ?? [];
-    
+		$attr_value = $args['attrValue']['innerContent']['desktop']['value'] ?? $args['attr']['innerContent']['desktop']['value'] ?? [];
+		if ( empty( $attr_value ) ) {
+			// Try accessing keys directly if attrValue was flattened
+			$attr_value = $args['attrValue'] ?? $args['attr'] ?? [];
+		}
+
 		$gradient_options  = $attr_value['gradient_options'] ?? 'gradient_custom_color';
 		$gradient_type     = $attr_value['gradient_type'] ?? 'linear_gradient';
 		$linear_position   = $attr_value['linear_position'] ?? 'right';

@@ -8,6 +8,7 @@ import StarRating from './components/start-rating';
 import YoutubeEmbed from './components/youtube-embed';
 import VimeVideo from './components/vimeo-video';
 import HeadingGradient from './components/heading-gradient';
+import BreadCrumbs from './components/bread-crumbs';
 
 /**
  * Register modules to Visual Builder once the API is ready.
@@ -24,6 +25,7 @@ $(window).on('et_builder_api_ready', (event, API) => {
         StarRating,
         YoutubeEmbed,
         VimeVideo,
-        HeadingGradient
+        HeadingGradient,
+        BreadCrumbs
     ]);
 });
