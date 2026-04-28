@@ -7,6 +7,7 @@ import TypeWriter from './components/type-writer';
 import StarRating from './components/start-rating';
 import YoutubeEmbed from './components/youtube-embed';
 import VimeVideo from './components/vimeo-video';
+import HeadingGradient from './components/heading-gradient';
 
 /**
  * Register modules to Visual Builder once the API is ready.
@@ -22,6 +23,7 @@ $(window).on('et_builder_api_ready', (event, API) => {
         TypeWriter,
         StarRating,
         YoutubeEmbed,
-        VimeVideo
+        VimeVideo,
+        HeadingGradient
     ]);
 });
