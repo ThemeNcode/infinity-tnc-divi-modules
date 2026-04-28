@@ -1,0 +1,45 @@
+/* eslint-disable @typescript-eslint/naming-convention */
+import { ModuleConversionOutline } from '@divi/types';
+
+export const conversionOutline: ModuleConversionOutline = {
+  advanced: {
+    admin_label:     'module.meta.adminLabel',
+    animation:       'module.decoration.animation',
+    background:      'module.decoration.background',
+    borders:         { default: 'module.decoration.border' },
+    box_shadow:      { default: 'module.decoration.boxShadow' },
+    disabled_on:     'module.decoration.disabledOn',
+    fonts:           { title: 'module.advanced.header.title' },
+    height:          'module.decoration.sizing',
+    link_options:    'module.advanced.link',
+    margin_padding:  'module.decoration.spacing',
+    max_width:       'module.decoration.sizing',
+    module:          'module.advanced.htmlAttributes',
+    overflow:        'module.decoration.overflow',
+    position_fields: 'module.decoration.position',
+    scroll:          'module.decoration.scroll',
+    sticky:          'module.decoration.sticky',
+    transform:       'module.decoration.transform',
+    transition:      'module.decoration.transition',
+    z_index:         'module.decoration.zIndex',
+  },
+  css: {
+    after:        'css.*.after',
+    before:       'css.*.before',
+    main_element: 'css.*.mainElement',
+    title:        'css.*.title',
+  },
+  module: {
+    gradient_title:    'headingGradientData.innerContent.*.gradient_title',
+    gradient_options:  'headingGradientData.innerContent.*.gradient_options',
+    gradient_type:     'headingGradientData.innerContent.*.gradient_type',
+    linear_position:   'headingGradientData.innerContent.*.linear_position',
+    radial_position:   'headingGradientData.innerContent.*.radial_position',
+    ellipse_position:  'headingGradientData.innerContent.*.ellipse_position',
+    start_color:       'headingGradientData.innerContent.*.start_color',
+    end_color:         'headingGradientData.innerContent.*.end_color',
+    start_position:    'headingGradientData.innerContent.*.start_position',
+    end_position:      'headingGradientData.innerContent.*.end_position',
+    presets_gradient:  'headingGradientData.innerContent.*.presets_gradient',
+  },
+};

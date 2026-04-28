@@ -12,6 +12,7 @@ import { parentModule } from './components/parent-module';
 import { vimeoVideo } from './components/vimeo-video';
 import { youtubeEmbed } from './components/youtube-embed';
 import { staticModule } from './components/static-module';
+import { headingGradient } from './components/heading-gradient';
 
 import './module-icons';
 
@@ -25,4 +26,5 @@ addAction('divi.moduleLibrary.registerModuleLibraryStore.after', 'extensionExamp
   registerModule(embedMap.metadata, omit(embedMap, 'metadata'));
   registerModule(vimeoVideo.metadata, omit(vimeoVideo, 'metadata'));
   registerModule(youtubeEmbed.metadata, omit(youtubeEmbed, 'metadata'));
+  registerModule(headingGradient.metadata, omit(headingGradient, 'metadata'));
 });

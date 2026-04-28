@@ -20,6 +20,7 @@ use INFTNC\Modules\DynamicModule\DynamicModule;
 use INFTNC\Modules\EmbedMap\EmbedMap;
 use INFTNC\Modules\VimeoVideo\VimeoVideo;
 use INFTNC\Modules\YoutubeEmbed\YoutubeEmbed;
+use INFTNC\Modules\HeadingGradient\HeadingGradient;
 
 add_action(
 	'divi_module_library_modules_dependency_tree',
@@ -32,5 +33,6 @@ add_action(
 		$dependency_tree->add_dependency( new EmbedMap() );
 		$dependency_tree->add_dependency( new VimeoVideo() );
 		$dependency_tree->add_dependency( new YoutubeEmbed() );
+		$dependency_tree->add_dependency( new HeadingGradient() );
 	}
 );
