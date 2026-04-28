@@ -1,14 +1,13 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { type ReactElement } from 'react';
 
-import { type Module } from '@divi/types';
 import { ModuleContainer } from '@divi/module';
+import { processFontIcon } from '@divi/icon-library';
 
 import { moduleClassnames } from './module-classnames';
 import { ModuleScriptData } from './module-script-data';
 import { ModuleStyles } from './styles';
-import { BreadCrumbsAttrs } from './types';
-
-export type BreadCrumbsEditProps = Module.Edit.Props<BreadCrumbsAttrs>;
+import { BreadCrumbsEditProps } from './types';
 
 const BreadCrumbsEdit = (props: BreadCrumbsEditProps): ReactElement => {
   const {
@@ -18,31 +17,40 @@ const BreadCrumbsEdit = (props: BreadCrumbsEditProps): ReactElement => {
     elements,
   } = props;
 
-  const breadCrumbsData  = attrs?.breadCrumbsData?.innerContent?.desktop?.value || {};
-  const homeText         = breadCrumbsData.home_text || 'Home';
-  const beforeText       = breadCrumbsData.before_text || '';
-  const useBeforeIcon    = breadCrumbsData.use_before_icon === 'on';
+  const breadCrumbsData = attrs?.breadCrumbsData?.innerContent?.desktop?.value || {};
+  const homeText        = breadCrumbsData.home_text || 'Home';
+  const beforeText      = breadCrumbsData.before_text || '';
+  const useBeforeIcon   = breadCrumbsData.use_before_icon === 'on';
+  const separatorIcon   = breadCrumbsData.seperator_icon;
+  const beforeTextIcon  = breadCrumbsData.before_text_icon;
+
+  const separatorChar  = separatorIcon  ? processFontIcon(separatorIcon  as any) : null;
+  const beforeIconChar = beforeTextIcon ? processFontIcon(beforeTextIcon as any) : null;
 
   return (
     <ModuleContainer
       id={id}
       name={name}
-      attrs={attrs}
-      elements={elements}
-      classnamesFunction={moduleClassnames}
-      scriptDataComponent={ModuleScriptData}
-      stylesComponent={ModuleStyles}
+      attrs={attrs as any}
+      elements={elements as any}
+      classnamesFunction={moduleClassnames as any}
+      scriptDataComponent={ModuleScriptData as any}
+      stylesComponent={ModuleStyles as any}
     >
-      {elements.styleComponents({
+      {(elements as any).styleComponents({
         attrName: 'module',
       })}
       <div className="inftnc_bread_crumbs_container">
-        {useBeforeIcon && <span className="inftnc_before_icon" />}
+        {useBeforeIcon && beforeIconChar && (
+          <span className="inftnc_before_icon et-pb-icon">{beforeIconChar}</span>
+        )}
         {beforeText && <span className="inftnc_before">{beforeText}</span>}
         <span className="home">
           <a href="#">{homeText}</a>
         </span>
-        <span className="inftnc_separator" />
+        {separatorChar && (
+          <span className="inftnc_separator et-pb-icon">{separatorChar}</span>
+        )}
         <span className="inftnc_current">Breadcrumbs</span>
       </div>
     </ModuleContainer>
