@@ -1,9 +1,39 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { ReactElement } from 'react';
+import { isNil } from 'lodash';
+import { processFontIcon } from '@divi/icon-library';
 import { ModuleContainer } from '@divi/module';
 
 import { DualButtonEditProps } from './types';
 import { ModuleStyles } from './styles';
+
+/** Convert camelCase breakpoint to kebab-case data attribute name. */
+const breakpointToDataAttr = (breakpoint: string): string => {
+  if ('desktop' === breakpoint) return 'data-icon';
+  return `data-icon-${breakpoint.replace(/([A-Z])/g, '-$1').toLowerCase()}`;
+};
+
+/** Build data-icon-* attrs map from a button decoration attribute. */
+const buildIconDataAttrs = (buttonDecoration: any): Record<string, string | null> => {
+  const iconDataAttrs: Record<string, string | null> = {};
+  if (!buttonDecoration) return iconDataAttrs;
+
+  const desktopValue  = buttonDecoration?.desktop?.value ?? {};
+  const hasCustom     = 'on' === desktopValue?.enable;
+  const isIconEnabled = 'on' === desktopValue?.icon?.enable;
+
+  if (!hasCustom || !isIconEnabled) return iconDataAttrs;
+
+  Object.keys(buttonDecoration).forEach(breakpoint => {
+    const bpValue      = (buttonDecoration as any)[breakpoint];
+    const iconSettings = bpValue?.value?.icon?.settings;
+    if (!isNil(iconSettings) && iconSettings) {
+      iconDataAttrs[breakpointToDataAttr(breakpoint)] = processFontIcon(iconSettings);
+    }
+  });
+
+  return iconDataAttrs;
+};
 
 const DualButtonEdit = ({
   attrs,
@@ -29,6 +59,9 @@ const DualButtonEdit = ({
   const rightUrl    = rightContent.linkUrl || '#';
   const rightTarget = 'on' === rightContent.linkTarget ? '_blank' : undefined;
 
+  const leftIconAttrs  = buildIconDataAttrs(attrs?.buttonLeft?.decoration?.button);
+  const rightIconAttrs = buildIconDataAttrs(attrs?.buttonRight?.decoration?.button);
+
   return (
     <ModuleContainer
       attrs={attrs}
@@ -51,6 +84,7 @@ const DualButtonEdit = ({
           href={leftUrl}
           target={leftTarget}
           rel={leftTarget ? 'noopener noreferrer' : undefined}
+          {...leftIconAttrs}
         >
           {leftText}
         </a>
@@ -60,6 +94,7 @@ const DualButtonEdit = ({
           href={rightUrl}
           target={rightTarget}
           rel={rightTarget ? 'noopener noreferrer' : undefined}
+          {...rightIconAttrs}
         >
           {rightText}
         </a>

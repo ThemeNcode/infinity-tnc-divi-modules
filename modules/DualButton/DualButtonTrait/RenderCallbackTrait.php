@@ -17,6 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 use ET\Builder\Packages\Module\Module;
 use ET\Builder\Framework\Utility\HTMLUtility;
 use ET\Builder\FrontEnd\BlockParser\BlockParserStore;
+use ET\Builder\Packages\IconLibrary\IconFont\Utils;
 
 trait RenderCallbackTrait {
 
@@ -36,6 +37,41 @@ trait RenderCallbackTrait {
 	 *
 	 * @return string HTML rendered output.
 	 */
+	/**
+	 * Build data-icon-* attribute map from a button decoration array.
+	 *
+	 * @param array $button_decoration Button decoration attribute (breakpoint-keyed).
+	 *
+	 * @return array
+	 */
+	protected static function build_icon_data_attrs( array $button_decoration ): array {
+		$icon_data_attrs   = [];
+		$desktop_value     = $button_decoration['desktop']['value'] ?? [];
+		$has_custom_button = 'on' === ( $desktop_value['enable'] ?? 'off' );
+		$is_icon_enabled   = 'on' === ( $desktop_value['icon']['enable'] ?? 'off' );
+
+		if ( ! $has_custom_button || ! $is_icon_enabled ) {
+			return $icon_data_attrs;
+		}
+
+		$breakpoint_to_data_attr = static function ( $breakpoint ) {
+			if ( 'desktop' === $breakpoint ) {
+				return 'data-icon';
+			}
+			return 'data-icon-' . strtolower( preg_replace( '/([A-Z])/', '-$1', $breakpoint ) );
+		};
+
+		foreach ( $button_decoration as $breakpoint => $breakpoint_value ) {
+			$icon_settings = $breakpoint_value['value']['icon']['settings'] ?? null;
+			if ( ! empty( $icon_settings ) ) {
+				$processed_icon                            = Utils::process_font_icon( $icon_settings );
+				$icon_data_attrs[ $breakpoint_to_data_attr( $breakpoint ) ] = $processed_icon;
+			}
+		}
+
+		return $icon_data_attrs;
+	}
+
 	public static function render_callback( $attrs, $content, $block, $elements ): string {
 		$data      = $attrs['dualButtonData']['innerContent']['desktop']['value'] ?? [];
 		$alignment = $data['button_alignment'] ?? 'flex-start';
@@ -53,6 +89,10 @@ trait RenderCallbackTrait {
 		$right_url     = esc_url( $right_content['linkUrl']  ?? '#' );
 		$right_target  = 'on' === ( $right_content['linkTarget'] ?? 'off' ) ? '_blank' : '';
 
+		// Icon data attributes.
+		$left_icon_attrs  = self::build_icon_data_attrs( $attrs['buttonLeft']['decoration']['button']  ?? [] );
+		$right_icon_attrs = self::build_icon_data_attrs( $attrs['buttonRight']['decoration']['button'] ?? [] );
+
 		// Left button style components (button decoration CSS classes).
 		$left_style_components = $elements->style_components(
 			[
@@ -67,19 +107,25 @@ trait RenderCallbackTrait {
 			]
 		);
 
-		$left_btn_attrs = [
-			'class' => 'et_pb_button inftnc_pb_button_left et_pb_bg_layout_light',
-			'href'  => $left_url,
-		];
+		$left_btn_attrs = array_merge(
+			[
+				'class' => 'et_pb_button inftnc_pb_button_left et_pb_bg_layout_light',
+				'href'  => $left_url,
+			],
+			$left_icon_attrs
+		);
 		if ( ! empty( $left_target ) ) {
 			$left_btn_attrs['target'] = $left_target;
 			$left_btn_attrs['rel']    = 'noopener noreferrer';
 		}
 
-		$right_btn_attrs = [
-			'class' => 'et_pb_button inftnc_pb_button_right et_pb_bg_layout_light',
-			'href'  => $right_url,
-		];
+		$right_btn_attrs = array_merge(
+			[
+				'class' => 'et_pb_button inftnc_pb_button_right et_pb_bg_layout_light',
+				'href'  => $right_url,
+			],
+			$right_icon_attrs
+		);
 		if ( ! empty( $right_target ) ) {
 			$right_btn_attrs['target'] = $right_target;
 			$right_btn_attrs['rel']    = 'noopener noreferrer';

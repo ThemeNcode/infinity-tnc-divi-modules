@@ -14,10 +14,87 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 use ET\Builder\FrontEnd\Module\Style;
 use ET\Builder\Packages\Module\Options\Css\CssStyle;
+use ET\Builder\Packages\IconLibrary\IconFont\Utils;
+use ET\Builder\Packages\StyleLibrary\Utils\StyleDeclarations;
 
 trait ModuleStylesTrait {
 
 	use CustomCssTrait;
+
+	/**
+	 * Generate content + font-family + margin CSS for a button icon pseudo-element.
+	 * Mirrors the JS buttonIconStyleDeclaration function.
+	 *
+	 * @param array $args { 'attrValue' => button decoration value at resolved breakpoint }
+	 *
+	 * @return string
+	 */
+	public static function button_icon_style_declaration( array $args ): string {
+		$attr_value = $args['attrValue'] ?? [];
+
+		$declarations = new StyleDeclarations(
+			[
+				'returnType' => 'string',
+				'important'  => [
+					'font-size'   => true,
+					'line-height' => true,
+				],
+			]
+		);
+
+		if ( 'off' === ( $attr_value['enable'] ?? 'off' ) ) {
+			return $declarations->value();
+		}
+
+		$icon_settings = $attr_value['icon']['settings'] ?? [];
+
+		if ( ! empty( $icon_settings ) ) {
+			$icon_unicode = Utils::escape_font_icon( Utils::process_font_icon( $icon_settings ) );
+			$declarations->add( 'content', "'{$icon_unicode}'" );
+
+			$font_family = 'fa' === ( $icon_settings['type'] ?? '' ) ? 'FontAwesome' : 'ETmodules';
+			$declarations->add( 'font-family', $font_family );
+		}
+
+		$icon_placement  = $attr_value['icon']['placement'] ?? 'right';
+		$has_custom_icon = ! empty( $attr_value['icon']['settings']['unicode'] );
+
+		if ( 'left' === $icon_placement ) {
+			$declarations->add( 'margin-left', '-1.3em' );
+		} elseif ( $has_custom_icon ) {
+			$declarations->add( 'margin-left', '0.3em' );
+		}
+
+		$declarations->add( 'line-height', '1em' );
+
+		return $declarations->value();
+	}
+
+	/**
+	 * Generate padding CSS when icon is show-on-hover only.
+	 * Mirrors the JS buttonSpacingDeclaration function.
+	 *
+	 * @param array $args { 'attrValue' => button decoration value at resolved breakpoint }
+	 *
+	 * @return string
+	 */
+	public static function button_spacing_style_declaration( array $args ): string {
+		$attr_value = $args['attrValue'] ?? [];
+
+		$declarations = new StyleDeclarations(
+			[
+				'returnType' => 'string',
+				'important'  => false,
+			]
+		);
+
+		if ( 'on' === ( $attr_value['icon']['onHover'] ?? 'on' ) ) {
+			$declarations->add( 'padding-left',  '1em' );
+			$declarations->add( 'padding-right', '1em' );
+		}
+
+		return $declarations->value();
+	}
 
 	/**
 	 * Module styles callback.
@@ -38,6 +115,12 @@ trait ModuleStylesTrait {
 		$data      = $attrs['dualButtonData']['innerContent']['desktop']['value'] ?? [];
 		$alignment = $data['button_alignment'] ?? 'flex-start';
 		$gap       = $data['button_gap']       ?? '10px';
+
+		// Resolve icon placement pseudo-element per button.
+		$left_btn_value  = $attrs['buttonLeft']['decoration']['button']['desktop']['value']  ?? [];
+		$right_btn_value = $attrs['buttonRight']['decoration']['button']['desktop']['value'] ?? [];
+		$left_pseudo     = 'left' === ( $left_btn_value['icon']['placement']  ?? 'right' ) ? 'before' : 'after';
+		$right_pseudo    = 'left' === ( $right_btn_value['icon']['placement'] ?? 'right' ) ? 'before' : 'after';
 
 		$wrapper_declaration = "justify-content: {$alignment}; gap: {$gap};";
 
@@ -61,17 +144,57 @@ trait ModuleStylesTrait {
 						]
 					),
 
-					// Left button styles.
+					// Left button styles (decoration) + icon CSS.
 					$elements->style(
 						[
-							'attrName' => 'buttonLeft',
+							'attrName'   => 'buttonLeft',
+							'styleProps' => [
+								'advancedStyles' => [
+									[
+										'componentName' => 'divi/common',
+										'props'         => [
+											'selector'            => "{$order_class} .inftnc_pb_button_left::{$left_pseudo}",
+											'attr'                => $attrs['buttonLeft']['decoration']['button'] ?? [],
+											'declarationFunction' => [ self::class, 'button_icon_style_declaration' ],
+										],
+									],
+									[
+										'componentName' => 'divi/common',
+										'props'         => [
+											'selector'            => "{$order_class} .inftnc_pb_button_left",
+											'attr'                => $attrs['buttonLeft']['decoration']['button'] ?? [],
+											'declarationFunction' => [ self::class, 'button_spacing_style_declaration' ],
+										],
+									],
+								],
+							],
 						]
 					),
 
-					// Right button styles.
+					// Right button styles (decoration) + icon CSS.
 					$elements->style(
 						[
-							'attrName' => 'buttonRight',
+							'attrName'   => 'buttonRight',
+							'styleProps' => [
+								'advancedStyles' => [
+									[
+										'componentName' => 'divi/common',
+										'props'         => [
+											'selector'            => "{$order_class} .inftnc_pb_button_right::{$right_pseudo}",
+											'attr'                => $attrs['buttonRight']['decoration']['button'] ?? [],
+											'declarationFunction' => [ self::class, 'button_icon_style_declaration' ],
+										],
+									],
+									[
+										'componentName' => 'divi/common',
+										'props'         => [
+											'selector'            => "{$order_class} .inftnc_pb_button_right",
+											'attr'                => $attrs['buttonRight']['decoration']['button'] ?? [],
+											'declarationFunction' => [ self::class, 'button_spacing_style_declaration' ],
+										],
+									],
+								],
+							],
 						]
 					),
 
