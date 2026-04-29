@@ -4,8 +4,12 @@
     "admin_label": "module.meta.adminLabel",
     "animation": "module.decoration.animation",
     "background": "module.decoration.background",
-    "borders": { "default": "module.decoration.border" },
-    "box_shadow": { "default": "module.decoration.boxShadow" },
+    "borders": {
+      "default": "module.decoration.border"
+    },
+    "box_shadow": {
+      "default": "module.decoration.boxShadow"
+    },
     "disabled_on": "module.decoration.disabledOn",
     "fonts": {
       "title": "module.advanced.header.title",

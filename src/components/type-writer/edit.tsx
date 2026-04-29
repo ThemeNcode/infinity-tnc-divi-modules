@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import React, { type ReactElement } from 'react';
+import React, { type ReactElement, useRef, useEffect } from 'react';
+import TypewriterCore from 'typewriter-effect/dist/core';
 
 import { ModuleContainer } from '@divi/module';
 
@@ -23,16 +24,57 @@ const TypeWriterEdit = (props: TypeWriterEditProps): ReactElement => {
     elements,
   } = props;
 
-  const data        = attrs?.typewriterData?.innerContent?.desktop?.value || {};
-  const beforeText  = data.before_text  || '';
-  const typingText  = data.typing_text  || 'Typewriter|Typing Animation';
-  const afterText   = data.after_text   || '';
+  const data            = attrs?.typewriterData?.innerContent?.desktop?.value || {};
+  const beforeText      = data.before_text      || '';
+  const typingText      = data.typing_text       || 'Typewriter|Typing Animation';
+  const afterText       = data.after_text        || '';
+  const typingSpeed     = data.typing_speed      || '75';
+  const typingBackspeed = data.typing_backspeed  || '75';
+  const pauseFor        = data.pause_for         || '1500';
+  const typingCursor    = data.typing_cursor     || '|';
+  const typingLoop      = data.typing_loop       || 'on';
 
   const headerLevel = (attrs?.module as any)?.advanced?.header?.title?.header_level?.desktop?.value || 'h1';
   const HeadingTag  = headerLevel as keyof JSX.IntrinsicElements;
 
-  // Show first typing string as static preview in VB.
-  const previewText = (typingText || '').split('|').filter((t: string) => t.trim() !== '')[0] || '';
+  const wrapperRef  = useRef<HTMLSpanElement>(null);
+  const twRef       = useRef<any>(null);
+
+  useEffect(() => {
+    if (!wrapperRef.current) return;
+
+    const strings  = (typingText || '').split('|').filter((t: string) => t.trim() !== '');
+    const loopVal  = typingLoop === 'on';
+
+    // Destroy previous instance.
+    if (twRef.current) {
+      twRef.current.stop();
+      twRef.current = null;
+    }
+    if (wrapperRef.current) {
+      wrapperRef.current.innerHTML = '';
+    }
+
+    twRef.current = new TypewriterCore(wrapperRef.current, {
+      strings,
+      autoStart:   true,
+      loop:        loopVal,
+      delay:       parseInt(typingSpeed, 10)     || 75,
+      deleteSpeed: parseInt(typingBackspeed, 10) || 75,
+      pauseFor:    parseInt(pauseFor, 10)        || 1500,
+      cursor:      typingCursor,
+    });
+
+    return () => {
+      if (twRef.current) {
+        twRef.current.stop();
+        twRef.current = null;
+      }
+      if (wrapperRef.current) {
+        wrapperRef.current.innerHTML = '';
+      }
+    };
+  }, [typingText, typingSpeed, typingBackspeed, pauseFor, typingCursor, typingLoop]);
 
   return (
     <ModuleContainer
@@ -50,7 +92,7 @@ const TypeWriterEdit = (props: TypeWriterEditProps): ReactElement => {
       <div className="inftnc_typewriter_wrapper">
         <HeadingTag className="inftnc_typewriter_main_title">
           {beforeText && <span className="inftnc_before_text">{beforeText}</span>}
-          <span className="inftnc_typewriter_text">{previewText}</span>
+          <span className="inftnc_typewriter_text" ref={wrapperRef}></span>
           {afterText && <span className="inftnc_after_text">{afterText}</span>}
         </HeadingTag>
       </div>
