@@ -56,6 +56,7 @@ function infinity_tnc_divi_module_initialize_d4_modules() {
 	require_once INFINITY_TNC_DIVI_MODULES_PATH . 'divi-4/modules/VimeoVideo/VimeoVideo.php';
 	require_once INFINITY_TNC_DIVI_MODULES_PATH . 'divi-4/modules/HeadingGradient/HeadingGradient.php';
 	require_once INFINITY_TNC_DIVI_MODULES_PATH . 'divi-4/modules/BreadCrumbs/BreadCrumbs.php';
+	require_once INFINITY_TNC_DIVI_MODULES_PATH . 'divi-4/modules/DualButtons/DualButtons.php';
 }
 add_action( 'et_builder_ready', 'infinity_tnc_divi_module_initialize_d4_modules' );
 

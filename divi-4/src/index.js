@@ -9,6 +9,7 @@ import YoutubeEmbed from './components/youtube-embed';
 import VimeVideo from './components/vimeo-video';
 import HeadingGradient from './components/heading-gradient';
 import BreadCrumbs from './components/bread-crumbs';
+import DualButtons from './components/dual-button';
 
 /**
  * Register modules to Visual Builder once the API is ready.
@@ -26,6 +27,7 @@ $(window).on('et_builder_api_ready', (event, API) => {
         YoutubeEmbed,
         VimeVideo,
         HeadingGradient,
-        BreadCrumbs
+        BreadCrumbs,
+        DualButtons
     ]);
 });
