@@ -14,6 +14,7 @@ import { youtubeEmbed } from './components/youtube-embed';
 import { staticModule } from './components/static-module';
 import { headingGradient } from './components/heading-gradient';
 import { breadCrumbs } from './components/bread-crumbs';
+import { typeWriter } from './components/type-writer';
 
 import './module-icons';
 
@@ -29,4 +30,5 @@ addAction('divi.moduleLibrary.registerModuleLibraryStore.after', 'extensionExamp
   registerModule(youtubeEmbed.metadata, omit(youtubeEmbed, 'metadata'));
   registerModule(headingGradient.metadata, omit(headingGradient, 'metadata'));
   registerModule(breadCrumbs.metadata, omit(breadCrumbs, 'metadata') as any);
+  registerModule(typeWriter.metadata, omit(typeWriter, 'metadata') as any);
 });
