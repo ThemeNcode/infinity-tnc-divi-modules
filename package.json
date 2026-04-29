@@ -103,6 +103,7 @@
   },
   "dependencies": {
     "classnames": "^2.5.1",
+    "react-svg-star-rating": "^2.1.2",
     "typewriter-effect": "^2.22.0"
   },
   "resolutions": {

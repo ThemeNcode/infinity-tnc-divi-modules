@@ -23,6 +23,7 @@ use INFTNC\Modules\YoutubeEmbed\YoutubeEmbed;
 use INFTNC\Modules\HeadingGradient\HeadingGradient;
 use INFTNC\Modules\BreadCrumbs\BreadCrumbs;
 use INFTNC\Modules\TypeWriter\TypeWriter;
+use INFTNC\Modules\StarRating\StarRating;
 
 add_action(
 	'divi_module_library_modules_dependency_tree',
@@ -38,5 +39,6 @@ add_action(
 		$dependency_tree->add_dependency( new HeadingGradient() );
 		$dependency_tree->add_dependency( new BreadCrumbs() );
 		$dependency_tree->add_dependency( new TypeWriter() );
+		$dependency_tree->add_dependency( new StarRating() );
 	}
 );
