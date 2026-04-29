@@ -39,6 +39,7 @@ define( 'INFINITY_TNC_DIVI_MODULES_JSON_PATH', INFINITY_TNC_DIVI_MODULES_PATH . 
 require INFINITY_TNC_DIVI_MODULES_PATH . 'vendor/autoload.php';
 require INFINITY_TNC_DIVI_MODULES_PATH . 'modules/Modules.php';
 require INFINITY_TNC_DIVI_MODULES_PATH . 'admin/breadcrumbs.php';
+require INFINITY_TNC_DIVI_MODULES_PATH . 'admin/inftnc-divi-modules-public.php';
 
 /**
  * Register all Divi 4 modules.

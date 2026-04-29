@@ -1,0 +1,29 @@
+<?php
+
+if ( ! defined( 'ABSPATH' ) ) exit;
+
+class Inftnc_divi_modules_public {
+
+    public function __construct() {
+        add_action( 'wp_enqueue_scripts', [ $this, 'inftnc_divi_modules_assets' ] );
+    }
+
+    /**
+     * Register front-end scripts and styles.
+     *
+     * @return void
+     */
+    public function inftnc_divi_modules_assets() {
+        $js = plugin_dir_url( __FILE__ ) . 'assets/js/';
+
+        wp_register_script( 'inftnc-rating',         $js . 'inftnc-rating.min.js',      [ 'jquery' ],          '1.2.0', true );
+        wp_register_script( 'inftnc-rating-module',  $js . 'star-rating-svg.min.js',    [ 'inftnc-rating' ],   '1.2.0', true );
+        wp_register_script( 'inftnc-typewriter',     $js . 'typewriter-core.min.js',     [ 'jquery' ],          '2.12.1', true );
+        wp_register_script( 'inftnc-typewriter-module', $js . 'inftnc-typewriter.min.js', [ 'inftnc-typewriter' ], '1.2.0', true );
+        wp_register_script( 'inftnc-social-share',   $js . 'inftnc-social-share.min.js', [],                   '1.2.0', true );
+        wp_register_script( 'slick',                 $js . 'slick.min.js',              [ 'jquery' ],          '1.8.1', true );
+        wp_register_script( 'inftnc-slick',          $js . 'inftnc-slick.min.js',       [ 'jquery' ],          '1.2.0', true );
+    }
+}
+
+new Inftnc_divi_modules_public;
