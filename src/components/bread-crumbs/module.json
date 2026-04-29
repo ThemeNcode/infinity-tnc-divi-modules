@@ -229,8 +229,8 @@
         }
       },
       "colorsBreadCrumbs": {
-        "panel": "content",
-        "priority": 30,
+        "panel": "design",
+        "priority": 10,
         "groupName": "colorsBreadCrumbs",
         "multiElements": true,
         "component": {
