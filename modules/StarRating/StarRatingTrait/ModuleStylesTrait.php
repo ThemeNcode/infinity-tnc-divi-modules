@@ -103,6 +103,13 @@ trait ModuleStylesTrait {
 						]
 					),
 
+					// Title heading font styles.
+					$elements->style(
+						[
+							'attrName' => 'titleText',
+						]
+					),
+
 					// Rating number font styles.
 					$elements->style(
 						[

@@ -57,6 +57,30 @@
         }
       }
     },
+    "titleText": {
+      "type": "object",
+      "label": "Rating Title",
+      "selector": "{{selector}} h1.inftnc_rating_title, {{selector}} h2.inftnc_rating_title, {{selector}} h3.inftnc_rating_title, {{selector}} h4.inftnc_rating_title, {{selector}} h5.inftnc_rating_title, {{selector}} h6.inftnc_rating_title",
+      "default": {
+        "decoration": {
+          "font": {
+            "font": {
+              "desktop": {
+                "value": {
+                  "size": "30px",
+                  "lineHeight": "1em"
+                }
+              }
+            }
+          }
+        }
+      },
+      "settings": {
+        "decoration": {
+          "font": {}
+        }
+      }
+    },
     "ratingNumber": {
       "type": "object",
       "label": "Rating Number Text",

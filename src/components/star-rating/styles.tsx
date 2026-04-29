@@ -45,6 +45,7 @@ ${orderClass} .jq-star:first-child { margin-left: 0 !important; }`
           },
         },
       })}
+      {(elements as any).style({ attrName: 'titleText' })}
       {(elements as any).style({ attrName: 'ratingNumber' })}
       <style>{alignmentCss}</style>
       {gapCss ? <style>{gapCss}</style> : null}

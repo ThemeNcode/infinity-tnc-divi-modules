@@ -53,6 +53,12 @@ export interface StarRatingAttrs extends InternalAttrs {
     >;
   };
 
+  titleText?: {
+    decoration?: {
+      font?: any;
+    };
+  };
+
   ratingNumber?: {
     decoration?: {
       font?: any;
