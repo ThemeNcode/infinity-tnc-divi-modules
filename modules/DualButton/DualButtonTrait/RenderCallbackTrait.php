@@ -63,7 +63,7 @@ trait RenderCallbackTrait {
 
 	public static function render_callback( $attrs, $content, $block, $elements ): string {
 		$data      = $attrs['dualButtonData']['innerContent']['desktop']['value'] ?? [];
-		$alignment = $data['button_alignment'] ?? 'flex-start';
+		$alignment = $data['button_alignment'] ?? 'left';
 		$gap       = $data['button_gap']       ?? '10px';
 
 		// Left button content.

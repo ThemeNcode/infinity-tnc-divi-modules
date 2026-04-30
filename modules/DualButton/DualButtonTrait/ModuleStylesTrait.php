@@ -114,7 +114,7 @@ trait ModuleStylesTrait {
 		$default_printed_style_attrs = $args['defaultPrintedStyleAttrs'] ?? [];
 
 		$data      = $attrs['dualButtonData']['innerContent']['desktop']['value'] ?? [];
-		$alignment = $data['button_alignment'] ?? 'flex-start';
+		$alignment = $data['button_alignment'] ?? 'left';
 		$gap       = $data['button_gap']       ?? '10px';
 
 		$left_btn_value  = $attrs['buttonLeft']['decoration']['button']['desktop']['value']  ?? [];

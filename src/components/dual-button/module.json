@@ -54,7 +54,7 @@
         "innerContent": {
           "desktop": {
             "value": {
-              "button_alignment": "flex-start",
+              "button_alignment": "left",
               "button_gap": "10px"
             }
           }
@@ -78,9 +78,9 @@
                 "type": "field",
                 "props": {
                   "options": {
-                    "flex-start":    { "label": "Left" },
+                    "left":          { "label": "Left" },
                     "center":        { "label": "Center" },
-                    "flex-end":      { "label": "Right" },
+                    "right":         { "label": "Right" },
                     "space-between": { "label": "Space Between" }
                   }
                 }

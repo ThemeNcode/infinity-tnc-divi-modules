@@ -43,7 +43,7 @@ const DualButtonEdit = ({
   elements,
 }: DualButtonEditProps): ReactElement => {
   const data      = attrs?.dualButtonData?.innerContent?.desktop?.value || {};
-  const alignment = data.button_alignment || 'flex-start';
+  const alignment = data.button_alignment || 'left';
   const gap       = data.button_gap || '10px';
 
   const leftContent  = attrs?.buttonLeft?.innerContent?.desktop?.value  || {};

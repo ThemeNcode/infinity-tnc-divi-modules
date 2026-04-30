@@ -21,9 +21,9 @@ export const conversionOutline: ModuleConversionOutline = {
     transform:       'module.decoration.transform',
     transition:      'module.decoration.transition',
     z_index:         'module.decoration.zIndex',
-    fonts: {
-      button_left:  'buttonLeft.decoration.button',
-      button_right: 'buttonRight.decoration.button',
+    button: {
+      button_left:  'buttonLeft',
+      button_right: 'buttonRight',
     },
   },
   css: {
