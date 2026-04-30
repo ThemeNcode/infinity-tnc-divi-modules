@@ -26,32 +26,20 @@ trait RenderCallbackTrait {
 	use ModuleScriptDataTrait;
 
 	/**
-	 * DualButton module render callback.
-	 *
-	 * @since ??
-	 *
-	 * @param array          $attrs    Block attributes saved by VB.
-	 * @param string         $content  Block content.
-	 * @param \WP_Block      $block    Parsed block object.
-	 * @param ModuleElements $elements ModuleElements instance.
-	 *
-	 * @return string HTML rendered output.
-	 */
-	/**
 	 * Build data-icon-* attribute map from a button decoration array.
+	 * Matches the D5 button module pattern.
 	 *
 	 * @param array $button_decoration Button decoration attribute (breakpoint-keyed).
 	 *
 	 * @return array
 	 */
 	protected static function build_icon_data_attrs( array $button_decoration ): array {
-		$icon_data_attrs   = [];
 		$desktop_value     = $button_decoration['desktop']['value'] ?? [];
 		$has_custom_button = 'on' === ( $desktop_value['enable'] ?? 'off' );
 		$is_icon_enabled   = 'on' === ( $desktop_value['icon']['enable'] ?? 'off' );
 
 		if ( ! $has_custom_button || ! $is_icon_enabled ) {
-			return $icon_data_attrs;
+			return [];
 		}
 
 		$breakpoint_to_data_attr = static function ( $breakpoint ) {
@@ -61,6 +49,7 @@ trait RenderCallbackTrait {
 			return 'data-icon-' . strtolower( preg_replace( '/([A-Z])/', '-$1', $breakpoint ) );
 		};
 
+		$icon_data_attrs = [];
 		foreach ( $button_decoration as $breakpoint => $breakpoint_value ) {
 			$icon_settings = $breakpoint_value['value']['icon']['settings'] ?? null;
 			if ( ! empty( $icon_settings ) ) {
@@ -77,35 +66,25 @@ trait RenderCallbackTrait {
 		$alignment = $data['button_alignment'] ?? 'flex-start';
 		$gap       = $data['button_gap']       ?? '10px';
 
-		// Left button.
+		// Left button content.
 		$left_content = $attrs['buttonLeft']['innerContent']['desktop']['value'] ?? [];
 		$left_text    = esc_html( $left_content['text']    ?? 'Left Button' );
 		$left_url     = esc_url( $left_content['linkUrl']  ?? '#' );
 		$left_target  = 'on' === ( $left_content['linkTarget'] ?? 'off' ) ? '_blank' : '';
 
-		// Right button.
+		// Right button content.
 		$right_content = $attrs['buttonRight']['innerContent']['desktop']['value'] ?? [];
 		$right_text    = esc_html( $right_content['text']    ?? 'Right Button' );
 		$right_url     = esc_url( $right_content['linkUrl']  ?? '#' );
 		$right_target  = 'on' === ( $right_content['linkTarget'] ?? 'off' ) ? '_blank' : '';
 
-		// Icon data attributes.
+		// Icon data-* attributes (D5 button pattern).
 		$left_icon_attrs  = self::build_icon_data_attrs( $attrs['buttonLeft']['decoration']['button']  ?? [] );
 		$right_icon_attrs = self::build_icon_data_attrs( $attrs['buttonRight']['decoration']['button'] ?? [] );
 
-		// Left button style components (button decoration CSS classes).
-		$left_style_components = $elements->style_components(
-			[
-				'attrName' => 'buttonLeft',
-			]
-		);
-
-		// Right button style components.
-		$right_style_components = $elements->style_components(
-			[
-				'attrName' => 'buttonRight',
-			]
-		);
+		// Style components (renders button decoration inline CSS including icon content).
+		$left_style_components  = $elements->style_components( [ 'attrName' => 'buttonLeft' ] );
+		$right_style_components = $elements->style_components( [ 'attrName' => 'buttonRight' ] );
 
 		$left_btn_attrs = array_merge(
 			[

@@ -12,11 +12,7 @@ interface BtnIconParams {
   };
 }
 
-/**
- * Generate margin + line-height CSS for the button icon pseudo-element.
- * Matches the D5 button example's buttonIconStyleDeclaration.
- * NOTE: content / font-family are handled separately via generateButtonIconCss().
- */
+/** Margin + line-height for button icon pseudo-element. Matches D5 button buttonIconStyleDeclaration. */
 export const buttonIconStyleDeclaration = ({ attrValue }: BtnIconParams): string => {
   const declarations = new StyleDeclarations({
     returnType: 'string',
@@ -42,16 +38,14 @@ export const buttonIconStyleDeclaration = ({ attrValue }: BtnIconParams): string
   return declarations.value as string;
 };
 
-/**
- * Generate padding CSS when icon shows on hover only.
- */
+/** Padding for button when icon is show-on-hover. Matches D5 button buttonSpacingDeclaration. */
 export const buttonSpacingDeclaration = ({ attrValue }: BtnIconParams): string => {
   const declarations = new StyleDeclarations({
     returnType: 'string',
     important: false,
   });
 
-  if ('on' === (attrValue?.icon?.onHover ?? 'on')) {
+  if ('on' === (attrValue?.icon?.onHover ?? '')) {
     declarations.add('padding-left',  '1em');
     declarations.add('padding-right', '1em');
   }

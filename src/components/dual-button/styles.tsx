@@ -1,6 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { ReactElement } from 'react';
-import { processFontIcon } from '@divi/icon-library';
 import {
   StyleContainer,
   StylesProps,
@@ -10,30 +9,6 @@ import {
 import { DualButtonAttrs } from './types';
 import { cssFields } from './custom-css';
 import { buttonIconStyleDeclaration, buttonSpacingDeclaration } from './style-declarations';
-
-/**
- * Build `content` + `font-family` CSS rule for a button's icon pseudo-element.
- * This is needed because style_components() for custom elementType:"button"
- * attributes may not generate the correct selector for our custom <a> elements.
- */
-const buildIconContentCss = (btnDecorationButton: any, selector: string): string => {
-  const value = btnDecorationButton?.desktop?.value ?? {};
-
-  if ('off' === (value?.enable ?? 'off')) return '';
-  if ('off' === (value?.icon?.enable ?? 'off')) return '';
-
-  const settings = value?.icon?.settings;
-  if (!settings) return '';
-
-  const iconChar = processFontIcon(settings);
-  if (!iconChar) return '';
-
-  const placement   = value?.icon?.placement ?? 'right';
-  const pseudo      = 'left' === placement ? 'before' : 'after';
-  const fontFamily  = 'fa' === settings?.type ? 'FontAwesome' : 'ETmodules';
-
-  return `${selector}::${pseudo} { content: "${iconChar}"; font-family: ${fontFamily}; }`;
-};
 
 const ModuleStyles = ({
   attrs,
@@ -56,9 +31,7 @@ const ModuleStyles = ({
   const leftPseudo     = 'left' === leftPlacement  ? 'before' : 'after';
   const rightPseudo    = 'left' === rightPlacement ? 'before' : 'after';
 
-  const wrapperCss   = `${orderClass} .inftnc_button_wrapper { justify-content: ${alignment}; gap: ${gap}; }`;
-  const leftIconCss  = buildIconContentCss(leftBtnDecButton,  `${orderClass} .inftnc_pb_button_left`);
-  const rightIconCss = buildIconContentCss(rightBtnDecButton, `${orderClass} .inftnc_pb_button_right`);
+  const wrapperCss = `${orderClass} .inftnc_button_wrapper { justify-content: ${alignment}; gap: ${gap}; }`;
 
   return (
     <StyleContainer mode={mode as any} state={state as any} noStyleTag={noStyleTag}>
@@ -72,7 +45,7 @@ const ModuleStyles = ({
         },
       })}
 
-      {/* Left button decoration (colors, border, font) + margin/line-height for icon */}
+      {/* Left button decoration + icon CSS */}
       {(elements as any).style({
         attrName: 'buttonLeft',
         styleProps: {
@@ -80,7 +53,10 @@ const ModuleStyles = ({
             {
               componentName: 'divi/common',
               props: {
-                selector:            `${orderClass} .inftnc_pb_button_left::${leftPseudo}`,
+                selector: [
+                  `body #page-container .et_pb_section ${orderClass} .inftnc_pb_button_left::${leftPseudo}`,
+                  `body #page-container .et_pb_section ${orderClass} .inftnc_pb_button_left:hover::${leftPseudo}`,
+                ].join(', '),
                 attr:                leftBtnDecButton,
                 declarationFunction: buttonIconStyleDeclaration,
               },
@@ -88,7 +64,7 @@ const ModuleStyles = ({
             {
               componentName: 'divi/common',
               props: {
-                selector:            `${orderClass} .inftnc_pb_button_left`,
+                selector:            `body #page-container ${orderClass}`,
                 attr:                leftBtnDecButton,
                 declarationFunction: buttonSpacingDeclaration,
               },
@@ -97,7 +73,7 @@ const ModuleStyles = ({
         },
       })}
 
-      {/* Right button decoration + icon positioning */}
+      {/* Right button decoration + icon CSS */}
       {(elements as any).style({
         attrName: 'buttonRight',
         styleProps: {
@@ -105,7 +81,10 @@ const ModuleStyles = ({
             {
               componentName: 'divi/common',
               props: {
-                selector:            `${orderClass} .inftnc_pb_button_right::${rightPseudo}`,
+                selector: [
+                  `body #page-container .et_pb_section ${orderClass} .inftnc_pb_button_right::${rightPseudo}`,
+                  `body #page-container .et_pb_section ${orderClass} .inftnc_pb_button_right:hover::${rightPseudo}`,
+                ].join(', '),
                 attr:                rightBtnDecButton,
                 declarationFunction: buttonIconStyleDeclaration,
               },
@@ -113,7 +92,7 @@ const ModuleStyles = ({
             {
               componentName: 'divi/common',
               props: {
-                selector:            `${orderClass} .inftnc_pb_button_right`,
+                selector:            `body #page-container ${orderClass}`,
                 attr:                rightBtnDecButton,
                 declarationFunction: buttonSpacingDeclaration,
               },
@@ -122,12 +101,8 @@ const ModuleStyles = ({
         },
       })}
 
-      {/* Wrapper layout */}
+      {/* Wrapper layout CSS */}
       <style>{wrapperCss}</style>
-
-      {/* Icon content + font-family (explicit, not relying on style_components) */}
-      {leftIconCss  ? <style>{leftIconCss}</style>  : null}
-      {rightIconCss ? <style>{rightIconCss}</style> : null}
 
       {/* Custom CSS */}
       <CssStyle

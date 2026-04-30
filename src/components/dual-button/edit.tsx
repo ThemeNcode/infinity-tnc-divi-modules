@@ -7,32 +7,30 @@ import { ModuleContainer } from '@divi/module';
 import { DualButtonEditProps } from './types';
 import { ModuleStyles } from './styles';
 
-/** Convert camelCase breakpoint to kebab-case data attribute name. */
-const breakpointToDataAttr = (breakpoint: string): string => {
-  if ('desktop' === breakpoint) return 'data-icon';
-  return `data-icon-${breakpoint.replace(/([A-Z])/g, '-$1').toLowerCase()}`;
-};
+/** Build data-icon-* attribute map from a button decoration object. */
+const buildIconDataAttrs = (decoration: any): Record<string, string | null> => {
+  const btnDec = decoration?.button;
+  if (!btnDec) return {};
 
-/** Build data-icon-* attrs map from a button decoration attribute. */
-const buildIconDataAttrs = (buttonDecoration: any): Record<string, string | null> => {
-  const iconDataAttrs: Record<string, string | null> = {};
-  if (!buttonDecoration) return iconDataAttrs;
+  const hasCustomButton = 'on' === (btnDec?.desktop?.value?.enable ?? 'off');
+  const isIconEnabled   = 'on' === (btnDec?.desktop?.value?.icon?.enable ?? 'off');
 
-  const desktopValue  = buttonDecoration?.desktop?.value ?? {};
-  const hasCustom     = 'on' === desktopValue?.enable;
-  const isIconEnabled = 'on' === desktopValue?.icon?.enable;
+  if (!hasCustomButton || !isIconEnabled) return {};
 
-  if (!hasCustom || !isIconEnabled) return iconDataAttrs;
+  const breakpointToDataAttr = (bp: string): string => {
+    if ('desktop' === bp) return 'data-icon';
+    return `data-icon-${bp.replace(/([A-Z])/g, '-$1').toLowerCase()}`;
+  };
 
-  Object.keys(buttonDecoration).forEach(breakpoint => {
-    const bpValue      = (buttonDecoration as any)[breakpoint];
-    const iconSettings = bpValue?.value?.icon?.settings;
+  const result: Record<string, string | null> = {};
+  Object.keys(btnDec).forEach(bp => {
+    const iconSettings = (btnDec as any)[bp]?.value?.icon?.settings;
     if (!isNil(iconSettings) && iconSettings) {
-      iconDataAttrs[breakpointToDataAttr(breakpoint)] = processFontIcon(iconSettings);
+      result[breakpointToDataAttr(bp)] = processFontIcon(iconSettings as any);
     }
   });
 
-  return iconDataAttrs;
+  return result;
 };
 
 const DualButtonEdit = ({
@@ -44,23 +42,23 @@ const DualButtonEdit = ({
   name,
   elements,
 }: DualButtonEditProps): ReactElement => {
-  const data        = attrs?.dualButtonData?.innerContent?.desktop?.value || {};
-  const alignment   = data.button_alignment || 'flex-start';
-  const gap         = data.button_gap || '10px';
+  const data      = attrs?.dualButtonData?.innerContent?.desktop?.value || {};
+  const alignment = data.button_alignment || 'flex-start';
+  const gap       = data.button_gap || '10px';
 
-  const leftContent  = attrs?.buttonLeft?.innerContent?.desktop?.value || {};
+  const leftContent  = attrs?.buttonLeft?.innerContent?.desktop?.value  || {};
   const rightContent = attrs?.buttonRight?.innerContent?.desktop?.value || {};
 
-  const leftText    = leftContent.text    || 'Left Button';
-  const leftUrl     = leftContent.linkUrl || '#';
-  const leftTarget  = 'on' === leftContent.linkTarget ? '_blank' : undefined;
+  const leftText   = leftContent.text    || 'Left Button';
+  const leftUrl    = leftContent.linkUrl || '#';
+  const leftTarget = 'on' === leftContent.linkTarget ? '_blank' : undefined;
 
   const rightText   = rightContent.text    || 'Right Button';
   const rightUrl    = rightContent.linkUrl || '#';
   const rightTarget = 'on' === rightContent.linkTarget ? '_blank' : undefined;
 
-  const leftIconAttrs  = buildIconDataAttrs(attrs?.buttonLeft?.decoration?.button);
-  const rightIconAttrs = buildIconDataAttrs(attrs?.buttonRight?.decoration?.button);
+  const leftIconDataAttrs  = buildIconDataAttrs(attrs?.buttonLeft?.decoration  as any);
+  const rightIconDataAttrs = buildIconDataAttrs(attrs?.buttonRight?.decoration as any);
 
   return (
     <ModuleContainer
@@ -71,31 +69,34 @@ const DualButtonEdit = ({
       isFirst={isFirst}
       isLast={isLast}
       name={name}
-      stylesComponent={ModuleStyles}
+      stylesComponent={ModuleStyles as any}
       tag="div"
     >
       <div
         className="inftnc_button_wrapper et_pb_button_module_wrapper"
         style={{ display: 'flex', flexWrap: 'wrap', justifyContent: alignment, gap }}
       >
-        {(elements as any).styleComponents({ attrName: 'buttonLeft' })}
+        {/* Left button */}
         <a
           className="et_pb_button inftnc_pb_button_left et_pb_bg_layout_light"
           href={leftUrl}
           target={leftTarget}
           rel={leftTarget ? 'noopener noreferrer' : undefined}
-          {...leftIconAttrs}
+          {...leftIconDataAttrs}
         >
+          {(elements as any).styleComponents({ attrName: 'buttonLeft' })}
           {leftText}
         </a>
-        {(elements as any).styleComponents({ attrName: 'buttonRight' })}
+
+        {/* Right button */}
         <a
           className="et_pb_button inftnc_pb_button_right et_pb_bg_layout_light"
           href={rightUrl}
           target={rightTarget}
           rel={rightTarget ? 'noopener noreferrer' : undefined}
-          {...rightIconAttrs}
+          {...rightIconDataAttrs}
         >
+          {(elements as any).styleComponents({ attrName: 'buttonRight' })}
           {rightText}
         </a>
       </div>

@@ -22,20 +22,21 @@ trait ModuleStylesTrait {
 	use CustomCssTrait;
 
 	/**
-	 * Generate content + font-family + margin CSS for a button icon pseudo-element.
-	 * Mirrors the JS buttonIconStyleDeclaration function.
+	 * Icon style declaration: content + font-family + margin + line-height for pseudo-element.
+	 * Matches D5 ButtonModule::icon_style_declaration().
 	 *
 	 * @param array $args { 'attrValue' => button decoration value at resolved breakpoint }
 	 *
 	 * @return string
 	 */
-	public static function button_icon_style_declaration( array $args ): string {
+	public static function icon_style_declaration( array $args ): string {
 		$attr_value = $args['attrValue'] ?? [];
 
 		$declarations = new StyleDeclarations(
 			[
 				'returnType' => 'string',
 				'important'  => [
+					'font-family' => true,
 					'font-size'   => true,
 					'line-height' => true,
 				],
@@ -71,8 +72,8 @@ trait ModuleStylesTrait {
 	}
 
 	/**
-	 * Generate padding CSS when icon is show-on-hover only.
-	 * Mirrors the JS buttonSpacingDeclaration function.
+	 * Spacing declaration: padding when icon is show-on-hover.
+	 * Matches D5 ButtonModule::button_spacing_style_declaration().
 	 *
 	 * @param array $args { 'attrValue' => button decoration value at resolved breakpoint }
 	 *
@@ -88,7 +89,7 @@ trait ModuleStylesTrait {
 			]
 		);
 
-		if ( 'on' === ( $attr_value['icon']['onHover'] ?? 'on' ) ) {
+		if ( 'on' === ( $attr_value['icon']['onHover'] ?? '' ) ) {
 			$declarations->add( 'padding-left',  '1em' );
 			$declarations->add( 'padding-right', '1em' );
 		}
@@ -116,7 +117,6 @@ trait ModuleStylesTrait {
 		$alignment = $data['button_alignment'] ?? 'flex-start';
 		$gap       = $data['button_gap']       ?? '10px';
 
-		// Resolve icon placement pseudo-element per button.
 		$left_btn_value  = $attrs['buttonLeft']['decoration']['button']['desktop']['value']  ?? [];
 		$right_btn_value = $attrs['buttonRight']['decoration']['button']['desktop']['value'] ?? [];
 		$left_pseudo     = 'left' === ( $left_btn_value['icon']['placement']  ?? 'right' ) ? 'before' : 'after';
@@ -144,7 +144,7 @@ trait ModuleStylesTrait {
 						]
 					),
 
-					// Left button styles (decoration) + icon CSS.
+					// Left button styles + icon CSS (D5 button pattern).
 					$elements->style(
 						[
 							'attrName'   => 'buttonLeft',
@@ -153,15 +153,21 @@ trait ModuleStylesTrait {
 									[
 										'componentName' => 'divi/common',
 										'props'         => [
-											'selector'            => "{$order_class} .inftnc_pb_button_left::{$left_pseudo}",
+											'selector' => implode(
+												', ',
+												[
+													"body #page-container .et_pb_section {$order_class} .inftnc_pb_button_left::{$left_pseudo}",
+													"body #page-container .et_pb_section {$order_class} .inftnc_pb_button_left:hover::{$left_pseudo}",
+												]
+											),
 											'attr'                => $attrs['buttonLeft']['decoration']['button'] ?? [],
-											'declarationFunction' => [ self::class, 'button_icon_style_declaration' ],
+											'declarationFunction' => [ self::class, 'icon_style_declaration' ],
 										],
 									],
 									[
 										'componentName' => 'divi/common',
 										'props'         => [
-											'selector'            => "{$order_class} .inftnc_pb_button_left",
+											'selector'            => "body #page-container {$order_class}",
 											'attr'                => $attrs['buttonLeft']['decoration']['button'] ?? [],
 											'declarationFunction' => [ self::class, 'button_spacing_style_declaration' ],
 										],
@@ -171,7 +177,7 @@ trait ModuleStylesTrait {
 						]
 					),
 
-					// Right button styles (decoration) + icon CSS.
+					// Right button styles + icon CSS (D5 button pattern).
 					$elements->style(
 						[
 							'attrName'   => 'buttonRight',
@@ -180,15 +186,21 @@ trait ModuleStylesTrait {
 									[
 										'componentName' => 'divi/common',
 										'props'         => [
-											'selector'            => "{$order_class} .inftnc_pb_button_right::{$right_pseudo}",
+											'selector' => implode(
+												', ',
+												[
+													"body #page-container .et_pb_section {$order_class} .inftnc_pb_button_right::{$right_pseudo}",
+													"body #page-container .et_pb_section {$order_class} .inftnc_pb_button_right:hover::{$right_pseudo}",
+												]
+											),
 											'attr'                => $attrs['buttonRight']['decoration']['button'] ?? [],
-											'declarationFunction' => [ self::class, 'button_icon_style_declaration' ],
+											'declarationFunction' => [ self::class, 'icon_style_declaration' ],
 										],
 									],
 									[
 										'componentName' => 'divi/common',
 										'props'         => [
-											'selector'            => "{$order_class} .inftnc_pb_button_right",
+											'selector'            => "body #page-container {$order_class}",
 											'attr'                => $attrs['buttonRight']['decoration']['button'] ?? [],
 											'declarationFunction' => [ self::class, 'button_spacing_style_declaration' ],
 										],
