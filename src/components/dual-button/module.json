@@ -150,18 +150,18 @@
               "groupSlug": "contentLeftButton",
               "attrName": "buttonLeft.innerContent",
               "subName": "linkTarget",
-              "label": "Open in New Window",
-              "description": "Open the left button link in a new tab.",
+              "label": "Button Link Target",
+              "description": "Here you can choose whether or not your link opens in a new window.",
               "priority": 30,
               "render": true,
-              "features": { "sticky": false, "hover": false },
+              "features": { "sticky": false, "hover": false, "responsive": false },
               "component": {
-                "name": "divi/toggle",
+                "name": "divi/select",
                 "type": "field",
                 "props": {
                   "options": {
-                    "off": { "label": "No" },
-                    "on":  { "label": "Yes" }
+                    "off": { "label": "In The Current Tab" },
+                    "on":  { "label": "In A New Tab" }
                   }
                 }
               }
@@ -238,18 +238,18 @@
               "groupSlug": "contentRightButton",
               "attrName": "buttonRight.innerContent",
               "subName": "linkTarget",
-              "label": "Open in New Window",
-              "description": "Open the right button link in a new tab.",
+              "label": "Button Link Target",
+              "description": "Here you can choose whether or not your link opens in a new window.",
               "priority": 30,
               "render": true,
-              "features": { "sticky": false, "hover": false },
+              "features": { "sticky": false, "hover": false, "responsive": false },
               "component": {
-                "name": "divi/toggle",
+                "name": "divi/select",
                 "type": "field",
                 "props": {
                   "options": {
-                    "off": { "label": "No" },
-                    "on":  { "label": "Yes" }
+                    "off": { "label": "In The Current Tab" },
+                    "on":  { "label": "In A New Tab" }
                   }
                 }
               }
