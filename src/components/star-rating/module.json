@@ -83,7 +83,7 @@
     },
     "ratingNumber": {
       "type": "object",
-      "label": "Rating Number Text",
+      "label": "Rating Number",
       "selector": "{{selector}} .inftnc_star_rating_number",
       "default": {
         "decoration": {
