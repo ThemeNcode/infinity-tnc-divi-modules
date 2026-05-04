@@ -49,26 +49,13 @@ trait ModuleStylesTrait {
 
 		$bread_crumbs_data = $attrs['breadCrumbsData']['innerContent']['desktop']['value'] ?? [];
 
-		$link_color           = $bread_crumbs_data['link_color'] ?? '';
-		$seperate_icon_color  = $bread_crumbs_data['seperate_icon_color'] ?? '';
-		$current_text_color   = $bread_crumbs_data['current_text_color'] ?? '';
-		$before_text_color    = $bread_crumbs_data['before_text_color'] ?? '';
-
-		$color_css_parts = [];
-		if ( ! empty( $link_color ) ) {
-			$color_css_parts[] = sprintf( '%s a { color: %s; }', $order_class, esc_attr( $link_color ) );
-		}
-		if ( ! empty( $seperate_icon_color ) ) {
-			$color_css_parts[] = sprintf( '%s .inftnc_separator { color: %s; }', $order_class, esc_attr( $seperate_icon_color ) );
-		}
-		if ( ! empty( $current_text_color ) ) {
-			$color_css_parts[] = sprintf( '%s .inftnc_current { color: %s; }', $order_class, esc_attr( $current_text_color ) );
-		}
-		if ( ! empty( $before_text_color ) ) {
-			$color_css_parts[] = sprintf( '%s .inftnc_before { color: %s; }', $order_class, esc_attr( $before_text_color ) );
-		}
+		$link_color          = $bread_crumbs_data['link_color'] ?? '';
+		$seperate_icon_color = $bread_crumbs_data['seperate_icon_color'] ?? '';
+		$current_text_color  = $bread_crumbs_data['current_text_color'] ?? '';
+		$before_text_color   = $bread_crumbs_data['before_text_color'] ?? '';
 
 		$styles = [
+			// Module decoration styles.
 			$elements->style(
 				[
 					'attrName'   => 'module',
@@ -80,7 +67,67 @@ trait ModuleStylesTrait {
 					],
 				]
 			),
+
+			// Breadcrumb font styles.
 			$elements->style( [ 'attrName' => 'breadcrumbText' ] ),
+
+			// Link color.
+			CssStyle::style(
+				[
+					'selector' => "{$order_class} a",
+					'attr'     => [
+						'desktop' => [
+							'value' => [
+								'mainElement' => ! empty( $link_color ) ? 'color: ' . esc_attr( $link_color ) . ';' : '',
+							],
+						],
+					],
+				]
+			),
+
+			// Separator icon color.
+			CssStyle::style(
+				[
+					'selector' => "{$order_class} .inftnc_separator",
+					'attr'     => [
+						'desktop' => [
+							'value' => [
+								'mainElement' => ! empty( $seperate_icon_color ) ? 'color: ' . esc_attr( $seperate_icon_color ) . ';' : '',
+							],
+						],
+					],
+				]
+			),
+
+			// Current page text color.
+			CssStyle::style(
+				[
+					'selector' => "{$order_class} .inftnc_current",
+					'attr'     => [
+						'desktop' => [
+							'value' => [
+								'mainElement' => ! empty( $current_text_color ) ? 'color: ' . esc_attr( $current_text_color ) . ';' : '',
+							],
+						],
+					],
+				]
+			),
+
+			// Before text color.
+			CssStyle::style(
+				[
+					'selector' => "{$order_class} .inftnc_before",
+					'attr'     => [
+						'desktop' => [
+							'value' => [
+								'mainElement' => ! empty( $before_text_color ) ? 'color: ' . esc_attr( $before_text_color ) . ';' : '',
+							],
+						],
+					],
+				]
+			),
+
+			// Custom CSS.
 			CssStyle::style(
 				[
 					'selector'  => $order_class,
@@ -89,10 +136,6 @@ trait ModuleStylesTrait {
 				]
 			),
 		];
-
-		if ( ! empty( $color_css_parts ) ) {
-			$styles[] = implode( "\n", $color_css_parts );
-		}
 
 		Style::add(
 			[
