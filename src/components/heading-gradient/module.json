@@ -26,18 +26,7 @@
         },
         "advanced": {
           "link": {},
-          "htmlAttributes": {},
-          "header": {
-            "title": {
-              "css": {
-                "main": "{{selector}} h1.inftnc_gradient_title, {{selector}} h2.inftnc_gradient_title, {{selector}} h3.inftnc_gradient_title, {{selector}} h4.inftnc_gradient_title, {{selector}} h5.inftnc_gradient_title, {{selector}} h6.inftnc_gradient_title"
-              },
-              "font_size": { "default": "30px" },
-              "line_height": { "default": "1em" },
-              "letter_spacing": { "default": "0px" },
-              "header_level": { "default": "h1" }
-            }
-          }
+          "htmlAttributes": {}
         },
         "decoration": {
           "background": {},
@@ -59,8 +48,17 @@
     },
     "title": {
       "type": "object",
-      "selector": "{{selector}} .inftnc_gradient_title",
+      "selector": "{{selector}} h1.inftnc_gradient_title, {{selector}} h2.inftnc_gradient_title, {{selector}} h3.inftnc_gradient_title, {{selector}} h4.inftnc_gradient_title, {{selector}} h5.inftnc_gradient_title, {{selector}} h6.inftnc_gradient_title",
+      "tagName": "h1",
+      "attributes": {
+        "class": "inftnc_gradient_title et_pb_module_header"
+      },
       "default": {
+        "innerContent": {
+          "desktop": {
+            "value": "My Awesome Heading with Gradient"
+          }
+        },
         "decoration": {
           "font": {
             "font": {
@@ -77,8 +75,52 @@
       "elementType": "heading",
       "childrenSanitizer": "et_core_esc_previously",
       "settings": {
+        "innerContent": {
+          "groupType": "group-item",
+          "item": {
+            "groupSlug": "contentHeadingGradient",
+            "attrName": "title.innerContent",
+            "label": "Heading Text",
+            "description": "Content entered here will appear inside the module.",
+            "priority": 5,
+            "render": true,
+            "features": {
+              "sticky": false,
+              "hover": false,
+              "responsive": false
+            },
+            "component": {
+              "name": "divi/text",
+              "type": "field"
+            }
+          }
+        },
         "decoration": {
-          "font": {}
+          "font": {
+            "groupType": "group-item",
+            "item": {
+              "groupSlug": "designTitleText",
+              "priority": 10,
+              "render": true,
+              "component": {
+                "type": "group",
+                "name": "divi/font",
+                "props": {
+                  "grouped": false,
+                  "fieldLabel": "Title",
+                  "dynamicSubgroupHost": true,
+                  "fields": {
+                    "color": {
+                      "render": false
+                    },
+                    "headingLevel": {
+                      "render": true
+                    }
+                  }
+                }
+              }
+            }
+          }
         }
       }
     },
@@ -89,7 +131,6 @@
         "innerContent": {
           "desktop": {
             "value": {
-              "gradient_title": "My Awesome Heading with Gradient",
               "gradient_options": "gradient_custom_color",
               "gradient_type": "linear_gradient",
               "linear_position": "right",
@@ -108,17 +149,6 @@
         "innerContent": {
           "groupType": "group-items",
           "items": {
-            "gradient_title": {
-              "groupSlug": "contentHeadingGradient",
-              "attrName": "headingGradientData.innerContent",
-              "subName": "gradient_title",
-              "label": "Heading Text",
-              "description": "Content entered here will appear inside the module.",
-              "priority": 10,
-              "render": true,
-              "features": { "sticky": false, "hover": false, "responsive": false },
-              "component": { "name": "divi/text", "type": "field" }
-            },
             "gradient_options": {
               "groupSlug": "gradientStyleHeadingGradient",
               "attrName": "headingGradientData.innerContent",
@@ -341,6 +371,20 @@
     "design": "auto",
     "advanced": "auto",
     "groups": {
+      "designTitleText": {
+        "panel": "design",
+        "priority": 10,
+        "groupName": "titleText",
+        "multiElements": true,
+        "component": {
+          "name": "divi/composite",
+          "props": {
+            "groupLabel": "Title Text",
+            "presetGroup": "divi/font",
+            "dynamicSubgroupHost": true
+          }
+        }
+      },
       "contentHeadingGradient": {
         "panel": "content",
         "priority": 10,

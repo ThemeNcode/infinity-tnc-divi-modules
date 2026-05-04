@@ -1,7 +1,7 @@
-import { Module, FormatBreakpointStateAttr } from '@divi/types';
+import { Module, FormatBreakpointStateAttr, InternalAttrs } from '@divi/types';
+import { Element } from '@divi/types';
 
 export interface HeadingGradientInnerContent {
-  gradient_title?: string;
   gradient_options?: string;
   gradient_type?: string;
   linear_position?: string;
@@ -14,7 +14,11 @@ export interface HeadingGradientInnerContent {
   presets_gradient?: string;
 }
 
-export interface HeadingGradientAttrs extends Module.Attributes {
+export interface HeadingGradientAttrs extends InternalAttrs {
+  title?: {
+    innerContent?: FormatBreakpointStateAttr<string>;
+    decoration?: Element.Decoration.PickedAttributes<'font'>;
+  };
   headingGradientData?: {
     innerContent?: FormatBreakpointStateAttr<HeadingGradientInnerContent>;
   };

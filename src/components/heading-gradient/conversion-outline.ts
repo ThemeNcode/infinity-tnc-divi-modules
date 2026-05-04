@@ -9,7 +9,7 @@ export const conversionOutline: ModuleConversionOutline = {
     borders:         { default: 'module.decoration.border' },
     box_shadow:      { default: 'module.decoration.boxShadow' },
     disabled_on:     'module.decoration.disabledOn',
-    fonts:           { title: 'module.advanced.header.title' },
+    fonts:           { title: 'title.decoration.font' },
     height:          'module.decoration.sizing',
     link_options:    'module.advanced.link',
     margin_padding:  'module.decoration.spacing',
@@ -30,7 +30,7 @@ export const conversionOutline: ModuleConversionOutline = {
     title:        'css.*.title',
   },
   module: {
-    gradient_title:    'headingGradientData.innerContent.*.gradient_title',
+    gradient_title:    'title.innerContent.*',
     gradient_options:  'headingGradientData.innerContent.*.gradient_options',
     gradient_type:     'headingGradientData.innerContent.*.gradient_type',
     linear_position:   'headingGradientData.innerContent.*.linear_position',

@@ -34,8 +34,8 @@ trait RenderCallbackTrait {
 	 */
 	public static function render_callback( $attrs, $content, $block, $elements ) {
 		$data         = $attrs['headingGradientData']['innerContent']['desktop']['value'] ?? [];
-		$title        = $data['gradient_title'] ?? 'My Awesome Heading with Gradient';
-		$header_level = $attrs['module']['advanced']['header']['title']['header_level']['desktop']['value'] ?? 'h1';
+		$title        = $attrs['title']['innerContent']['desktop']['value'] ?? 'My Awesome Heading with Gradient';
+		$header_level = $attrs['title']['decoration']['font']['font']['desktop']['value']['headingLevel'] ?? 'h1';
 
 		$heading = \ET\Builder\Framework\Utility\HTMLUtility::render(
 			[
@@ -103,9 +103,10 @@ trait RenderCallbackTrait {
 
 		$gradientCss = '';
 		if ( ! empty( $gradientDeclaration ) ) {
-			$orderClass = ".inftnc_heading_gradient_container_" . $block->parsed_block['orderIndex'];
-			$gradientCss = "<style>
-				{$orderClass} .inftnc_gradient_title {
+			$orderClass   = ".inftnc_heading_gradient_container_" . $block->parsed_block['orderIndex'];
+			$headingTags  = implode( ', ', array_map( fn( $n ) => "{$orderClass} h{$n}.inftnc_gradient_title", range( 1, 6 ) ) );
+			$gradientCss  = "<style>
+				{$headingTags} {
 					background: {$gradientDeclaration}
 					-webkit-background-clip: text !important;
 					-webkit-text-fill-color: transparent !important;

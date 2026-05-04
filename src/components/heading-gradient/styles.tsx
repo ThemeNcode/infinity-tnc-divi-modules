@@ -80,8 +80,9 @@ const ModuleStyles = ({
     gradientDeclaration = presets[presets_gradient] ?? presets.gradient_preset1;
   }
 
+  const gradientTargets = [1,2,3,4,5,6].map(n => `${orderClass} h${n}.inftnc_gradient_title`).join(', ');
   const gradientCss = gradientDeclaration ? `
-    ${orderClass} .inftnc_gradient_title {
+    ${gradientTargets} {
       ${gradientDeclaration}
       -webkit-background-clip: text !important;
       -webkit-text-fill-color: transparent !important;
