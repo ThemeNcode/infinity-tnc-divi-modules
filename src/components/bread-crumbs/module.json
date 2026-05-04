@@ -72,6 +72,9 @@
                   "fields": {
                     "headingLevel": {
                       "render": false
+                    },
+                    "color": {
+                      "render": false
                     }
                   }
                 }
