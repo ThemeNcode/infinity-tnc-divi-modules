@@ -39,6 +39,7 @@ const ModuleStyles = ({
           },
         },
       })}
+      {(elements as any).style({ attrName: 'breadcrumbText' })}
       {colorCss ? <style>{colorCss}</style> : null}
       <CssStyle
         selector={orderClass}

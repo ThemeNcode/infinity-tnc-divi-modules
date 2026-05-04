@@ -54,6 +54,10 @@ export interface BreadCrumbsAttrs extends InternalAttrs {
     >;
   };
 
+  breadcrumbText?: {
+    decoration?: Element.Decoration.PickedAttributes<'font'>;
+  };
+
   breadCrumbsData?: {
     innerContent?: FormatBreakpointStateAttr<BreadCrumbsDataValue>;
   };

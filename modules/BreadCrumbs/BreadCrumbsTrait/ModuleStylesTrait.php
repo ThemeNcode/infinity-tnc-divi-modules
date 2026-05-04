@@ -80,6 +80,7 @@ trait ModuleStylesTrait {
 					],
 				]
 			),
+			$elements->style( [ 'attrName' => 'breadcrumbText' ] ),
 			CssStyle::style(
 				[
 					'selector'  => $order_class,
