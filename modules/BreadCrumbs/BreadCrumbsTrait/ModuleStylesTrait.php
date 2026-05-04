@@ -99,6 +99,8 @@ trait ModuleStylesTrait {
 				]
 			),
 
+
+
 			// Current page text color.
 			CssStyle::style(
 				[

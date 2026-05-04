@@ -48,10 +48,24 @@
     },
     "breadcrumbText": {
       "type": "object",
-      "selector": "{{selector}}, {{selector}} a, {{selector}} .inftnc_current, {{selector}} .inftnc_before",
+      "selector": "{{selector}}, {{selector}} a, {{selector}} .inftnc_current, {{selector}} .inftnc_before, {{selector}} .inftnc_separator, {{selector}} .inftnc_before_icon",
       "styleProps": {
         "font": {
           "important": true
+        }
+      },
+      "default": {
+        "decoration": {
+          "font": {
+            "font": {
+              "desktop": {
+                "value": {
+                  "size": "16px",
+                  "fontSize": "16px"
+                }
+              }
+            }
+          }
         }
       },
       "settings": {

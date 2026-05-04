@@ -23,10 +23,11 @@ const ModuleStyles = ({
   const breadCrumbsData = attrs?.breadCrumbsData?.innerContent?.desktop?.value || {};
 
   const colorCss = [
-    breadCrumbsData.link_color          ? `${orderClass} a { color: ${breadCrumbsData.link_color}; }` : '',
+
+    breadCrumbsData.link_color ? `${orderClass} a { color: ${breadCrumbsData.link_color} !important; }` : '',
     breadCrumbsData.seperate_icon_color ? `${orderClass} .inftnc_separator, ${orderClass} .inftnc_before_icon { color: ${breadCrumbsData.seperate_icon_color}; }` : '',
-    breadCrumbsData.current_text_color  ? `${orderClass} .inftnc_current { color: ${breadCrumbsData.current_text_color}; }` : '',
-    breadCrumbsData.before_text_color   ? `${orderClass} .inftnc_before { color: ${breadCrumbsData.before_text_color}; }` : '',
+    breadCrumbsData.current_text_color ? `${orderClass} .inftnc_current { color: ${breadCrumbsData.current_text_color} !important; }` : '',
+    breadCrumbsData.before_text_color ? `${orderClass} .inftnc_before { color: ${breadCrumbsData.before_text_color} !important; }` : '',
   ].filter(Boolean).join('\n');
 
   return (
