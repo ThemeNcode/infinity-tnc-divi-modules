@@ -24,7 +24,7 @@ const ModuleStyles = ({
 
   const colorCss = [
     breadCrumbsData.link_color          ? `${orderClass} a { color: ${breadCrumbsData.link_color}; }` : '',
-    breadCrumbsData.seperate_icon_color ? `${orderClass} .inftnc_separator { color: ${breadCrumbsData.seperate_icon_color}; }` : '',
+    breadCrumbsData.seperate_icon_color ? `${orderClass} .inftnc_separator, ${orderClass} .inftnc_before_icon { color: ${breadCrumbsData.seperate_icon_color}; }` : '',
     breadCrumbsData.current_text_color  ? `${orderClass} .inftnc_current { color: ${breadCrumbsData.current_text_color}; }` : '',
     breadCrumbsData.before_text_color   ? `${orderClass} .inftnc_before { color: ${breadCrumbsData.before_text_color}; }` : '',
   ].filter(Boolean).join('\n');

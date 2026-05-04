@@ -85,10 +85,10 @@ trait ModuleStylesTrait {
 				]
 			),
 
-			// Separator icon color.
+			// Separator and Before icon color.
 			CssStyle::style(
 				[
-					'selector' => "{$order_class} .inftnc_separator",
+					'selector' => "{$order_class} .inftnc_separator, {$order_class} .inftnc_before_icon",
 					'attr'     => [
 						'desktop' => [
 							'value' => [
