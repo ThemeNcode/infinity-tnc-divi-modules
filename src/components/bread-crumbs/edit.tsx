@@ -21,12 +21,23 @@ const BreadCrumbsEdit = (props: BreadCrumbsEditProps): ReactElement => {
   const homeText        = breadCrumbsData.home_text || 'Home';
   const beforeText      = breadCrumbsData.before_text || '';
   const useBeforeIcon   = breadCrumbsData.use_before_icon === 'on';
-  const defaultIcon = { unicode: '&#x35;', weight: '400', type: 'divi' };
+  const defaultIcon = { unicode: '&#x35;', weight: 400, type: 'divi' };
   const separatorIcon   = breadCrumbsData.seperator_icon || defaultIcon;
   const beforeTextIcon  = breadCrumbsData.before_text_icon || defaultIcon;
 
-  const separatorChar  = separatorIcon  ? processFontIcon(separatorIcon  as any) : null;
-  const beforeIconChar = beforeTextIcon ? processFontIcon(beforeTextIcon as any) : null;
+  let separatorChar = separatorIcon && typeof separatorIcon === 'object' ? processFontIcon(separatorIcon as any) : null;
+  if (!separatorChar) {
+    if (typeof separatorIcon === 'string' && separatorIcon.includes('&#x35;')) separatorChar = '5';
+    else if ((separatorIcon as any)?.unicode === '&#x35;') separatorChar = '5';
+    else separatorChar = '5';
+  }
+
+  let beforeIconChar = beforeTextIcon && typeof beforeTextIcon === 'object' ? processFontIcon(beforeTextIcon as any) : null;
+  if (!beforeIconChar) {
+    if (typeof beforeTextIcon === 'string' && beforeTextIcon.includes('&#x35;')) beforeIconChar = '5';
+    else if ((beforeTextIcon as any)?.unicode === '&#x35;') beforeIconChar = '5';
+    else beforeIconChar = '5';
+  }
 
   return (
     <ModuleContainer
