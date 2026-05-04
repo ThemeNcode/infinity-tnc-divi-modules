@@ -30,6 +30,8 @@ export const conversionOutline: ModuleConversionOutline = {
     after:        'css.*.after',
     before:       'css.*.before',
     main_element: 'css.*.mainElement',
+    title:        'css.*.right_button',
+    button:       'css.*.right_button',
   },
   module: {
     button_left_text:            'buttonLeft.innerContent.*.text',
