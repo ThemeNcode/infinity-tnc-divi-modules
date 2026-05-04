@@ -43,10 +43,6 @@ trait ModuleStylesTrait {
 			]
 		);
 
-		if ( 'off' === ( $attr_value['enable'] ?? 'off' ) ) {
-			return $declarations->value();
-		}
-
 		$icon_settings = $attr_value['icon']['settings'] ?? [];
 
 		if ( ! empty( $icon_settings ) ) {

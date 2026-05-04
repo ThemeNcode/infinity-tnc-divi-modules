@@ -1,3 +1,8 @@
+import {
+  isFaIcon,
+  escapeFontIcon,
+  processFontIcon,
+} from '@divi/icon-library';
 import { StyleDeclarations } from '@divi/style-library';
 
 interface BtnIconParams {
@@ -17,15 +22,24 @@ export const buttonIconStyleDeclaration = ({ attrValue }: BtnIconParams): string
   const declarations = new StyleDeclarations({
     returnType: 'string',
     important: {
+      'font-family': true,
       'font-size':   true,
       'line-height': true,
+      content:       true,
     },
   });
 
-  if ('off' === (attrValue?.enable ?? 'off')) return declarations.value as string;
+  const iconSettings = attrValue?.icon?.settings;
+  const fontIcon     = processFontIcon(iconSettings as any);
 
-  const placement    = attrValue?.icon?.placement ?? 'right';
-  const hasCustomIcon = Boolean(attrValue?.icon?.settings?.unicode);
+  if (fontIcon) {
+    const fontFamily = isFaIcon(iconSettings as any) ? 'FontAwesome' : 'ETmodules';
+    declarations.add('content', `'${escapeFontIcon(fontIcon)}'`);
+    declarations.add('font-family', `"${fontFamily}"`);
+  }
+
+  const placement     = attrValue?.icon?.placement ?? 'right';
+  const hasCustomIcon = Boolean(fontIcon);
 
   if ('left' === placement) {
     declarations.add('margin-left', '-1.3em');

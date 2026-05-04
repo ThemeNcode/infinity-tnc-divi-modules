@@ -35,10 +35,8 @@ trait RenderCallbackTrait {
 	 */
 	protected static function build_icon_data_attrs( array $button_decoration ): array {
 		$desktop_value     = $button_decoration['desktop']['value'] ?? [];
-		$has_custom_button = 'on' === ( $desktop_value['enable'] ?? 'off' );
 		$is_icon_enabled   = 'on' === ( $desktop_value['icon']['enable'] ?? 'off' );
-
-		if ( ! $has_custom_button || ! $is_icon_enabled ) {
+		if ( ! $is_icon_enabled ) {
 			return [];
 		}
 

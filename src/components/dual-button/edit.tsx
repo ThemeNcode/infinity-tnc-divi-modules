@@ -12,10 +12,8 @@ const buildIconDataAttrs = (decoration: any): Record<string, string | null> => {
   const btnDec = decoration?.button;
   if (!btnDec) return {};
 
-  const hasCustomButton = 'on' === (btnDec?.desktop?.value?.enable ?? 'off');
-  const isIconEnabled   = 'on' === (btnDec?.desktop?.value?.icon?.enable ?? 'off');
-
-  if (!hasCustomButton || !isIconEnabled) return {};
+  const isIconEnabled = 'on' === (btnDec?.desktop?.value?.icon?.enable ?? 'off');
+  if (!isIconEnabled) return {};
 
   const breakpointToDataAttr = (bp: string): string => {
     if ('desktop' === bp) return 'data-icon';
