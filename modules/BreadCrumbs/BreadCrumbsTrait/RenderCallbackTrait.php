@@ -68,9 +68,9 @@ trait RenderCallbackTrait {
 		$before_text       = $bread_crumbs_data['before_text'] ?? '';
 		$use_before_icon   = $bread_crumbs_data['use_before_icon'] ?? 'off';
 
-		$separator_char = self::resolve_icon_char( $bread_crumbs_data['seperator_icon'] ?? [], '&#x35;' );
+		$separator_char = self::resolve_icon_char( $bread_crumbs_data['seperator_icon'] ?? '&#x35;||divi', '&#x35;' );
 		$before_icon_char = 'on' === $use_before_icon
-			? self::resolve_icon_char( $bread_crumbs_data['before_text_icon'] ?? [], '&#x35;' )
+			? self::resolve_icon_char( $bread_crumbs_data['before_text_icon'] ?? '&#x35;||divi', '&#x35;' )
 			: '';
 
 		// Build breadcrumb output — infinity_tnc_breadcrumb wraps $separator_char in .inftnc_separator.et-pb-icon.

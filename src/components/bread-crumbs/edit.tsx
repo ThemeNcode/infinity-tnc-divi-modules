@@ -21,8 +21,9 @@ const BreadCrumbsEdit = (props: BreadCrumbsEditProps): ReactElement => {
   const homeText        = breadCrumbsData.home_text || 'Home';
   const beforeText      = breadCrumbsData.before_text || '';
   const useBeforeIcon   = breadCrumbsData.use_before_icon === 'on';
-  const separatorIcon   = breadCrumbsData.seperator_icon;
-  const beforeTextIcon  = breadCrumbsData.before_text_icon;
+  const defaultIcon = { unicode: '&#x35;', weight: '400', type: 'divi' };
+  const separatorIcon   = breadCrumbsData.seperator_icon || defaultIcon;
+  const beforeTextIcon  = breadCrumbsData.before_text_icon || defaultIcon;
 
   const separatorChar  = separatorIcon  ? processFontIcon(separatorIcon  as any) : null;
   const beforeIconChar = beforeTextIcon ? processFontIcon(beforeTextIcon as any) : null;

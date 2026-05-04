@@ -90,9 +90,17 @@
             "value": {
               "home_text": "Home",
               "before_text": "",
-              "seperator_icon": "&#x35;||divi",
+              "seperator_icon": {
+                "unicode": "&#x35;",
+                "weight": "400",
+                "type": "divi"
+              },
               "use_before_icon": "off",
-              "before_text_icon": "&#x35;||divi",
+              "before_text_icon": {
+                "unicode": "&#x35;",
+                "weight": "400",
+                "type": "divi"
+              },
               "link_color": "",
               "seperate_icon_color": "",
               "current_text_color": "",
@@ -158,7 +166,11 @@
                 "name": "divi/icon-picker",
                 "type": "field",
                 "props": {
-                  "default": "&#x35;||divi"
+                  "default": {
+                    "unicode": "&#x35;",
+                    "weight": "400",
+                    "type": "divi"
+                  }
                 }
               }
             },
@@ -206,7 +218,11 @@
                 "name": "divi/icon-picker",
                 "type": "field",
                 "props": {
-                  "default": "&#x35;||divi"
+                  "default": {
+                    "unicode": "&#x35;",
+                    "weight": "400",
+                    "type": "divi"
+                  }
                 }
               }
             },
