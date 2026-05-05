@@ -31,6 +31,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 define( 'INFINITY_TNC_DIVI_MODULES_PATH', plugin_dir_path( __FILE__ ) );
+define( 'INFINITY_TNC_DIVI_MODULES_URL', plugin_dir_url( __FILE__ ) );
 define( 'INFINITY_TNC_DIVI_MODULES_JSON_PATH', INFINITY_TNC_DIVI_MODULES_PATH . 'modules-json/' );
 
 /**

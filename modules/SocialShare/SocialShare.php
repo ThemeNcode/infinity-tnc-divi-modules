@@ -38,13 +38,27 @@ class SocialShare implements DependencyInterface {
 		add_action(
 			'init',
 			function() use ( $module_json_folder_path ) {
+				wp_register_script(
+					'inftnc-social-share',
+					INFINITY_TNC_DIVI_MODULES_URL . 'admin/assets/js/inftnc-social-share.min.js',
+					[ 'jquery' ],
+					'1.2.0',
+					true
+				);
+
 				ModuleRegistration::register_module(
 					$module_json_folder_path,
 					[
 						'render_callback' => [ SocialShare::class, 'render_callback' ],
+						'assets'          => [
+							'scripts' => [
+								'inftnc-social-share',
+							],
+						],
 					]
 				);
 			}
 		);
+
 	}
 }
