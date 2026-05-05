@@ -4,6 +4,7 @@ import {
   StylesProps,
   CssStyle,
 } from '@divi/module';
+import { getAttrByMode } from '@divi/module-utils';
 
 import { SocialShareAttrs, SocialShareInnerContent } from './types';
 import { cssFields } from './custom-css';
@@ -27,14 +28,32 @@ export const ModuleStyles = ({
   state,
   noStyleTag,
 }: StylesProps<SocialShareAttrs>): ReactElement => {
-  const data: SocialShareInnerContent = attrs?.socialShareData?.innerContent?.desktop?.value ?? {};
+  // Use getAttrByMode so the VB live-preview reacts to breakpoint/state changes.
+  const data: SocialShareInnerContent = (getAttrByMode(attrs?.socialShareData?.innerContent) ?? {}) as SocialShareInnerContent;
 
-  const columns       = data.columns ?? 'column_auto';
+  let columns       = data.columns ?? 'column_auto';
+  let buttonLayout  = data.button_layout ?? 'icon_with_text';
+  let buttonShape   = data.button_shape ?? 'button_square';
+
+  // divi/select inside group-items can store a numeric index — resolve to string value.
+  const columnsKeys = [ 'column_auto', 'column_one', 'column_two', 'column_three', 'column_four', 'column_five', 'column_six' ];
+  if (typeof columns === 'number') {
+    columns = columnsKeys[columns] ?? 'column_auto';
+  }
+
+  const buttonLayoutKeys = [ 'icon_with_text', 'only_icon', 'only_text' ];
+  if (typeof buttonLayout === 'number') {
+    buttonLayout = buttonLayoutKeys[buttonLayout] ?? 'icon_with_text';
+  }
+
+  const buttonShapeKeys = [ 'button_square', 'button_rounded', 'button_circle' ];
+  if (typeof buttonShape === 'number') {
+    buttonShape = buttonShapeKeys[buttonShape] ?? 'button_square';
+  }
+
   const columnsCss    = COLUMN_TEMPLATES[columns] ?? COLUMN_TEMPLATES.column_auto;
   const columnsGap    = data.columns_gap ?? '10px';
   const rowGap        = data.row_gap ?? '10px';
-  const buttonLayout  = data.button_layout ?? 'icon_with_text';
-  const buttonShape   = data.button_shape ?? 'button_square';
   const onlyIcon      = buttonLayout === 'only_icon';
   const onlyText      = buttonLayout === 'only_text';
   const isCircle      = buttonShape === 'button_circle';

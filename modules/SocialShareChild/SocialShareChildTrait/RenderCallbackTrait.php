@@ -119,17 +119,32 @@ trait RenderCallbackTrait {
 		$parent_attrs = ModuleUtils::get_all_attrs( $parent );
 
 		$data    = $attrs['socialShareChildData']['innerContent']['desktop']['value'] ?? [];
-		$network = $data['social_share'] ?? 'facebook';
+		$raw_network = $data['social_share'] ?? 'facebook';
+
+		// divi/select inside group-items can store a numeric index instead of the value string.
+		// Resolve it back to the correct key using the ordered network list.
+		$network_keys = [
+			'facebook', 'whatsapp', 'twitter', 'pinterest',
+			'linekdin', 'telegram', 'reddit', 'tumblr', 'email', 'blogger',
+		];
+		if ( is_numeric( $raw_network ) ) {
+			$network = $network_keys[ (int) $raw_network ] ?? 'facebook';
+		} elseif ( in_array( $raw_network, $network_keys, true ) ) {
+			$network = $raw_network;
+		} else {
+			$network = 'facebook';
+		}
 
 		$share_url = self::get_share_url( $network );
 		$icon_html = self::get_network_icon( $network );
 		$label     = self::get_network_label( $network );
 
-		$text_span = sprintf( '<span class="inftnc_social_text">%s</span>', esc_html( $label ) );
+		$network_class_key = ( 'facebook' === $network ) ? 'fb' : $network;
+		$text_span = sprintf( '<span class="inftnc_social_text inftnc_%s_text">%s</span>', esc_attr( $network_class_key ), esc_html( $label ) );
 
 		$link_html = sprintf(
 			'<a class="inftnc_share_link inftnc_%s_share_link" href="%s" target="_blank" rel="noopener noreferrer">%s%s</a>',
-			esc_attr( $network ),
+			esc_attr( $network_class_key ),
 			esc_url( $share_url ),
 			$text_span,
 			$icon_html

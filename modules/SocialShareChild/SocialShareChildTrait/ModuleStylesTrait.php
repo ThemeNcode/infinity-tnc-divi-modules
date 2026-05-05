@@ -42,36 +42,32 @@ trait ModuleStylesTrait {
 		$icon_color_child     = $data['icon_color_child'] ?? '';
 		$icon_size_child      = $data['icon_size_child'] ?? '';
 
-		$css_parts = [];
+		$module_css = [];
+		$button_css = [];
+		$link_css   = [];
+		$icon_css   = [];
 
 		// Full width share button.
-		$css_parts[] = sprintf( '%s .inftnc_share_button { width:100%%; }', $order_class );
-		$css_parts[] = sprintf( '%s.inftnc_social_share_child { margin-bottom:0 !important; }', $order_class );
+		$button_css[] = 'width:100%;';
+		$module_css[] = 'margin-bottom:0 !important;';
 
 		if ( ! empty( $button_color_child ) ) {
-			$css_parts[] = sprintf( '%s .inftnc_share_link { background-color:%s !important; }', $order_class, esc_attr( $button_color_child ) );
+			$link_css[] = sprintf( 'background-color:%s !important;', esc_attr( $button_color_child ) );
 		}
 
 		if ( ! empty( $icon_color_child ) ) {
-			$css_parts[] = sprintf( '%s .inftnc_social_icon { color:%s !important; }', $order_class, esc_attr( $icon_color_child ) );
+			$icon_css[] = sprintf( 'color:%s !important;', esc_attr( $icon_color_child ) );
 		}
 
 		if ( ! empty( $icon_size_child ) ) {
-			$size_value  = is_numeric( $icon_size_child ) ? $icon_size_child . 'px' : $icon_size_child;
-			$css_parts[] = sprintf( '%s .inftnc_social_icon { font-size:%s !important; }', $order_class, esc_attr( $size_value ) );
+			$size_value = is_numeric( $icon_size_child ) ? $icon_size_child . 'px' : $icon_size_child;
+			$icon_css[] = sprintf( 'font-size:%s !important;', esc_attr( $size_value ) );
 		}
 
 		if ( ! empty( $button_padding_child ) ) {
 			$parts = explode( '|', $button_padding_child );
 			if ( 4 === count( $parts ) ) {
-				$css_parts[] = sprintf(
-					'%s .inftnc_share_link { padding:%s %s %s %s !important; }',
-					$order_class,
-					esc_attr( $parts[0] ),
-					esc_attr( $parts[1] ),
-					esc_attr( $parts[2] ),
-					esc_attr( $parts[3] )
-				);
+				$link_css[] = sprintf( 'padding:%s %s %s %s !important;', esc_attr( $parts[0] ), esc_attr( $parts[1] ), esc_attr( $parts[2] ), esc_attr( $parts[3] ) );
 			}
 		}
 
@@ -95,8 +91,32 @@ trait ModuleStylesTrait {
 					'cssFields' => self::custom_css(),
 				]
 			),
-			implode( "\n", $css_parts ),
 		];
+
+		if ( ! empty( $module_css ) ) {
+			$styles[] = CssStyle::style( [
+				'selector' => $order_class,
+				'attr'     => [ 'desktop' => [ 'value' => [ 'mainElement' => implode( ' ', $module_css ) ] ] ],
+			] );
+		}
+		if ( ! empty( $button_css ) ) {
+			$styles[] = CssStyle::style( [
+				'selector' => "{$order_class} .inftnc_share_button",
+				'attr'     => [ 'desktop' => [ 'value' => [ 'mainElement' => implode( ' ', $button_css ) ] ] ],
+			] );
+		}
+		if ( ! empty( $link_css ) ) {
+			$styles[] = CssStyle::style( [
+				'selector' => "{$order_class} .inftnc_share_link",
+				'attr'     => [ 'desktop' => [ 'value' => [ 'mainElement' => implode( ' ', $link_css ) ] ] ],
+			] );
+		}
+		if ( ! empty( $icon_css ) ) {
+			$styles[] = CssStyle::style( [
+				'selector' => "{$order_class} .inftnc_social_icon",
+				'attr'     => [ 'desktop' => [ 'value' => [ 'mainElement' => implode( ' ', $icon_css ) ] ] ],
+			] );
+		}
 
 		Style::add(
 			[

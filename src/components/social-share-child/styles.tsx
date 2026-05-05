@@ -4,6 +4,7 @@ import {
   StylesProps,
   CssStyle,
 } from '@divi/module';
+import { getAttrByMode } from '@divi/module-utils';
 
 import { SocialShareChildAttrs, SocialShareChildInnerContent } from './types';
 import { SocialShareAttrs } from '../social-share/types';
@@ -19,7 +20,8 @@ export const ModuleStyles = ({
   state,
   noStyleTag,
 }: StylesProps<SocialShareChildAttrs, SocialShareAttrs>): ReactElement => {
-  const data: SocialShareChildInnerContent = attrs?.socialShareChildData?.innerContent?.desktop?.value ?? {};
+  // Use getAttrByMode so the VB live-preview reacts to breakpoint/state changes.
+  const data: SocialShareChildInnerContent = (getAttrByMode(attrs?.socialShareChildData?.innerContent) ?? {}) as SocialShareChildInnerContent;
 
   const lines: string[] = [];
 

@@ -47,6 +47,22 @@ trait ModuleStylesTrait {
 		$icon_size      = $data['icon_size'] ?? '';
 		$button_padding = $data['button_padding'] ?? '';
 
+		// divi/select inside group-items can store a numeric index — resolve to string value.
+		$button_layout_keys = [ 'icon_with_text', 'only_icon', 'only_text' ];
+		if ( is_numeric( $button_layout ) ) {
+			$button_layout = $button_layout_keys[ (int) $button_layout ] ?? 'icon_with_text';
+		}
+
+		$button_shape_keys = [ 'button_square', 'button_rounded', 'button_circle' ];
+		if ( is_numeric( $button_shape ) ) {
+			$button_shape = $button_shape_keys[ (int) $button_shape ] ?? 'button_square';
+		}
+
+		$columns_keys = [ 'column_auto', 'column_one', 'column_two', 'column_three', 'column_four', 'column_five', 'column_six' ];
+		if ( is_numeric( $columns ) ) {
+			$columns = $columns_keys[ (int) $columns ] ?? 'column_auto';
+		}
+
 		$column_map = [
 			'column_auto'  => 'repeat(auto-fill, minmax(200px, 1fr))',
 			'column_one'   => 'repeat(1, 1fr)',
@@ -62,75 +78,65 @@ trait ModuleStylesTrait {
 		$is_circle  = 'button_circle' === $button_shape;
 		$is_rounded = 'button_rounded' === $button_shape;
 
-		$css_parts = [];
+		$wrapper_css = [];
+		$link_css    = [];
+		$icon_css    = [];
+		$text_css    = [];
 
 		// Wrapper grid / flex layout.
 		if ( $only_icon && $is_circle && 'column_auto' === $columns ) {
-			$css_parts[] = sprintf(
-				'%s .inftnc_social_share_wrapper { display:flex !important; flex-direction:row !important; flex-wrap:wrap !important; column-gap:%s; row-gap:%s; }',
-				$order_class, esc_attr( $columns_gap ), esc_attr( $row_gap )
-			);
+			$wrapper_css[] = sprintf( 'display:flex !important; flex-direction:row !important; flex-wrap:wrap !important; column-gap:%s; row-gap:%s;', esc_attr( $columns_gap ), esc_attr( $row_gap ) );
 		} else {
 			$grid_columns = $column_map[ $columns ] ?? $column_map['column_auto'];
-			$css_parts[]  = sprintf(
-				'%s .inftnc_social_share_wrapper { display:grid; grid-template-columns:%s; column-gap:%s; row-gap:%s; }',
-				$order_class, $grid_columns, esc_attr( $columns_gap ), esc_attr( $row_gap )
-			);
+			$wrapper_css[] = sprintf( 'display:grid; grid-template-columns:%s; column-gap:%s; row-gap:%s;', $grid_columns, esc_attr( $columns_gap ), esc_attr( $row_gap ) );
 		}
 
 		// Button background.
 		if ( ! empty( $button_bg ) ) {
-			$css_parts[] = sprintf( '%s .inftnc_share_link { background-color:%s; }', $order_class, esc_attr( $button_bg ) );
+			$link_css[] = sprintf( 'background-color:%s;', esc_attr( $button_bg ) );
 		}
 
 		// Button shape.
 		if ( $is_circle && $only_icon ) {
-			$css_parts[] = sprintf( '%s .inftnc_share_link { border-radius:100px; width:45px; padding:10px; text-align:center; display:unset !important; }', $order_class );
-			$css_parts[] = sprintf( '%s .inftnc_social_icon { margin-left:unset; }', $order_class );
+			$link_css[] = 'border-radius:100px; width:45px; padding:10px; text-align:center; display:unset !important;';
+			$icon_css[] = 'margin-left:unset;';
 		} elseif ( $is_circle ) {
-			$css_parts[] = sprintf( '%s .inftnc_share_link { border-radius:30px; }', $order_class );
+			$link_css[] = 'border-radius:30px;';
 		} elseif ( $is_rounded ) {
-			$css_parts[] = sprintf( '%s .inftnc_share_link { border-radius:10px; }', $order_class );
+			$link_css[] = 'border-radius:10px;';
 		} else {
-			$css_parts[] = sprintf( '%s .inftnc_share_link { border-radius:0; }', $order_class );
+			$link_css[] = 'border-radius:0;';
 		}
 
 		// Only icon.
 		if ( $only_icon ) {
-			$css_parts[] = sprintf( '%s .inftnc_social_text { display:none; }', $order_class );
+			$text_css[] = 'display:none;';
 			if ( ! $is_circle ) {
-				$css_parts[] = sprintf( '%s .inftnc_share_link { justify-content:center; }', $order_class );
+				$link_css[] = 'justify-content:center;';
 			}
 		}
 
 		// Only text.
 		if ( $only_text ) {
-			$css_parts[] = sprintf( '%s .inftnc_social_icon { display:none; }', $order_class );
+			$icon_css[] = 'display:none;';
 		}
 
 		// Icon color.
 		if ( ! empty( $icon_color ) ) {
-			$css_parts[] = sprintf( '%s .inftnc_social_icon { color:%s; }', $order_class, esc_attr( $icon_color ) );
+			$icon_css[] = sprintf( 'color:%s;', esc_attr( $icon_color ) );
 		}
 
 		// Icon size.
 		if ( ! empty( $icon_size ) ) {
 			$size_value  = is_numeric( $icon_size ) ? $icon_size . 'px' : $icon_size;
-			$css_parts[] = sprintf( '%s .inftnc_social_icon { font-size:%s; }', $order_class, esc_attr( $size_value ) );
+			$icon_css[] = sprintf( 'font-size:%s;', esc_attr( $size_value ) );
 		}
 
 		// Button padding.
 		if ( ! empty( $button_padding ) ) {
 			$parts = explode( '|', $button_padding );
 			if ( 4 === count( $parts ) ) {
-				$css_parts[] = sprintf(
-					'%s .inftnc_share_link { padding:%s %s %s %s; }',
-					$order_class,
-					esc_attr( $parts[0] ),
-					esc_attr( $parts[1] ),
-					esc_attr( $parts[2] ),
-					esc_attr( $parts[3] )
-				);
+				$link_css[] = sprintf( 'padding:%s %s %s %s;', esc_attr( $parts[0] ), esc_attr( $parts[1] ), esc_attr( $parts[2] ), esc_attr( $parts[3] ) );
 			}
 		}
 
@@ -156,8 +162,29 @@ trait ModuleStylesTrait {
 			),
 		];
 
-		if ( ! empty( $css_parts ) ) {
-			$styles[] = implode( "\n", $css_parts );
+		if ( ! empty( $wrapper_css ) ) {
+			$styles[] = CssStyle::style( [
+				'selector' => "{$order_class} .inftnc_social_share_wrapper",
+				'attr'     => [ 'desktop' => [ 'value' => [ 'mainElement' => implode( ' ', $wrapper_css ) ] ] ],
+			] );
+		}
+		if ( ! empty( $link_css ) ) {
+			$styles[] = CssStyle::style( [
+				'selector' => "{$order_class} .inftnc_share_link",
+				'attr'     => [ 'desktop' => [ 'value' => [ 'mainElement' => implode( ' ', $link_css ) ] ] ],
+			] );
+		}
+		if ( ! empty( $icon_css ) ) {
+			$styles[] = CssStyle::style( [
+				'selector' => "{$order_class} .inftnc_social_icon",
+				'attr'     => [ 'desktop' => [ 'value' => [ 'mainElement' => implode( ' ', $icon_css ) ] ] ],
+			] );
+		}
+		if ( ! empty( $text_css ) ) {
+			$styles[] = CssStyle::style( [
+				'selector' => "{$order_class} .inftnc_social_text",
+				'attr'     => [ 'desktop' => [ 'value' => [ 'mainElement' => implode( ' ', $text_css ) ] ] ],
+			] );
 		}
 
 		Style::add(
