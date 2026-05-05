@@ -9,7 +9,9 @@
   "category": "module",
   "childModuleName": "inftnc/social-share-child",
   "childModuleTitle": "Social Network",
-  "childrenName": ["inftnc/social-share-child"],
+  "childrenName": [
+    "inftnc/social-share-child"
+  ],
   "attributes": {
     "module": {
       "type": "object",
@@ -73,7 +75,9 @@
                   "grouped": false,
                   "fieldLabel": "Button Text",
                   "fields": {
-                    "headingLevel": { "render": false }
+                    "headingLevel": {
+                      "render": false
+                    }
                   }
                 }
               }
@@ -114,15 +118,28 @@
               "description": "Choose the button layout style.",
               "priority": 10,
               "render": true,
-              "features": { "sticky": false, "hover": false, "responsive": false },
+              "features": {
+                "sticky": false,
+                "hover": false,
+                "responsive": false
+              },
               "component": {
                 "name": "divi/select",
                 "type": "field",
                 "props": {
                   "options": [
-                    { "label": "Icon with Text", "value": "icon_with_text" },
-                    { "label": "Only Icon", "value": "only_icon" },
-                    { "label": "Only Text", "value": "only_text" }
+                    {
+                      "label": "Icon with Text",
+                      "value": "icon_with_text"
+                    },
+                    {
+                      "label": "Only Icon",
+                      "value": "only_icon"
+                    },
+                    {
+                      "label": "Only Text",
+                      "value": "only_text"
+                    }
                   ]
                 }
               }
@@ -135,15 +152,28 @@
               "description": "Choose the button shape.",
               "priority": 20,
               "render": true,
-              "features": { "sticky": false, "hover": false, "responsive": false },
+              "features": {
+                "sticky": false,
+                "hover": false,
+                "responsive": false
+              },
               "component": {
                 "name": "divi/select",
                 "type": "field",
                 "props": {
                   "options": [
-                    { "label": "Square", "value": "button_square" },
-                    { "label": "Rounded", "value": "button_rounded" },
-                    { "label": "Circle", "value": "button_circle" }
+                    {
+                      "label": "Square",
+                      "value": "button_square"
+                    },
+                    {
+                      "label": "Rounded",
+                      "value": "button_rounded"
+                    },
+                    {
+                      "label": "Circle",
+                      "value": "button_circle"
+                    }
                   ]
                 }
               }
@@ -156,19 +186,44 @@
               "description": "Choose number of columns.",
               "priority": 30,
               "render": true,
-              "features": { "sticky": false, "hover": false, "responsive": false },
+              "features": {
+                "sticky": false,
+                "hover": false,
+                "responsive": false
+              },
               "component": {
                 "name": "divi/select",
                 "type": "field",
                 "props": {
                   "options": [
-                    { "label": "Auto", "value": "column_auto" },
-                    { "label": "1", "value": "column_one" },
-                    { "label": "2", "value": "column_two" },
-                    { "label": "3", "value": "column_three" },
-                    { "label": "4", "value": "column_four" },
-                    { "label": "5", "value": "column_five" },
-                    { "label": "6", "value": "column_six" }
+                    {
+                      "label": "Auto",
+                      "value": "column_auto"
+                    },
+                    {
+                      "label": "1",
+                      "value": "column_one"
+                    },
+                    {
+                      "label": "2",
+                      "value": "column_two"
+                    },
+                    {
+                      "label": "3",
+                      "value": "column_three"
+                    },
+                    {
+                      "label": "4",
+                      "value": "column_four"
+                    },
+                    {
+                      "label": "5",
+                      "value": "column_five"
+                    },
+                    {
+                      "label": "6",
+                      "value": "column_six"
+                    }
                   ]
                 }
               }
@@ -180,11 +235,24 @@
               "label": "Column Gap",
               "priority": 40,
               "render": true,
-              "features": { "sticky": false, "hover": false, "responsive": false },
+              "features": {
+                "sticky": false,
+                "hover": false,
+                "responsive": false
+              },
               "component": {
                 "name": "divi/range",
                 "type": "field",
-                "props": { "min": 0, "max": 100, "allowedUnits": ["px", "em", "rem", "%"] }
+                "props": {
+                  "min": 0,
+                  "max": 100,
+                  "allowedUnits": [
+                    "px",
+                    "em",
+                    "rem",
+                    "%"
+                  ]
+                }
               }
             },
             "row_gap": {
@@ -194,11 +262,24 @@
               "label": "Row Gap",
               "priority": 50,
               "render": true,
-              "features": { "sticky": false, "hover": false, "responsive": false },
+              "features": {
+                "sticky": false,
+                "hover": false,
+                "responsive": false
+              },
               "component": {
                 "name": "divi/range",
                 "type": "field",
-                "props": { "min": 0, "max": 100, "allowedUnits": ["px", "em", "rem", "%"] }
+                "props": {
+                  "min": 0,
+                  "max": 100,
+                  "allowedUnits": [
+                    "px",
+                    "em",
+                    "rem",
+                    "%"
+                  ]
+                }
               }
             },
             "button_bg": {
@@ -208,8 +289,15 @@
               "label": "Button Background Color",
               "priority": 10,
               "render": true,
-              "features": { "sticky": false, "hover": false, "responsive": false },
-              "component": { "name": "divi/color-picker", "type": "field" }
+              "features": {
+                "sticky": false,
+                "hover": false,
+                "responsive": false
+              },
+              "component": {
+                "name": "divi/color-picker",
+                "type": "field"
+              }
             },
             "button_padding": {
               "groupSlug": "designShareButton",
@@ -218,8 +306,15 @@
               "label": "Button Padding",
               "priority": 20,
               "render": true,
-              "features": { "sticky": false, "hover": false, "responsive": false },
-              "component": { "name": "divi/four-range-fields", "type": "field" }
+              "features": {
+                "sticky": false,
+                "hover": false,
+                "responsive": false
+              },
+              "component": {
+                "name": "divi/spacing",
+                "type": "field"
+              }
             },
             "icon_color": {
               "groupSlug": "designShareIcon",
@@ -228,8 +323,15 @@
               "label": "Icon Color",
               "priority": 10,
               "render": true,
-              "features": { "sticky": false, "hover": false, "responsive": false },
-              "component": { "name": "divi/color-picker", "type": "field" }
+              "features": {
+                "sticky": false,
+                "hover": false,
+                "responsive": false
+              },
+              "component": {
+                "name": "divi/color-picker",
+                "type": "field"
+              }
             },
             "icon_size": {
               "groupSlug": "designShareIcon",
@@ -238,11 +340,21 @@
               "label": "Icon Size",
               "priority": 20,
               "render": true,
-              "features": { "sticky": false, "hover": false, "responsive": false },
+              "features": {
+                "sticky": false,
+                "hover": false,
+                "responsive": false
+              },
               "component": {
                 "name": "divi/range",
                 "type": "field",
-                "props": { "min": 0, "max": 100, "allowedUnits": ["px"] }
+                "props": {
+                  "min": 0,
+                  "max": 100,
+                  "allowedUnits": [
+                    "px"
+                  ]
+                }
               }
             }
           }
@@ -280,7 +392,9 @@
         "multiElements": true,
         "component": {
           "name": "divi/composite",
-          "props": { "groupLabel": "Layout" }
+          "props": {
+            "groupLabel": "Layout"
+          }
         }
       },
       "designButtonText": {
@@ -289,7 +403,10 @@
         "groupName": "designButtonText",
         "component": {
           "name": "divi/composite",
-          "props": { "groupLabel": "Button Text", "presetGroup": "divi/font" }
+          "props": {
+            "groupLabel": "Button Text",
+            "presetGroup": "divi/font"
+          }
         }
       },
       "designShareButton": {
@@ -299,7 +416,9 @@
         "multiElements": true,
         "component": {
           "name": "divi/composite",
-          "props": { "groupLabel": "Share Button" }
+          "props": {
+            "groupLabel": "Share Button"
+          }
         }
       },
       "designShareIcon": {
@@ -309,7 +428,9 @@
         "multiElements": true,
         "component": {
           "name": "divi/composite",
-          "props": { "groupLabel": "Share Icon" }
+          "props": {
+            "groupLabel": "Share Icon"
+          }
         }
       }
     }

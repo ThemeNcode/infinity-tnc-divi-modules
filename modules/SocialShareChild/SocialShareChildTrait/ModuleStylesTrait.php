@@ -65,8 +65,13 @@ trait ModuleStylesTrait {
 		}
 
 		if ( ! empty( $button_padding_child ) ) {
-			$parts = explode( '|', $button_padding_child );
-			if ( 4 === count( $parts ) ) {
+			if ( is_array( $button_padding_child ) ) {
+				$parts = array_values( $button_padding_child );
+			} else {
+				$parts = explode( '|', $button_padding_child );
+			}
+			
+			if ( count( $parts ) >= 4 ) {
 				$link_css[] = sprintf( 'padding:%s %s %s %s !important;', esc_attr( $parts[0] ), esc_attr( $parts[1] ), esc_attr( $parts[2] ), esc_attr( $parts[3] ) );
 			}
 		}

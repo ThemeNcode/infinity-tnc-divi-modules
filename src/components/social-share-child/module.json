@@ -79,7 +79,7 @@
             "value": {
               "social_share": "facebook",
               "button_color_child": "",
-              "button_padding_child": "",
+              "button_padding_child": "10px|24px|10px|24px",
               "icon_color_child": "",
               "icon_size_child": "16px"
             }
@@ -136,7 +136,7 @@
               "priority": 20,
               "render": true,
               "features": { "sticky": false, "hover": false, "responsive": false },
-              "component": { "name": "divi/four-range-fields", "type": "field" }
+              "component": { "name": "divi/spacing", "type": "field" }
             },
             "icon_color_child": {
               "groupSlug": "designShareIcon",

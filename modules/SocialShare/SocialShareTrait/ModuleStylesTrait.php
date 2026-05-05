@@ -134,8 +134,13 @@ trait ModuleStylesTrait {
 
 		// Button padding.
 		if ( ! empty( $button_padding ) ) {
-			$parts = explode( '|', $button_padding );
-			if ( 4 === count( $parts ) ) {
+			if ( is_array( $button_padding ) ) {
+				$parts = array_values( $button_padding );
+			} else {
+				$parts = explode( '|', $button_padding );
+			}
+			
+			if ( count( $parts ) >= 4 ) {
 				$link_css[] = sprintf( 'padding:%s %s %s %s;', esc_attr( $parts[0] ), esc_attr( $parts[1] ), esc_attr( $parts[2] ), esc_attr( $parts[3] ) );
 			}
 		}
