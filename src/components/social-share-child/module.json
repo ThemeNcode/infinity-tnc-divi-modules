@@ -79,14 +79,10 @@
             "value": {
               "social_share": "facebook",
               "button_color_child": "",
-              "button_padding_child": {
-                "padding": {
-                  "top": "10px",
-                  "right": "24px",
-                  "bottom": "10px",
-                  "left": "24px"
-                }
-              },
+              "button_padding_child_top": "",
+              "button_padding_child_right": "",
+              "button_padding_child_bottom": "",
+              "button_padding_child_left": "",
               "icon_color_child": "",
               "icon_size_child": "16px"
             }
@@ -135,21 +131,60 @@
               "features": { "sticky": false, "hover": false, "responsive": false },
               "component": { "name": "divi/color-picker", "type": "field" }
             },
-            "button_padding_child": {
+            "button_padding_child_top": {
               "groupSlug": "designShareButton",
               "attrName": "socialShareChildData.innerContent",
-              "subName": "button_padding_child",
-              "label": "Button Padding",
+              "subName": "button_padding_child_top",
+              "label": "Padding Top",
               "priority": 20,
               "render": true,
               "features": { "sticky": false, "hover": false, "responsive": false },
               "component": {
-                "name": "divi/spacing",
-                "type": "group",
-                "props": {
-                  "grouped": false,
-                  "fieldLabel": "Button Padding"
-                }
+                "name": "divi/range",
+                "type": "field",
+                "props": { "min": 0, "max": 200, "allowedUnits": ["px", "em", "rem", "%"] }
+              }
+            },
+            "button_padding_child_right": {
+              "groupSlug": "designShareButton",
+              "attrName": "socialShareChildData.innerContent",
+              "subName": "button_padding_child_right",
+              "label": "Padding Right",
+              "priority": 21,
+              "render": true,
+              "features": { "sticky": false, "hover": false, "responsive": false },
+              "component": {
+                "name": "divi/range",
+                "type": "field",
+                "props": { "min": 0, "max": 200, "allowedUnits": ["px", "em", "rem", "%"] }
+              }
+            },
+            "button_padding_child_bottom": {
+              "groupSlug": "designShareButton",
+              "attrName": "socialShareChildData.innerContent",
+              "subName": "button_padding_child_bottom",
+              "label": "Padding Bottom",
+              "priority": 22,
+              "render": true,
+              "features": { "sticky": false, "hover": false, "responsive": false },
+              "component": {
+                "name": "divi/range",
+                "type": "field",
+                "props": { "min": 0, "max": 200, "allowedUnits": ["px", "em", "rem", "%"] }
+              }
+            },
+            "button_padding_child_left": {
+              "groupSlug": "designShareButton",
+              "attrName": "socialShareChildData.innerContent",
+              "subName": "button_padding_child_left",
+              "label": "Padding Left",
+              "priority": 23,
+              "render": true,
+              "features": { "sticky": false, "hover": false, "responsive": false },
+              "component": {
+                "name": "divi/range",
+                "type": "field",
+                "props": { "min": 0, "max": 200, "allowedUnits": ["px", "em", "rem", "%"] }
               }
             },
             "icon_color_child": {

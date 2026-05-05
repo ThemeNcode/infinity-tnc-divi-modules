@@ -45,7 +45,10 @@ trait ModuleStylesTrait {
 		$button_bg      = $data['button_bg'] ?? '';
 		$icon_color     = $data['icon_color'] ?? '';
 		$icon_size      = $data['icon_size'] ?? '';
-		$button_padding = $data['button_padding'] ?? '';
+		$button_padding_top    = $data['button_padding_top'] ?? '';
+		$button_padding_right  = $data['button_padding_right'] ?? '';
+		$button_padding_bottom = $data['button_padding_bottom'] ?? '';
+		$button_padding_left   = $data['button_padding_left'] ?? '';
 
 		// divi/select inside group-items can store a numeric index — resolve to string value.
 		$button_layout_keys = [ 'icon_with_text', 'only_icon', 'only_text' ];
@@ -132,32 +135,15 @@ trait ModuleStylesTrait {
 			$icon_css[] = sprintf( 'font-size:%s;', esc_attr( $size_value ) );
 		}
 
-		// Button padding.
-		if ( ! empty( $button_padding ) ) {
-			if ( is_array( $button_padding ) ) {
-				$p = $button_padding;
-				$get_val = function( $v ) {
-					$val = ( is_array( $v ) && isset( $v['value'] ) ? $v['value'] : $v );
-					// Check for nested padding object from group component
-					if ( is_array( $val ) ) {
-						$val = $val['padding'] ?? ( $val['margin'] ?? ( $val['value'] ?? $val ) );
-					}
-					if ( empty( $val ) && '0' !== $val && 0 !== $val ) return '0px';
-					return is_numeric( $val ) ? $val . 'px' : $val;
-				};
-				$parts = [
-					$get_val( $p['top'] ?? ( $p['margin-top'] ?? ( $p['padding-top'] ?? ( $p['padding']['top'] ?? ( $p[0] ?? '0px' ) ) ) ) ),
-					$get_val( $p['right'] ?? ( $p['margin-right'] ?? ( $p['padding-right'] ?? ( $p['padding']['right'] ?? ( $p[1] ?? '0px' ) ) ) ) ),
-					$get_val( $p['bottom'] ?? ( $p['margin-bottom'] ?? ( $p['padding-bottom'] ?? ( $p['padding']['bottom'] ?? ( $p[2] ?? '0px' ) ) ) ) ),
-					$get_val( $p['left'] ?? ( $p['margin-left'] ?? ( $p['padding-left'] ?? ( $p['padding']['left'] ?? ( $p[3] ?? '0px' ) ) ) ) ),
-				];
-			} else {
-				$parts = explode( '|', $button_padding );
-			}
-			
-			if ( count( $parts ) >= 4 ) {
-				$link_css[] = sprintf( 'padding:%s %s %s %s !important;', esc_attr( $parts[0] ), esc_attr( $parts[1] ), esc_attr( $parts[2] ), esc_attr( $parts[3] ) );
-			}
+		// Button padding from 4 separate range fields.
+		if ( $button_padding_top || $button_padding_right || $button_padding_bottom || $button_padding_left ) {
+			$link_css[] = sprintf(
+				'padding:%s %s %s %s !important;',
+				esc_attr( $button_padding_top ?: '0' ),
+				esc_attr( $button_padding_right ?: '0' ),
+				esc_attr( $button_padding_bottom ?: '0' ),
+				esc_attr( $button_padding_left ?: '0' )
+			);
 		}
 
 		$styles = [

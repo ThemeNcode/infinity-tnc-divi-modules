@@ -40,41 +40,12 @@ export const ModuleStyles = ({
     lines.push(`${orderClass} .inftnc_social_icon { font-size: ${data.icon_size_child} !important; }`);
   }
 
-  if (data.button_padding_child) {
-    let paddingValue = '';
-    if (typeof data.button_padding_child === 'string') {
-      const parts = data.button_padding_child.split('|');
-      if (parts.length === 4) {
-        paddingValue = `${parts[0]} ${parts[1]} ${parts[2]} ${parts[3]}`;
-      } else {
-        paddingValue = data.button_padding_child;
-      }
-    } else if (typeof data.button_padding_child === 'object' && data.button_padding_child !== null) {
-      const p = data.button_padding_child as any;
-      const extract = (v: any) => {
-        if (!v && v !== 0) return '0px';
-        let out = v;
-        if (typeof out === 'object' && out !== null) {
-          out = out.padding ?? out.margin ?? out.value ?? out;
-          if (typeof out === 'object' && out !== null) {
-            out = out.desktop?.value ?? out.value ?? out;
-          }
-        }
-        if (out === undefined || out === null || out === '' || typeof out === 'object') return '0px';
-        return /^\d+$/.test(String(out)) ? `${out}px` : String(out);
-      };
-      
-      const t = extract(p.top || p['margin-top'] || p['padding-top'] || p.padding?.top || p[0]);
-      const r = extract(p.right || p['margin-right'] || p['padding-right'] || p.padding?.right || p[1]);
-      const b = extract(p.bottom || p['margin-bottom'] || p['padding-bottom'] || p.padding?.bottom || p[2]);
-      const l = extract(p.left || p['margin-left'] || p['padding-left'] || p.padding?.left || p[3]);
-      
-      paddingValue = `${t} ${r} ${b} ${l}`;
-    }
-
-    if (paddingValue) {
-      lines.push(`${orderClass} .inftnc_share_link { padding: ${paddingValue} !important; }`);
-    }
+  const pTop    = data.button_padding_child_top;
+  const pRight  = data.button_padding_child_right;
+  const pBottom = data.button_padding_child_bottom;
+  const pLeft   = data.button_padding_child_left;
+  if (pTop || pRight || pBottom || pLeft) {
+    lines.push(`${orderClass} .inftnc_share_link { padding: ${pTop || '0'} ${pRight || '0'} ${pBottom || '0'} ${pLeft || '0'} !important; }`);
   }
 
   return (

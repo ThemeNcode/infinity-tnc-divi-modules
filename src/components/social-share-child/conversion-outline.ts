@@ -25,7 +25,12 @@ export const conversionOutline: ModuleConversionOutline = {
   module: {
     social_share:          'socialShareChildData.innerContent.*.social_share',
     button_color_child:    'socialShareChildData.innerContent.*.button_color_child',
-    button_padding_child:  'socialShareChildData.innerContent.*.button_padding_child',
+    button_padding_child:  {
+      top:    'socialShareChildData.innerContent.*.button_padding_child_top',
+      right:  'socialShareChildData.innerContent.*.button_padding_child_right',
+      bottom: 'socialShareChildData.innerContent.*.button_padding_child_bottom',
+      left:   'socialShareChildData.innerContent.*.button_padding_child_left',
+    },
     icon_color_child:      'socialShareChildData.innerContent.*.icon_color_child',
     icon_size_child:       'socialShareChildData.innerContent.*.icon_size_child',
   },

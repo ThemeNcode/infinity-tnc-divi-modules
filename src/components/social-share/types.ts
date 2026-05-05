@@ -24,7 +24,10 @@ export interface SocialShareInnerContent {
   button_bg?: string;
   icon_color?: string;
   icon_size?: string;
-  button_padding?: string;
+  button_padding_top?: string;
+  button_padding_right?: string;
+  button_padding_bottom?: string;
+  button_padding_left?: string;
 }
 
 export interface SocialShareAttrs extends InternalAttrs {

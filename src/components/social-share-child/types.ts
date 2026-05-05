@@ -18,7 +18,10 @@ export type SocialShareChildCssGroupAttr = FormatBreakpointStateAttr<SocialShare
 export interface SocialShareChildInnerContent {
   social_share?: string;
   button_color_child?: string;
-  button_padding_child?: string;
+  button_padding_child_top?: string;
+  button_padding_child_right?: string;
+  button_padding_child_bottom?: string;
+  button_padding_child_left?: string;
   icon_color_child?: string;
   icon_size_child?: string;
 }
