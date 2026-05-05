@@ -10,6 +10,8 @@ import VimeVideo from './components/vimeo-video';
 import HeadingGradient from './components/heading-gradient';
 import BreadCrumbs from './components/bread-crumbs';
 import DualButtons from './components/dual-button';
+import SocialShare from './components/social-share';
+import SocialShareChild from './components/social-share-child';
 
 /**
  * Register modules to Visual Builder once the API is ready.
@@ -28,6 +30,8 @@ $(window).on('et_builder_api_ready', (event, API) => {
         VimeVideo,
         HeadingGradient,
         BreadCrumbs,
-        DualButtons
+        DualButtons,
+        SocialShare,
+        SocialShareChild
     ]);
 });
