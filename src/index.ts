@@ -17,6 +17,8 @@ import { breadCrumbs } from './components/bread-crumbs';
 import { typeWriter } from './components/type-writer';
 import { starRating } from './components/star-rating';
 import { dualButton } from './components/dual-button';
+import { socialShare } from './components/social-share';
+import { socialShareChild } from './components/social-share-child';
 
 import './module-icons';
 
@@ -35,4 +37,6 @@ addAction('divi.moduleLibrary.registerModuleLibraryStore.after', 'extensionExamp
   registerModule(typeWriter.metadata, omit(typeWriter, 'metadata') as any);
   registerModule(starRating.metadata, omit(starRating, 'metadata') as any);
   registerModule(dualButton.metadata, omit(dualButton, 'metadata') as any);
+  registerModule(socialShare.metadata, omit(socialShare, 'metadata') as any);
+  registerModule(socialShareChild.metadata, omit(socialShareChild, 'metadata') as any);
 });

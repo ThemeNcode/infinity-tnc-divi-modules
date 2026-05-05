@@ -25,6 +25,8 @@ use INFTNC\Modules\BreadCrumbs\BreadCrumbs;
 use INFTNC\Modules\TypeWriter\TypeWriter;
 use INFTNC\Modules\StarRating\StarRating;
 use INFTNC\Modules\DualButton\DualButton;
+use INFTNC\Modules\SocialShare\SocialShare;
+use INFTNC\Modules\SocialShareChild\SocialShareChild;
 
 add_action(
 	'divi_module_library_modules_dependency_tree',
@@ -42,5 +44,7 @@ add_action(
 		$dependency_tree->add_dependency( new TypeWriter() );
 		$dependency_tree->add_dependency( new StarRating() );
 		$dependency_tree->add_dependency( new DualButton() );
+		$dependency_tree->add_dependency( new SocialShare() );
+		$dependency_tree->add_dependency( new SocialShareChild() );
 	}
 );
