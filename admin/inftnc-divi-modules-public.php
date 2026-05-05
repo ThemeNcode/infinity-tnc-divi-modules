@@ -14,7 +14,10 @@ class Inftnc_divi_modules_public {
      * @return void
      */
     public function inftnc_divi_modules_assets() {
-        $js = plugin_dir_url( __FILE__ ) . 'assets/js/';
+        $js  = plugin_dir_url( __FILE__ ) . 'assets/js/';
+        $css = plugin_dir_url( __FILE__ ) . 'assets/';
+
+        wp_enqueue_style( 'fontawesome', $css . 'fontawesome/css/all.min.css', [], '6.0.0' );
 
         wp_register_script( 'inftnc-rating',         $js . 'inftnc-rating.min.js',      [ 'jquery' ],          '1.2.0', true );
         wp_register_script( 'inftnc-rating-module',  $js . 'star-rating-svg.min.js',    [ 'inftnc-rating' ],   '1.2.0', true );
