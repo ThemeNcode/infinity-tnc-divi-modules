@@ -101,7 +101,7 @@ class INFTNC_SocialShareChild extends ET_Builder_Module {
 				'tab_slug'        => 'advanced',
 				'toggle_slug'     => 'share_icon',
 				'allowed_units'    => array('px'),
-				'default'          => 16,
+				'default'          => '16px',
 				'default_unit'     => 'px',
                 'range_settings' => array(
 					'min'  => 0,
@@ -645,17 +645,16 @@ class INFTNC_SocialShareChild extends ET_Builder_Module {
 			);
 		}
 		
-		//Icon Size 
-		if( '' !== $this->props['icon_size_child'] ) { 
+		//Icon Size
+		if( '' !== $this->props['icon_size_child'] ) {
+			$icon_size_child = is_numeric( $this->props['icon_size_child'] ) ? $this->props['icon_size_child'] . 'px' : $this->props['icon_size_child'];
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
 					'selector'    => '%%order_class%% .inftnc_social_icon',
 					'declaration' => sprintf(
-						'
-							font-size:%1$s !important;
-						',
-						$this->props['icon_size_child']
+						'font-size:%1$s !important;',
+						$icon_size_child
 					),
 				)
 			);
