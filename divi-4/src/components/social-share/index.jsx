@@ -1,6 +1,6 @@
 // External Dependencies
 import React, { Component } from 'react';
-import SocialShareChild from '../SocialShareChild/SocialShareChild';
+import SocialShareChild from '../social-share-child';
 
 
 class SocialShare extends Component {
