@@ -79,7 +79,14 @@
             "value": {
               "social_share": "facebook",
               "button_color_child": "",
-              "button_padding_child": "10px|24px|10px|24px",
+              "button_padding_child": {
+                "padding": {
+                  "top": "10px",
+                  "right": "24px",
+                  "bottom": "10px",
+                  "left": "24px"
+                }
+              },
               "icon_color_child": "",
               "icon_size_child": "16px"
             }
@@ -103,18 +110,18 @@
                 "name": "divi/select",
                 "type": "field",
                 "props": {
-                  "options": [
-                    { "label": "Facebook", "value": "facebook" },
-                    { "label": "WhatsApp", "value": "whatsapp" },
-                    { "label": "X (Twitter)", "value": "twitter" },
-                    { "label": "Pinterest", "value": "pinterest" },
-                    { "label": "LinkedIn", "value": "linekdin" },
-                    { "label": "Telegram", "value": "telegram" },
-                    { "label": "Reddit", "value": "reddit" },
-                    { "label": "Tumblr", "value": "tumblr" },
-                    { "label": "Email", "value": "email" },
-                    { "label": "Blogger", "value": "blogger" }
-                  ]
+                  "options": {
+                    "facebook":  { "label": "Facebook" },
+                    "whatsapp":  { "label": "WhatsApp" },
+                    "twitter":   { "label": "X (Twitter)" },
+                    "pinterest": { "label": "Pinterest" },
+                    "linekdin":  { "label": "LinkedIn" },
+                    "telegram":  { "label": "Telegram" },
+                    "reddit":    { "label": "Reddit" },
+                    "tumblr":    { "label": "Tumblr" },
+                    "email":     { "label": "Email" },
+                    "blogger":   { "label": "Blogger" }
+                  }
                 }
               }
             },
@@ -136,7 +143,14 @@
               "priority": 20,
               "render": true,
               "features": { "sticky": false, "hover": false, "responsive": false },
-              "component": { "name": "divi/spacing", "type": "field" }
+              "component": {
+                "name": "divi/spacing",
+                "type": "group",
+                "props": {
+                  "grouped": false,
+                  "fieldLabel": "Button Padding"
+                }
+              }
             },
             "icon_color_child": {
               "groupSlug": "designShareIcon",

@@ -101,7 +101,14 @@
               "button_bg": "",
               "icon_color": "",
               "icon_size": "16px",
-              "button_padding": ""
+              "button_padding": {
+                "padding": {
+                  "top": "10px",
+                  "right": "24px",
+                  "bottom": "10px",
+                  "left": "24px"
+                }
+              }
             }
           }
         }
@@ -313,7 +320,11 @@
               },
               "component": {
                 "name": "divi/spacing",
-                "type": "field"
+                "type": "group",
+                "props": {
+                  "grouped": false,
+                  "fieldLabel": "Button Padding"
+                }
               }
             },
             "icon_color": {

@@ -102,9 +102,39 @@ export const ModuleStyles = ({
   }
 
   if (data.button_padding) {
-    const parts = String(data.button_padding).split('|');
-    if (parts.length === 4) {
-      lines.push(`${orderClass} .inftnc_share_link { padding: ${parts[0]} ${parts[1]} ${parts[2]} ${parts[3]}; }`);
+    let paddingValue = '';
+    if (typeof data.button_padding === 'string') {
+      const parts = data.button_padding.split('|');
+      if (parts.length === 4) {
+        paddingValue = `${parts[0]} ${parts[1]} ${parts[2]} ${parts[3]}`;
+      } else {
+        paddingValue = data.button_padding;
+      }
+    } else if (typeof data.button_padding === 'object' && data.button_padding !== null) {
+      const p = data.button_padding as any;
+      const extract = (v: any) => {
+        if (!v && v !== 0) return '0px';
+        let out = v;
+        if (typeof out === 'object' && out !== null) {
+          out = out.padding ?? out.margin ?? out.value ?? out;
+          if (typeof out === 'object' && out !== null) {
+            out = out.desktop?.value ?? out.value ?? out;
+          }
+        }
+        if (out === undefined || out === null || out === '' || typeof out === 'object') return '0px';
+        return /^\d+$/.test(String(out)) ? `${out}px` : String(out);
+      };
+      
+      const t = extract(p.top || p['margin-top'] || p['padding-top'] || p.padding?.top || p[0]);
+      const r = extract(p.right || p['margin-right'] || p['padding-right'] || p.padding?.right || p[1]);
+      const b = extract(p.bottom || p['margin-bottom'] || p['padding-bottom'] || p.padding?.bottom || p[2]);
+      const l = extract(p.left || p['margin-left'] || p['padding-left'] || p.padding?.left || p[3]);
+      
+      paddingValue = `${t} ${r} ${b} ${l}`;
+    }
+
+    if (paddingValue) {
+      lines.push(`${orderClass} .inftnc_share_link { padding: ${paddingValue} !important; }`);
     }
   }
 

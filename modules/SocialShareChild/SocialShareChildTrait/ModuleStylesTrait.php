@@ -66,7 +66,22 @@ trait ModuleStylesTrait {
 
 		if ( ! empty( $button_padding_child ) ) {
 			if ( is_array( $button_padding_child ) ) {
-				$parts = array_values( $button_padding_child );
+				$p = $button_padding_child;
+				$get_val = function( $v ) {
+					$val = ( is_array( $v ) && isset( $v['value'] ) ? $v['value'] : $v );
+					// Check for nested padding object from group component
+					if ( is_array( $val ) ) {
+						$val = $val['padding'] ?? ( $val['margin'] ?? ( $val['value'] ?? $val ) );
+					}
+					if ( empty( $val ) && '0' !== $val && 0 !== $val ) return '0px';
+					return is_numeric( $val ) ? $val . 'px' : $val;
+				};
+				$parts = [
+					$get_val( $p['top'] ?? ( $p['margin-top'] ?? ( $p['padding-top'] ?? ( $p['padding']['top'] ?? ( $p[0] ?? '0px' ) ) ) ) ),
+					$get_val( $p['right'] ?? ( $p['margin-right'] ?? ( $p['padding-right'] ?? ( $p['padding']['right'] ?? ( $p[1] ?? '0px' ) ) ) ) ),
+					$get_val( $p['bottom'] ?? ( $p['margin-bottom'] ?? ( $p['padding-bottom'] ?? ( $p['padding']['bottom'] ?? ( $p[2] ?? '0px' ) ) ) ) ),
+					$get_val( $p['left'] ?? ( $p['margin-left'] ?? ( $p['padding-left'] ?? ( $p['padding']['left'] ?? ( $p[3] ?? '0px' ) ) ) ) ),
+				];
 			} else {
 				$parts = explode( '|', $button_padding_child );
 			}
