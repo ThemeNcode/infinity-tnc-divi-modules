@@ -134,20 +134,11 @@
                 "name": "divi/select",
                 "type": "field",
                 "props": {
-                  "options": [
-                    {
-                      "label": "Icon with Text",
-                      "value": "icon_with_text"
-                    },
-                    {
-                      "label": "Only Icon",
-                      "value": "only_icon"
-                    },
-                    {
-                      "label": "Only Text",
-                      "value": "only_text"
-                    }
-                  ]
+                  "options": {
+                    "icon_with_text": { "label": "Icon with Text" },
+                    "only_icon":      { "label": "Only Icon" },
+                    "only_text":      { "label": "Only Text" }
+                  }
                 }
               }
             },
@@ -168,20 +159,11 @@
                 "name": "divi/select",
                 "type": "field",
                 "props": {
-                  "options": [
-                    {
-                      "label": "Square",
-                      "value": "button_square"
-                    },
-                    {
-                      "label": "Rounded",
-                      "value": "button_rounded"
-                    },
-                    {
-                      "label": "Circle",
-                      "value": "button_circle"
-                    }
-                  ]
+                  "options": {
+                    "button_square":  { "label": "Square" },
+                    "button_rounded": { "label": "Rounded" },
+                    "button_circle":  { "label": "Circle" }
+                  }
                 }
               }
             },
@@ -202,36 +184,15 @@
                 "name": "divi/select",
                 "type": "field",
                 "props": {
-                  "options": [
-                    {
-                      "label": "Auto",
-                      "value": "column_auto"
-                    },
-                    {
-                      "label": "1",
-                      "value": "column_one"
-                    },
-                    {
-                      "label": "2",
-                      "value": "column_two"
-                    },
-                    {
-                      "label": "3",
-                      "value": "column_three"
-                    },
-                    {
-                      "label": "4",
-                      "value": "column_four"
-                    },
-                    {
-                      "label": "5",
-                      "value": "column_five"
-                    },
-                    {
-                      "label": "6",
-                      "value": "column_six"
-                    }
-                  ]
+                  "options": {
+                    "column_auto":  { "label": "Auto" },
+                    "column_one":   { "label": "1" },
+                    "column_two":   { "label": "2" },
+                    "column_three": { "label": "3" },
+                    "column_four":  { "label": "4" },
+                    "column_five":  { "label": "5" },
+                    "column_six":   { "label": "6" }
+                  }
                 }
               }
             },
