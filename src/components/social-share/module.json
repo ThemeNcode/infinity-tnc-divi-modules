@@ -367,18 +367,22 @@
   },
   "customCssFields": {
     "wrapper": {
+      "label": "Main Element",
       "subName": "wrapper",
       "selectorSuffix": " .inftnc_social_share_wrapper"
     },
     "share_link": {
+      "label": "Share Link",
       "subName": "share_link",
       "selectorSuffix": " .inftnc_share_link"
     },
     "social_icon": {
+      "label": "Social Icon",
       "subName": "social_icon",
       "selectorSuffix": " .inftnc_social_icon"
     },
     "social_text": {
+      "label": "Social Text",
       "subName": "social_text",
       "selectorSuffix": " .inftnc_social_text"
     }
