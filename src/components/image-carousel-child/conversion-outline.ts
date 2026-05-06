@@ -1,0 +1,26 @@
+/* eslint-disable @typescript-eslint/naming-convention */
+import { ModuleConversionOutline } from '@divi/types';
+
+export const conversionOutline: ModuleConversionOutline = {
+  advanced: {
+    admin_label:     'module.meta.adminLabel',
+    animation:       'module.decoration.animation',
+    background:      'module.decoration.background',
+    borders:         { default: 'module.decoration.border' },
+    box_shadow:      { default: 'module.decoration.boxShadow' },
+    disabled_on:     'module.decoration.disabledOn',
+    margin_padding:  'module.decoration.spacing',
+    module:          'module.advanced.htmlAttributes',
+    transform:       'module.decoration.transform',
+    transition:      'module.decoration.transition',
+  },
+  css: {
+    after:        'css.*.after',
+    before:       'css.*.before',
+    main_element: 'css.*.mainElement',
+  },
+  module: {
+    image: 'imageCarouselChildData.innerContent.*.image',
+    alt:   'imageCarouselChildData.innerContent.*.alt',
+  },
+};

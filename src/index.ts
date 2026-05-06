@@ -19,6 +19,8 @@ import { starRating } from './components/star-rating';
 import { dualButton } from './components/dual-button';
 import { socialShare } from './components/social-share';
 import { socialShareChild } from './components/social-share-child';
+import { imageCarousel } from './components/image-carousel';
+import { imageCarouselChild } from './components/image-carousel-child';
 
 import './module-icons';
 
@@ -39,4 +41,6 @@ addAction('divi.moduleLibrary.registerModuleLibraryStore.after', 'extensionExamp
   registerModule(dualButton.metadata, omit(dualButton, 'metadata') as any);
   registerModule(socialShare.metadata, omit(socialShare, 'metadata') as any);
   registerModule(socialShareChild.metadata, omit(socialShareChild, 'metadata') as any);
+  registerModule(imageCarousel.metadata, omit(imageCarousel, 'metadata') as any);
+  registerModule(imageCarouselChild.metadata, omit(imageCarouselChild, 'metadata') as any);
 });

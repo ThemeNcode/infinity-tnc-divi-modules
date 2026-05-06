@@ -1,0 +1,57 @@
+{
+  "_comment": "!!! THIS IS AN AUTOMATICALLY GENERATED FILE - DO NOT EDIT !!!",
+  "advanced": {
+    "admin_label": "module.meta.adminLabel",
+    "animation": "module.decoration.animation",
+    "background": "module.decoration.background",
+    "borders": {
+      "default": "module.decoration.border"
+    },
+    "box_shadow": {
+      "default": "module.decoration.boxShadow"
+    },
+    "disabled_on": "module.decoration.disabledOn",
+    "height": "module.decoration.sizing",
+    "link_options": "module.advanced.link",
+    "margin_padding": "module.decoration.spacing",
+    "max_width": "module.decoration.sizing",
+    "module": "module.advanced.htmlAttributes",
+    "overflow": "module.decoration.overflow",
+    "position_fields": "module.decoration.position",
+    "scroll": "module.decoration.scroll",
+    "sticky": "module.decoration.sticky",
+    "transform": "module.decoration.transform",
+    "transition": "module.decoration.transition",
+    "z_index": "module.decoration.zIndex"
+  },
+  "css": {
+    "after": "css.*.after",
+    "before": "css.*.before",
+    "main_element": "css.*.mainElement"
+  },
+  "module": {
+    "slides_to_show": "imageCarouselData.innerContent.*.slides_to_show",
+    "slides_to_scroll": "imageCarouselData.innerContent.*.slides_to_scroll",
+    "animation_speed": "imageCarouselData.innerContent.*.animation_speed",
+    "autoplay": "imageCarouselData.innerContent.*.autoplay",
+    "autoplay_speed": "imageCarouselData.innerContent.*.autoplay_speed",
+    "use_navigation": "imageCarouselData.innerContent.*.use_navigation",
+    "use_pagination": "imageCarouselData.innerContent.*.use_pagination",
+    "slide_spacing": "imageCarouselData.innerContent.*.slide_spacing",
+    "infinite": "imageCarouselData.innerContent.*.infinite",
+    "pause_on_hover": "imageCarouselData.innerContent.*.pause_on_hover",
+    "swipe": "imageCarouselData.innerContent.*.swipe",
+    "rtl": "imageCarouselData.innerContent.*.rtl",
+    "image_grayscale_default": "imageCarouselData.innerContent.*.image_grayscale_default",
+    "image_grayscale_hover": "imageCarouselData.innerContent.*.image_grayscale_hover",
+    "image_hover": "imageCarouselData.innerContent.*.image_hover",
+    "navigation_icon_size": "imageCarouselData.innerContent.*.navigation_icon_size",
+    "navigation_bg_size": "imageCarouselData.innerContent.*.navigation_bg_size",
+    "navigation_icon_color": "imageCarouselData.innerContent.*.navigation_icon_color",
+    "navigation_bg_color": "imageCarouselData.innerContent.*.navigation_bg_color",
+    "pagination_cmn_dots_size": "imageCarouselData.innerContent.*.pagination_dots_size",
+    "pagination_active_dots_size": "imageCarouselData.innerContent.*.pagination_active_dots_size",
+    "pagination_cmn_dots_color": "imageCarouselData.innerContent.*.pagination_dots_color",
+    "dots_alignment": "imageCarouselData.innerContent.*.dots_alignment"
+  }
+}

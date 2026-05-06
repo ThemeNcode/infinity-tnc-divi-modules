@@ -27,6 +27,8 @@ use INFTNC\Modules\StarRating\StarRating;
 use INFTNC\Modules\DualButton\DualButton;
 use INFTNC\Modules\SocialShare\SocialShare;
 use INFTNC\Modules\SocialShareChild\SocialShareChild;
+use INFTNC\Modules\ImageCarousel\ImageCarousel;
+use INFTNC\Modules\ImageCarouselChild\ImageCarouselChild;
 
 add_action(
 	'divi_module_library_modules_dependency_tree',
@@ -46,5 +48,7 @@ add_action(
 		$dependency_tree->add_dependency( new DualButton() );
 		$dependency_tree->add_dependency( new SocialShare() );
 		$dependency_tree->add_dependency( new SocialShareChild() );
+		$dependency_tree->add_dependency( new ImageCarousel() );
+		$dependency_tree->add_dependency( new ImageCarouselChild() );
 	}
 );

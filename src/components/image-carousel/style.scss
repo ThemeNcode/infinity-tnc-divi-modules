@@ -1,0 +1,31 @@
+@import '~slick-carousel/slick/slick.css';
+@import '~slick-carousel/slick/slick-theme.css';
+
+.inftnc_carousels_image_wrapper {
+  .slick-slider {
+    position: relative;
+  }
+
+  .slick-prev,
+  .slick-next {
+    z-index: 9999;
+  }
+
+  .slick-prev {
+    left: -16px;
+  }
+
+  .slick-next {
+    right: -16px;
+  }
+
+  .inftnc_carousel_child {
+    overflow: hidden;
+
+    .image_carousel_img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+}

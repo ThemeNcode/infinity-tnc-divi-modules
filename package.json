@@ -104,7 +104,7 @@
   },
   "dependencies": {
     "classnames": "^2.5.1",
-    "react-slick": "^0.30.3",
+    "react-slick": "^0.31.0",
     "react-svg-star-rating": "^2.1.2",
     "slick-carousel": "^1.8.1",
     "typewriter-effect": "^2.22.0"
