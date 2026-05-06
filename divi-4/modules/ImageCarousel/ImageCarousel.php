@@ -510,7 +510,8 @@ class INFTNC_ImageCarousel extends ET_Builder_Module {
 		( 'on' === $rtl  ) ? ( $rtl_value = 'true' ) : ( $rtl_value = 'false' );
 		( 'on' === $rtl  ) ? ( $dir_value = 'rtl' ) : ( $dir_value = '' );
 
-		// Enqueue Script
+		// Enqueue styles and scripts
+		wp_enqueue_style( 'inftnc-image-carousel' );
 		wp_enqueue_script('slick');
 		wp_enqueue_script('inftnc-slick');
 
