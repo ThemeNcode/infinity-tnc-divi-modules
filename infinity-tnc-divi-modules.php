@@ -60,6 +60,9 @@ function infinity_tnc_divi_module_initialize_d4_modules() {
 	require_once INFINITY_TNC_DIVI_MODULES_PATH . 'divi-4/modules/DualButtons/DualButtons.php';
 	require_once INFINITY_TNC_DIVI_MODULES_PATH . 'divi-4/modules/SocialShare/SocialShare.php';
 	require_once INFINITY_TNC_DIVI_MODULES_PATH . 'divi-4/modules/SocialShareChild/SocialShareChild.php';
+	require_once INFINITY_TNC_DIVI_MODULES_PATH . 'divi-4/modules/ImageCarousel/ImageCarousel.php';
+	require_once INFINITY_TNC_DIVI_MODULES_PATH . 'divi-4/modules/ImageCarouselChild/ImageCarouselChild.php'
+	
 }
 add_action( 'et_builder_ready', 'infinity_tnc_divi_module_initialize_d4_modules' );
 

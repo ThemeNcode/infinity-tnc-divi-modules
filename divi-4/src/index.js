@@ -12,6 +12,9 @@ import BreadCrumbs from './components/bread-crumbs';
 import DualButtons from './components/dual-button';
 import SocialShare from './components/social-share';
 import SocialShareChild from './components/social-share-child';
+import INFTNC_ImageCarousel from './components/image-carousel';
+import ImageCarouselChild from './components/image-carousel-child';
+
 
 /**
  * Register modules to Visual Builder once the API is ready.
@@ -32,6 +35,9 @@ $(window).on('et_builder_api_ready', (event, API) => {
         BreadCrumbs,
         DualButtons,
         SocialShare,
-        SocialShareChild
+        SocialShareChild,
+        INFTNC_ImageCarousel,
+        ImageCarouselChild
+       
     ]);
 });
