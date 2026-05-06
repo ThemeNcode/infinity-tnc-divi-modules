@@ -71,6 +71,14 @@ module.exports = {
                     }
                 ]
             },
+            // Handle CSS files.
+            {
+                test: /\.css$/,
+                use: [
+                    'style-loader',
+                    'css-loader',
+                ],
+            },
         ]
     },
 

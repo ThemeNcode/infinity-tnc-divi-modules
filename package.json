@@ -64,6 +64,7 @@
     "@types/lodash": "^4.17.1",
     "@types/react": "18.3.1",
     "@types/react-dom": "18.3.0",
+    "@types/react-slick": "^0.23.13",
     "@types/seamless-immutable": "^7.1.19",
     "@types/uuid": "^9.0.8",
     "@types/wordpress__blocks": "^12.5.14",
@@ -103,7 +104,9 @@
   },
   "dependencies": {
     "classnames": "^2.5.1",
+    "react-slick": "^0.30.3",
     "react-svg-star-rating": "^2.1.2",
+    "slick-carousel": "^1.8.1",
     "typewriter-effect": "^2.22.0"
   },
   "resolutions": {

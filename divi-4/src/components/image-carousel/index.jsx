@@ -1,6 +1,8 @@
 // External Dependencies
 import React, { Component } from 'react';
 import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 class INFTNC_ImageCarousel extends Component {
 
@@ -312,7 +314,7 @@ class INFTNC_ImageCarousel extends Component {
               -moz-transform: scale(1.04);
               -ms-transform: scale(1.04);
               -o-transform: scale(1.04);
-              transform: scale(1.04);'`,
+              transform: scale(1.04);`,
             }]);
           }
   
@@ -412,7 +414,7 @@ class INFTNC_ImageCarousel extends Component {
     rtl == 'on' ? rtlValue = true :  rtlValue = false ;
 
     // Fix infinite Issue 
-    let image_length = content.length;
+    let image_length = Array.isArray(content) ? content.length : (content ? 1 : 0);
     let imageInfinite = image_length >= slides_to_show && infinite === "on" ? true  : false;
 
     var settings = { 
@@ -449,7 +451,7 @@ class INFTNC_ImageCarousel extends Component {
 
     return (
   
-        <Slider {...settings} className="inftnc_carousels_image_wrapper">{this.props.content}</Slider>
+        <Slider key={Math.random()} {...settings} className="inftnc_carousels_image_wrapper">{this.props.content}</Slider>
       
     );
   }

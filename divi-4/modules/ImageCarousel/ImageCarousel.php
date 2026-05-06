@@ -671,7 +671,7 @@ class INFTNC_ImageCarousel extends ET_Builder_Module {
 		}
 
 		// Pagination Acitve Dots Size
-		if( '' == $this->props['pagination_active_dots_size'] ) {
+		if( '' !== $this->props['pagination_active_dots_size'] ) {
 			ET_Builder_Element::set_style(
 				$render_slug,
 				array(
