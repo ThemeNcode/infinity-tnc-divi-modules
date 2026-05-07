@@ -100,7 +100,7 @@
               "component": {
                 "name": "divi/range",
                 "type": "field",
-                "props": { "min": 1, "max": 10, "allowedUnits": [] }
+                "props": { "min": 1, "max": 10, "allowedUnits": [], "defaultUnit": "" }
               }
             },
             "slides_to_scroll": {
@@ -114,7 +114,7 @@
               "component": {
                 "name": "divi/range",
                 "type": "field",
-                "props": { "min": 1, "max": 10, "allowedUnits": [] }
+                "props": { "min": 1, "max": 10, "allowedUnits": [], "defaultUnit": "" }
               }
             },
             "animation_speed": {
@@ -128,7 +128,7 @@
               "component": {
                 "name": "divi/range",
                 "type": "field",
-                "props": { "min": 0, "max": 1000, "allowedUnits": [] }
+                "props": { "min": 0, "max": 1000, "allowedUnits": [], "defaultUnit": "" }
               }
             },
             "slide_spacing": {
