@@ -2,21 +2,53 @@
 @import '~slick-carousel/slick/slick-theme.css';
 
 .inftnc_carousels_image_wrapper {
+  // Side padding gives the absolutely-positioned arrows room to show
+  padding: 0 40px;
+
   .slick-slider {
     position: relative;
   }
 
-  .slick-prev,
-  .slick-next {
+  .slick-inftnc-arrow {
     z-index: 9999;
+    width: 35px;
+    height: 35px;
+    background-color: #d9d9d9;
+    border-radius: 5px;
+
+    &::before {
+      font-family: 'ETmodules', sans-serif;
+      font-weight: 400;
+      font-size: 20px;
+      color: #7a7070;
+      opacity: 1;
+      display: inline-block;
+    }
+
+    &.slick-prev {
+      left: 0;
+
+      &::before {
+        content: '4';
+      }
+    }
+
+    &.slick-next {
+      right: 0;
+
+      &::before {
+        content: '5';
+      }
+    }
   }
 
-  .slick-prev {
-    left: -16px;
-  }
+  // Dots sit below the slides
+  .slick-dots {
+    bottom: -40px;
 
-  .slick-next {
-    right: -16px;
+    li button::before {
+      font-size: 10px;
+    }
   }
 
   .inftnc_carousel_child {

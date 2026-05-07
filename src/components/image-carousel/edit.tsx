@@ -3,6 +3,14 @@ import Slider from 'react-slick';
 import { ChildModulesContainer, ModuleContainer } from '@divi/module';
 import { getAttrByMode } from '@divi/module-utils';
 
+const PrevArrow = ( { className, onClick }: { className?: string; onClick?: () => void } ) => (
+  <button type="button" className={ `${ className ?? '' } slick-inftnc-arrow` } onClick={ onClick } />
+);
+
+const NextArrow = ( { className, onClick }: { className?: string; onClick?: () => void } ) => (
+  <button type="button" className={ `${ className ?? '' } slick-inftnc-arrow` } onClick={ onClick } />
+);
+
 import { ImageCarouselEditProps, ImageCarouselInnerContent } from './types';
 import { ModuleStyles } from './styles';
 import { ModuleScriptData } from './module-script-data';
@@ -41,6 +49,8 @@ export const ImageCarouselEdit = (props: ImageCarouselEditProps): ReactElement =
     dots,
     arrows,
     rtl,
+    prevArrow: <PrevArrow />,
+    nextArrow: <NextArrow />,
     responsive: [
       { breakpoint: 980, settings: { slidesToShow: Math.min( slidesToShow, 2 ) } },
       { breakpoint: 767, settings: { slidesToShow: 1 } },
