@@ -21,6 +21,8 @@ import { socialShare } from './components/social-share';
 import { socialShareChild } from './components/social-share-child';
 import { imageCarousel } from './components/image-carousel';
 import { imageCarouselChild } from './components/image-carousel-child';
+import { logoCarousel } from './components/logo-carousel';
+import { logoCarouselChild } from './components/logo-carousel-child';
 
 import './module-icons';
 
@@ -43,4 +45,6 @@ addAction('divi.moduleLibrary.registerModuleLibraryStore.after', 'extensionExamp
   registerModule(socialShareChild.metadata, omit(socialShareChild, 'metadata') as any);
   registerModule(imageCarousel.metadata, omit(imageCarousel, 'metadata') as any);
   registerModule(imageCarouselChild.metadata, omit(imageCarouselChild, 'metadata') as any);
+  registerModule(logoCarousel.metadata, omit(logoCarousel, 'metadata') as any);
+  registerModule(logoCarouselChild.metadata, omit(logoCarouselChild, 'metadata') as any);
 });

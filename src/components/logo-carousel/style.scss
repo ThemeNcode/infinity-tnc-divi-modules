@@ -1,0 +1,63 @@
+.inftnc_carousels_logo_wrapper {
+  padding: 0 40px;
+  position: relative;
+
+  .slick-list {
+    margin-left: calc(-1 * var(--inftnc-slide-gap, 0px));
+  }
+
+  .slick-slide {
+    padding-left: var(--inftnc-slide-gap, 0px);
+  }
+
+  .slick-inftnc-arrow {
+    z-index: 9999;
+    width: 35px;
+    height: 35px;
+    background-color: #d9d9d9;
+    border-radius: 5px;
+
+    &::before {
+      font-family: 'ETmodules', sans-serif;
+      font-weight: 400;
+      font-size: 20px;
+      color: #7a7070;
+      opacity: 1;
+      display: inline-block;
+    }
+
+    &.slick-prev {
+      left: 0;
+
+      &::before {
+        content: attr(data-icon);
+      }
+    }
+
+    &.slick-next {
+      right: 0;
+
+      &::before {
+        content: attr(data-icon);
+      }
+    }
+  }
+
+  .slick-dots {
+    bottom: -40px;
+
+    li button::before {
+      font-size: 10px;
+    }
+  }
+
+  .inftnc_carousel_child {
+    overflow: hidden;
+
+    .logo_carousel_img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+}

@@ -29,6 +29,8 @@ use INFTNC\Modules\SocialShare\SocialShare;
 use INFTNC\Modules\SocialShareChild\SocialShareChild;
 use INFTNC\Modules\ImageCarousel\ImageCarousel;
 use INFTNC\Modules\ImageCarouselChild\ImageCarouselChild;
+use INFTNC\Modules\LogoCarousel\LogoCarousel;
+use INFTNC\Modules\LogoCarouselChild\LogoCarouselChild;
 
 add_action(
 	'divi_module_library_modules_dependency_tree',
@@ -50,5 +52,7 @@ add_action(
 		$dependency_tree->add_dependency( new SocialShareChild() );
 		$dependency_tree->add_dependency( new ImageCarousel() );
 		$dependency_tree->add_dependency( new ImageCarouselChild() );
+		$dependency_tree->add_dependency( new LogoCarousel() );
+		$dependency_tree->add_dependency( new LogoCarouselChild() );
 	}
 );
