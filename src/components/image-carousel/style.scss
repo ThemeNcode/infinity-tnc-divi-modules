@@ -29,7 +29,7 @@
       left: 0;
 
       &::before {
-        content: '4';
+        content: attr(data-icon);
       }
     }
 
@@ -37,7 +37,7 @@
       right: 0;
 
       &::before {
-        content: '5';
+        content: attr(data-icon);
       }
     }
   }

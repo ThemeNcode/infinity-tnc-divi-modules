@@ -20,20 +20,11 @@
     right: 0 !important;
 }
 
-.slick-inftnc-arrow.slick-prev:before {
-    font-family: ETmodules !important;
-    font-weight: 400 !important;
-    content: '4' !important;
-    font-size: 20px;
-    display: inline-block !important;
-    color: #7a7070 !important;
-    opacity: 1;
-}
-
+.slick-inftnc-arrow.slick-prev:before,
 .slick-inftnc-arrow.slick-next:before {
     font-family: ETmodules !important;
     font-weight: 400 !important;
-    content: '5' !important;
+    content: attr(data-icon) !important;
     font-size: 20px;
     display: inline-block !important;
     color: #7a7070 !important;

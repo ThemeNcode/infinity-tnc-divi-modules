@@ -4,11 +4,11 @@ import { ChildModulesContainer, ModuleContainer } from '@divi/module';
 import { getAttrByMode } from '@divi/module-utils';
 
 const PrevArrow = ( { className, onClick }: { className?: string; onClick?: () => void } ) => (
-  <button type="button" className={ `${ className ?? '' } slick-inftnc-arrow` } onClick={ onClick } />
+  <button type="button" className={ `${ className ?? '' } slick-inftnc-arrow` } onClick={ onClick } data-icon="&#x34;" />
 );
 
 const NextArrow = ( { className, onClick }: { className?: string; onClick?: () => void } ) => (
-  <button type="button" className={ `${ className ?? '' } slick-inftnc-arrow` } onClick={ onClick } />
+  <button type="button" className={ `${ className ?? '' } slick-inftnc-arrow` } onClick={ onClick } data-icon="&#x35;" />
 );
 
 import { ImageCarouselEditProps, ImageCarouselInnerContent } from './types';
