@@ -26,7 +26,6 @@ export const ModuleStyles = ({
 }: StylesProps<ImageCarouselAttrs>): ReactElement => {
   const data = (getAttrByMode(attrs?.imageCarouselData?.innerContent) ?? {}) as ImageCarouselInnerContent;
 
-  const slideSpacing            = data.slide_spacing ?? '20px';
   const imageGrayscaleDefault   = data.image_grayscale_default ?? 'off';
   const imageGrayscaleHover     = data.image_grayscale_hover ?? 'off';
   const imageHover              = data.image_hover ?? 'none';
@@ -40,11 +39,6 @@ export const ModuleStyles = ({
   const dotsAlignment           = data.dots_alignment ?? 'center';
 
   const lines: string[] = [];
-
-  if (slideSpacing) {
-    lines.push(`${orderClass} .inftnc_carousel_child.slick-slide { margin-left: ${slideSpacing}; }`);
-    lines.push(`${orderClass} .inftnc_carousels_image_wrapper .slick-list { margin-left: -${slideSpacing}; }`);
-  }
 
   if (navIconSize) {
     lines.push(`${orderClass} .slick-inftnc-arrow.slick-prev:before, ${orderClass} .slick-inftnc-arrow.slick-next:before { font-size: ${navIconSize}; }`);

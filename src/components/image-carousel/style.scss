@@ -9,6 +9,14 @@
     position: relative;
   }
 
+  .slick-list {
+    margin-left: calc(-1 * var(--inftnc-slide-gap, 0px));
+  }
+
+  .slick-slide {
+    padding-left: var(--inftnc-slide-gap, 0px);
+  }
+
   .slick-inftnc-arrow {
     z-index: 9999;
     width: 35px;

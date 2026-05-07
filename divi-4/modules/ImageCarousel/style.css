@@ -3,6 +3,14 @@
     position: relative;
 }
 
+.inftnc_carousels_image_wrapper .slick-slide {
+    padding-left: var(--inftnc-slide-gap, 0px);
+}
+
+.inftnc_carousels_image_wrapper .slick-list {
+    margin-left: calc(-1 * var(--inftnc-slide-gap, 0px));
+}
+
 .slick-inftnc-arrow {
     background-color: #d9d9d9 !important;
     width: 35px !important;

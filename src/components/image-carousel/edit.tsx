@@ -29,6 +29,7 @@ export const ImageCarouselEdit = (props: ImageCarouselEditProps): ReactElement =
 
   const data = (getAttrByMode(attrs?.imageCarouselData?.innerContent) ?? {}) as ImageCarouselInnerContent;
 
+  const slideSpacing   = data.slide_spacing ?? '20px';
   const slidesToShow   = Math.max( 1, parseInt( data.slides_to_show   ?? '3', 10 ) || 3 );
   const slidesToScroll = Math.max( 1, parseInt( data.slides_to_scroll ?? '1', 10 ) || 1 );
   const speed          = parseInt( data.animation_speed ?? '300', 10 ) || 300;
@@ -70,7 +71,7 @@ export const ImageCarouselEdit = (props: ImageCarouselEditProps): ReactElement =
       {elements.styleComponents({
         attrName: 'module',
       })}
-      <div className="inftnc_carousels_image_wrapper">
+      <div className="inftnc_carousels_image_wrapper" style={ { '--inftnc-slide-gap': slideSpacing } as React.CSSProperties }>
         {childrenIds && childrenIds.length > 0 ? (
           <Slider {...slickSettings}>
             {childrenIds.map( ( childId: string ) => (

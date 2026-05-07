@@ -44,6 +44,7 @@ trait RenderCallbackTrait {
 
 		$data = $attrs['imageCarouselData']['innerContent']['desktop']['value'] ?? [];
 
+		$slide_spacing    = $data['slide_spacing'] ?? '20px';
 		$slides_to_show   = $data['slides_to_show'] ?? '3';
 		$slides_to_scroll = $data['slides_to_scroll'] ?? '1';
 		$animation_speed  = $data['animation_speed'] ?? '300';
@@ -72,6 +73,7 @@ trait RenderCallbackTrait {
 				'attributes'        => array_filter( [
 					'dir'                  => $dir,
 					'class'                => 'inftnc_carousels_image_wrapper',
+					'style'                => $slide_spacing ? "--inftnc-slide-gap:{$slide_spacing};" : null,
 					'data-slides-to-show'  => esc_attr( $slides_to_show ),
 					'data-slide-scroll'    => esc_attr( $slides_to_scroll ),
 					'data-animation-speed' => esc_attr( $animation_speed ),

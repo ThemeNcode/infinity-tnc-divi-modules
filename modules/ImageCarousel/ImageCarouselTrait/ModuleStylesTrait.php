@@ -37,7 +37,6 @@ trait ModuleStylesTrait {
 
 		$data = $attrs['imageCarouselData']['innerContent']['desktop']['value'] ?? [];
 
-		$slide_spacing            = $data['slide_spacing'] ?? '20px';
 		$image_grayscale_default  = $data['image_grayscale_default'] ?? 'off';
 		$image_grayscale_hover    = $data['image_grayscale_hover'] ?? 'off';
 		$image_hover              = $data['image_hover'] ?? 'none';
@@ -70,18 +69,6 @@ trait ModuleStylesTrait {
 				]
 			),
 		];
-
-		// Slide spacing.
-		if ( $slide_spacing ) {
-			$styles[] = CssStyle::style( [
-				'selector' => "{$order_class} .inftnc_carousel_child.slick-slide",
-				'attr'     => [ 'desktop' => [ 'value' => [ 'mainElement' => "margin-left:{$slide_spacing};" ] ] ],
-			] );
-			$styles[] = CssStyle::style( [
-				'selector' => "{$order_class} .inftnc_carousels_image_wrapper .slick-list",
-				'attr'     => [ 'desktop' => [ 'value' => [ 'mainElement' => "margin-left:-{$slide_spacing};" ] ] ],
-			] );
-		}
 
 		// Navigation icon size.
 		if ( $navigation_icon_size ) {
