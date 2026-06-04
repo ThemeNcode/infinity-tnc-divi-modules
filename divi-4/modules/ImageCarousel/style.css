@@ -21,11 +21,11 @@
 }
 
 .slick-inftnc-arrow.slick-prev {
-    left: 0 !important;
+    left: -16px !important;
 }
 
 .slick-inftnc-arrow.slick-next {
-    right: 0 !important;
+    right: -16px !important;
 }
 
 .slick-inftnc-arrow.slick-prev:before,

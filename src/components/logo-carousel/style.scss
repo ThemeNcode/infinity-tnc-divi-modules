@@ -27,7 +27,7 @@
     }
 
     &.slick-prev {
-      left: 0;
+      left: -16px;
 
       &::before {
         content: attr(data-icon);
@@ -35,7 +35,7 @@
     }
 
     &.slick-next {
-      right: 0;
+      right: -16px;
 
       &::before {
         content: attr(data-icon);

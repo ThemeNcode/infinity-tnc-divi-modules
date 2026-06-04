@@ -20,11 +20,11 @@
 }
 
 .inftnc_carousels_logo_wrapper .slick-inftnc-arrow.slick-prev {
-    left: 0 !important;
+    left: -16px !important;
 }
 
 .inftnc_carousels_logo_wrapper .slick-inftnc-arrow.slick-next {
-    right: 0 !important;
+    right: -16px !important;
 }
 
 .inftnc_carousels_logo_wrapper .slick-inftnc-arrow.slick-prev:before,
