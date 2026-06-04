@@ -22,7 +22,7 @@ class Inftnc_divi_modules_public {
         wp_register_style( 'slick',                  $css . 'css/slick.min.css',   [],        '1.8.1' );
         wp_register_style( 'slick-theme',            $css . 'css/slick-theme.css', [ 'slick' ], '1.8.1' );
         wp_register_style( 'inftnc-image-carousel',  INFINITY_TNC_DIVI_MODULES_URL . 'divi-4/modules/ImageCarousel/style.css',  [ 'slick', 'slick-theme' ], '1.2.0' );
-        wp_register_style( 'inftnc-logo-carousel',   INFINITY_TNC_DIVI_MODULES_URL . 'divi-4/modules/LogoCarousel/style.css',   [ 'slick', 'slick-theme' ], '1.2.0' );
+        wp_register_style( 'inftnc-logo-carousel',   INFINITY_TNC_DIVI_MODULES_URL . 'divi-4/modules/LogoCarousel/style.css',   [ 'slick', 'slick-theme' ], '1.2.1' );
 
         wp_register_script( 'inftnc-rating',         $js . 'inftnc-rating.min.js',      [ 'jquery' ],          '1.2.0', true );
         wp_register_script( 'inftnc-rating-module',  $js . 'star-rating-svg.min.js',    [ 'inftnc-rating' ],   '1.2.0', true );

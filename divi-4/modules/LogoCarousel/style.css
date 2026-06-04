@@ -39,7 +39,14 @@
 }
 
 .inftnc_carousels_logo_wrapper .slick-dots li button:before {
+    font-family: Arial, Helvetica, sans-serif !important;
     font-size: 10px;
+    line-height: 1 !important;
+    width: auto !important;
+    height: auto !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
 }
 
 .inftnc_carousels_logo_wrapper .slick-dots {
