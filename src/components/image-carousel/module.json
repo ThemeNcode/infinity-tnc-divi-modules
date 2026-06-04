@@ -77,8 +77,8 @@
               "navigation_bg_size": "35px",
               "navigation_icon_color": "",
               "navigation_bg_color": "",
-              "pagination_dots_size": "40px",
-              "pagination_active_dots_size": "40px",
+              "pagination_dots_size": "18px",
+              "pagination_active_dots_size": "28px",
               "pagination_dots_color": "",
               "dots_alignment": "center"
             }

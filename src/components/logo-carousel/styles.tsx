@@ -70,7 +70,7 @@ export const ModuleStyles = ({
 
   if (dotsAlignment) {
     const justify = ALIGN_MAP[dotsAlignment] ?? 'center';
-    lines.push(`${orderClass} .inftnc_carousels_logo_wrapper .slick-dots { display: flex; justify-content: ${justify}; margin-top: 25px; }`);
+    lines.push(`${orderClass} .inftnc_carousels_logo_wrapper .slick-dots { justify-content: ${justify}; }`);
   }
 
   if (logoGrayscaleDefault === 'on') {

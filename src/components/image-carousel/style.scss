@@ -52,10 +52,44 @@
 
   // Dots sit below the slides
   .slick-dots {
-    bottom: -40px;
+    position: relative;
+    bottom: auto;
+    margin-top: 15px;
+    width: 100%;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+
+    li button {
+      font-size: 0;
+      line-height: 0;
+      width: 20px;
+      height: 20px;
+      padding: 5px;
+      cursor: pointer;
+      color: transparent;
+      background: transparent;
+      border: 0;
+      outline: none;
+    }
 
     li button::before {
+      content: '•';
+      font-family: Arial, Helvetica, sans-serif;
       font-size: 10px;
+      line-height: 1;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: auto;
+      height: auto;
+      color: #000;
+      opacity: 0.25;
+    }
+
+    li.slick-active button::before {
+      opacity: 0.75;
     }
   }
 
