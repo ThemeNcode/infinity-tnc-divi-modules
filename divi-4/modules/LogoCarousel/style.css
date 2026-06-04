@@ -1,5 +1,5 @@
 .inftnc_carousels_logo_wrapper {
-    padding: 0 40px;
+    padding: 0;
     position: relative;
 }
 
@@ -58,9 +58,10 @@
 }
 
 .inftnc_carousels_logo_wrapper .slick-dots {
-    position: relative !important;
-    bottom: auto !important;
-    margin-top: 15px !important;
+    position: absolute !important;
+    bottom: -62px !important;
+    left: 0 !important;
+    right: 0 !important;
     width: 100% !important;
     display: flex !important;
     justify-content: center !important;
