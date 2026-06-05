@@ -3,7 +3,7 @@
   "d4Shortcode": "inftnc_star_rating",
   "title": "Star Rating - Infinity TNC",
   "titles": "Star Ratings",
-  "moduleIcon": "divi/content",
+  "moduleIcon": "inftnc/module-star-rating",
   "moduleClassName": "inftnc_star_rating",
   "moduleOrderClassName": "inftnc_star_rating_wrapper",
   "category": "module",

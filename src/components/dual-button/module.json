@@ -5,7 +5,7 @@
   "moduleOrderClassName": "inftnc_dual_buttons",
   "title": "Dual Buttons - Infinity TNC",
   "titles": "Dual Buttons",
-  "moduleIcon": "divi/module-button",
+  "moduleIcon": "inftnc/module-dual-button",
   "category": "module",
   "childrenName": [],
   "attributes": {

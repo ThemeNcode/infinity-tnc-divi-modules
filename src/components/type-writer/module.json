@@ -3,7 +3,7 @@
   "d4Shortcode": "inftnc_type_writer",
   "title": "Typewriter - Infinity TNC",
   "titles": "Typewriters",
-  "moduleIcon": "divi/content",
+  "moduleIcon": "inftnc/module-type-writer",
   "moduleClassName": "inftnc_type_writer",
   "moduleOrderClassName": "inftnc_typewriter_wrapper",
   "category": "module",

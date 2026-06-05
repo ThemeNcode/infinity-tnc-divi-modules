@@ -3,7 +3,7 @@
   "d4Shortcode": "inftnc_social_share",
   "title": "Social Share - Infinity TNC",
   "titles": "Social Share",
-  "moduleIcon": "divi/social-media-follow",
+  "moduleIcon": "inftnc/module-social-share",
   "moduleClassName": "inftnc_social_share",
   "moduleOrderClassName": "inftnc_social_share",
   "category": "module",

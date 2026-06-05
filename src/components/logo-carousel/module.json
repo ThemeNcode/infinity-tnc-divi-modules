@@ -3,7 +3,7 @@
   "d4Shortcode": "inftnc_logo_carousel",
   "title": "Logo Carousel - Infinity TNC",
   "titles": "Logo Carousels",
-  "moduleIcon": "divi/image-gallery",
+  "moduleIcon": "inftnc/module-logo-carousel",
   "moduleClassName": "inftnc_logo_carousel",
   "moduleOrderClassName": "inftnc_logo_carousel",
   "category": "module",

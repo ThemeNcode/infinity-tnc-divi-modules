@@ -3,7 +3,7 @@
   "d4Shortcode": "inftnc_bread_crumbs",
   "title": "Breadcrumbs - Infinity TNC",
   "titles": "Breadcrumbs",
-  "moduleIcon": "divi/content",
+  "moduleIcon": "inftnc/module-bread-crumbs",
   "moduleClassName": "inftnc_bread_crumbs",
   "moduleOrderClassName": "inftnc_bread_crumbs_container",
   "category": "module",

@@ -3,7 +3,7 @@
   "d4Shortcode": "inftnc_heading_gradient",
   "title": "Heading Gradient - Infinity TNC",
   "titles": "Heading Gradients",
-  "moduleIcon": "divi/content",
+  "moduleIcon": "inftnc/module-heading-gradient",
   "moduleClassName": "inftnc_heading_gradient",
   "moduleOrderClassName": "inftnc_heading_gradient_container",
   "category": "module",

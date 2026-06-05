@@ -3,7 +3,7 @@
   "d4Shortcode": "inftnc_youtube_embed",
   "title": "Youtube Video - Infinity TNC",
   "titles": "Youtube Videos",
-  "moduleIcon": "divi/content",
+  "moduleIcon": "inftnc/module-youtube-embed",
   "moduleClassName": "inftnc_youtube_video",
   "moduleOrderClassName": "inftnc_youtube_video_container",
   "category": "module",
