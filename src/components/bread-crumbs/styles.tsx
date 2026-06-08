@@ -41,6 +41,7 @@ const ModuleStyles = ({
         },
       })}
       {(elements as any).style({ attrName: 'breadcrumbText' })}
+      <style>{`${orderClass} .inftnc_separator.et-pb-icon, ${orderClass} .inftnc_before_icon.et-pb-icon { font-family: 'ETmodules' !important; }`}</style>
       {colorCss ? <style>{colorCss}</style> : null}
       <CssStyle
         selector={orderClass}

@@ -148,6 +148,31 @@ trait ModuleStylesTrait {
 				'styles'        => $styles,
 			]
 		);
+
+		// Restore ETmodules font-family after breadcrumbText font styles (priority 99 > 10 so this outputs later).
+		Style::add(
+			[
+				'id'            => $args['id'],
+				'name'          => $args['name'],
+				'orderIndex'    => $args['orderIndex'],
+				'storeInstance' => $args['storeInstance'],
+				'priority'      => 99,
+				'styles'        => [
+					CssStyle::style(
+						[
+							'selector' => "{$order_class} .inftnc_separator.et-pb-icon, {$order_class} .inftnc_before_icon.et-pb-icon",
+							'attr'     => [
+								'desktop' => [
+									'value' => [
+										'mainElement' => "font-family: 'ETmodules' !important;",
+									],
+								],
+							],
+						]
+					),
+				],
+			]
+		);
 	}
 
 }
