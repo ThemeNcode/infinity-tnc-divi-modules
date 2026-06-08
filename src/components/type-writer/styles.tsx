@@ -27,6 +27,7 @@ const ModuleStyles = ({
         },
       },
     })}
+    {(elements as any).style({ attrName: 'typingText' })}
     {(elements as any).style({ attrName: 'beforeText' })}
     {(elements as any).style({ attrName: 'afterText' })}
     <CssStyle

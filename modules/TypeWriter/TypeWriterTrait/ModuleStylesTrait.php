@@ -54,6 +54,13 @@ trait ModuleStylesTrait {
 						]
 					),
 
+					// Typing text font styles.
+					$elements->style(
+						[
+							'attrName' => 'typingText',
+						]
+					),
+
 					// Before text font styles.
 					$elements->style(
 						[

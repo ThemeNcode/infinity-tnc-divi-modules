@@ -52,6 +52,12 @@ export interface TypeWriterAttrs extends InternalAttrs {
     >;
   };
 
+  typingText?: {
+    decoration?: {
+      font?: any;
+    };
+  };
+
   beforeText?: {
     decoration?: {
       font?: any;

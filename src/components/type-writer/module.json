@@ -57,9 +57,33 @@
         }
       }
     },
+    "typingText": {
+      "type": "object",
+      "label": "Typing",
+      "selector": "{{selector}} .inftnc_typewriter_text",
+      "default": {
+        "decoration": {
+          "font": {
+            "font": {
+              "desktop": {
+                "value": {
+                  "size": "30px",
+                  "lineHeight": "1em"
+                }
+              }
+            }
+          }
+        }
+      },
+      "settings": {
+        "decoration": {
+          "font": {}
+        }
+      }
+    },
     "beforeText": {
       "type": "object",
-      "label": "Before Title Text",
+      "label": "Before Title",
       "selector": "{{selector}} .inftnc_before_text",
       "default": {
         "decoration": {
@@ -83,7 +107,7 @@
     },
     "afterText": {
       "type": "object",
-      "label": "After Title Text",
+      "label": "After Title",
       "selector": "{{selector}} .inftnc_after_text",
       "default": {
         "decoration": {
