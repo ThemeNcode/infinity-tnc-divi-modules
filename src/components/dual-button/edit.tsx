@@ -6,6 +6,7 @@ import { ModuleContainer } from '@divi/module';
 
 import { DualButtonEditProps } from './types';
 import { ModuleStyles } from './styles';
+import { ModuleScriptData } from './module-script-data';
 
 /** Build data-icon-* attribute map from a button decoration object. */
 const buildIconDataAttrs = (decoration: any): Record<string, string | null> => {
@@ -67,9 +68,11 @@ const DualButtonEdit = ({
       isFirst={isFirst}
       isLast={isLast}
       name={name}
+      scriptDataComponent={ModuleScriptData as any}
       stylesComponent={ModuleStyles as any}
       tag="div"
     >
+      {(elements as any).styleComponents({ attrName: 'module' })}
       <div
         className="inftnc_button_wrapper et_pb_button_module_wrapper"
         style={{ display: 'flex', flexWrap: 'wrap', justifyContent: alignment, gap }}
