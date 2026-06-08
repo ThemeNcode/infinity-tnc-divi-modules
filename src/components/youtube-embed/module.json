@@ -204,7 +204,7 @@
                   "min": 0,
                   "max": 1000,
                   "step": 1,
-                  "allowedUnits": [],
+                  "allowedUnits": [""],
                   "defaultUnit": ""
                 },
                 "type": "field"
@@ -229,7 +229,7 @@
                   "min": 0,
                   "max": 1000,
                   "step": 1,
-                  "allowedUnits": [],
+                  "allowedUnits": [""],
                   "defaultUnit": ""
                 },
                 "type": "field"

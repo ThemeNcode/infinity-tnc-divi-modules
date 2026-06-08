@@ -54,10 +54,12 @@ const YoutubeEmbedEdit = (props: YoutubeEmbedEditProps): ReactElement => {
     }
 
     if (exactId && videoMethod !== 'embed_code') {
-      const iframeSrc = `https://www.youtube.com/embed/${exactId}?controls=${controlValue}&autoplay=${autoplayValue}&loop=${loopValue}&mute=${muteValue}&start=${videoStart}&end=${videoEnd}&rel=${relValue}`;
+      const startParam = parseInt(videoStart, 10) > 0 ? `&start=${parseInt(videoStart, 10)}` : '';
+      const endParam   = parseInt(videoEnd, 10)   > 0 ? `&end=${parseInt(videoEnd, 10)}`     : '';
+      const iframeSrc = `https://www.youtube.com/embed/${exactId}?controls=${controlValue}&autoplay=${autoplayValue}&loop=${loopValue}&mute=${muteValue}${startParam}${endParam}&rel=${relValue}&enablejsapi=1`;
       content = (
         <iframe
-          key="youtube_video"
+          key={`yt_v_${exactId}${startParam}${endParam}_c${controlValue}_a${autoplayValue}_l${loopValue}_m${muteValue}_r${relValue}`}
           src={iframeSrc}
           title="YouTube video player"
           frameBorder="0"
@@ -78,10 +80,12 @@ const YoutubeEmbedEdit = (props: YoutubeEmbedEditProps): ReactElement => {
     }
 
     if (playlistId && videoMethod !== 'embed_code') {
-      const iframeSrc = `https://www.youtube.com/embed/videoseries?controls=${controlValue}&autoplay=${autoplayValue}&loop=${loopValue}&mute=${muteValue}&start=${videoStart}&end=${videoEnd}&rel=${relValue}&list=${playlistId}`;
+      const startParam = parseInt(videoStart, 10) > 0 ? `&start=${parseInt(videoStart, 10)}` : '';
+      const endParam   = parseInt(videoEnd, 10)   > 0 ? `&end=${parseInt(videoEnd, 10)}`     : '';
+      const iframeSrc = `https://www.youtube.com/embed/videoseries?controls=${controlValue}&autoplay=${autoplayValue}&loop=${loopValue}&mute=${muteValue}${startParam}${endParam}&rel=${relValue}&list=${playlistId}&enablejsapi=1`;
       content = (
         <iframe
-          key="youtube_playlist"
+          key={`yt_pl_${playlistId}${startParam}${endParam}_c${controlValue}_a${autoplayValue}_l${loopValue}_m${muteValue}_r${relValue}`}
           src={iframeSrc}
           title="YouTube playlist player"
           frameBorder="0"

@@ -56,6 +56,17 @@ trait RenderCallbackTrait {
         $loop_value = ( 'on' === $loop ) ? 1 : 0;
         $control_value = ( 'on' === $player_control ) ? 1 : 0;
 		$rel_value = ( 'on' === $video_rel ) ? 1 : 0;
+		$start_param = (int) $video_start > 0 ? '&amp;start=' . (int) $video_start : '';
+		$end_param   = (int) $video_end   > 0 ? '&amp;end='   . (int) $video_end   : '';
+
+		$order_index = $block->parsed_block['orderIndex'] ?? 0;
+		$iframe_id   = 'inftnc-yt-' . absint( $order_index );
+		$end_script  = '';
+		if ( (int) $video_end > 0 ) {
+			$js_id  = esc_js( $iframe_id );
+			$js_end = (int) $video_end;
+			$end_script = "<script>(function(){var el=document.getElementById('" . $js_id . "'),et=" . $js_end . ";if(!el||et<=0)return;function p(d){try{el.contentWindow.postMessage(JSON.stringify(d),'https://www.youtube.com');}catch(x){}}window.addEventListener('message',function(e){if(e.origin!=='https://www.youtube.com'||e.source!==el.contentWindow)return;try{var d=JSON.parse(e.data);if(d.event==='infoDelivery'&&d.info&&d.info.currentTime>=et){p({event:'command',func:'pauseVideo',args:'',id:'player-" . $js_id . "'});}}catch(x){}});setInterval(function(){p({event:'listening',id:'player-" . $js_id . "'});},500);})();</script>";
+		}
 
 		$map = '';
         if ( 'video' === $video_type ) {
@@ -68,16 +79,18 @@ trait RenderCallbackTrait {
 			}
 
 			if ( !empty($exact_id) && 'embed_code' !== $video_method ) {
-				$map = sprintf('<iframe src="https://www.youtube.com/embed/%1$s?controls=%7$s&amp;autoplay=%4$s&amp;loop=%6$s&amp;mute=%5$s&amp;start=%2$s&amp;end=%3$s&amp;rel=%8$s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
+				$map = sprintf('<iframe id="%9$s" src="https://www.youtube.com/embed/%1$s?controls=%2$s&amp;autoplay=%3$s&amp;loop=%4$s&amp;mute=%5$s%6$s%7$s&amp;rel=%8$s&amp;enablejsapi=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
 					esc_attr( $exact_id ),
-					esc_attr( $video_start ),
-					esc_attr( $video_end ),
-					esc_attr( $autoplay_value ),
-					esc_attr( $mute_value ),
-					esc_attr( $loop_value ),
 					esc_attr( $control_value ),
-					esc_attr( $rel_value )
+					esc_attr( $autoplay_value ),
+					esc_attr( $loop_value ),
+					esc_attr( $mute_value ),
+					$start_param,
+					$end_param,
+					esc_attr( $rel_value ),
+					esc_attr( $iframe_id )
 				);
+				$map .= $end_script;
 			} elseif ( 'embed_code' === $video_method ) {
 				$map = et_core_esc_previously( $youtube_embed );
 			}
@@ -91,16 +104,18 @@ trait RenderCallbackTrait {
 			}
 
 			if ( !empty($playlist_id) && 'embed_code' !== $video_method ) {
-				$map = sprintf('<iframe src="https://www.youtube.com/embed/videoseries?controls=%7$s&amp;autoplay=%4$s&amp;loop=%6$s&amp;mute=%5$s&amp;start=%2$s&amp;end=%3$s&amp;rel=%8$s&amp;list=%1$s" title="YouTube playlist player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
-					esc_attr( $playlist_id ),
-					esc_attr( $video_start ),
-					esc_attr( $video_end ),
-					esc_attr( $autoplay_value ),
-					esc_attr( $mute_value ),
-					esc_attr( $loop_value ),
+				$map = sprintf('<iframe id="%9$s" src="https://www.youtube.com/embed/videoseries?controls=%1$s&amp;autoplay=%2$s&amp;loop=%3$s&amp;mute=%4$s%5$s%6$s&amp;rel=%7$s&amp;list=%8$s&amp;enablejsapi=1" title="YouTube playlist player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>',
 					esc_attr( $control_value ),
-					esc_attr( $rel_value )
+					esc_attr( $autoplay_value ),
+					esc_attr( $loop_value ),
+					esc_attr( $mute_value ),
+					$start_param,
+					$end_param,
+					esc_attr( $rel_value ),
+					esc_attr( $playlist_id ),
+					esc_attr( $iframe_id )
 				);
+				$map .= $end_script;
 			} elseif ( 'embed_code' === $video_method ) {
 				$map = et_core_esc_previously( $youtube_embed );
 			}
