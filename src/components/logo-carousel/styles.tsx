@@ -36,24 +36,30 @@ export const ModuleStyles = ({
   const paginationDotsSize      = data.pagination_dots_size ?? '';
   const paginationActiveDotsSize = data.pagination_active_dots_size ?? '';
   const paginationDotsColor     = data.pagination_dots_color ?? '';
-  const dotsAlignment           = data.dots_alignment ?? 'center';
+  let dotsAlignment             = data.dots_alignment ?? 'center';
+
+  // divi/select inside group-items can store a numeric index — resolve to string value.
+  const dotsAlignmentKeys = ['left', 'center', 'right'];
+  if (typeof dotsAlignment === 'number' || (typeof dotsAlignment === 'string' && /^\d+$/.test(dotsAlignment))) {
+    dotsAlignment = dotsAlignmentKeys[parseInt(String(dotsAlignment), 10)] ?? 'center';
+  }
 
   const lines: string[] = [];
 
   if (navIconSize) {
-    lines.push(`${orderClass} .slick-inftnc-arrow.slick-prev:before, ${orderClass} .slick-inftnc-arrow.slick-next:before { font-size: ${navIconSize}; }`);
+    lines.push(`${orderClass} .inftnc_carousels_logo_wrapper .slick-inftnc-arrow.slick-prev:before, ${orderClass} .inftnc_carousels_logo_wrapper .slick-inftnc-arrow.slick-next:before { font-size: ${navIconSize} !important; }`);
   }
 
   if (navBgSize) {
-    lines.push(`${orderClass} .slick-inftnc-arrow { width: ${navBgSize} !important; height: ${navBgSize} !important; }`);
+    lines.push(`${orderClass} .inftnc_carousels_logo_wrapper .slick-inftnc-arrow { width: ${navBgSize} !important; height: ${navBgSize} !important; }`);
   }
 
   if (navIconColor) {
-    lines.push(`${orderClass} .slick-inftnc-arrow.slick-prev:before, ${orderClass} .slick-inftnc-arrow.slick-next:before { color: ${navIconColor} !important; }`);
+    lines.push(`${orderClass} .inftnc_carousels_logo_wrapper .slick-inftnc-arrow.slick-prev:before, ${orderClass} .inftnc_carousels_logo_wrapper .slick-inftnc-arrow.slick-next:before { color: ${navIconColor} !important; }`);
   }
 
   if (navBgColor) {
-    lines.push(`${orderClass} .slick-inftnc-arrow { background-color: ${navBgColor} !important; }`);
+    lines.push(`${orderClass} .inftnc_carousels_logo_wrapper .slick-inftnc-arrow { background-color: ${navBgColor} !important; }`);
   }
 
   if (paginationDotsSize) {
@@ -70,7 +76,7 @@ export const ModuleStyles = ({
 
   if (dotsAlignment) {
     const justify = ALIGN_MAP[dotsAlignment] ?? 'center';
-    lines.push(`${orderClass} .inftnc_carousels_logo_wrapper .slick-dots { justify-content: ${justify}; }`);
+    lines.push(`${orderClass} .inftnc_carousels_logo_wrapper .slick-dots { display: flex !important; justify-content: ${justify} !important; }`);
   }
 
   if (logoGrayscaleDefault === 'on') {

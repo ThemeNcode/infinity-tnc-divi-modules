@@ -42,6 +42,9 @@
     font-size: 0 !important;
     line-height: 0 !important;
     padding: 5px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
 }
 
 .inftnc_carousels_logo_wrapper .slick-dots li button:before {
@@ -51,10 +54,10 @@
     line-height: 1 !important;
     width: auto !important;
     height: auto !important;
-    top: 50% !important;
-    left: 50% !important;
-    transform: translate(-50%, -50%) !important;
-    opacity: 0.25 !important;
+    position: static !important;
+    top: auto !important;
+    left: auto !important;
+    transform: none !important;
 }
 
 .inftnc_carousels_logo_wrapper .slick-dots {
@@ -72,9 +75,14 @@
     overflow: hidden;
 }
 
-[dir='rtl'] .inftnc_carousels_logo_wrapper .slick-inftnc-arrow.slick-next {
+.inftnc_carousels_logo_wrapper[dir='rtl'] .slick-inftnc-arrow.slick-prev {
+    left: auto !important;
+    right: -16px !important;
+}
+
+.inftnc_carousels_logo_wrapper[dir='rtl'] .slick-inftnc-arrow.slick-next {
     right: auto !important;
-    left: 0 !important;
+    left: -16px !important;
 }
 
 /**slick **/

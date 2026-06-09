@@ -43,6 +43,19 @@
     }
   }
 
+  // RTL: mirror the arrows so one sits on each side (dir is set on this wrapper).
+  &[dir='rtl'] {
+    .slick-inftnc-arrow.slick-prev {
+      left: auto;
+      right: -16px;
+    }
+
+    .slick-inftnc-arrow.slick-next {
+      right: auto;
+      left: -16px;
+    }
+  }
+
   .slick-dots {
     position: absolute;
     bottom: -62px;
@@ -64,6 +77,9 @@
       background: transparent;
       border: 0;
       outline: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     li button::before {
@@ -71,14 +87,10 @@
       font-family: Arial, Helvetica, sans-serif;
       font-size: 10px;
       line-height: 1;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      position: static;
       width: auto;
       height: auto;
       color: #000;
-      opacity: 0.25;
     }
 
     li.slick-active button::before {

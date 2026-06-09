@@ -49,6 +49,12 @@ trait ModuleStylesTrait {
 		$pagination_dots_color    = $data['pagination_dots_color'] ?? '';
 		$dots_alignment           = $data['dots_alignment'] ?? 'center';
 
+		// divi/select inside group-items can store a numeric index — resolve to string value.
+		$dots_alignment_keys = [ 'left', 'center', 'right' ];
+		if ( is_numeric( $dots_alignment ) ) {
+			$dots_alignment = $dots_alignment_keys[ (int) $dots_alignment ] ?? 'center';
+		}
+
 		$styles = [
 			$elements->style(
 				[
@@ -70,26 +76,27 @@ trait ModuleStylesTrait {
 			),
 		];
 
-		// Navigation icon size.
+		// Navigation icon size. Route through .inftnc_carousels_logo_wrapper (specificity 0,4,1)
+		// + !important to beat the Divi-4 base rule `.inftnc_carousels_logo_wrapper .slick-inftnc-arrow…:before`.
 		if ( $navigation_icon_size ) {
-			$arrow_selector = "{$order_class} .slick-inftnc-arrow.slick-prev:before,{$order_class} .slick-inftnc-arrow.slick-next:before";
+			$arrow_selector = "{$order_class} .inftnc_carousels_logo_wrapper .slick-inftnc-arrow.slick-prev:before,{$order_class} .inftnc_carousels_logo_wrapper .slick-inftnc-arrow.slick-next:before";
 			$styles[] = CssStyle::style( [
 				'selector' => $arrow_selector,
-				'attr'     => [ 'desktop' => [ 'value' => [ 'mainElement' => "font-size:{$navigation_icon_size};" ] ] ],
+				'attr'     => [ 'desktop' => [ 'value' => [ 'mainElement' => "font-size:{$navigation_icon_size}!important;" ] ] ],
 			] );
 		}
 
 		// Navigation button size.
 		if ( $navigation_bg_size ) {
 			$styles[] = CssStyle::style( [
-				'selector' => "{$order_class} .slick-inftnc-arrow",
+				'selector' => "{$order_class} .inftnc_carousels_logo_wrapper .slick-inftnc-arrow",
 				'attr'     => [ 'desktop' => [ 'value' => [ 'mainElement' => "width:{$navigation_bg_size}!important;height:{$navigation_bg_size}!important;" ] ] ],
 			] );
 		}
 
 		// Navigation icon color.
 		if ( $navigation_icon_color ) {
-			$arrow_selector = "{$order_class} .slick-inftnc-arrow.slick-prev:before,{$order_class} .slick-inftnc-arrow.slick-next:before";
+			$arrow_selector = "{$order_class} .inftnc_carousels_logo_wrapper .slick-inftnc-arrow.slick-prev:before,{$order_class} .inftnc_carousels_logo_wrapper .slick-inftnc-arrow.slick-next:before";
 			$styles[] = CssStyle::style( [
 				'selector' => $arrow_selector,
 				'attr'     => [ 'desktop' => [ 'value' => [ 'mainElement' => sprintf( 'color:%s!important;', esc_attr( $navigation_icon_color ) ) ] ] ],
@@ -99,7 +106,7 @@ trait ModuleStylesTrait {
 		// Navigation button background color.
 		if ( $navigation_bg_color ) {
 			$styles[] = CssStyle::style( [
-				'selector' => "{$order_class} .slick-inftnc-arrow",
+				'selector' => "{$order_class} .inftnc_carousels_logo_wrapper .slick-inftnc-arrow",
 				'attr'     => [ 'desktop' => [ 'value' => [ 'mainElement' => sprintf( 'background-color:%s!important;', esc_attr( $navigation_bg_color ) ) ] ] ],
 			] );
 		}
@@ -138,7 +145,7 @@ trait ModuleStylesTrait {
 			$justify  = $justify_map[ $dots_alignment ] ?? 'center';
 			$styles[] = CssStyle::style( [
 				'selector' => "{$order_class} .inftnc_carousels_logo_wrapper .slick-dots",
-				'attr'     => [ 'desktop' => [ 'value' => [ 'mainElement' => "display:flex;justify-content:{$justify};margin-top:25px;" ] ] ],
+				'attr'     => [ 'desktop' => [ 'value' => [ 'mainElement' => "display:flex !important;justify-content:{$justify} !important;margin-top:25px;" ] ] ],
 			] );
 		}
 
