@@ -49,6 +49,12 @@ trait ModuleStylesTrait {
 		$pagination_dots_color    = $data['pagination_dots_color'] ?? '';
 		$dots_alignment           = $data['dots_alignment'] ?? 'center';
 
+		// divi/select inside group-items can store a numeric index — resolve to string value.
+		$dots_alignment_keys = [ 'left', 'center', 'right' ];
+		if ( is_numeric( $dots_alignment ) ) {
+			$dots_alignment = $dots_alignment_keys[ (int) $dots_alignment ] ?? 'center';
+		}
+
 		$styles = [
 			$elements->style(
 				[
@@ -138,7 +144,7 @@ trait ModuleStylesTrait {
 			$justify  = $justify_map[ $dots_alignment ] ?? 'center';
 			$styles[] = CssStyle::style( [
 				'selector' => "{$order_class} .inftnc_carousels_image_wrapper .slick-dots",
-				'attr'     => [ 'desktop' => [ 'value' => [ 'mainElement' => "display:flex;justify-content:{$justify};margin-top:25px;" ] ] ],
+				'attr'     => [ 'desktop' => [ 'value' => [ 'mainElement' => "display:flex !important;justify-content:{$justify} !important;margin-top:25px;" ] ] ],
 			] );
 		}
 

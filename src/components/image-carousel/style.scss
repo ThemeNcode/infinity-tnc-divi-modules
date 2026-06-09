@@ -71,6 +71,9 @@
       background: transparent;
       border: 0;
       outline: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
 
     li button::before {
@@ -78,14 +81,10 @@
       font-family: Arial, Helvetica, sans-serif;
       font-size: 10px;
       line-height: 1;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      position: static;
       width: auto;
       height: auto;
       color: #000;
-      opacity: 0.25;
     }
 
     li.slick-active button::before {
