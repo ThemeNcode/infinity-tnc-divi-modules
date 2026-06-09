@@ -37,7 +37,10 @@ export const ModuleStyles = ({
   }
 
   if (data.icon_size_child) {
-    lines.push(`${orderClass} .inftnc_social_icon { font-size: ${data.icon_size_child} !important; }`);
+    // Add .inftnc_share_link so the child rule reaches specificity 0,4,0 — one class
+    // higher than the parent's 0,3,0 icon-size rule — so a per-network icon size always
+    // overrides the parent default, regardless of stylesheet source order in the VB.
+    lines.push(`${orderClass} .inftnc_share_button .inftnc_share_link .inftnc_social_icon { font-size: ${data.icon_size_child} !important; }`);
   }
 
   const pTop    = data.button_padding_child_top;

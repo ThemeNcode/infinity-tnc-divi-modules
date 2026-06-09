@@ -35,20 +35,20 @@ export const ModuleStyles = ({
   let buttonLayout  = data.button_layout ?? 'icon_with_text';
   let buttonShape   = data.button_shape ?? 'button_square';
 
-  // divi/select inside group-items can store a numeric index — resolve to string value.
+  // divi/select inside group-items can store a numeric index (number or numeric string) — resolve to string value.
   const columnsKeys = [ 'column_auto', 'column_one', 'column_two', 'column_three', 'column_four', 'column_five', 'column_six' ];
-  if (typeof columns === 'number') {
-    columns = columnsKeys[columns] ?? 'column_auto';
+  if (typeof columns === 'number' || (typeof columns === 'string' && /^\d+$/.test(columns))) {
+    columns = columnsKeys[parseInt(String(columns), 10)] ?? 'column_auto';
   }
 
   const buttonLayoutKeys = [ 'icon_with_text', 'only_icon', 'only_text' ];
-  if (typeof buttonLayout === 'number') {
-    buttonLayout = buttonLayoutKeys[buttonLayout] ?? 'icon_with_text';
+  if (typeof buttonLayout === 'number' || (typeof buttonLayout === 'string' && /^\d+$/.test(buttonLayout))) {
+    buttonLayout = buttonLayoutKeys[parseInt(String(buttonLayout), 10)] ?? 'icon_with_text';
   }
 
   const buttonShapeKeys = [ 'button_square', 'button_rounded', 'button_circle' ];
-  if (typeof buttonShape === 'number') {
-    buttonShape = buttonShapeKeys[buttonShape] ?? 'button_square';
+  if (typeof buttonShape === 'number' || (typeof buttonShape === 'string' && /^\d+$/.test(buttonShape))) {
+    buttonShape = buttonShapeKeys[parseInt(String(buttonShape), 10)] ?? 'button_square';
   }
 
   const columnsCss    = COLUMN_TEMPLATES[columns] ?? COLUMN_TEMPLATES.column_auto;
@@ -72,8 +72,8 @@ export const ModuleStyles = ({
   }
 
   if (isCircle && onlyIcon) {
-    lines.push(`${orderClass} .inftnc_share_link { border-radius: 100px; width: 45px; padding: 10px; text-align: center; }`);
-    lines.push(`${orderClass} .inftnc_social_icon { margin-left: 0; }`);
+    lines.push(`${orderClass} .inftnc_share_link { border-radius: 50% !important; aspect-ratio: 1/1 !important; padding: 10px !important; display: inline-flex !important; justify-content: center !important; align-items: center !important; width: auto !important; }`);
+    lines.push(`${orderClass} .inftnc_social_icon { margin-left: 0 !important; }`);
   } else if (isCircle) {
     lines.push(`${orderClass} .inftnc_share_link { border-radius: 30px; }`);
   } else if (isRounded) {
@@ -98,15 +98,19 @@ export const ModuleStyles = ({
   }
 
   if (data.icon_size) {
-    lines.push(`${orderClass} .inftnc_social_icon { font-size: ${data.icon_size}; }`);
+    // Use .inftnc_share_button (specificity 0,3,0) + !important to beat the base
+    // VB stylesheet rule `.inftnc_fb_share_link .inftnc_social_icon { font-size: 16px }`.
+    lines.push(`${orderClass} .inftnc_share_button .inftnc_social_icon { font-size: ${data.icon_size} !important; }`);
   }
 
-  const pTop    = data.button_padding_top;
-  const pRight  = data.button_padding_right;
-  const pBottom = data.button_padding_bottom;
-  const pLeft   = data.button_padding_left;
-  if (pTop || pRight || pBottom || pLeft) {
-    lines.push(`${orderClass} .inftnc_share_link { padding: ${pTop || '0'} ${pRight || '0'} ${pBottom || '0'} ${pLeft || '0'} !important; }`);
+  if (!(isCircle && onlyIcon)) {
+    const pTop    = data.button_padding_top;
+    const pRight  = data.button_padding_right;
+    const pBottom = data.button_padding_bottom;
+    const pLeft   = data.button_padding_left;
+    if (pTop || pRight || pBottom || pLeft) {
+      lines.push(`${orderClass} .inftnc_share_link { padding: ${pTop || '0'} ${pRight || '0'} ${pBottom || '0'} ${pLeft || '0'} !important; }`);
+    }
   }
 
   return (

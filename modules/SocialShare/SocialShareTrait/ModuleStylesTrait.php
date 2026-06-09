@@ -101,8 +101,8 @@ trait ModuleStylesTrait {
 
 		// Button shape.
 		if ( $is_circle && $only_icon ) {
-			$link_css[] = 'border-radius:100px; width:45px; padding:10px; text-align:center; display:unset !important;';
-			$icon_css[] = 'margin-left:unset;';
+			$link_css[] = 'border-radius:50% !important; aspect-ratio:1/1 !important; padding:10px !important; display:inline-flex !important; justify-content:center !important; align-items:center !important; width:auto !important;';
+			$icon_css[] = 'margin-left:0 !important;';
 		} elseif ( $is_circle ) {
 			$link_css[] = 'border-radius:30px;';
 		} elseif ( $is_rounded ) {
@@ -132,18 +132,20 @@ trait ModuleStylesTrait {
 		// Icon size.
 		if ( ! empty( $icon_size ) ) {
 			$size_value  = is_numeric( $icon_size ) ? $icon_size . 'px' : $icon_size;
-			$icon_css[] = sprintf( 'font-size:%s;', esc_attr( $size_value ) );
+			$icon_css[] = sprintf( 'font-size:%s !important;', esc_attr( $size_value ) );
 		}
 
-		// Button padding from 4 separate range fields.
-		if ( $button_padding_top || $button_padding_right || $button_padding_bottom || $button_padding_left ) {
-			$link_css[] = sprintf(
-				'padding:%s %s %s %s !important;',
-				esc_attr( $button_padding_top ?: '0' ),
-				esc_attr( $button_padding_right ?: '0' ),
-				esc_attr( $button_padding_bottom ?: '0' ),
-				esc_attr( $button_padding_left ?: '0' )
-			);
+		// Button padding — skip for circle+icon-only (aspect-ratio circle needs equal padding).
+		if ( ! ( $is_circle && $only_icon ) ) {
+			if ( $button_padding_top || $button_padding_right || $button_padding_bottom || $button_padding_left ) {
+				$link_css[] = sprintf(
+					'padding:%s %s %s %s !important;',
+					esc_attr( $button_padding_top ?: '0' ),
+					esc_attr( $button_padding_right ?: '0' ),
+					esc_attr( $button_padding_bottom ?: '0' ),
+					esc_attr( $button_padding_left ?: '0' )
+				);
+			}
 		}
 
 		$styles = [

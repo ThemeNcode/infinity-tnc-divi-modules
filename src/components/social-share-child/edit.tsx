@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import React, { ReactElement, CSSProperties } from 'react';
 import { ModuleContainer } from '@divi/module';
 import { getAttrByMode } from '@divi/module-utils';
 
@@ -46,6 +46,17 @@ const networkIconClass: Record<string, string> = {
   blogger:   'inftnc_soical_blogger',
 };
 
+const buttonLayoutKeys = ['icon_with_text', 'only_icon', 'only_text'];
+const buttonShapeKeys  = ['button_square', 'button_rounded', 'button_circle'];
+
+function resolveSelectValue(val: string | number | undefined, keys: string[], fallback: string): string {
+  if (val === undefined || val === null) return fallback;
+  if (typeof val === 'number' || (typeof val === 'string' && /^\d+$/.test(val))) {
+    return keys[parseInt(String(val), 10)] ?? fallback;
+  }
+  return String(val);
+}
+
 export const SocialShareChildEdit = (props: SocialShareChildEditProps): ReactElement => {
   const {
     attrs,
@@ -68,6 +79,31 @@ export const SocialShareChildEdit = (props: SocialShareChildEditProps): ReactEle
   const iconCls = networkIconClass[network] ?? '';
   const networkClassKey = network === 'facebook' ? 'fb' : network;
 
+  // Read parent button settings to apply circle / only-icon styles inline in the VB.
+  const parentData = (getAttrByMode((parentAttrs as any)?.socialShareData?.innerContent) ?? {}) as {
+    button_layout?: string | number;
+    button_shape?:  string | number;
+  };
+
+  const buttonLayout = resolveSelectValue(parentData.button_layout, buttonLayoutKeys, 'icon_with_text');
+  const buttonShape  = resolveSelectValue(parentData.button_shape,  buttonShapeKeys,  'button_square');
+
+  const isCircle = buttonShape  === 'button_circle';
+  const onlyIcon = buttonLayout === 'only_icon';
+
+  const linkStyle: CSSProperties = (isCircle && onlyIcon) ? {
+    borderRadius:    '50%',
+    aspectRatio:     '1/1',
+    padding:         '10px',
+    display:         'inline-flex',
+    justifyContent:  'center',
+    alignItems:      'center',
+    width:           'auto',
+  } : {};
+
+  const iconStyle: CSSProperties = (isCircle && onlyIcon) ? { marginLeft: 0 } : {};
+  const textStyle: CSSProperties = onlyIcon ? { display: 'none' } : {};
+
   return (
     <ModuleContainer
       attrs={attrs}
@@ -82,9 +118,9 @@ export const SocialShareChildEdit = (props: SocialShareChildEditProps): ReactEle
         attrName: 'module',
       })}
       <div className="inftnc_share_button">
-        <a className={`inftnc_share_link inftnc_${networkClassKey}_share_link`} href="#" onClick={e => e.preventDefault()}>
-          <span className={`inftnc_social_text inftnc_${networkClassKey}_text`}>{label}</span>
-          <span className={`inftnc_social_icon ${iconCls}${network === 'twitter' ? ' et-pb-icon' : ''}`}>
+        <a className={`inftnc_share_link inftnc_${networkClassKey}_share_link`} href="#" onClick={e => e.preventDefault()} style={linkStyle}>
+          <span className={`inftnc_social_text inftnc_${networkClassKey}_text`} style={textStyle}>{label}</span>
+          <span className={`inftnc_social_icon ${iconCls}${network === 'twitter' ? ' et-pb-icon' : ''}`} style={iconStyle}>
             {network === 'twitter' ? String.fromCharCode(0xe094) : null}
             {network === 'email' ? <i className="fas fa-envelope"></i> : null}
           </span>
