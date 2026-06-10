@@ -1,6 +1,6 @@
 === Infinity TNC Divi Modules ===
 Contributors: ThemeNcode, abdulawal39
-Tags: divi, modules, slider, logo, carousel
+Tags: divi, modules, slider, logo, carousel, social share
 Requires at least: 5.0
 Tested up to: 6.8.3
 Requires PHP: 7.0
@@ -15,6 +15,8 @@ Fulfill your Divi experience with the awesome & useful modules for every purpose
 Divi is one of the most powerful page builders in today's world. Infinity TNC is here to make it even more powerful with the addition of exciting and powerful new modules. Simply get this addon, install and start using the power of amazing modules.
 
 With this plugin, you can access a growing library of functionalities that will streamline your design process and help you create exceptional Divi websites. Simply drag and drop the required modules, integrate dynamic elements, and engage the audience. Download this plugin to get all the modules you need to design stunning websites with your favorite Divi builder. Since Infinity TNC Divi Modules is a free plugin, you can install it directly without hassle. 
+
+**Now compatible with Divi 5!** Every module works in both the classic Divi 4 Builder and the new Divi 5 Visual Builder. Existing layouts built with Divi 4 are converted automatically, so you can upgrade to Divi 5 without rebuilding your pages.
 
 <h3>Currently included Modules:</h3>
 
@@ -113,6 +115,17 @@ Source code is available on github. <a href="https://github.com/ThemeNcode/infin
 8. Divi Typewriter Module Preview
  
 == Changelog ==
+= 5.0.0 =
+* Added full compatibility with Divi 5 — every module now works in the new Divi 5 Visual Builder.
+* Added Divi 4 to Divi 5 conversion support, so existing layouts migrate automatically.
+* Fixed module icons not displaying in the Visual Builder.
+* Fixed Breadcrumbs separator icon sizing on the front end.
+* Fixed Dual Buttons alignment and button gap.
+* Fixed Image Carousel and Logo Carousel navigation arrows and pagination in the Visual Builder.
+* Fixed Typewriter inline layout in the Visual Builder.
+* Plugin asset versions are now managed from a single version constant.
+* General code cleanup and improvements.
+
 = 1.2.0 =
 * Misc. Improvements
 
@@ -121,4 +134,5 @@ Source code is available on github. <a href="https://github.com/ThemeNcode/infin
 
 == Upgrade Notice ==
 
-none
+= 5.0.0 =
+Adds full Divi 5 compatibility for all modules, with automatic conversion of existing Divi 4 layouts, plus several Visual Builder fixes.
