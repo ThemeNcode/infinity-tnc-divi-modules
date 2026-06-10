@@ -30,7 +30,7 @@ const files = [
 const zip = async () => {
     const gulpZip = (await import('gulp-zip')).default;
     return src(files)
-        .pipe(gulpZip(package.name + '-v' + package.version + '.zip'))
+        .pipe(gulpZip(package.name + '.zip'))
         .pipe(dest('./'));
 };
 
