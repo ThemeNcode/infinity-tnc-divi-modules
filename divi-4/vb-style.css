@@ -9,3 +9,14 @@
 .et-fb-icon.et-fb-icon--svg {
 	margin: 0 !important;
 }
+
+/**
+ * Typewriter module: in the Visual Builder the typing text is rendered by the
+ * `typewriter-effect` React component, which wraps its output in a block-level
+ * `<div class="Typewriter">`. That block breaks the before/typing/after text
+ * onto separate lines. Force it to flow inline like the frontend output, where
+ * the jQuery typewriter library types directly into an inline span.
+ */
+.inftnc_typewriter_text .Typewriter {
+	display: inline;
+}
