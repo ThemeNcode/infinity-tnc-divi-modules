@@ -14,6 +14,8 @@ import SocialShare from './components/social-share';
 import SocialShareChild from './components/social-share-child';
 import INFTNC_ImageCarousel from './components/image-carousel';
 import ImageCarouselChild from './components/image-carousel-child';
+import LogoCarousel from './components/logo-carousel';
+import LogoCarouselChild from './components/logo-carousel-child';
 
 
 /**
@@ -37,7 +39,9 @@ $(window).on('et_builder_api_ready', (event, API) => {
         SocialShare,
         SocialShareChild,
         INFTNC_ImageCarousel,
-        ImageCarouselChild
-       
+        ImageCarouselChild,
+        LogoCarousel,
+        LogoCarouselChild
+
     ]);
 });

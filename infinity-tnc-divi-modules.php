@@ -92,6 +92,17 @@ function infinity_tnc_divi_module_enqueue_d4_vb_scripts() {
 		wp_enqueue_style( 'inftnc-dual-buttons-vb-style', "{$plugin_dir_url}divi-4/modules/DualButtons/style.css", array(), '1.2.0' );
 		wp_enqueue_style( 'inftnc-social-share-vb-style', "{$plugin_dir_url}divi-4/modules/SocialShare/style.css", array(), '1.2.0' );
 		wp_enqueue_style( 'inftnc-social-share-child-vb-style', "{$plugin_dir_url}divi-4/modules/SocialShareChild/style.css", array(), '1.2.0' );
+
+		/*
+		 * Image/Logo carousel slick styles (navigation arrows + pagination dots) for the
+		 * classic (Divi 4) Visual Builder. The Divi 5 carousel modules reuse the same
+		 * .slick-inftnc-arrow / .inftnc_carousels_image_wrapper classes, and these rules use
+		 * !important, so only load them for the Divi 4 builder to avoid overriding Divi 5.
+		 */
+		if ( ! function_exists( 'et_builder_d5_enabled' ) || ! et_builder_d5_enabled() ) {
+			wp_enqueue_style( 'inftnc-image-carousel' );
+			wp_enqueue_style( 'inftnc-logo-carousel' );
+		}
 	}
 }
 add_action( 'wp_enqueue_scripts', 'infinity_tnc_divi_module_enqueue_d4_vb_scripts' );
