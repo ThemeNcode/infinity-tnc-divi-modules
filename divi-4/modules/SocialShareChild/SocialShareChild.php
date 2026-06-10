@@ -17,6 +17,7 @@ class INFTNC_SocialShareChild extends ET_Builder_Module {
 	function init() {
 		// Module name
 		$this->name             				= esc_html__( 'Social Network', 'infinity-tnc-divi-modules' );
+		$this->icon_path                        = plugin_dir_path( __FILE__ ) . 'icon.svg';
         $this->advanced_setting_title_text 		= esc_html__( 'New Social Network', 'infinity-tnc-divi-modules' );
 		$this->settings_text               		= esc_html__( 'Social Network Settings', 'infinity-tnc-divi-modules' );
 

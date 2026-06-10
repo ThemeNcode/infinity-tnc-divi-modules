@@ -17,6 +17,7 @@ class INFTNC_LogoCarouselChild extends ET_Builder_Module {
 	function init() {
 		// Module name
 		$this->name             				= esc_html__( 'Logo', 'infinity-tnc-divi-modules' );
+		$this->icon_path                        = plugin_dir_path( __FILE__ ) . 'icon.svg';
         $this->advanced_setting_title_text 		= esc_html__( 'New Logo', 'infinity-tnc-divi-modules' );
 		$this->settings_text               		= esc_html__( 'Logo Carousel Settings', 'infinity-tnc-divi-modules' );
 
