@@ -1,6 +1,6 @@
 === Infinity TNC Divi Modules ===
 Contributors: ThemeNcode, abdulawal39
-Tags: divi, modules, slider, logo, carousel, social share
+Tags: divi, divi 5, modules, carousel, logo carousel, image carousel, social share, breadcrumbs, star rating, typewriter, dual button, embed map
 Requires at least: 5.0
 Tested up to: 6.8.3
 Requires PHP: 7.0
