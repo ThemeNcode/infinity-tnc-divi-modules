@@ -48,8 +48,6 @@ require INFINITY_TNC_DIVI_MODULES_PATH . 'admin/inftnc-divi-modules-public.php';
  * @since ??
  */
 function infinity_tnc_divi_module_initialize_d4_modules() {
-	require_once INFINITY_TNC_DIVI_MODULES_PATH . 'divi-4/modules/Divi4Module/Divi4Module.php';
-	require_once INFINITY_TNC_DIVI_MODULES_PATH . 'divi-4/modules/Divi4OnlyModule/Divi4OnlyModule.php';
 	require_once INFINITY_TNC_DIVI_MODULES_PATH . 'divi-4/modules/EmbedMap/EmbedMap.php';
 	require_once INFINITY_TNC_DIVI_MODULES_PATH . 'divi-4/modules/TypeWriter/TypeWriter.php';
 	require_once INFINITY_TNC_DIVI_MODULES_PATH . 'divi-4/modules/StarRating/StarRating.php';
