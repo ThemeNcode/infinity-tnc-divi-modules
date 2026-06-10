@@ -3,7 +3,7 @@
 Plugin Name: Infinity TNC Divi Modules
 Plugin URI:  https://divi.themencode.com/infinity-tnc-divi-modules-preview/
 Description: Fulfill your Divi experience with the awesome & useful modules for every purpose you need.
-Version:     1.2.0
+Version:     5.0.0
 Author:      ThemeNcode LLC
 Author URI:  https://themencode.com/
 License:     GPL2
@@ -33,6 +33,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 define( 'INFINITY_TNC_DIVI_MODULES_PATH', plugin_dir_path( __FILE__ ) );
 define( 'INFINITY_TNC_DIVI_MODULES_URL', plugin_dir_url( __FILE__ ) );
 define( 'INFINITY_TNC_DIVI_MODULES_JSON_PATH', INFINITY_TNC_DIVI_MODULES_PATH . 'modules-json/' );
+
+/**
+ * Plugin version, read once from the plugin header so it stays the single source
+ * of truth. Used to version all enqueued CSS/JS assets (cache busting).
+ */
+define( 'INFINITY_TNC_DIVI_MODULES_VERSION', get_file_data( __FILE__, array( 'Version' => 'Version' ) )['Version'] );
 
 /**
  * Requires Autoloader.
@@ -77,19 +83,19 @@ function infinity_tnc_divi_module_enqueue_d4_vb_scripts() {
 			'infinity-tnc-divi-modules-d4-vb',
 			"{$plugin_dir_url}divi-4/build/infinity-tnc-divi-modules-divi4.js",
 			array( 'react', 'jquery' ),
-			'1.2.0',
+			INFINITY_TNC_DIVI_MODULES_VERSION,
 			true
 		);
-		wp_enqueue_style( 'inftnc-d4-vb-style', "{$plugin_dir_url}divi-4/vb-style.css", array(), '1.2.0' );
-		wp_enqueue_style( 'inftnc-embed-map-vb-style', "{$plugin_dir_url}divi-4/modules/EmbedMap/style.css", array(), '1.2.0' );
-		wp_enqueue_style( 'inftnc-star-rating-vb-style', "{$plugin_dir_url}divi-4/modules/StarRating/style.css", array(), '1.2.0' );
-		wp_enqueue_style( 'inftnc-youtube-embed-vb-style', "{$plugin_dir_url}divi-4/modules/YoutubeEmbed/style.css", array(), '1.2.0' );
-		wp_enqueue_style( 'inftnc-vimeo-video-vb-style', "{$plugin_dir_url}divi-4/modules/VimeoVideo/style.css", array(), '1.2.0' );
-		wp_enqueue_style( 'inftnc-heading-gradient-vb-style', "{$plugin_dir_url}divi-4/modules/HeadingGradient/style.css", array(), '1.2.0' );
-		wp_enqueue_style( 'inftnc-breadcrumb-vb-style', "{$plugin_dir_url}divi-4/modules/BreadCrumbs/style.css", array(), '1.2.0' );
-		wp_enqueue_style( 'inftnc-dual-buttons-vb-style', "{$plugin_dir_url}divi-4/modules/DualButtons/style.css", array(), '1.2.0' );
-		wp_enqueue_style( 'inftnc-social-share-vb-style', "{$plugin_dir_url}divi-4/modules/SocialShare/style.css", array(), '1.2.0' );
-		wp_enqueue_style( 'inftnc-social-share-child-vb-style', "{$plugin_dir_url}divi-4/modules/SocialShareChild/style.css", array(), '1.2.0' );
+		wp_enqueue_style( 'inftnc-d4-vb-style', "{$plugin_dir_url}divi-4/vb-style.css", array(), INFINITY_TNC_DIVI_MODULES_VERSION );
+		wp_enqueue_style( 'inftnc-embed-map-vb-style', "{$plugin_dir_url}divi-4/modules/EmbedMap/style.css", array(), INFINITY_TNC_DIVI_MODULES_VERSION );
+		wp_enqueue_style( 'inftnc-star-rating-vb-style', "{$plugin_dir_url}divi-4/modules/StarRating/style.css", array(), INFINITY_TNC_DIVI_MODULES_VERSION );
+		wp_enqueue_style( 'inftnc-youtube-embed-vb-style', "{$plugin_dir_url}divi-4/modules/YoutubeEmbed/style.css", array(), INFINITY_TNC_DIVI_MODULES_VERSION );
+		wp_enqueue_style( 'inftnc-vimeo-video-vb-style', "{$plugin_dir_url}divi-4/modules/VimeoVideo/style.css", array(), INFINITY_TNC_DIVI_MODULES_VERSION );
+		wp_enqueue_style( 'inftnc-heading-gradient-vb-style', "{$plugin_dir_url}divi-4/modules/HeadingGradient/style.css", array(), INFINITY_TNC_DIVI_MODULES_VERSION );
+		wp_enqueue_style( 'inftnc-breadcrumb-vb-style', "{$plugin_dir_url}divi-4/modules/BreadCrumbs/style.css", array(), INFINITY_TNC_DIVI_MODULES_VERSION );
+		wp_enqueue_style( 'inftnc-dual-buttons-vb-style', "{$plugin_dir_url}divi-4/modules/DualButtons/style.css", array(), INFINITY_TNC_DIVI_MODULES_VERSION );
+		wp_enqueue_style( 'inftnc-social-share-vb-style', "{$plugin_dir_url}divi-4/modules/SocialShare/style.css", array(), INFINITY_TNC_DIVI_MODULES_VERSION );
+		wp_enqueue_style( 'inftnc-social-share-child-vb-style', "{$plugin_dir_url}divi-4/modules/SocialShareChild/style.css", array(), INFINITY_TNC_DIVI_MODULES_VERSION );
 
 		/*
 		 * Image/Logo carousel slick styles (navigation arrows + pagination dots) for the
@@ -117,7 +123,7 @@ function infinity_tnc_divi_module_enqueue_vb_scripts() {
 		\ET\Builder\VisualBuilder\Assets\PackageBuildManager::register_package_build(
 			[
 				'name'   => 'infinity-tnc-divi-modules-vb-bundle-script',
-				'version' => '1.2.0',
+				'version' => INFINITY_TNC_DIVI_MODULES_VERSION,
 				'script' => [
 					'src' => "{$plugin_dir_url}scripts/bundle.js",
 					'deps'               => [
@@ -133,7 +139,7 @@ function infinity_tnc_divi_module_enqueue_vb_scripts() {
 		\ET\Builder\VisualBuilder\Assets\PackageBuildManager::register_package_build(
 			[
 				'name'   => 'infinity-tnc-divi-modules-vb-bundle-style',
-				'version' => '1.2.0',
+				'version' => INFINITY_TNC_DIVI_MODULES_VERSION,
 				'style' => [
 					'src' => "{$plugin_dir_url}styles/vb-bundle.css",
 					'deps'               => [],
@@ -153,15 +159,15 @@ add_action( 'divi_visual_builder_assets_before_enqueue_scripts', 'infinity_tnc_d
  */
 function infinity_tnc_divi_module_enqueue_frontend_scripts() {
 	$plugin_dir_url = plugin_dir_url( __FILE__ );
-	wp_enqueue_style( 'infinity-tnc-divi-modules-bundle-style', "{$plugin_dir_url}styles/bundle.css", array(), '1.2.0' );
-	wp_enqueue_style( 'inftnc-embed-map-style', "{$plugin_dir_url}divi-4/modules/EmbedMap/style.css", array(), '1.2.0' );
-	wp_enqueue_style( 'inftnc-star-rating-style', "{$plugin_dir_url}divi-4/modules/StarRating/style.css", array(), '1.2.0' );
-	wp_enqueue_style( 'inftnc-youtube-embed-style', "{$plugin_dir_url}divi-4/modules/YoutubeEmbed/style.css", array(), '1.2.0' );
-	wp_enqueue_style( 'inftnc-vimeo-video-style', "{$plugin_dir_url}divi-4/modules/VimeoVideo/style.css", array(), '1.2.0' );
-	wp_enqueue_style( 'inftnc-heading-gradient-style', "{$plugin_dir_url}divi-4/modules/HeadingGradient/style.css", array(), '1.2.0' );
-	wp_enqueue_style( 'inftnc-breadcrumb-style', "{$plugin_dir_url}divi-4/modules/BreadCrumbs/style.css", array(), '1.2.0' );
-	wp_enqueue_style( 'inftnc-dual-buttons-style', "{$plugin_dir_url}divi-4/modules/DualButtons/style.css", array(), '1.2.0' );
-	wp_enqueue_style( 'inftnc-social-share-style', "{$plugin_dir_url}divi-4/modules/SocialShare/style.css", array(), '1.2.0' );
-	wp_enqueue_style( 'inftnc-social-share-child-style', "{$plugin_dir_url}divi-4/modules/SocialShareChild/style.css", array(), '1.2.0' );
+	wp_enqueue_style( 'infinity-tnc-divi-modules-bundle-style', "{$plugin_dir_url}styles/bundle.css", array(), INFINITY_TNC_DIVI_MODULES_VERSION );
+	wp_enqueue_style( 'inftnc-embed-map-style', "{$plugin_dir_url}divi-4/modules/EmbedMap/style.css", array(), INFINITY_TNC_DIVI_MODULES_VERSION );
+	wp_enqueue_style( 'inftnc-star-rating-style', "{$plugin_dir_url}divi-4/modules/StarRating/style.css", array(), INFINITY_TNC_DIVI_MODULES_VERSION );
+	wp_enqueue_style( 'inftnc-youtube-embed-style', "{$plugin_dir_url}divi-4/modules/YoutubeEmbed/style.css", array(), INFINITY_TNC_DIVI_MODULES_VERSION );
+	wp_enqueue_style( 'inftnc-vimeo-video-style', "{$plugin_dir_url}divi-4/modules/VimeoVideo/style.css", array(), INFINITY_TNC_DIVI_MODULES_VERSION );
+	wp_enqueue_style( 'inftnc-heading-gradient-style', "{$plugin_dir_url}divi-4/modules/HeadingGradient/style.css", array(), INFINITY_TNC_DIVI_MODULES_VERSION );
+	wp_enqueue_style( 'inftnc-breadcrumb-style', "{$plugin_dir_url}divi-4/modules/BreadCrumbs/style.css", array(), INFINITY_TNC_DIVI_MODULES_VERSION );
+	wp_enqueue_style( 'inftnc-dual-buttons-style', "{$plugin_dir_url}divi-4/modules/DualButtons/style.css", array(), INFINITY_TNC_DIVI_MODULES_VERSION );
+	wp_enqueue_style( 'inftnc-social-share-style', "{$plugin_dir_url}divi-4/modules/SocialShare/style.css", array(), INFINITY_TNC_DIVI_MODULES_VERSION );
+	wp_enqueue_style( 'inftnc-social-share-child-style', "{$plugin_dir_url}divi-4/modules/SocialShareChild/style.css", array(), INFINITY_TNC_DIVI_MODULES_VERSION );
 }
 add_action( 'wp_enqueue_scripts', 'infinity_tnc_divi_module_enqueue_frontend_scripts' );
