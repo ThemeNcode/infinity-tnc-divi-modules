@@ -191,6 +191,7 @@ module.exports = {
           from: '**/module-default-render-attributes.json',
           context: 'src/components',
           to: path.resolve(__dirname, 'modules-json'),
+          noErrorOnMissing: true,
         },
       ]
     } ),

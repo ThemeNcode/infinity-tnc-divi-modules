@@ -1,10 +1,6 @@
 import { addFilter } from '@wordpress/hooks';
 import {
-  moduleD4,
-  moduleDynamic,
   moduleEmbedMap,
-  moduleParent,
-  moduleStatic,
   moduleVimeoVideo,
   moduleBreadCrumbs,
   moduleDualButton,
@@ -21,10 +17,6 @@ import {
 addFilter('divi.iconLibrary.icon.map', 'extensionExample', (icons) => {
   return {
     ...icons,
-    [moduleParent.name]:           moduleParent,
-    [moduleStatic.name]:           moduleStatic,
-    [moduleDynamic.name]:          moduleDynamic,
-    [moduleD4.name]:               moduleD4,
     [moduleEmbedMap.name]:         moduleEmbedMap,
     [moduleVimeoVideo.name]:       moduleVimeoVideo,
     [moduleBreadCrumbs.name]:      moduleBreadCrumbs,

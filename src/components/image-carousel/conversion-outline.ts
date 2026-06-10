@@ -26,6 +26,9 @@ export const conversionOutline: ModuleConversionOutline = {
     after:        'css.*.after',
     before:       'css.*.before',
     main_element: 'css.*.mainElement',
+    image:        'css.*.image',
+    navigation:   'css.*.navigation',
+    pagination:   'css.*.pagination',
   },
   module: {
     slides_to_show:          'imageCarouselData.innerContent.*.slides_to_show',

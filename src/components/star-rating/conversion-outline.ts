@@ -10,7 +10,7 @@ export const conversionOutline: ModuleConversionOutline = {
     box_shadow:      { default: 'module.decoration.boxShadow' },
     disabled_on:     'module.decoration.disabledOn',
     fonts:           {
-      title:         'module.advanced.header.title',
+      title:         'titleText.decoration.font',
       rating_number: 'ratingNumber.decoration.font',
     },
     height:          'module.decoration.sizing',
@@ -33,6 +33,7 @@ export const conversionOutline: ModuleConversionOutline = {
   },
   module: {
     title:              'starRatingData.innerContent.*.title',
+    title_level:        'module.advanced.header.title.header_level.*',
     count_star:         'starRatingData.innerContent.*.count_star',
     rating:             'starRatingData.innerContent.*.rating',
     show_rating_number: 'starRatingData.innerContent.*.show_rating_number',
