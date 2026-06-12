@@ -157,7 +157,7 @@ class INFTNC_StarRating extends ET_Builder_Module {
 			),
 
 			'show_rating_number' => array(
-				'label'             => esc_html__( 'Display Rating Value Text', 'infinity' ),
+				'label'             => esc_html__( 'Display Rating Value Text', 'infinity-tnc-divi-modules' ),
 				'type'              => 'yes_no_button',
 				'default'			=> 'off',
 				'options'           => array(

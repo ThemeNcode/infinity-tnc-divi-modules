@@ -49,6 +49,23 @@ require INFINITY_TNC_DIVI_MODULES_PATH . 'admin/breadcrumbs.php';
 require INFINITY_TNC_DIVI_MODULES_PATH . 'admin/inftnc-divi-modules-public.php';
 
 /**
+ * Load the plugin text domain for translations.
+ *
+ * The translation files (.mo) are expected in the /languages directory
+ * declared by the "Domain Path" plugin header.
+ *
+ * @since ??
+ */
+function infinity_tnc_divi_module_load_textdomain() {
+	load_plugin_textdomain(
+		'infinity-tnc-divi-modules',
+		false,
+		dirname( plugin_basename( __FILE__ ) ) . '/languages'
+	);
+}
+add_action( 'init', 'infinity_tnc_divi_module_load_textdomain' );
+
+/**
  * Register all Divi 4 modules.
  *
  * @since ??

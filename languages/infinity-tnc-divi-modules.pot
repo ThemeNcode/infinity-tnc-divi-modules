@@ -1,0 +1,1396 @@
+# Translation template for Infinity TNC Divi Modules.
+# Copyright (C) 2026 ThemeNcode LLC
+# This file is distributed under the same license as the Infinity TNC Divi Modules package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Infinity TNC Divi Modules 5.0.0\n"
+"Report-Msgid-Bugs-To: devs@tncflow.com\n"
+"POT-Creation-Date: 2026-06-12 18:39+0600\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Domain: infinity-tnc-divi-modules\n"
+
+#. translators: %s: author archive name
+#: admin/breadcrumbs.php:167
+#, php-format
+msgid "Author archive for %s"
+msgstr ""
+
+#. translators: %s: search query
+#: admin/breadcrumbs.php:217
+#, php-format
+msgid "Search query for: %s"
+msgstr ""
+
+#. translators: %s: 404 error
+#: admin/breadcrumbs.php:223
+#, php-format
+msgid "Error %d"
+msgstr ""
+
+#. translators: %s: current page number
+#: admin/breadcrumbs.php:230
+#, php-format
+msgid " ( Page %s )"
+msgstr ""
+
+#: divi-4/modules/HeadingGradient/HeadingGradient.php:21
+msgid "Heading Gradient - Infinity TNC"
+msgstr ""
+
+#: divi-4/modules/HeadingGradient/HeadingGradient.php:28
+#: divi-4/modules/HeadingGradient/HeadingGradient.php:38
+#: divi-4/modules/HeadingGradient/HeadingGradient.php:63
+msgid "Heading"
+msgstr ""
+
+#: divi-4/modules/HeadingGradient/HeadingGradient.php:44
+msgid "Gradient Style"
+msgstr ""
+
+#: divi-4/modules/HeadingGradient/HeadingGradient.php:85
+#: divi-4/modules/StarRating/StarRating.php:87
+#: divi-4/modules/TypeWriter/TypeWriter.php:91
+msgid "Heading Level"
+msgstr ""
+
+#: divi-4/modules/HeadingGradient/HeadingGradient.php:129
+msgid "Heading Text"
+msgstr ""
+
+#: divi-4/modules/HeadingGradient/HeadingGradient.php:131
+msgid "My Awesome Heading with Gradient"
+msgstr ""
+
+#: divi-4/modules/HeadingGradient/HeadingGradient.php:133
+msgid "Content entered here will appear inside the module."
+msgstr ""
+
+#: divi-4/modules/HeadingGradient/HeadingGradient.php:139
+msgid "Gradient Options"
+msgstr ""
+
+#: divi-4/modules/HeadingGradient/HeadingGradient.php:143
+msgid "Gradient Preset"
+msgstr ""
+
+#: divi-4/modules/HeadingGradient/HeadingGradient.php:144
+msgid "Custom Color"
+msgstr ""
+
+#: divi-4/modules/HeadingGradient/HeadingGradient.php:152
+msgid "Gradient Type"
+msgstr ""
+
+#: divi-4/modules/HeadingGradient/HeadingGradient.php:156
+msgid "Linear Gradient"
+msgstr ""
+
+#: divi-4/modules/HeadingGradient/HeadingGradient.php:157
+msgid "Radial Gradient"
+msgstr ""
+
+#: divi-4/modules/HeadingGradient/HeadingGradient.php:158
+msgid "Elliptical"
+msgstr ""
+
+#: divi-4/modules/HeadingGradient/HeadingGradient.php:168
+#: divi-4/modules/HeadingGradient/HeadingGradient.php:190
+#: divi-4/modules/HeadingGradient/HeadingGradient.php:212
+msgid "Position"
+msgstr ""
+
+#: divi-4/modules/HeadingGradient/HeadingGradient.php:172
+#: divi-4/modules/HeadingGradient/HeadingGradient.php:194
+#: divi-4/modules/HeadingGradient/HeadingGradient.php:216
+msgid "Top Left"
+msgstr ""
+
+#: divi-4/modules/HeadingGradient/HeadingGradient.php:173
+msgid "Top"
+msgstr ""
+
+#: divi-4/modules/HeadingGradient/HeadingGradient.php:174
+#: divi-4/modules/HeadingGradient/HeadingGradient.php:196
+#: divi-4/modules/HeadingGradient/HeadingGradient.php:218
+msgid "Top Right"
+msgstr ""
+
+#: divi-4/modules/HeadingGradient/HeadingGradient.php:175
+msgid "Right"
+msgstr ""
+
+#: divi-4/modules/HeadingGradient/HeadingGradient.php:176
+#: divi-4/modules/HeadingGradient/HeadingGradient.php:201
+#: divi-4/modules/HeadingGradient/HeadingGradient.php:224
+msgid "Bottom Right"
+msgstr ""
+
+#: divi-4/modules/HeadingGradient/HeadingGradient.php:177
+msgid "Bottom"
+msgstr ""
+
+#: divi-4/modules/HeadingGradient/HeadingGradient.php:178
+#: divi-4/modules/HeadingGradient/HeadingGradient.php:200
+#: divi-4/modules/HeadingGradient/HeadingGradient.php:222
+msgid "Bottom Left"
+msgstr ""
+
+#: divi-4/modules/HeadingGradient/HeadingGradient.php:179
+msgid "Left"
+msgstr ""
+
+#: divi-4/modules/HeadingGradient/HeadingGradient.php:195
+#: divi-4/modules/HeadingGradient/HeadingGradient.php:217
+msgid "Top Center"
+msgstr ""
+
+#: divi-4/modules/HeadingGradient/HeadingGradient.php:197
+#: divi-4/modules/HeadingGradient/HeadingGradient.php:219
+msgid "Left Center"
+msgstr ""
+
+#: divi-4/modules/HeadingGradient/HeadingGradient.php:198
+#: divi-4/modules/HeadingGradient/HeadingGradient.php:220
+msgid "Center Center"
+msgstr ""
+
+#: divi-4/modules/HeadingGradient/HeadingGradient.php:199
+#: divi-4/modules/HeadingGradient/HeadingGradient.php:221
+msgid "Right Center"
+msgstr ""
+
+#: divi-4/modules/HeadingGradient/HeadingGradient.php:223
+msgid "Bottom Center"
+msgstr ""
+
+#: divi-4/modules/HeadingGradient/HeadingGradient.php:235
+msgid "Start Color"
+msgstr ""
+
+#: divi-4/modules/HeadingGradient/HeadingGradient.php:246
+msgid "End Color"
+msgstr ""
+
+#: divi-4/modules/HeadingGradient/HeadingGradient.php:257
+msgid "Start Position"
+msgstr ""
+
+#: divi-4/modules/HeadingGradient/HeadingGradient.php:273
+msgid "End Position"
+msgstr ""
+
+#: divi-4/modules/HeadingGradient/HeadingGradient.php:289
+msgid "Presets Gradient Style"
+msgstr ""
+
+#: divi-4/modules/DualButtons/DualButtons.php:18
+msgid "Dual Buttons - Infinity TNC"
+msgstr ""
+
+#: divi-4/modules/DualButtons/DualButtons.php:27
+msgid "Button Text"
+msgstr ""
+
+#: divi-4/modules/DualButtons/DualButtons.php:31
+#: divi-4/modules/DualButtons/DualButtons.php:53
+#: divi-4/modules/DualButtons/DualButtons.php:66
+#: divi-4/modules/DualButtons/DualButtons.php:68
+#: divi-4/modules/DualButtons/DualButtons.php:173
+msgid "Button Left"
+msgstr ""
+
+#: divi-4/modules/DualButtons/DualButtons.php:34
+#: divi-4/modules/DualButtons/DualButtons.php:57
+#: divi-4/modules/DualButtons/DualButtons.php:74
+#: divi-4/modules/DualButtons/DualButtons.php:76
+#: divi-4/modules/DualButtons/DualButtons.php:190
+msgid "Button Right"
+msgstr ""
+
+#: divi-4/modules/DualButtons/DualButtons.php:38
+msgid "Button Links"
+msgstr ""
+
+#: divi-4/modules/DualButtons/DualButtons.php:44
+#: divi-4/modules/DualButtons/DualButtons.php:129
+msgid "Button Alignment"
+msgstr ""
+
+#: divi-4/modules/DualButtons/DualButtons.php:45
+#: divi-4/modules/DualButtons/DualButtons.php:140
+msgid "Button Gap"
+msgstr ""
+
+#: divi-4/modules/DualButtons/DualButtons.php:70
+#: divi-4/modules/DualButtons/DualButtons.php:78
+msgid "Input your desired button text."
+msgstr ""
+
+#: divi-4/modules/DualButtons/DualButtons.php:83
+#: divi-4/modules/DualButtons/DualButtons.php:92
+#: divi-4/modules/VimeoVideo/VimeoVideo.php:75
+#: divi-4/modules/YoutubeEmbed/YoutubeEmbed.php:86
+msgid "URL"
+msgstr ""
+
+#: divi-4/modules/DualButtons/DualButtons.php:86
+#: divi-4/modules/DualButtons/DualButtons.php:95
+msgid "Input URL for your button."
+msgstr ""
+
+#: divi-4/modules/DualButtons/DualButtons.php:103
+#: divi-4/modules/DualButtons/DualButtons.php:117
+msgid "Link Target"
+msgstr ""
+
+#: divi-4/modules/DualButtons/DualButtons.php:107
+#: divi-4/modules/DualButtons/DualButtons.php:121
+msgid "Same Window"
+msgstr ""
+
+#: divi-4/modules/DualButtons/DualButtons.php:108
+#: divi-4/modules/DualButtons/DualButtons.php:122
+msgid "New Tab"
+msgstr ""
+
+#: divi-4/modules/DualButtons/DualButtons.php:112
+#: divi-4/modules/DualButtons/DualButtons.php:126
+msgid "Choose whether your link opens in same or new tab"
+msgstr ""
+
+#: divi-4/modules/DualButtons/DualButtons.php:130
+msgid "Align your button to the left, right or center of the module."
+msgstr ""
+
+#: divi-4/modules/SocialShare/SocialShare.php:28
+msgid "Social Share - Infinity TNC"
+msgstr ""
+
+#: divi-4/modules/SocialShare/SocialShare.php:29
+#: divi-4/modules/SocialShareChild/SocialShareChild.php:19
+#: divi-4/modules/SocialShareChild/SocialShareChild.php:57
+msgid "Social Network"
+msgstr ""
+
+#: divi-4/modules/SocialShare/SocialShare.php:39
+msgid "General"
+msgstr ""
+
+#: divi-4/modules/SocialShare/SocialShare.php:45
+msgid "Layout"
+msgstr ""
+
+#: divi-4/modules/SocialShare/SocialShare.php:49
+#: divi-4/modules/SocialShare/SocialShare.php:194
+#: divi-4/modules/SocialShareChild/SocialShareChild.php:34
+#: divi-4/modules/SocialShareChild/SocialShareChild.php:128
+#: divi-4/modules/LogoCarouselChild/LogoCarouselChild.php:35
+msgid "Share Button"
+msgstr ""
+
+#: divi-4/modules/SocialShare/SocialShare.php:53
+#: divi-4/modules/SocialShareChild/SocialShareChild.php:38
+#: divi-4/modules/LogoCarouselChild/LogoCarouselChild.php:39
+msgid "Share Button Icon"
+msgstr ""
+
+#: divi-4/modules/SocialShare/SocialShare.php:72
+msgid "Button Style and Layout"
+msgstr ""
+
+#: divi-4/modules/SocialShare/SocialShare.php:76
+msgid "Icon with Text"
+msgstr ""
+
+#: divi-4/modules/SocialShare/SocialShare.php:77
+msgid "Only Icon"
+msgstr ""
+
+#: divi-4/modules/SocialShare/SocialShare.php:78
+msgid "Only Text"
+msgstr ""
+
+#: divi-4/modules/SocialShare/SocialShare.php:85
+msgid "Button Shape"
+msgstr ""
+
+#: divi-4/modules/SocialShare/SocialShare.php:88
+msgid "Square"
+msgstr ""
+
+#: divi-4/modules/SocialShare/SocialShare.php:89
+msgid "Rounded"
+msgstr ""
+
+#: divi-4/modules/SocialShare/SocialShare.php:90
+msgid "Circle"
+msgstr ""
+
+#: divi-4/modules/SocialShare/SocialShare.php:97
+msgid "Number of Columns"
+msgstr ""
+
+#: divi-4/modules/SocialShare/SocialShare.php:101
+msgid "Auto"
+msgstr ""
+
+#: divi-4/modules/SocialShare/SocialShare.php:102
+msgid "1"
+msgstr ""
+
+#: divi-4/modules/SocialShare/SocialShare.php:103
+msgid "2"
+msgstr ""
+
+#: divi-4/modules/SocialShare/SocialShare.php:104
+msgid "3"
+msgstr ""
+
+#: divi-4/modules/SocialShare/SocialShare.php:105
+msgid "4"
+msgstr ""
+
+#: divi-4/modules/SocialShare/SocialShare.php:106
+msgid "5"
+msgstr ""
+
+#: divi-4/modules/SocialShare/SocialShare.php:107
+msgid "6"
+msgstr ""
+
+#: divi-4/modules/SocialShare/SocialShare.php:116
+msgid "Column Gap"
+msgstr ""
+
+#: divi-4/modules/SocialShare/SocialShare.php:131
+msgid "Row Gap"
+msgstr ""
+
+#: divi-4/modules/SocialShare/SocialShare.php:146
+#: divi-4/modules/SocialShareChild/SocialShareChild.php:79
+msgid "Button Background Color"
+msgstr ""
+
+#: divi-4/modules/SocialShare/SocialShare.php:153
+#: divi-4/modules/ImageCarousel/ImageCarousel.php:322
+#: divi-4/modules/LogoCarousel/LogoCarousel.php:322
+#: divi-4/modules/SocialShareChild/SocialShareChild.php:93
+msgid "Icon Color"
+msgstr ""
+
+#: divi-4/modules/SocialShare/SocialShare.php:160
+#: divi-4/modules/ImageCarousel/ImageCarousel.php:288
+#: divi-4/modules/LogoCarousel/LogoCarousel.php:288
+#: divi-4/modules/SocialShareChild/SocialShareChild.php:100
+msgid "Icon Size"
+msgstr ""
+
+#: divi-4/modules/SocialShare/SocialShare.php:175
+#: divi-4/modules/SocialShareChild/SocialShareChild.php:86
+msgid "Button Padding"
+msgstr ""
+
+#: divi-4/modules/ImageCarousel/ImageCarousel.php:28
+msgid "Image Carousel - Infinity TNC"
+msgstr ""
+
+#: divi-4/modules/ImageCarousel/ImageCarousel.php:31
+#: divi-4/modules/ImageCarousel/ImageCarousel.php:61
+#: divi-4/modules/ImageCarousel/ImageCarousel.php:71
+#: divi-4/modules/ImageCarousel/ImageCarousel.php:414
+#: divi-4/modules/ImageCarousel/ImageCarousel.php:426
+#: divi-4/modules/ImageCarouselChild/ImageCarouselChild.php:18
+#: divi-4/modules/ImageCarouselChild/ImageCarouselChild.php:46
+msgid "Image"
+msgstr ""
+
+#: divi-4/modules/ImageCarousel/ImageCarousel.php:41
+msgid "Image General"
+msgstr ""
+
+#: divi-4/modules/ImageCarousel/ImageCarousel.php:42
+#: divi-4/modules/LogoCarousel/LogoCarousel.php:40
+msgid "Carousel Settings"
+msgstr ""
+
+#: divi-4/modules/ImageCarousel/ImageCarousel.php:47
+#: divi-4/modules/ImageCarousel/ImageCarousel.php:75
+#: divi-4/modules/LogoCarousel/LogoCarousel.php:45
+#: divi-4/modules/LogoCarousel/LogoCarousel.php:73
+msgid "Navigation"
+msgstr ""
+
+#: divi-4/modules/ImageCarousel/ImageCarousel.php:49
+#: divi-4/modules/ImageCarousel/ImageCarousel.php:79
+#: divi-4/modules/LogoCarousel/LogoCarousel.php:47
+#: divi-4/modules/LogoCarousel/LogoCarousel.php:77
+msgid "Pagination"
+msgstr ""
+
+#: divi-4/modules/ImageCarousel/ImageCarousel.php:53
+#: divi-4/modules/LogoCarousel/LogoCarousel.php:51
+msgid "Default"
+msgstr ""
+
+#: divi-4/modules/ImageCarousel/ImageCarousel.php:56
+#: divi-4/modules/LogoCarousel/LogoCarousel.php:54
+msgid "Active"
+msgstr ""
+
+#: divi-4/modules/ImageCarousel/ImageCarousel.php:95
+#: divi-4/modules/LogoCarousel/LogoCarousel.php:95
+msgid "Slides to Show"
+msgstr ""
+
+#: divi-4/modules/ImageCarousel/ImageCarousel.php:98
+#: divi-4/modules/LogoCarousel/LogoCarousel.php:98
+msgid "Slides to show at a time"
+msgstr ""
+
+#: divi-4/modules/ImageCarousel/ImageCarousel.php:106
+#: divi-4/modules/LogoCarousel/LogoCarousel.php:106
+msgid "Slides to Scroll"
+msgstr ""
+
+#: divi-4/modules/ImageCarousel/ImageCarousel.php:109
+#: divi-4/modules/LogoCarousel/LogoCarousel.php:109
+msgid "Slides to scroll at a time"
+msgstr ""
+
+#: divi-4/modules/ImageCarousel/ImageCarousel.php:117
+#: divi-4/modules/LogoCarousel/LogoCarousel.php:117
+msgid "Animation Speed (ms)"
+msgstr ""
+
+#: divi-4/modules/ImageCarousel/ImageCarousel.php:121
+#: divi-4/modules/LogoCarousel/LogoCarousel.php:121
+msgid "Animation Transition speed"
+msgstr ""
+
+#: divi-4/modules/ImageCarousel/ImageCarousel.php:131
+#: divi-4/modules/LogoCarousel/LogoCarousel.php:131
+msgid "Auto Play"
+msgstr ""
+
+#: divi-4/modules/ImageCarousel/ImageCarousel.php:135
+#: divi-4/modules/ImageCarousel/ImageCarousel.php:160
+#: divi-4/modules/ImageCarousel/ImageCarousel.php:172
+#: divi-4/modules/ImageCarousel/ImageCarousel.php:202
+#: divi-4/modules/ImageCarousel/ImageCarousel.php:215
+#: divi-4/modules/ImageCarousel/ImageCarousel.php:228
+#: divi-4/modules/ImageCarousel/ImageCarousel.php:241
+#: divi-4/modules/ImageCarousel/ImageCarousel.php:253
+#: divi-4/modules/ImageCarousel/ImageCarousel.php:265
+#: divi-4/modules/LogoCarousel/LogoCarousel.php:135
+#: divi-4/modules/LogoCarousel/LogoCarousel.php:160
+#: divi-4/modules/LogoCarousel/LogoCarousel.php:172
+#: divi-4/modules/LogoCarousel/LogoCarousel.php:202
+#: divi-4/modules/LogoCarousel/LogoCarousel.php:215
+#: divi-4/modules/LogoCarousel/LogoCarousel.php:228
+#: divi-4/modules/LogoCarousel/LogoCarousel.php:241
+#: divi-4/modules/LogoCarousel/LogoCarousel.php:253
+#: divi-4/modules/LogoCarousel/LogoCarousel.php:265
+#: divi-4/modules/BreadCrumbs/BreadCrumbs.php:117
+msgid "Yes"
+msgstr ""
+
+#: divi-4/modules/ImageCarousel/ImageCarousel.php:136
+#: divi-4/modules/ImageCarousel/ImageCarousel.php:161
+#: divi-4/modules/ImageCarousel/ImageCarousel.php:173
+#: divi-4/modules/ImageCarousel/ImageCarousel.php:203
+#: divi-4/modules/ImageCarousel/ImageCarousel.php:216
+#: divi-4/modules/ImageCarousel/ImageCarousel.php:229
+#: divi-4/modules/ImageCarousel/ImageCarousel.php:242
+#: divi-4/modules/ImageCarousel/ImageCarousel.php:254
+#: divi-4/modules/ImageCarousel/ImageCarousel.php:266
+#: divi-4/modules/LogoCarousel/LogoCarousel.php:136
+#: divi-4/modules/LogoCarousel/LogoCarousel.php:161
+#: divi-4/modules/LogoCarousel/LogoCarousel.php:173
+#: divi-4/modules/LogoCarousel/LogoCarousel.php:203
+#: divi-4/modules/LogoCarousel/LogoCarousel.php:216
+#: divi-4/modules/LogoCarousel/LogoCarousel.php:229
+#: divi-4/modules/LogoCarousel/LogoCarousel.php:242
+#: divi-4/modules/LogoCarousel/LogoCarousel.php:254
+#: divi-4/modules/LogoCarousel/LogoCarousel.php:266
+msgid "NO"
+msgstr ""
+
+#: divi-4/modules/ImageCarousel/ImageCarousel.php:143
+#: divi-4/modules/LogoCarousel/LogoCarousel.php:143
+msgid "Autoplay Speed (ms)"
+msgstr ""
+
+#: divi-4/modules/ImageCarousel/ImageCarousel.php:156
+#: divi-4/modules/LogoCarousel/LogoCarousel.php:156
+msgid "Use Navigation"
+msgstr ""
+
+#: divi-4/modules/ImageCarousel/ImageCarousel.php:168
+#: divi-4/modules/LogoCarousel/LogoCarousel.php:168
+msgid "Use Pagination"
+msgstr ""
+
+#: divi-4/modules/ImageCarousel/ImageCarousel.php:180
+#: divi-4/modules/LogoCarousel/LogoCarousel.php:180
+msgid "Slide Spacing"
+msgstr ""
+
+#: divi-4/modules/ImageCarousel/ImageCarousel.php:197
+#: divi-4/modules/LogoCarousel/LogoCarousel.php:197
+msgid "Infinite"
+msgstr ""
+
+#: divi-4/modules/ImageCarousel/ImageCarousel.php:200
+#: divi-4/modules/LogoCarousel/LogoCarousel.php:200
+msgid "Infinite Logo looping"
+msgstr ""
+
+#: divi-4/modules/ImageCarousel/ImageCarousel.php:210
+#: divi-4/modules/LogoCarousel/LogoCarousel.php:210
+msgid "Pause on Hover"
+msgstr ""
+
+#: divi-4/modules/ImageCarousel/ImageCarousel.php:213
+#: divi-4/modules/LogoCarousel/LogoCarousel.php:213
+msgid "Pauses autoplay on hover"
+msgstr ""
+
+#: divi-4/modules/ImageCarousel/ImageCarousel.php:223
+#: divi-4/modules/LogoCarousel/LogoCarousel.php:223
+msgid "Swipe"
+msgstr ""
+
+#: divi-4/modules/ImageCarousel/ImageCarousel.php:226
+#: divi-4/modules/LogoCarousel/LogoCarousel.php:226
+msgid "Enables touch swipe"
+msgstr ""
+
+#: divi-4/modules/ImageCarousel/ImageCarousel.php:236
+#: divi-4/modules/LogoCarousel/LogoCarousel.php:236
+msgid "RTL"
+msgstr ""
+
+#: divi-4/modules/ImageCarousel/ImageCarousel.php:239
+#: divi-4/modules/LogoCarousel/LogoCarousel.php:239
+msgid "Change the logo direction to become right-to-left"
+msgstr ""
+
+#: divi-4/modules/ImageCarousel/ImageCarousel.php:249
+#: divi-4/modules/LogoCarousel/LogoCarousel.php:249
+msgid "Grayscale by Default"
+msgstr ""
+
+#: divi-4/modules/ImageCarousel/ImageCarousel.php:261
+#: divi-4/modules/LogoCarousel/LogoCarousel.php:261
+msgid "Grayscale on Hover"
+msgstr ""
+
+#: divi-4/modules/ImageCarousel/ImageCarousel.php:273
+msgid "Image Hover Effect"
+msgstr ""
+
+#: divi-4/modules/ImageCarousel/ImageCarousel.php:277
+#: divi-4/modules/LogoCarousel/LogoCarousel.php:277
+msgid "None"
+msgstr ""
+
+#: divi-4/modules/ImageCarousel/ImageCarousel.php:278
+#: divi-4/modules/LogoCarousel/LogoCarousel.php:278
+msgid "Zoom IN"
+msgstr ""
+
+#: divi-4/modules/ImageCarousel/ImageCarousel.php:279
+#: divi-4/modules/LogoCarousel/LogoCarousel.php:279
+msgid "Zoom Out"
+msgstr ""
+
+#: divi-4/modules/ImageCarousel/ImageCarousel.php:280
+#: divi-4/modules/LogoCarousel/LogoCarousel.php:280
+msgid "Slide"
+msgstr ""
+
+#: divi-4/modules/ImageCarousel/ImageCarousel.php:281
+#: divi-4/modules/LogoCarousel/LogoCarousel.php:281
+msgid "Rotate"
+msgstr ""
+
+#: divi-4/modules/ImageCarousel/ImageCarousel.php:305
+#: divi-4/modules/LogoCarousel/LogoCarousel.php:305
+msgid "Background Size"
+msgstr ""
+
+#: divi-4/modules/ImageCarousel/ImageCarousel.php:330
+#: divi-4/modules/LogoCarousel/LogoCarousel.php:330
+msgid "Background Color"
+msgstr ""
+
+#: divi-4/modules/ImageCarousel/ImageCarousel.php:338
+#: divi-4/modules/ImageCarousel/ImageCarousel.php:356
+msgid "Dot Size"
+msgstr ""
+
+#: divi-4/modules/ImageCarousel/ImageCarousel.php:374
+msgid "Dot Color"
+msgstr ""
+
+#: divi-4/modules/ImageCarousel/ImageCarousel.php:382
+msgid "Dot Alignment"
+msgstr ""
+
+#: divi-4/modules/ImageCarousel/ImageCarousel.php:383
+#: divi-4/modules/LogoCarousel/LogoCarousel.php:383
+msgid "Align Dots to the left, right or center of the module."
+msgstr ""
+
+#: divi-4/modules/LogoCarousel/LogoCarousel.php:28
+msgid "Logo Carousel - Infinity TNC"
+msgstr ""
+
+#: divi-4/modules/LogoCarousel/LogoCarousel.php:29
+#: divi-4/modules/LogoCarousel/LogoCarousel.php:59
+#: divi-4/modules/LogoCarousel/LogoCarousel.php:69
+#: divi-4/modules/LogoCarousel/LogoCarousel.php:414
+#: divi-4/modules/LogoCarousel/LogoCarousel.php:426
+#: divi-4/modules/LogoCarouselChild/LogoCarouselChild.php:19
+#: divi-4/modules/LogoCarouselChild/LogoCarouselChild.php:58
+msgid "Logo"
+msgstr ""
+
+#: divi-4/modules/LogoCarousel/LogoCarousel.php:39
+msgid "Logo General"
+msgstr ""
+
+#: divi-4/modules/LogoCarousel/LogoCarousel.php:273
+msgid "Logo Hover Effect"
+msgstr ""
+
+#: divi-4/modules/LogoCarousel/LogoCarousel.php:338
+#: divi-4/modules/LogoCarousel/LogoCarousel.php:356
+msgid "Dots Size"
+msgstr ""
+
+#: divi-4/modules/LogoCarousel/LogoCarousel.php:374
+msgid "Dots Color"
+msgstr ""
+
+#: divi-4/modules/LogoCarousel/LogoCarousel.php:382
+msgid "Dots Alignment"
+msgstr ""
+
+#: divi-4/modules/VimeoVideo/VimeoVideo.php:23
+msgid "Vimeo Video - Infinity TNC"
+msgstr ""
+
+#: divi-4/modules/VimeoVideo/VimeoVideo.php:30
+msgid "Iframe"
+msgstr ""
+
+#: divi-4/modules/VimeoVideo/VimeoVideo.php:37
+msgid "Vimeo Video"
+msgstr ""
+
+#: divi-4/modules/VimeoVideo/VimeoVideo.php:39
+#: divi-4/modules/YoutubeEmbed/YoutubeEmbed.php:39
+msgid "Video Options"
+msgstr ""
+
+#: divi-4/modules/VimeoVideo/VimeoVideo.php:71
+msgid "Vimeo Method"
+msgstr ""
+
+#: divi-4/modules/VimeoVideo/VimeoVideo.php:76
+#: divi-4/modules/YoutubeEmbed/YoutubeEmbed.php:87
+msgid "ID"
+msgstr ""
+
+#: divi-4/modules/VimeoVideo/VimeoVideo.php:77
+#: divi-4/modules/YoutubeEmbed/YoutubeEmbed.php:88
+#: divi-4/modules/EmbedMap/EmbedMap.php:85
+#: divi-4/modules/EmbedMap/EmbedMap.php:119
+msgid "Embed Code"
+msgstr ""
+
+#: divi-4/modules/VimeoVideo/VimeoVideo.php:84
+msgid "Vimeo Video URL"
+msgstr ""
+
+#: divi-4/modules/VimeoVideo/VimeoVideo.php:96
+msgid "Vimeo Video ID"
+msgstr ""
+
+#: divi-4/modules/VimeoVideo/VimeoVideo.php:107
+msgid "Vimeo Video Embed Code"
+msgstr ""
+
+#: divi-4/modules/VimeoVideo/VimeoVideo.php:118
+#: divi-4/modules/YoutubeEmbed/YoutubeEmbed.php:129
+msgid "Start Time"
+msgstr ""
+
+#: divi-4/modules/VimeoVideo/VimeoVideo.php:120
+msgid "Time represented in minutes and/or seconds (for example,1m2s)"
+msgstr ""
+
+#: divi-4/modules/VimeoVideo/VimeoVideo.php:128
+#: divi-4/modules/YoutubeEmbed/YoutubeEmbed.php:162
+msgid "Autoplay"
+msgstr ""
+
+#: divi-4/modules/VimeoVideo/VimeoVideo.php:131
+msgid "Automatically start playback of the video."
+msgstr ""
+
+#: divi-4/modules/VimeoVideo/VimeoVideo.php:133
+#: divi-4/modules/VimeoVideo/VimeoVideo.php:148
+#: divi-4/modules/VimeoVideo/VimeoVideo.php:163
+#: divi-4/modules/VimeoVideo/VimeoVideo.php:178
+#: divi-4/modules/VimeoVideo/VimeoVideo.php:193
+#: divi-4/modules/VimeoVideo/VimeoVideo.php:208
+#: divi-4/modules/VimeoVideo/VimeoVideo.php:223
+#: divi-4/modules/VimeoVideo/VimeoVideo.php:238
+#: divi-4/modules/YoutubeEmbed/YoutubeEmbed.php:166
+#: divi-4/modules/YoutubeEmbed/YoutubeEmbed.php:180
+#: divi-4/modules/YoutubeEmbed/YoutubeEmbed.php:194
+#: divi-4/modules/YoutubeEmbed/YoutubeEmbed.php:208
+#: divi-4/modules/YoutubeEmbed/YoutubeEmbed.php:222
+#: divi-4/modules/TypeWriter/TypeWriter.php:215
+msgid "ON"
+msgstr ""
+
+#: divi-4/modules/VimeoVideo/VimeoVideo.php:134
+#: divi-4/modules/VimeoVideo/VimeoVideo.php:149
+#: divi-4/modules/VimeoVideo/VimeoVideo.php:164
+#: divi-4/modules/VimeoVideo/VimeoVideo.php:179
+#: divi-4/modules/VimeoVideo/VimeoVideo.php:194
+#: divi-4/modules/VimeoVideo/VimeoVideo.php:209
+#: divi-4/modules/VimeoVideo/VimeoVideo.php:224
+#: divi-4/modules/VimeoVideo/VimeoVideo.php:239
+#: divi-4/modules/YoutubeEmbed/YoutubeEmbed.php:167
+#: divi-4/modules/YoutubeEmbed/YoutubeEmbed.php:181
+#: divi-4/modules/YoutubeEmbed/YoutubeEmbed.php:195
+#: divi-4/modules/YoutubeEmbed/YoutubeEmbed.php:209
+#: divi-4/modules/YoutubeEmbed/YoutubeEmbed.php:223
+#: divi-4/modules/TypeWriter/TypeWriter.php:216
+msgid "OFF"
+msgstr ""
+
+#: divi-4/modules/VimeoVideo/VimeoVideo.php:143
+#: divi-4/modules/YoutubeEmbed/YoutubeEmbed.php:176
+msgid "Mute"
+msgstr ""
+
+#: divi-4/modules/VimeoVideo/VimeoVideo.php:146
+msgid ""
+"Set video to mute on load. Viewers can still adjust the volume preferences "
+"in the player."
+msgstr ""
+
+#: divi-4/modules/VimeoVideo/VimeoVideo.php:158
+#: divi-4/modules/YoutubeEmbed/YoutubeEmbed.php:190
+#: divi-4/modules/TypeWriter/TypeWriter.php:210
+msgid "Loop"
+msgstr ""
+
+#: divi-4/modules/VimeoVideo/VimeoVideo.php:161
+msgid "Play the video again when it reaches the end, infinitely."
+msgstr ""
+
+#: divi-4/modules/VimeoVideo/VimeoVideo.php:173
+#: divi-4/modules/YoutubeEmbed/YoutubeEmbed.php:204
+msgid "Player Control"
+msgstr ""
+
+#: divi-4/modules/VimeoVideo/VimeoVideo.php:176
+msgid ""
+"This parameter will hide all elements in the player (play bar, sharing "
+"buttons, etc) for a chromeless experience. "
+msgstr ""
+
+#: divi-4/modules/VimeoVideo/VimeoVideo.php:188
+msgid "Intro Portrait"
+msgstr ""
+
+#: divi-4/modules/VimeoVideo/VimeoVideo.php:191
+msgid "Show the author’s profile image"
+msgstr ""
+
+#: divi-4/modules/VimeoVideo/VimeoVideo.php:203
+msgid "Intro Title"
+msgstr ""
+
+#: divi-4/modules/VimeoVideo/VimeoVideo.php:206
+msgid "Show the video’s title."
+msgstr ""
+
+#: divi-4/modules/VimeoVideo/VimeoVideo.php:218
+msgid "Intro Byline"
+msgstr ""
+
+#: divi-4/modules/VimeoVideo/VimeoVideo.php:221
+msgid "Show the author of the video (byline)."
+msgstr ""
+
+#: divi-4/modules/VimeoVideo/VimeoVideo.php:233
+msgid "Plays Inline"
+msgstr ""
+
+#: divi-4/modules/VimeoVideo/VimeoVideo.php:236
+msgid ""
+"Play video inline on mobile devices instead of automatically going into "
+"fullscreen mode. Inline playback is enabled for all videos by default."
+msgstr ""
+
+#: divi-4/modules/VimeoVideo/VimeoVideo.php:248
+msgid "Color"
+msgstr ""
+
+#: divi-4/modules/VimeoVideo/VimeoVideo.php:251
+msgid ""
+"Specify the color of the video controls. Colors may be overridden by the "
+"embed settings of the video"
+msgstr ""
+
+#: divi-4/modules/StarRating/StarRating.php:22
+msgid "Star Rating - Infinity TNC"
+msgstr ""
+
+#: divi-4/modules/StarRating/StarRating.php:29
+msgid "Rating"
+msgstr ""
+
+#: divi-4/modules/StarRating/StarRating.php:35
+msgid "Star Style"
+msgstr ""
+
+#: divi-4/modules/StarRating/StarRating.php:39
+msgid "Title Text"
+msgstr ""
+
+#: divi-4/modules/StarRating/StarRating.php:43
+msgid "Rating Text"
+msgstr ""
+
+#: divi-4/modules/StarRating/StarRating.php:62
+#: divi-4/modules/StarRating/StarRating.php:154
+msgid "Title"
+msgstr ""
+
+#: divi-4/modules/StarRating/StarRating.php:92
+msgid "Rating Number"
+msgstr ""
+
+#: divi-4/modules/StarRating/StarRating.php:129
+msgid "Rating Scale"
+msgstr ""
+
+#: divi-4/modules/StarRating/StarRating.php:141
+msgid "Rating Value"
+msgstr ""
+
+#: divi-4/modules/StarRating/StarRating.php:160
+msgid "Display Rating Value Text"
+msgstr ""
+
+#: divi-4/modules/StarRating/StarRating.php:164
+msgid "Show"
+msgstr ""
+
+#: divi-4/modules/StarRating/StarRating.php:165
+msgid "Hide"
+msgstr ""
+
+#: divi-4/modules/StarRating/StarRating.php:171
+msgid "Star Icon Color"
+msgstr ""
+
+#: divi-4/modules/StarRating/StarRating.php:180
+msgid "Star Icon Empty Color"
+msgstr ""
+
+#: divi-4/modules/StarRating/StarRating.php:189
+msgid "Star Size"
+msgstr ""
+
+#: divi-4/modules/StarRating/StarRating.php:202
+msgid "Star Gap"
+msgstr ""
+
+#: divi-4/modules/StarRating/StarRating.php:215
+msgid "Star Alignment"
+msgstr ""
+
+#: divi-4/modules/StarRating/StarRating.php:216
+msgid "Align your start to the left, right or center of the module."
+msgstr ""
+
+#: divi-4/modules/YoutubeEmbed/YoutubeEmbed.php:23
+msgid "Youtube Video - Infinity TNC"
+msgstr ""
+
+#: divi-4/modules/YoutubeEmbed/YoutubeEmbed.php:30
+msgid "Youtube"
+msgstr ""
+
+#: divi-4/modules/YoutubeEmbed/YoutubeEmbed.php:37
+msgid "Youtube Video"
+msgstr ""
+
+#: divi-4/modules/YoutubeEmbed/YoutubeEmbed.php:70
+msgid "Video Type"
+msgstr ""
+
+#: divi-4/modules/YoutubeEmbed/YoutubeEmbed.php:74
+msgid "Video"
+msgstr ""
+
+#: divi-4/modules/YoutubeEmbed/YoutubeEmbed.php:75
+msgid "Playlist"
+msgstr ""
+
+#: divi-4/modules/YoutubeEmbed/YoutubeEmbed.php:82
+msgid "Video/Playlist Method"
+msgstr ""
+
+#: divi-4/modules/YoutubeEmbed/YoutubeEmbed.php:95
+msgid "Youtube Video/Playlist URL"
+msgstr ""
+
+#: divi-4/modules/YoutubeEmbed/YoutubeEmbed.php:107
+msgid "Youtube Video/Playlist ID"
+msgstr ""
+
+#: divi-4/modules/YoutubeEmbed/YoutubeEmbed.php:118
+msgid "Youtube Video/Playlist Embed Code"
+msgstr ""
+
+#: divi-4/modules/YoutubeEmbed/YoutubeEmbed.php:146
+msgid "End Time"
+msgstr ""
+
+#: divi-4/modules/YoutubeEmbed/YoutubeEmbed.php:218
+msgid "External suggested videos."
+msgstr ""
+
+#: divi-4/modules/TypeWriter/TypeWriter.php:23
+msgid "Typewriter - Infinity TNC"
+msgstr ""
+
+#: divi-4/modules/TypeWriter/TypeWriter.php:30
+#: divi-4/modules/TypeWriter/TypeWriter.php:40
+#: divi-4/modules/TypeWriter/TypeWriter.php:164
+msgid "Typing Text"
+msgstr ""
+
+#: divi-4/modules/TypeWriter/TypeWriter.php:32
+msgid "Typing Effect Options"
+msgstr ""
+
+#: divi-4/modules/TypeWriter/TypeWriter.php:44
+msgid "Before Title Text"
+msgstr ""
+
+#: divi-4/modules/TypeWriter/TypeWriter.php:49
+msgid "After Title Text"
+msgstr ""
+
+#: divi-4/modules/TypeWriter/TypeWriter.php:66
+msgid "Typing"
+msgstr ""
+
+#: divi-4/modules/TypeWriter/TypeWriter.php:96
+msgid "Before Title"
+msgstr ""
+
+#: divi-4/modules/TypeWriter/TypeWriter.php:120
+msgid "After Title"
+msgstr ""
+
+#: divi-4/modules/TypeWriter/TypeWriter.php:157
+#: divi-4/modules/BreadCrumbs/BreadCrumbs.php:42
+#: divi-4/modules/BreadCrumbs/BreadCrumbs.php:92
+msgid "Before Text"
+msgstr ""
+
+#: divi-4/modules/TypeWriter/TypeWriter.php:159
+msgid "I am a Heading with"
+msgstr ""
+
+#: divi-4/modules/TypeWriter/TypeWriter.php:166
+msgid "Typewriter|Typing Animation"
+msgstr ""
+
+#: divi-4/modules/TypeWriter/TypeWriter.php:167
+msgid "Use | to separate multiple values. Ex. Text 1 | Text 2 | Text 3"
+msgstr ""
+
+#: divi-4/modules/TypeWriter/TypeWriter.php:172
+msgid "After Text"
+msgstr ""
+
+#: divi-4/modules/TypeWriter/TypeWriter.php:174
+msgid "Effect"
+msgstr ""
+
+#: divi-4/modules/TypeWriter/TypeWriter.php:179
+msgid "Typing Speed (ms)"
+msgstr ""
+
+#: divi-4/modules/TypeWriter/TypeWriter.php:186
+msgid "Typing BackSpeed (ms)"
+msgstr ""
+
+#: divi-4/modules/TypeWriter/TypeWriter.php:189
+msgid "The BackSpeed between deleting each character."
+msgstr ""
+
+#: divi-4/modules/TypeWriter/TypeWriter.php:194
+msgid "Pause Time (ms)"
+msgstr ""
+
+#: divi-4/modules/TypeWriter/TypeWriter.php:195
+msgid "The pause duration after a text is typed."
+msgstr ""
+
+#: divi-4/modules/TypeWriter/TypeWriter.php:202
+msgid "Cursor"
+msgstr ""
+
+#: divi-4/modules/TypeWriter/TypeWriter.php:203
+msgid "Use as the cursor."
+msgstr ""
+
+#: divi-4/modules/TypeWriter/TypeWriter.php:213
+msgid "Whether to keep looping or not."
+msgstr ""
+
+#: divi-4/modules/ImageCarouselChild/ImageCarouselChild.php:20
+msgid "New Image"
+msgstr ""
+
+#: divi-4/modules/ImageCarouselChild/ImageCarouselChild.php:21
+msgid "Image Carousel Settings"
+msgstr ""
+
+#: divi-4/modules/ImageCarouselChild/ImageCarouselChild.php:28
+#: divi-4/modules/LogoCarouselChild/LogoCarouselChild.php:29
+msgid "Content"
+msgstr ""
+
+#: divi-4/modules/ImageCarouselChild/ImageCarouselChild.php:50
+msgid "Upload an Image"
+msgstr ""
+
+#: divi-4/modules/ImageCarouselChild/ImageCarouselChild.php:51
+msgid "Choose an Image"
+msgstr ""
+
+#: divi-4/modules/ImageCarouselChild/ImageCarouselChild.php:52
+msgid "Set As Image"
+msgstr ""
+
+#: divi-4/modules/ImageCarouselChild/ImageCarouselChild.php:53
+msgid ""
+"Upload your desired Image, or type in the URL to the Image you would like to "
+"display."
+msgstr ""
+
+#: divi-4/modules/ImageCarouselChild/ImageCarouselChild.php:58
+msgid "Image ALT Text"
+msgstr ""
+
+#: divi-4/modules/ImageCarouselChild/ImageCarouselChild.php:61
+msgid ""
+"This defines the HTML ALT text. A short description of your image can be "
+"placed here."
+msgstr ""
+
+#: divi-4/modules/EmbedMap/EmbedMap.php:23
+msgid "Embed Map - Infinity TNC"
+msgstr ""
+
+#: divi-4/modules/EmbedMap/EmbedMap.php:30
+msgid "Map"
+msgstr ""
+
+#: divi-4/modules/EmbedMap/EmbedMap.php:38
+msgid "Embed Map"
+msgstr ""
+
+#: divi-4/modules/EmbedMap/EmbedMap.php:80
+msgid "Source Type"
+msgstr ""
+
+#: divi-4/modules/EmbedMap/EmbedMap.php:84
+#: divi-4/modules/EmbedMap/EmbedMap.php:92
+msgid "Latitude & Longitude"
+msgstr ""
+
+#: divi-4/modules/EmbedMap/EmbedMap.php:96
+msgid "Map Latitude & Longitude"
+msgstr ""
+
+#: divi-4/modules/EmbedMap/EmbedMap.php:104
+msgid "Zoom"
+msgstr ""
+
+#: divi-4/modules/EmbedMap/EmbedMap.php:122
+msgid "Map Longitude"
+msgstr ""
+
+#: divi-4/modules/SocialShareChild/SocialShareChild.php:21
+msgid "New Social Network"
+msgstr ""
+
+#: divi-4/modules/SocialShareChild/SocialShareChild.php:22
+msgid "Social Network Settings"
+msgstr ""
+
+#: divi-4/modules/SocialShareChild/SocialShareChild.php:28
+msgid "Network"
+msgstr ""
+
+#: divi-4/modules/SocialShareChild/SocialShareChild.php:62
+msgid "Select a Network"
+msgstr ""
+
+#: divi-4/modules/SocialShareChild/SocialShareChild.php:63
+msgid "Facebook"
+msgstr ""
+
+#: divi-4/modules/SocialShareChild/SocialShareChild.php:64
+msgid "WhatsApp"
+msgstr ""
+
+#: divi-4/modules/SocialShareChild/SocialShareChild.php:65
+msgid "X"
+msgstr ""
+
+#: divi-4/modules/SocialShareChild/SocialShareChild.php:66
+msgid "Pinterest"
+msgstr ""
+
+#: divi-4/modules/SocialShareChild/SocialShareChild.php:67
+msgid "Linekdin"
+msgstr ""
+
+#: divi-4/modules/SocialShareChild/SocialShareChild.php:68
+msgid "Telegram "
+msgstr ""
+
+#: divi-4/modules/SocialShareChild/SocialShareChild.php:69
+msgid "Reddit"
+msgstr ""
+
+#: divi-4/modules/SocialShareChild/SocialShareChild.php:70
+msgid "Tumblr"
+msgstr ""
+
+#: divi-4/modules/SocialShareChild/SocialShareChild.php:71
+msgid "Email "
+msgstr ""
+
+#: divi-4/modules/SocialShareChild/SocialShareChild.php:72
+msgid "Blogger"
+msgstr ""
+
+#: divi-4/modules/SocialShareChild/SocialShareChild.php:74
+msgid "Choose the social network"
+msgstr ""
+
+#: divi-4/modules/SocialShareChild/SocialShareChild.php:223
+#: divi-4/modules/SocialShareChild/SocialShareChild.php:236
+msgid " Share on Facebook"
+msgstr ""
+
+#: divi-4/modules/SocialShareChild/SocialShareChild.php:254
+#: divi-4/modules/SocialShareChild/SocialShareChild.php:266
+#: modules/SocialShareChild/SocialShareChildTrait/RenderCallbackTrait.php:91
+msgid "Share on WhatsApp"
+msgstr ""
+
+#: divi-4/modules/SocialShareChild/SocialShareChild.php:301
+#: divi-4/modules/SocialShareChild/SocialShareChild.php:312
+#: modules/SocialShareChild/SocialShareChildTrait/RenderCallbackTrait.php:92
+msgid "Share on X"
+msgstr ""
+
+#: divi-4/modules/SocialShareChild/SocialShareChild.php:340
+#: divi-4/modules/SocialShareChild/SocialShareChild.php:353
+#: modules/SocialShareChild/SocialShareChildTrait/RenderCallbackTrait.php:93
+msgid "Share on Pinterest"
+msgstr ""
+
+#: divi-4/modules/SocialShareChild/SocialShareChild.php:388
+#: divi-4/modules/SocialShareChild/SocialShareChild.php:401
+msgid "Share on Linekdin"
+msgstr ""
+
+#: divi-4/modules/SocialShareChild/SocialShareChild.php:428
+#: divi-4/modules/SocialShareChild/SocialShareChild.php:441
+#: modules/SocialShareChild/SocialShareChildTrait/RenderCallbackTrait.php:95
+msgid "Share on Telegram"
+msgstr ""
+
+#: divi-4/modules/SocialShareChild/SocialShareChild.php:467
+#: divi-4/modules/SocialShareChild/SocialShareChild.php:481
+#: modules/SocialShareChild/SocialShareChildTrait/RenderCallbackTrait.php:96
+msgid "Share on Reddit"
+msgstr ""
+
+#: divi-4/modules/SocialShareChild/SocialShareChild.php:509
+#: modules/SocialShareChild/SocialShareChildTrait/RenderCallbackTrait.php:97
+msgid "Share on Tumblr"
+msgstr ""
+
+#: divi-4/modules/SocialShareChild/SocialShareChild.php:521
+msgid "Share on Tumblr "
+msgstr ""
+
+#: divi-4/modules/SocialShareChild/SocialShareChild.php:555
+#: modules/SocialShareChild/SocialShareChildTrait/RenderCallbackTrait.php:98
+msgid "Share on Email"
+msgstr ""
+
+#: divi-4/modules/SocialShareChild/SocialShareChild.php:569
+msgid "Share on Email "
+msgstr ""
+
+#: divi-4/modules/SocialShareChild/SocialShareChild.php:599
+#: modules/SocialShareChild/SocialShareChildTrait/RenderCallbackTrait.php:99
+msgid "Share on Blogger"
+msgstr ""
+
+#: divi-4/modules/SocialShareChild/SocialShareChild.php:612
+msgid "Share on Blogger "
+msgstr ""
+
+#: divi-4/modules/LogoCarouselChild/LogoCarouselChild.php:21
+msgid "New Logo"
+msgstr ""
+
+#: divi-4/modules/LogoCarouselChild/LogoCarouselChild.php:22
+msgid "Logo Carousel Settings"
+msgstr ""
+
+#: divi-4/modules/LogoCarouselChild/LogoCarouselChild.php:62
+msgid "Upload a Logo"
+msgstr ""
+
+#: divi-4/modules/LogoCarouselChild/LogoCarouselChild.php:63
+msgid "Choose a Logo"
+msgstr ""
+
+#: divi-4/modules/LogoCarouselChild/LogoCarouselChild.php:64
+msgid "Set As Logo"
+msgstr ""
+
+#: divi-4/modules/LogoCarouselChild/LogoCarouselChild.php:65
+msgid ""
+"Upload your desired logo, or type in the URL to the logo you would like to "
+"display."
+msgstr ""
+
+#: divi-4/modules/LogoCarouselChild/LogoCarouselChild.php:70
+msgid "Logo ALT Text"
+msgstr ""
+
+#: divi-4/modules/LogoCarouselChild/LogoCarouselChild.php:73
+msgid ""
+"This defines the HTML ALT text. A short description of your logo can be "
+"placed here."
+msgstr ""
+
+#: divi-4/modules/BreadCrumbs/BreadCrumbs.php:17
+msgid "Breadcrumbs - Infinity TNC"
+msgstr ""
+
+#: divi-4/modules/BreadCrumbs/BreadCrumbs.php:25
+msgid "Text"
+msgstr ""
+
+#: divi-4/modules/BreadCrumbs/BreadCrumbs.php:26
+msgid "Icon"
+msgstr ""
+
+#: divi-4/modules/BreadCrumbs/BreadCrumbs.php:32
+msgid "Colors"
+msgstr ""
+
+#: divi-4/modules/BreadCrumbs/BreadCrumbs.php:47
+msgid "Home Text"
+msgstr ""
+
+#: divi-4/modules/BreadCrumbs/BreadCrumbs.php:52
+msgid "Separator"
+msgstr ""
+
+#: divi-4/modules/BreadCrumbs/BreadCrumbs.php:57
+msgid "Current Text"
+msgstr ""
+
+#: divi-4/modules/BreadCrumbs/BreadCrumbs.php:83
+#: divi-4/modules/BreadCrumbs/BreadCrumbs.php:86
+msgid "Home"
+msgstr ""
+
+#: divi-4/modules/BreadCrumbs/BreadCrumbs.php:87
+msgid "Default home text in the Breadcrumbs"
+msgstr ""
+
+#: divi-4/modules/BreadCrumbs/BreadCrumbs.php:95
+msgid "Before text in the breadcrumbs"
+msgstr ""
+
+#: divi-4/modules/BreadCrumbs/BreadCrumbs.php:100
+msgid "Separator Icon"
+msgstr ""
+
+#: divi-4/modules/BreadCrumbs/BreadCrumbs.php:107
+msgid "Choose the icon for the separator."
+msgstr ""
+
+#: divi-4/modules/BreadCrumbs/BreadCrumbs.php:111
+msgid "Add Before Icon"
+msgstr ""
+
+#: divi-4/modules/BreadCrumbs/BreadCrumbs.php:116
+msgid "No"
+msgstr ""
+
+#: divi-4/modules/BreadCrumbs/BreadCrumbs.php:122
+msgid "Before Text Icon"
+msgstr ""
+
+#: divi-4/modules/BreadCrumbs/BreadCrumbs.php:129
+msgid "Choose the icon for the before text."
+msgstr ""
+
+#: divi-4/modules/BreadCrumbs/BreadCrumbs.php:136
+msgid "Link Color"
+msgstr ""
+
+#: divi-4/modules/BreadCrumbs/BreadCrumbs.php:143
+msgid "Separator Icon Color"
+msgstr ""
+
+#: divi-4/modules/BreadCrumbs/BreadCrumbs.php:150
+msgid "Current Text Color"
+msgstr ""
+
+#: divi-4/modules/BreadCrumbs/BreadCrumbs.php:157
+msgid "Before Text Color"
+msgstr ""
+
+#: modules/SocialShareChild/SocialShareChildTrait/RenderCallbackTrait.php:90
+msgid "Share on Facebook"
+msgstr ""
+
+#: modules/SocialShareChild/SocialShareChildTrait/RenderCallbackTrait.php:94
+msgid "Share on LinkedIn"
+msgstr ""
