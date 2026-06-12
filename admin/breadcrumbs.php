@@ -45,7 +45,7 @@ function infinity_tnc_breadcrumb($_home_text='Home',$_before_text='',$_delimiter
         $post_object = sanitize_post( $queried_object );
 
         // Set variables 
-        $title          = apply_filters( 'the_title', $post_object->post_title );
+        $title          = get_the_title( $post_object->ID );
         $parent         = $post_object->post_parent;
         $post_type      = $post_object->post_type;
         $post_id        = $post_object->ID;
