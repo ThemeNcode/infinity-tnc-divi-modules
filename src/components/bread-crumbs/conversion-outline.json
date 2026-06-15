@@ -43,5 +43,9 @@
     "seperate_icon_color": "breadCrumbsData.innerContent.*.seperate_icon_color",
     "current_text_color": "breadCrumbsData.innerContent.*.current_text_color",
     "before_text_color": "breadCrumbsData.innerContent.*.before_text_color"
+  },
+  "valueExpansionFunctionMap": {
+    "seperator_icon": "convertFontIcon",
+    "before_text_icon": "convertFontIcon"
   }
 }

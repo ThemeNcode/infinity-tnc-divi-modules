@@ -389,3 +389,14 @@
 .slick-arrow.slick-hidden {
     display: none;
 }
+
+/*
+ * Reset Divi's default child-module bottom margin inside the carousel.
+ * Divi adds `margin-bottom: 2.75%` to every `.et_pb_module` in a column
+ * (e.g. `.et_pb_gutters3 .et_pb_column_4_4.et_block_column .et_pb_module`,
+ * specificity 0,4,0). Slides should not carry that spacing, so override it
+ * with !important to win regardless of the column/gutter combination.
+ */
+.inftnc_carousels_logo_wrapper .et_pb_module {
+    margin-bottom: 0 !important;
+}

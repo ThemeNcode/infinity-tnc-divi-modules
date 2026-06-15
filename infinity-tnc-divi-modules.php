@@ -146,6 +146,7 @@ function infinity_tnc_divi_module_enqueue_vb_scripts() {
 					'deps'               => [
 						'divi-module-library',
 						'divi-vendor-wp-hooks',
+						'divi-conversion',
 					],
 					'enqueue_top_window' => false,
 					'enqueue_app_window' => true,

@@ -38,6 +38,7 @@ module.exports = {
     '@divi/icon-library': ['divi', 'iconLibrary'],
     '@divi/module-library': ['divi', 'moduleLibrary'],
     '@divi/style-library': ['divi', 'styleLibrary'],
+    '@divi/conversion': ['divi', 'conversion'],
   },
 
   // This option determine how different types of module within the project will be treated.

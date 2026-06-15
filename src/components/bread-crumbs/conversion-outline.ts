@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/naming-convention */
+import { convertFontIcon } from '@divi/conversion';
 import { ModuleConversionOutline } from '@divi/types';
 
 export const conversionOutline: ModuleConversionOutline = {
@@ -41,5 +42,12 @@ export const conversionOutline: ModuleConversionOutline = {
     seperate_icon_color: 'breadCrumbsData.innerContent.*.seperate_icon_color',
     current_text_color:  'breadCrumbsData.innerContent.*.current_text_color',
     before_text_color:   'breadCrumbsData.innerContent.*.before_text_color',
+  },
+  // D4 stores icons as strings ('&#x35;||divi'); D5 expects an object
+  // ({ unicode, type, weight }). convertFontIcon performs that expansion
+  // during conversion — without it the module fails to convert (legacy fallback).
+  valueExpansionFunctionMap: {
+    seperator_icon:   convertFontIcon,
+    before_text_icon: convertFontIcon,
   },
 };
