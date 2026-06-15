@@ -29,7 +29,9 @@ const files = [
 
 const zip = async () => {
     const gulpZip = (await import('gulp-zip')).default;
-    return src(files)
+    // encoding: false keeps binary files (fonts, images) intact.
+    // gulp 5 defaults to UTF-8 decoding which corrupts binaries.
+    return src(files, { encoding: false })
         .pipe(gulpZip(package.name + '.zip'))
         .pipe(dest('./'));
 };
