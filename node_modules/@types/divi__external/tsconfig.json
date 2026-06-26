@@ -1,0 +1,7 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    /* Needs to declared on workspace/package level, otherwise these become relative to root */
+    "declarationDir": "build-types",
+  }
+}

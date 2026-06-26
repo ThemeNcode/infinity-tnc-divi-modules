@@ -1,0 +1,71 @@
+.inftnc_gradient_p1 {
+    font-size: 16px;
+    background: #03658C;
+    background: linear-gradient(to right, #03658C 0%, #63BBF2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.inftnc_gradient_p2 {
+    font-size: 16px;
+    background: #F1543F;
+    background: linear-gradient(to right, #F1543F 0%, #FDC362 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.inftnc_gradient_p3 {
+    font-size: 16px;
+    background: #30303B;
+    background: linear-gradient(to bottom right, #30303B 0%, #EAE9E7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.inftnc_gradient_p4 {
+    font-size: 16px;
+    background: #8C5B49;
+    background: linear-gradient(to right, #8C5B49 0%, #D9BBA0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.inftnc_gradient_p5 {
+    font-size: 16px;
+    background: #044D29;
+    background: linear-gradient(to right, #044D29 0%, #97ED8A 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.inftnc_gradient_p6 {
+    font-size: 16px;
+    background: #481CA6;
+    background: linear-gradient(to right, #481CA6 0%, #AC43D9 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.et-fb-preset--active .inftnc_gradient_p1 {
+    font-size: 20px
+}
+
+.et-fb-preset--active .inftnc_gradient_p2 {
+    font-size: 20px
+}
+
+.et-fb-preset--active .inftnc_gradient_p3 {
+    font-size: 20px
+}
+
+.et-fb-preset--active .inftnc_gradient_p4 {
+    font-size: 20px
+}
+
+.et-fb-preset--active .inftnc_gradient_p5 {
+    font-size: 20px
+}
+
+.et-fb-preset--active .inftnc_gradient_p6 {
+    font-size: 20px
+}

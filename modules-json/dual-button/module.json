@@ -1,0 +1,371 @@
+{
+  "name": "inftnc/dual-buttons",
+  "d4Shortcode": "inftnc_dual_buttons",
+  "moduleClassName": "inftnc_dual_buttons",
+  "moduleOrderClassName": "inftnc_dual_buttons",
+  "title": "Dual Buttons - Infinity TNC",
+  "titles": "Dual Buttons",
+  "moduleIcon": "inftnc/module-dual-button",
+  "category": "module",
+  "childrenName": [],
+  "attributes": {
+    "module": {
+      "type": "object",
+      "selector": "{{selector}}",
+      "default": {
+        "meta": {
+          "adminLabel": {
+            "desktop": {
+              "value": "Dual Buttons"
+            }
+          }
+        }
+      },
+      "settings": {
+        "meta": {
+          "adminLabel": {}
+        },
+        "advanced": {
+          "link": {},
+          "htmlAttributes": {}
+        },
+        "decoration": {
+          "background": {},
+          "sizing": {},
+          "spacing": {},
+          "border": {},
+          "boxShadow": {},
+          "transform": {},
+          "animation": {},
+          "overflow": {},
+          "disabledOn": {},
+          "transition": {},
+          "position": {},
+          "zIndex": {},
+          "scroll": {},
+          "sticky": {}
+        }
+      }
+    },
+    "dualButtonData": {
+      "type": "object",
+      "selector": "{{selector}}",
+      "default": {
+        "innerContent": {
+          "desktop": {
+            "value": {
+              "button_alignment": "left",
+              "button_gap": "10px"
+            }
+          }
+        }
+      },
+      "settings": {
+        "innerContent": {
+          "groupType": "group-items",
+          "items": {
+            "button_alignment": {
+              "groupSlug": "designLayout",
+              "attrName": "dualButtonData.innerContent",
+              "subName": "button_alignment",
+              "label": "Button Alignment",
+              "description": "Alignment of buttons inside the wrapper.",
+              "priority": 10,
+              "render": true,
+              "features": { "sticky": false, "hover": false, "responsive": false },
+              "component": {
+                "name": "divi/select",
+                "type": "field",
+                "props": {
+                  "options": {
+                    "left":          { "label": "Left" },
+                    "center":        { "label": "Center" },
+                    "right":         { "label": "Right" },
+                    "space-between": { "label": "Space Between" }
+                  }
+                }
+              }
+            },
+            "button_gap": {
+              "groupSlug": "designLayout",
+              "attrName": "dualButtonData.innerContent",
+              "subName": "button_gap",
+              "label": "Button Gap",
+              "description": "Gap between the two buttons.",
+              "priority": 20,
+              "render": true,
+              "features": { "sticky": false, "hover": false, "responsive": false },
+              "component": {
+                "name": "divi/range",
+                "type": "field",
+                "props": { "min": 0, "max": 100, "step": 1, "defaultUnit": "px" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "buttonLeft": {
+      "type": "object",
+      "selector": "{{selector}} .inftnc_pb_button_left",
+      "elementType": "button",
+      "default": {
+        "innerContent": {
+          "desktop": {
+            "value": {
+              "text": "Left Button",
+              "linkUrl": "",
+              "linkTarget": "off"
+            }
+          }
+        }
+      },
+      "settings": {
+        "innerContent": {
+          "groupType": "group-items",
+          "items": {
+            "text": {
+              "groupSlug": "contentLeftButton",
+              "attrName": "buttonLeft.innerContent",
+              "subName": "text",
+              "label": "Left Button Text",
+              "description": "Text for the left button.",
+              "priority": 10,
+              "render": true,
+              "features": { "sticky": false, "hover": false },
+              "component": { "name": "divi/text", "type": "field" }
+            },
+            "linkUrl": {
+              "groupSlug": "contentLeftButton",
+              "attrName": "buttonLeft.innerContent",
+              "subName": "linkUrl",
+              "label": "Left Button URL",
+              "description": "URL for the left button.",
+              "priority": 20,
+              "render": true,
+              "features": { "sticky": false, "hover": false },
+              "component": { "name": "divi/text", "type": "field" }
+            },
+            "linkTarget": {
+              "groupSlug": "contentLeftButton",
+              "attrName": "buttonLeft.innerContent",
+              "subName": "linkTarget",
+              "label": "Button Link Target",
+              "description": "Here you can choose whether or not your link opens in a new window.",
+              "priority": 30,
+              "render": true,
+              "features": { "sticky": false, "hover": false, "responsive": false },
+              "component": {
+                "name": "divi/select",
+                "type": "field",
+                "props": {
+                  "options": {
+                    "off": { "label": "In The Current Tab" },
+                    "on":  { "label": "In A New Tab" }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "decoration": {
+          "button": {
+            "groupType": "group-items",
+            "items": {
+              "button": {
+                "groupSlug": "designButtonLeft",
+                "priority": 10,
+                "render": true,
+                "component": {
+                  "type": "group",
+                  "name": "divi/button",
+                  "props": {
+                    "grouped": false,
+                    "groupLabel": "Button Left",
+                    "fieldLabel": "Button Left",
+                    "attrName": "buttonLeft",
+                    "dynamicSubgroupHost": true
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "buttonRight": {
+      "type": "object",
+      "selector": "{{selector}} .inftnc_pb_button_right",
+      "elementType": "button",
+      "default": {
+        "innerContent": {
+          "desktop": {
+            "value": {
+              "text": "Right Button",
+              "linkUrl": "",
+              "linkTarget": "off"
+            }
+          }
+        }
+      },
+      "settings": {
+        "innerContent": {
+          "groupType": "group-items",
+          "items": {
+            "text": {
+              "groupSlug": "contentRightButton",
+              "attrName": "buttonRight.innerContent",
+              "subName": "text",
+              "label": "Right Button Text",
+              "description": "Text for the right button.",
+              "priority": 10,
+              "render": true,
+              "features": { "sticky": false, "hover": false },
+              "component": { "name": "divi/text", "type": "field" }
+            },
+            "linkUrl": {
+              "groupSlug": "contentRightButton",
+              "attrName": "buttonRight.innerContent",
+              "subName": "linkUrl",
+              "label": "Right Button URL",
+              "description": "URL for the right button.",
+              "priority": 20,
+              "render": true,
+              "features": { "sticky": false, "hover": false },
+              "component": { "name": "divi/text", "type": "field" }
+            },
+            "linkTarget": {
+              "groupSlug": "contentRightButton",
+              "attrName": "buttonRight.innerContent",
+              "subName": "linkTarget",
+              "label": "Button Link Target",
+              "description": "Here you can choose whether or not your link opens in a new window.",
+              "priority": 30,
+              "render": true,
+              "features": { "sticky": false, "hover": false, "responsive": false },
+              "component": {
+                "name": "divi/select",
+                "type": "field",
+                "props": {
+                  "options": {
+                    "off": { "label": "In The Current Tab" },
+                    "on":  { "label": "In A New Tab" }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "decoration": {
+          "button": {
+            "groupType": "group-items",
+            "items": {
+              "button": {
+                "groupSlug": "designButtonRight",
+                "priority": 10,
+                "render": true,
+                "component": {
+                  "type": "group",
+                  "name": "divi/button",
+                  "props": {
+                    "grouped": false,
+                    "groupLabel": "Button Right",
+                    "fieldLabel": "Button Right",
+                    "attrName": "buttonRight",
+                    "dynamicSubgroupHost": true
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "css": {
+      "type": "object",
+      "selector": "{{selector}}"
+    }
+  },
+  "customCssFields": {
+    "button_wrapper": {
+      "label": "Button Wrapper",
+      "subName": "button_wrapper",
+      "selectorSuffix": " .inftnc_button_wrapper"
+    },
+    "left_button": {
+      "label": "Left Button",
+      "subName": "left_button",
+      "selectorSuffix": " .inftnc_pb_button_left"
+    },
+    "right_button": {
+      "label": "Right Button",
+      "subName": "right_button",
+      "selectorSuffix": " .inftnc_pb_button_right"
+    }
+  },
+  "settings": {
+    "content": "auto",
+    "design": "auto",
+    "advanced": "auto",
+    "groups": {
+      "contentLeftButton": {
+        "panel": "content",
+        "priority": 10,
+        "groupName": "leftButton",
+        "multiElements": true,
+        "component": {
+          "name": "divi/composite",
+          "props": { "groupLabel": "Left Button" }
+        }
+      },
+      "contentRightButton": {
+        "panel": "content",
+        "priority": 20,
+        "groupName": "rightButton",
+        "multiElements": true,
+        "component": {
+          "name": "divi/composite",
+          "props": { "groupLabel": "Right Button" }
+        }
+      },
+      "designLayout": {
+        "panel": "design",
+        "priority": 5,
+        "groupName": "layout",
+        "multiElements": true,
+        "component": {
+          "name": "divi/composite",
+          "props": { "groupLabel": "Button Layout" }
+        }
+      },
+      "designButtonLeft": {
+        "panel": "design",
+        "priority": 10,
+        "groupName": "buttonLeft",
+        "multiElements": true,
+        "component": {
+          "name": "divi/composite",
+          "props": {
+            "groupLabel": "Button Left",
+            "presetGroup": "divi/button",
+            "dynamicSubgroupHost": true
+          }
+        }
+      },
+      "designButtonRight": {
+        "panel": "design",
+        "priority": 20,
+        "groupName": "buttonRight",
+        "multiElements": true,
+        "component": {
+          "name": "divi/composite",
+          "props": {
+            "groupLabel": "Button Right",
+            "presetGroup": "divi/button",
+            "dynamicSubgroupHost": true
+          }
+        }
+      }
+    }
+  }
+}
