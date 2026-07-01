@@ -114,7 +114,12 @@ Source code is available on github. <a href="https://github.com/ThemeNcode/infin
 7. Divi Vimeo video Module Preview
 8. Divi Typewriter Module Preview
  
+ 
 == Changelog ==
+
+= 5.0.1 =
+* Fixed an issue with Divi 5 migration.
+
 = 5.0.0 =
 * Added full compatibility with Divi 5 — every module now works in the new Divi 5 Visual Builder.
 * Added Divi 4 to Divi 5 conversion support, so existing layouts migrate automatically.

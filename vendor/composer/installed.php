@@ -3,7 +3,7 @@
         'name' => 'divi/infinity-tnc-divi-modules',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => 'edaa70bf6b88b9c18891543602616cae769af561',
+        'reference' => '8c822483e0f087befe98a38ba5dfc8be7850541e',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'divi/infinity-tnc-divi-modules' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'edaa70bf6b88b9c18891543602616cae769af561',
+            'reference' => '8c822483e0f087befe98a38ba5dfc8be7850541e',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

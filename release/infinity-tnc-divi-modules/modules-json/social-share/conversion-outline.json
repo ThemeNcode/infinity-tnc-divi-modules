@@ -40,12 +40,10 @@
     "row_gap": "socialShareData.innerContent.*.row_gap",
     "button_bg": "socialShareData.innerContent.*.button_bg",
     "icon_color": "socialShareData.innerContent.*.icon_color",
-    "icon_size": "socialShareData.innerContent.*.icon_size",
-    "button_padding": {
-      "top": "socialShareData.innerContent.*.button_padding_top",
-      "right": "socialShareData.innerContent.*.button_padding_right",
-      "bottom": "socialShareData.innerContent.*.button_padding_bottom",
-      "left": "socialShareData.innerContent.*.button_padding_left"
-    }
-  }
+    "icon_size": "socialShareData.innerContent.*.icon_size"
+  },
+  "deprecatedMap": [
+    "button_padding",
+    "button_padding_last_edited"
+  ]
 }
