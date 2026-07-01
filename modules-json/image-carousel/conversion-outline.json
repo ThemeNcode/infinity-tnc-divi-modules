@@ -56,5 +56,24 @@
     "pagination_active_dots_size": "imageCarouselData.innerContent.*.pagination_active_dots_size",
     "pagination_cmn_dots_color": "imageCarouselData.innerContent.*.pagination_dots_color",
     "dots_alignment": "imageCarouselData.innerContent.*.dots_alignment"
-  }
+  },
+  "deprecatedMap": [
+    "border_radii_image",
+    "border_radii_image_last_edited",
+    "border_color_all_image",
+    "border_color_top_image",
+    "border_color_right_image",
+    "border_color_bottom_image",
+    "border_color_left_image",
+    "border_style_all_image",
+    "border_style_top_image",
+    "border_style_right_image",
+    "border_style_bottom_image",
+    "border_style_left_image",
+    "border_width_all_image",
+    "border_width_top_image",
+    "border_width_right_image",
+    "border_width_bottom_image",
+    "border_width_left_image"
+  ]
 }

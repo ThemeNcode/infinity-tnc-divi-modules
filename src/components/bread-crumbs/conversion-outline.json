@@ -22,7 +22,10 @@
     "sticky": "module.decoration.sticky",
     "transform": "module.decoration.transform",
     "transition": "module.decoration.transition",
-    "z_index": "module.decoration.zIndex"
+    "z_index": "module.decoration.zIndex",
+    "fonts": {
+      "module": "breadcrumbText.decoration.font"
+    }
   },
   "css": {
     "after": "css.*.after",

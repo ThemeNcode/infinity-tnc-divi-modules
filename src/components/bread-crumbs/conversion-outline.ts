@@ -22,6 +22,14 @@ export const conversionOutline: ModuleConversionOutline = {
     transform:       'module.decoration.transform',
     transition:      'module.decoration.transition',
     z_index:         'module.decoration.zIndex',
+    // D4 auto-adds a base `module` font advanced option, so exports carry
+    // `module_font`, `module_font_size`, `module_text_align`, etc. Without this
+    // mapping those attributes fall through to `unknownAttributes.*`, which flags
+    // the whole module `nonconvertible` (Conversion.php ~1618) and leaves it
+    // stuck as a Divi 4 shortcode. Map them onto the D5 breadcrumb text font.
+    fonts: {
+      module: 'breadcrumbText.decoration.font',
+    },
   },
   css: {
     after:        'css.*.after',

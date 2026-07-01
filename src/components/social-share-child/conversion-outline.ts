@@ -25,13 +25,20 @@ export const conversionOutline: ModuleConversionOutline = {
   module: {
     social_share:          'socialShareChildData.innerContent.*.social_share',
     button_color_child:    'socialShareChildData.innerContent.*.button_color_child',
-    button_padding_child:  {
-      top:    'socialShareChildData.innerContent.*.button_padding_child_top',
-      right:  'socialShareChildData.innerContent.*.button_padding_child_right',
-      bottom: 'socialShareChildData.innerContent.*.button_padding_child_bottom',
-      left:   'socialShareChildData.innerContent.*.button_padding_child_left',
-    },
+    // NOTE: `button_padding_child` is intentionally NOT mapped here; it is
+    // deprecated below instead. See the matching comment in
+    // ../social-share/conversion-outline.ts: D4 stores it as a single combined
+    // `custom_margin` string while D5 uses four separate attributes, and a
+    // nested object here throws "Illegal offset type" in Divi's server-side
+    // conversion (Conversion::getAttrMap), 500-ing the whole conversion.
     icon_color_child:      'socialShareChildData.innerContent.*.icon_color_child',
     icon_size_child:       'socialShareChildData.innerContent.*.icon_size_child',
   },
+  // Must be deprecated (not just omitted) so Divi does not route the leftover D4
+  // attribute to `unknownAttributes.*`, which would mark the module
+  // `nonconvertible` and leave it stuck as a Divi 4 shortcode. Padding falls
+  // back to the D5 module defaults on conversion.
+  // @ts-expect-error deprecatedMap is a valid outline key consumed server-side
+  // (Conversion.php ~261) but is not declared on the ModuleConversionOutline type.
+  deprecatedMap: [ 'button_padding_child', 'button_padding_child_last_edited' ],
 };

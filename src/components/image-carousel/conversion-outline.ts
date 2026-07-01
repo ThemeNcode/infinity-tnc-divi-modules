@@ -55,4 +55,22 @@ export const conversionOutline: ModuleConversionOutline = {
     pagination_cmn_dots_color:   'imageCarouselData.innerContent.*.pagination_dots_color',
     dots_alignment:          'imageCarouselData.innerContent.*.dots_alignment',
   },
+  // The D4 module has a second border group with the `image` slug (Image Border
+  // toggle) producing `border_*_image` attributes. The D5 module has no separate
+  // image element to hold a border, so there is no conversion target. Left
+  // unmapped, these attributes fall through to `unknownAttributes.*`, flagging
+  // the whole module `nonconvertible` (Conversion.php ~1618) and leaving it stuck
+  // as a Divi 4 shortcode. Deprecate the full `image` border family so Divi skips
+  // them cleanly and the module converts (image border falls back to defaults).
+  // @ts-expect-error deprecatedMap is a valid outline key consumed server-side
+  // (Conversion.php ~261) but is not declared on the ModuleConversionOutline type.
+  deprecatedMap: [
+    'border_radii_image', 'border_radii_image_last_edited',
+    'border_color_all_image', 'border_color_top_image', 'border_color_right_image',
+    'border_color_bottom_image', 'border_color_left_image',
+    'border_style_all_image', 'border_style_top_image', 'border_style_right_image',
+    'border_style_bottom_image', 'border_style_left_image',
+    'border_width_all_image', 'border_width_top_image', 'border_width_right_image',
+    'border_width_bottom_image', 'border_width_left_image',
+  ],
 };
