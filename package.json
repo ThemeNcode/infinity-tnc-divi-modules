@@ -112,8 +112,5 @@
   "resolutions": {
     "@types/react": "17.0.44",
     "@types/react-dom": "17.0.14"
-  },
-  "msw": {
-    "workerDirectory": "storybook-assets"
   }
 }

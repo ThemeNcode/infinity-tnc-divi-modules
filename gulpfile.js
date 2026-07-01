@@ -26,7 +26,6 @@ const files = [
     '!**/node_modules/**',
     '!src/**',
     '!test-config/**',
-    '!storybook-assets/**',
 
     // Ignored files.
     '!**/*.zip',
