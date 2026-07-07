@@ -39,23 +39,24 @@ export const conversionOutline: ModuleConversionOutline = {
     button_bg:       'socialShareData.innerContent.*.button_bg',
     icon_color:      'socialShareData.innerContent.*.icon_color',
     icon_size:       'socialShareData.innerContent.*.icon_size',
-    // NOTE: `button_padding` is intentionally NOT mapped here; it is deprecated
-    // below instead. In D4 it is a single combined `custom_margin` string
-    // ("top|right|bottom|left|..."), while the D5 module stores it as four
-    // separate attributes (button_padding_top/right/bottom/left). Divi's
-    // server-side conversion (Conversion::getAttrMap) requires every `module`
-    // outline value to be a STRING path; a nested object gets passed to
-    // str_replace() and then used as an array key, throwing "Illegal offset
-    // type" and 500-ing the whole Divi 4 -> Divi 5 conversion. Divi also ships
-    // no built-in value-expansion that outputs `button_padding_*` keys, so the
-    // button padding falls back to the D5 module defaults on conversion.
+    // In D4 `button_padding` is a single combined `custom_margin` string
+    // ("top|right|bottom|left|..."), while the D5 module reads four separate
+    // attributes (button_padding_top/right/bottom/left). Divi's server-side
+    // conversion (Conversion::getAttrMap) requires every `module` outline value
+    // to be a STRING path — a nested object throws "Illegal offset type" and
+    // 500s the whole conversion, and there is no built-in value-expansion that
+    // splits it into `button_padding_*` keys. So map the combined string
+    // verbatim to a single `button_padding` attribute; the D5 module
+    // (ModuleStylesTrait) parses it into top/right/bottom/left when the four
+    // separate attributes are empty, preserving the converted padding.
+    button_padding:  'socialShareData.innerContent.*.button_padding',
   },
-  // `button_padding` (and its responsive `_last_edited` helper) must be listed
-  // as deprecated. If simply omitted, Divi routes the leftover D4 attribute to
-  // `unknownAttributes.*`, which flags the whole module as `nonconvertible`
-  // (Conversion.php ~1618) and leaves it stuck as a Divi 4 shortcode module.
-  // Deprecating it makes Divi skip it cleanly so the module converts to D5.
+  // Only the responsive `_last_edited` helper stays deprecated (the D5 module
+  // renders desktop values only). It must be deprecated rather than omitted, or
+  // Divi routes the leftover D4 attribute to `unknownAttributes.*` and flags the
+  // whole module `nonconvertible` (Conversion.php ~1618), leaving it stuck as a
+  // Divi 4 shortcode module.
   // @ts-expect-error deprecatedMap is a valid outline key consumed server-side
   // (Conversion.php ~261) but is not declared on the ModuleConversionOutline type.
-  deprecatedMap: [ 'button_padding', 'button_padding_last_edited' ],
+  deprecatedMap: [ 'button_padding_last_edited' ],
 };
