@@ -4,7 +4,7 @@ Tags: divi, divi 5, modules, carousel, social share
 Requires at least: 5.0
 Tested up to: 7.0
 Requires PHP: 7.0
-Stable tag: 5.0.0
+Stable tag: 5.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
  
@@ -115,6 +115,12 @@ Source code is available on github. <a href="https://github.com/ThemeNcode/infin
 8. Divi Typewriter Module Preview
  
 == Changelog ==
+= 5.0.1 =
+* Hardened Heading Gradient module: gradient colors and positions are now sanitized before being used in inline styles.
+* Escaped Breadcrumbs output (home text, before text, and post titles) on the front end.
+* Improved Social Share URL encoding to use RFC 3986 compliant encoding.
+* Added format validation for YouTube and Vimeo video IDs in the embed modules.
+
 = 5.0.0 =
 * Added full compatibility with Divi 5 — every module now works in the new Divi 5 Visual Builder.
 * Added Divi 4 to Divi 5 conversion support, so existing layouts migrate automatically.
@@ -133,6 +139,9 @@ Source code is available on github. <a href="https://github.com/ThemeNcode/infin
 * Initial Release of the free version
 
 == Upgrade Notice ==
+
+= 5.0.1 =
+Security and stability hardening for the Heading Gradient, Breadcrumbs, Social Share, and video embed modules.
 
 = 5.0.0 =
 Adds full Divi 5 compatibility for all modules, with automatic conversion of existing Divi 4 layouts, plus several Visual Builder fixes.
