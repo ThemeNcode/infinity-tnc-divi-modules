@@ -75,7 +75,8 @@ trait RenderCallbackTrait {
 				preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $youtube_url, $match);
 				$exact_id = isset($match[1]) ? $match[1] : '';
 			} elseif ( 'video_id' === $video_method ) {
-				$exact_id = $youtube_id;
+				// YouTube video IDs are exactly 11 chars from a fixed charset; reject anything else.
+				$exact_id = preg_match( '/^[a-zA-Z0-9_-]{11}$/', $youtube_id ) ? $youtube_id : '';
 			}
 
 			if ( !empty($exact_id) && 'embed_code' !== $video_method ) {

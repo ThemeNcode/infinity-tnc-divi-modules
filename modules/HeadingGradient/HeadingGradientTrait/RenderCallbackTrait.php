@@ -53,10 +53,10 @@ trait RenderCallbackTrait {
 		$linear_position   = $data['linear_position'] ?? 'right';
 		$radial_position   = $data['radial_position'] ?? 'center center';
 		$ellipse_position  = $data['ellipse_position'] ?? 'center center';
-		$start_color       = $data['start_color'] ?? '#481CA6';
-		$end_color         = $data['end_color'] ?? '#AC43D9';
-		$start_position    = $data['start_position'] ?? 0;
-		$end_position      = $data['end_position'] ?? 100;
+		$start_color       = sanitize_hex_color( $data['start_color'] ?? '#481CA6' ) ?? '#481CA6';
+		$end_color         = sanitize_hex_color( $data['end_color'] ?? '#AC43D9' ) ?? '#AC43D9';
+		$start_position    = absint( $data['start_position'] ?? 0 );
+		$end_position      = absint( $data['end_position'] ?? 100 );
 		$presets_gradient  = $data['presets_gradient'] ?? 'gradient_preset1';
 
 		$position_map = [
@@ -75,9 +75,11 @@ trait RenderCallbackTrait {
 			'bottom_center' => 'bottom center',
 		];
 
-		$linearPosCSS  = $position_map[$linear_position] ?? $linear_position;
-		$radialPosCSS  = $position_map[$radial_position] ?? $radial_position;
-		$ellipsePosCSS = $position_map[$ellipse_position] ?? $ellipse_position;
+		// Only allow positions from the allowlist; fall back to a safe default rather than
+		// the raw attribute value so unsanitized data cannot enter the CSS string.
+		$linearPosCSS  = $position_map[$linear_position] ?? 'right';
+		$radialPosCSS  = $position_map[$radial_position] ?? 'center center';
+		$ellipsePosCSS = $position_map[$ellipse_position] ?? 'center center';
 
 		$gradientDeclaration = '';
 

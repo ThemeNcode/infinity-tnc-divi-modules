@@ -84,8 +84,9 @@ trait RenderCallbackTrait {
 				);
 			}
         } elseif ( 'vimeo_id' === $vimeo_method && !empty($vimeo_id) ) {
+            // Vimeo IDs are always numeric; absint() strips any non-conforming input.
             $map = sprintf('<iframe src="https://player.vimeo.com/video/%1$s?&autoplay=%11$s&loop=%3$s&muted=%2$s&controls=%4$s&title=%6$s&byline=%7$s&portrait=%5$s&#t=%8$s&color=%9$s&playsinline=%10$s" frameborder="0" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>',
-                esc_attr( $vimeo_id ),
+                esc_attr( absint( $vimeo_id ) ),
                 esc_attr( $mute_value ),
                 esc_attr( $loop_value ),
                 esc_attr( $control_value ),  

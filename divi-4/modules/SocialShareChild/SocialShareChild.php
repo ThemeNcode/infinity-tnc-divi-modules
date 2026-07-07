@@ -215,7 +215,7 @@ class INFTNC_SocialShareChild extends ET_Builder_Module {
 							%3$s
 							%4$s
 					</a>',
-			/* 01 */ 'https://www.facebook.com/sharer/sharer.php?u='. urlencode(get_permalink()) .'&amp;t='.urlencode($post_title).'',
+			/* 01 */ 'https://www.facebook.com/sharer/sharer.php?u='. rawurlencode(get_permalink()) .'&amp;t='.rawurlencode($post_title).'',
 			/* 02 */ 'icon_with_text' === $social_layout ? sprintf('
 						<span class="inftnc_social_text inftnc_fb_text">%1$s</span>
 						<span class="inftnc_social_icon inftnc_social_fb"></span>
@@ -246,7 +246,7 @@ class INFTNC_SocialShareChild extends ET_Builder_Module {
 							%3$s
 							%4$s
 					</a>',
-			/* 01 */ 'https://api.whatsapp.com/send?text=%'.urlencode( $post_title ).'% %'.urlencode( get_permalink() ).'%',
+			/* 01 */ 'https://api.whatsapp.com/send?text=%'.rawurlencode( $post_title ).'% %'.rawurlencode( get_permalink() ).'%',
 			/* 02 */ 'icon_with_text' === $social_layout ? sprintf('
 						<span class="inftnc_social_text inftnc_whatsapp_text">%1$s</span>
 						<span class="inftnc_social_icon inftnc_social_whatsapp"></span>
@@ -275,14 +275,14 @@ class INFTNC_SocialShareChild extends ET_Builder_Module {
 			$post_excerpt = get_the_excerpt( get_the_ID()  );
 
 		   // Encode the post title and excerpt for use in URL
-			$encoded_title = urlencode($post_title);
-			$encoded_excerpt = urlencode($post_excerpt);
+			$encoded_title = rawurlencode($post_title);
+			$encoded_excerpt = rawurlencode($post_excerpt);
 
 			// Get post permalink
 			$post_permalink = get_permalink( get_the_ID() );
 
 			// Encode the post permalink for use in URL
-			$encoded_permalink = urlencode($post_permalink);
+			$encoded_permalink = rawurlencode($post_permalink);
 
 			// Twitter share link with dynamic title, excerpt, and permalink
 			$twitter_share_link = 'https://twitter.com/intent/tweet?url=' . $encoded_permalink . '&text=' . $encoded_title . '%20-%20' . $encoded_excerpt;
@@ -324,7 +324,7 @@ class INFTNC_SocialShareChild extends ET_Builder_Module {
 			$post_permalink = get_permalink( get_the_ID() );
 
 			// Construct the Pinterest share link
-			$pinterest_share_link = 'https://pinterest.com/pin/create/button/?url=' . urlencode($post_permalink) . '&description=' . urlencode($post_title);
+			$pinterest_share_link = 'https://pinterest.com/pin/create/button/?url=' . rawurlencode($post_permalink) . '&description=' . rawurlencode($post_title);
 
 			$share_button = sprintf('
 					<a class="inftnc_share_link inftnc_pinterest_share_link" href="%1$s">
@@ -367,9 +367,9 @@ class INFTNC_SocialShareChild extends ET_Builder_Module {
 				$post_permalink = get_permalink( get_the_ID() );
 
 				// Encode post title, excerpt, and permalink for use in URL
-				$encoded_title = urlencode($post_title);
-				$encoded_excerpt = urlencode($post_excerpt);
-				$encoded_permalink = urlencode($post_permalink);
+				$encoded_title = rawurlencode($post_title);
+				$encoded_excerpt = rawurlencode($post_excerpt);
+				$encoded_permalink = rawurlencode($post_permalink);
 
 				// Construct the LinkedIn share link
 				$linkedin_share_link = 'https://www.linkedin.com/sharing/share-offsite/?url=' . $encoded_permalink . '&title=' . $encoded_title . '&summary=' . $encoded_excerpt;
@@ -412,7 +412,7 @@ class INFTNC_SocialShareChild extends ET_Builder_Module {
 			$post_permalink = get_permalink( get_the_ID() );
 
 			// Construct the Telegram share link
-			$telegram_share_link = 'https://t.me/share/url?url=' . urlencode($post_permalink) . '&text=' . urlencode($post_title);
+			$telegram_share_link = 'https://t.me/share/url?url=' . rawurlencode($post_permalink) . '&text=' . rawurlencode($post_title);
 
 			$share_button = sprintf('
 					<a class="inftnc_share_link inftnc_telegram_share_link" href="%1$s">
@@ -451,7 +451,7 @@ class INFTNC_SocialShareChild extends ET_Builder_Module {
 			$post_permalink = get_permalink( get_the_ID() );
 
 			// Construct the Reddit share link
-			$reddit_share_link = 'https://www.reddit.com/submit?url=' . urlencode($post_permalink) . '&title=' . urlencode($post_title);
+			$reddit_share_link = 'https://www.reddit.com/submit?url=' . rawurlencode($post_permalink) . '&title=' . rawurlencode($post_title);
 
 			$share_button = sprintf('
 					<a class="inftnc_share_link inftnc_reddit_share_link" href="%1$s">
@@ -492,7 +492,7 @@ class INFTNC_SocialShareChild extends ET_Builder_Module {
 			$post_permalink = get_permalink( get_the_ID() );
 
 			// Construct the Tumblr share link
-			$tumblr_share_link = 'https://www.tumblr.com/widgets/share/tool?canonicalUrl=' . urlencode($post_permalink) . '&title=' . urlencode($post_title) . '&caption=' . urlencode($post_excerpt);
+			$tumblr_share_link = 'https://www.tumblr.com/widgets/share/tool?canonicalUrl=' . rawurlencode($post_permalink) . '&title=' . rawurlencode($post_title) . '&caption=' . rawurlencode($post_excerpt);
 
 
 			$share_button = sprintf('
@@ -533,9 +533,9 @@ class INFTNC_SocialShareChild extends ET_Builder_Module {
 			$post_permalink = get_permalink( get_the_ID() );
 
 			// Encode post title, excerpt, and permalink for use in URL
-			$encoded_title = urlencode($post_title);
-			$encoded_excerpt = urlencode($post_excerpt);
-			$encoded_permalink = urlencode($post_permalink);
+			$encoded_title = rawurlencode($post_title);
+			$encoded_excerpt = rawurlencode($post_excerpt);
+			$encoded_permalink = rawurlencode($post_permalink);
 
 			// Construct the email share link
 			$email_share_link = 'mailto:?subject=' . $encoded_title . '&body=Hey,%0A%0AI%20found%20this%20interesting%20post%20and%20thought%20you%20might%20like%20it:%0A%0A' . $encoded_title . '%0A' . $encoded_excerpt . '%0A%0ARead%20more%20here:%20' . $encoded_permalink;
@@ -582,7 +582,7 @@ class INFTNC_SocialShareChild extends ET_Builder_Module {
 			$post_permalink = get_permalink( get_the_ID() );
 
 			// Construct the Tumblr share link
-			$blogger_share_link = 'https://www.blogger.com/blog-this.g?u=' . urlencode($post_permalink) . '&n=' . urlencode($post_title) . '&t=' . urlencode($post_excerpt);
+			$blogger_share_link = 'https://www.blogger.com/blog-this.g?u=' . rawurlencode($post_permalink) . '&n=' . rawurlencode($post_title) . '&t=' . rawurlencode($post_excerpt);
 
 			$share_button = sprintf('
 					<a class="inftnc_share_link inftnc_blogger_share_link" href="%1$s">

@@ -49,7 +49,7 @@ function infinity_tnc_breadcrumb($_home_text='Home',$_before_text='',$_delimiter
         $parent         = $post_object->post_parent;
         $post_type      = $post_object->post_type;
         $post_id        = $post_object->ID;
-        $post_link      = $before . $title . $after;
+        $post_link      = $before . esc_html( $title ) . $after;
         $parent_string  = '';
         $post_type_link = '';
 
@@ -239,16 +239,16 @@ function infinity_tnc_breadcrumb($_home_text='Home',$_before_text='',$_delimiter
     ) {
         // Do not show breadcrumbs on page one of home and frontpage
         if ( is_paged() ) {
-            $breadcrumb_output_link .= '<span class="inftnc_before">'.$here_text.'</span> ';
+            $breadcrumb_output_link .= '<span class="inftnc_before">'.esc_html( $here_text ).'</span> ';
             $breadcrumb_output_link .= '<span vocab="https://schema.org/" typeof="BreadcrumbList">';        
-            $breadcrumb_output_link .= '<span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" href="' . $home_link . '" class="home"><span property="name">' . $home_text . '</span><meta property="position" content="1"></a><meta property="position" content="1"></span>';
+            $breadcrumb_output_link .= '<span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" href="' . $home_link . '" class="home"><span property="name">' . esc_html( $home_text ) . '</span><meta property="position" content="1"></a><meta property="position" content="1"></span>';
             $breadcrumb_output_link .= $page_addon;
             $breadcrumb_output_link .= '</span>';  
         }
     } else {
-        $breadcrumb_output_link .= '<span class="inftnc_before">'.$here_text.'</span> ';
+        $breadcrumb_output_link .= '<span class="inftnc_before">'.esc_html( $here_text ).'</span> ';
         $breadcrumb_output_link .= '<span vocab="https://schema.org/" typeof="BreadcrumbList">';        
-        $breadcrumb_output_link .= '<span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" href="' . $home_link . '" class="home"><span property="name">' . $home_text . '</span></a><meta property="position" content="1"></span>';
+        $breadcrumb_output_link .= '<span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" href="' . $home_link . '" class="home"><span property="name">' . esc_html( $home_text ) . '</span></a><meta property="position" content="1"></span>';
         $breadcrumb_output_link .= $delimiter;
         $breadcrumb_output_link .= $breadcrumb_trail;
         $breadcrumb_output_link .= $page_addon;
