@@ -29,7 +29,11 @@ export const ModuleStyles = ({
   lines.push(`${orderClass}.inftnc_social_share_child { margin-bottom: 0 !important; }`);
 
   if (data.button_color_child) {
-    lines.push(`${orderClass} .inftnc_share_link { background-color: ${data.button_color_child} !important; }`);
+    // `.inftnc_share_button` lifts this to specificity 0,3,0 — one class above the
+    // parent Social Share module's 0,2,0 `.inftnc_share_link` rule — so the child's
+    // own background always wins. Mirrors the front-end (SocialShareChild
+    // ModuleStylesTrait), which emits the same selector.
+    lines.push(`${orderClass} .inftnc_share_button .inftnc_share_link { background-color: ${data.button_color_child} !important; }`);
   }
 
   if (data.icon_color_child) {
@@ -48,7 +52,11 @@ export const ModuleStyles = ({
   const pBottom = data.button_padding_child_bottom;
   const pLeft   = data.button_padding_child_left;
   if (pTop || pRight || pBottom || pLeft) {
-    lines.push(`${orderClass} .inftnc_share_link { padding: ${pTop || '0'} ${pRight || '0'} ${pBottom || '0'} ${pLeft || '0'} !important; }`);
+    // Same 0,3,0 specificity lift as above: the parent module emits its group padding
+    // as `${parentOrderClass} .inftnc_share_link { padding: ... !important }` (0,2,0).
+    // With equal specificity and both !important the parent would win on source order,
+    // which is why per-button padding worked on the front end but not in the VB.
+    lines.push(`${orderClass} .inftnc_share_button .inftnc_share_link { padding: ${pTop || '0'} ${pRight || '0'} ${pBottom || '0'} ${pLeft || '0'} !important; }`);
   }
 
   return (
