@@ -45,19 +45,6 @@ trait ModuleStylesTrait {
 		$icon_color_child           = $data['icon_color_child'] ?? '';
 		$icon_size_child            = $data['icon_size_child'] ?? '';
 
-		// Divi 4 -> Divi 5 fallback: converted modules carry the button padding as a
-		// single combined string ("top|right|bottom|left") in `button_padding_child`
-		// instead of the four separate attributes. Split it only when the separate
-		// values are empty, so padding set directly in Divi 5 always takes precedence.
-		if ( ! ( $button_padding_child_top || $button_padding_child_right || $button_padding_child_bottom || $button_padding_child_left )
-			&& ! empty( $data['button_padding_child'] ) ) {
-			$parts                       = explode( '|', (string) $data['button_padding_child'] );
-			$button_padding_child_top    = $parts[0] ?? '';
-			$button_padding_child_right  = $parts[1] ?? '';
-			$button_padding_child_bottom = $parts[2] ?? '';
-			$button_padding_child_left   = $parts[3] ?? '';
-		}
-
 		$module_css = [];
 		$button_css = [];
 		$link_css   = [];

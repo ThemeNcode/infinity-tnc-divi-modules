@@ -27,13 +27,19 @@ export const conversionOutline: ModuleConversionOutline = {
     button_color_child:    'socialShareChildData.innerContent.*.button_color_child',
     // See the matching comment in ../social-share/conversion-outline.ts. D4 stores
     // `button_padding_child` as a single combined `custom_margin` string while D5
-    // reads four separate attributes; a nested object here throws "Illegal offset
-    // type" in Divi's server-side conversion (Conversion::getAttrMap). Map the
-    // combined string verbatim; the D5 module (ModuleStylesTrait) parses it into
-    // top/right/bottom/left when the four separate attributes are empty.
-    button_padding_child:  'socialShareChildData.innerContent.*.button_padding_child',
+    // reads four separate attributes. This points at the PARENT path; the expansion
+    // function below splits the value and Divi appends each returned key to it.
+    button_padding_child:  'socialShareChildData.innerContent.*',
     icon_color_child:      'socialShareChildData.innerContent.*.icon_color_child',
     icon_size_child:       'socialShareChildData.innerContent.*.icon_size_child',
+  },
+  // Maps the D4 attribute to a callback registered on the
+  // `divi.moduleLibrary.conversion.valueExpansionFunctionMap` filter
+  // (see modules/Modules.php -> INFTNC\Modules\Conversion\ValueExpansion).
+  // @ts-expect-error valueExpansionFunctionMap is a valid outline key consumed
+  // server-side (Conversion.php ~249) but is not on the ModuleConversionOutline type.
+  valueExpansionFunctionMap: {
+    button_padding_child: 'inftncShareButtonPaddingChild',
   },
   // Only the responsive `_last_edited` helper stays deprecated (the D5 module
   // renders desktop values only). It must be deprecated rather than omitted, or

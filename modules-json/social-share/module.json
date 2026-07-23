@@ -104,8 +104,7 @@
               "button_padding_top": "10px",
               "button_padding_right": "24px",
               "button_padding_bottom": "10px",
-              "button_padding_left": "24px",
-              "button_padding": ""
+              "button_padding_left": "24px"
             }
           }
         }

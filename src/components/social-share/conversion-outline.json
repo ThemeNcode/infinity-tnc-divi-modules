@@ -41,7 +41,10 @@
     "button_bg": "socialShareData.innerContent.*.button_bg",
     "icon_color": "socialShareData.innerContent.*.icon_color",
     "icon_size": "socialShareData.innerContent.*.icon_size",
-    "button_padding": "socialShareData.innerContent.*.button_padding"
+    "button_padding": "socialShareData.innerContent.*"
+  },
+  "valueExpansionFunctionMap": {
+    "button_padding": "inftncShareButtonPadding"
   },
   "deprecatedMap": [
     "button_padding_last_edited"

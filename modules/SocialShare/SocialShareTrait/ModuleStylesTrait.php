@@ -50,19 +50,6 @@ trait ModuleStylesTrait {
 		$button_padding_bottom = $data['button_padding_bottom'] ?? '';
 		$button_padding_left   = $data['button_padding_left'] ?? '';
 
-		// Divi 4 -> Divi 5 fallback: converted modules carry the share-button padding
-		// as a single combined string ("top|right|bottom|left") in `button_padding`
-		// instead of the four separate attributes. Split it only when the separate
-		// values are empty, so padding set directly in Divi 5 always takes precedence.
-		if ( ! ( $button_padding_top || $button_padding_right || $button_padding_bottom || $button_padding_left )
-			&& ! empty( $data['button_padding'] ) ) {
-			$parts                 = explode( '|', (string) $data['button_padding'] );
-			$button_padding_top    = $parts[0] ?? '';
-			$button_padding_right  = $parts[1] ?? '';
-			$button_padding_bottom = $parts[2] ?? '';
-			$button_padding_left   = $parts[3] ?? '';
-		}
-
 		// divi/select inside group-items can store a numeric index — resolve to string value.
 		$button_layout_keys = [ 'icon_with_text', 'only_icon', 'only_text' ];
 		if ( is_numeric( $button_layout ) ) {

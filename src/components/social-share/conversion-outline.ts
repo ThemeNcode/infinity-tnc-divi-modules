@@ -39,17 +39,22 @@ export const conversionOutline: ModuleConversionOutline = {
     button_bg:       'socialShareData.innerContent.*.button_bg',
     icon_color:      'socialShareData.innerContent.*.icon_color',
     icon_size:       'socialShareData.innerContent.*.icon_size',
-    // In D4 `button_padding` is a single combined `custom_margin` string
+    // D4 stores `button_padding` as a single combined `custom_margin` string
     // ("top|right|bottom|left|..."), while the D5 module reads four separate
-    // attributes (button_padding_top/right/bottom/left). Divi's server-side
-    // conversion (Conversion::getAttrMap) requires every `module` outline value
-    // to be a STRING path — a nested object throws "Illegal offset type" and
-    // 500s the whole conversion, and there is no built-in value-expansion that
-    // splits it into `button_padding_*` keys. So map the combined string
-    // verbatim to a single `button_padding` attribute; the D5 module
-    // (ModuleStylesTrait) parses it into top/right/bottom/left when the four
-    // separate attributes are empty, preserving the converted padding.
-    button_padding:  'socialShareData.innerContent.*.button_padding',
+    // attributes (button_padding_top/right/bottom/left). A nested object here is
+    // not allowed — Divi requires a STRING path (Conversion::getAttrMap) — so this
+    // points at the PARENT path and `valueExpansionFunctionMap` below splits the
+    // value. Divi appends each key the expansion function returns to this path,
+    // writing socialShareData.innerContent.desktop.value.button_padding_top etc.
+    button_padding:  'socialShareData.innerContent.*',
+  },
+  // Maps the D4 attribute to a callback registered on the
+  // `divi.moduleLibrary.conversion.valueExpansionFunctionMap` filter
+  // (see modules/Modules.php -> INFTNC\Modules\Conversion\ValueExpansion).
+  // @ts-expect-error valueExpansionFunctionMap is a valid outline key consumed
+  // server-side (Conversion.php ~249) but is not on the ModuleConversionOutline type.
+  valueExpansionFunctionMap: {
+    button_padding: 'inftncShareButtonPadding',
   },
   // Only the responsive `_last_edited` helper stays deprecated (the D5 module
   // renders desktop values only). It must be deprecated rather than omitted, or
