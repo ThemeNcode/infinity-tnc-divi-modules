@@ -17,6 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 use ET\Builder\Packages\Module\Module;
 use ET\Builder\Framework\Utility\HTMLUtility;
 use ET\Builder\FrontEnd\BlockParser\BlockParserStore;
+use INFTNC\Modules\Sanitizer\EmbedKses;
 
 trait RenderCallbackTrait {
 	use ModuleClassnamesTrait;
@@ -99,7 +100,9 @@ trait RenderCallbackTrait {
 				esc_attr( $autoplay_value )
              );
         } elseif ( 'embed_code' === $vimeo_method ) {
-            $map = et_core_esc_previously( $vimeo_embed );
+            // Sanitize raw embed markup with KSES (post allowlist + a tight iframe
+            // rule). This strips <script> while keeping the Vimeo iframe intact.
+            $map = EmbedKses::sanitize( $vimeo_embed );
         }
 
 		$inner_content = HTMLUtility::render(

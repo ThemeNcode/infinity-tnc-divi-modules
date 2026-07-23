@@ -44,7 +44,10 @@ trait RenderCallbackTrait {
 
 		$data = $attrs['imageCarouselData']['innerContent']['desktop']['value'] ?? [];
 
-		$slide_spacing    = $data['slide_spacing'] ?? '20px';
+		$slide_spacing_raw = $data['slide_spacing'] ?? '20px';
+		// Validate as a CSS length before interpolating into the inline custom
+		// property, so builder attributes cannot inject arbitrary CSS.
+		$slide_spacing    = preg_match( '/^\d+(\.\d+)?(px|em|rem|%|vw|vh)$/', (string) $slide_spacing_raw ) ? $slide_spacing_raw : '20px';
 		$slides_to_show   = $data['slides_to_show'] ?? '3';
 		$slides_to_scroll = $data['slides_to_scroll'] ?? '1';
 		$animation_speed  = $data['animation_speed'] ?? '300';

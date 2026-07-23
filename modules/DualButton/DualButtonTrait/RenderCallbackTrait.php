@@ -61,8 +61,15 @@ trait RenderCallbackTrait {
 
 	public static function render_callback( $attrs, $content, $block, $elements ): string {
 		$data      = $attrs['dualButtonData']['innerContent']['desktop']['value'] ?? [];
-		$alignment = $data['button_alignment'] ?? 'left';
-		$gap       = $data['button_gap']       ?? '10px';
+
+		// Allowlist the alignment and validate the gap as a CSS length before they are
+		// interpolated into the inline style, so builder attributes cannot inject
+		// arbitrary CSS. Unknown values fall back to safe defaults.
+		$alignment_raw = $data['button_alignment'] ?? 'left';
+		$alignment     = in_array( $alignment_raw, [ 'left', 'center', 'right', 'space-between' ], true ) ? $alignment_raw : 'left';
+
+		$gap_raw = $data['button_gap'] ?? '10px';
+		$gap     = preg_match( '/^\d+(\.\d+)?(px|em|rem|%|vw|vh)$/', (string) $gap_raw ) ? $gap_raw : '10px';
 
 		// Left button content.
 		$left_content = $attrs['buttonLeft']['innerContent']['desktop']['value'] ?? [];
