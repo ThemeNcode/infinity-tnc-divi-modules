@@ -4,7 +4,7 @@ Tags: divi, divi 5, modules, carousel, social share
 Requires at least: 5.0
 Tested up to: 7.0
 Requires PHP: 7.0
-Stable tag: 5.0.1
+Stable tag: 5.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
  
@@ -115,6 +115,13 @@ Source code is available on github. <a href="https://github.com/ThemeNcode/infin
 8. Divi Typewriter Module Preview
  
 == Changelog ==
+= 5.0.2 =
+* Hardened the embed modules: YouTube, Vimeo, and Embed Map raw embed code is now sanitized with a KSES iframe allowlist that strips scripts while keeping legitimate embeds intact.
+* Validated Dual Buttons alignment and gap values before they are used in inline styles.
+* Tightened YouTube and Vimeo video/playlist ID validation.
+* Added more escaping to the Breadcrumbs module (term and author names, search query, and the home link URL).
+* Fixed Social Share and Social Share Child button padding not converting correctly from Divi 4 to Divi 5 layouts.
+
 = 5.0.1 =
 * Hardened Heading Gradient module: gradient colors and positions are now sanitized before being used in inline styles.
 * Escaped Breadcrumbs output (home text, before text, and post titles) on the front end.
@@ -139,6 +146,9 @@ Source code is available on github. <a href="https://github.com/ThemeNcode/infin
 * Initial Release of the free version
 
 == Upgrade Notice ==
+
+= 5.0.2 =
+Additional security hardening for the video embed, Dual Buttons, and Breadcrumbs modules, plus a Social Share padding conversion fix for Divi 5.
 
 = 5.0.1 =
 Security and stability hardening for the Heading Gradient, Breadcrumbs, Social Share, and video embed modules.
