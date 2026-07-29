@@ -94,7 +94,7 @@ add_action( 'et_builder_ready', 'infinity_tnc_divi_module_initialize_d4_modules'
  * @since ??
  */
 function infinity_tnc_divi_module_enqueue_d4_vb_scripts() {
-	if ( et_core_is_fb_enabled() ) {
+	if ( function_exists( 'et_core_is_fb_enabled' ) && et_core_is_fb_enabled() ) {
 		$plugin_dir_url = plugin_dir_url( __FILE__ );
 		wp_enqueue_script(
 			'infinity-tnc-divi-modules-d4-vb',
@@ -134,7 +134,8 @@ add_action( 'wp_enqueue_scripts', 'infinity_tnc_divi_module_enqueue_d4_vb_script
  * @since ??
  */
 function infinity_tnc_divi_module_enqueue_vb_scripts() {
-	if ( et_builder_d5_enabled() && et_core_is_fb_enabled() ) {
+	if ( function_exists( 'et_builder_d5_enabled' ) && et_builder_d5_enabled()
+		&& function_exists( 'et_core_is_fb_enabled' ) && et_core_is_fb_enabled() ) {
 		$plugin_dir_url = plugin_dir_url( __FILE__ );
 
 		\ET\Builder\VisualBuilder\Assets\PackageBuildManager::register_package_build(
