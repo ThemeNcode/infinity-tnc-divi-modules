@@ -8,6 +8,7 @@ import { ModuleScriptData } from './module-script-data';
 import { ModuleStyles } from './styles';
 
 import { EmbedMapAttrs } from './types';
+import { sanitizeEmbedHtml } from '../../utils/sanitize-embed';
 
 export type EmbedMapEditProps = Module.Edit.Props<EmbedMapAttrs>;
 
@@ -41,7 +42,7 @@ const EmbedMapEdit = (props: EmbedMapEditProps): ReactElement => {
   let mapContent: ReactElement | null = null;
 
   if ('emebed_code' === sourceType && embedCode) {
-    mapContent = <div dangerouslySetInnerHTML={{ __html: embedCode }} />;
+    mapContent = <div dangerouslySetInnerHTML={{ __html: sanitizeEmbedHtml(embedCode) }} />;
   } else if ('latitude_longitude' === sourceType) {
     const iframeSrc = `https://maps.google.com/maps?q=${latitudeLongitude}&z=${mapZoom}&output=embed`;
     mapContent = (

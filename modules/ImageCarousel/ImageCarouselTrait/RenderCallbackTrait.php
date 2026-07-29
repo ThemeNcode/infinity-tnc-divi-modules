@@ -63,12 +63,9 @@ trait RenderCallbackTrait {
 		$rtl            = ( 'on' === $rtl_raw ) ? 'true' : 'false';
 		$dir            = ( 'on' === $rtl_raw ) ? 'rtl' : '';
 
-		$children_ids = isset( $block->parsed_block['innerBlocks'] ) ? array_map(
-			function( $inner_block ) {
-				return $inner_block['id'];
-			},
-			$block->parsed_block['innerBlocks']
-		) : [];
+		$children_ids = isset( $block->parsed_block['innerBlocks'] )
+			? array_column( $block->parsed_block['innerBlocks'], 'id' )
+			: [];
 
 		$carousel_wrapper = HTMLUtility::render(
 			[

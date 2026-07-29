@@ -6,6 +6,7 @@ import { moduleClassnames } from './module-classnames';
 import { ModuleScriptData } from './module-script-data';
 import { ModuleStyles } from './styles';
 import { YoutubeEmbedEditProps } from './types';
+import { sanitizeEmbedHtml } from '../../utils/sanitize-embed';
 
 /**
  * Youtube Embed edit component for the Visual Builder.
@@ -68,7 +69,7 @@ const YoutubeEmbedEdit = (props: YoutubeEmbedEditProps): ReactElement => {
         />
       );
     } else if (videoMethod === 'embed_code' && youtubeEmbed) {
-      content = <div key="youtube_embed" dangerouslySetInnerHTML={{ __html: youtubeEmbed }} />;
+      content = <div key="youtube_embed" dangerouslySetInnerHTML={{ __html: sanitizeEmbedHtml(youtubeEmbed) }} />;
     }
   } else if (videoType === 'playlist') {
     let playlistId = '';
@@ -94,7 +95,7 @@ const YoutubeEmbedEdit = (props: YoutubeEmbedEditProps): ReactElement => {
         />
       );
     } else if (videoMethod === 'embed_code' && youtubeEmbed) {
-      content = <div key="youtube_playlist_embed" dangerouslySetInnerHTML={{ __html: youtubeEmbed }} />;
+      content = <div key="youtube_playlist_embed" dangerouslySetInnerHTML={{ __html: sanitizeEmbedHtml(youtubeEmbed) }} />;
     }
   }
 

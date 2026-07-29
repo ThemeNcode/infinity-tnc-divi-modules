@@ -40,23 +40,30 @@ trait RenderCallbackTrait {
 			return [];
 		}
 
-		$breakpoint_to_data_attr = static function ( $breakpoint ) {
-			if ( 'desktop' === $breakpoint ) {
-				return 'data-icon';
-			}
-			return 'data-icon-' . strtolower( preg_replace( '/([A-Z])/', '-$1', $breakpoint ) );
-		};
-
 		$icon_data_attrs = [];
 		foreach ( $button_decoration as $breakpoint => $breakpoint_value ) {
 			$icon_settings = $breakpoint_value['value']['icon']['settings'] ?? null;
 			if ( ! empty( $icon_settings ) ) {
-				$processed_icon                            = Utils::process_font_icon( $icon_settings );
-				$icon_data_attrs[ $breakpoint_to_data_attr( $breakpoint ) ] = $processed_icon;
+				$processed_icon = Utils::process_font_icon( $icon_settings );
+				$icon_data_attrs[ self::breakpoint_to_data_attr( $breakpoint ) ] = $processed_icon;
 			}
 		}
 
 		return $icon_data_attrs;
+	}
+
+	/**
+	 * Map a breakpoint name to its `data-icon*` attribute name.
+	 *
+	 * @param string $breakpoint Breakpoint name (e.g. 'desktop', 'tablet').
+	 *
+	 * @return string
+	 */
+	protected static function breakpoint_to_data_attr( string $breakpoint ): string {
+		if ( 'desktop' === $breakpoint ) {
+			return 'data-icon';
+		}
+		return 'data-icon-' . strtolower( preg_replace( '/([A-Z])/', '-$1', $breakpoint ) );
 	}
 
 	public static function render_callback( $attrs, $content, $block, $elements ): string {

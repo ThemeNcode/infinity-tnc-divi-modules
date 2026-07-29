@@ -4,7 +4,7 @@ Tags: divi, divi 5, modules, carousel, social share
 Requires at least: 5.0
 Tested up to: 7.0
 Requires PHP: 7.0
-Stable tag: 5.0.2
+Stable tag: 5.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
  
@@ -115,6 +115,12 @@ Source code is available on github. <a href="https://github.com/ThemeNcode/infin
 8. Divi Typewriter Module Preview
  
 == Changelog ==
+= 5.0.3 =
+* Hardened the Visual Builder embed previews: raw YouTube, Vimeo, and Embed Map embed code is now sanitized with an iframe allowlist in both the Divi 4 and Divi 5 builders, so stored markup can no longer execute when opening the builder.
+* Cast the Heading Gradient container index before it is used in inline styles to prevent style-context breakout.
+* Restricted the Breadcrumbs separator/icon value to a single glyph or HTML entity, rejecting arbitrary markup.
+* Replaced anonymous closures used for module registration and callbacks with named functions/methods (Marketplace guideline compliance).
+
 = 5.0.2 =
 * Hardened the embed modules: YouTube, Vimeo, and Embed Map raw embed code is now sanitized with a KSES iframe allowlist that strips scripts while keeping legitimate embeds intact.
 * Validated Dual Buttons alignment and gap values before they are used in inline styles.
@@ -146,6 +152,9 @@ Source code is available on github. <a href="https://github.com/ThemeNcode/infin
 * Initial Release of the free version
 
 == Upgrade Notice ==
+
+= 5.0.3 =
+Security hardening for the Visual Builder embed previews (Divi 4 and Divi 5), the Heading Gradient inline styles, and the Breadcrumbs separator, plus a code-quality cleanup of module registration.
 
 = 5.0.2 =
 Additional security hardening for the video embed, Dual Buttons, and Breadcrumbs modules, plus a Social Share padding conversion fix for Divi 5.

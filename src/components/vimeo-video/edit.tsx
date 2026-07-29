@@ -6,6 +6,7 @@ import { moduleClassnames } from './module-classnames';
 import { ModuleScriptData } from './module-script-data';
 import { ModuleStyles } from './styles';
 import { VimeoVideoEditProps } from './types';
+import { sanitizeEmbedHtml } from '../../utils/sanitize-embed';
 
 /**
  * Vimeo Video edit component for the Visual Builder.
@@ -81,7 +82,7 @@ const VimeoVideoEdit = (props: VimeoVideoEditProps): ReactElement => {
       />
     );
   } else if (vimeoMethod === 'embed_code' && vimeoEmbed) {
-    mapContent = <div key="embed_code" dangerouslySetInnerHTML={{ __html: vimeoEmbed }} />;
+    mapContent = <div key="embed_code" dangerouslySetInnerHTML={{ __html: sanitizeEmbedHtml(vimeoEmbed) }} />;
   }
 
   return (

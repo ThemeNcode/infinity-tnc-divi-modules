@@ -105,8 +105,13 @@ trait RenderCallbackTrait {
 
 		$gradientCss = '';
 		if ( ! empty( $gradientDeclaration ) ) {
-			$orderClass   = ".inftnc_heading_gradient_container_" . $block->parsed_block['orderIndex'];
-			$headingTags  = implode( ', ', array_map( fn( $n ) => "{$orderClass} h{$n}.inftnc_gradient_title", range( 1, 6 ) ) );
+			$order_index  = absint( $block->parsed_block['orderIndex'] ?? 0 );
+			$orderClass   = ".inftnc_heading_gradient_container_{$order_index}";
+			$heading_selectors = [];
+			for ( $n = 1; $n <= 6; $n++ ) {
+				$heading_selectors[] = "{$orderClass} h{$n}.inftnc_gradient_title";
+			}
+			$headingTags  = implode( ', ', $heading_selectors );
 			$gradientCss  = "<style>
 				{$headingTags} {
 					background: {$gradientDeclaration}
