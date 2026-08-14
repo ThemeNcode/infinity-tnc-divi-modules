@@ -6,6 +6,7 @@ import { getAttrByMode } from '@divi/module-utils';
 import { LogoCarouselChildEditProps, LogoCarouselChildInnerContent } from './types';
 import { ModuleStyles } from './styles';
 import { moduleClassnames } from './module-classnames';
+import { resolveImageSrc } from '../../utils/image-src';
 
 // Fallback for modules created before placeholderContent was registered.
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -21,7 +22,7 @@ export const LogoCarouselChildEdit = (props: LogoCarouselChildEditProps): ReactE
   } = props;
 
   const data = (getAttrByMode(attrs?.logoCarouselChildData?.innerContent) ?? {}) as LogoCarouselChildInnerContent;
-  const logo = data.logo ?? '';
+  const logo = resolveImageSrc(data.logo);
   const alt  = data.alt ?? '';
 
   return (

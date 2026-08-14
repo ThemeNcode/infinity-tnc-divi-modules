@@ -3,7 +3,7 @@
 Plugin Name: Infinity TNC Divi Modules
 Plugin URI:  https://divi.themencode.com/infinity-tnc-divi-modules-preview/
 Description: Fulfill your Divi experience with the awesome & useful modules for every purpose you need.
-Version:     5.0.3
+Version:     5.0.4
 Author:      ThemeNcode LLC
 Author URI:  https://themencode.com/
 License:     GPL2
@@ -99,7 +99,7 @@ function infinity_tnc_divi_module_enqueue_d4_vb_scripts() {
 		wp_enqueue_script(
 			'infinity-tnc-divi-modules-d4-vb',
 			"{$plugin_dir_url}divi-4/build/infinity-tnc-divi-modules-divi4.js",
-			array( 'react', 'jquery' ),
+			array( 'react', 'jquery', 'underscore' ),
 			INFINITY_TNC_DIVI_MODULES_VERSION,
 			true
 		);

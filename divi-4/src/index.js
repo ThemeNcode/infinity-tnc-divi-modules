@@ -1,3 +1,7 @@
+// Must be the first import: captures WordPress's Underscore before react-svg-star-rating's
+// baked-in lodash overwrites the global `_`. See underscore-guard.js for the full rationale.
+import { realUnderscore } from './underscore-guard';
+
 import $ from 'jquery';
 
 import EmbedMap from './components/embed-map';
@@ -15,6 +19,13 @@ import ImageCarouselChild from './components/image-carousel-child';
 import LogoCarousel from './components/logo-carousel';
 import LogoCarouselChild from './components/logo-carousel-child';
 
+
+// All imports above have now evaluated, including react-svg-star-rating's baked-in lodash,
+// which overwrites the global `_`. Put WordPress's Underscore back so the Backbone-based
+// media library keeps working ("this.activateMode is not a function" otherwise).
+if (realUnderscore && typeof window !== 'undefined' && window._ !== realUnderscore) {
+    window._ = realUnderscore;
+}
 
 /**
  * Register modules to Visual Builder once the API is ready.
