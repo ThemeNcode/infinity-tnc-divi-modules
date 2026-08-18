@@ -1,5 +1,5 @@
 === Infinity TNC Divi Modules ===
-Contributors: ThemeNcode, abdulawal39
+Contributors: ThemeNcode, abdulawal39, codesrakib
 Tags: divi, divi 5, modules, carousel, social share
 Requires at least: 5.0
 Tested up to: 7.0
