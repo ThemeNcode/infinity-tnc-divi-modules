@@ -31,27 +31,33 @@ class LogoCarousel implements DependencyInterface {
 	 * @return void
 	 */
 	public function load() {
+		add_action( 'init', [ $this, 'register_module' ] );
+	}
+
+	/**
+	 * Registers the module and its assets on `init`.
+	 *
+	 * @since ??
+	 *
+	 * @return void
+	 */
+	public function register_module() {
 		$module_json_folder_path = INFINITY_TNC_DIVI_MODULES_JSON_PATH . 'logo-carousel/';
 
-		add_action(
-			'init',
-			function() use ( $module_json_folder_path ) {
-				ModuleRegistration::register_module(
-					$module_json_folder_path,
-					[
-						'render_callback' => [ LogoCarousel::class, 'render_callback' ],
-						'assets'          => [
-							'scripts' => [
-								'slick',
-								'inftnc-slick',
-							],
-							'styles' => [
-								'inftnc-logo-carousel',
-							],
-						],
-					]
-				);
-			}
+		ModuleRegistration::register_module(
+			$module_json_folder_path,
+			[
+				'render_callback' => [ LogoCarousel::class, 'render_callback' ],
+				'assets'          => [
+					'scripts' => [
+						'slick',
+						'inftnc-slick',
+					],
+					'styles' => [
+						'inftnc-logo-carousel',
+					],
+				],
+			]
 		);
 	}
 }

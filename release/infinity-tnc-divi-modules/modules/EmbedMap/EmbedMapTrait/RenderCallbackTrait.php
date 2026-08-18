@@ -17,6 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 use ET\Builder\Packages\Module\Module;
 use ET\Builder\Framework\Utility\HTMLUtility;
 use ET\Builder\FrontEnd\BlockParser\BlockParserStore;
+use INFTNC\Modules\Sanitizer\EmbedKses;
 
 trait RenderCallbackTrait {
 	use ModuleClassnamesTrait;
@@ -45,7 +46,10 @@ trait RenderCallbackTrait {
 
 		// Build map output based on source type.
 		if ( 'embed_code' === $source_type && ! empty( $embed_code ) ) {
-			$map = et_core_esc_previously( $embed_code );
+			// Sanitize raw embed markup with KSES (post allowlist + a tight iframe
+			// rule), matching the Divi 4 module's KSES approach. This strips <script>
+			// and other dangerous markup while keeping the map iframe intact.
+			$map = EmbedKses::sanitize( $embed_code );
 		} else {
 			$map = sprintf(
 				'<iframe src="https://maps.google.com/maps?q=%1$s&z=%2$s&amp;output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>',

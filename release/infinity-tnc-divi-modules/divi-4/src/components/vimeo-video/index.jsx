@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 
 // Internal Dependencies
+import { sanitizeEmbedHtml } from '../../utils/sanitize-embed';
 
 
 class VimeoVideo extends Component {
@@ -70,7 +71,7 @@ class VimeoVideo extends Component {
             );
 
         } else if (vimeo_method === 'embed_code') {
-            vimeoIframe = <div dangerouslySetInnerHTML={{ __html: vimeo_embed }}></div>
+            vimeoIframe = <div dangerouslySetInnerHTML={{ __html: sanitizeEmbedHtml(vimeo_embed) }}></div>
         }
 
         return (

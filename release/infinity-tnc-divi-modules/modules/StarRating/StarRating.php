@@ -34,18 +34,24 @@ class StarRating implements DependencyInterface {
 	 * @return void
 	 */
 	public function load() {
+		add_action( 'init', [ $this, 'register_module' ] );
+	}
+
+	/**
+	 * Registers the module on `init`.
+	 *
+	 * @since ??
+	 *
+	 * @return void
+	 */
+	public function register_module() {
 		$module_json_folder_path = INFINITY_TNC_DIVI_MODULES_JSON_PATH . 'star-rating/';
 
-		add_action(
-			'init',
-			function() use ( $module_json_folder_path ) {
-				ModuleRegistration::register_module(
-					$module_json_folder_path,
-					[
-						'render_callback' => [ StarRating::class, 'render_callback' ],
-					]
-				);
-			}
+		ModuleRegistration::register_module(
+			$module_json_folder_path,
+			[
+				'render_callback' => [ StarRating::class, 'render_callback' ],
+			]
 		);
 	}
 }

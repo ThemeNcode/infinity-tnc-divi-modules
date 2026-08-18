@@ -1,6 +1,9 @@
 // External Dependencies
 import React, { Component } from 'react';
 
+// Internal Dependencies
+import { sanitizeEmbedHtml } from '../../utils/sanitize-embed';
+
 class YoutubeEmbed extends Component {
 
     static slug = 'inftnc_youtube_embed';
@@ -61,7 +64,7 @@ class YoutubeEmbed extends Component {
 
         } else if (video_type === 'video' && video_method === 'embed_code' && youtube_url) {
 
-            inftncYoutubeIframe = <div dangerouslySetInnerHTML={{ __html: youtube_embed }}></div>
+            inftncYoutubeIframe = <div dangerouslySetInnerHTML={{ __html: sanitizeEmbedHtml(youtube_embed) }}></div>
 
         } else if (video_type === 'playlist' && 'video_url' === video_method) {
 
@@ -99,7 +102,7 @@ class YoutubeEmbed extends Component {
 
         } else if (video_type === 'playlist' && 'embed_code' === video_method) {
 
-            inftncYoutubeIframe = <div dangerouslySetInnerHTML={{ __html: youtube_embed }}></div>
+            inftncYoutubeIframe = <div dangerouslySetInnerHTML={{ __html: sanitizeEmbedHtml(youtube_embed) }}></div>
 
         }
 

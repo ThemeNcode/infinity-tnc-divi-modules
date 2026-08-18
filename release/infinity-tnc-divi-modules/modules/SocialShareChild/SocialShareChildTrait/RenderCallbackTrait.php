@@ -34,9 +34,9 @@ trait RenderCallbackTrait {
 	 * @return string Share URL.
 	 */
 	private static function get_share_url( string $network ): string {
-		$post_url     = urlencode( get_permalink() );
-		$post_title   = urlencode( get_the_title() );
-		$post_excerpt = urlencode( get_the_excerpt() );
+		$post_url     = rawurlencode( get_permalink() );
+		$post_title   = rawurlencode( get_the_title() );
+		$post_excerpt = rawurlencode( get_the_excerpt() );
 
 		$urls = [
 			'facebook'  => 'https://www.facebook.com/sharer/sharer.php?u=' . $post_url . '&t=' . $post_title,

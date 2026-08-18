@@ -17,6 +17,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 use ET\Builder\Packages\Module\Module;
 use ET\Builder\Framework\Utility\HTMLUtility;
 use ET\Builder\FrontEnd\BlockParser\BlockParserStore;
+use INFTNC\Modules\Sanitizer\EmbedKses;
 
 trait RenderCallbackTrait {
 	use ModuleClassnamesTrait;
@@ -75,7 +76,8 @@ trait RenderCallbackTrait {
 				preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]v=)|youtu\.be/)([^"&?/ ]{11})%i', $youtube_url, $match);
 				$exact_id = isset($match[1]) ? $match[1] : '';
 			} elseif ( 'video_id' === $video_method ) {
-				$exact_id = $youtube_id;
+				// YouTube video IDs are exactly 11 chars from a fixed charset; reject anything else.
+				$exact_id = preg_match( '/^[a-zA-Z0-9_-]{11}$/', $youtube_id ) ? $youtube_id : '';
 			}
 
 			if ( !empty($exact_id) && 'embed_code' !== $video_method ) {
@@ -92,7 +94,9 @@ trait RenderCallbackTrait {
 				);
 				$map .= $end_script;
 			} elseif ( 'embed_code' === $video_method ) {
-				$map = et_core_esc_previously( $youtube_embed );
+				// Sanitize raw embed markup with KSES (post allowlist + a tight iframe
+				// rule). This strips <script> while keeping the YouTube iframe intact.
+				$map = EmbedKses::sanitize( $youtube_embed );
 			}
         } elseif ( 'playlist' === $video_type ) {
 			$playlist_id = '';
@@ -100,7 +104,9 @@ trait RenderCallbackTrait {
 				preg_match('%(?:youtube(?:-nocookie)?\.com/(?:[^/]+/.+/|(?:v|e(?:mbed)?)/|.*[?&]list=)|youtu\.be/)([^"&?/ ]{34})%i', $youtube_url, $match);
 				$playlist_id = isset($match[1]) ? $match[1] : '';
 			} elseif ( 'video_id' === $video_method ) {
-				$playlist_id = $youtube_id;
+				// YouTube playlist IDs use a fixed charset and are longer than video IDs
+				// (typically 13-34 chars); reject anything outside that shape.
+				$playlist_id = preg_match( '/^[a-zA-Z0-9_-]{10,42}$/', $youtube_id ) ? $youtube_id : '';
 			}
 
 			if ( !empty($playlist_id) && 'embed_code' !== $video_method ) {
@@ -117,7 +123,9 @@ trait RenderCallbackTrait {
 				);
 				$map .= $end_script;
 			} elseif ( 'embed_code' === $video_method ) {
-				$map = et_core_esc_previously( $youtube_embed );
+				// Sanitize raw embed markup with KSES (post allowlist + a tight iframe
+				// rule). This strips <script> while keeping the YouTube iframe intact.
+				$map = EmbedKses::sanitize( $youtube_embed );
 			}
         }
 

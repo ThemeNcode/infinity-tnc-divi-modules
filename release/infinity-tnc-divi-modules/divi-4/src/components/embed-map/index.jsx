@@ -1,6 +1,9 @@
 // External Dependencies
 import React, { Component } from 'react';
 
+// Internal Dependencies
+import { sanitizeEmbedHtml } from '../../utils/sanitize-embed';
+
 class EmbedMap extends Component {
 
     static slug = 'inftnc_embed_map';
@@ -11,7 +14,7 @@ class EmbedMap extends Component {
 
         let tncIframe;
         if (source_type === 'emebed_code') {
-            tncIframe = <div dangerouslySetInnerHTML={{ __html: embed_code }}></div>
+            tncIframe = <div dangerouslySetInnerHTML={{ __html: sanitizeEmbedHtml(embed_code) }}></div>
         } else if (source_type === 'latitude_longitude') {
             const iframeSrc = `https://maps.google.com/maps?q=${latitude_longitude}&z=${map_zoom}&output=embed`;
             tncIframe = <iframe src={iframeSrc}></iframe>;

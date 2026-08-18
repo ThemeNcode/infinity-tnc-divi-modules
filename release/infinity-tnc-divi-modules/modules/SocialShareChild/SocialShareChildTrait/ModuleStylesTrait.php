@@ -113,8 +113,13 @@ trait ModuleStylesTrait {
 			] );
 		}
 		if ( ! empty( $link_css ) ) {
+			// Include the `.inftnc_share_button` wrapper to raise specificity to (0,3,0)
+			// so a child button's own padding/background wins over the parent Social
+			// Share module's group-level `.inftnc_share_link` rule (0,2,0). Both use
+			// !important, so without the extra class the parent (equal specificity)
+			// would override the child depending on stylesheet order.
 			$styles[] = CssStyle::style( [
-				'selector' => "{$order_class} .inftnc_share_link",
+				'selector' => "{$order_class} .inftnc_share_button .inftnc_share_link",
 				'attr'     => [ 'desktop' => [ 'value' => [ 'mainElement' => implode( ' ', $link_css ) ] ] ],
 			] );
 		}

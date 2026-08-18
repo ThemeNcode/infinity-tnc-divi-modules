@@ -46,13 +46,25 @@ trait RenderCallbackTrait {
 		$logo = $data['logo'] ?? '';
 		$alt  = $data['alt'] ?? '';
 
+		// The divi/upload field stores its value as a plain URL string, but the media
+		// library returns an object ( e.g. [ 'url' => ... ] ) when an image is inserted.
+		// Normalize to a URL string so it is not cast to "Array" by esc_attr().
+		if ( is_array( $logo ) ) {
+			$logo = $logo['url'] ?? ( $logo['src'] ?? '' );
+		}
+
 		$default_image = defined( 'ET_BUILDER_PLACEHOLDER_LANDSCAPE_IMAGE_DATA' ) ? ET_BUILDER_PLACEHOLDER_LANDSCAPE_IMAGE_DATA : '';
 
-		// esc_attr instead of esc_url: the saved value may be a data: URI (from placeholderContent)
-		// which esc_url() strips. esc_attr() HTML-encodes safely without protocol validation.
+		$src = $logo ?: $default_image;
+
+		// Real uploaded images are http(s) URLs and are escaped with esc_url(). The
+		// placeholder is a data: URI, which esc_url() would strip, so fall back to
+		// esc_attr() only for data: URIs.
+		$src_escaped = ( 0 === strpos( (string) $src, 'data:' ) ) ? esc_attr( $src ) : esc_url( $src );
+
 		$img_html = sprintf(
 			'<img class="logo_carousel_img" src="%s" alt="%s">',
-			esc_attr( $logo ?: $default_image ),
+			$src_escaped,
 			esc_attr( $alt )
 		);
 

@@ -41,12 +41,9 @@ trait RenderCallbackTrait {
 		wp_enqueue_script( 'inftnc-social-share' );
 		
 		$inner_content = $attrs['socialShareData']['innerContent']['desktop']['value'] ?? [];
-		$children_ids = $block->parsed_block['innerBlocks'] ? array_map(
-			function( $inner_block ) {
-				return $inner_block['id'];
-			},
-			$block->parsed_block['innerBlocks']
-		) : [];
+		$children_ids = $block->parsed_block['innerBlocks']
+			? array_column( $block->parsed_block['innerBlocks'], 'id' )
+			: [];
 
 		$wrapper = HTMLUtility::render(
 			[

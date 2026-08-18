@@ -40,29 +40,43 @@ trait RenderCallbackTrait {
 			return [];
 		}
 
-		$breakpoint_to_data_attr = static function ( $breakpoint ) {
-			if ( 'desktop' === $breakpoint ) {
-				return 'data-icon';
-			}
-			return 'data-icon-' . strtolower( preg_replace( '/([A-Z])/', '-$1', $breakpoint ) );
-		};
-
 		$icon_data_attrs = [];
 		foreach ( $button_decoration as $breakpoint => $breakpoint_value ) {
 			$icon_settings = $breakpoint_value['value']['icon']['settings'] ?? null;
 			if ( ! empty( $icon_settings ) ) {
-				$processed_icon                            = Utils::process_font_icon( $icon_settings );
-				$icon_data_attrs[ $breakpoint_to_data_attr( $breakpoint ) ] = $processed_icon;
+				$processed_icon = Utils::process_font_icon( $icon_settings );
+				$icon_data_attrs[ self::breakpoint_to_data_attr( $breakpoint ) ] = $processed_icon;
 			}
 		}
 
 		return $icon_data_attrs;
 	}
 
+	/**
+	 * Map a breakpoint name to its `data-icon*` attribute name.
+	 *
+	 * @param string $breakpoint Breakpoint name (e.g. 'desktop', 'tablet').
+	 *
+	 * @return string
+	 */
+	protected static function breakpoint_to_data_attr( string $breakpoint ): string {
+		if ( 'desktop' === $breakpoint ) {
+			return 'data-icon';
+		}
+		return 'data-icon-' . strtolower( preg_replace( '/([A-Z])/', '-$1', $breakpoint ) );
+	}
+
 	public static function render_callback( $attrs, $content, $block, $elements ): string {
 		$data      = $attrs['dualButtonData']['innerContent']['desktop']['value'] ?? [];
-		$alignment = $data['button_alignment'] ?? 'left';
-		$gap       = $data['button_gap']       ?? '10px';
+
+		// Allowlist the alignment and validate the gap as a CSS length before they are
+		// interpolated into the inline style, so builder attributes cannot inject
+		// arbitrary CSS. Unknown values fall back to safe defaults.
+		$alignment_raw = $data['button_alignment'] ?? 'left';
+		$alignment     = in_array( $alignment_raw, [ 'left', 'center', 'right', 'space-between' ], true ) ? $alignment_raw : 'left';
+
+		$gap_raw = $data['button_gap'] ?? '10px';
+		$gap     = preg_match( '/^\d+(\.\d+)?(px|em|rem|%|vw|vh)$/', (string) $gap_raw ) ? $gap_raw : '10px';
 
 		// Left button content.
 		$left_content = $attrs['buttonLeft']['innerContent']['desktop']['value'] ?? [];

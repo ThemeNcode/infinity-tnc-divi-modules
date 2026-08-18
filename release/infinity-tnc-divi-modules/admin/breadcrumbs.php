@@ -49,7 +49,7 @@ function infinity_tnc_breadcrumb($_home_text='Home',$_before_text='',$_delimiter
         $parent         = $post_object->post_parent;
         $post_type      = $post_object->post_type;
         $post_id        = $post_object->ID;
-        $post_link      = $before . $title . $after;
+        $post_link      = $before . esc_html( $title ) . $after;
         $parent_string  = '';
         $post_type_link = '';
 
@@ -92,7 +92,7 @@ function infinity_tnc_breadcrumb($_home_text='Home',$_before_text='',$_delimiter
             while ( $parent ) {
                 $post_parent = get_post( $parent );
 
-                $temp_link = sprintf( $link, esc_url( get_permalink( $post_parent->ID ) ), get_the_title( $post_parent->ID ) );
+                $temp_link = sprintf( $link, esc_url( get_permalink( $post_parent->ID ) ), esc_html( get_the_title( $post_parent->ID ) ) );
                 $temp_link = str_replace( 'positionhere', $position++, $temp_link );
 
                 $parent_links[] = $temp_link;
@@ -134,7 +134,7 @@ function infinity_tnc_breadcrumb($_home_text='Home',$_before_text='',$_delimiter
             $term_parent        = $term_object->parent;
             $taxonomy_object    = get_taxonomy( $taxonomy );
             //Categories: Tags: is set there
-            $current_term_link  = $before . $taxonomy_object->labels->singular_name . ': ' . $term_name . $after;
+            $current_term_link  = $before . esc_html( $taxonomy_object->labels->singular_name ) . ': ' . esc_html( $term_name ) . $after;
             $parent_term_string = '';
 
             if ( 0 !== $term_parent )
@@ -144,7 +144,7 @@ function infinity_tnc_breadcrumb($_home_text='Home',$_before_text='',$_delimiter
                 while ( $term_parent ) {
                     $term = get_term( $term_parent, $taxonomy );
 
-                    $temp_link = sprintf( $link, esc_url( get_term_link( $term ) ), $term->name );
+                    $temp_link = sprintf( $link, esc_url( get_term_link( $term ) ), esc_html( $term->name ) );
                     $temp_link = str_replace( 'positionhere', $position++, $temp_link );
 
                     $parent_term_links[] = $temp_link; 
@@ -164,7 +164,7 @@ function infinity_tnc_breadcrumb($_home_text='Home',$_before_text='',$_delimiter
 
         } elseif ( is_author() ) {
             /* translators: %s: author archive name */
-            $breadcrumb_trail = sprintf( __( 'Author archive for %s', 'infinity-tnc-divi-modules' ), $before . $queried_object->data->display_name . $after );
+            $breadcrumb_trail = sprintf( __( 'Author archive for %s', 'infinity-tnc-divi-modules' ), $before . esc_html( $queried_object->data->display_name ) . $after );
 
 
         } elseif ( is_date() ) {
@@ -214,7 +214,7 @@ function infinity_tnc_breadcrumb($_home_text='Home',$_before_text='',$_delimiter
     // Handle the search page
     if ( is_search() ) {
          /* translators: %s: search query */
-        $breadcrumb_trail = sprintf( __( 'Search query for: %s', 'infinity-tnc-divi-modules' ), $before . get_search_query() . $after );
+        $breadcrumb_trail = sprintf( __( 'Search query for: %s', 'infinity-tnc-divi-modules' ), $before . esc_html( get_search_query( false ) ) . $after );
     }
 
     // Handle 404's
@@ -239,16 +239,16 @@ function infinity_tnc_breadcrumb($_home_text='Home',$_before_text='',$_delimiter
     ) {
         // Do not show breadcrumbs on page one of home and frontpage
         if ( is_paged() ) {
-            $breadcrumb_output_link .= '<span class="inftnc_before">'.$here_text.'</span> ';
+            $breadcrumb_output_link .= '<span class="inftnc_before">'.esc_html( $here_text ).'</span> ';
             $breadcrumb_output_link .= '<span vocab="https://schema.org/" typeof="BreadcrumbList">';        
-            $breadcrumb_output_link .= '<span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" href="' . $home_link . '" class="home"><span property="name">' . $home_text . '</span><meta property="position" content="1"></a><meta property="position" content="1"></span>';
+            $breadcrumb_output_link .= '<span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" href="' . esc_url( $home_link ) . '" class="home"><span property="name">' . esc_html( $home_text ) . '</span><meta property="position" content="1"></a><meta property="position" content="1"></span>';
             $breadcrumb_output_link .= $page_addon;
             $breadcrumb_output_link .= '</span>';  
         }
     } else {
-        $breadcrumb_output_link .= '<span class="inftnc_before">'.$here_text.'</span> ';
+        $breadcrumb_output_link .= '<span class="inftnc_before">'.esc_html( $here_text ).'</span> ';
         $breadcrumb_output_link .= '<span vocab="https://schema.org/" typeof="BreadcrumbList">';        
-        $breadcrumb_output_link .= '<span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" href="' . $home_link . '" class="home"><span property="name">' . $home_text . '</span></a><meta property="position" content="1"></span>';
+        $breadcrumb_output_link .= '<span property="itemListElement" typeof="ListItem"><a property="item" typeof="WebPage" href="' . esc_url( $home_link ) . '" class="home"><span property="name">' . esc_html( $home_text ) . '</span></a><meta property="position" content="1"></span>';
         $breadcrumb_output_link .= $delimiter;
         $breadcrumb_output_link .= $breadcrumb_trail;
         $breadcrumb_output_link .= $page_addon;

@@ -44,7 +44,14 @@ trait RenderCallbackTrait {
 		// Legacy D4 string format: '&#x35;||divi'
 		if ( is_string( $icon_value ) && ! empty( $icon_value ) ) {
 			$parts = explode( '||', $icon_value );
-			return $parts[0];
+			$char  = $parts[0];
+
+			// The legacy segment must be a single icon glyph or HTML entity — never
+			// arbitrary markup. Anything else falls back to the safe default so the
+			// value cannot break out of the separator/icon span (stored XSS).
+			return preg_match( '/^(&#x?[0-9a-fA-F]+;|&[a-zA-Z][a-zA-Z0-9]*;|[^\s<>"\'&])$/u', $char )
+				? $char
+				: $fallback;
 		}
 
 		return $fallback;

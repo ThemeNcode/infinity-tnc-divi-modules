@@ -4,7 +4,7 @@ Tags: divi, divi 5, modules, carousel, social share
 Requires at least: 5.0
 Tested up to: 7.0
 Requires PHP: 7.0
-Stable tag: 5.0.0
+Stable tag: 5.0.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
  
@@ -114,11 +114,31 @@ Source code is available on github. <a href="https://github.com/ThemeNcode/infin
 7. Divi Vimeo video Module Preview
 8. Divi Typewriter Module Preview
  
- 
 == Changelog ==
+= 5.0.4 =
+* Fixed the WordPress media modal breaking ("this.activateMode is not a function") in the Divi 4 Visual Builder, caused by a bundled dependency overwriting the global Underscore that the media library relies on.
+* Fixed Image Carousel and Logo Carousel images not displaying (and an "Array to string conversion" notice) when an image is inserted from the media library, by normalizing the upload field value to a URL.
+* Image Carousel and Logo Carousel image URLs are now escaped with esc_url() (data: URI placeholders remain supported).
+
+= 5.0.3 =
+* Hardened the Visual Builder embed previews: raw YouTube, Vimeo, and Embed Map embed code is now sanitized with an iframe allowlist in both the Divi 4 and Divi 5 builders, so stored markup can no longer execute when opening the builder.
+* Cast the Heading Gradient container index before it is used in inline styles to prevent style-context breakout.
+* Restricted the Breadcrumbs separator/icon value to a single glyph or HTML entity, rejecting arbitrary markup.
+* Replaced anonymous closures used for module registration and callbacks with named functions/methods (Marketplace guideline compliance).
+* Fixed a fatal error ("Call to undefined function et_core_is_fb_enabled()") that could occur on the front end when the Divi theme/builder is not active.
+
+= 5.0.2 =
+* Hardened the embed modules: YouTube, Vimeo, and Embed Map raw embed code is now sanitized with a KSES iframe allowlist that strips scripts while keeping legitimate embeds intact.
+* Validated Dual Buttons alignment and gap values before they are used in inline styles.
+* Tightened YouTube and Vimeo video/playlist ID validation.
+* Added more escaping to the Breadcrumbs module (term and author names, search query, and the home link URL).
+* Fixed Social Share and Social Share Child button padding not converting correctly from Divi 4 to Divi 5 layouts.
 
 = 5.0.1 =
-* Fixed an issue with Divi 5 migration.
+* Hardened Heading Gradient module: gradient colors and positions are now sanitized before being used in inline styles.
+* Escaped Breadcrumbs output (home text, before text, and post titles) on the front end.
+* Improved Social Share URL encoding to use RFC 3986 compliant encoding.
+* Added format validation for YouTube and Vimeo video IDs in the embed modules.
 
 = 5.0.0 =
 * Added full compatibility with Divi 5 — every module now works in the new Divi 5 Visual Builder.
@@ -138,6 +158,18 @@ Source code is available on github. <a href="https://github.com/ThemeNcode/infin
 * Initial Release of the free version
 
 == Upgrade Notice ==
+
+= 5.0.4 =
+Fixes the media modal in the Divi 4 Visual Builder and restores Image/Logo Carousel image display when inserting from the media library.
+
+= 5.0.3 =
+Security hardening for the Visual Builder embed previews (Divi 4 and Divi 5), the Heading Gradient inline styles, and the Breadcrumbs separator, plus a code-quality cleanup of module registration.
+
+= 5.0.2 =
+Additional security hardening for the video embed, Dual Buttons, and Breadcrumbs modules, plus a Social Share padding conversion fix for Divi 5.
+
+= 5.0.1 =
+Security and stability hardening for the Heading Gradient, Breadcrumbs, Social Share, and video embed modules.
 
 = 5.0.0 =
 Adds full Divi 5 compatibility for all modules, with automatic conversion of existing Divi 4 layouts, plus several Visual Builder fixes.

@@ -33,18 +33,24 @@ class DualButton implements DependencyInterface {
 	 * @return void
 	 */
 	public function load(): void {
+		add_action( 'init', [ $this, 'register_module' ] );
+	}
+
+	/**
+	 * Registers the module on `init`.
+	 *
+	 * @since ??
+	 *
+	 * @return void
+	 */
+	public function register_module(): void {
 		$module_json_folder_path = INFINITY_TNC_DIVI_MODULES_JSON_PATH . 'dual-button/';
 
-		add_action(
-			'init',
-			function () use ( $module_json_folder_path ) {
-				ModuleRegistration::register_module(
-					$module_json_folder_path,
-					[
-						'render_callback' => [ DualButton::class, 'render_callback' ],
-					]
-				);
-			}
+		ModuleRegistration::register_module(
+			$module_json_folder_path,
+			[
+				'render_callback' => [ DualButton::class, 'render_callback' ],
+			]
 		);
 	}
 }

@@ -3,7 +3,7 @@
 Plugin Name: Infinity TNC Divi Modules
 Plugin URI:  https://divi.themencode.com/infinity-tnc-divi-modules-preview/
 Description: Fulfill your Divi experience with the awesome & useful modules for every purpose you need.
-Version:     5.0.1
+Version:     5.0.4
 Author:      ThemeNcode LLC
 Author URI:  https://themencode.com/
 License:     GPL2
@@ -94,12 +94,12 @@ add_action( 'et_builder_ready', 'infinity_tnc_divi_module_initialize_d4_modules'
  * @since ??
  */
 function infinity_tnc_divi_module_enqueue_d4_vb_scripts() {
-	if ( et_core_is_fb_enabled() ) {
+	if ( function_exists( 'et_core_is_fb_enabled' ) && et_core_is_fb_enabled() ) {
 		$plugin_dir_url = plugin_dir_url( __FILE__ );
 		wp_enqueue_script(
 			'infinity-tnc-divi-modules-d4-vb',
 			"{$plugin_dir_url}divi-4/build/infinity-tnc-divi-modules-divi4.js",
-			array( 'react', 'jquery' ),
+			array( 'react', 'jquery', 'underscore' ),
 			INFINITY_TNC_DIVI_MODULES_VERSION,
 			true
 		);
@@ -134,7 +134,8 @@ add_action( 'wp_enqueue_scripts', 'infinity_tnc_divi_module_enqueue_d4_vb_script
  * @since ??
  */
 function infinity_tnc_divi_module_enqueue_vb_scripts() {
-	if ( et_builder_d5_enabled() && et_core_is_fb_enabled() ) {
+	if ( function_exists( 'et_builder_d5_enabled' ) && et_builder_d5_enabled()
+		&& function_exists( 'et_core_is_fb_enabled' ) && et_core_is_fb_enabled() ) {
 		$plugin_dir_url = plugin_dir_url( __FILE__ );
 
 		\ET\Builder\VisualBuilder\Assets\PackageBuildManager::register_package_build(

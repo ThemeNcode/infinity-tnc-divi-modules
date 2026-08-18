@@ -53,10 +53,10 @@ trait RenderCallbackTrait {
 		$linear_position   = $data['linear_position'] ?? 'right';
 		$radial_position   = $data['radial_position'] ?? 'center center';
 		$ellipse_position  = $data['ellipse_position'] ?? 'center center';
-		$start_color       = $data['start_color'] ?? '#481CA6';
-		$end_color         = $data['end_color'] ?? '#AC43D9';
-		$start_position    = $data['start_position'] ?? 0;
-		$end_position      = $data['end_position'] ?? 100;
+		$start_color       = sanitize_hex_color( $data['start_color'] ?? '#481CA6' ) ?? '#481CA6';
+		$end_color         = sanitize_hex_color( $data['end_color'] ?? '#AC43D9' ) ?? '#AC43D9';
+		$start_position    = absint( $data['start_position'] ?? 0 );
+		$end_position      = absint( $data['end_position'] ?? 100 );
 		$presets_gradient  = $data['presets_gradient'] ?? 'gradient_preset1';
 
 		$position_map = [
@@ -75,9 +75,11 @@ trait RenderCallbackTrait {
 			'bottom_center' => 'bottom center',
 		];
 
-		$linearPosCSS  = $position_map[$linear_position] ?? $linear_position;
-		$radialPosCSS  = $position_map[$radial_position] ?? $radial_position;
-		$ellipsePosCSS = $position_map[$ellipse_position] ?? $ellipse_position;
+		// Only allow positions from the allowlist; fall back to a safe default rather than
+		// the raw attribute value so unsanitized data cannot enter the CSS string.
+		$linearPosCSS  = $position_map[$linear_position] ?? 'right';
+		$radialPosCSS  = $position_map[$radial_position] ?? 'center center';
+		$ellipsePosCSS = $position_map[$ellipse_position] ?? 'center center';
 
 		$gradientDeclaration = '';
 
@@ -103,8 +105,13 @@ trait RenderCallbackTrait {
 
 		$gradientCss = '';
 		if ( ! empty( $gradientDeclaration ) ) {
-			$orderClass   = ".inftnc_heading_gradient_container_" . $block->parsed_block['orderIndex'];
-			$headingTags  = implode( ', ', array_map( fn( $n ) => "{$orderClass} h{$n}.inftnc_gradient_title", range( 1, 6 ) ) );
+			$order_index  = absint( $block->parsed_block['orderIndex'] ?? 0 );
+			$orderClass   = ".inftnc_heading_gradient_container_{$order_index}";
+			$heading_selectors = [];
+			for ( $n = 1; $n <= 6; $n++ ) {
+				$heading_selectors[] = "{$orderClass} h{$n}.inftnc_gradient_title";
+			}
+			$headingTags  = implode( ', ', $heading_selectors );
 			$gradientCss  = "<style>
 				{$headingTags} {
 					background: {$gradientDeclaration}
